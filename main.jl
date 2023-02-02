@@ -45,15 +45,30 @@ function RK4(f,x0,t0,tf,h)
     return (t , xs)
 end
 
+"""Esta función nos genera matrices aleatorias con base en el modelo de red aleatoria. Lo hice de esta manera para
+que pudieramos tener una representación gráfica de las interacciones y al mimsmo tiempo obtener matrices aleatorias con
+valores aleatorios además."""
+
+function randomMatrix(N,p)
+    g = redAleatoria(N,p)
+    M = adjacency_matrix(g)
+    for i in 1:N
+        M[i,i] = 1
+    end
+    M = M.*randn(N,N)
+    for i in 1:N
+        if M[i,i] < 0
+            M[i,i]*=-1
+        end
+    end
+    return (M, g)
+end
+
 """ Modelo de competencia de 5 especies en competencia. """
 
-function cincoEspecies(x0,t0,tf,dt)
+function cincoEspecies(x0,t0,tf,dt,A)
     # A = randn(5,5) - Matrix(1I,5,5)
     #rng = MersenneTwister(1234)
-    A = randn(5,5)
-    for i in 1:5
-        A[i,i] = 1
-    end
     r = [1,2,1,2,1]
     K = [2,3,1,3,4]
     function sistema(X)
@@ -66,11 +81,7 @@ end
 
 """ Modelo de competencia de 10 especies en competencia."""
 
-function diezEspecies(x0,t0,tf,dt)
-    A = randn(5,5)
-    for i in 1:10
-        A[i,i] = 1
-    end
+function diezEspecies(x0,t0,tf,dt,A)
     r = [2,2,2,2,2,2,2,2,2,2]
     K = [2,3,1,3,4,1,3,5,2,2]
     function sistema(X)
@@ -83,7 +94,7 @@ end
 """ Modelo de red aleatoria, la primera función es un generador de enlaces enlacesAleatorios con
 base en un número de enlaces N y una probabilidad p """
 
-#= function enlacesAleatorios(N,p)
+function enlacesAleatorios(N,p)
     Channel() do channel
         for i in 1:N
             for j in 1:i
@@ -108,4 +119,4 @@ function redAleatoria(N,p)
         add_edge!(g,enlaces[i][1],enlaces[i][2])
     end
     return g
-end =#
+end
