@@ -4,6 +4,7 @@ using Plots
 using LaTeXStrings
 using Graphs
 using GraphPlot
+using StatsBase
 
 plotlyjs()
 
@@ -61,19 +62,24 @@ function randomMatrix(N,p)
             M[i,i]*=-1
         end
     end
-    return (M, g)
+    return (Matrix(M), g)
 end
 
 """ Modelo de competencia de 5 especies en competencia. """
 
 function cincoEspecies(x0,t0,tf,dt,A)
-    # A = randn(5,5) - Matrix(1I,5,5)
-    #rng = MersenneTwister(1234)
-    r = [1,2,1,2,1]
+    r = [2,3,1,3,4]
     K = [2,3,1,3,4]
     function sistema(X)
-        return r.*X.*(ones(5)-A*X./K)
-        # return [2X[1]*(1-X[1]/2)-X[1]*X[2],3X[2]*(1-X[2]/3)-2X[1]*X[2]]
+        sol = zeros(5)
+        xs = zeros(5)
+        for i in 1:5
+            for j in 1:5
+                xs[i] += A[i,j]*X[j]
+            end
+            sol[i] = r[i]*X[i]*(1-xs[i]/K[i])
+        end
+        return sol               
     end
     
     return RK4(sistema,x0,t0,tf,dt)
@@ -82,10 +88,31 @@ end
 """ Modelo de competencia de 10 especies en competencia."""
 
 function diezEspecies(x0,t0,tf,dt,A)
-    r = [2,2,2,2,2,2,2,2,2,2]
-    K = [2,3,1,3,4,1,3,5,2,2]
+    r = rand(100)
+    K = rand(100)
     function sistema(X)
-        return r.*X.*(ones(10)-A*X./K)
+        return r.*X.*(ones(100)-A*X./K)
+    end
+    
+    return RK4(sistema,x0,t0,tf,dt)
+end
+
+""" Modelo de competencia de 2 especies en competencia (Prueba)."""
+
+function pruebas(x0,t0,tf,dt,A)
+    r = [2,3]
+    K = [2,3]
+    function sistema(X::Vector)
+        sis = zeros(2)
+        xs = zeros(2)
+        for i in 1:2
+            for j in 1:2
+                xs[i] += A[i,j]*X[j]
+            end
+            sis[i] = r[i]*X[i]*(1-xs[i]/K[i])
+        end
+        return sis #[2X[1]*(1-X[1]/2-X[1]*X[2]/2),3X[2]*(1-X[2]/3-2X[1]*X[2]/3)]
+        # return [2X[1]*(1-X[1]/2)-X[1]*X[2],3X[2]*(1-X[2]/3)-2X[1]*X[2]]
     end
     
     return RK4(sistema,x0,t0,tf,dt)
