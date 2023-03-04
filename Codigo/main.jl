@@ -1,4 +1,4 @@
-#using Random
+using Random
 using LinearAlgebra
 using Plots
 using LaTeXStrings
@@ -46,30 +46,24 @@ function RK4(f,x0,t0,tf,h)
     return (t , xs)
 end
 
-"""Esta función nos genera matrices aleatorias con base en el modelo de red aleatoria. Lo hice de esta manera para
-que pudieramos tener una representación gráfica de las interacciones y al mimsmo tiempo obtener matrices aleatorias con
-valores aleatorios además."""
+""" Modelo de competencia de 5 especies en competencia. Funciona con tasa de crecimiento
+y capacidaddes de carga por separado, es para analizar sistemas aleaotrios completamente.
 
-function randomMatrix(N,p)
-    g = redAleatoria(N,p)
-    M = adjacency_matrix(g)
-    for i in 1:N
-        M[i,i] = 1
-    end
-    M = M.*randn(N,N)
-    for i in 1:N
-        if M[i,i] < 0
-            M[i,i]*=-1
+Como están basadas en la función prueba, me di cuenta que este sistema está mal, por eso 
+no llega a la capcidad de carga, las ri/ki no con iguales y por eso afecta en el resultado.
+"""
+
+function cincoEspecies(x0,t0,tf,dt,r,K)
+    A = zeros(5,5)
+    for i in 1:5
+        A[i,i] = 1
+        for j in 1:5
+            if i != j
+                A[i,j] = rand()*r[i]/K[i]
+            end
         end
     end
-    return (Matrix(M), g)
-end
-
-""" Modelo de competencia de 5 especies en competencia. """
-
-function cincoEspecies(x0,t0,tf,dt,A)
-    r = [2,3,1,3,4]
-    K = [2,3,1,3,4]
+    
     function sistema(X)
         sol = zeros(5)
         xs = zeros(5)
@@ -85,24 +79,41 @@ function cincoEspecies(x0,t0,tf,dt,A)
     return RK4(sistema,x0,t0,tf,dt)
 end
 
-""" Modelo de competencia de 10 especies en competencia."""
+""" Modelo de competencia de 10 especies en competencia. Mismo caso en en el 
+sistema de cinco especies."""
 
-function diezEspecies(x0,t0,tf,dt,A)
-    r = rand(100)
-    K = rand(100)
+function diezEspecies(x0,t0,tf,dt,r,K)
+    A = zeros(10,10)
+    for i in 1:10
+        A[i,i] = 1
+        for j in 1:10
+            if i != j
+                A[i,j] = rand()*r[i]/K[i]
+            end
+        end
+    end
+    
     function sistema(X)
-        return r.*X.*(ones(100)-A*X./K)
+        sol = zeros(10)
+        xs = zeros(10)
+        for i in 1:10
+            for j in 1:10
+                xs[i] += A[i,j]*X[j]
+            end
+            sol[i] = r[i]*X[i]*(1-xs[i]/K[i])
+        end
+        return sol               
     end
     
     return RK4(sistema,x0,t0,tf,dt)
 end
 
-""" Modelo de competencia de 2 especies en competencia (Prueba)."""
+""" Modelo de competencia de 2 especies en competencia (Prueba). 
+Nota importante, solo funciona con r = [2,3] y K = [2,3]"""
 
-function pruebas(x0,t0,tf,dt,A)
-    r = [2,3]
-    K = [2,3]
-    function sistema(X::Vector)
+function pruebas(x0,t0,tf,dt,r,K)
+    A = [r[1]/K[1] rand()*r[1]/K[1];rand()*r[2]/K[2] r[2]/K[2]]
+    function sistema(X)
         sis = zeros(2)
         xs = zeros(2)
         for i in 1:2
@@ -111,11 +122,11 @@ function pruebas(x0,t0,tf,dt,A)
             end
             sis[i] = r[i]*X[i]*(1-xs[i]/K[i])
         end
-        return sis #[2X[1]*(1-X[1]/2-X[1]*X[2]/2),3X[2]*(1-X[2]/3-2X[1]*X[2]/3)]
-        # return [2X[1]*(1-X[1]/2)-X[1]*X[2],3X[2]*(1-X[2]/3)-2X[1]*X[2]]
+        return sis
+        #return [2X[1]*(1-X[1]/2-X[2]/2),3X[2]*(1-X[2]/3-2X[1]/3)]
     end
     
-    return RK4(sistema,x0,t0,tf,dt)
+    return (RK4(sistema,x0,t0,tf,dt),A)
 end
 
 """ Modelo de red aleatoria, la primera función es un generador de enlaces enlacesAleatorios con
@@ -146,4 +157,44 @@ function redAleatoria(N,p)
         add_edge!(g,enlaces[i][1],enlaces[i][2])
     end
     return g
+end
+
+"""Esta función nos genera matrices aleatorias con base en el modelo de red aleatoria.
+Lo hice de esta manera para que pudieramos tener una representación gráfica de las 
+interacciones y al mimsmo tiempo obtener matrices aleatorias con valores aleatorios además."""
+
+function randomMatrix(N,p)
+    g = redAleatoria(N,p)
+    M = adjacency_matrix(g)
+    for i in 1:N
+        M[i,i] = 1
+    end
+    M = M.*randn(N,N)
+    for i in 1:N
+        M[i,i] = 1
+    end
+    return (Matrix(M), g)
+end
+
+"""Voy a diseñar una función que sea compatible con la matiz que regresa randomMatrix(N,p), 
+es decir que solo necesitará la matriz para trabajar sin tener en cuenta las capacidades de carga
+ni las tasas de crecimiento. Vamos a ve que sale"""
+
+function poblacionesLK(x0,t0,tf,dt,N,p)
+    A , _ = randomMatrix(N,p)  
+    r = 2*ones(N)
+    K = 3*ones(N)
+    function sistema(X)
+        sis = zeros(N)
+        xs = zeros(N)
+        for i in 1:N
+            for j in 1:N
+                xs[i] += A[i,j]*X[j]
+            end
+            sis[i] = r[i]*X[i]*(1-xs[i]/K[i])
+        end
+        return sis
+    end
+    
+    return (RK4(sistema,x0,t0,tf,dt),A)
 end
