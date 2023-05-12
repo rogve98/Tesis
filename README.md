@@ -3,9 +3,9 @@ Este repositorio contiene todos los archivos trabajados durante mi proceso de te
 
 La estructura del reposotorio es la siguiente
 
-* En la carpeta [Codigo](/home/rogve98/Documentos/Tesis/Tesis/Código/Codigo) se encuentra los archivos .jl del proyecto en donde existe uno de pruebas y otro definitivo llamado main.jl
-* En la carpeta de [Notebooks](/home/rogve98/Documentos/Tesis/Tesis/Código/Notebooks) se encuentran cuatro notebooks, dos de apoyo para pintar espacios fase con Makie.jl y con matplotlib.py que respectivamente son Elementos básicos y Espacios fase. El notebook de pruebas son donde se hallan las pruebas y errores del código y en avances se encuentran los resultados importantes hasta el momento.
-* En la carpeta [Imagenes](/home/rogve98/Documentos/Tesis/Tesis/Código/Imagenes) se encuentran todas imágenes generadas y guardadas de los experimentos y avances que se hagan.
+* En la carpeta [Codigo](/master/Codigo) se encuentra los archivos .jl del proyecto en donde existe uno de pruebas y otro definitivo llamado main.jl
+* En la carpeta de [Notebooks](/master/Notebooks) se encuentran cuatro notebooks, dos de apoyo para pintar espacios fase con Makie.jl y con matplotlib.py que respectivamente son Elementos básicos y Espacios fase. El notebook de pruebas son donde se hallan las pruebas y errores del código y en avances se encuentran los resultados importantes hasta el momento.
+* En la carpeta [Imagenes](/master/Imagenes) se encuentran todas imágenes generadas y guardadas de los experimentos y avances que se hagan.
 
 ## Avances
 
@@ -30,8 +30,14 @@ Para poder resolver este tipo de problemas es necesario integrar numéricamente 
 
 ### Avances en el código
 
+**050523**
+
 Ya que tenemos nuestro integrador de RK4, definimos un sistema $N-$ dimensional con sus interacciones pertinentes. Para ello podemos agarrarnos el modelo de red aleatoria de Erdös-Rènyi (modelo GNP) que es un modelo que atribuye un enlace (interacción) en función de una probabilidad. Extraemos su matriz de adyacencia y la manipulamos para poder obtener una matriz aleatoria con entradas que cumplan la distribución normal. 
 
 El problema no lineal que queremos resolver es el de un sistema de $N$ especies en competencia, por tanto nos agarramos las ecuaciones de Lotka-Volterra en dicha versión. Armando el sistema notamos que funciona para dos especies muy bien pero para para cinco comienza a hacer cosas extrañas como sobrepasar la capacidad de carga, descubrimos de forma empírica que se debía a la escala en la que se encuentran los números de la distribución y la diagonal que representan los términos logísticos de las ecuaciones.
 
 Elegimos un factor de escala de 10 y dicho problema se ha resuelto pero hace falta demostrar porque funciona.
+
+**110523**
+
+He determinado el jacobiano del sistema en su forma general, deben cumplir dos reglas determinadas para la identidad y para la parte triangular superior e inferior. He generado código al respecto y hace falta verificar que funcione. Ahora hace falta determinar por medio de un algorítmo los puntos críticos del sistema y posteriormente su estabilidad asociada; luego vendrá lo de la ley circular y el resto de la chamba.

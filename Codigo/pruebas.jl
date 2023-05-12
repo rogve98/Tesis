@@ -217,6 +217,35 @@ function poblacionesLK(x0,t0,tf,dt,params)
     return (RK4(sistema,x0,t0,tf,dt),A,g)
 end
 
+"""
+Jacobiano n-dimensional
+
+X := especies
+P := parámetros, [r,K,N,A]
+"""
+
+function Jacobiano(X::Vector,P::Array)
+    r = P[1]
+    K = P[2]
+    N = P[3]
+    A = P[4]
+    M = zeros(N,N)
+    for i in 1:N
+        for j in 1:N
+            if i == j
+                xs = zeros(N)
+                for k in 1:N
+                    xs[i] += A[i,k]*X[k]
+                end
+                M[i,i] = r[i]*(1-xs[i]/K[i])-r[i]*X[i]/K[i]
+            else
+                M[i,j] = -r[i]*X[i]*A[i,j]/K[i]
+            end
+        end
+    end
+    return M
+end        
+
 """Esta función lo que pretende es pintar el sistema resultante de lo que resuelve poblacionesLK.
 Para luego encontrar puntos críticos y determinar Jacobiano de cada uno y sus estabilidades.
 Lo que nos interesa con esta función es tratar de obtener La matriz de interacciones, sacar
