@@ -3,9 +3,9 @@ Este repositorio contiene todos los archivos trabajados durante mi proceso de te
 
 La estructura del reposotorio es la siguiente
 
-* En la carpeta [Codigo](/master/Codigo) se encuentra los archivos .jl del proyecto en donde existe uno de pruebas y otro definitivo llamado main.jl
-* En la carpeta de [Notebooks](/master/Notebooks) se encuentran cuatro notebooks, dos de apoyo para pintar espacios fase con Makie.jl y con matplotlib.py que respectivamente son Elementos básicos y Espacios fase. El notebook de pruebas son donde se hallan las pruebas y errores del código y en avances se encuentran los resultados importantes hasta el momento.
-* En la carpeta [Imagenes](/master/Imagenes) se encuentran todas imágenes generadas y guardadas de los experimentos y avances que se hagan.
+* En la carpeta [Codigo](/Tesis/Codigo) se encuentra los archivos .jl del proyecto en donde existe uno de pruebas y otro definitivo llamado main.jl
+* En la carpeta de [Notebooks](/Tesis/Notebooks) se encuentran cuatro notebooks, dos de apoyo para pintar espacios fase con Makie.jl y con matplotlib.py que respectivamente son Elementos básicos y Espacios fase. El notebook de pruebas son donde se hallan las pruebas y errores del código y en avances se encuentran los resultados importantes hasta el momento.
+* En la carpeta [Imagenes](/Tesis/Imagenes) se encuentran todas imágenes generadas y guardadas de los experimentos y avances que se hagan.
 
 ## Avances
 
@@ -41,3 +41,15 @@ Elegimos un factor de escala de 10 y dicho problema se ha resuelto pero hace fal
 **110523**
 
 He determinado el jacobiano del sistema en su forma general, deben cumplir dos reglas determinadas para la identidad y para la parte triangular superior e inferior. He generado código al respecto y hace falta verificar que funcione. Ahora hace falta determinar por medio de un algorítmo los puntos críticos del sistema y posteriormente su estabilidad asociada; luego vendrá lo de la ley circular y el resto de la chamba.
+
+**170523**
+
+Una vez generado el jacobiano del sistema hay que determinar los puntos críticos del mismo. Como tenemos un sistema de ecuaciones no lineales, y queremos encontrar raíces: lo ideal sería generar un algorítmo de Newton Rhapson n-dimensional para generar las raíces. Para ello se debe generar la siguiente regla.
+
+$$
+v_{i+1}=v_i-(J(v_i))^{-1}f(v_i)
+$$
+
+Donde las $v's$ es el vector solución en donde tiene la raíz de cada entrada, y $J(v_i)$ es el Jacobiano del sistema el cual hemos determinado con anterioridad. El avance de esta semana es que se generado dicho algorítmo y se ha probado para un sistema de $2\times 2$ que ya se había estudiado con cuidado anteriormente y las soluciones de sus puntos críticos coinciden con los cálculos analíticos. Quizás valga la pena analizar un sistema de $3\times 3$ para observar como se comportan los puntos críticos en dimensiones superiores.
+
+Lo anterior con el fin de ver como vienen configurados los puntos críticos, si se quedan en un plano o si andan combinados por el hiper espacio etc etc.
