@@ -3,9 +3,9 @@ Este repositorio contiene todos los archivos trabajados durante mi proceso de te
 
 La estructura del reposotorio es la siguiente
 
-* En la carpeta [Codigo](/Tesis/Codigo) se encuentra los archivos .jl del proyecto en donde existe uno de pruebas y otro definitivo llamado main.jl
-* En la carpeta de [Notebooks](/Tesis/Notebooks) se encuentran cuatro notebooks, dos de apoyo para pintar espacios fase con Makie.jl y con matplotlib.py que respectivamente son Elementos básicos y Espacios fase. El notebook de pruebas son donde se hallan las pruebas y errores del código y en avances se encuentran los resultados importantes hasta el momento.
-* En la carpeta [Imagenes](/Tesis/Imagenes) se encuentran todas imágenes generadas y guardadas de los experimentos y avances que se hagan.
+* En la carpeta [Codigo](/Codigo) se encuentra los archivos .jl del proyecto en donde existe uno de pruebas y otro definitivo llamado main.jl
+* En la carpeta de [Notebooks](/Notebooks) se encuentran cuatro notebooks, dos de apoyo para pintar espacios fase con Makie.jl y con matplotlib.py que respectivamente son Elementos básicos y Espacios fase. El notebook de pruebas son donde se hallan las pruebas y errores del código y en avances se encuentran los resultados importantes hasta el momento.
+* En la carpeta [Imagenes](/Imagenes) se encuentran todas imágenes generadas y guardadas de los experimentos y avances que se hagan.
 
 ## Avances
 

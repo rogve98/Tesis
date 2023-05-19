@@ -1,12 +1,14 @@
 using Random
 using LinearAlgebra
-using Plots
 using LaTeXStrings
 using Graphs
 using GraphPlot
 using StatsBase
+using PyPlot
+using PyCall
 
-plotlyjs()
+np = pyimport("numpy")
+
 
 """RK4
 
