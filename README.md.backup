@@ -3,9 +3,9 @@ Este repositorio contiene todos los archivos trabajados durante mi proceso de te
 
 La estructura del reposotorio es la siguiente
 
-* En la carpeta [Codigo](/Tesis/Codigo) se encuentra los archivos .jl del proyecto en donde existe uno de pruebas y otro definitivo llamado main.jl
-* En la carpeta de [Notebooks](/Tesis/Notebooks) se encuentran cuatro notebooks, dos de apoyo para pintar espacios fase con Makie.jl y con matplotlib.py que respectivamente son Elementos básicos y Espacios fase. El notebook de pruebas son donde se hallan las pruebas y errores del código y en avances se encuentran los resultados importantes hasta el momento.
-* En la carpeta [Imagenes](/Tesis/Imagenes) se encuentran todas imágenes generadas y guardadas de los experimentos y avances que se hagan.
+* En la carpeta [Codigo](/Codigo) se encuentra los archivos .jl del proyecto en donde existe uno de pruebas y otro definitivo llamado main.jl. Recientemente se agregó uno de avances.jl que contiene el mismo código que main.jl solo que usa PyPlot como graficador. Esto para poder pintar espacios fase y otras cosas.
+* En la carpeta de [Notebooks](/Notebooks) se encuentran cuatro notebooks, dos de apoyo para pintar espacios fase con Makie.jl y con matplotlib.py que respectivamente son Elementos básicos y Espacios fase. El notebook de pruebas son donde se hallan las pruebas y errores del código y en avances se encuentran los resultados importantes hasta el momento.
+* En la carpeta [Imagenes](/Imagenes) se encuentran todas imágenes generadas y guardadas de los experimentos y avances que se hagan.
 
 ## Avances
 
@@ -53,3 +53,11 @@ $$
 Donde las $v's$ es el vector solución en donde tiene la raíz de cada entrada, y $J(v_i)$ es el Jacobiano del sistema el cual hemos determinado con anterioridad. El avance de esta semana es que se generado dicho algorítmo y se ha probado para un sistema de $2\times 2$ que ya se había estudiado con cuidado anteriormente y las soluciones de sus puntos críticos coinciden con los cálculos analíticos. Quizás valga la pena analizar un sistema de $3\times 3$ para observar como se comportan los puntos críticos en dimensiones superiores.
 
 Lo anterior con el fin de ver como vienen configurados los puntos críticos, si se quedan en un plano o si andan combinados por el hiper espacio etc etc.
+
+**180523**
+
+Se ha comprobado que el código funciona para sistemas de $2\times 2$. Se quizo extender hacia sistemas de $3\times 3$, pero no supe como hacer los espacios fase en 3D. Agregué todos los avances de ahora al notebook de avances donde viene todo un resumen. Lo siguiente será ir experimentando con las probabilidades (conectancia) y la magnitud de las interacciones. De ahí en adelante el camino es desconocido.
+
+**220523**
+
+Ahora viene la siguiente fase, necesitamos comprender como se dan las transiciones de fase en este tipo de sistemas. Recordemos que uno de los artículos propone la emergencia de varios puntos críticos atractores a partir de ciertos parámetros, mientras que el otro artículo reporta velocidades de mutación para cierto punto crítico. Hay que checar con cuidado ambos artículos para ver que podemos recoger de ellos. 
