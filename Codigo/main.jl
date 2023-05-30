@@ -121,9 +121,6 @@ interacciones y al mimsmo tiempo obtener matrices aleatorias con valores aleator
 function randomMatrix(N,p)
     g = redAleatoria(N,p)
     M = adjacency_matrix(g)
-    for i in 1:N 
-        M[i,i] = 1
-    end
     M = 10*M.*randn(N,N)
     for i in 1:N
         M[i,i] = 1
@@ -145,14 +142,14 @@ function poblacionesLK(x0,t0,tf,dt,params)
     p = params[2]
     r = params[3]
     K = params[4]
-    #A , g = randomMatrix(N,p)   
-    A = [1.0        0.0      13.5989   -3.28364  0.0;
-    0.0        1.0       0.0       6.10228  0.0;
-    0.574493   0.0       1.0       2.74343  0.0;
-    2.59557   -3.14685  -2.20031   1.0      0.0;
-    0.0        0.0       0.0       0.0      1.0;
-   ]
-   g=2 
+    A , g = randomMatrix(N,p)   
+#     A = [1.0        0.0      13.5989   -3.28364  0.0;
+#     0.0        1.0       0.0       6.10228  0.0;
+#     0.574493   0.0       1.0       2.74343  0.0;
+#     2.59557   -3.14685  -2.20031   1.0      0.0;
+#     0.0        0.0       0.0       0.0      1.0;
+#    ]
+#    g=2 
     function sistema(X::Vector)
         sis = zeros(N)
         xs = zeros(N)
@@ -238,4 +235,30 @@ function nrMulti(Jacobiano::Function,x0::Vector,P::Array,n::Int)
         sol[i,:] = sol[i-1,:] - inv(Jacobiano(sol[i-1,:],P))*sistema(sol[i-1,:],P)
     end
     return sol[end,:]
+end
+
+"""
+Redes aleatorias que fungen como Jacobianos (matrices de interacciones). Es el estilo 
+de May en donde se salta todo el sistema para solo trabajar con matrices aleatorias que 
+dependen de una probabilidad y con la diagonal con -d, representando la capacidad de 
+carga del sistema.
+"""
+
+function interacciones(N,p,d)
+    g = redAleatoria(N,p)
+    M = adjacency_matrix(g)
+    M = 1/sqrt(N)*M.*randn(N,N)
+    for i in 1:N
+        M[i,i] = -d
+    end
+    return (Matrix(M), g)
+end
+
+"""
+Función para generar un círculo con centro en (h,k) y radio radio r.
+"""
+
+function circulo(h,k,r)
+    θ = range(0, stop = 2π, length = 500)
+    h .+ r*sin.(θ), k .+ r*cos.(θ)
 end
