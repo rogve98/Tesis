@@ -61,3 +61,11 @@ Se ha comprobado que el código funciona para sistemas de $2\times 2$. Se quizo 
 **220523**
 
 Ahora viene la siguiente fase, necesitamos comprender como se dan las transiciones de fase en este tipo de sistemas. Recordemos que uno de los artículos propone la emergencia de varios puntos críticos atractores a partir de ciertos parámetros, mientras que el otro artículo reporta velocidades de mutación para cierto punto crítico. Hay que checar con cuidado ambos artículos para ver que podemos recoger de ellos. 
+
+**290523**
+
+El avance de ahora fue generar los primeros inputs sobre la ley circular y graficar los eigenvalores.
+
+**030623**
+
+Avances en la ley circular, ya tenemos forma de alterar la distribución normal con diferentes desviaciones estándar. Se hicieron pruebas con desviaciones superiores a 1 pero no se encontró lo esperado sino que solo se halló un desplazamiento del círculo más no una muestra de inestabilidad. 

@@ -5,6 +5,7 @@ using LaTeXStrings
 using Graphs
 using GraphPlot
 using StatsBase
+using Distributions
 
 plotlyjs()
 
@@ -244,13 +245,15 @@ dependen de una probabilidad y con la diagonal con -d, representando la capacida
 carga del sistema.
 """
 
-function interacciones(N,p,d)
+function interacciones(N,p,σ,d)
     g = redAleatoria(N,p)
     M = adjacency_matrix(g)
-    M = 1/sqrt(N)*M.*randn(N,N)
+    dist = Normal(0,σ)
+    M = M.*rand(dist,N,N)
     for i in 1:N
         M[i,i] = -d
     end
+    M = 1/sqrt(N*p)*M
     return (Matrix(M), g)
 end
 
