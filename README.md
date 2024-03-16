@@ -68,4 +68,20 @@ El avance de ahora fue generar los primeros inputs sobre la ley circular y grafi
 
 **030623**
 
-Avances en la ley circular, ya tenemos forma de alterar la distribución normal con diferentes desviaciones estándar. Se hicieron pruebas con desviaciones superiores a 1 pero no se encontró lo esperado sino que solo se halló un desplazamiento del círculo más no una muestra de inestabilidad. 
+Avances en la ley circular, ya tenemos forma de alterar la distribución normal con diferentes desviaciones estándar. Se hicieron pruebas con desviaciones superiores a 1 pero no se encontró lo esperado sino que solo se halló un desplazamiento del círculo más no una muestra de inestabilidad.
+
+# Retomando...
+
+04/01/2023
+
+Tuvimos un largo periodo de inactividad, 6 meses al menos, la última entrada fue el 3 de julio cuando andábamos saliendo de "vacaciones" y Sergio andaría fuera de descanso. Ese descanso se prolongó, comencé en la música, en el trabajo etc etc.
+
+Vamos a retomar pero con un nuevo enfoque, el enfoque que teníamos estaba bien, ya están construidas varias cosas pero la dirección que se estaba teniendo no me estaba convenciendo del todo; más que nada porque estábamos dejando fuera el tema de las transiciones de fase que es mi punto central de la investigación; nos estábamos enfocando en la estabilidad del sistema que si bien es interesante, veía un poco conflictiva la forma en la que se vería ante el sínodo si puede que "no exista" mucha física al respecto. 
+
+Por ello desde noviembre del año pasado estuve pensando en un nuevo enfoque que me regresara las transiciones de fase y justo llegué a un clímax. Vamos a mezclar la teoría de redes enfocada en sistemas complejos con el sistema de dinámica no lineal y con eso trabajaremos para investigar una transición de fase pero debe ser teórica.
+
+Los elementos principales ahora son:
+
+1. Construir una red de Albert-Barabasi, es decir, una red con independencia de escala, modelar su ley de potencias y de ahí ligar los sistemas (matrices de adyacencia) con los sistemas de dinámica no lineal.
+
+Esta es la principal misión, por eso quiero generar una meta para Enero: Construir el modelo para finales de Enero y avanzar a la siguiente fase que sería el ligamento con la parte del sistema no lineal.

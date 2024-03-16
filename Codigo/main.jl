@@ -68,21 +68,7 @@ function eulerND(f,x0,t0,tf,dt)                #x0 es un vector N-dimensional
     for i in 2:n #aplicamos las iteraciones
         xs[i,:] = xs[i-1,:] + dt*f(xs[i-1,:])
     end
-    return (tiempos,xs)
-end  
-
-""" Modelo de competencia de 2 especies en competencia (Prueba). 
-Nota importante, solo funciona con r = [2,3] y K = [2,3]"""
-
-function pruebas(x0,t0,tf,dt,r,K)
-    A = [r[1]/K[1] rand()*r[1]/K[1];rand()*r[2]/K[2] r[2]/K[2]]
-    function sistema(X)
-        #Hay que poner manualmente los coeficientes de la matriz aleatoria
-        return [r[1]*X[1]*(1-X[1]/K[1]-7.84877*X[2]/K[1]),
-        r[2]*X[2]*(1-X[2]/K[2]-3.52496*X[1]/K[2])]
-    end
-    
-    return (RK4(sistema,x0,t0,tf,dt),A)
+    return [tiempos,xs]
 end
 
 """ Modelo de red aleatoria, la primera función es un generador de enlaces enlacesAleatorios con
@@ -120,9 +106,10 @@ Lo hice de esta manera para que pudieramos tener una representación gráfica de
 interacciones y al mimsmo tiempo obtener matrices aleatorias con valores aleatorios además."""
 
 function randomMatrix(N,p)
+    d = Normal(0,0.1)
     g = redAleatoria(N,p)
     M = adjacency_matrix(g)
-    M = 10*M.*randn(N,N)
+    M = M.*rand(d,N,N)
     for i in 1:N
         M[i,i] = 1
     end
@@ -238,30 +225,115 @@ function nrMulti(Jacobiano::Function,x0::Vector,P::Array,n::Int)
     return sol[end,:]
 end
 
-"""
-Redes aleatorias que fungen como Jacobianos (matrices de interacciones). Es el estilo 
-de May en donde se salta todo el sistema para solo trabajar con matrices aleatorias que 
-dependen de una probabilidad y con la diagonal con -d, representando la capacidad de 
-carga del sistema.
-"""
+"""Red Circular"""
 
-function interacciones(N,p,σ,d)
-    g = redAleatoria(N,p)
-    M = adjacency_matrix(g)
-    dist = Normal(0,σ)
-    M = M.*rand(dist,N,N)
+function Circular(N)
+    g = Graph(N)
     for i in 1:N
-        M[i,i] = -d
+        add_edge!(g,i,i+1)
     end
-    M = 1/sqrt(N*p)*M
-    return (Matrix(M), g)
+    add_edge!(g,N,1)
+    return g#gplot(g,nodelabel=1:N)
 end
 
 """
-Función para generar un círculo con centro en (h,k) y radio radio r.
+n:=número de nodos totales
+m:=número de enlaces nuevos por nodo; con este parámetro definimos la red inicial a partir de una red GNL
+
+La idea del algorítmo es construir una red inicial aleatoria tipo GNL para asegurarnos que sea mayormente conexa
+(la GNP no lo asegura al 100% a menos de que ocupemos la teoría de punto crítico pero eso lo veremos después). 
+Se verifica si es conexa mediante un condicional y si si generamos el algorítmo de albert barabasi que consiste en
+definit probabilidades de enlace en función del grado de cada nodo j dividido entre el grado total (suma de grados).
+De aquí definimos un vector de m entradas que serán los nuevos nodos a los que irán conectados un último y nuevo 
+nodo.
+
+targets funciona de tal manera que hace una selección desde el nodo 1 hasta el nodo nv(G) y por medio de las
+probabilidades se van eligiendo esos nodos. Por ejemplo para la primera entrada del vector será más probable que
+se escoga el número entre 1 y nv(G) que tenga la probabilidad más alta en probabilities. Por ejemplo si el vector
+de probabilities en su tercera entrada tiene un grado alto (probabilidad alta), es muy probable que el nodo que 
+vaya a salir seleccionado entre 1 y nv(G) es el 3 (porque le corresponde la tercera entrada). De aquí actúa el 
+replace y el 3 ya no puede ser escogido en futuras ocasiones pero el procedimiento se repite para la siguiente 
+entrada del vector targets, y así hasta acabar con todos.
+
+Posteriormente se agrega un nodo extra para poder conectar los targets a este nodo extra y la manera de conectarlos
+es por medio del índice i del ciclo for que justamente coincide con el nodo agregado, de aquí nada más falta
+conectar ese nodo extra con todos los nodos de target. Y bueno este procedimiento se realiza iteradamente hasta
+terminar con los valores de n.
 """
 
-function circulo(h,k,r)
-    θ = range(0, stop = 2π, length = 500)
-    h .+ r*sin.(θ), k .+ r*cos.(θ)
+function barabasi_albert(n, m)
+    # Inicializar un grafo completo con m nodos
+    G = Circular(m) #GNL(m,m)
+    if is_connected(G)
+        # Implementar el modelo de Barabási-Albert
+        for i in m+1:n
+            # Calcular las probabilidades de conexión para nodos existentes
+            probabilities = [degree(G, j) / sum(degree(G, k) for k in vertices(G)) for j in vertices(G)]
+
+            # Elegir m nodos existentes basados en las probabilidades
+            targets = sample(1: nv(G),Weights(probabilities),m,replace=false)
+
+            # Agregar un nuevo nodo
+            add_vertex!(G)
+
+            # Conectar el nuevo nodo a los nodos seleccionados
+            for target in targets
+                add_edge!(G,i,target)
+            end
+        end
+    end
+    M = Matrix(adjacency_matrix(G))
+    M = 10*M.*randn(N,N)
+    for i in 1:N
+        M[i,i] = 1
+    end
+
+    return G,M
+end
+
+
+"""
+En la semana del 4 de marzo, 2024 se hizo un experimento tratando de testear la calidad de poblacionesLK, se creó
+este sistema para poder visualizar una comparativa entre ambas formas de sintetizar el algorítmo. Los resultados 
+encontrados en su momento fue que que este sistema conserva desde las primeras iteraciones una precisión de 16 decimales,
+mientras que poblacionesLK presenta una baja en precisión comenzando con 4 decimales y de ahí va desarrollando hasta
+acoplarse a este sistema. Estuve revisando porque podría darse esa falta de precisión e intenté fijar los vectores Y
+valores a BigFloat pero realmente no tuvo un gran efecto. Si es necesario reproducir nuevas pruebas dejemos esta
+evidencia y construcción para retomar si se requiere.
+"""
+
+function prueba(x0,t0,tf,dt,params)
+    N = params[1]
+    p = params[2]
+    r = params[3]
+    K = params[4]
+    function sistema(X::Vector) #[2X[1]*(1-(X[1]+X[2])/2),2X[2]*(1-(X[2]+2X[1])/3)]
+        return [
+            2X[1]*(1-(1.0X[1] +       0.0X[2] +      13.5989X[3]   -3.28364X[4] +  0.0X[5])/2),
+            2X[2]*(1-(0.0X[1] +       1.0X[2] +      0.0X[3] +      6.10228X[4] +  0.0X[5])/3),
+            2X[3]*(1-(0.574493X[1] +  0.0X[2] +      1.0X[3] +      2.74343X[4] +  0.0X[5])/2),
+            2X[4]*(1-(2.59557X[1]    -3.14685X[2]   -2.20031X[3] +  1.0X[4] +      0.0X[5])/3),
+            2X[5]*(1-(0.0X[1] +       0.0X[2] +      0.0X[3] +      0.0X[4] +      1.0X[5])/2)
+        ]
+    end
+    return RK4(sistema,x0,t0,tf,dt)
+end
+
+function no_es_NaN(valor)
+    !isnan(valor)
+end
+
+function esEstable(sol::Matrix)
+    all(no_es_NaN,sol)
+end
+
+function contadorEstables(sol::Matrix)
+    contador = []
+    N = length(sol[1,:])
+    for i in 1:N
+        if in(1,isnan.(sol[:,i]))
+            push!(contador,i)
+        end
+    end
+    return length(contador)
 end
