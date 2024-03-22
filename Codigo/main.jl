@@ -9,6 +9,51 @@ using Distributions
 
 plotlyjs()
 
+"""
+Definimos un objeto mutable que guarde todos los parámetros necesarios para poder realizar
+las operaciones de las fuciones participantes en este código, en general definimos:
+N := Número de especies
+σ := Desviación estándar de la distribución normal
+p := Probabilidad de la red aleatoria; estrictamente debe ser un parámetro en [0,1]
+x0 := Vector de las condiciones iniciales del sistema
+t0 := Tiempo inicial
+tf := Tiempo final
+h := Paso de integración
+r := Vector N-dimensional que contiene las tasas de crecimiento de las especies
+K := Vector N-dimensional que contiene las capacidades de carga de las poblaciones
+"""
+
+mutable struct Parametros
+    N::Int          
+    σ::Float64
+    p::Float64
+    x0::Vector
+    t0::Int
+    tf::Int
+    h::Float64
+    r::Vector
+    K::Vector 
+end
+
+"""
+Este objeto contendrá las soluciones requeridas del sistema, solo se enfoca en la integración
+del sistema como tal. Quizás más adelante sea necesario definir más objetos para otras
+cantidades/soluciones. De momento este objeto deine:
+t := tiempos de integración, es un range()
+rk4 := solución integrada por RK4
+Euler := solución integrada por Euler
+A := Refiere a la matriz de interacciones, los α_{ij}
+g := Es la red del sistema
+"""
+
+mutable struct Soluciones
+	t::StepRangeLen{Float64, Base.TwicePrecision{Float64}, Base.TwicePrecision{Float64}, Int64}
+    rk4::Matrix
+    Euler::Matrix
+    A::Matrix
+    g::SimpleGraph{Int64}
+end
+
 """RK4
 
 Runge-Kutta 4. Es un integrador para resolver sistemas de ecuaciones diferenciales aunque
@@ -24,16 +69,11 @@ h := paso de integración
 """
 
 function RK4(f,x0,t0,tf,h)
-    #=al igual que en la función de eulerND, definimos una matriz de dimensión 
-    (número de iteraciones × dimensión del sistema dinámico) como conjunto solución=#
     t = range(t0, stop = tf, step = h)
     n = length(t)
     dim = length(x0)
-    #lo hacemos en un arreglo de ceros
     xs = zeros(n,dim)
-    #imponemos la condición inicial en el primer renglón
     xs[1,:] = x0
-    #generamos un ciclo for con las iteraciones de runge-kutta de cuarto orden
     for i in  2:n
         k1 = f(xs[i-1,:])
         k2 = f(xs[i-1,:]+(h/2)*k1)
@@ -42,8 +82,6 @@ function RK4(f,x0,t0,tf,h)
         
         xs[i,:] = xs[i-1,:] + (h/6)*(k1+2*k2+2*k3+k4)
     end
-    #=regresamos el resultado en una tupla, con los tiempos en la primera entrada y 
-    el conjunto solución en la segunda entrada=#
     return (t , xs)
 end
 
@@ -105,8 +143,8 @@ end
 Lo hice de esta manera para que pudieramos tener una representación gráfica de las 
 interacciones y al mimsmo tiempo obtener matrices aleatorias con valores aleatorios además."""
 
-function randomMatrix(N,p)
-    d = Normal(0,0.1)
+function randomMatrix(N,p,σ)
+    d = Normal(0,σ)
     g = redAleatoria(N,p)
     M = adjacency_matrix(g)
     M = M.*rand(d,N,N)
@@ -121,16 +159,17 @@ es decir que solo necesitará la matriz para trabajar sin tener en cuenta las ca
 ni las tasas de crecimiento. Vamos a ve que sale. La variable params contiene la dimensión, la 
 probabilidad de contectancia, la tasa de crecimiento y la capacidad de carga
 
-params := [N,p,r,K]
+params es el objeto que tiene todo lo necesario para esta función.
 
 """
 
-function poblacionesLK(x0,t0,tf,dt,params)
-    N = params[1]
-    p = params[2]
-    r = params[3]
-    K = params[4]
-    A , g = randomMatrix(N,p)   
+function poblacionesLK(params::Parametros)
+    N = params.N
+    p = params.p
+    r = params.r
+    K = params.K
+    σ = params.σ
+    A , g = randomMatrix(N,p,σ)   
 #     A = [1.0        0.0      13.5989   -3.28364  0.0;
 #     0.0        1.0       0.0       6.10228  0.0;
 #     0.574493   0.0       1.0       2.74343  0.0;
@@ -150,7 +189,12 @@ function poblacionesLK(x0,t0,tf,dt,params)
         return sis
     end
     
-    return (RK4(sistema,x0,t0,tf,dt),eulerND(sistema,x0,t0,tf,dt),A,g)
+    return Soluciones(RK4(sistema,params.x0,params.t0,params.tf,params.h)[1],
+    RK4(sistema,params.x0,params.t0,params.tf,params.h)[2],
+    eulerND(sistema,params.x0,params.t0,params.tf,params.h)[2],
+    A,
+    g
+    )
 end
 
 """
@@ -319,21 +363,19 @@ function prueba(x0,t0,tf,dt,params)
     return RK4(sistema,x0,t0,tf,dt)
 end
 
+"""
+Función para determinar que el valor introducido es un real, o como tal no es un NaN (Not a Number)
+"""
+
 function no_es_NaN(valor)
     !isnan(valor)
 end
 
+"""
+Esta función es capaz de mapear todos los valores de una matriz en donde determina si la solución del sistema
+es estable o no. El mapeo determinar si existen NaN o no.
+"""
+
 function esEstable(sol::Matrix)
     all(no_es_NaN,sol)
-end
-
-function contadorEstables(sol::Matrix)
-    contador = []
-    N = length(sol[1,:])
-    for i in 1:N
-        if in(1,isnan.(sol[:,i]))
-            push!(contador,i)
-        end
-    end
-    return length(contador)
 end
