@@ -1,2 +1,1 @@
-*.psd filter=lfs diff=lfs merge=lfs -text
-*.ipynb filter=lfs diff=lfs merge=lfs -text
+Notebooks/Avances.ipynb filter=lfs diff=lfs merge=lfs -text

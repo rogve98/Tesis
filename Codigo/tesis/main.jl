@@ -6,6 +6,8 @@ using Graphs
 using GraphPlot
 using StatsBase
 using Distributions
+using CSV
+using DataFrames
 
 plotlyjs()
 
