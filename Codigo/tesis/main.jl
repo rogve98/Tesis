@@ -10,11 +10,10 @@ using DataFrames
 plotlyjs()
 
 
-
+include("structs.jl") #Contiene los structs
 include("Integradores.jl") #Contiene RK4 y eulerND
 include("Redes.jl") #Contiene todo el material de Redes
 include("Estabilidad.jl") #Contiene las funciones de estabilidad por punto critico
-include("structs.jl") #Contiene los structs
 include("Sistema.jl") #Contiene las funciones del sistema y la transición.
 
 """

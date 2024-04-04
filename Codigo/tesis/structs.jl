@@ -42,3 +42,14 @@ mutable struct Soluciones
     A::Matrix
     g::SimpleGraph{Int64}
 end
+
+"""
+Objeto neceario para las funciones del módulo de Estabilidad, contiene toda la información e 
+incluso contiene el vector atractor del sistema en donde se determina que las especies coexisten.
+"""
+
+mutable struct estabilidad
+    params::Parametros
+    M::Soluciones
+    X::Vector
+end
