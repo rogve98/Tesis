@@ -1,0 +1,28 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{function} \PYG{n}{poblacionesLK}\PYG{p}{(}\PYG{n}{x0}\PYG{p}{,}\PYG{n}{t0}\PYG{p}{,}\PYG{n}{tf}\PYG{p}{,}\PYG{n}{dt}\PYG{p}{,}\PYG{n}{params}\PYG{p}{)}
+    \PYG{n}{N} \PYG{o}{=} \PYG{n}{params}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}
+    \PYG{n}{p} \PYG{o}{=} \PYG{n}{params}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}
+    \PYG{n}{r} \PYG{o}{=} \PYG{n}{params}\PYG{p}{[}\PYG{l+m+mi}{3}\PYG{p}{]}
+    \PYG{n}{K} \PYG{o}{=} \PYG{n}{params}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{]}
+    \PYG{n}{A} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mf}{1.0}        \PYG{l+m+mf}{0.0}      \PYG{l+m+mf}{13.5989}   \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{3.28364}  \PYG{l+m+mf}{0.0}\PYG{p}{;}
+     \PYG{l+m+mf}{0.0}        \PYG{l+m+mf}{1.0}       \PYG{l+m+mf}{0.0}       \PYG{l+m+mf}{6.10228}  \PYG{l+m+mf}{0.0}\PYG{p}{;}
+     \PYG{l+m+mf}{0.574493}   \PYG{l+m+mf}{0.0}       \PYG{l+m+mf}{1.0}       \PYG{l+m+mf}{2.74343}  \PYG{l+m+mf}{0.0}\PYG{p}{;}
+     \PYG{l+m+mf}{2.59557}   \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{3.14685}  \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{2.20031}   \PYG{l+m+mf}{1.0}      \PYG{l+m+mf}{0.0}\PYG{p}{;}
+     \PYG{l+m+mf}{0.0}        \PYG{l+m+mf}{0.0}       \PYG{l+m+mf}{0.0}       \PYG{l+m+mf}{0.0}      \PYG{l+m+mf}{1.0}\PYG{p}{;}
+    \PYG{p}{]}
+    \PYG{n}{g}\PYG{o}{=}\PYG{l+m+mi}{2}
+    \PYG{k}{function} \PYG{n}{sistema}\PYG{p}{(}\PYG{n}{X}\PYG{o}{::}\PYG{k+kt}{Vector}\PYG{p}{)}
+        \PYG{n}{sis} \PYG{o}{=} \PYG{n}{zeros}\PYG{p}{(}\PYG{n}{N}\PYG{p}{)}
+        \PYG{n}{xs} \PYG{o}{=} \PYG{n}{zeros}\PYG{p}{(}\PYG{n}{N}\PYG{p}{)}
+        \PYG{k}{for} \PYG{n}{i} \PYG{k}{in} \PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{N}
+            \PYG{k}{for} \PYG{n}{j} \PYG{k}{in} \PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{N}
+                \PYG{n}{xs}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{+=} \PYG{n}{A}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,}\PYG{n}{j}\PYG{p}{]}\PYG{o}{*}\PYG{n}{X}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]}
+            \PYG{k}{end}
+            \PYG{n}{sis}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{n}{r}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{*}\PYG{n}{X}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{*}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{o}{\PYGZhy{}}\PYG{n}{xs}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{/}\PYG{n}{K}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])}
+        \PYG{k}{end}
+        \PYG{k}{return} \PYG{n}{sis}
+    \PYG{k}{end}
+
+    \PYG{k}{return} \PYG{p}{(}\PYG{n}{RK4}\PYG{p}{(}\PYG{n}{sistema}\PYG{p}{,}\PYG{n}{x0}\PYG{p}{,}\PYG{n}{t0}\PYG{p}{,}\PYG{n}{tf}\PYG{p}{,}\PYG{n}{dt}\PYG{p}{),}\PYG{n}{eulerND}\PYG{p}{(}\PYG{n}{sistema}\PYG{p}{,}\PYG{n}{x0}\PYG{p}{,}\PYG{n}{t0}\PYG{p}{,}\PYG{n}{tf}\PYG{p}{,}\PYG{n}{dt}\PYG{p}{),}\PYG{n}{A}\PYG{p}{,}\PYG{n}{g}\PYG{p}{)}
+\PYG{k}{end}
+\end{Verbatim}

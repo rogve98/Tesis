@@ -19,7 +19,7 @@ El objeto estabilidad contiene la información completa de los parámetros y de 
 soluciones del sistema y agrega el punto de equilibrio X para poder ser utilizado.
 """
 
-function Inteacciones(params::Parametros,sol::Soluciones)
+function Interacciones(params::Parametros,sol::Soluciones)
     X = sol.rk4[end,:]
     return estabilidad(params,sol,X)
 end
@@ -35,7 +35,7 @@ function Jacobiano(E::estabilidad)
     r = E.params.r
     K = E.params.K
     N = E.params.N
-    A = E.M.A
+    A = E.sol.A
     X = E.X
     M = zeros(N,N)
     for i in 1:N
@@ -96,4 +96,25 @@ function nrMulti(Jacobiano::Function,E::estabilidad,n::Int)
         sol[i,:] = sol[i-1,:] - inv(Jacobiano(E))*sistema(E)
     end
     return sol[end,:]
+end
+
+function jacobianoSimple(A::Matrix,X::Vector,params::Parametros)
+    r = params.r
+    K = params.K
+    N = params.N
+    M = zeros(N,N)
+    for i in 1:N
+        for j in 1:N
+            if i == j
+                xs = zeros(N)
+                for k in 1:N
+                    xs[i] += A[i,k]*X[k]
+                end
+                M[i,i] = r[i]*(1-xs[i]/K[i])-r[i]*X[i]/K[i]
+            else
+                M[i,j] = -r[i]*X[i]*A[i,j]/K[i]
+            end
+        end
+    end
+    return M
 end

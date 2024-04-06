@@ -50,6 +50,6 @@ incluso contiene el vector atractor del sistema en donde se determina que las es
 
 mutable struct estabilidad
     params::Parametros
-    M::Soluciones
+    sol::Soluciones
     X::Vector
 end

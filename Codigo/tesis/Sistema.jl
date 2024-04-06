@@ -92,7 +92,7 @@ Esta función genera la gráfica de la transición. Opera sobre un conjunto de p
 
 function transicion(params::Parametros,p)
     sol = []
-    medidas = 300
+    medidas = 200
     for i in p
         estables = []
         params.p = i
