@@ -17,24 +17,39 @@ function enlacesAleatorios(N,p)
     end
 end
 
-""" Generamos la red aleatoria con el generador de enlaces aleatorios. """
+""" Generamos la red aleatoria con el generador de enlaces aleatorios. Ya sea dirigida o 
+no dirigida."""
 
-function redAleatoria(N,p)
-    g = Graph(N)
-    enlaces = collect(enlacesAleatorios(N,p))
-    for i in 1:length(enlaces)
-        add_edge!(g,enlaces[i][1],enlaces[i][2])
+function redAleatoria(N,p,red::String)
+    if red == "dirigida"
+        g = DiGraph(N)
+        enlaces_i = collect(enlacesAleatorios(N,p))
+        enlaces_j = collect(enlacesAleatorios(N,p))
+        while length(enlaces_j)!=length(enlaces_i)
+            enlaces_j = collect(enlacesAleatorios(N,p))
+        end   
+        for i in 1:length(enlaces_i)
+            add_edge!(g,enlaces_i[i][1],enlaces_i[i][2])
+            add_edge!(g,enlaces_j[i][2],enlaces_j[i][1])
+        end
+        return g
+    elseif red == "no dirigida"
+        g = Graph(N)
+        enlaces = collect(enlacesAleatorios(N,p))
+        for i in 1:length(enlaces)
+            add_edge!(g,enlaces[i][1],enlaces[i][2])
+        end
+        return g
     end
-    return g
 end
 
 """Esta función nos genera matrices aleatorias con base en el modelo de red aleatoria.
 Lo hice de esta manera para que pudieramos tener una representación gráfica de las 
 interacciones y al mimsmo tiempo obtener matrices aleatorias con valores aleatorios además."""
 
-function randomMatrix(N,p,σ)
+function randomMatrix(N,p,σ,red::String)
     d = Normal(0,σ)
-    g = redAleatoria(N,p)
+    g = redAleatoria(N,p,red)
     M = adjacency_matrix(g)
     M = M.*rand(d,N,N)
     for i in 1:N

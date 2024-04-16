@@ -13,14 +13,8 @@ function poblacionesLK(params::Parametros)
     r = params.r
     K = params.K
     σ = params.σ
-    A , g = randomMatrix(N,p,σ)   
-#     A = [1.0        0.0      13.5989   -3.28364  0.0;
-#     0.0        1.0       0.0       6.10228  0.0;
-#     0.574493   0.0       1.0       2.74343  0.0;
-#     2.59557   -3.14685  -2.20031   1.0      0.0;
-#     0.0        0.0       0.0       0.0      1.0;
-#    ]
-#    g=2 
+    red = params.S
+    A , g = randomMatrix(N,p,σ,red)   
     function sistema(X::Vector)
         sis = zeros(N)
         xs = zeros(N)

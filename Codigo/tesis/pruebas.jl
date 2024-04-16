@@ -24,3 +24,12 @@ function prueba(x0,t0,tf,dt,params)
     end
     return RK4(sistema,x0,t0,tf,dt)
 end
+
+"""Sistema de 5 x 5 que podría ser útil"""
+#     A = [1.0        0.0      13.5989   -3.28364  0.0;
+#     0.0        1.0       0.0       6.10228  0.0;
+#     0.574493   0.0       1.0       2.74343  0.0;
+#     2.59557   -3.14685  -2.20031   1.0      0.0;
+#     0.0        0.0       0.0       0.0      1.0;
+#    ]
+#    g=2 

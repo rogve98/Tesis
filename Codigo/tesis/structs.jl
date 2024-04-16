@@ -22,6 +22,7 @@ mutable struct Parametros
     h::Float64
     r::Vector
     K::Vector 
+    S::String
 end
 
 """
@@ -40,7 +41,7 @@ mutable struct Soluciones
     rk4::Matrix
     Euler::Matrix
     A::Matrix
-    g::SimpleGraph{Int64}
+    g::Union{SimpleGraph{Int64},SimpleDiGraph{Int64}}
 end
 
 """
