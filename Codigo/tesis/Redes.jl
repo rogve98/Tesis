@@ -21,7 +21,7 @@ end
 no dirigida."""
 
 function redAleatoria(N,p,red::String)
-    if red == "dirigida"
+    if red == "no dirigida"
         g = DiGraph(N)
         enlaces_i = collect(enlacesAleatorios(N,p))
         enlaces_j = collect(enlacesAleatorios(N,p))
@@ -33,7 +33,7 @@ function redAleatoria(N,p,red::String)
             add_edge!(g,enlaces_j[i][2],enlaces_j[i][1])
         end
         return g
-    elseif red == "no dirigida"
+    elseif red == "dirigida"
         g = Graph(N)
         enlaces = collect(enlacesAleatorios(N,p))
         for i in 1:length(enlaces)

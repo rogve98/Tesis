@@ -64,7 +64,8 @@ function integrador(params::Parametros)
     r = params.r
     K = params.K
     σ = params.σ
-    A , _ = randomMatrix(N,p,σ)
+    red = params.S
+    A , _ = randomMatrix(N,p,σ,red)
     function sistema(X::Vector)
         sis = zeros(N)
         xs = zeros(N)
