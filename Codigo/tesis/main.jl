@@ -6,6 +6,8 @@ using GraphPlot
 using Distributions
 using CSV
 using DataFrames
+using StatsBase
+using DelimitedFiles
 
 plotlyjs()
 
@@ -15,6 +17,7 @@ include("Integradores.jl") #Contiene RK4 y eulerND
 include("Redes.jl") #Contiene todo el material de Redes
 include("Estabilidad.jl") #Contiene las funciones de estabilidad por punto critico
 include("Sistema.jl") #Contiene las funciones del sistema y la transición.
+include("pruebas.jl")
 
 """
 Redes aleatorias que fungen como Jacobianos (matrices de interacciones). Es el estilo 

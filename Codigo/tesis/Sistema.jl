@@ -99,3 +99,74 @@ function transicion(params::Parametros,p)
     end
     return sol
 end
+
+"""
+
+"""
+
+function LKBarabasi(params::Parametros,m)
+    N = params.N
+    r = params.r
+    K = params.K
+    σ = params.σ
+    A , g = BMatrix(N,m,σ)
+    function sistema(X::Vector)
+        sis = zeros(N)
+        xs = zeros(N)
+        for i in 1:N
+            for j in 1:N
+                xs[i] += A[i,j]*X[j]
+            end
+            sis[i] = r[i]*X[i]*(1-xs[i]/K[i])
+        end
+        return sis
+    end
+    return Soluciones(RK4(sistema,params.x0,params.t0,params.tf,params.h)[1],
+    RK4(sistema,params.x0,params.t0,params.tf,params.h)[2],
+    eulerND(sistema,params.x0,params.t0,params.tf,params.h)[2],
+    A,
+    g
+    )
+end
+
+"""
+
+"""
+
+function integradorB(params::Parametros,m)
+    N = params.N
+    r = params.r
+    K = params.K
+    σ = params.σ
+    A , _ = BMatrix(N,m,σ)
+    function sistema(X::Vector)
+        sis = zeros(N)
+        xs = zeros(N)
+        for i in 1:N
+            for j in 1:N
+                xs[i] += A[i,j]*X[j]
+            end
+            sis[i] = r[i]*X[i]*(1-xs[i]/K[i])
+        end
+        return sis
+    end
+    return RK4(sistema,params.x0,params.t0,params.tf,params.h)[2]
+end
+
+"""
+
+"""
+
+function transicionB(params::Parametros,m)
+    sol = []
+    medidas = 200
+    for i in m
+        estables = []
+        for j in 1:medidas
+            xs = integradorB(params::Parametros,i)
+            push!(estables, xs)
+        end
+        push!(sol,count(x -> x == 1,esEstable.(estables)))
+    end
+    return sol
+end

@@ -33,3 +33,12 @@ end
 #     0.0        0.0       0.0       0.0      1.0;
 #    ]
 #    g=2 
+
+function pruebaDiagCeros(params::Parametros)
+    r = params.r
+    K = params.K
+    function sistema(X)
+        return [r[1]X[1]-(r[1]*randn()*X[1]*X[2])/K[1],r[2]X[2]-(r[2]*randn()*X[1]*X[2])/K[2]]
+    end
+    return RK4(sistema,params.x0,params.t0,params.tf,params.h)
+end

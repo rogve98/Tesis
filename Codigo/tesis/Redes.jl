@@ -21,7 +21,7 @@ end
 no dirigida."""
 
 function redAleatoria(N,p,red::String)
-    if red == "no dirigida"
+    if red == "dirigida"
         g = DiGraph(N)
         enlaces_i = collect(enlacesAleatorios(N,p))
         enlaces_j = collect(enlacesAleatorios(N,p))
@@ -33,7 +33,7 @@ function redAleatoria(N,p,red::String)
             add_edge!(g,enlaces_j[i][2],enlaces_j[i][1])
         end
         return g
-    elseif red == "dirigida"
+    elseif red == "no dirigida"
         g = Graph(N)
         enlaces = collect(enlacesAleatorios(N,p))
         for i in 1:length(enlaces)
@@ -122,4 +122,19 @@ function barabasi_albert(n, m)
     end
 
     return G,M
+end
+
+"""
+
+"""
+
+function BMatrix(N,m,σ)
+    d = Normal(0,σ)
+    g,_ = barabasi_albert(N,m)
+    M = adjacency_matrix(g)
+    M = M.*rand(d,N,N)
+    for i in 1:N
+        M[i,i] = 1
+    end
+    return (Matrix(M), g)
 end
