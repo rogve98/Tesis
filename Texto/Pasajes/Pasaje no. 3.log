@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.14)  21 AUG 2024 01:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.14)  22 AUG 2024 13:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**"./Pasaje no. 2.tex"
-(Pasaje no. 2.tex
+**"./Pasaje no. 3.tex"
+(Pasaje no. 3.tex
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -527,11 +527,11 @@ dftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count319
 \l__pdf_internal_box=\box103
-) (Pasaje no. 2.aux
+) (Pasaje no. 3.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 )
-\openout1 = `"Pasaje no. 2.aux"'.
+\openout1 = `"Pasaje no. 3.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
 LaTeX Font Info:    ... okay on input line 45.
@@ -554,9 +554,9 @@ LaTeX Font Info:    ... okay on input line 45.
 LaTeX Info: Redefining \. on input line 45.
 LaTeX Info: Redefining \% on input line 45.
 Package hyperref Info: Link coloring ON on input line 45.
- (Pasaje no. 2.out) (Pasaje no. 2.out)
+ (Pasaje no. 3.out) (Pasaje no. 3.out)
 \@outlinefile=\write4
-\openout4 = `"Pasaje no. 2.out"'.
+\openout4 = `"Pasaje no. 3.out"'.
 
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.
@@ -620,36 +620,26 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-<escudoCiencias.pdf, id=11, 425.59pt x 480.79625pt>
+<escudoCiencias.pdf, id=7, 425.59pt x 480.79625pt>
 File: escudoCiencias.pdf Graphic file (type pdf)
 <use escudoCiencias.pdf>
 Package pdftex.def Info: escudoCiencias.pdf  used on input line 47.
 (pdftex.def)             Requested size: 88.14917pt x 99.58464pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 73.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 72.
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 73.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 72.
 
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 77--81
+Underfull \hbox (badness 10000) in paragraph at lines 75--79
 
  []
 
-<Sistema estable 100.png, id=14, 602.25pt x 401.5pt>
-File: Sistema estable 100.png Graphic file (type png)
-<use Sistema estable 100.png>
-Package pdftex.def Info: Sistema estable 100.png  used on input line 88.
-(pdftex.def)             Requested size: 241.84843pt x 161.23428pt.
-<transición 02-50.png, id=16, 602.25pt x 401.5pt>
-File: transición 02-50.png Graphic file (type png)
-<use transición 02-50.png>
-Package pdftex.def Info: transición 02-50.png  used on input line 94.
-(pdftex.def)             Requested size: 237.01411pt x 158.01181pt.
 
 
 [1
@@ -658,15 +648,26 @@ Non-PDF special ignored!
 
 {C:/Users/Rodrigo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./escudoCi
 encias.pdf>]
-<Eigenvalores.png, id=53, 702.625pt x 501.875pt>
-File: Eigenvalores.png Graphic file (type png)
-<use Eigenvalores.png>
-Package pdftex.def Info: Eigenvalores.png  used on input line 104.
-(pdftex.def)             Requested size: 214.29495pt x 153.06781pt.
+<Competencia de especies.png, id=45, 462.528pt x 346.896pt>
+File: Competencia de especies.png Graphic file (type png)
+<use Competencia de especies.png>
+Package pdftex.def Info: Competencia de especies.png  used on input line 122.
+(pdftex.def)             Requested size: 217.66211pt x 163.24757pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 128--134
+
+ []
 
 
-[2 <./Sistema estable 100.png> <./transición 02-50.png> <./Eigenvalores.png>]
-(Pasaje no. 2.aux
+Underfull \hbox (badness 10000) in paragraph at lines 128--134
+
+ []
+
+
+
+[2 <./Competencia de especies.png>]
+
+[3] (Pasaje no. 3.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 )
@@ -674,36 +675,35 @@ LaTeX Info: Redefining \% on input line 8.
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
  ***********
-Package rerunfilecheck Info: File `"Pasaje no. 2".out' has not changed.
-(rerunfilecheck)             Checksum: 9BE8C8EE2C1F5E1EE48E66961DD69ACE;336.
+Package rerunfilecheck Info: File `"Pasaje no. 3".out' has not changed.
+(rerunfilecheck)             Checksum: 4C5FFC405A4A302829FB33E6294F35D3;159.
  ) 
 Here is how much of TeX's memory you used:
- 14426 strings out of 473899
- 232343 string characters out of 5725556
- 1946960 words of memory out of 5000000
- 37090 multiletter control sequences out of 15000+600000
- 567518 words of font info for 73 fonts, out of 8000000 for 9000
+ 14395 strings out of 473899
+ 231737 string characters out of 5725556
+ 1948960 words of memory out of 5000000
+ 37052 multiletter control sequences out of 15000+600000
+ 567393 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,9n,80p,1147b,579s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,13n,80p,1068b,484s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
 m/cmbx10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public
 /amsfonts/cm/cmbx12.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/t
 ype1/public/amsfonts/cm/cmex10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiK
 TeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Rodrigo/AppData/Local/P
-rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Rodrigo/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Rod
-rigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:
+rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Rodrigo/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Rod
+rigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:
 /Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr
-10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
-nts/cm/cmr12.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmr6.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Rodrigo/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Rodrigo/AppDat
-a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on "Pasaje no. 2.pdf" (2 pages, 387014 bytes).
+6.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
+ts/cm/cmr8.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmr9.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Rodrigo/AppData/Local/P
+rograms/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on "Pasaje no. 3.pdf" (3 pages, 355973 bytes).
 PDF statistics:
- 127 PDF objects out of 1000 (max. 8388607)
- 10 named destinations out of 1000 (max. 500000)
- 37 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 126 PDF objects out of 1000 (max. 8388607)
+ 15 named destinations out of 1000 (max. 500000)
+ 19 words of extra memory for PDF output out of 10000 (max. 10000000)
 
