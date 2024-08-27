@@ -58,6 +58,63 @@ function randomMatrix(N,p,σ,red::String)
     return (Matrix(M), g)
 end
 
+"""
+Combina las tres funciones anteriores para poder optimizar los tiempos de compilación. Utiliza
+el struct Parametros como argumento.
+"""
+
+function incidencias(parametros::Parametros)
+    N = parametros.N
+    p = parametros.p
+    σ = parametros.σ
+    red = parametros.Red
+    d = Normal(0,σ)
+
+    function enlacesAleatorios(N,p)
+        Channel() do channel
+            for i in 1:N
+                for j in 1:i
+                    if rand() < p
+                        if i == j
+                            continue
+                        else
+                            put!(channel,(i,j))
+                        end
+                    end
+                end
+            end
+        end
+    end
+    # Se puede optimizar más dejando solo el caso "no dirigida".
+    if red == "dirigida"
+        g = DiGraph(N)
+        enlaces_i = collect(enlacesAleatorios(N,p))
+        enlaces_j = collect(enlacesAleatorios(N,p))
+        while length(enlaces_j)!=length(enlaces_i)
+            enlaces_j = collect(enlacesAleatorios(N,p))
+        end   
+        for i in 1:length(enlaces_i)
+            add_edge!(g,enlaces_i[i][1],enlaces_i[i][2])
+            add_edge!(g,enlaces_j[i][2],enlaces_j[i][1])
+        end
+    elseif red == "no dirigida"
+        g = Graph(N)
+        enlaces = collect(enlacesAleatorios(N,p))
+        for i in 1:length(enlaces)
+            add_edge!(g,enlaces[i][1],enlaces[i][2])
+        end
+    end
+
+    M = adjacency_matrix(g)
+    M = M.*rand(d,N,N)
+    for i in 1:N
+        M[i,i] = 1
+    end
+    return Matrix(M)
+
+end
+
+
 """Red Circular"""
 
 function Circular(N)

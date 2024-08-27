@@ -42,3 +42,28 @@ function pruebaDiagCeros(params::Parametros)
     end
     return RK4(sistema,params.x0,params.t0,params.tf,params.h)
 end
+
+"""
+Se guarda aquí la función del jacobiano porque es una versión anterior a la que se encuentra en Estabilidad.jl
+"""
+
+function jacobianoSimple(A::Matrix,X::Vector,params::Parametros)
+    r = params.r
+    K = params.K
+    N = params.N
+    M = zeros(N,N)
+    for i in 1:N
+        for j in 1:N
+            if i == j
+                xs = zeros(N)
+                for k in 1:N
+                    xs[i] += A[i,k]*X[k]
+                end
+                M[i,i] = r[i]*(1-xs[i]/K[i])-r[i]*X[i]/K[i]
+            else
+                M[i,j] = -r[i]*X[i]*A[i,j]/K[i]
+            end
+        end
+    end
+    return M
+end

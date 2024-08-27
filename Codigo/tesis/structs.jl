@@ -22,7 +22,7 @@ mutable struct Parametros
     h::Float64
     r::Vector
     K::Vector 
-    S::String
+    Red::String
 end
 
 """

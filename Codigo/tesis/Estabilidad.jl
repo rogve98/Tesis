@@ -52,7 +52,15 @@ function Jacobiano(E::estabilidad)
         end
     end
     return M
-end        
+end     
+
+"""
+
+"""
+
+function Diagonales()
+    
+end
 
 """ Sistema del LK. Únicamente es la reproducción del sistema n-dimensional. Utiliza la
 información del objeto estabilidad para poder realizar sus cálculos.
@@ -96,25 +104,4 @@ function nrMulti(Jacobiano::Function,E::estabilidad,n::Int)
         sol[i,:] = sol[i-1,:] - inv(Jacobiano(E))*sistema(E)
     end
     return sol[end,:]
-end
-
-function jacobianoSimple(A::Matrix,X::Vector,params::Parametros)
-    r = params.r
-    K = params.K
-    N = params.N
-    M = zeros(N,N)
-    for i in 1:N
-        for j in 1:N
-            if i == j
-                xs = zeros(N)
-                for k in 1:N
-                    xs[i] += A[i,k]*X[k]
-                end
-                M[i,i] = r[i]*(1-xs[i]/K[i])-r[i]*X[i]/K[i]
-            else
-                M[i,j] = -r[i]*X[i]*A[i,j]/K[i]
-            end
-        end
-    end
-    return M
 end

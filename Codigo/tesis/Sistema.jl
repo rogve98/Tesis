@@ -13,7 +13,7 @@ function poblacionesLK(params::Parametros)
     r = params.r
     K = params.K
     σ = params.σ
-    red = params.S
+    red = params.Red
     A , g = randomMatrix(N,p,σ,red)   
     function sistema(X::Vector)
         sis = zeros(N)
@@ -64,7 +64,7 @@ function integrador(params::Parametros)
     r = params.r
     K = params.K
     σ = params.σ
-    red = params.S
+    red = params.Red
     A , _ = randomMatrix(N,p,σ,red)
     function sistema(X::Vector)
         sis = zeros(N)
@@ -82,7 +82,7 @@ end
 
 """
 Esta función genera la gráfica de la transición. Opera sobre un conjunto de probabilidades
-(en general de longitud 50)
+(en general de longitud 50 y 100)
 """
 
 function transicion(params::Parametros,p)
@@ -101,7 +101,7 @@ function transicion(params::Parametros,p)
 end
 
 """
-
+Sistema de competencia de especies (completo) para la red de barabasi albert.
 """
 
 function LKBarabasi(params::Parametros,m)
@@ -130,7 +130,7 @@ function LKBarabasi(params::Parametros,m)
 end
 
 """
-
+Integrador para la red de barabasi albert.
 """
 
 function integradorB(params::Parametros,m)
@@ -154,7 +154,7 @@ function integradorB(params::Parametros,m)
 end
 
 """
-
+Para realizar los gráficos de transición de fase para la red de albert barabasi.
 """
 
 function transicionB(params::Parametros,m)
