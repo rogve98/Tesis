@@ -69,6 +69,8 @@
 	
 \section{Explicaciones técnicas}
 
+\subsection{Sistema de competencia de especies para $n=2$}
+
 El sistema de Lotka-Volterra es uno de los sistemas utilizados para poder comprender la naturaleza de la dinámica no lineal. En este caso particular, los términos no lineales son cuadráticos y representan la interacción entre la especie $i$ y la especie $j$. 
 \begin{equation}\label{eqn:LK}
 	\frac{dx_i}{dt}=r_ix_i\left(1-\frac{\sum_{j=1}^N \alpha_{ij}x_j}{K_i}\right)
@@ -83,12 +85,13 @@ $$
 \end{cases}
 $$
 En este caso particular, tenemos una tasa de crecimiento y una capacidad de carga personalizada para cada especie, lo que es razonable con el hecho de que cada especie crece a un ritmo determinado y también es limitada de manera determinada. En este caso los coeficientes $\alpha_{ij}$ forman parte de una matriz de \textit{incidencias} entre especies definida de la siguiente manera
-$$A=
-\begin{pmatrix}
-	1 & \alpha_{12}\\
-	\alpha_{21} &1
-\end{pmatrix}
-$$
+\begin{equation}\label{eqn:mIncidencias}
+	A=
+	\begin{pmatrix}
+		1 & \alpha_{12}\\
+		\alpha_{21} &1
+	\end{pmatrix}
+\end{equation}
 Es apreciable que los términos de la diagonal se encuentran en $\alpha_{ii} = 1$\footnote{Argumentar más adelante.} respectivamente, más adelante se dará una explicación detallada de esta característica; por el momento solo nos enfocaremos en la dinámica que produce el sistema. Para ello se define el siguiente sistema
 \begin{align*}
 	\frac{dx}{dt}&=2x\left(1-\frac{x}{2}\right)-xy\\
@@ -128,22 +131,59 @@ Al resolver esta última ecuación se determina el último punto fijo que corres
 \end{wrapfigure} 
 en caso contrario el sistema es considerado \textit{inestable.} Es posible determinar mediante técnicas computacionales el campo vectorial de las soluciones de este sistema\footnote{Realizar referencia de la técnica empleada.}, inclusive dos de las isoclinas\footnote{si son isoclinas???} del sistema resolviendo las ecuaciones igualando a cero y despejando $y$ de cada una de ellas. Es notorio como dichas isoclinas inciden de alguna forma en tres de los puntos fijos. El gráfico nos muestra que las soluciones convergen hacia los puntos que se encuentran en los ejes; todo dependerá de las condiciones iniciales del sistema para ver hacia donde convergen. El punto fijo de en medio es conocido como punto silla y es inestable ya que aunque existan soluciones que convergan hacia él mismo, en la mínima perturbación que se le provoque la solución puede ``desviarse'' hacia los atractores. Por último se observa que del origen divergen todas las soluciones por lo que es considerado un punto fijo repulsor.\\
 \\
-En esta ocasión por tratarse de un sistema de $2\times 2$, se tuvo la fortuna de poder obtener una representación visual del sistema y poder realizar un análisis cualitativo del mismo para sacar conclusiones. Pero ¿qué sucede cuando se tienen sistemas de $N$ especies? En principio el espacio vectorial (fase) de las soluciones se vuelve $N-$dimensional y por lo tanto imposible de visualizar en un gráfico. Es por ello que se requieren de otras técnicas analíticas para seguir esbozando el comportamiento del sistema. Una herramienta útil a esta conjetura es la de \textit{linealizar} el sistema para poder explorar el comportamiento de los puntos fijos a nivel local. Para realizar esta acción es necesario aplicar el Jacobiano al sistema para ``bajar'' el grado de las ecuaciones a ecuaciones no lineales del sistema.\\
+%%%%%%%%%%%%%%%%%%%%%CHECKPOINT
+%% Nada más checar la aseveración de las isoclinas para ver si se queda o se retira del párrafo
+En esta ocasión por tratarse de un sistema de $2\times 2$, se tuvo la fortuna de poder obtener una representación visual del sistema y poder realizar un análisis cualitativo del mismo para sacar conclusiones. Pero ¿qué sucede cuando se tienen sistemas de $N$ especies? En principio el espacio vectorial (fase) de las soluciones se vuelve $N-$dimensional y por lo tanto imposible de visualizar en un gráfico. Es por ello que se requieren de otras técnicas analíticas para seguir esbozando el comportamiento del sistema. Una herramienta útil a esta conjetura es la de \textit{linealizar}\footnote{Explicar brevemente en esta nota a que se refiere esto.} el sistema para poder explorar el comportamiento de los puntos fijos a nivel local. Para realizar esta acción es necesario aplicar el \textit{Jacobiano} al sistema para ``bajar'' el grado de las ecuaciones del sistema \ref{eqn:LK} y así obtener puras ecuaciones lineales.\\
 \\
-Definiendo al sistema de la siguiente manera
+Se define la función vectorial $\mathbf{F}:\mathbb{R}^n\to\mathbb{R}^n$, donde $n$ será el número de especies del sistema de Lotka-Volterra generalizado \ref{eqn:LK}.
 \begin{equation}\label{eqn:LKmatricial}
-	\mathbf{F}(t)=\begin{pmatrix}
-		\dot{x}_1\\
+	\mathbf{F}(\vec{x})=\begin{pmatrix}
+		f_1(\vec{x})=\dot{x}_1\\
 		\vdots\\
-		\dot{x}_n
+		f_n(\vec{x}))=\dot{x}_n
+	\end{pmatrix},\qquad\text{donde $\vec{x}=\left(x_1(t),...,x_n(t))\right)$.}
+\end{equation}
+Las componentes de $\mathbf{F}(\vec{x})$ corresponden con las funciones del sistema \ref{eqn:LK}, y las componentes del vector $\vec{x}$ corresponden con sus especies involucradas. Por tanto el Jacobiano del sistema quedaría de la siguiente forma
+\begin{equation}\label{eqn:Jacobiano}
+	\mathbb{J}_\mathbf{F}(\vec{x}) = \begin{pmatrix}
+		\frac{\partial f_1(\vec{x})}{\partial x_1} & \cdots &\frac{\partial f_1(\vec{x})}{\partial x_n}\\
+		\vdots & \ddots & \vdots\\
+		\frac{\partial f_n(\vec{x})}{\partial x_1} & \cdots &\frac{\partial f_n(\vec{x})}{\partial x_n}
 	\end{pmatrix}
 \end{equation}
-donde el vector de derivadas temporales de \ref{eqn:LKmatricial} corresponden con el sistema generalizado de Lotka-Volterra \ref{eqn:LK}. Entonces el jacobiano es esta función vectorial se vería de la siguiente forma
-\begin{equation}
-	\mathbb{J}(\mathbf{F}) = \begin{pmatrix}
-		
+Esta resultante al ser evaluada en los puntos fijos del sistema genera la llamada matriz de \textit{interacciones} que es aquella que nos brinda la información necesaria para determinar la estabilidad de ese punto fijo en particular. Por ello se establece que la matriz de interacciones brinda información solo a nivel local, pues no contiene información de otros puntos fijos ajenos. Para validar esta aseveración ocuparemos nuestro sistema de $2\times 2$ y relacionaremos la matriz de interacciones con lo que se muestra en el gráfico. El Jacobiano del sistema \ref{eqn:LK} para $n=2$ es el siguiente
+\begin{equation}\label{eqn:Jacobiano2}
+	\mathbb{J}_\mathbf{F}(\vec{x})=\begin{pmatrix}
+		r_1-\frac{2r_1x_1+r_1a_{12}x_2}{K_1} & -\frac{r_1a_{12}x_1}{K_1}\\
+		-\frac{r_2a_{21}x_2}{K_2} & r_2-\frac{2r_2x_2+r_2a_{21}x_1}{K_2}
 	\end{pmatrix}
 \end{equation}
+debido a la matriz de incidencias \ref{eqn:mIncidencias}, se tiene que los valores $a_{ii}=1$ que corresponden con las auto-interacciones. Evaluando los puntos fijos antes encontrados en el jacobiano \ref{eqn:Jacobiano2} se tienen las siguientes matrices de interacciones:
+$$
+\mathbb{J}_{(2,0)} = \begin{pmatrix}
+	-2 & -2\\
+	0 & -1
+\end{pmatrix},\qquad \mathbb{J}_{(0,3)}=\begin{pmatrix}
+-1 & 0\\
+-6 & -3
+\end{pmatrix},\qquad \mathbb{J}_{(1,1)}=\begin{pmatrix}
+-1 & -1\\
+-2 & -1
+\end{pmatrix},\qquad \mathbb{J}_{(0,0)}=\begin{pmatrix}
+2 & 0 \\
+0 & 3
+\end{pmatrix}
+$$
+%%%%%%%%Checkpoint
+Como previamente se ha revisado\footnote{Hay que referenciar este enunciado con algún sustento de la introducción en donde se maneje el tema de los eigenvalores y eigenvectores como solución de sistemas lineales.}, los eigenvalores (más que los eigenvectores) determinan la estabilidad de un sistema lineal. Se establece que mientras ellos tengan parte real negativa se asegurará que el sistema será estable y que en otro caso el sistema será inestable. Por lo tanto los eigenvalores de las primeras dos matrices de interacciones deben ser negativos para que sustenten los atractores de la figura \ref{fig:CompetenciaEspecies}. Mientras que los eigenvalores de $\mathbb{J}_{(1,1)}$ deben ser uno negativo y otro positivo para sustentar al punto silla. Para la matriz $\mathbb{J}_{(0,0)}$ sus eigenvalores deben ser positivos para que sustenten el repulsor. Realizando el álgebra correspondiente se determina lo siguiente
+\begin{align*}
+	\mathbb{J}_{(2,0)}&\Longrightarrow\ \lambda_1 = -2,\quad\lambda_2 = -1\\
+	\mathbb{J}_{(0,3)}&\Longrightarrow\ \lambda_1 = -3,\quad\lambda_2 = -1\\
+	\mathbb{J}_{(1,1)}&\Longrightarrow\ \lambda_1 = -1+\sqrt{2},\quad\lambda_2 = -1-\sqrt{2}\\
+	\mathbb{J}_{(0,0)}&\Longrightarrow\ \lambda_1 = 2,\quad\lambda_2 = 3\\
+\end{align*}
+Por tanto se sustenta el método de la linearización para esbozar la estabilidad de \ref{eqn:LK}; esta manera analítica de reconocer la estabilidad del sistema será sumamente útil para vislumbrar sistemas más robustos de $N>3$ especies. Habiendo conocido la manera de accionar frente al sistema \ref{eqn:LK} para $n=2$ es posible expander y generalizar las ideas hacia un sistema de $N$ especies, a continuación se abordará esa discusión.
 
-
+\subsection{Sistema de competencia de especies generalizado para $N$ especies.}
+ 
 \end{document}

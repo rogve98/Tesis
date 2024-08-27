@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.14)  22 AUG 2024 13:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.14)  26 AUG 2024 21:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -620,7 +620,7 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-<escudoCiencias.pdf, id=7, 425.59pt x 480.79625pt>
+<escudoCiencias.pdf, id=11, 425.59pt x 480.79625pt>
 File: escudoCiencias.pdf Graphic file (type pdf)
 <use escudoCiencias.pdf>
 Package pdftex.def Info: escudoCiencias.pdf  used on input line 47.
@@ -636,7 +636,16 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 72.
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 75--79
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 72.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 72.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--81
 
  []
 
@@ -648,18 +657,18 @@ Non-PDF special ignored!
 
 {C:/Users/Rodrigo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./escudoCi
 encias.pdf>]
-<Competencia de especies.png, id=45, 462.528pt x 346.896pt>
+<Competencia de especies.png, id=51, 462.528pt x 346.896pt>
 File: Competencia de especies.png Graphic file (type png)
 <use Competencia de especies.png>
-Package pdftex.def Info: Competencia de especies.png  used on input line 122.
+Package pdftex.def Info: Competencia de especies.png  used on input line 125.
 (pdftex.def)             Requested size: 217.66211pt x 163.24757pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--134
+Underfull \hbox (badness 10000) in paragraph at lines 131--139
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--134
+Underfull \hbox (badness 10000) in paragraph at lines 131--139
 
  []
 
@@ -667,7 +676,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 128--134
 
 [2 <./Competencia de especies.png>]
 
-[3] (Pasaje no. 3.aux
+[3]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 187.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 187.
+
+
+
+[4] (Pasaje no. 3.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 )
@@ -675,35 +695,46 @@ LaTeX Info: Redefining \% on input line 8.
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
  ***********
-Package rerunfilecheck Info: File `"Pasaje no. 3".out' has not changed.
-(rerunfilecheck)             Checksum: 4C5FFC405A4A302829FB33E6294F35D3;159.
+
+
+Package rerunfilecheck Warning: File `"Pasaje no. 3".out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `"Pasaje no. 3".out':
+(rerunfilecheck)             Before: 2BCC59B822C0F90A1100BA21F4862CA6;449
+(rerunfilecheck)             After:  D3A8EEF058AAC9C9C856C8EA3BFD06CC;850.
  ) 
 Here is how much of TeX's memory you used:
- 14395 strings out of 473899
- 231737 string characters out of 5725556
- 1948960 words of memory out of 5000000
- 37052 multiletter control sequences out of 15000+600000
- 567393 words of font info for 71 fonts, out of 8000000 for 9000
+ 14417 strings out of 473899
+ 232010 string characters out of 5725556
+ 1949960 words of memory out of 5000000
+ 37064 multiletter control sequences out of 15000+600000
+ 569564 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,13n,80p,1068b,484s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
 m/cmbx10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public
 /amsfonts/cm/cmbx12.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmex10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Rodrigo/AppData/Local/P
-rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Rodrigo/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Rod
-rigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:
-/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr
-6.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmr8.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmr9.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Rodrigo/AppData/Local/P
-rograms/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "Pasaje no. 3.pdf" (3 pages, 355973 bytes).
+ype1/public/amsfonts/cm/cmbx8.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Rodrigo/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Rodrigo/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Ro
+drigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C
+:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+mi8.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmr10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmr12.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Rodrigo/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Rodrigo/AppData/Local/P
+rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Rodrigo/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Rod
+rigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C
+:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbo
+ls/msbm10.pfb>
+Output written on "Pasaje no. 3.pdf" (4 pages, 397721 bytes).
 PDF statistics:
- 126 PDF objects out of 1000 (max. 8388607)
- 15 named destinations out of 1000 (max. 500000)
- 19 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 164 PDF objects out of 1000 (max. 8388607)
+ 22 named destinations out of 1000 (max. 500000)
+ 27 words of extra memory for PDF output out of 10000 (max. 10000000)
 
