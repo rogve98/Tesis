@@ -55,11 +55,46 @@ function Jacobiano(E::estabilidad)
 end     
 
 """
-
+Se implementa la siguiente función en donde se integra al sistema con RK4, se extrae el punto fijo y se
+valida que el sistema es estable para poder sacar el Jacobiano del sistema. Luego se aplican las derivadas
+parciales correspondientes para tener obtener finalmente la matriz de interacciones.
 """
 
-function Diagonales()
-    
+function DiagonalJ(params::Parametros)
+    N = params.N
+    r = params.r
+    K = params.K
+    A = incidencias(params::Parametros)
+    function sistema(X::Vector)
+        sis = zeros(N)
+        xs = zeros(N)
+        for i in 1:N
+            for j in 1:N
+                xs[i] += A[i,j]*X[j]
+            end
+            sis[i] = r[i]*X[i]*(1-xs[i]/K[i])
+        end
+        return sis
+    end
+    LK = RK4(sistema,params.x0,params.t0,params.tf,params.h)[2]
+    if esEstable(LK)
+        X = LK[end,:]
+        M = zeros(N,N)
+        for i in 1:N
+            for j in 1:N
+                if i == j
+                    xs = zeros(N)
+                    for k in 1:N
+                        xs[i] += A[i,k]*X[k]
+                    end
+                    M[i,i] = r[i]*(1-xs[i]/K[i])-r[i]*X[i]/K[i]
+                else
+                    M[i,j] = -r[i]*X[i]*A[i,j]/K[i]
+                end
+            end
+        end
+        return M
+    end
 end
 
 """ Sistema del LK. Únicamente es la reproducción del sistema n-dimensional. Utiliza la
