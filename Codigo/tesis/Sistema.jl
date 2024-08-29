@@ -65,7 +65,7 @@ function integrador(params::Parametros)
     K = params.K
     σ = params.σ
     red = params.Red
-    A , _ = randomMatrix(N,p,σ,red)
+    A = incidencias(params)
     function sistema(X::Vector)
         sis = zeros(N)
         xs = zeros(N)
@@ -98,6 +98,48 @@ function transicion(params::Parametros,p)
         push!(sol,count(x -> x == 1,esEstable.(estables)))
     end
     return sol
+end
+
+"""
+Esta función nos servirá para poder generar gráficos de transición para un conjunto de 100 sigmas.
+El algoritmo es el mismo que en la función anterior solo que en lugar de evaluar sobre las probabilidades
+se centra en las sigmas de la distribución normal.
+"""
+
+function transicionσ(params::Parametros,σ)
+    sol = []
+    medidas = 5
+    for i in σ
+        estables = []
+        params.σ = i 
+        for j in 1:medidas 
+            xs = integrador(params::Parametros)
+            push!(estables,xs)
+        end
+        push!(sol,count(x -> x  == 1, esEstable.(estables)))
+    end
+    return sol    
+end
+
+"""
+
+"""
+function transicionN(params::Parametros,N)
+    sol = []
+    medidas = 5
+    for i in N
+        estables = [] 
+        params.N = Int(i) 
+        params.x0 = ones(Int(i))
+        params.r = 2*ones(Int(i))
+        params.K = 5*ones(Int(i))
+        for j in 1:medidas 
+            xs = integrador(params::Parametros)
+            push!(estables,xs)
+        end
+        push!(sol,count(x -> x == 1,esEstable.(estables)))
+    end
+    return sol    
 end
 
 """
