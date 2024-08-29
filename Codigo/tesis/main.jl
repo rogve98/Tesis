@@ -17,7 +17,8 @@ include("Integradores.jl") #Contiene RK4 y eulerND
 include("Redes.jl") #Contiene todo el material de Redes
 include("Estabilidad.jl") #Contiene las funciones de estabilidad por punto critico
 include("Sistema.jl") #Contiene las funciones del sistema y la transición.
-include("pruebas.jl")
+include("pruebas.jl") #Contiene código reciclado y algunas pruebas importantes por hacer
+include("Scripts.jl") #Contiene scripts para poder guardar los datos en archivos .CSV
 
 """
 Redes aleatorias que fungen como Jacobianos (matrices de interacciones). Es el estilo 
