@@ -122,7 +122,7 @@ Por tanto tenemos para $\dot{x}$ el punto fijo $(2,0)$ mientras que para $\dot{y
 %%%%%%%%%%%%%%%%%%%%%CHECKPOINT
 Al resolver esta última ecuación se determina el último punto fijo que corresponde a $(1,1)$. Los puntos fijos brindan información para explorar hacia donde pueden converger (atractores) o diverger (repulsores o puntos sillas) las soluciones del sistema dependiendo de las condiciones iniciales que se le impongan.\footnote{explicar brevemente de que se trata uno, quizás esto deba precisarse desde la introducción.} Se establece que si las soluciones convergen entonces el sistema es considerado \textit{estable} mientras que 
 \begin{wrapfigure}{r}{0.5 \textwidth} \vspace{-30pt} \begin{center}
-		\includegraphics[width=0.45\textwidth]{Competencia de especies} 
+		\includegraphics[width=0.45\textwidth]{../Imagenes/Competencia de especies} 
 		\end{center} 
 		\vspace{-20pt} 
 		\caption{Campo vectorial de las soluciones del sistema propuesto.} 
@@ -175,15 +175,41 @@ $$
 \end{pmatrix}
 $$
 %%%%%%%%Checkpoint
-Como previamente se ha revisado\footnote{Hay que referenciar este enunciado con algún sustento de la introducción en donde se maneje el tema de los eigenvalores y eigenvectores como solución de sistemas lineales.}, los eigenvalores (más que los eigenvectores) determinan la estabilidad de un sistema lineal. Se establece que mientras ellos tengan parte real negativa se asegurará que el sistema será estable y que en otro caso el sistema será inestable. Por lo tanto los eigenvalores de las primeras dos matrices de interacciones deben ser negativos para que sustenten los atractores de la figura \ref{fig:CompetenciaEspecies}. Mientras que los eigenvalores de $\mathbb{J}_{(1,1)}$ deben ser uno negativo y otro positivo para sustentar al punto silla. Para la matriz $\mathbb{J}_{(0,0)}$ sus eigenvalores deben ser positivos para que sustenten el repulsor. Realizando el álgebra correspondiente se determina lo siguiente
+Como previamente se ha revisado\footnote{Hay que referenciar este enunciado con algún sustento de la introducción en donde se maneje el tema de los eigenvalores y eigenvectores como solución de sistemas lineales.}, los eigenvalores (más que los eigenvectores) determinan la estabilidad de un sistema lineal. Se establece que mientras ellos tengan parte real negativa se asegurará que el sistema será estable y que en otro caso el sistema será inestable. Por lo tanto los eigenvalores de las primeras dos matrices de interacciones deben ser negativos para que sustenten los atractores de la figura \ref{fig:CompetenciaEspecies}. Mientras que los eigenvalores de $\mathbb{J}_{(1,1)}$ deben ser uno negativo y otro positivo para sustentar al punto silla. Para la matriz $\mathbb{J}_{(0,0)}$ sus eigenvalores deben ser positivos para que sustenten el repulsor. Realizando el álgebra correspondiente se encuentra lo siguiente
 \begin{align*}
 	\mathbb{J}_{(2,0)}&\Longrightarrow\ \lambda_1 = -2,\quad\lambda_2 = -1\\
 	\mathbb{J}_{(0,3)}&\Longrightarrow\ \lambda_1 = -3,\quad\lambda_2 = -1\\
 	\mathbb{J}_{(1,1)}&\Longrightarrow\ \lambda_1 = -1+\sqrt{2},\quad\lambda_2 = -1-\sqrt{2}\\
 	\mathbb{J}_{(0,0)}&\Longrightarrow\ \lambda_1 = 2,\quad\lambda_2 = 3\\
 \end{align*}
-Por tanto se sustenta el método de la linearización para esbozar la estabilidad de \ref{eqn:LK}; esta manera analítica de reconocer la estabilidad del sistema será sumamente útil para vislumbrar sistemas más robustos de $N>3$ especies. Habiendo conocido la manera de accionar frente al sistema \ref{eqn:LK} para $n=2$ es posible expander y generalizar las ideas hacia un sistema de $N$ especies, a continuación se abordará esa discusión.
+Por tanto se termina de validar la consistencia del método de la linearización para esbozar la estabilidad de \ref{eqn:LK} por cada uno de sus puntos fijos. Esta forma analítica de reconocer la estabilidad del sistema será sumamente útil para cuando se tengan $N>3$ especies. Habiendo conocido las técnicas a nivel particular frente al sistema para $n=2$ toca generalizar las ideas hacia un sistema más robusto de $N$ especies, a continuación se abordará esa discusión.
 
+%%%%%%%%% Checkpoint
 \subsection{Sistema de competencia de especies generalizado para $N$ especies.}
+
+En la sección anterior se ha definido al sistema de competencia de especies \ref{eqn:LK} y a su forma vectorial \ref{eqn:LKmatricial}, se mostró un ejemplo particular para $n=2$ para observar su dinámica a través de sus puntos fijos y de la linearización del sistema para conseguir matrices de interacciones que determinen la estabilidad del sistema a nivel local. En esta sección profundizaremos más acerca del sistema y los elementos que la componen tal como la matriz de incidencias \ref{eqn:mIncidencias} de la cual ya se ha mencionado en un caso particular. \\
+\\
+Para este trabajo resultó conveniente utilizar el concepto de \textit{redes complejas} para poder representar las interacciones entre las especies del sistema. Una red es considerada una colección de \textit{nodos} que se encuentran unidos por \textit{enlaces}\footnote{definir más adelante el tipo de interacciones con base en el signo y si son dirigidas o no dirigidas.}. Para definir redes siempre es necesario establecer que es lo que representan los nodos y que representan los enlaces, en nuestro caso por ejemplo si existe una interacción entre las especies $x_i$ y $x_j$ (nodos de la red) entonces hay un enlace que los une. Por tanto establecemos que los nodos de la red corresponden con las especies y los enlaces con las interacciones.
+\begin{wrapfigure}{l}{0.45 \textwidth} \vspace{-30pt} \begin{center}
+		\includegraphics[width=0.45\textwidth]{../Imagenes/karate} 
+	\end{center} 
+	\vspace{-20pt} 
+	\caption{Red de Karate.} 
+	\vspace{-10pt}
+	\label{fig:RedKarate}
+\end{wrapfigure} 
+En el mundo es posible encontrar diferentes tipos de redes con cierto significado, tales como la red de energética de un país, redes de amistades en una universidad o redes de acciones que cotizan en la bolsa de valores. Para poder representar estas redes y cualquier otro tipo de red conviene introducir el concepto de \textit{matriz de adyacencia.}
+\newtheorem{defin1}{Definición}
+\begin{defin1}
+	Sea $A\in\mathcal{M}_n(\mathbb{R}) $. Se define la matriz de adyacencia tal que sus entradas son de la siguiente forma
+	$$a_{ij}= 
+	\begin{cases}
+		1, \ \text{si $\exists$ un enlace entre el nodo $i$ y el nodo $j$.}\\
+		0, \ \text{en otro caso}.
+	\end{cases}$$
+\end{defin1}
+Para nuestros fines, la matriz de adyacencia nos indica la existencia o no de una interacción entre especies. Red dirigida y red no dirigida...
+
+
  
 \end{document}

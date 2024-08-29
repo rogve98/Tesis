@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.14)  26 AUG 2024 21:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.14)  28 AUG 2024 01:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -657,10 +657,11 @@ Non-PDF special ignored!
 
 {C:/Users/Rodrigo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./escudoCi
 encias.pdf>]
-<Competencia de especies.png, id=55, 462.528pt x 346.896pt>
-File: Competencia de especies.png Graphic file (type png)
-<use Competencia de especies.png>
-Package pdftex.def Info: Competencia de especies.png  used on input line 125.
+<../Imagenes/Competencia de especies.png, id=55, 462.528pt x 346.896pt>
+File: ../Imagenes/Competencia de especies.png Graphic file (type png)
+<use ../Imagenes/Competencia de especies.png>
+Package pdftex.def Info: ../Imagenes/Competencia de especies.png  used on input
+ line 125.
 (pdftex.def)             Requested size: 217.66211pt x 163.24757pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 131--139
@@ -674,20 +675,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 131--139
 
 
 
-[2 <./Competencia de especies.png>]
+[2 <../Imagenes/Competencia de especies.png>]
 
 [3]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 187.
+(hyperref)                removing `math shift' on input line 188.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 187.
+(hyperref)                removing `math shift' on input line 188.
+
+<../Imagenes/karate.png, id=94, 379.4175pt x 379.4175pt>
+File: ../Imagenes/karate.png Graphic file (type png)
+<use ../Imagenes/karate.png>
+Package pdftex.def Info: ../Imagenes/karate.png  used on input line 194.
+(pdftex.def)             Requested size: 217.66211pt x 217.66547pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 190--200
+
+ []
+
+\c@defin1=\count326
+
+Overfull \hbox (7.21933pt too wide) detected at line 209
+\OML/cmm/m/it/10.95 a[] \OT1/cmr/m/n/10.95 = []
+ []
 
 
 
-[4] (Pasaje no. 3.aux
+[4 <../Imagenes/karate.png>] (Pasaje no. 3.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 )
@@ -699,11 +716,11 @@ Package rerunfilecheck Info: File `"Pasaje no. 3".out' has not changed.
 (rerunfilecheck)             Checksum: D3A8EEF058AAC9C9C856C8EA3BFD06CC;850.
  ) 
 Here is how much of TeX's memory you used:
- 14418 strings out of 473899
- 232026 string characters out of 5725556
+ 14455 strings out of 473899
+ 233028 string characters out of 5725556
  1949960 words of memory out of 5000000
- 37065 multiletter control sequences out of 15000+600000
- 569564 words of font info for 79 fonts, out of 8000000 for 9000
+ 37097 multiletter control sequences out of 15000+600000
+ 570265 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,13n,80p,1068b,484s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
@@ -725,9 +742,9 @@ a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Rod
 rigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C
 :/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbo
 ls/msbm10.pfb>
-Output written on "Pasaje no. 3.pdf" (4 pages, 398421 bytes).
+Output written on "Pasaje no. 3.pdf" (4 pages, 438198 bytes).
 PDF statistics:
- 167 PDF objects out of 1000 (max. 8388607)
- 22 named destinations out of 1000 (max. 500000)
- 35 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 176 PDF objects out of 1000 (max. 8388607)
+ 25 named destinations out of 1000 (max. 500000)
+ 40 words of extra memory for PDF output out of 10000 (max. 10000000)
 
