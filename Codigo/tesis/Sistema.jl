@@ -108,7 +108,7 @@ se centra en las sigmas de la distribución normal.
 
 function transicionσ(params::Parametros,σ)
     sol = []
-    medidas = 5
+    medidas = 1000
     for i in σ
         estables = []
         params.σ = i 
@@ -126,7 +126,7 @@ end
 """
 function transicionN(params::Parametros,N)
     sol = []
-    medidas = 5
+    medidas = 1000
     for i in N
         estables = [] 
         params.N = Int(i) 
