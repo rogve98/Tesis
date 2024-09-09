@@ -1,0 +1,88 @@
+\documentclass[a4paper,11pt]{book}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,mexico]{babel}
+
+\usepackage{amsmath, amssymb, amsthm}
+%\usepackage{mathrsfs}
+\usepackage{appendix}
+\usepackage{bachelorstitlepageUNAM}
+\usepackage{tikz-network}
+%\usepackage{minted}	
+%pdflatex -synctex=1 -interaction=nonstopmode --shell-escape %.tex
+
+
+\usepackage{hyperref}
+\usepackage{captdef}
+
+\usepackage{psfrag}
+\usepackage{graphicx}
+%\usepackage{subfig}
+\usepackage{color}
+\usepackage{multicol} 
+\usepackage{wrapfig}
+
+\usepackage{cancel}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{caption}
+\usepackage{subcaption}
+\renewcommand{\baselinestretch}{1.5}
+
+\usepackage{hyperref}
+%\usepackage[hidelinks]{hyperref} 
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,      
+	urlcolor=cyan,
+}
+\theoremstyle{plain}
+\newtheorem{proposición}{Proposición}
+\newtheorem{teorema}{Teorema}
+\theoremstyle{definition}
+\newtheorem{definición}{Definición}
+\newtheorem{ejemplo}{Ejemplo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%PORTADA%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\author{Rodrigo Vega Vilchis}
+\title{Estabilidad y transiciones de fase en el sistema de Lotka-Volterra generalizado.}
+\faculty{Facultad de Ciencias}
+\degree{F\'ISICO}
+\supervisor{Dr. Sergio Antonio Alcalá Corona}
+\cityandyear{Ciudad Universitaria, CDMX, 2024}
+\logouni{Escudo-UNAM}
+\logofac{Escudo-FCIENCIAS}
+
+\begin{document}
+
+
+
+\frontmatter
+\maketitle
+
+\begin{flushright}%
+	\emph{A mis padres que siempre fueron insistentes en titularme.}\\
+	\emph{A mi hermano, esperando ser siempre su buen ejemplo.}
+	\thispagestyle{empty}
+\end{flushright}
+
+\chapter{Agradecimientos}
+
+\chapter{Resumen}
+
+\tableofcontents
+\listoffigures
+\listoftables
+%\listofalgorithms
+
+\chapter{Introducción}
+
+\mainmatter
+\include{./TeX_files/chapter01}
+\include{./TeX_files/chapter02}
+
+\backmatter
+% bibliography, glossary and index would go here.
+
+\end{document}

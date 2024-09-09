@@ -1,0 +1,124 @@
+\chapter{De lo simple a lo complejo}
+
+Dentro del marco de los sistemas complejos se manejan varias ramas muy interesantes que le dan su esencia, desde los sistemas dinámicos discretos, dinámica no lineal, teoría de redes complejas, termodinámica fuera de equilibrio, modelos basados en agentes, entre otras. Cada una de ellas aporta un valioso contenido al sistema complejo que se quiera estudiar y analizar dependiendo de sus componentes. Delimitar el área de los sistemas complejos aún resulta una labor complicada debido a su gran \textit{diversidad}, sin embargo, se sabe de la existencia de ciertas características que todo sistema complejo comparte. Los sistemas complejos cuentan con entes: \textit{conectados, interdependientes, dependientes del camino, emergentes} entre otros. El presente trabajo tiene como propósito mostrar al lector cada una de estas características con el objeto de estudio que se va a proponer como piedra angular.\\
+\\
+Para llegar a conocer nuestra piedra angular primero será necesario delimitar las áreas que intervendrán en la discusión constante de este texto. Se ocupará un \textit{sistema dinámico no-lineal} bajo el soporte de una \textit{red compleja}. La Dinámica no lineal es la rama de los sistemas dinámicos continuos en donde el comportamiento del sistema no se rige por la suma de los comportamientos de sus descriptores. Por ejemplo, una neurona y la suma del comportamiento de las neuronas de un cerebro no puede explicar la emergencia de la consciencia. Por otro lado las redes complejas es la extensión de la \textit{teoría de grafos} aplicada a escenarios comunes de la naturaleza y de la vida cotidiana, tales como redes ecológicas, redes sociales, redes comerciales etc. Su importancia radica en las propiedades que se le pueden extraer para interpretar información sobre la estructura de la red y de la red misma.
+
+\section{Revisión de sistemas lineales.}
+
+En los cursos de ecuaciones diferenciales de cuarto semestre\footnote{citar a Blanchard y Devaney} es obligado abordar el tema de los sistemas de ecuaciones diferenciales lineales con el objetivo de explorar en un primer nivel el comportamiento de diversas cantidades que interactúan y evolucionan en el tiempo. Las ecuaciones diferenciales son la herramienta para modelar fenómenos y su evolución en el tiempo; nos permite trazar soluciones que describen su trayectoria. Dicho de otra forma, son la herramienta para anticipar el comportamiento del fenómeno aunque en la vida real no es tan simple como suena.
+\begin{definición}
+	Un sistema de ecuaciones diferenciales lineales es una colección de $n$ ecuaciones diferenciales interrelacionadas de la forma
+	\begin{equation}\label{eqn:sistemaLineal}
+		\begin{split}
+			\dot{x}_1 &= f_1(x_1(t),...,x_n(t))\\
+			\dot{x}_2 &= f_2(x_1(t),...,x_n(t))\\
+			\vdots\\
+			\dot{x}_n &= f_n(x_1(t),...,x_n(t))
+		\end{split}
+	\end{equation}
+	donde $f:\mathbb{R}^n\to\mathbb{R}$ lineal, continua y diferenciable. No esta demás recordar que para que una función se considerada lineal debe de cumplir para cualesquiera dos vectores $u,v \in\mathbb{R}^n$ y para todo $k\in\mathbb{R}$ satisface:
+	\begin{itemize}
+		\item [1.] $f(u+v)=f(u)+f(v)$
+		\item [2.] $f(ku)=kf(u)$
+	\end{itemize}
+	A este cumplimiento se le conoce como \textit{principio de superposición} y el concepto se extiende cuando contamos con las soluciones del sistema lineal.
+\end{definición}
+Al tratarse de un sistema lineal, resulta bastante oportuno expresarlo en términos de notación matricial, es decir, una multiplicación de una matriz cuadrada $M\in\mathcal{M}_n(\mathbb{R})$ por un vector columna que tiene a todas las funciones $x_i(t)$ lineales.
+\begin{align*}
+	\begin{split}
+			\dot{x}_1 &= a_{11}x_1(t)+\cdots+a_{1n}x_n(t)             \\
+			\vdots &\qquad \vdots\qquad\qquad\vdots\qquad\quad\vdots  \\
+			\dot{x}_n &= a_{n1}x_1(t)+\cdots+a_{nn}x_n(t)             
+	\end{split}	          
+	\qquad\ \ \, \Longleftrightarrow
+	\begin{split}
+		\underbrace{\begin{pmatrix}
+				\dot{x}_1\\
+				\vdots\\
+				\dot{x}_n
+		\end{pmatrix}}_{\dot{X}(t)}=\underbrace{\begin{pmatrix}
+				a_{11} & \cdots & a_{1n}\\
+				\vdots & \ddots & \vdots\\
+				a_{n1} & \cdots & a_{nn}
+		\end{pmatrix}}_{M}\underbrace{\begin{pmatrix}
+		x_1(t)\\
+		\vdots\\
+		x_n(t)
+	\end{pmatrix}}_{X(t)}
+	\end{split} 
+\end{align*}
+en este caso las constantes de la matriz $a_{ij}\in M$ son parámetros que describen ciertas interacciones con respecto de las cantidades que intervienen en el sistema (\ref{eqn:sistemaLineal}); estas interacciones son las responsables de la dinámica del sistema, es decir, de la manera en que evoluciona en el tiempo dependiendo de sus condiciones iniciales. Es conveniente poder contar con la matriz de coeficientes ya que por si sola nos servirá para darle solución al sistema lineal y para poder conocer la estabilidad del mismo, aún sin saber la solución general. Para ahondar en el tema de la estabilidad es necesario conocer los \textit{puntos fijos} del sistema.
+
+
+%%%%%%%%%%%%%%%%%%CHECHPOINT
+
+
+\subsection{Puntos fijos y estabilidad del sistema.}
+
+También llamados puntos de equilibrio son aquellos en donde las soluciones de (\ref{eqn:sistemaLineal}) permanecen constantes en el tiempo y dependiendo de su naturaleza\footnote{dictada por los elementos de la matriz de coeficientes $M$.} se establecerá si el punto y el sistema en cuestión es estable o inestable. Para poder hallarlos es necesario hacer cumplir el siguiente sistema de ecuaciones
+\begin{equation*}
+	\begin{split}
+		\dot{x}_1 &= f_1(x_1(t),...,x_n(t))=0\\
+		\dot{x}_2 &= f_2(x_1(t),...,x_n(t))=0\\
+		\vdots\\
+		\dot{x}_n &= f_n(x_1(t),...,x_n(t))=0
+	\end{split}
+	\quad\Longleftrightarrow\quad
+	\begin{split}
+		\begin{pmatrix}
+			a_{11} & \cdots & a_{1n}\\
+			\vdots & \ddots & \vdots\\
+			a_{n1} & \cdots & a_{nn}
+		\end{pmatrix}
+		\underbrace{\begin{pmatrix}
+				x_1(t)\\
+				\vdots\\
+				x_n(t)
+		\end{pmatrix}}_{X_0}=0
+	\end{split}
+\end{equation*}
+Para darle solución es necesario encontrar $X_0\in\mathbb{R}^n$ que lo satisfaga; en dicho caso se establece que $X_0$ es el punto fijo del sistema. Los puntos fijos son clave para entender la estabilidad de (\ref{eqn:sistemaLineal}), servirán de referencia para determinar si las soluciones tienden hacia el punto fijo o si divergen del mismo (o una combinación de ambas). Pero tan solo con determinarlo no es suficiente, para ello debemos manipular la matriz de coeficientes $M$ para saber la naturaleza de este punto fijo. Para ello necesitamos hallar los \textit{valores propios} de $M$, por tanto necesitamos determinar
+$$\det(M-\lambda I)=0$$
+resolviendo el polinomio característico de grado $n$ (dependiendo del tamaño del sistema), se obtendrán los valores propios que por si mismo nos brindan demasiada información acerca de como se comportan las soluciones.
+\begin{proposición}\label{prp:Atractores}
+	Un sistema lineal con eigenvalores negativos siempre será estable, es decir, todas las soluciones van a tender hacia el punto fijo del sistema. El punto fijo asociado al sistema con estas características es conocido como \textbf{Atractor}.
+\end{proposición}
+Para poder demostrarlo necesitamos encontrar la solución analítica del sistema. Habiendo determinado el conjunto de eigenvalores del sistema, es directo ir a buscar los \textit{eigenvectores} del mismo, y sabemos que se debe cumplir la siguiente igualdad
+$$Av=\lambda v$$
+
+
+\newpage
+\subsection{Sistema lineal de para $n=2$}
+
+Para revisar las características de un sistema lineal, conviene comenzar por estudiar un sistema de dos ecuaciones para poder obtener la mayor información visual posible.
+\begin{align*}
+	\frac{dx}{dt} &= ax + by \\
+	\frac{dy}{dt} &= cx + dy
+\end{align*}
+en este caso las constantes $a,b,c,d\in\mathbb{R}$ son parámetros que describen ciertas interacciones con respecto de las cantidades ($x$ y $y$) que intervienen en el sistema. Por tratarse de un sistema lineal es bastante oportuno poder re-escribir al sistema en notación matricial, se define el vector $X(t)=(x(t),y(t))$ y se tiene
+$$
+MX = \begin{pmatrix}
+	a & b\\
+	c & d
+\end{pmatrix}\cdot\begin{bmatrix}
+x(t)\\
+y(t)
+\end{bmatrix}
+$$
+mientras que las derivadas que se encuentran del lado izquierdo del sistema son
+$$
+\frac{dX(t)}{dt}=\begin{pmatrix}
+	\dot{x}\\
+	\dot{y}
+\end{pmatrix}
+$$
+Por lo tanto el sistema lineal se re-escribe bajo una notación más simple de la siguiente forma
+\begin{equation}
+	\dot{X}(t)=MX
+\end{equation}
+
+
+
+
+%%la particularidad con los sistemas no lineales es el hecho de que no se pueden expresar como la suma de las soluciones del sistema, en otras palabras no cumplen el principio de superposición.

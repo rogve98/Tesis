@@ -1,79 +1,4 @@
-\documentclass[11pt,a4paper]{book}
-
-\usepackage[utf8]{inputenc}
-\usepackage[spanish,mexico]{babel}
-
-\usepackage{amsmath, amssymb, amsthm}
-%\usepackage{mathrsfs}
-\usepackage{appendix}
-%\usepackage{minted}	
-
-%pdflatex -synctex=1 -interaction=nonstopmode --shell-escape %.tex
-
-
-\usepackage{hyperref}
-\usepackage{captdef}
-
-\usepackage{psfrag}
-\usepackage{graphicx}
-%\usepackage{subfig}
-\usepackage{color}
-\usepackage{multicol} 
-\usepackage{wrapfig}
-
-%\usepackage{fancyhdr}
-%\pagestyle{fancy}
-%\fancyhf{}
-
-
-\usepackage{cancel}
-\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
-\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
-\usepackage{caption}
-\usepackage{subcaption}
-\renewcommand{\baselinestretch}{1.5}
-
-\usepackage{hyperref}
-%\usepackage[hidelinks]{hyperref} 
-\hypersetup{
-	colorlinks=true,
-	linkcolor=blue,
-	filecolor=magenta,      
-	urlcolor=cyan,
-}
-\theoremstyle{definition}
-\newtheorem{definición}{Definición}
-\newtheorem{ejemplo}{Ejemplo}
-
-\begin{document}
-\thispagestyle{empty}
-\includegraphics[height=3.5cm]{escudoCiencias.pdf}
-\vspace{-3.8cm}
-\begin{flushright}
-	\hspace{4cm}
-	{\Large\textbf{Sobre los Métodos.}\\
-		Proyecto de Tesis}
-	\vspace{0.3cm}\\
-	\begin{large}Autor: Rodrigo Vega Vilchis.\end{large}\\
-	\begin{footnotesize}
-		Correo: rockdrigo6@ciencias.unam.mx\\
-		\hspace{2.05cm}{\color{white}.}\\
-	\end{footnotesize}
-	\vspace{0.1cm}
-	\begin{large}
-		Fecha: 19 Agosto, 2024\end{large}\\
-\end{flushright}
-%\vspace{.4cm}
-\hrule height1pt\vspace{.5cm}
-
-
-
-\tableofcontents
-\listoffigures
-\newpage
-\section{Explicaciones técnicas}
-
-\subsection{Sistema de competencia de especies para $n=2$}
+\chapter{Estabilidad y transiciones de fase de un sistema complejo.}
 
 El sistema de Lotka-Volterra es uno de los sistemas utilizados para poder comprender la naturaleza de la dinámica no lineal. En este caso particular, los términos no lineales son cuadráticos y representan la interacción entre la especie $i$ y la especie $j$. 
 \begin{equation}\label{eqn:LK}
@@ -126,12 +51,12 @@ Por tanto tenemos para $\dot{x}$ el punto fijo $(2,0)$ mientras que para $\dot{y
 %%%%%%%%%%%%%%%%%%%%%CHECKPOINT
 Al resolver esta última ecuación se determina el último punto fijo que corresponde a $(1,1)$. Los puntos fijos brindan información para explorar hacia donde pueden converger (atractores) o diverger (repulsores o puntos sillas) las soluciones del sistema dependiendo de las condiciones iniciales que se le impongan.\footnote{explicar brevemente de que se trata uno, quizás esto deba precisarse desde la introducción.} Se establece que si las soluciones convergen entonces el sistema es considerado \textit{estable} mientras que 
 \begin{wrapfigure}{r}{0.5 \textwidth} \vspace{-30pt} \begin{center}
-		\includegraphics[width=0.45\textwidth]{../Imagenes/Competencia de especies} 
-		\end{center} 
-		\vspace{-20pt} 
-		\caption{Campo vectorial de las soluciones del sistema propuesto de dos especies.} 
-		\vspace{-10pt}
-		\label{fig:CompetenciaEspecies}
+		\includegraphics[width=0.45\textwidth]{../../Imagenes/Competencia de especies} 
+	\end{center} 
+	\vspace{-20pt} 
+	\caption{Campo vectorial de las soluciones del sistema propuesto de dos especies.} 
+	\vspace{-10pt}
+	\label{fig:CompetenciaEspecies}
 \end{wrapfigure} 
 en caso contrario el sistema es considerado \textit{inestable.} Es posible determinar mediante técnicas computacionales el campo vectorial de las soluciones de este sistema\footnote{Realizar referencia de la técnica empleada.}, inclusive dos de las isoclinas\footnote{si son isoclinas???} del sistema resolviendo las ecuaciones igualando a cero y despejando $y$ de cada una de ellas. Es notorio como dichas isoclinas inciden de alguna forma en tres de los puntos fijos. El gráfico nos muestra que las soluciones convergen hacia los puntos que se encuentran en los ejes; todo dependerá de las condiciones iniciales del sistema para ver hacia donde convergen. El punto fijo de en medio es conocido como punto silla y es inestable ya que aunque existan soluciones que convergan hacia él mismo, en la mínima perturbación que se le provoque la solución puede ``desviarse'' hacia los atractores. Por último se observa que del origen divergen todas las soluciones por lo que es considerado un punto fijo repulsor.\\
 \\
@@ -140,14 +65,18 @@ en caso contrario el sistema es considerado \textit{inestable.} Es posible deter
 En esta ocasión por tratarse de un sistema de $2\times 2$, se tuvo la fortuna de poder obtener una representación visual del sistema y poder realizar un análisis cualitativo del mismo para sacar conclusiones. Pero ¿qué sucede cuando se tienen sistemas de $N$ especies? En principio el espacio vectorial (fase) de las soluciones se vuelve $N-$dimensional y por lo tanto imposible de visualizar en un gráfico. Es por ello que se requieren de otras técnicas analíticas para seguir esbozando el comportamiento del sistema. Una herramienta útil a esta conjetura es la de \textit{linealizar}\footnote{Explicar brevemente en esta nota a que se refiere esto.} el sistema para poder explorar el comportamiento de los puntos fijos a nivel local. Para realizar esta acción es necesario aplicar el \textit{Jacobiano} al sistema para ``bajar'' el grado de las ecuaciones del sistema \ref{eqn:LK} y así obtener puras ecuaciones lineales.\\
 \\
 Se define la función vectorial $\mathbf{F}:\mathbb{R}^n\to\mathbb{R}^n$, donde $n$ será el número de especies del sistema de Lotka-Volterra generalizado \ref{eqn:LK}.
-\begin{equation}\label{eqn:LKmatricial}
+\begin{equation}\label{eqn:Fmatricial}
 	\mathbf{F}(\vec{x})=\begin{pmatrix}
-		f_1(\vec{x})=\dot{x}_1\\
+		\dot{x}_1=f_1(\vec{x})\\
 		\vdots\\
-		f_n(\vec{x}))=\dot{x}_n
-	\end{pmatrix},\qquad\text{donde $\vec{x}=\left(x_1(t),...,x_n(t))\right)$.}
+		\dot{x}_n=f_n(\vec{x}))
+	\end{pmatrix},\qquad\text{donde $\vec{x}(t)=\left(x_1(t),...,x_n(t))\right)\in\mathbb{R}^n$.}
 \end{equation}
-Las componentes de $\mathbf{F}(\vec{x})$ corresponden con las funciones del sistema \ref{eqn:LK}, y las componentes del vector $\vec{x}$ corresponden con sus especies involucradas. Por tanto el Jacobiano del sistema quedaría de la siguiente forma
+Las componentes de $\mathbf{F}(\vec{x})$ corresponden con las funciones del sistema \ref{eqn:LK}, y las componentes del vector $\vec{x}$ corresponden con sus especies involucradas. El sistema \ref{eqn:LK} puede ser re-escrito bajo la simplicidad de la siguiente ecuación
+\begin{equation}\label{eqn:LKmatricial}
+	\dot{X}(t) = \mathbf{F}(X(t)),\qquad\text{considerando $\dot{X}(t)=\frac{d\vec{x}(t)}{dt}$}
+\end{equation}
+Por tanto el Jacobiano del sistema se definirá de la siguiente manera
 \begin{equation}\label{eqn:Jacobiano}
 	\mathbb{J}_\mathbf{F}(\vec{x}) = \begin{pmatrix}
 		\frac{\partial f_1(\vec{x})}{\partial x_1} & \cdots &\frac{\partial f_1(\vec{x})}{\partial x_n}\\
@@ -168,14 +97,14 @@ $$
 	-2 & -2\\
 	0 & -1
 \end{pmatrix},\qquad \mathbb{J}_{(0,3)}=\begin{pmatrix}
--1 & 0\\
--6 & -3
+	-1 & 0\\
+	-6 & -3
 \end{pmatrix},\qquad \mathbb{J}_{(1,1)}=\begin{pmatrix}
--1 & -1\\
--2 & -1
+	-1 & -1\\
+	-2 & -1
 \end{pmatrix},\qquad \mathbb{J}_{(0,0)}=\begin{pmatrix}
-2 & 0 \\
-0 & 3
+	2 & 0 \\
+	0 & 3
 \end{pmatrix}
 $$
 %%%%%%%%Checkpoint
@@ -195,7 +124,7 @@ En la sección anterior se ha introducido el sistema de competencia de especies 
 \\
 Para este trabajo resultó conveniente utilizar el marco de las \textit{redes complejas} para poder representar las interacciones entre las especies del sistema. Una red es considerada una colección de \textit{nodos} que se encuentran unidos por \textit{enlaces}\footnote{definir más adelante el tipo de interacciones con base en el signo y si son dirigidas o no dirigidas. Además de agregar cita del Newman para esta definición.}. Para definir redes siempre es necesario establecer que es lo que representan los nodos y que representan los enlaces, en nuestro caso por ejemplo si existe una interacción entre las especies $x_i$ y $x_j$ (nodos de la red) entonces hay un enlace que los une. Por tanto establecemos que los nodos de la red corresponden con las especies y los enlaces con las interacciones.
 \begin{wrapfigure}{l}{0.45 \textwidth} \vspace{-30pt} \begin{center}
-		\includegraphics[width=0.45\textwidth]{../Imagenes/karate} 
+		\includegraphics[width=0.45\textwidth]{../../Imagenes/karate} 
 	\end{center} 
 	\vspace{-20pt} 
 	\caption{Red de Karate.} 
@@ -217,7 +146,7 @@ La matriz de adyacencia será la herramienta para determinar la relación de int
 	Para poder apreciar la matriz de adyacencia definamos una red de 10 nodos y veamos su matriz de adyacencia que le corresponde. Es notorio que cada nodo se encuentra identificado con un número de nodo, esto nos va a servir  para poderlo mapear en la matriz de adyacencia. La correspondencia es la siguiente:
 \end{ejemplo}
 \begin{wrapfigure}{r}{0.5 \textwidth} \vspace{-30pt} \begin{center}
-		\includegraphics[width=0.45\textwidth]{../Imagenes/Red10} 
+		\includegraphics[width=0.45\textwidth]{../../Imagenes/Red10} 
 	\end{center} 
 	\vspace{-20pt} 
 	\caption{Red no dirigida de 10 nodos.} 
@@ -261,7 +190,7 @@ Los enlaces de las redes dirigidas van a estar representados por flechas para qu
 \end{ejemplo}
 
 \begin{wrapfigure}{l}{0.5 \textwidth} \vspace{-30pt} \begin{center}
-		\includegraphics[width=0.45\textwidth]{../Imagenes/Red10Dir} 
+		\includegraphics[width=0.45\textwidth]{../../Imagenes/Red10Dir} 
 	\end{center} 
 	\vspace{-20pt} 
 	\caption{Red no dirigida de 10 nodos.} 
@@ -282,4 +211,5 @@ D = \begin{pmatrix}
 	0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0\\
 \end{pmatrix}
 $$
-\end{document}
+
+

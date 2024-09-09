@@ -1,0 +1,4 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {0.1}Explicaciones técnicas}{6}{section.0.1}%
+\contentsline {subsection}{\numberline {0.1.1}Sistema de competencia de especies para $n=2$}{6}{subsection.0.1.1}%
+\contentsline {subsection}{\numberline {0.1.2}Sistema de competencia de especies generalizado para $N$ especies.}{10}{subsection.0.1.2}%

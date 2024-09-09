@@ -1,0 +1,10 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{Agradecimientos}{\es@scroman {iii}}{chapter*.1}%
+\contentsline {chapter}{Resumen}{\es@scroman {v}}{chapter*.2}%
+\contentsline {chapter}{Introducción}{\es@scroman {xiii}}{chapter*.6}%
+\contentsline {chapter}{\numberline {1}De lo simple a lo complejo}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Revisión de sistemas lineales.}{1}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Puntos fijos y estabilidad del sistema.}{3}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Sistema lineal de para $n=2$}{4}{subsection.1.1.2}%
+\contentsline {chapter}{\numberline {2}Estabilidad y transiciones de fase de un sistema complejo.}{5}{chapter.2}%
+\contentsline {subsection}{\numberline {2.0.1}Sistema de competencia de especies generalizado para $N$ especies.}{9}{subsection.2.0.1}%
