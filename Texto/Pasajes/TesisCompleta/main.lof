@@ -3,8 +3,11 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Espacios fase con eigenvalores reales.}}{6}{figure.caption.7}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Espacios fase con eigenvalores complejos.}}{6}{figure.caption.8}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Campo vectorial de las soluciones del sistema propuesto de dos especies.}}{7}{figure.caption.7}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Red de Karate.}}{10}{figure.caption.8}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Red no dirigida de 10 nodos.}}{10}{figure.caption.9}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Red no dirigida de 10 nodos.}}{12}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Campo vectorial de las soluciones del sistema propuesto de dos especies.}}{9}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Red de Karate.}}{12}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Red no dirigida de 10 nodos.}}{12}{figure.caption.11}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Red no dirigida de 10 nodos.}}{14}{figure.caption.12}%
+\addvspace {10\p@ }

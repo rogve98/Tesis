@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.14)  9 SEP 2024 02:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.14)  9 SEP 2024 22:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1041,7 +1041,8 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 ) (main.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
- (TeX_files/chapter01.aux) (TeX_files/chapter02.aux))
+ (TeX_files/chapter01.aux) (TeX_files/chapter02.aux)
+(TeX_files/Apéndices.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
@@ -1164,7 +1165,7 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<Escudo-UNAM.pdf, id=42, 300.51309pt x 337.88977pt>
+<Escudo-UNAM.pdf, id=50, 300.51309pt x 337.88977pt>
 File: Escudo-UNAM.pdf Graphic file (type pdf)
 <use Escudo-UNAM.pdf>
 Package pdftex.def Info: Escudo-UNAM.pdf  used on input line 63.
@@ -1181,7 +1182,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 63.
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<Escudo-FCIENCIAS.pdf, id=43, 359.74399pt x 411.136pt>
+<Escudo-FCIENCIAS.pdf, id=51, 359.74399pt x 411.136pt>
 File: Escudo-FCIENCIAS.pdf Graphic file (type pdf)
 <use Escudo-FCIENCIAS.pdf>
 Package pdftex.def Info: Escudo-FCIENCIAS.pdf  used on input line 63.
@@ -1321,22 +1322,40 @@ LaTeX Info: Redefining \. on input line 60.
 LaTeX Info: Redefining \% on input line 60.
 [2]
 
-LaTeX Info: Redefining \. on input line 91.
-LaTeX Info: Redefining \% on input line 91.
+LaTeX Info: Redefining \. on input line 94.
+LaTeX Info: Redefining \% on input line 94.
 [3]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 92.
+LaTeX Info: Redefining \. on input line 135.
+LaTeX Info: Redefining \% on input line 135.
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 142--145
+
+ []
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 92.
 
+LaTeX Info: Redefining \. on input line 145.
+LaTeX Info: Redefining \% on input line 145.
+[5]
+<../../Imagenes/Espacios fase reales.png, id=208, 2007.5pt x 803.0pt>
+File: ../../Imagenes/Espacios fase reales.png Graphic file (type png)
+<use ../../Imagenes/Espacios fase reales.png>
+Package pdftex.def Info: ../../Imagenes/Espacios fase reales.png  used on input
+ line 151.
+(pdftex.def)             Requested size: 461.71529pt x 184.68611pt.
+<../../Imagenes/Espacios fase complejos.png, id=209, 2007.5pt x 803.0pt>
+File: ../../Imagenes/Espacios fase complejos.png Graphic file (type png)
+<use ../../Imagenes/Espacios fase complejos.png>
+Package pdftex.def Info: ../../Imagenes/Espacios fase complejos.png  used on in
+put line 161.
+(pdftex.def)             Requested size: 461.71529pt x 184.68611pt.
 )
 
 LaTeX Info: Redefining \. on input line 82.
 LaTeX Info: Redefining \% on input line 82.
-[4]
+[6 <../../Imagenes/Espacios fase reales.png> <../../Imagenes/Espacios fase comp
+lejos.png>]
 \openout2 = `./TeX_files/chapter02.aux'.
 
  (TeX_files/chapter02.tex
@@ -1348,7 +1367,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--10
 
 
 
-[5
+[7
 
 
 
@@ -1360,8 +1379,8 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 50.
 LaTeX Info: Redefining \% on input line 50.
-[6]
-<../../Imagenes/Competencia de especies.png, id=191, 462.528pt x 346.896pt>
+[8]
+<../../Imagenes/Competencia de especies.png, id=234, 462.528pt x 346.896pt>
 File: ../../Imagenes/Competencia de especies.png Graphic file (type png)
 <use ../../Imagenes/Competencia de especies.png>
 Package pdftex.def Info: ../../Imagenes/Competencia de especies.png  used on in
@@ -1379,11 +1398,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 60--68
 
 
 
-[7 <../../Imagenes/Competencia de especies.png>]
+[9 <../../Imagenes/Competencia de especies.png>]
 
 LaTeX Info: Redefining \. on input line 112.
 LaTeX Info: Redefining \% on input line 112.
-[8]
+[10]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 121.
@@ -1396,7 +1415,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 121.
 
-<../../Imagenes/karate.png, id=229, 379.4175pt x 379.4175pt>
+<../../Imagenes/karate.png, id=271, 379.4175pt x 379.4175pt>
 File: ../../Imagenes/karate.png Graphic file (type png)
 <use ../../Imagenes/karate.png>
 Package pdftex.def Info: ../../Imagenes/karate.png  used on input line 127.
@@ -1408,12 +1427,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 123--133
 
 
 
-[9]
+[11]
 Overfull \hbox (6.92897pt too wide) detected at line 141
 \OML/cmm/m/it/10.95 a[] \OT1/cmr/m/n/10.95 = []
  []
 
-<../../Imagenes/Red10.png, id=237, 379.4175pt x 379.4175pt>
+<../../Imagenes/Red10.png, id=281, 379.4175pt x 379.4175pt>
 File: ../../Imagenes/Red10.png Graphic file (type png)
 <use ../../Imagenes/Red10.png>
 Package pdftex.def Info: ../../Imagenes/Red10.png  used on input line 149.
@@ -1432,10 +1451,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 170--177
 
 LaTeX Info: Redefining \. on input line 177.
 LaTeX Info: Redefining \% on input line 177.
-[10 <../../Imagenes/karate.png> <../../Imagenes/Red10.png>]
+[12 <../../Imagenes/karate.png> <../../Imagenes/Red10.png>]
 
-[11]
-<../../Imagenes/Red10Dir.png, id=256, 379.4175pt x 379.4175pt>
+[13]
+<../../Imagenes/Red10Dir.png, id=299, 379.4175pt x 379.4175pt>
 File: ../../Imagenes/Red10Dir.png Graphic file (type png)
 <use ../../Imagenes/Red10Dir.png>
 Package pdftex.def Info: ../../Imagenes/Red10Dir.png  used on input line 193.
@@ -1444,11 +1463,31 @@ Package pdftex.def Info: ../../Imagenes/Red10Dir.png  used on input line 193.
 
 LaTeX Info: Redefining \. on input line 83.
 LaTeX Info: Redefining \% on input line 83.
-[12 <../../Imagenes/Red10Dir.png>] (main.aux
+[14 <../../Imagenes/Red10Dir.png>]
+\openout2 = `./TeX_files/Apéndices.aux'.
+
+ (TeX_files/Apéndices.tex
+Cap\'{\i }tulo 3.
+)
+
+[15
+
+
+
+
+]
+
+LaTeX Info: Redefining \. on input line 86.
+LaTeX Info: Redefining \% on input line 86.
+[16
+
+
+
+] (main.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
- (TeX_files/chapter01.aux)
-(TeX_files/chapter02.aux))
+ (TeX_files/chapter01.aux) (TeX_files/chapter02.aux)
+(TeX_files/Apéndices.aux))
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
@@ -1458,16 +1497,16 @@ L3 programming layer <2024-07-20>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7D092A3F814DCA877F148607868864F7;1943.
+(rerunfilecheck)             Checksum: 7D6A4D00C17414094530841051BFCD93;2137.
  ) 
 Here is how much of TeX's memory you used:
- 29140 strings out of 473899
- 548392 string characters out of 5725556
+ 29218 strings out of 473899
+ 550952 string characters out of 5725556
  1959960 words of memory out of 5000000
- 51387 multiletter control sequences out of 15000+600000
+ 51442 multiletter control sequences out of 15000+600000
  571782 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 109i,30n,117p,1100b,586s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 109i,30n,117p,1324b,598s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
 m/cmbx10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public
 /amsfonts/cm/cmbx12.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/t
@@ -1482,18 +1521,18 @@ m/cmmi12.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public
 pe1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTe
 X/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/Rodrigo/AppData/Local/Prog
 rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Rodrigo/AppData/
-Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Rodrig
-o/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Use
-rs/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pf
-b><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmr9.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmsl10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/typ
-e1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTe
+Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Rodrigo
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/User
+s/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb
+><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
+/cmsl10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmsy10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmsy9.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTe
 X/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Rodrigo/AppData/Local/Pro
 grams/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (26 pages, 644870 bytes).
+Output written on main.pdf (30 pages, 1618256 bytes).
 PDF statistics:
- 362 PDF objects out of 1000 (max. 8388607)
- 69 named destinations out of 1000 (max. 500000)
- 115 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 418 PDF objects out of 1000 (max. 8388607)
+ 85 named destinations out of 1000 (max. 500000)
+ 141 words of extra memory for PDF output out of 10000 (max. 10000000)
 

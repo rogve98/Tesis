@@ -79,44 +79,89 @@ También llamados puntos de equilibrio son aquellos en donde las soluciones de (
 	\end{split}
 \end{equation*}
 Para darle solución es necesario encontrar $X_0\in\mathbb{R}^n$ que lo satisfaga; en dicho caso se establece que $X_0$ es el punto fijo del sistema. Los puntos fijos son clave para entender la estabilidad de (\ref{eqn:sistemaLineal}), servirán de referencia para determinar si las soluciones tienden hacia el punto fijo o si divergen del mismo (o una combinación de ambas). Pero tan solo con determinarlo no es suficiente, para ello debemos manipular la matriz de coeficientes $M$ para saber la naturaleza de este punto fijo. Para ello necesitamos hallar los \textit{valores propios} de $M$, por tanto necesitamos determinar
-$$\det(M-\lambda I)=0$$
-resolviendo el polinomio característico de grado $n$ (dependiendo del tamaño del sistema), se obtendrán los valores propios que por si mismo nos brindan demasiada información acerca de como se comportan las soluciones.
-\begin{proposición}\label{prp:Atractores}
-	Un sistema lineal con eigenvalores negativos siempre será estable, es decir, todas las soluciones van a tender hacia el punto fijo del sistema. El punto fijo asociado al sistema con estas características es conocido como \textbf{Atractor}.
-\end{proposición}
-Para poder demostrarlo necesitamos encontrar la solución analítica del sistema. Habiendo determinado el conjunto de eigenvalores del sistema, es directo ir a buscar los \textit{eigenvectores} del mismo, y sabemos que se debe cumplir la siguiente igualdad
-$$Av=\lambda v$$
-
-
-\newpage
-\subsection{Sistema lineal de para $n=2$}
-
-Para revisar las características de un sistema lineal, conviene comenzar por estudiar un sistema de dos ecuaciones para poder obtener la mayor información visual posible.
-\begin{align*}
-	\frac{dx}{dt} &= ax + by \\
-	\frac{dy}{dt} &= cx + dy
-\end{align*}
-en este caso las constantes $a,b,c,d\in\mathbb{R}$ son parámetros que describen ciertas interacciones con respecto de las cantidades ($x$ y $y$) que intervienen en el sistema. Por tratarse de un sistema lineal es bastante oportuno poder re-escribir al sistema en notación matricial, se define el vector $X(t)=(x(t),y(t))$ y se tiene
-$$
-MX = \begin{pmatrix}
-	a & b\\
-	c & d
-\end{pmatrix}\cdot\begin{bmatrix}
-x(t)\\
-y(t)
-\end{bmatrix}
-$$
-mientras que las derivadas que se encuentran del lado izquierdo del sistema son
-$$
-\frac{dX(t)}{dt}=\begin{pmatrix}
-	\dot{x}\\
-	\dot{y}
-\end{pmatrix}
-$$
-Por lo tanto el sistema lineal se re-escribe bajo una notación más simple de la siguiente forma
-\begin{equation}
-	\dot{X}(t)=MX
+\begin{equation}\label{eqn:vPropios}
+	\det(M-\lambda I)=0
 \end{equation}
+resolviendo el polinomio característico de grado $n$ (dependiendo del tamaño del sistema), se obtendrá el conjunto de valores propios que por si mismos nos brindan demasiada información acerca de como se comportan las soluciones del sistema.
+
+%%%%%%%%%%%%%%%%%%CHECKPOINT
+\begin{proposición}\label{prp:Atractores}
+	Un sistema lineal que tiene eigenvalores con parte real negativa siempre será estable, es decir, todas las soluciones tenderán hacia el punto fijo del sistema. Este punto de equilibrio del sistema con estas características es conocido como \textbf{Atractor}.
+\end{proposición}
+Independientemente de la elección de las condiciones iniciales, las soluciones tenderán hacia el punto fijo cuando $t\to\infty$ y se mantendrá ahí siendo resistente ante perturbaciones. Notemos que en la ec. (\ref{eqn:vPropios}) es posible tener raíces reales como complejas, dependiendo de los coeficientes de $M$. Sin embargo aunque se tengan eigenvalores complejos, la dinámica seguirá siendo la misma: se tendrán soluciones que tienden o divergen (o combinación de ambas) del punto fijo, lo que cambia es la forma en que lo hacen. Cuando las soluciones del sistema lineal divergen del punto fijo, entonces se establece que el sistema es inestable y el punto fijo asociado se le conoce como \textbf{\textit{Repulsor}}. Cualquier mínima perturbación que tenga la solución que esta ubicada en el punto fijo, hará que diverga. La combinación de los anteriores se les conoce como \textbf{\textit{Punto silla}}; se dice que es combinación porque podría acercarse al punto silla pero al hacerlo en algún momento terminará divergiendo. Es considerado también como sistema intestable ya que para $t\to\infty$ cualquier solución no trivial se irá a $\infty$.
+\begin{ejemplo}\label{eg:Fuente2x2}
+	Veamos un ejemplo sencillo para poder apreciar lo anterior, para ello se propone el siguiente sistema de $2\times 2$.
+	$$
+		\dot{X}(t)=\underbrace{\begin{pmatrix}
+				2 & 2\\
+				1 & 3
+		\end{pmatrix}}_{M_1}X(t)
+	$$
+	Sacando su polinomio característico (\ref{eqn:vPropios}) tenemos los siguiente eigenvalores\footnote{para sistemas de $2\times 2$ se tiene establecido un polinomio característico que se define como $p_M(\lambda)=\lambda^2-\lambda\text{Tr}A+\det A$}
+	\begin{align*}
+		p_{M_1}(\lambda)&=\lambda^2-5\lambda+4 = 0\\
+		\lambda_1=4 &\qquad \lambda_2=1
+	\end{align*}
+	Según lo que establece la Proposición \ref{prp:Atractores}, este no es un sistema que sea estable ya que sus eigenvalores tienen parte real positiva. Para poder comprobarlo necesitamos determinar la solución general del sistema asociado a $M_1$. Para ello es necesario encontrar los \textit{eigenvectores} del sistema, es decir
+	\begin{align*}
+		M_1\vec{v}=\lambda\vec{v}\qquad&\Longleftrightarrow\qquad (M_1-\lambda I)\vec{v}=0 \\
+		\vec{v}_{\lambda_1} = \begin{bmatrix}
+			1\\
+			1
+		\end{bmatrix}  \qquad&\qquad \vec{v}_{\lambda_2} = \begin{bmatrix}
+		\frac{1}{2}\\
+		-1
+		\end{bmatrix}
+	\end{align*}
+\end{ejemplo}
+\begin{teorema}\label{teo:Solgral}
+	Sea $\vec{v}_0$ un eigenvector de $M$ una matriz asociada al eigenvalor $\lambda$. Entonces la función $X(t)=e^{\lambda t}\vec{v}_0$ es una solución del sistema $\vec{X}(t)=MX(t)$\footnote{ver demostración en el apéndice \ref{ch:Ap}}.
+\end{teorema}
+Se dice que es una solución general porque podemos seleccionar cualquier $k\in\mathbb{R}$ de tal manera que sea un múltiplo del eigenvector del sistema. En ese caso obtenemos toda una familia de soluciones posibles. Por tanto para el sistema del Ejemplo \ref{eg:Fuente2x2} se tienen las siguientes soluciones posibles:
+$$X_1(t)=k_1e^{4t}\begin{bmatrix}
+	1\\
+	1
+\end{bmatrix},\qquad\qquad X_2(t)=k_2e^{t}\begin{bmatrix}
+\frac{1}{2}\\
+-1
+\end{bmatrix}$$
+Sin embargo por tratarse de un sistema lineal, se cumple el principio de superposición lo cual significa que la solución general al sistema asociado a $M_1$ es
+$$X(t)=k_1e^{4t}\vec{v}_{\lambda_1}+k_2e^{t}\vec{v}_{\lambda_2}$$
+Se puede apreciar que para las soluciones separadas y la solución general del sistema asociado a $M_1$, el límite de $X(t)$ cuando $t\to\infty$ es infinito, por tanto las soluciones del Ejemplo \ref{eg:Fuente2x2} siempre van a diverger a infinito independientemente de la elección de condiciones iniciales. Cuando se trata de sistemas lineales, una solución y la suma de las soluciones siempre será solución del sistema, es decir, se pueden escribir como combinación lineal. Generalizando el concepto a un sistema de $n$ ecuaciones lineales tenemos la siguiente solución general:
+\begin{equation}\label{eqn:solGral}
+	X(t)=k_1e^{\lambda_1 t}\vec{v}_{\lambda_1}+k_2e^{\lambda_2 t}\vec{v}_{\lambda_2}+\cdots+k_ne^{\lambda_n t}\vec{v}_{\lambda_n}
+\end{equation}
+Esta solución general también aplica perfectamente para el caso en donde se tienen eigenvalores complejos, solamente que habría que descomponer mediante la relación de Euler las exponenciales, es decir, $e^{\lambda t}$ donde $\lambda=a\pm bi$ se descompone como $e^{at}\left (\cos bt+i\sin bt\right )$. Como solución se vería de la siguiente manera
+\begin{equation}\label{eqn:solCompleja}
+	X(t)=e^a\left (\cos bt+i\sin bt\right )\vec{v}_{\lambda}
+\end{equation}
+donde $\vec{v}_{\lambda}$ es un vector propio del sistema. Finalmente, en este punto tenemos todos los elementos para darle respuesta a nuestra Proposición \ref{prp:Atractores}; tanto la ecuación (\ref{eqn:solGral}) como (\ref{eqn:solCompleja}) se puede notar que si la parte real del eigenvalor del sistema es positivo, para $t\to\infty$ la exponencial también tiende a infinito y por lo tanto la solución lo hará. En contra parte, si la parte real del eigenvalor es negativa entonces la solución va a tender hacia donde los vectores propios se dirijan, particularmente hacia el punto fijo. Esto únicamente será válido si todos los eigenvalores del sistema tienen parte real negativa ya que si existe al menos uno que tenga parte real positiva eventualmente terminará divergiendo. Eso es lo que sucede con los puntos silla, quizás existan mayoría de eigenvalores con parte real negativa pero si existe al menos uno que tenga parte real positiva, eventualmente para tiempos largos la solución va a diverger. Para poder darnos una idea visual de lo que llamamos \textit{atractores}, \textit{repulsores} y \textit{puntos silla} podemos acceder al espacio fase del sistema y ver de manera integral como se comportan las soluciones del sistema lineal.
+
+\subsection{Espacios fase}
+
+El espacio fase es considerado como la representación geométrica de las trayectorias posibles en un sistema dinámico, en el mismo se contemplan todas las condiciones iniciales posibles y todas las trayectorias posibles que emergen de las anteriores. Aquí mismo encontramos gráficamente los puntos fijos y podemos distinguirlos cualitativamente de que naturaleza son. Las técnicas analíticas descritas anteriormente nos sirven para conocer el comportamiento sin el uso del espacio fase, pero para sistemas de $n=2,3$ podemos acceder al espacio fase y ver como son sus trayectorias. En ese sentido para sistemas con $n>3$ ecuaciones ya será imposible generar su visualización ya que cada uno de los ejes representa una de las cantidades del sistema. \\
+\\
+En esta breve sección únicamente veremos diversos ejemplos de sistemas $2\times 2$ con eigenvalores variados que nos muestren atractores, repulsores y puntos silla. Sin embargo se omitirán los cálculos de eigenvalores, eigenvectores y soluciones generales, únicamente se pretende mostrar al lector como podemos analizar los sistemas de manera cualitativa a través de sus espacios fase. Por último se dividirán entre espacios fase con eigenvalores reales y con eigenvalores complejos para tener una demarcación adecuada de ambos casos.
+\newpage
+\begin{ejemplo}
+	hola
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.23]{../../Imagenes/Espacios fase reales}
+		\caption{Espacios fase con eigenvalores reales.}
+	\end{figure}
+\end{ejemplo}
+
+\begin{ejemplo}
+	hola de nuevo 
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.23]{../../Imagenes/Espacios fase complejos}
+		\caption{Espacios fase con eigenvalores complejos.}
+	\end{figure}
+\end{ejemplo}
 
 
 
