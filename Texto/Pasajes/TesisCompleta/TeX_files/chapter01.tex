@@ -143,27 +143,72 @@ El espacio fase es considerado como la representación geométrica de las trayec
 \\
 En esta breve sección únicamente veremos diversos ejemplos de sistemas $2\times 2$ con eigenvalores variados que nos muestren atractores, repulsores y puntos silla. Sin embargo se omitirán los cálculos de eigenvalores, eigenvectores y soluciones generales, únicamente se pretende mostrar al lector como podemos analizar los sistemas de manera cualitativa a través de sus espacios fase. Por último se dividirán entre espacios fase con eigenvalores reales y con eigenvalores complejos para tener una demarcación adecuada de ambos casos.
 \newpage
-\begin{ejemplo}
-	hola
-	
+\begin{ejemplo}\label{eg:EspaciosFreal}
+	Para la sección de espacios fase con puntos fijos con eigenvalores reales vamos a considerar las siguientes matrices de coeficientes para $n=2$
+	\begin{equation*}
+		\begin{split}
+			R_1=\begin{pmatrix}
+				-1 & 0\\
+				0 & -4 
+			\end{pmatrix}
+		\end{split},\qquad
+		\begin{split}
+			R_2=\begin{pmatrix}
+				-3 & 0\\
+				0 & 2 			
+			\end{pmatrix}
+		\end{split},\qquad
+		\begin{split}
+			R_3=\begin{pmatrix}
+					2 & 2\\
+					1 & 3
+			\end{pmatrix}
+		\end{split}
+	\end{equation*}
+	Nótese que la $R_3$ es la misma que la $M_1$ del Ejemplo \ref{eg:Fuente2x2} la cual tiene ambos eigenvalores positivos y se había concluido que por la solución general (\ref{eqn:solGral}) que sus soluciones divergen del punto fijo; además en la Figura (\ref{fig:EFReales}) se puede observar la gráfica de la derecha que corresponde con $R_1$ como todas las soluciones divergen del punto fijo. Los eigenvalores de $R_1$ son respectivamente $\lambda_{1R_1}= -1$ y $\lambda_{2R_2}=-4$; ambos son negativos y cumplen con lo que estipula la Proposición \ref{prp:Atractores} y se puede comprobar por medio de la solución general o el gráfico de la izquierda de la Figura (\ref{fig:EFReales}). Para los eigenvalores de $R_2$ se tienen los siguientes eigenvalores $\lambda_{1R_2}=-3$ y $\lambda_{2R_2}=2$; en este caso se tiene que una de las soluciones de la ec. (\ref{eqn:solGral}) tratará de acercarse al punto fijo debido a la exponencial con $\lambda<0$, sin embargo para $t\to\infty$ las soluciones divergerán a $\pm\infty$ y lo podemos apreciar a partir del gráfico de en medio de la Figura (\ref{fig:EFReales}).
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[scale=0.23]{../../Imagenes/Espacios fase reales}
-		\caption{Espacios fase con eigenvalores reales.}
+		\caption{Espacios fase con eigenvalores reales. De izquierda a derecha se relacionan con las matrices del Ejemplo \ref{eg:EspaciosFreal}. La matriz $R_1$ corresponde con la gráfica de la izquierda, la matriz $R_2$ con la gráfica de en medio y la matriz $R_3$ con la gráfica de la derecha.}
+		\label{fig:EFReales}
 	\end{figure}
 \end{ejemplo}
 
-\begin{ejemplo}
-	hola de nuevo 
-	
+\begin{ejemplo}\label{eg:EspaciosFcomplejos}
+	Para el caso de los espacios fase con eigenvalores complejos se proponen las siguientes matrices de coeficientes para $n=2$
+	\begin{equation*}
+		\begin{split}
+			C_1=\begin{pmatrix}
+				-2 & -3\\
+				3 & -2 
+			\end{pmatrix}
+		\end{split},\qquad
+		\begin{split}
+			C_2=\begin{pmatrix}
+				0 & 1\\
+				-2 & 0 			
+			\end{pmatrix}
+		\end{split},\qquad
+		\begin{split}
+			C_3=\begin{pmatrix}
+				0 & 2\\
+				-3 & 2
+			\end{pmatrix}
+		\end{split}
+	\end{equation*}
+	Los eigenvalores para la matriz $C_1$ son $\lambda_{C_1}=-2\pm 3i$, nuevamente notamos que la parte real de sus eigenvalores son negativas lo que significa que todas las soluciones tenderán hacia el punto de equilibrio independientemente de sus condiciones iniciales; en la gráfica de la izquierda de la Figura (\ref{fig:EFComplejos}) se puede apreciar este comportamiento. Los eigenvalores de $C_2$ son respectivamente $\lambda_{C_2}=\pm 2i$, en este caso la parte real es igual a cero lo que significa que las soluciones van a estar oscilando para $t\to\infty$ sin llegar a converger a ningún punto, este tipo de comportamientos son ideales ya que en la naturaleza no se conoce alguna cosa que oscile de manera perpetua. Para los eigenvalores de $C_3$ se tienen los eigenvalores $\lambda_{C_3}=1\pm 5i$, en este caso las soluciones divergen (agregar más cosas...). Hablar con base de la solución general el caraceter oscilatorio de divergencia, convergencia y estacionario...
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[scale=0.23]{../../Imagenes/Espacios fase complejos}
-		\caption{Espacios fase con eigenvalores complejos.}
+		\caption{Espacios fase con eigenvalores complejos. De izquierda a derecha se relacionan con las matrices del Ejemplo \ref{eg:EspaciosFcomplejos}. La matriz $C_1$ corresponde con la gráfica de la izquierda, la matriz $C_2$ con la gráfica de en medio y la matriz $C_3$ con la gráfica de la derecha.}
+		\label{fig:EFComplejos}
 	\end{figure}
 \end{ejemplo}
 
 
+\section{Sistemas no lineales}
+
+\subsection{Modelo logístico}
 
 
 %%la particularidad con los sistemas no lineales es el hecho de que no se pueden expresar como la suma de las soluciones del sistema, en otras palabras no cumplen el principio de superposición.

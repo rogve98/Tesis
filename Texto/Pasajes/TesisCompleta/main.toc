@@ -6,7 +6,9 @@
 \contentsline {section}{\numberline {1.1}Revisión de sistemas lineales.}{1}{section.1.1}%
 \contentsline {subsection}{\numberline {1.1.1}Puntos fijos y estabilidad del sistema.}{3}{subsection.1.1.1}%
 \contentsline {subsection}{\numberline {1.1.2}Espacios fase}{5}{subsection.1.1.2}%
-\contentsline {chapter}{\numberline {2}Estabilidad y transiciones de fase de un sistema complejo.}{7}{chapter.2}%
-\contentsline {subsection}{\numberline {2.0.1}Sistema de competencia de especies generalizado para $N$ especies.}{11}{subsection.2.0.1}%
-\contentsline {chapter}{\numberline {3}Apéndice}{15}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Demostraciones del texto}{15}{section.3.1}%
+\contentsline {section}{\numberline {1.2}Sistemas no lineales}{7}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Modelo logístico}{7}{subsection.1.2.1}%
+\contentsline {chapter}{\numberline {2}Estabilidad y transiciones de fase de un sistema complejo.}{9}{chapter.2}%
+\contentsline {subsection}{\numberline {2.0.1}Sistema de competencia de especies generalizado para $N$ especies.}{13}{subsection.2.0.1}%
+\contentsline {chapter}{\numberline {3}Apéndice}{17}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Demostraciones del texto}{17}{section.3.1}%
