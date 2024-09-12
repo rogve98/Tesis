@@ -65,35 +65,64 @@ function DiagonalJ(params::Parametros)
     r = params.r
     K = params.K
     A = incidencias(params::Parametros)
-    function sistema(X::Vector)
-        sis = zeros(N)
-        xs = zeros(N)
-        for i in 1:N
-            for j in 1:N
-                xs[i] += A[i,j]*X[j]
-            end
-            sis[i] = r[i]*X[i]*(1-xs[i]/K[i])
-        end
-        return sis
-    end
-    LK = RK4(sistema,params.x0,params.t0,params.tf,params.h)[2]
-    if esEstable(LK)
-        X = LK[end,:]
-        M = zeros(N,N)
-        for i in 1:N
-            for j in 1:N
-                if i == j
-                    xs = zeros(N)
-                    for k in 1:N
-                        xs[i] += A[i,k]*X[k]
-                    end
-                    M[i,i] = r[i]*(1-xs[i]/K[i])-r[i]*X[i]/K[i]
-                else
-                    M[i,j] = -r[i]*X[i]*A[i,j]/K[i]
+    function Estables(A::Matrix)
+        function sistema(X::Vector)
+            sis = zeros(N)
+            xs = zeros(N)
+            for i in 1:N
+                for j in 1:N
+                    xs[i] += A[i,j]*X[j]
                 end
+                sis[i] = r[i]*X[i]*(1-xs[i]/K[i])
+            end
+            return sis
+        end
+        return LK = RK4(sistema,params.x0,params.t0,params.tf,params.h)[2]
+    end
+    LK = Estables(A)
+    while !(esEstable(LK))
+        A = incidencias(params)
+        LK = Estables(A)        
+    end
+    X = LK[end,:]
+    M = zeros(N,N)
+    for i in 1:N
+        for j in 1:N
+            if i == j
+                xs = zeros(N)
+                for k in 1:N
+                    xs[i] += A[i,k]*X[k]
+                end
+                M[i,i] = r[i]*(1-xs[i]/K[i])-r[i]*X[i]/K[i]
+            else
+                M[i,j] = -r[i]*X[i]*A[i,j]/K[i]
             end
         end
-        return M
+    end
+    return diag(M)
+end
+
+"""
+Esta función nos servirá para explorar la distribución de las diagonales de los
+jacobianos, esto con el fin de poder hallar un parámetro de criticalidad en los
+diagramas de transición de fase... Hay algunas ideas en el texto de mercedes que
+encuadran con esto pero al día de hoy 11-Sep-24 no estoy seguro de la relación.
+"""
+
+function distDiagonal(params::Parametros,p)
+    medidas = 5
+    σ = params.σ
+    for i in p
+        diagonales = []
+        #jacobianos = []
+        params.p = i 
+        for i in 1:medidas
+            d = DiagonalJ(params::Parametros)
+        #    push!(jacobianos,J)
+            push!(diagonales,d)
+        end
+        writedlm("Diagonales_s$σ.p$i.csv",diagonales)
+        #writedlm("Jacobianos p$i.csv",jacobianos)
     end
 end
 

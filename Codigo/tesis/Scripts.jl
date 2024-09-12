@@ -24,3 +24,14 @@ function transicionCSV(datos::DatosCSV)
     end
     writedlm(nombre,[p sNuevo])
 end
+
+
+"""
+Función para explorar las diagonales de los Jacobianos según sus parámetros
+"""
+
+function vectorDiagonales(ruta::String)
+    df = DataFrame(CSV.File(ruta,header=false))
+    df = permutedims(df)
+    return df,vcat(collect(eachcol(df))...)    
+end
