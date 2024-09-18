@@ -13,3 +13,47 @@ Se anexa la demostración al \textbf{Teorema 1} [\ref{teo:Solgral}]:
 				   &= AX(t)
 	\end{align*}
 \end{proof}
+
+\section{Códigos de gráficas}
+
+El trabajo presente se ha realizado bajo algoritmos, funciones y sintaxis del lenguaje Julia. En esta sección como en otras se estará anexando código en referencia a elementos presentes en el cuerpo de la tesis. Se anexa código de las figuras de los espacios fase de la sección (\ref{sec:Espacios fase}).\\
+\\
+El bloque de código (\ref{al:EspaciosFase}) funciona para generar la Figura (\ref{fig:EFReales}); sin embargo se puede modificar convenientemente para poder generar las Figuras (\ref{fig:EFComplejos}) y (\ref{fig:CompetenciaEspecies}), únicamente hay que definir las respectivas funciones del sistema para que se pueda generar el campo de direcciones apropiado.
+\begin{algorithm}
+	\caption{Generación de gráficas de espacios fase de $2\times 2$ con eigenvalores reales.}
+	\KwData{Matrices de coeficientes.}
+	\KwResult{Espacios fase.}
+	\label{al:EspaciosFase}
+	Inicializar el proceso\;	
+	\begin{minted}{julia}
+using CairoMakie
+xlim = (-3,3)	#Se establecen los límites que abarcarán las gráficas
+ylim = (-3,3)
+
+fSilla(X) = Point2(-3X[1],2X[2])  #Se definen las matrices de coeficientes
+fAtractor(X) = Point2(-X[1],-4X[2])  #de los sistemas lineales
+fRepulsor(X) = Point2(2X[1]+2X[2],X[1]+3X[2])
+
+titles = ["Atractor","Punto silla", "Repulsor"] #Títulos para cada gráfica
+functions = [fAtractor,fSilla,fRepulsor]  #Arreglo de funciones para poder iterarlas
+n = length(functions)  #más adelante
+
+#Se definen los colores de las líneas de flujo del espacio fase
+cmaps = [[:red,:orange,:brown],[:red,:orange,:brown],[:red,:orange,:brown]]
+
+#1. Se define la figura en sus dimensiones y el tamaño de letra.
+#2. Se definen los ejes y la información que llevará con ellos. 
+#3. Se definen las líneas de campo
+#4. Escondemos las y(t) para la figura de en medio y la de la derecha
+#5. Se establecen los límites de cada gráfico
+fig = Figure(size = (1000, 400), fontsize = 20)
+axs = [Axis(fig[1, i], xlabel = "x(t)", ylabel = "y(t)", title = titles[i],
+aspect = 1, backgroundcolor = :white) for i in 1:n]
+[streamplot!(axs[i], functions[i], -4 .. 4, -4 .. 4, colormap = cmaps[i],
+gridsize = (32, 32), arrow_size = 9) for i in 1:n, density = 0.1]
+[hideydecorations!(axs[i], grid = false, ticks = false) for i in 2:n]
+[limits!(axs[i], xlim...,ylim...) for i in 1:n]
+fig	#Se imprime la figura
+	\end{minted}
+	 Ejecutar el código y obtener el resultado\;
+\end{algorithm}

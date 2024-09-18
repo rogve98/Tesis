@@ -78,11 +78,11 @@ También llamados puntos de equilibrio son aquellos en donde las soluciones de (
 		\end{pmatrix}}_{X_0}=0
 	\end{split}
 \end{equation*}
-Para darle solución es necesario encontrar $X_0\in\mathbb{R}^n$ que lo satisfaga; en dicho caso se establece que $X_0$ es el punto fijo del sistema. Los puntos fijos son clave para entender la estabilidad de (\ref{eqn:sistemaLineal}), servirán de referencia para determinar si las soluciones tienden hacia el punto fijo o si divergen del mismo (o una combinación de ambas). Pero tan solo con determinarlo no es suficiente, para ello debemos manipular la matriz de coeficientes $M$ para saber la naturaleza de este punto fijo. Para ello necesitamos hallar los \textit{valores propios} de $M$, por tanto necesitamos determinar
+Para darle solución es necesario encontrar $X_0\in\mathbb{R}^n$ que lo satisfaga; en dicho caso se establece que $X_0$ es el punto fijo del sistema. Los puntos fijos son clave para entender la estabilidad de (\ref{eqn:sistemaLineal}), servirán de referencia para determinar si las soluciones tienden hacia el punto fijo o si divergen del mismo (o una combinación de ambas). Pero tan solo con determinarlo no es suficiente, para ello debemos manipular la matriz de coeficientes $M$ para saber que tipo de punto fijo es. Para ello necesitamos hallar los \textit{valores propios} de $M$, por tanto se necesita resolver
 \begin{equation}\label{eqn:vPropios}
 	\det(M-\lambda I)=0
 \end{equation}
-resolviendo el polinomio característico de grado $n$ (dependiendo del tamaño del sistema), se obtendrá el conjunto de valores propios que por si mismos nos brindan demasiada información acerca de como se comportan las soluciones del sistema.
+al encontrar las raíces del polinomio característico de grado $n$ (dependiendo del tamaño del sistema), se obtendrá el conjunto de valores propios que por si mismos nos brindan demasiada información acerca de como se comportan las soluciones del sistema.
 
 %%%%%%%%%%%%%%%%%%CHECKPOINT
 \begin{proposición}\label{prp:Atractores}
@@ -115,9 +115,9 @@ Independientemente de la elección de las condiciones iniciales, las soluciones 
 	\end{align*}
 \end{ejemplo}
 \begin{teorema}\label{teo:Solgral}
-	Sea $\vec{v}_0$ un eigenvector de $M$ una matriz asociada al eigenvalor $\lambda$. Entonces la función $X(t)=e^{\lambda t}\vec{v}_0$ es una solución del sistema $\vec{X}(t)=MX(t)$\footnote{ver demostración en el apéndice \ref{ch:Ap}}.
+	Sea $\vec{v}_0$ un eigenvector de $M$ una matriz asociada a un sistema de ecuaciones diferenciales lineales con $n$ eigenvalores $\Lambda=\{\lambda_i\, |\, i\in\{1,...,n\}\}$. Entonces la función $X(t)=e^{\lambda t}\vec{v}_0$ es una solución del sistema $\vec{X}(t)=MX(t)$\footnote{ver demostración en el apéndice \ref{ch:Ap}}.
 \end{teorema}
-Se dice que es una solución general porque podemos seleccionar cualquier $k\in\mathbb{R}$ de tal manera que sea un múltiplo del eigenvector del sistema. En ese caso obtenemos toda una familia de soluciones posibles. Por tanto para el sistema del Ejemplo \ref{eg:Fuente2x2} se tienen las siguientes soluciones posibles:
+Se dice que es una solución general porque podemos seleccionar cualquier $k\in\mathbb{R}$ de tal manera que sea un múltiplo del eigenvector asociado a $\lambda_i$. En ese caso obtenemos toda una familia de soluciones posibles. Por tanto para el sistema del Ejemplo \ref{eg:Fuente2x2} se tienen las siguientes soluciones
 $$X_1(t)=k_1e^{4t}\begin{bmatrix}
 	1\\
 	1
@@ -125,26 +125,26 @@ $$X_1(t)=k_1e^{4t}\begin{bmatrix}
 \frac{1}{2}\\
 -1
 \end{bmatrix}$$
-Sin embargo por tratarse de un sistema lineal, se cumple el principio de superposición lo cual significa que la solución general al sistema asociado a $M_1$ es
+Por tratarse de un sistema lineal, se cumple el principio de superposición lo cual significa que la solución general al sistema asociado a $M_1$ es
 $$X(t)=k_1e^{4t}\vec{v}_{\lambda_1}+k_2e^{t}\vec{v}_{\lambda_2}$$
-Se puede apreciar que para las soluciones separadas y la solución general del sistema asociado a $M_1$, el límite de $X(t)$ cuando $t\to\infty$ es infinito, por tanto las soluciones del Ejemplo \ref{eg:Fuente2x2} siempre van a diverger a infinito independientemente de la elección de condiciones iniciales. Cuando se trata de sistemas lineales, una solución y la suma de las soluciones siempre será solución del sistema, es decir, se pueden escribir como combinación lineal. Generalizando el concepto a un sistema de $n$ ecuaciones lineales tenemos la siguiente solución general:
+Se puede apreciar que para cualquiera de las soluciones del sistema asociado a $M_1$, el límite de $X(t)$ cuando $t\to\infty$ es infinito, por tanto las soluciones del Ejemplo \ref{eg:Fuente2x2} siempre van a diverger a infinito independientemente de la elección de condiciones iniciales. Cuando se trata de sistemas lineales, una solución y la suma de las soluciones siempre será solución del sistema, es decir, se pueden escribir como combinación lineal. Generalizando el concepto a un sistema de $n$ ecuaciones lineales tenemos la siguiente solución general:
 \begin{equation}\label{eqn:solGral}
 	X(t)=k_1e^{\lambda_1 t}\vec{v}_{\lambda_1}+k_2e^{\lambda_2 t}\vec{v}_{\lambda_2}+\cdots+k_ne^{\lambda_n t}\vec{v}_{\lambda_n}
 \end{equation}
-Esta solución general también aplica perfectamente para el caso en donde se tienen eigenvalores complejos, solamente que habría que descomponer mediante la relación de Euler las exponenciales, es decir, $e^{\lambda t}$ donde $\lambda=a\pm bi$ se descompone como $e^{at}\left (\cos bt+i\sin bt\right )$. Como solución se vería de la siguiente manera
+Esta solución general también aplica perfectamente para el caso en donde se tienen eigenvalores complejos, solamente habría que descomponer las exponenciales con base en la relación de Euler, es decir, $e^{\lambda t}$ donde $\lambda=a\pm bi$ se descompone como $e^{at}\left (\cos bt+i\sin bt\right )$. Como solución se vería de la siguiente manera
 \begin{equation}\label{eqn:solCompleja}
-	X(t)=e^a\left (\cos bt+i\sin bt\right )\vec{v}_{\lambda}
+	X(t)=e^{at}\left (\cos bt+i\sin bt\right )\vec{v}_{\lambda}
 \end{equation}
-donde $\vec{v}_{\lambda}$ es un vector propio del sistema. Finalmente, en este punto tenemos todos los elementos para darle respuesta a nuestra Proposición \ref{prp:Atractores}; tanto la ecuación (\ref{eqn:solGral}) como (\ref{eqn:solCompleja}) se puede notar que si la parte real del eigenvalor del sistema es positivo, para $t\to\infty$ la exponencial también tiende a infinito y por lo tanto la solución lo hará. En contra parte, si la parte real del eigenvalor es negativa entonces la solución va a tender hacia donde los vectores propios se dirijan, particularmente hacia el punto fijo. Esto únicamente será válido si todos los eigenvalores del sistema tienen parte real negativa ya que si existe al menos uno que tenga parte real positiva eventualmente terminará divergiendo. Eso es lo que sucede con los puntos silla, quizás existan mayoría de eigenvalores con parte real negativa pero si existe al menos uno que tenga parte real positiva, eventualmente para tiempos largos la solución va a diverger. Para poder darnos una idea visual de lo que llamamos \textit{atractores}, \textit{repulsores} y \textit{puntos silla} podemos acceder al espacio fase del sistema y ver de manera integral como se comportan las soluciones del sistema lineal.
-
-\subsection{Espacios fase}
+la forma en que se comportarán las soluciones ya sea que convergan o divergan del punto fijo es mediante oscilaciones que crecen o decrecen en función de $e^{at}$. Llegando a este punto tenemos todos los elementos para darle soporte a nuestra Proposición \ref{prp:Atractores}; tanto la ecuación (\ref{eqn:solGral}) como (\ref{eqn:solCompleja}) se puede notar que si la parte real del eigenvalor del sistema es positivo, para $t\to\infty$ la exponencial también tiende a infinito y por lo tanto la solución lo hará. En contra parte, si la parte real del eigenvalor es negativa entonces la solución va a tender hacia donde los vectores propios se dirijan, particularmente hacia el punto fijo. Esto únicamente será válido si todos los eigenvalores del sistema tienen parte real negativa ya que si existe al menos uno que tenga parte real positiva eventualmente terminará divergiendo. Es lo que sucede con los puntos silla, quizás existan mayoría de eigenvalores con parte real negativa pero si existe al menos uno que tenga parte real positiva, eventualmente para tiempos largos la solución va a diverger. Para poder darnos una idea visual de lo que llamamos \textit{atractores}, \textit{repulsores} y \textit{puntos silla} podemos acceder al espacio fase del sistema y ver de manera integral como se comportan las soluciones del sistema lineal.
+%%%%%%%%%%%%%%%%%%%%%%%%%CHECKPOINT
+\subsection{Espacios fase}\label{sec:Espacios fase}
 
 El espacio fase es considerado como la representación geométrica de las trayectorias posibles en un sistema dinámico, en el mismo se contemplan todas las condiciones iniciales posibles y todas las trayectorias posibles que emergen de las anteriores. Aquí mismo encontramos gráficamente los puntos fijos y podemos distinguirlos cualitativamente de que naturaleza son. Las técnicas analíticas descritas anteriormente nos sirven para conocer el comportamiento sin el uso del espacio fase, pero para sistemas de $n=2,3$ podemos acceder al espacio fase y ver como son sus trayectorias. En ese sentido para sistemas con $n>3$ ecuaciones ya será imposible generar su visualización ya que cada uno de los ejes representa una de las cantidades del sistema. \\
 \\
 En esta breve sección únicamente veremos diversos ejemplos de sistemas $2\times 2$ con eigenvalores variados que nos muestren atractores, repulsores y puntos silla. Sin embargo se omitirán los cálculos de eigenvalores, eigenvectores y soluciones generales, únicamente se pretende mostrar al lector como podemos analizar los sistemas de manera cualitativa a través de sus espacios fase. Por último se dividirán entre espacios fase con eigenvalores reales y con eigenvalores complejos para tener una demarcación adecuada de ambos casos.
 \newpage
 \begin{ejemplo}\label{eg:EspaciosFreal}
-	Para la sección de espacios fase con puntos fijos con eigenvalores reales vamos a considerar las siguientes matrices de coeficientes para $n=2$
+	Para la sección de espacios fase con eigenvalores reales vamos a considerar las siguientes matrices de coeficientes para $n=2$
 	\begin{equation*}
 		\begin{split}
 			R_1=\begin{pmatrix}
@@ -165,7 +165,7 @@ En esta breve sección únicamente veremos diversos ejemplos de sistemas $2\time
 			\end{pmatrix}
 		\end{split}
 	\end{equation*}
-	Nótese que la $R_3$ es la misma que la $M_1$ del Ejemplo \ref{eg:Fuente2x2} la cual tiene ambos eigenvalores positivos y se había concluido que por la solución general (\ref{eqn:solGral}) que sus soluciones divergen del punto fijo; además en la Figura (\ref{fig:EFReales}) se puede observar la gráfica de la derecha que corresponde con $R_1$ como todas las soluciones divergen del punto fijo. Los eigenvalores de $R_1$ son respectivamente $\lambda_{1R_1}= -1$ y $\lambda_{2R_2}=-4$; ambos son negativos y cumplen con lo que estipula la Proposición \ref{prp:Atractores} y se puede comprobar por medio de la solución general o el gráfico de la izquierda de la Figura (\ref{fig:EFReales}). Para los eigenvalores de $R_2$ se tienen los siguientes eigenvalores $\lambda_{1R_2}=-3$ y $\lambda_{2R_2}=2$; en este caso se tiene que una de las soluciones de la ec. (\ref{eqn:solGral}) tratará de acercarse al punto fijo debido a la exponencial con $\lambda<0$, sin embargo para $t\to\infty$ las soluciones divergerán a $\pm\infty$ y lo podemos apreciar a partir del gráfico de en medio de la Figura (\ref{fig:EFReales}).
+	Nótese que la $R_3$ es la misma que la $M_1$ del Ejemplo \ref{eg:Fuente2x2} la cual tiene ambos eigenvalores positivos y se había concluido que sus soluciones divergen del punto fijo con base en la solución general (\ref{eqn:solGral}); además en la Figura (\ref{fig:EFReales}) se puede observar la gráfica de la derecha que corresponde con $R_1$ como todas las soluciones divergen del punto fijo. Los eigenvalores de $R_1$ son respectivamente $\lambda_{1R_1}= -1$ y $\lambda_{2R_1}=-4$; ambos son negativos y cumplen con lo que estipula la Proposición \ref{prp:Atractores} y se puede comprobar por medio de la solución general o el gráfico de la izquierda de la Figura (\ref{fig:EFReales}) que las soluciones convergen al punto fijo. Para los eigenvalores de $R_2$ se tienen los siguientes eigenvalores $\lambda_{1R_2}=-3$ y $\lambda_{2R_2}=2$; en este caso se tiene que una de las soluciones de la ec. (\ref{eqn:solGral}) tratará de acercarse al punto fijo debido a la exponencial con $\lambda<0$, sin embargo para $t\to\infty$ las soluciones divergerán a $\pm\infty$; a partir del gráfico de en medio de la Figura (\ref{fig:EFReales}) se puede apreciar este comportamiento.
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[scale=0.23]{../../Imagenes/Espacios fase reales}
@@ -196,7 +196,8 @@ En esta breve sección únicamente veremos diversos ejemplos de sistemas $2\time
 			\end{pmatrix}
 		\end{split}
 	\end{equation*}
-	Los eigenvalores para la matriz $C_1$ son $\lambda_{C_1}=-2\pm 3i$, nuevamente notamos que la parte real de sus eigenvalores son negativas lo que significa que todas las soluciones tenderán hacia el punto de equilibrio independientemente de sus condiciones iniciales; en la gráfica de la izquierda de la Figura (\ref{fig:EFComplejos}) se puede apreciar este comportamiento. Los eigenvalores de $C_2$ son respectivamente $\lambda_{C_2}=\pm 2i$, en este caso la parte real es igual a cero lo que significa que las soluciones van a estar oscilando para $t\to\infty$ sin llegar a converger a ningún punto, este tipo de comportamientos son ideales ya que en la naturaleza no se conoce alguna cosa que oscile de manera perpetua. Para los eigenvalores de $C_3$ se tienen los eigenvalores $\lambda_{C_3}=1\pm 5i$, en este caso las soluciones divergen (agregar más cosas...). Hablar con base de la solución general el caraceter oscilatorio de divergencia, convergencia y estacionario...
+	%%%%CHECKPOINT
+	Los eigenvalores para la matriz $C_1$ son $\lambda_{C_1}=-2\pm 3i$, nuevamente notamos que la parte real de sus eigenvalores son negativas lo que significa que todas las soluciones tenderán hacia el punto de equilibrio independientemente de sus condiciones iniciales; en la gráfica de la izquierda de la Figura (\ref{fig:EFComplejos}) se puede apreciar este comportamiento. Los eigenvalores de $C_2$ son respectivamente $\lambda_{C_2}=\pm 2i$, en este caso la parte real es igual a cero lo que significa que las soluciones van a estar oscilando de un determinado valor a otro sin llegar a converger a ningún punto para $t\to\infty$ . Únicamente puede cambiar la amplitud de las oscilaciones y esto dependerá de las condiciones iniciales que se impongan. Este es el comportamiento descrito por el \textit{oscilador armónico simple} y sabemos que es considerado como ideal ya que en la naturaleza no se conocen cantidades que oscilen de manera perpetua y sin pérdida de energía. Por último los eigenvalores de $C_3$ son respectivamente $\lambda_{C_3}=1\pm 5i$, en este caso las soluciones divergen como se puede apreciar en la gráfica de la derecha de la Figura (\ref{fig:EFComplejos}). La parte real de sus eigenvalores es positiva lo que indica dicho comportamiento para cualquier condición inicial en $t\to\infty$.
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[scale=0.23]{../../Imagenes/Espacios fase complejos}
@@ -204,9 +205,17 @@ En esta breve sección únicamente veremos diversos ejemplos de sistemas $2\time
 		\label{fig:EFComplejos}
 	\end{figure}
 \end{ejemplo}
+%%%%%%%CHECPOINT
+Para terminar esta sección conviene remarcar el significado de la estabilidad e inestabilidad de los sistemas y sobre todo darle una interpretación física. Ya se ha visto que cuando un sistema es estable todas sus soluciones tienden hacia el punto fijo; la estabilidad radica en que para cualquier perturbación del sistema, este siempre regresará a su punto de equilibrio y permanecerá ahí para $t\to\infty$. A diferencia de los sistemas inestables, en donde si se encuentra en el punto de equilibrio cualquier mínima perturbación hará que nunca regrese a dicho estado y cambie totalmente su dinámica. En este sentido a los primeros sistemas se les denomina como robustos mientras que a los segundos se les denomina como sensibles. \\
+\\
+Para ejemplificar esto pensemos en un péndulo de una vara con una masa en uno de sus extremos; un punto fijo atractor es para cuando el péndulo apunta hacia abajo ya que cualquier perturbación sea pequeña o grande hará que regrese a su estado de equilibrio. En contraparte si conseguimos que el péndulo permanezca estable apuntando hacia arriba, cualquier mínima perturbación hará que nunca regrese a ese estado de equilibrio. Para este ejemplo en particular, si perturbamos el estado de equilibrio inestable terminará posicionándose en el estado de equilibrio estable para algún tiempo considerablemente largo.
 
 
 \section{Sistemas no lineales}
+
+El enfoque principal de este trabajo es sobre sistemas de ecuaciones diferenciales no lineales; ha sido pertinente abordar el tema de los sistemas lineales para poder introducir conceptos importantes que se extienden al entendimiento de los sistemas no lineales. Tal y como dice el nombre, cuando se habla de sistemas de ecuaciones diferenciales no lineales se refiere a que las funciones del sistema (\ref{eqn:sistemaLineal}) son no lineales, quiere decir que en las ecuaciones es posible hallar funciones trigonométricas, exponenciales, cuadradas, cúbicas y todo aquello que sea no lineal. Esta característica tiene importantes consecuencias ya que ahora el sistema no cumplirá el principio de superposición, es decir, la suma de las soluciones del sistema en este caso ya no será solución del sistema. \\
+\\
+Otra característica importante es que ahora resolver este tipo de sistemas de manera analítica resulta o complicado o simplemente imposible (véase el problema de los 3 cuerpos\footnote{poner cita aquí}). Dada nuestra situación debemos recurrir a la implementación de métodos numéricos para poder obtener una solución aproximada a lo que debería ser la dinámica de este tipo de sistemas. Existen métodos numéricos de diversas eficiencias (\footnote{cita})
 
 \subsection{Modelo logístico}
 

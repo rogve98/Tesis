@@ -1,6 +1,6 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.14)  10 SEP 2024 20:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.14)  13 SEP 2024 21:15
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  %&-line parsing enabled.
 **./main.tex
 (main.tex
@@ -741,24 +741,140 @@ File: pgflibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))
 \c@LayerCounter=\count348
 )
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
-Package: hyperref 2024-07-10 v7.01j Hypertext links for LaTeX
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/algorithm2e\algorithm
+2e.sty
+Package: algorithm2e 2017/07/18 v5.2 algorithms environments
+\c@AlgoLine=\count349
+\algocf@hangindent=\skip61
 
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.s
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/ifoddpage\ifoddpage.s
 ty
-Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
+\c@checkoddpage=\count350
+) (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/tools\xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+) (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/relsize\relsize.sty
+Package: relsize 2013/03/29 ver 4.1
 )
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefi
-nekeys.sty
-Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape
-.sty
-Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+\skiptotal=\skip62
+\skiplinenumber=\skip63
+\skiprule=\skip64
+\skiphlne=\skip65
+\skiptext=\skip66
+\skiplength=\skip67
+\algomargin=\skip68
+\skipalgocfslide=\skip69
+\algowidth=\dimen275
+\inoutsize=\dimen276
+\inoutindent=\dimen277
+\interspacetitleruled=\dimen278
+\interspacealgoruled=\dimen279
+\interspacetitleboxruled=\dimen280
+\algocf@ruledwidth=\skip70
+\algocf@inoutbox=\box67
+\algocf@inputbox=\box68
+\AlCapSkip=\skip71
+\AlCapHSkip=\skip72
+\algoskipindent=\skip73
+\algocf@nlbox=\box69
+\algocf@hangingbox=\box70
+\algocf@untilbox=\box71
+\algocf@skipuntil=\skip74
+\algocf@capbox=\box72
+\algocf@lcaptionbox=\skip75
+\algoheightruledefault=\skip76
+\algoheightrule=\skip77
+\algotitleheightruledefault=\skip78
+\algotitleheightrule=\skip79
+\c@algocfline=\count351
+\c@algocfproc=\count352
+\c@algocf=\count353
+\algocf@algoframe=\box73
+\algocf@algobox=\box74
+) (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/minted\minted.sty
+Package: minted 2023/12/18 v2.9 Yet another Pygments shim for LaTeX
+
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.s
+ty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
 Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
 )
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.s
+ty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+))
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/fvextra\fvextra.sty
+Package: fvextra 2024/05/16 v1.7.0 fvextra - extensions and patches for fancyvr
+b
+
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/fancyvrb\fancyvrb.sty
+Package: fancyvrb 2024/01/20 4.5c verbatim text (tvz,hv)
+\FV@CodeLineNo=\count354
+\FV@InFile=\read5
+\FV@TabBox=\box75
+\c@FancyVerbLine=\count355
+\FV@StepNumber=\count356
+\FV@OutFile=\write5
+) (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/upquote\upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+) (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/lineno\lineno.sty
+Package: lineno 2023/05/20 line numbers on paragraphs v5.3
+\linenopenalty=\count357
+\output=\toks68
+\linenoprevgraf=\count358
+\linenumbersep=\dimen281
+\linenumberwidth=\dimen282
+\c@linenumber=\count359
+\c@pagewiselinenumber=\count360
+\c@LN@truepage=\count361
+\c@internallinenumber=\count362
+\c@internallinenumbers=\count363
+\quotelinenumbersep=\dimen283
+\bframerule=\dimen284
+\bframesep=\dimen285
+\bframebox=\box76
+\linenoamsmath@ams@eqpen=\count364
+LaTeX Info: Redefining \\ on input line 3180.
+)
+\c@FancyVerbWriteLine=\count365
+\c@FancyVerbBufferIndex=\count366
+\c@FancyVerbBufferLength=\count367
+\c@FancyVerbBufferLine=\count368
+\c@FV@oldbufferlength=\count369
+\c@FV@TrueTabGroupLevel=\count370
+\c@FV@TrueTabCounter=\count371
+\FV@TabBox@Group=\box77
+\FV@TmpLength=\skip80
+\c@FV@HighlightLinesStart=\count372
+\c@FV@HighlightLinesStop=\count373
+\FV@LoopCount=\count374
+\FV@NCharsBox=\box78
+\FV@BreakIndent=\dimen286
+\FV@BreakIndentNChars=\count375
+\FV@BreakSymbolSepLeft=\dimen287
+\FV@BreakSymbolSepLeftNChars=\count376
+\FV@BreakSymbolSepRight=\dimen288
+\FV@BreakSymbolSepRightNChars=\count377
+\FV@BreakSymbolIndentLeft=\dimen289
+\FV@BreakSymbolIndentLeftNChars=\count378
+\FV@BreakSymbolIndentRight=\dimen290
+\FV@BreakSymbolIndentRightNChars=\count379
+\c@FancyVerbLineBreakLast=\count380
+\FV@LineBox=\box79
+\FV@LineIndentBox=\box80
+\c@FV@BreakBufferDepth=\count381
+\FV@LineWidth=\dimen291
+) (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/tools\shellesc.sty
+Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
+Package shellesc Info: Unrestricted shell escape enabled on input line 75.
+)
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/ifplatform\ifplatform
+.sty
+Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
+
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcm
 ds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
@@ -771,7 +887,61 @@ Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
+)
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/catchfile\catchfile
+.sty
+Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
+
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.s
+ty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 ))
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+)) (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/xstring\xstring.st
+y
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/xstring\xstring.tex
+\xs_counta=\count382
+\xs_countb=\count383
+)
+Package: xstring 2023/08/22 v1.86 String manipulations (CT)
+) (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/framed\framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip81
+\fb@frw=\dimen292
+\fb@frh=\dimen293
+\FrameRule=\dimen294
+\FrameSep=\dimen295
+) (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count384
+\float@exts=\toks69
+\float@box=\box81
+\@float@everytoks=\toks70
+\@floatcapt=\box82
+)
+\minted@appexistsfile=\read6
+\minted@bgbox=\box83
+\minted@code=\write6
+\c@minted@FancyVerbLineTemp=\count385
+\c@minted@pygmentizecounter=\count386
+\@float@every@listing=\toks71
+\c@listing=\count387
+)
+runsystem(if not exist _minted-main mkdir _minted-main)...executed.
+
+
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2024-07-10 v7.01j Hypertext links for LaTeX
+
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefi
+nekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape
+.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+)
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
@@ -784,21 +954,17 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gett
 itlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
-
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.s
-ty
-Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
-))
-\c@section@level=\count349
+)
+\c@section@level=\count388
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc
 .sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
-\@linkdim=\dimen275
-\Hy@linkcounter=\count350
-\Hy@pagecounter=\count351
+\@linkdim=\dimen296
+\Hy@linkcounter=\count389
+\Hy@pagecounter=\count390
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2024-07-10 v7.01j Hyperref: PDFDocEncoding definition (HO)
@@ -808,7 +974,7 @@ Now handling font encoding PD1 ...
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count352
+\Hy@SavedSpaceFactor=\count391
  (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2024-07-10 v7.01j Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -821,13 +987,13 @@ Package hyperref Info: Plain pages OFF on input line 4172.
 Package hyperref Info: Backreferencing OFF on input line 4177.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4424.
-\c@Hy@tempcnt=\count353
+\c@Hy@tempcnt=\count392
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4763.
-\XeTeXLinkMargin=\dimen276
+\XeTeXLinkMargin=\dimen297
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -837,9 +1003,9 @@ lc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count354
-\Field@Width=\dimen277
-\Fld@charsize=\dimen278
+\Fld@menulength=\count393
+\Field@Width=\dimen298
+\Fld@charsize=\dimen299
 Package hyperref Info: Hyper figures OFF on input line 6042.
 Package hyperref Info: Link nesting OFF on input line 6047.
 Package hyperref Info: Hyper index ON on input line 6050.
@@ -852,9 +1018,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6072.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count355
-\c@Item=\count356
-\c@Hfootnote=\count357
+\Hy@abspage=\count394
+\c@Item=\count395
+\c@Hfootnote=\count396
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
@@ -867,8 +1033,8 @@ Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
 kage
 with kernel methods
 )
-\Fld@listcount=\count358
-\c@bookmark@seq@number=\count359
+\Fld@listcount=\count397
+\c@bookmark@seq@number=\count398
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunf
 ilecheck.sty
@@ -881,58 +1047,41 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 85.
 )
-\Hy@SectionHShift=\skip61
+\Hy@SectionHShift=\skip82
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/captdef\captdef.sty
 Package: captdef 1998/12/17 non-floating captions
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/psfrag\psfrag.sty
 Package: psfrag 1998/04/11 v3.04 PSfrag (MCG)
-\pfg@pcount=\count360
-\pfg@scount=\count361
-\pfg@temp=\write5
+\pfg@pcount=\count399
+\pfg@scount=\count400
+\pfg@temp=\write7
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/tools\multicol.sty
 Package: multicol 2024/05/23 v1.9h multicolumn formatting (FMi)
-\c@tracingmulticols=\count362
-\mult@box=\box67
-\multicol@leftmargin=\dimen279
-\c@unbalance=\count363
-\c@collectmore=\count364
-\doublecol@number=\count365
-\multicoltolerance=\count366
-\multicolpretolerance=\count367
-\full@width=\dimen280
-\page@free=\dimen281
-\premulticols=\dimen282
-\postmulticols=\dimen283
-\multicolsep=\skip62
-\multicolbaselineskip=\skip63
-\partial@page=\box68
-\last@line=\box69
-\mc@boxedresult=\box70
-\maxbalancingoverflow=\dimen284
-\mult@rightbox=\box71
-\mult@grightbox=\box72
-\mult@firstbox=\box73
-\mult@gfirstbox=\box74
-\@tempa=\box75
-\@tempa=\box76
-\@tempa=\box77
-\@tempa=\box78
-\@tempa=\box79
-\@tempa=\box80
-\@tempa=\box81
-\@tempa=\box82
-\@tempa=\box83
-\@tempa=\box84
-\@tempa=\box85
-\@tempa=\box86
-\@tempa=\box87
-\@tempa=\box88
-\@tempa=\box89
-\@tempa=\box90
-\@tempa=\box91
+\c@tracingmulticols=\count401
+\mult@box=\box84
+\multicol@leftmargin=\dimen300
+\c@unbalance=\count402
+\c@collectmore=\count403
+\doublecol@number=\count404
+\multicoltolerance=\count405
+\multicolpretolerance=\count406
+\full@width=\dimen301
+\page@free=\dimen302
+\premulticols=\dimen303
+\postmulticols=\dimen304
+\multicolsep=\skip83
+\multicolbaselineskip=\skip84
+\partial@page=\box85
+\last@line=\box86
+\mc@boxedresult=\box87
+\maxbalancingoverflow=\dimen305
+\mult@rightbox=\box88
+\mult@grightbox=\box89
+\mult@firstbox=\box90
+\mult@gfirstbox=\box91
 \@tempa=\box92
 \@tempa=\box93
 \@tempa=\box94
@@ -952,22 +1101,39 @@ Package: multicol 2024/05/23 v1.9h multicolumn formatting (FMi)
 \@tempa=\box108
 \@tempa=\box109
 \@tempa=\box110
-\c@minrows=\count368
-\c@columnbadness=\count369
-\c@finalcolumnbadness=\count370
-\last@try=\dimen285
-\multicolovershoot=\dimen286
-\multicolundershoot=\dimen287
-\mult@nat@firstbox=\box111
-\colbreak@box=\box112
-\mc@col@check@num=\count371
+\@tempa=\box111
+\@tempa=\box112
+\@tempa=\box113
+\@tempa=\box114
+\@tempa=\box115
+\@tempa=\box116
+\@tempa=\box117
+\@tempa=\box118
+\@tempa=\box119
+\@tempa=\box120
+\@tempa=\box121
+\@tempa=\box122
+\@tempa=\box123
+\@tempa=\box124
+\@tempa=\box125
+\@tempa=\box126
+\@tempa=\box127
+\c@minrows=\count407
+\c@columnbadness=\count408
+\c@finalcolumnbadness=\count409
+\last@try=\dimen306
+\multicolovershoot=\dimen307
+\multicolundershoot=\dimen308
+\mult@nat@firstbox=\box128
+\colbreak@box=\box129
+\mc@col@check@num=\count410
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/wrapfig\wrapfig.sty
-\wrapoverhang=\dimen288
-\WF@size=\dimen289
-\c@WF@wrappedlines=\count372
-\WF@box=\box113
-\WF@everypar=\toks68
+\wrapoverhang=\dimen309
+\WF@size=\dimen310
+\c@WF@wrappedlines=\count411
+\WF@box=\box130
+\WF@everypar=\toks72
 Package: wrapfig 2003/01/31  v 3.6
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/cancel\cancel.sty
@@ -975,7 +1141,7 @@ Package: cancel 2013/04/12 v2.2 Cancel math terms
 )
 
 Package xcolor Warning: Package option `usenames' is obsolete and ignored on in
-put line 27.
+put line 29.
 
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/graphics\dvipsnam.def
@@ -987,35 +1153,36 @@ File: svgnam.def 2023/11/15 v3.01 Predefined colors according to SVG 1.1 (UK)
 Package: colortbl 2024/07/06 v1.0i Color table columns (DPC)
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
 Package: array 2024/06/14 v2.6d Tabular extension package (FMi)
-\col@sep=\dimen290
-\ar@mcellbox=\box114
-\extrarowheight=\dimen291
-\NC@list=\toks69
-\extratabsurround=\skip64
-\backup@length=\skip65
-\ar@cellbox=\box115
+\col@sep=\dimen311
+\ar@mcellbox=\box131
+\extrarowheight=\dimen312
+\NC@list=\toks73
+\extratabsurround=\skip85
+\backup@length=\skip86
+\ar@cellbox=\box132
 )
-\everycr=\toks70
-\minrowclearance=\skip66
-\rownum=\count373
+\everycr=\toks74
+\minrowclearance=\skip87
+\rownum=\count412
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen292
-\captionmargin=\dimen293
-\caption@leftmargin=\dimen294
-\caption@rightmargin=\dimen295
-\caption@width=\dimen296
-\caption@indent=\dimen297
-\caption@parindent=\dimen298
-\caption@hangindent=\dimen299
+\caption@tempdima=\dimen313
+\captionmargin=\dimen314
+\caption@leftmargin=\dimen315
+\caption@rightmargin=\dimen316
+\caption@width=\dimen317
+\caption@indent=\dimen318
+\caption@parindent=\dimen319
+\caption@hangindent=\dimen320
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count374
-\c@continuedfloat=\count375
+\c@caption@flags=\count413
+\c@continuedfloat=\count414
+Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: wrapfig package is loaded.
 )
@@ -1023,46 +1190,55 @@ Package caption Info: wrapfig package is loaded.
 y
 Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
 Package caption Info: New subtype `subfigure' on input line 238.
-\c@subfigure=\count376
+\c@subfigure=\count415
 Package caption Info: New subtype `subtable' on input line 238.
-\c@subtable=\count377
+\c@subtable=\count416
+) (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/cite\cite.sty
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 332.
+Package: cite 2015/02/27  v 5.5
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 38.
-\c@proposición=\count378
-\c@teorema=\count379
-\c@definición=\count380
-\c@ejemplo=\count381
+Package hyperref Info: Option `colorlinks' set `true' on input line 41.
+\c@proposición=\count417
+\c@teorema=\count418
+\c@definición=\count419
+\c@ejemplo=\count420
+runsystem(for ^%i in (pygmentize.exe pygmentize.bat pygmentize.cmd) do set > ma
+in.aex <nul: /p x=^%~$PATH:i>> main.aex)...executed.
+
+runsystem(del main.aex)...executed.
+
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-p
 dftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count382
-\l__pdf_internal_box=\box116
+\l__color_backend_stack_int=\count421
+\l__pdf_internal_box=\box133
 ) (main.aux
-LaTeX Info: Redefining \. on input line 8.
-LaTeX Info: Redefining \% on input line 8.
+LaTeX Info: Redefining \. on input line 9.
+LaTeX Info: Redefining \% on input line 9.
  (TeX_files/chapter01.aux) (TeX_files/chapter02.aux)
 (TeX_files/Apéndices.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1098,23 +1274,23 @@ LaTeX Font Info:    ... okay on input line 57.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \. on input line 57.
-LaTeX Info: Redefining \% on input line 57.
+LaTeX Info: Redefining \. on input line 60.
+LaTeX Info: Redefining \% on input line 60.
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.
 mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count383
-\scratchdimen=\dimen300
-\scratchbox=\box117
-\nofMPsegments=\count384
-\nofMParguments=\count385
-\everyMPshowfont=\toks71
-\MPscratchCnt=\count386
-\MPscratchDim=\dimen301
-\MPnumerator=\count387
-\makeMPintoPDFobject=\count388
-\everyMPtoPDFconversion=\toks72
+\scratchcounter=\count422
+\scratchdimen=\dimen321
+\scratchbox=\box134
+\nofMPsegments=\count423
+\nofMParguments=\count424
+\everyMPshowfont=\toks75
+\MPscratchCnt=\count425
+\MPscratchDim=\dimen322
+\MPnumerator=\count426
+\makeMPintoPDFobject=\count427
+\everyMPtoPDFconversion=\toks76
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf
 -base.sty
@@ -1126,10 +1302,10 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 .cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring ON on input line 57.
+Package hyperref Info: Link coloring ON on input line 60.
  (main.out) (main.out)
-\@outlinefile=\write6
-\openout6 = `main.out'.
+\@outlinefile=\write8
+\openout8 = `main.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
@@ -1165,35 +1341,35 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<Escudo-UNAM.pdf, id=58, 300.51309pt x 337.88977pt>
+<Escudo-UNAM.pdf, id=62, 300.51309pt x 337.88977pt>
 File: Escudo-UNAM.pdf Graphic file (type pdf)
 <use Escudo-UNAM.pdf>
-Package pdftex.def Info: Escudo-UNAM.pdf  used on input line 63.
+Package pdftex.def Info: Escudo-UNAM.pdf  used on input line 66.
 (pdftex.def)             Requested size: 68.77722pt x 77.33466pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 63.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 66.
 
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 63.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 66.
 
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<Escudo-FCIENCIAS.pdf, id=59, 359.74399pt x 411.136pt>
+<Escudo-FCIENCIAS.pdf, id=63, 359.74399pt x 411.136pt>
 File: Escudo-FCIENCIAS.pdf Graphic file (type pdf)
 <use Escudo-FCIENCIAS.pdf>
-Package pdftex.def Info: Escudo-FCIENCIAS.pdf  used on input line 63.
+Package pdftex.def Info: Escudo-FCIENCIAS.pdf  used on input line 66.
 (pdftex.def)             Requested size: 67.66591pt x 77.33466pt.
 
-Underfull \hbox (badness 10000) detected at line 63
+Underfull \hbox (badness 10000) detected at line 66
 \OT1/cmr/bx/n/14.4 T E S I S
  []
 
 
-Underfull \hbox (badness 10000) detected at line 63
+Underfull \hbox (badness 10000) detected at line 66
 \OT1/cmr/m/n/10.95 P R E S E N T A :
  []
 
@@ -1219,16 +1395,16 @@ iple pdfs with page group included in a single page
 
 ]
 
-LaTeX Info: Redefining \. on input line 72.
-LaTeX Info: Redefining \% on input line 72.
+LaTeX Info: Redefining \. on input line 75.
+LaTeX Info: Redefining \% on input line 75.
 [4
 
 ]
 
 [5]
 
-LaTeX Info: Redefining \. on input line 74.
-LaTeX Info: Redefining \% on input line 74.
+LaTeX Info: Redefining \. on input line 77.
+LaTeX Info: Redefining \% on input line 77.
 [6
 
 ] (main.toc
@@ -1252,54 +1428,66 @@ Package spanish Warning: Replacing `OT1/cmr/bx/sc' by
 (spanish)                faked small caps on input line 4.
 
 )
-\tf@toc=\write7
-\openout7 = `main.toc'.
+\tf@toc=\write9
+\openout9 = `main.toc'.
 
 
 
 [7]
 
-LaTeX Info: Redefining \. on input line 75.
-LaTeX Info: Redefining \% on input line 75.
+LaTeX Info: Redefining \. on input line 78.
+LaTeX Info: Redefining \% on input line 78.
 [8
 
 ] (main.lof
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
-\tf@lof=\write8
-\openout8 = `main.lof'.
+\tf@lof=\write10
+\openout10 = `main.lof'.
 
 
 
 [9]
 
-LaTeX Info: Redefining \. on input line 76.
-LaTeX Info: Redefining \% on input line 76.
+LaTeX Info: Redefining \. on input line 79.
+LaTeX Info: Redefining \% on input line 79.
 [10
 
 ] (main.lot
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
-\tf@lot=\write9
-\openout9 = `main.lot'.
+\tf@lot=\write11
+\openout11 = `main.lot'.
 
 
 
 [11]
 
-LaTeX Info: Redefining \. on input line 79.
-LaTeX Info: Redefining \% on input line 79.
+LaTeX Info: Redefining \. on input line 80.
+LaTeX Info: Redefining \% on input line 80.
 [12
 
-]
+] (main.loa)
+\tf@loa=\write12
+\openout12 = `main.loa'.
+
+
 
 [13]
 
-LaTeX Info: Redefining \. on input line 81.
-LaTeX Info: Redefining \% on input line 81.
+LaTeX Info: Redefining \. on input line 82.
+LaTeX Info: Redefining \% on input line 82.
 [14
+
+]
+
+[15]
+
+LaTeX Info: Redefining \. on input line 84.
+LaTeX Info: Redefining \% on input line 84.
+[16
 
 ]
 \openout2 = `./TeX_files/chapter01.aux'.
@@ -1338,39 +1526,44 @@ Underfull \hbox (badness 10000) in paragraph at lines 142--145
 LaTeX Info: Redefining \. on input line 145.
 LaTeX Info: Redefining \% on input line 145.
 [5]
-<../../Imagenes/Espacios fase reales.png, id=233, 2007.5pt x 803.0pt>
+<../../Imagenes/Espacios fase reales.png, id=249, 2007.5pt x 803.0pt>
 File: ../../Imagenes/Espacios fase reales.png Graphic file (type png)
 <use ../../Imagenes/Espacios fase reales.png>
 Package pdftex.def Info: ../../Imagenes/Espacios fase reales.png  used on input
  line 171.
 (pdftex.def)             Requested size: 461.71529pt x 184.68611pt.
-<../../Imagenes/Espacios fase complejos.png, id=237, 2007.5pt x 803.0pt>
+<../../Imagenes/Espacios fase complejos.png, id=254, 2007.5pt x 803.0pt>
 File: ../../Imagenes/Espacios fase complejos.png Graphic file (type png)
 <use ../../Imagenes/Espacios fase complejos.png>
 Package pdftex.def Info: ../../Imagenes/Espacios fase complejos.png  used on in
-put line 202.
+put line 203.
 (pdftex.def)             Requested size: 461.71529pt x 184.68611pt.
 
 
-LaTeX Info: Redefining \. on input line 206.
-LaTeX Info: Redefining \% on input line 206.
-[6 <../../Imagenes/Espacios fase reales.png>])
+LaTeX Info: Redefining \. on input line 207.
+LaTeX Info: Redefining \% on input line 207.
+[6 <../../Imagenes/Espacios fase reales.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 209--212
 
-LaTeX Info: Redefining \. on input line 82.
-LaTeX Info: Redefining \% on input line 82.
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 212.
+LaTeX Info: Redefining \% on input line 212.
 [7 <../../Imagenes/Espacios fase complejos.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 216--219
+
+ []
+
+)
+
+LaTeX Info: Redefining \. on input line 85.
+LaTeX Info: Redefining \% on input line 85.
+[8]
 \openout2 = `./TeX_files/chapter02.aux'.
 
  (TeX_files/chapter02.tex
-
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
-[8
-
-
-
-
-]
 Cap\'{\i }tulo 2.
 
 Underfull \hbox (badness 10000) in paragraph at lines 6--10
@@ -1379,7 +1572,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--10
 
 
 
-[9]
+[9
+
+
+
+
+]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -1387,12 +1585,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 50.
 LaTeX Info: Redefining \% on input line 50.
 [10]
-<../../Imagenes/Competencia de especies.png, id=270, 462.528pt x 346.896pt>
+<../../Imagenes/Competencia de especies.png, id=293, 1806.75pt x 1606.0pt>
 File: ../../Imagenes/Competencia de especies.png Graphic file (type png)
 <use ../../Imagenes/Competencia de especies.png>
 Package pdftex.def Info: ../../Imagenes/Competencia de especies.png  used on in
 put line 54.
-(pdftex.def)             Requested size: 217.66211pt x 163.24757pt.
+(pdftex.def)             Requested size: 241.84843pt x 214.96272pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 60--68
 
@@ -1422,7 +1620,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 121.
 
-<../../Imagenes/karate.png, id=308, 379.4175pt x 379.4175pt>
+<../../Imagenes/karate.png, id=328, 379.4175pt x 379.4175pt>
 File: ../../Imagenes/karate.png Graphic file (type png)
 <use ../../Imagenes/karate.png>
 Package pdftex.def Info: ../../Imagenes/karate.png  used on input line 127.
@@ -1439,7 +1637,7 @@ Overfull \hbox (6.92897pt too wide) detected at line 141
 \OML/cmm/m/it/10.95 a[] \OT1/cmr/m/n/10.95 = []
  []
 
-<../../Imagenes/Red10.png, id=317, 379.4175pt x 379.4175pt>
+<../../Imagenes/Red10.png, id=338, 379.4175pt x 379.4175pt>
 File: ../../Imagenes/Red10.png Graphic file (type png)
 <use ../../Imagenes/Red10.png>
 Package pdftex.def Info: ../../Imagenes/Red10.png  used on input line 149.
@@ -1461,21 +1659,33 @@ LaTeX Info: Redefining \% on input line 177.
 [14 <../../Imagenes/karate.png> <../../Imagenes/Red10.png>]
 
 [15]
-<../../Imagenes/Red10Dir.png, id=335, 379.4175pt x 379.4175pt>
+<../../Imagenes/Red10Dir.png, id=357, 379.4175pt x 379.4175pt>
 File: ../../Imagenes/Red10Dir.png Graphic file (type png)
 <use ../../Imagenes/Red10Dir.png>
 Package pdftex.def Info: ../../Imagenes/Red10Dir.png  used on input line 193.
 (pdftex.def)             Requested size: 217.66211pt x 217.66547pt.
 )
 
-LaTeX Info: Redefining \. on input line 83.
-LaTeX Info: Redefining \% on input line 83.
+LaTeX Info: Redefining \. on input line 86.
+LaTeX Info: Redefining \% on input line 86.
 [16 <../../Imagenes/Red10Dir.png>]
 \openout2 = `./TeX_files/Apéndices.aux'.
 
  (TeX_files/Apéndices.tex
 Cap\'{\i }tulo 3.
-)
+\openout5 = `main.pyg'.
+
+(_minted-main/default.pygstyle)
+(_minted-main/03A701D00B80E7CAFECA324C7436C1BE228C163F5D4C4DD96BE66FA41258E0CF.
+pygtex
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
+))
+Underfull \hbox (badness 10000) in paragraph at lines 19--87
+
+ []
+
+
 
 [17
 
@@ -1484,15 +1694,11 @@ Cap\'{\i }tulo 3.
 
 ]
 
-LaTeX Info: Redefining \. on input line 86.
-LaTeX Info: Redefining \% on input line 86.
-[18
-
-
-
-] (main.aux
-LaTeX Info: Redefining \. on input line 8.
-LaTeX Info: Redefining \% on input line 8.
+LaTeX Info: Redefining \. on input line 87.
+LaTeX Info: Redefining \% on input line 87.
+[18] (main.aux
+LaTeX Info: Redefining \. on input line 9.
+LaTeX Info: Redefining \% on input line 9.
  (TeX_files/chapter01.aux) (TeX_files/chapter02.aux)
 (TeX_files/Apéndices.aux))
  ***********
@@ -1504,16 +1710,18 @@ L3 programming layer <2024-07-20>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7D505BB37E440B54F137853C3D4E5651;2446.
+(rerunfilecheck)             Checksum: 3FD7D80E9F681F7098F3A39760DC5E90;2608.
+runsystem(del main.pyg)...executed.
+
  ) 
 Here is how much of TeX's memory you used:
- 29228 strings out of 473899
- 551096 string characters out of 5725556
+ 33434 strings out of 473899
+ 638964 string characters out of 5725556
  1959960 words of memory out of 5000000
- 51448 multiletter control sequences out of 15000+600000
- 571782 words of font info for 86 fonts, out of 8000000 for 9000
+ 55559 multiletter control sequences out of 15000+600000
+ 572118 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 109i,30n,117p,1324b,600s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 109i,30n,117p,1421b,892s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
 m/cmbx10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public
 /amsfonts/cm/cmbx12.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/t
@@ -1521,25 +1729,28 @@ ype1/public/amsfonts/cm/cmbx8.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKT
 eX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/Rodrigo/AppData/Local/
 Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Rodrigo/Ap
 pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users
-/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pf
-b><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmmi12.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmmi6.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/Rodrigo/AppData/Local/Prog
-rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Rodrigo/AppData/
-Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Rodrigo
-/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/User
-s/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb
-><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmsl10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmsy10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/amsfonts/cm/cmsy9.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Rodrigo/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (32 pages, 1629406 bytes).
+/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmitt10.p
+fb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
+cm/cmmi10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmmi12.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Rodrigo/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/Rodrigo/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Rodr
+igo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/U
+sers/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.
+pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
+/cm/cmr9.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/amsfonts/cm/cmsl10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Users/Rodrigo/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Rodrigo/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/Ro
+drigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.
+pfb>
+Output written on main.pdf (34 pages, 2213797 bytes).
 PDF statistics:
- 455 PDF objects out of 1000 (max. 8388607)
- 89 named destinations out of 1000 (max. 500000)
- 157 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 496 PDF objects out of 1000 (max. 8388607)
+ 99 named destinations out of 1000 (max. 500000)
+ 165 words of extra memory for PDF output out of 10000 (max. 10000000)
 
