@@ -77,7 +77,7 @@ function DiagonalJ(params::Parametros)
             end
             return sis
         end
-        return LK = RK4(sistema,params.x0,params.t0,params.tf,params.h)[2]
+        return RK4(sistema,params.x0,params.t0,params.tf,params.h)[2]
     end
     LK = Estables(A)
     while !(esEstable(LK))

@@ -19,6 +19,7 @@ include("Estabilidad.jl") #Contiene las funciones de estabilidad por punto criti
 include("Sistema.jl") #Contiene las funciones del sistema y la transición.
 include("pruebas.jl") #Contiene código reciclado y algunas pruebas importantes por hacer
 include("Scripts.jl") #Contiene scripts para poder guardar los datos en archivos .CSV
+include("paralel.jl") #Vamos a implementar cómputo en paralelo.
 
 """
 Redes aleatorias que fungen como Jacobianos (matrices de interacciones). Es el estilo 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.14)  13 SEP 2024 21:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.14)  24 SEP 2024 20:10
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1217,8 +1217,7 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 ) (main.aux
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
- (TeX_files/chapter01.aux) (TeX_files/chapter02.aux)
-(TeX_files/Apéndices.aux))
+ (TeX_files/chapter01.aux) (TeX_files/Apéndices.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
@@ -1341,7 +1340,7 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<Escudo-UNAM.pdf, id=62, 300.51309pt x 337.88977pt>
+<Escudo-UNAM.pdf, id=54, 300.51309pt x 337.88977pt>
 File: Escudo-UNAM.pdf Graphic file (type pdf)
 <use Escudo-UNAM.pdf>
 Package pdftex.def Info: Escudo-UNAM.pdf  used on input line 66.
@@ -1358,7 +1357,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 66.
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<Escudo-FCIENCIAS.pdf, id=63, 359.74399pt x 411.136pt>
+<Escudo-FCIENCIAS.pdf, id=55, 359.74399pt x 411.136pt>
 File: Escudo-FCIENCIAS.pdf Graphic file (type pdf)
 <use Escudo-FCIENCIAS.pdf>
 Package pdftex.def Info: Escudo-FCIENCIAS.pdf  used on input line 66.
@@ -1526,13 +1525,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 142--145
 LaTeX Info: Redefining \. on input line 145.
 LaTeX Info: Redefining \% on input line 145.
 [5]
-<../../Imagenes/Espacios fase reales.png, id=249, 2007.5pt x 803.0pt>
+<../../Imagenes/Espacios fase reales.png, id=231, 2007.5pt x 803.0pt>
 File: ../../Imagenes/Espacios fase reales.png Graphic file (type png)
 <use ../../Imagenes/Espacios fase reales.png>
 Package pdftex.def Info: ../../Imagenes/Espacios fase reales.png  used on input
  line 171.
 (pdftex.def)             Requested size: 461.71529pt x 184.68611pt.
-<../../Imagenes/Espacios fase complejos.png, id=254, 2007.5pt x 803.0pt>
+<../../Imagenes/Espacios fase complejos.png, id=236, 2007.5pt x 803.0pt>
 File: ../../Imagenes/Espacios fase complejos.png Graphic file (type png)
 <use ../../Imagenes/Espacios fase complejos.png>
 Package pdftex.def Info: ../../Imagenes/Espacios fase complejos.png  used on in
@@ -1552,127 +1551,59 @@ Underfull \hbox (badness 10000) in paragraph at lines 209--212
 LaTeX Info: Redefining \. on input line 212.
 LaTeX Info: Redefining \% on input line 212.
 [7 <../../Imagenes/Espacios fase complejos.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 216--219
+Underfull \hbox (badness 10000) in paragraph at lines 217--231
 
  []
 
-)
+
+Underfull \hbox (badness 10000) in paragraph at lines 217--231
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 217--231
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 217--231
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 217--231
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 217--231
+
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 231.
+LaTeX Info: Redefining \% on input line 231.
+[8]
+Underfull \vbox (badness 4805) has occurred while \output is active []
+
+
+
+LaTeX Info: Redefining \. on input line 231.
+LaTeX Info: Redefining \% on input line 231.
+[9])
 
 LaTeX Info: Redefining \. on input line 85.
 LaTeX Info: Redefining \% on input line 85.
-[8]
-\openout2 = `./TeX_files/chapter02.aux'.
-
- (TeX_files/chapter02.tex
-Cap\'{\i }tulo 2.
-
-Underfull \hbox (badness 10000) in paragraph at lines 6--10
-
- []
-
-
-
-[9
-
-
-
-
-]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-LaTeX Info: Redefining \. on input line 50.
-LaTeX Info: Redefining \% on input line 50.
 [10]
-<../../Imagenes/Competencia de especies.png, id=293, 1806.75pt x 1606.0pt>
-File: ../../Imagenes/Competencia de especies.png Graphic file (type png)
-<use ../../Imagenes/Competencia de especies.png>
-Package pdftex.def Info: ../../Imagenes/Competencia de especies.png  used on in
-put line 54.
-(pdftex.def)             Requested size: 241.84843pt x 214.96272pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 60--68
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 60--68
-
- []
-
-
-
-[11 <../../Imagenes/Competencia de especies.png>]
-
-LaTeX Info: Redefining \. on input line 112.
-LaTeX Info: Redefining \% on input line 112.
-[12]
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 121.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 121.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 121.
-
-<../../Imagenes/karate.png, id=328, 379.4175pt x 379.4175pt>
-File: ../../Imagenes/karate.png Graphic file (type png)
-<use ../../Imagenes/karate.png>
-Package pdftex.def Info: ../../Imagenes/karate.png  used on input line 127.
-(pdftex.def)             Requested size: 217.66211pt x 217.66547pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 123--133
-
- []
-
-
-
-[13]
-Overfull \hbox (6.92897pt too wide) detected at line 141
-\OML/cmm/m/it/10.95 a[] \OT1/cmr/m/n/10.95 = []
- []
-
-<../../Imagenes/Red10.png, id=338, 379.4175pt x 379.4175pt>
-File: ../../Imagenes/Red10.png Graphic file (type png)
-<use ../../Imagenes/Red10.png>
-Package pdftex.def Info: ../../Imagenes/Red10.png  used on input line 149.
-(pdftex.def)             Requested size: 217.66211pt x 217.66547pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 170--177
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 170--177
-
- []
-
-
-
-LaTeX Info: Redefining \. on input line 177.
-LaTeX Info: Redefining \% on input line 177.
-[14 <../../Imagenes/karate.png> <../../Imagenes/Red10.png>]
-
-[15]
-<../../Imagenes/Red10Dir.png, id=357, 379.4175pt x 379.4175pt>
-File: ../../Imagenes/Red10Dir.png Graphic file (type png)
-<use ../../Imagenes/Red10Dir.png>
-Package pdftex.def Info: ../../Imagenes/Red10Dir.png  used on input line 193.
-(pdftex.def)             Requested size: 217.66211pt x 217.66547pt.
-)
-
-LaTeX Info: Redefining \. on input line 86.
-LaTeX Info: Redefining \% on input line 86.
-[16 <../../Imagenes/Red10Dir.png>]
 \openout2 = `./TeX_files/Apéndices.aux'.
 
  (TeX_files/Apéndices.tex
-Cap\'{\i }tulo 3.
+Cap\'{\i }tulo 2.
+
+LaTeX Warning: Reference `fig:CompetenciaEspecies' on page 11 undefined on inpu
+t line 21.
+
 \openout5 = `main.pyg'.
 
 (_minted-main/default.pygstyle)
@@ -1687,7 +1618,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--87
 
 
 
-[17
+[11
 
 
 
@@ -1696,11 +1627,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--87
 
 LaTeX Info: Redefining \. on input line 87.
 LaTeX Info: Redefining \% on input line 87.
-[18] (main.aux
+[12] (main.aux
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
- (TeX_files/chapter01.aux) (TeX_files/chapter02.aux)
-(TeX_files/Apéndices.aux))
+ (TeX_files/chapter01.aux) (TeX_files/Apéndices.aux))
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
@@ -1709,17 +1639,20 @@ L3 programming layer <2024-07-20>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 3FD7D80E9F681F7098F3A39760DC5E90;2608.
+(rerunfilecheck)             Checksum: 64AD35E12AC01354118761A52B6F9A6B;1846.
 runsystem(del main.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 33434 strings out of 473899
- 638964 string characters out of 5725556
- 1959960 words of memory out of 5000000
- 55559 multiletter control sequences out of 15000+600000
- 572118 words of font info for 88 fonts, out of 8000000 for 9000
+ 33309 strings out of 473899
+ 635571 string characters out of 5725556
+ 1950960 words of memory out of 5000000
+ 55474 multiletter control sequences out of 15000+600000
+ 569942 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  109i,30n,117p,1421b,892s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
@@ -1732,25 +1665,23 @@ pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users
 /Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmitt10.p
 fb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
 cm/cmmi10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmmi12.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Rodrigo/AppData/Local/Pr
-ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/Rodrigo/AppDat
-a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Rodr
-igo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/U
-sers/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.
-pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
-/cm/cmr9.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmsl10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Users/Rodrigo/AppData/Local/Pr
-ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Rodrigo/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/Ro
-drigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.
-pfb>
-Output written on main.pdf (34 pages, 2213797 bytes).
+c/amsfonts/cm/cmmi6.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/Rodrigo/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Rodrigo/AppData
+/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Rodrig
+o/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Use
+rs/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pf
+b><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmsl10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/amsfonts/cm/cmsy10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmsy9.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Rodrigo/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/Rodrigo/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (28 pages, 1467921 bytes).
 PDF statistics:
- 496 PDF objects out of 1000 (max. 8388607)
- 99 named destinations out of 1000 (max. 500000)
- 165 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 390 PDF objects out of 1000 (max. 8388607)
+ 70 named destinations out of 1000 (max. 500000)
+ 129 words of extra memory for PDF output out of 10000 (max. 10000000)
 
