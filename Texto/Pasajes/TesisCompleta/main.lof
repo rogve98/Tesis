@@ -3,6 +3,13 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Espacios fase con eigenvalores reales. De izquierda a derecha se relacionan con las matrices del Ejemplo \ref {eg:EspaciosFreal}. La matriz $R_1$ corresponde con la gráfica de la izquierda, la matriz $R_2$ con la gráfica de en medio y la matriz $R_3$ con la gráfica de la derecha.}}{6}{figure.caption.8}%
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Espacios fase con eigenvalores complejos. De izquierda a derecha se relacionan con las matrices del Ejemplo \ref {eg:EspaciosFcomplejos}. La matriz $C_1$ corresponde con la gráfica de la izquierda, la matriz $C_2$ con la gráfica de en medio y la matriz $C_3$ con la gráfica de la derecha.}}{7}{figure.caption.9}%
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Espacios fase con eigenvalores reales. (\textbf {A}) Corresponde con la matriz $R_1$; (\textbf {B}) corresponde con la matriz $R_2$; (\textbf {C}) corrresponde con la matriz $R_3$ del Ejemplo \ref {eg:EspaciosFreal}.}}{6}{figure.caption.8}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Espacios fase con eigenvalores complejos. (\textbf {A}) corresponde con la matriz $C_1$; (\textbf {B}) corresponde con la matriz $C_2$; (\textbf {C}) corresponde con la matriz $C_3$ del Ejemplo \ref {eg:EspaciosFcomplejos}.}}{7}{figure.caption.9}%
+\contentsline {figure}{\numberline {1.3}{\ignorespaces (\textbf {A}) Ecuación logística con una tasa de crecimiento $r=2$ y una capacidad de carga $K=10$; se muestra su linea fase con sus puntos de equilibrio y sus respectivas estabilidades. (\textbf {B}) Solución de la ecuación logística para las condiciones iniciales: $N_1=0.01$, $N_2=15$, y $N_3=-0.1$.}}{11}{figure.caption.10}%
+\contentsline {figure}{\numberline {1.4}{\ignorespaces (\textbf {A}) Serie de tiempo del sistema presa-depredador con $\alpha =1$, $\beta =2$, $\gamma =2$ y $\delta =1$. Bajo esta configuración la población de las presas se mantiene predominante sobre la población de depredadores. (\textbf {B}) Serie de tiempo del sistema presa-depredador con $\alpha =2$, $\beta = 1$, $\gamma = 1$ y $\delta = 2$. En este escenario la población de depredadores se mantiene predominante frente a la población de presas.}}{13}{figure.caption.11}%
+\contentsline {figure}{\numberline {1.5}{\ignorespaces (\textbf {A}) Serie de tiempo del sistema (\ref {eqn:EgPresaDepredador}) integrado con RK4 con un paso de integración $h=0.01$ y con la condición inicial $(1,2)$. (\textbf {B}) Espacio fase del sistema (\ref {eqn:EgPresaDepredador}) junto con la solución numérica marcada en azul.}}{14}{figure.caption.12}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Campo vectorial de las soluciones del sistema propuesto de dos especies.}}{19}{figure.caption.14}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Red de Karate.}}{22}{figure.caption.15}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Red no dirigida de 10 nodos.}}{22}{figure.caption.16}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Red no dirigida de 10 nodos.}}{24}{figure.caption.17}%

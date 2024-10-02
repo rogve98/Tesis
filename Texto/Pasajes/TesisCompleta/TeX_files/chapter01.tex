@@ -169,7 +169,7 @@ En esta breve sección únicamente veremos diversos ejemplos de sistemas $2\time
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[scale=0.23]{../../Imagenes/Espacios fase reales}
-		\caption{Espacios fase con eigenvalores reales. De izquierda a derecha se relacionan con las matrices del Ejemplo \ref{eg:EspaciosFreal}. La matriz $R_1$ corresponde con la gráfica de la izquierda, la matriz $R_2$ con la gráfica de en medio y la matriz $R_3$ con la gráfica de la derecha.}
+		\caption{Espacios fase con eigenvalores reales. (\textbf{A}) Corresponde con la matriz $R_1$; (\textbf{B}) corresponde con la matriz $R_2$; (\textbf{C}) corrresponde con la matriz $R_3$ del Ejemplo \ref{eg:EspaciosFreal}.}
 		\label{fig:EFReales}
 	\end{figure}
 \end{ejemplo}
@@ -201,7 +201,7 @@ En esta breve sección únicamente veremos diversos ejemplos de sistemas $2\time
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[scale=0.23]{../../Imagenes/Espacios fase complejos}
-		\caption{Espacios fase con eigenvalores complejos. De izquierda a derecha se relacionan con las matrices del Ejemplo \ref{eg:EspaciosFcomplejos}. La matriz $C_1$ corresponde con la gráfica de la izquierda, la matriz $C_2$ con la gráfica de en medio y la matriz $C_3$ con la gráfica de la derecha.}
+		\caption{Espacios fase con eigenvalores complejos. (\textbf{A}) corresponde con la matriz $C_1$; (\textbf{B}) corresponde con la matriz $C_2$; (\textbf{C}) corresponde con la matriz $C_3$ del Ejemplo \ref{eg:EspaciosFcomplejos}.}
 		\label{fig:EFComplejos}
 	\end{figure}
 \end{ejemplo}
@@ -241,9 +241,88 @@ Mientras que el método de Runge-Kutta de orden 4 sigue la siguiente corresponde
 		y_{n+1} &= y_n+\frac{h}{6}\left [f(Y_1,t_n)+2f\left (Y_2,t_n+\frac{h}{2}\right)+ 2f\left (Y_3,t_n+\frac{h}{2}\right )+f(Y_4,t_n)\right ]+O(h^5)
 	\end{split}
 \end{equation}
-Se pueden consultar ambos métodos y sus deducciones en las siguientes bibliografías [Poner CITAS]. Más adelante se hablará sobre su implementación computacional.
+Se pueden consultar ambos métodos y sus deducciones en las siguientes bibliografías [Poner CITAS]\footnote{poner citas}. Más adelante se hablará sobre su implementación computacional.
 
 \subsection{Modelo logístico}
 
+En los cursos de Ecuaciones Diferenciales I se suele iniciar con la introducción del tema del crecimiento de cantidades: ya sea poblaciones, tasas de interés, etc. Para ello se plantea una primera ecuación diferencial que retrata que la velocidad de crecimiento de dicha cantidad es proporcional al tamaño de la cantidad:
+\begin{equation}\label{eqn:CrecimientoExponencial}
+	\frac{dN(t)}{dt}=rN(t)
+\end{equation}
+en este caso $r\in\mathbb{R}^+$ funge como la tasa de crecimiento de la cantidad en incremento. Mediante la técnica de separación de variables se deduce que la solución de esta ecuación diferencial es $N(t)=ke^{rt}$ con $k\in\mathbb{R}$. Como modelo de crecimiento poblacional es un buen punto de partida pero tiene un problema: la solución que produce para tiempos muy largos provoca que la población crezca sin límites y con certeza sabemos que eso no puede ocurrir. Al extender la idea de esta ecuación diferencial, se obtiene la alternativa conocida como \textit{Modelo logístico}: ampliamente utilizado como base para el análisis de dinámica poblacional, propagación de enfermedades y en esencia sistemas que presenten crecimiento limitado por recursos. La ecuación logística se presenta de la siguiente forma
+\begin{equation}\label{eqn:EqLogistica}
+	\frac{dN}{dt}=rN\left (1-\frac{N}{K}\right )
+\end{equation}
+considerando que $N(t)$ es una población y $r$ es la misma tasa de crecimiento que en (\ref{eqn:CrecimientoExponencial}), $K$ se denomina como la capacidad de carga de la población. A este concepto se le entiende como el límite hasta donde puede llegar el crecimiento de esta población aún cuando la condición inicial de (\ref{eqn:EqLogistica}) se encuentre por arriba o por debajo de $K$\footnote{En la sección (\ref{sec:SolEqLogistica}) se muestra el proceso para hallar la solución de la ecuación logística y su comparación en series de tiempo entre la solución analítica y la solución numérica usando Runge-Kutta de orden 4.}. 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.23]{../../Imagenes/Ecuacion Logistica}
+	\caption{(\textbf{A}) Ecuación logística con una tasa de crecimiento $r=2$ y una capacidad de carga $K=10$; se muestra su linea fase con sus puntos de equilibrio y sus respectivas estabilidades. (\textbf{B}) Solución de la ecuación logística para las condiciones iniciales: $N_1=0.01$, $N_2=15$, y $N_3=-0.1$.}
+	\label{fig:EcuacionLogistica}
+\end{figure}		
+La ecuación logística es no lineal ya que posee un término cuadrático pero es de las pocas a las que se le puede hallar una solución analítica. Consta de un crecimiento exponencial que se ve frenado por el término que se encuentra entre paréntesis. Para cierto $t^*\in\mathbb{R}^+$ se tendrá que $N(t^*)=K$ y por lo tanto la ecuación se hace cero y la población deja de crecer estableciéndose sobre la capacidad de carga. Si se escoge una condición inicial tal que $N_0<K$ entonces la población crecerá y se establecerá sobre la capacidad de carga,  sin embargo, si $N_0>K$ entonces la población decrecerá hasta estacionarse en la capacidad de carga (Figura \ref{fig:EcuacionLogistica}). En el caso en donde se elige una condición inicial $N_0<0$ la población simplemente diverge, a esto normalmente se le interpreta como que no tienen sentido las poblaciones negativas y por eso normalmente nunca se toman en cuenta las condiciones iniciales negativas. \\
+\\
+Con base en los elementos de la sección anterior, la ecuación logística posee dos puntos de equilibrio: $\mathcal{N}=\{0,K\}$. Por tratarse de una ecuación, la dinámica se estudia en una dimensión: es decir, el espacio fase corresponde con una línea fase. Para analizar la estabilidad de los puntos fijos se suele seguir las siguientes reglas: si $\dot{N}<0$ entonces las soluciones decrecen y/o se mueven hacia la izquierda; en caso contrario $\dot{N}>0$ las soluciones se mueven y/o crecen hacia la derecha. Con base en esas reglas se puede observar la dinámica de los puntos fijos conlcuyenndo que el $0$ es un punto fijo repulsor, mientras que el $10$ es un punto fijo atractor. Esto tiene sentido ya que toda población en un principio comienza a crecer de manera exponencial tendiendo hacia su punto de equilibrio estable, incluso si la población comienza con una condición inicial $N_0>K$ decrecerá hasta asentarse en el punto de equilibrio. Cualquier mínima población (``perturbación") hace que la población diverga del 0 mientras que toda perturbación alrededor de $K$ hará que regrese a su estado de equilibrio.\\
+\\
+Es posible observar como existe un punto máximo en donde cambia la forma de crecimiento de la población e incluso se le puede observar como un punto de inflexión. Para $K/2$ se tiene un cambio de ritmo en el crecimiento, la población en un principio crece de manera exponencial hasta que llega a $K/2$ y a partir de aquí comienza a decrecer el ritmo de crecimiento hasta llegar a su punto de equilibrio. Esta dinámica viene del término que se encuentra entre paréntesis y que gracias a la capacidad de carga podemos obtener un modelo un poco más realista pero aún con algunas limitaciones.\\
+\\
+El modelo es adecuado para tener un primer acercamiento a las dinámicas de poblaciones, sin embargo se queda corto para ajustarse a situaciones realistas ya que no toma factores ambientales que puedan afectar a la dinámica, la tasa de crecimiento únicamente depende del tamaño de la población y de no de otros factores que podrían ser más complejos, la capacidad de carga también se maneja constante cuando podría ser una función del tiempo siendo afectada por elementos del entorno etc. Por lo tanto existen más modelos que parten de la formulación de la ecuación logística y cada uno de ellos hace su intento por mostrar alguna característica del sistema de la que se quiera profundizar.
 
-%%la particularidad con los sistemas no lineales es el hecho de que no se pueden expresar como la suma de las soluciones del sistema, en otras palabras no cumplen el principio de superposición.
+\subsection{Modelo presa-depredador}
+
+Uno de los sistemas no lineales más importantes aplicado a más de una especie es el modelo de presa-depredador o también conocido como Lotka-Volterra, en particular se aplica a dos especies (por lo tanto son dos ecuaciones) y aunque también posee limitaciones como las que se comentaron al final se la sección anterior, sigue siendo un modelo base para entender dinámicas de poblaciones en este caso bajo un contexto de depredación. El modelo consta de dos especies: una que es presa (la cual es consumida por la depredadora) y la depredadora (que depende de la presa para su supervivencia) y sigue las reglas del siguiente sistema\footnote{En la sección (\ref{sec:SolPresaDepredador}) se muestra la solución (implícita) del sistema presa de predador junto con la comparación de las curvas de nivel de la solución analítica contra las del espacio fase generadas por las ecuaciones de (\ref{eqn:PresaDepredador}).}
+\begin{equation}\label{eqn:PresaDepredador}
+	\begin{split}
+		\frac{dx}{dt} &= \alpha x - \beta xy\\
+		\frac{dy}{dt} &= \delta xy -\gamma y
+	\end{split}
+\end{equation}
+En este sistema $x(t)$ corresponde con la especie de presas y $y(t)$ es la especie depredadora; $\alpha$ corresponde con la tasa de crecimiento de la especie de presas en ausencia de la especie depredadora, $\beta$ es la tasa de depredación y corresponde con la cantidad de presas cazadas, $\delta$ es la tasa de crecimiento de las presas a causa del consumo de las presas y $\gamma$ es la tasa de mortalidad de la especie depredadora en ausencia de presas. La especie presa $x(t)$ crece a diferentes ritmos en el tiempo aún con su tasa de crecimiento constante, esto debido a que se ve frenada en función de como crecen los depredadores $y(t)$ y en consecuencia como disminuyen a la población de presas. Al mismo tiempo, los depredadores $y(t)$ irán creciendo conforme el número de presas disminuya pero en algún punto el número de presas disminuirá tanto que no satisfará la demanda de los depredadores, por lo tanto por insuficiencia los depredadores comenzarán a disminuir. \\
+\\
+Los ritmos de crecimiento de ambas especies vendrá dictada por los coeficientes de interacción y ciertas combinaciones entre coeficientes hace la predominancia de una de las dos especies. En concreto $\beta$ y $\gamma$ ayudan a que las presas predominen en cantidad mientras que $\alpha$ y $\delta$ hacen el mismo papel pero con los depredadores. 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.23]{../../Imagenes/Series de Tiempo PD}
+	\caption{(\textbf{A}) Serie de tiempo del sistema presa-depredador con $\alpha=1$, $\beta=2$, $\gamma=2$ y $\delta=1$. Bajo esta configuración la población de las presas se mantiene predominante sobre la población de depredadores. (\textbf{B}) Serie de tiempo del sistema presa-depredador con $\alpha=2$, $\beta = 1$, $\gamma = 1$ y $\delta = 2$. En este escenario la población de depredadores se mantiene predominante frente a la población de presas.}
+	\label{fig:SeriesdeTiempoPD}
+\end{figure}
+Para el primer caso $\beta >\alpha$ y $\gamma>\delta$, esto se traduce en que existirá una alta tasa de depredación lo que provoca la baja de las presas pero al mismo tiempo la tasa de mortalidad de los depredadores es alta lo que hace que la escases de presas disminuya drásticamente el número de depredadores; mientras esto ocurres le da chance a las presas de reproducirse sin estar al asecho de los depredadores y cuando esto ocurre la población de depredadores se restablece y vuelven a consumir con una alta tasa de depredación. Como se puede intuir esto forma parte de un ciclo que se va repitiendo en el tiempo aunque claro que es considerado una dinámica ideal pues como se ha mencionado repetidas veces, no se están tomando fluctuaciones importantes que devienen del ambiente. Para que los depredadores puedan predominar en su población solo hay que invertir las desigualdades propuestas y observar como con una alta natalidad de presas (abundancia) y un índice de depredación mayor a la mortalidad de los depredadores hace que se mantengan en mayor abundancia que las presas.\\
+\\
+Para analizar más sobre la dinámica del sistema convendría conocer los puntos críticos del sistema y averiguar de que tipo de estabilidad se trata. El punto crítico trivial sabemos que es el $(0,0)$ y siempre será un repulsor, pues las poblaciones tienden a crecer ya sea en mayor o en menor medida. Igualando las ecuaciones de (\ref{eqn:PresaDepredador}) a cero y realizando las cuentas correspondientes se encuentra que el otro punto crítico es $(\frac{\gamma}{\delta},\frac{\alpha}{\beta})$. Por ahora no podemos determinar el tipo de estabilidad de manera analítica puesto que no tenemos disponible una matriz de interacciones de un sistema lineal de la que podamos sacar eigenvalores para realizar el análisis de la sección anterior pero podemos guiarnos a partir de su espacio fase y ver que dinámica presenta.
+
+\begin{ejemplo}\label{eg:PresaDepredador}
+	Se define el siguiente sistema de presa-depredador para analizar el tipo de dinámica que produce
+	\begin{equation}\label{eqn:EgPresaDepredador}
+		\begin{split}
+			\dot{x} &= 2x-0.6xy \\
+			\dot{y} &= 0.5xy-2y
+		\end{split}
+	\end{equation}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.215]{../../Imagenes/Espacio fase PD}
+		\caption{(\textbf{A}) Serie de tiempo del sistema (\ref{eqn:EgPresaDepredador}) integrado con RK4 con un paso de integración $h=0.01$ y con la condición inicial $(1,2)$. (\textbf{B}) Espacio fase del sistema (\ref{eqn:EgPresaDepredador}) junto con la solución numérica marcada en azul.}
+		\label{fig:EspacioFasePD}
+	\end{figure}
+	los puntos fijos del sistema son: $(0,0)$ y $(\frac{10}{3},4)$ respectivamente. En la discusión realizada anteriormente podemos anticipar que la población de presas predomina sobre la población de depredadores ya que $\alpha>\beta$, $\gamma>\delta$ pero contamos con que $\beta>\delta$ y se propuso que la tasa $\beta$ ayuda al crecimiento de las presas por la alta demanda de depredación que en conjunto con el alto índice de mortalidad provoca que los depredadores tengan una etapa crítica de baja población. La Figura (\ref{fig:EspacioFasePD}) muestra la evolución temporal de las presas y los depredadores así como el espacio fase que cuenta con todas las familias de soluciones posibles en particular se marca en azul la que corresponde con (\ref{eg:PresaDepredador}). La forma en que se obtuvo la solución fue por medio de integración numérica RK4\footnote{La implementación computacional sugiero que se aborde y se agregue en apéndice; dejar esta nota como referencia a dicha sección.} y constantemente se estará utilizando para la integración de los sistemas no lineales que se abordarán más adelante.
+	
+\end{ejemplo}
+
+En el siguiente capítulo se abordará una técnica analítica para poder determinar la estabilidad de los puntos críticos de sistemas no lineales, se le conoce como \textit{Linearización} y aunque es una herramienta limitada que funciona a nivel local, sirve de mucho para explorar la estabilidad de sistemas no lineales de más de tres ecuaciones en donde la implementación visual es imposible de generar. Las aplicaciones de este modelo pueden variar desde su inmediato que es en ecología, en dinámica de enfermedades tal como lo es el modelo SIR, inclusive hasta en mercadología para ver que empresas dominan sobre otras o que acciones dominan sobre otras.
+
+\subsubsection{Introducción al modelo de competencia de especies}
+
+El sistema de presa-depredador se puede extender al realizar una combinación sutil con la ecuación logística (\ref{eqn:EqLogistica}), es decir, es agregarle una capacidad de carga y la premisa de que ahora no hay especies que depredan y que son depredadas sino que ahora las especies compiten por los recursos disponibles y finitos de un ambiente/ecosistema. Este es el conocido \textit{sistema de competencia de especies} o de Lotka-Volterra de competencia
+\begin{equation}\label{eqn:CompentenciaEspecies2x2}
+	\begin{split}
+		\frac{dx}{dt} &= \alpha x\left (1-\frac{x}{K_1}\right )-\beta xy\\
+		\frac{dy}{dt} &= \gamma y\left (1-\frac{y}{K_2}\right )-\delta xy
+	\end{split}
+\end{equation}
+Este sistema de ecuaciones aumenta el número de términos no lineales con respecto del presa depredador, teniendo $x^2$ y $xy$ por lo que también aumenta la complejidad al quererlo resolver de forma analítica\footnote{Si es que tiene solución.}. Aunque en el apéndice se presenten las soluciones analíticas de la ecuación logística y del sistema presa-depredador, para este sistema únicamente nos estaremos guiando de la solución numérica y los espacios fase que podamos generar computacionalmente para sistemas de 2 o 3 ecuaciones.\\
+\\
+El siguiente capítulo estará enteramente dedicado al sistema de competencia de especies, se abordarán desde lo particular con ejemplos de dos ecuaciones, se explorará su dinámica y se presentará la técnica de la linearización para poder determinar la estabilidad de los puntos fijos del sistema a nivel local. Posteriormente se generalizará el sistema a $N$ ecuaciones diferenciales y se hablará sobre las interacciones y su construcción. Se hablará sobre la implementación computacional para poder resolver el sistema generalizado de $N$ especies y se hablará sobre las condiciones para que el sistema pueda ser estable o no. El objetivo final de este trabajo es validar para que condiciones un sistema de $N$ ecuaciones diferenciales es estable y para cuales no lo es. Con base en ello se plantea la siguiente hipótesis
+\begin{proposición}
+	Un sistema de competencia de especies generalizado de $N$ ecuaciones diferenciales presenta una transición de fase entre un régimen estable y otro inestable. Dicha transición esta determinada en función de los parámetros: $N$ número de especies (ecuaciones diferenciales), $p$ una probabilidad que determina la conectividad entre especies siendo que para valores de $p$ cercanos a cero el número de conexiones entre especies es bajo y para valores de $p$ cercanos a uno el número de conexiones entre especies es alto. Y por último $\sigma$ un parámetro que determina que tan ``fuertes" son las interacciones entre especies, es decir que tan altas o bajas son las tasas de interacción entre especies. 
+\end{proposición}
+

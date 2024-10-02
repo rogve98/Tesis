@@ -32,11 +32,10 @@ function transicionσParalel(params::Parametros,σ)
     sol = Vector{Int}(undef,length(σ))
     medidas::Int = 1500
     Threads.@threads for idx in 1:length(σ)
-        i = p[idx]
+        i = σ[idx]
         estables = []
         params_local = deepcopy(params)
-        params_local.p = i
-        params.σ = i 
+        params_local.σ = i
         for j in 1:medidas 
             xs = integrador(params_local)
             push!(estables,xs)
