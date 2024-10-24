@@ -57,8 +57,10 @@
 \logouni{Escudo-UNAM}
 \logofac{Escudo-FCIENCIAS}
 
-\begin{document}
+\newcommand{\julia}{\includegraphics[trim=0 1cm 0 -1cm, height=1.2em]{../../Imagenes/julia-logo-color}\ }
+\newcommand{\ttt}[1]{\texttt{#1}}
 
+\begin{document}
 
 
 \frontmatter
@@ -75,8 +77,8 @@
 \chapter{Resumen}
 
 \tableofcontents
-%\listoffigures
-\listoftables
+\listoffigures
+%\listoftables
 \listofalgorithms
 
 \chapter{Introducción}
@@ -84,6 +86,7 @@
 \mainmatter
 \include{./TeX_files/chapter01}
 \include{./TeX_files/chapter02}
+\include{./TeX_files/chapter03}
 \include{./TeX_files/Apéndices}
 
 \backmatter

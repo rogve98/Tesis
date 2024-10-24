@@ -67,3 +67,50 @@ function jacobianoSimple(A::Matrix,X::Vector,params::Parametros)
     end
     return M
 end
+
+"""
+Método de gauss newton para ajuste de curva sigmoidal, de momento no funciona xdxd
+"""
+
+function gauss_newton(x, y, β_init; tol=1e-6, max_iter=100)
+    # Definir la función modelo (sigmoide)
+    function modelo(x, β)
+        return 1 ./ (1 .+ exp.(-β[1] .* (x .- β[2])))
+    end
+
+    # Definir la matriz Jacobiana
+    function jacobiano(x, β)
+        J = zeros(length(x), 2)
+        f_x = modelo(x, β)
+        J[:, 1] = (x .- β[2]) .* f_x .* (1 .- f_x)  # Derivada respecto a β1
+        J[:, 2] = -β[1] .* f_x .* (1 .- f_x)        # Derivada respecto a β2
+        return J
+    end
+
+    β = copy(β_init)
+    for iter in 1:max_iter
+        # Residuos
+        r = y .- modelo(x, β)
+        # Jacobiano
+        J = jacobiano(x, β)
+        # Actualización de parámetros
+        Δβ = -inv(J' * J) * J' * r
+        β += Δβ
+        # Verificar la convergencia
+        if norm(Δβ) < tol
+            println("Convergencia alcanzada en la iteración $iter")
+            break
+        end
+    end
+
+    return β
+end
+
+# # Ejemplo de uso con datos simulados
+# x_data = collect(-10:0.5:10)
+# y_data = 1 ./ (1 .+ exp.(-1.5 .* (x_data .- 2))) + 0.1*randn(length(x_data))  # Agregar algo de ruido
+# β_inicial = [1.0, 0.0]  # Parámetros iniciales para la sigmoide (β1, β2)
+
+# # Llamar a la función de Gauss-Newton
+# β_opt = gauss_newton(x_data, y_data, β_inicial)
+# println("Parámetros ajustados: β1 = $(β_opt[1]), β2 = $(β_opt[2])")
