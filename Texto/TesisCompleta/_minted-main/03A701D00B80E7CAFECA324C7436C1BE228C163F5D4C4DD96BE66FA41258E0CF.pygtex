@@ -1,0 +1,30 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{using}\PYG{+w}{ }\PYG{n}{CairoMakie}
+\PYG{n}{xlim}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{)}\PYG{+w}{	}\PYG{c}{\PYGZsh{}Se establecen los límites que abarcarán las gráficas}
+\PYG{n}{ylim}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{)}
+
+\PYG{n}{fSilla}\PYG{p}{(}\PYG{n}{X}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Point2}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{3}\PYG{n}{X}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{],}\PYG{l+m+mi}{2}\PYG{n}{X}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{])}\PYG{+w}{  }\PYG{c}{\PYGZsh{}Se definen las matrices de coeficientes}
+\PYG{n}{fAtractor}\PYG{p}{(}\PYG{n}{X}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Point2}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{n}{X}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{],}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{4}\PYG{n}{X}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{])}\PYG{+w}{  }\PYG{c}{\PYGZsh{}de los sistemas lineales}
+\PYG{n}{fRepulsor}\PYG{p}{(}\PYG{n}{X}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Point2}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{n}{X}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{+}\PYG{l+m+mi}{2}\PYG{n}{X}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{],}\PYG{n}{X}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{+}\PYG{l+m+mi}{3}\PYG{n}{X}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{])}
+
+\PYG{n}{titles}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{[}\PYG{l+s}{\PYGZdq{}Atractor\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}Punto silla\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Repulsor\PYGZdq{}}\PYG{p}{]}\PYG{+w}{ }\PYG{c}{\PYGZsh{}Títulos para cada gráfica}
+\PYG{n}{functions}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{[}\PYG{n}{fAtractor}\PYG{p}{,}\PYG{n}{fSilla}\PYG{p}{,}\PYG{n}{fRepulsor}\PYG{p}{]}\PYG{+w}{  }\PYG{c}{\PYGZsh{}Arreglo de funciones para poder iterarlas}
+\PYG{n}{n}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{length}\PYG{p}{(}\PYG{n}{functions}\PYG{p}{)}\PYG{+w}{  }\PYG{c}{\PYGZsh{}más adelante}
+
+\PYG{c}{\PYGZsh{}Se definen los colores de las líneas de flujo del espacio fase}
+\PYG{n}{cmaps}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{[[}\PYG{l+s+ss}{:red}\PYG{p}{,}\PYG{l+s+ss}{:orange}\PYG{p}{,}\PYG{l+s+ss}{:brown}\PYG{p}{],[}\PYG{l+s+ss}{:red}\PYG{p}{,}\PYG{l+s+ss}{:orange}\PYG{p}{,}\PYG{l+s+ss}{:brown}\PYG{p}{],[}\PYG{l+s+ss}{:red}\PYG{p}{,}\PYG{l+s+ss}{:orange}\PYG{p}{,}\PYG{l+s+ss}{:brown}\PYG{p}{]]}
+
+\PYG{c}{\PYGZsh{}1. Se define la figura en sus dimensiones y el tamaño de letra.}
+\PYG{c}{\PYGZsh{}2. Se definen los ejes y la información que llevará con ellos.}
+\PYG{c}{\PYGZsh{}3. Se definen las líneas de campo}
+\PYG{c}{\PYGZsh{}4. Escondemos las y(t) para la figura de en medio y la de la derecha}
+\PYG{c}{\PYGZsh{}5. Se establecen los límites de cada gráfico}
+\PYG{n}{fig}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Figure}\PYG{p}{(}\PYG{n}{size}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{l+m+mi}{1000}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{400}\PYG{p}{),}\PYG{+w}{ }\PYG{n}{fontsize}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{20}\PYG{p}{)}
+\PYG{n}{axs}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{[}\PYG{n}{Axis}\PYG{p}{(}\PYG{n}{fig}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{],}\PYG{+w}{ }\PYG{n}{xlabel}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}x(t)\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{ylabel}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}y(t)\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{title}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{titles}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],}
+\PYG{n}{aspect}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{backgroundcolor}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+ss}{:white}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{for}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{n}\PYG{p}{]}
+\PYG{p}{[}\PYG{n}{streamplot!}\PYG{p}{(}\PYG{n}{axs}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],}\PYG{+w}{ }\PYG{n}{functions}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{4}\PYG{+w}{ }\PYG{o}{..}\PYG{+w}{ }\PYG{l+m+mi}{4}\PYG{p}{,}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{4}\PYG{+w}{ }\PYG{o}{..}\PYG{+w}{ }\PYG{l+m+mi}{4}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{colormap}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{cmaps}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],}
+\PYG{n}{gridsize}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{l+m+mi}{32}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{32}\PYG{p}{),}\PYG{+w}{ }\PYG{n}{arrow\PYGZus{}size}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{9}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{for}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{n}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{density}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mf}{0.1}\PYG{p}{]}
+\PYG{p}{[}\PYG{n}{hideydecorations!}\PYG{p}{(}\PYG{n}{axs}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],}\PYG{+w}{ }\PYG{n}{grid}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nb}{false}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{ticks}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nb}{false}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{for}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{o}{:}\PYG{n}{n}\PYG{p}{]}
+\PYG{p}{[}\PYG{n}{limits!}\PYG{p}{(}\PYG{n}{axs}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],}\PYG{+w}{ }\PYG{n}{xlim}\PYG{o}{...}\PYG{p}{,}\PYG{n}{ylim}\PYG{o}{...}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{for}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{n}\PYG{p}{]}
+\PYG{n}{fig}\PYG{+w}{	}\PYG{c}{\PYGZsh{}Se imprime la figura}
+\end{Verbatim}

@@ -1,0 +1,19 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{l+s}{\PYGZdq{}\PYGZdq{}\PYGZdq{} Integrador de Euler generalizado.}
+\PYG{l+s}{f := Función N\PYGZhy{}dimensional del sistema a integrar}
+\PYG{l+s}{x0 := Condición inicial de}
+\PYG{l+s}{t0 := Tiempo inicial}
+\PYG{l+s}{tf := Tiempo final}
+\PYG{l+s}{dt := Paso de integración \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{k}{function}\PYG{+w}{ }\PYG{n}{eulerND}\PYG{p}{(}\PYG{n}{f}\PYG{o}{::}\PYG{k+kt}{Function}\PYG{p}{,}\PYG{n}{x0}\PYG{o}{::}\PYG{k+kt}{Vector}\PYG{p}{,}\PYG{n}{t0}\PYG{o}{::}\PYG{k+kt}{Int64}\PYG{p}{,}\PYG{n}{tf}\PYG{o}{::}\PYG{k+kt}{Int64}\PYG{p}{,}\PYG{n}{dt}\PYG{o}{::}\PYG{k+kt}{Float64}\PYG{p}{)}
+\PYG{+w}{	}\PYG{n}{tiempos}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{range}\PYG{p}{(}\PYG{n}{t0}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{stop}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{tf}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{step}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{dt}\PYG{p}{)}
+\PYG{+w}{	}\PYG{n}{n}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{length}\PYG{p}{(}\PYG{n}{tiempos}\PYG{p}{)}
+\PYG{+w}{	}\PYG{n}{dim}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{length}\PYG{p}{(}\PYG{n}{x0}\PYG{p}{)}
+\PYG{+w}{	}\PYG{n}{xs}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{n}\PYG{p}{,}\PYG{n}{dim}\PYG{p}{)}
+\PYG{+w}{	}\PYG{n}{xs}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{o}{:}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{x0}
+\PYG{+w}{	}\PYG{k}{for}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{o}{:}\PYG{n}{n}
+\PYG{+w}{		}\PYG{n}{xs}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,}\PYG{o}{:}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{xs}\PYG{p}{[}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{o}{:}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{dt}\PYG{o}{*}\PYG{n}{f}\PYG{p}{(}\PYG{n}{xs}\PYG{p}{[}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{o}{:}\PYG{p}{])}
+\PYG{+w}{	}\PYG{k}{end}
+\PYG{+w}{	}\PYG{k}{return}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{tiempos}\PYG{p}{,}\PYG{n}{xs}\PYG{p}{)}
+\PYG{k}{end}
+\end{Verbatim}

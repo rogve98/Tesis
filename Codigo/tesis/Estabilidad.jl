@@ -99,7 +99,7 @@ function DiagonalJ(params::Parametros)
             end
         end
     end
-    return (diag(M),M)
+    return diag(M)
 end
 
 """
