@@ -52,11 +52,11 @@ esto se va a volver un relajo. Se busca minimzar tiempos de ejecución
 """
 
 function distDiagonalParalel(params::Parametros,p)
-    medidas = 100
+    medidas = 10
     σ = params.σ
     for i in p
-        diagonales = []
-        #jacobianos = []
+        #diagonales = []
+        jacobianos = []
         params.p = i 
 
         # Crear el lock fuera del ciclo
@@ -64,21 +64,21 @@ function distDiagonalParalel(params::Parametros,p)
 
         # Paralelización en la generación de diagonales
         Threads.@threads for i in 1:medidas
-            d = DiagonalJ(params::Parametros)
+            _,M = DiagonalJ(params::Parametros)
 
             # Bloque crítico con el lock
             lock(lck)  # Bloqueamos antes de modificar el arreglo compartido
             try
-               push!(diagonales, d)
-                # push!(jacobianos, M)
+               #push!(diagonales, d)
+                push!(jacobianos, M)
             finally
                 unlock(lck)  # Desbloqueamos después de la operación
             end
         end
 
         # Escritura secuencial de los resultados a un archivo CSV
-        writedlm("Diagonales_s$σ.p$i.csv", diagonales)
-        # writedlm("Jacobianos_s$σ.p$i.csv", jacobianos)
+        #writedlm("Diagonales_s$σ.p$i.csv", diagonales)
+        writedlm("Jacobianos_s$σ.p$i.csv", jacobianos)
     end
 end
     

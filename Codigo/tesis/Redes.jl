@@ -51,10 +51,11 @@ function randomMatrix(N,p,σ,red::String)
     d = Normal(0,σ)
     g = redAleatoria(N,p,red)
     M = adjacency_matrix(g)
-    M = M.*rand(d,N,N)
-    for i in 1:N
-        M[i,i] = 1
-    end
+    Id = 1* Matrix(I, N, N)
+    M = M.*rand(d,N,N)+I
+    # for i in 1:N
+    #     M[i,i] = 1
+    # end
     return (Matrix(M), g)
 end
 

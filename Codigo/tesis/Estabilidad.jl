@@ -26,7 +26,7 @@ end
 
 """
 Jacobiano n-dimensional. Se deteminó de manera analítica. Utiliza el objeto
-estabilidad como argumento para sus cálculos.
+estabilidad como argumento para sus cálculos. Esta es la matriz de interacciones.
 
 estailidad(params::Parametros,sol::Soluciones,X::Vector)
 """
@@ -99,7 +99,7 @@ function DiagonalJ(params::Parametros)
             end
         end
     end
-    return diag(M)
+    return diag(M),M
 end
 
 """

@@ -66,7 +66,7 @@ Ahora veamos las curvas de nivel de la solución analítica en contraste con el 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.22]{../Imagenes/Curvas de nivel PD}
-	\caption{(\textbf{A}) Curvas de nivel utilizando la solución analítica (\ref{eqn:CurvasNivelPD}). (\textbf{B}) Espacio fase generado a partir de las ecuaciones de (\ref{eqn:PresaDepredador}).}
+	\caption{(\textbf{A}) Curvas de nivel utilizando la solución analítica (\ref{eqn:CurvasNivelPD}). (\textbf{B}) Espacio fase generado a partir de las ecuaciones de (\ref{eqn:PresaDepredador}) integrando con RK4.}
 	\label{fig:CurvasNivelPD}
 \end{figure}
 \newpage
@@ -156,7 +156,7 @@ end
 	\texttt{range()} es una función que genera una partición para una cota inferior, otra superior y un paso de partición. Se obtiene el tamaño de ese conjunto mediante el efecto de \texttt{lenght()}. Se define la dimensión del sistema aplicando esta misma función pero a la condición inicial \texttt{x0}, esto es importante porque a partir de aquí se va a definir el conjunto solución \texttt{xs} que es una matriz de ceros con \texttt{n} filas y \texttt{dim} columnas: cada columna va a ser la solución numérica de cada ecuación del sistema. Pero antes de comenzar a integrar \texttt{xs[1,:] = x0} posiciona la condición inicial. Posteriormente se realiza un ciclo \texttt{for} de \texttt{2} a \texttt{n} donde se aplica la regla de Euler (\ref{eqn:Euler}). Finalmente se regresa el conjunto de \texttt{tiempos} y la solución N-dimensional \texttt{xs}.
 \end{algorithm}
 \newpage
-Es importante resaltar el uso de \textit{pre-alocación} del arreglo solución, esto agiliza tiempos de ejecución al definir cada uno de los espacios donde irá cada término de la solución, a diferencia de si se ocupa el método \ttt{push!()} (análogo con el \ttt{append()} de python) para ir agregando cada término al arreglo. Esta misma filosofía servirá para la implementación de RK4, lo único que cambiará es la definición de lo que se pone dentro del ciclo \ttt{for}.
+Es importante resaltar el uso de \textit{pre-locación} del arreglo solución, esto agiliza tiempos de ejecución al definir cada uno de los espacios donde irá cada término de la solución, a diferencia de si se ocupa el método \ttt{push!()} (análogo con el \ttt{append()} de python) para ir agregando cada término al arreglo. Esta misma filosofía servirá para la implementación de RK4, lo único que cambiará es la definición de lo que se pone dentro del ciclo \ttt{for}.
 \subsubsection{Método de Runge-Kutta 4}
 
 \begin{algorithm}
@@ -200,3 +200,62 @@ t,xs = RK4(presaDepredador,x0,t0,tf,h)
 tE,xsE = eulerND(presaDepredador,x0,t0,tf,h)
 \end{minted}
 En este caso \ttt{presaDepredador(X::Vector)} (en referencia al sistema (\ref{eqn:EgPresaDepredador})) es la función N-dimensional que ocupará \ttt{eulerND} y \ttt{RK4}. Se define en función de un vector \ttt{X} y devuelve un arreglo de dos entradas donde cada entrada constituye una ecuación del sistema a integrar. Con dichos arreglos solución se pueden graficar las series de tiempo (en función de \ttt{(t,xs[:,i])} con \ttt{i=\{1,2\}}) o los espacios fase (en función de \ttt{(xs[:,1],x[:,2])}).
+
+\subsection{Redes aleatorias}\label{sec:RedesAleatorias}
+
+En esta sección se revisará la implementación de las redes aleatorias dirigidas y no dirigidas con base en la definición \ref{def:redAleatoria}. Para ello primero construyamos una función que nos genere combinaciones aleatorias de parejas de números.
+\begin{algorithm}
+	\caption{Parejas de números aleatorios.}
+	\label{al:enlacesAleatorios}
+	\begin{minted}{julia}
+function enlacesAleatorios(N,p)
+  Channel() do channel
+    for i in 1:N
+      for j in 1:i
+        if rand() < p
+          if i == j
+            continue
+          else
+            put!(channel,(i,j))
+          end
+        end
+      end
+    end
+  end
+end
+	\end{minted}
+\end{algorithm}
+
+Este código toma como argumento el número de enlaces \ttt{N} y la probabilidad \ttt{p}$\in[0,1]$; luego manda a llamar un \ttt{Channel()} que es un espacio en donde se va a realizar una tarea, en este caso la recolección de tuplas de dos números. Se definen dos ciclos \ttt{for} en donde el primero iterará sobre todos los nodos de $1$ a $N$ y el segundo iterará sobre un subconjunto de nodos topado a \ttt{i} para evitar la repetición de enlaces. Se define la condición \ttt{rand()<p} que definirá el enlace discriminado autoenlaces (la condición \ttt{i==j}) y si la condición se cumple, el par \ttt{(i,j)} se guardará en el \ttt{Channel()}, este proceso se repetirá hasta recorrer todos los índices posibles. El segundo \ttt{for} también podría iterarse sobre \ttt{i:N} y tendríamos un resultado equivalente. Esta función define solo los enlaces, ahora veamos como crear las redes aleatorias.
+\begin{algorithm}
+	\caption{Red aleatoria dirigida y no dirigida}
+	\label{al:redAleatoria}
+	\begin{minted}{julia}
+using Graphs
+function redAleatoria(N,p,red::String)
+  if red == "dirigida"
+    g = DiGraph(N)
+    enlaces_i = collect(enlacesAleatorios(N,p))
+    enlaces_j = collect(enlacesAleatorios(N,p))
+    while length(enlaces_j)!=length(enlaces_i)
+      enlaces_j = collect(enlacesAleatorios(N,p))
+    end   
+    for i in 1:length(enlaces_i)
+      add_edge!(g,enlaces_i[i][1],enlaces_i[i][2])
+      add_edge!(g,enlaces_j[i][2],enlaces_j[i][1])
+    end
+    return g
+  elseif red == "no dirigida"
+    g = Graph(N)
+    enlaces = collect(enlacesAleatorios(N,p))
+    for i in 1:length(enlaces)
+      add_edge!(g,enlaces[i][1],enlaces[i][2])
+    end
+    return g
+  end
+end
+	\end{minted}
+\end{algorithm}
+
+Esta función genera la red aleatoria dirigida y no dirigida, para ello se pasan los argumentos \ttt{N}, \ttt{p} de antes y una cadena \ttt{red} para la elección del tipo de red aleatoria que queramos. Para el caso de la dirigida definimos primero una red dirigida de $N$ nodos con \ttt{DiGraph(N)}, recuperamos los enlaces para la dirección $i$ a $j$ (matriz triangular superior) y para la dirección $j$ a $i$ (matriz triangular inferior) utilizando la función \ttt{collect()} y buscamos que estos conjuntos tengan un mismo tamaño, lo cual se fuerza con el \ttt{while}. Cuando el conjunto de enlaces tenga el mismo tamaño ahora si podemos ir agregando los enlaces con \ttt{add\_edge!()} tanto para la dirección $i$ a $j$ como para la dirección $j$ a $i$. El caso de la no dirigida es mucho más simple porque el proceso anterior solo se aplica para un conjunto de enlaces, la diferencia es que en principio definiremos una red no dirigida de $N$ nodos con \ttt{Graph(N)}.
+
