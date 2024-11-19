@@ -2,15 +2,10 @@
 \contentsline {chapter}{Agradecimientos}{\es@scroman {iii}}{chapter*.1}%
 \contentsline {chapter}{Resumen}{\es@scroman {v}}{chapter*.2}%
 \contentsline {chapter}{Introducción}{\es@scroman {xiii}}{chapter*.6}%
-\contentsline {chapter}{\numberline {1}De lo simple a lo complejo}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Revisión de sistemas lineales.}{1}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Puntos fijos y estabilidad del sistema.}{3}{subsection.1.1.1}%
-\contentsline {subsection}{\numberline {1.1.2}Espacios fase}{5}{subsection.1.1.2}%
-\contentsline {section}{\numberline {1.2}Sistemas no lineales}{8}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Modelo logístico}{10}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}Modelo presa-depredador}{13}{subsection.1.2.2}%
-\contentsline {chapter}{\numberline {2}¿Será estable un gran sistema complejo?}{19}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Sistema de especies en competencia.}{19}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Caso particular para $N=2$}{20}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Generalizando a N especies}{24}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Red de incidencias}{27}{subsection.2.3.1}%
+\contentsline {chapter}{\numberline {1}¿Será estable un gran sistema complejo?}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Sistema de especies en competencia.}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Caso particular para $N=2$}{2}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Generalizando a N especies}{6}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Red de incidencias}{9}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Tipos de interacciones}{12}{subsection.1.3.2}%
+\contentsline {section}{\numberline {1.4}Jacobiano del sistema: Matriz de interacciones}{17}{section.1.4}%
