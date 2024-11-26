@@ -60,7 +60,7 @@ valida que el sistema es estable para poder sacar el Jacobiano del sistema. Lueg
 parciales correspondientes para tener obtener finalmente la matriz de interacciones.
 """
 
-function DiagonalJ(params::Parametros)
+function Jacobianos(params::Parametros)
     N = params.N
     r = params.r
     K = params.K
@@ -99,7 +99,7 @@ function DiagonalJ(params::Parametros)
             end
         end
     end
-    return diag(M)
+    return M
 end
 
 """
@@ -169,3 +169,14 @@ function nrMulti(Jacobiano::Function,E::estabilidad,n::Int)
     end
     return sol[end,:]
 end
+
+
+"""
+Funciones que utilizaremos para ver cuantas entradas positivas/negativas tiene la matriz de 
+incidencias y la martiz de interacciones (Jacobiano evaluado en el punto fijo). Lo que se ha 
+encontrado es que el número de entradas positivas de la matriz de incidencias coincide con el
+número de entradas negativas del Jacobiano resultante. Eso es correcto puesto que se preservan
+las interacciones a como Robert May estipula en su libro p. 28
+"""
+ispositive(x) = x>0 ? true : false
+isnegative(x) = x<0 ? true : false

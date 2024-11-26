@@ -114,3 +114,15 @@ end
 # # Llamar a la función de Gauss-Newton
 # β_opt = gauss_newton(x_data, y_data, β_inicial)
 # println("Parámetros ajustados: β1 = $(β_opt[1]), β2 = $(β_opt[2])")
+
+
+"""Ejemplo para función multivariada para el caso de la ley elíptica de Allesina"""
+# μ = [0, 0]
+# Σ = [1  0.9;
+#      0.9 10]
+# p = MvNormal(μ, Σ)
+
+# X = range(-8, 8, length=100)
+# Y = range(-8, 8, length=100)
+# Z = [pdf(p, [x,y]) for y in Y, x in X] # Note x-y "for" ordering
+# contourf(X, Y, Z, color=:viridis)

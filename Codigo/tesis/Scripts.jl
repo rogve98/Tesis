@@ -30,13 +30,13 @@ end
 Función para explorar las diagonales de los Jacobianos según sus parámetros
 """
 
-function vectorDiagonales(ruta::String,df::DataFrame)
+function vectorDiagonales(ruta::String,DF::DataFrame)
     if ruta != ""
         df = DataFrame(CSV.File(ruta,header=false))
         df = permutedims(df)
         return df,vcat(collect(eachcol(df))...)    
     else
-        df = permutedims(df)
-        return df,vcat(collect(eachcol(df))...)
+        DF = permutedims(DF)
+        return DF,vcat(collect(eachcol(DF))...)
     end
 end

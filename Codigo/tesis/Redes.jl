@@ -52,10 +52,7 @@ function randomMatrix(N,p,σ,red::String)
     g = redAleatoria(N,p,red)
     M = adjacency_matrix(g)
     Id = 1* Matrix(I, N, N)
-    M = M.*rand(d,N,N)+I
-    # for i in 1:N
-    #     M[i,i] = 1
-    # end
+    M = M.*rand(d,N,N)+Id
     return (Matrix(M), g)
 end
 

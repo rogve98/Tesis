@@ -28,16 +28,33 @@ dependen de una probabilidad y con la diagonal con -d, representando la capacida
 carga del sistema.
 """
 
-function interacciones(N,p,σ,d)
-    g = redAleatoria(N,p)
+function interacciones(N,p,σ,red)
+    g = redAleatoria(N,p,red)
     M = adjacency_matrix(g)
     dist = Normal(0,σ)
-    M = M.*rand(dist,N,N)
-    for i in 1:N
-        M[i,i] = -d
-    end
-    M = 1/sqrt(N*p)*M
-    return (Matrix(M), g)
+    Id = -1 * Matrix(I,N,N)
+    M = M.*rand(dist,N,N) + Id
+    #M = 1/sqrt(N*p)*M
+    return Matrix(M)#, g
+end
+
+"""
+Interacciones de la red de Allesina, este es un prototipo para este momento. Hay que ver
+como construir adecuadamente la distribución bivariada y/o verificar si es correcta la 
+forma en que propuse la construcción de la matriz de interacciones.
+
+En este caso σ contiene en la primer columna los valores de los centros (las μ's)
+y la segunda columna tiene las desviaciones estandar σ's.
+"""
+
+function interaccionesEliptica(N,p,σ,red)
+    g = redAleatoria(N,p,red)
+    M = adjacency_matrix(g)
+    dist1 = Normal(σ[1,1],σ[1,2])
+    dist2 = Normal(σ[2,1],σ[2,2])
+    Id = -3 * Matrix(I,N,N)
+    M = M.*UpperTriangular(rand(dist1,N,N)) + M.*LowerTriangular(rand(dist2,N,N)) + Id
+    return Matrix(M)
 end
 
 """
@@ -47,4 +64,57 @@ Función para generar un círculo con centro en (h,k) y radio radio r.
 function circulo(h,k,r)
     θ = range(0, stop = 2π, length = 500)
     h .+ r*sin.(θ), k .+ r*cos.(θ)
+end
+
+"""
+Función para generar una eli´se con centro  (h,k) y con semiejes a y b
+"""
+
+function elipse(h, k, a, b)
+    θ = range(0, stop = 2π, length = 500)
+    h .+ a .* cos.(θ), k .+ b .* sin.(θ)
+end
+
+"""
+Esta transición de fase lo que busca es ver como varía la estabilidad en función de p 
+para poder comparar los resultados de May con los míos, dependiendo del tiempo que tarde 
+la compilación veré para que Ns considero estos cálculos.
+"""
+
+function transicionMay(N,p,σ,red)
+    sol = []
+    medidas = 1000
+    for i in p
+        estables = []
+        for _ in 1:medidas
+            M = interacciones(N,i,σ,red)
+            eigs = eigvals(M)
+            push!(estables, eigs)
+        end
+        neg = all.(x -> real(x) < 0, estables)
+        push!(sol,count(x -> x == 1,neg))
+    end
+    return sol
+end
+
+"""
+Función para determinar la transición de May en función de sigma. Esta función me parece que es 
+todavía más relevante que la anerior porque el parámetro crítico que propone may se ajusta mejor
+a los resultados en función de sigma.
+"""
+
+function transicionσMay(N,p,σ,red)
+    sol = []
+    medidas = 1000
+    for i in σ
+        estables = []
+        for _ in 1:medidas
+            M = interacciones(N,p,i,red)
+            eigs = eigvals(M)
+            push!(estables, eigs)
+        end
+        neg = all.(x -> real(x) < 0, estables)
+        push!(sol,count(x -> x == 1,neg))
+    end
+    return sol
 end
