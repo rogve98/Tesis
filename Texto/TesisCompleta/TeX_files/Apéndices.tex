@@ -1,4 +1,4 @@
-\chapter{Apéndice}\label{ch:Ap}
+\chapter{Apéndices}\label{ch:Ap}
 
 \section{Demostraciones del texto}
 \subsection{Solución de un sistema lineal}
@@ -123,9 +123,7 @@ Las redes que aparecen en el segundo capítulo de esta tesis han sido implementa
 	\caption{Redes y sus representaciones visuales}
 	\label{al:implementacionRedes}
 	\begin{minted}{julia}
-using Graphs
-using GraphPlot
-using Karnak
+using Graphs, GraphPlot, Karnak
 #Ejemplo de la red de karate usando GraphPlot
 gkarate = smallgraph(:karate)
 gplot(gkarate,nodelabel=1:nv(gkarate)) #Grafica y agrega un label a cada nodo.
@@ -166,7 +164,7 @@ finish()
 \setlength{\parindent}{0cm} Por último conviene mencionar que se puede guardar el archivo si se le ingresa una ruta absoluta o relativa, en ambos casos si se le introduce una cadena que va como: \ttt{ruta\_relativa/Nombre\_de\_archivo.png} se guarda en el directorio al que se le esté apuntando. 
 
 \newpage
-\subsection{Algoritmos}\label{sec:algoritmos}
+\subsection{Integradores}\label{sec:integradores}
 
 
 
@@ -311,8 +309,7 @@ Habiendo definido la red aleatoria dirigida y no dirigida, dar paso a la \textit
 	\label{al:redIncidencias}
 	\caption{Red de incidencias}
 	\begin{minted}{julia}
-using Distributions
-using Graphs
+using Distributions, Graphs
 function randomMatrix(N,p,sigma,red::String)
    d = Normal(0,sigma)
    g = redAleatoria(N,p,red)

@@ -10,13 +10,13 @@
 \usepackage{tikz-network}
 \usepackage[linesnumbered,ruled,vlined]{algorithm2e}
 \usepackage{minted}	
+\usepackage{tcolorbox}
 \usepackage{float}
 %pdflatex -synctex=1 -interaction=nonstopmode --shell-escape %.tex
 
 
-\usepackage{hyperref}
-\usepackage{captdef}
 
+\usepackage{captdef}
 \usepackage{psfrag}
 \usepackage{graphicx}
 %\usepackage{subfig}
@@ -53,7 +53,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%PORTADA%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \author{Rodrigo Vega Vilchis}
-\title{Estabilidad y transiciones de fase en el sistema de Lotka-Volterra generalizado.}
+\title{Condiciones de estabilidad en los sistemas de Lotka-Volterra generalizado.}
 \faculty{Facultad de Ciencias}
 \degree{F\'ISICO}
 \supervisor{Dr. Sergio Antonio Alcalá Corona}
@@ -71,8 +71,8 @@
 \maketitle
 
 \begin{flushright}%
-	\emph{A mis padres que siempre fueron insistentes en titularme.}\\
-	\emph{A mi hermano, esperando ser siempre su buen ejemplo.}
+	\emph{A mis padres...}\\
+	\emph{A mi hermano...}
 	\thispagestyle{empty}
 \end{flushright}
 
@@ -88,9 +88,10 @@
 \chapter{Introducción}
 
 \mainmatter
-%\include{./TeX_files/chapter01}
+%\include{./TeX_files/chapter00}
+\include{./TeX_files/chapter01}
 \include{./TeX_files/chapter02}
-%\include{./TeX_files/chapter03}
+\include{./TeX_files/chapter03}
 %\include{./TeX_files/Apéndices}
 
 \backmatter

@@ -1,11 +1,22 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {chapter}{Agradecimientos}{\es@scroman {iii}}{chapter*.1}%
 \contentsline {chapter}{Resumen}{\es@scroman {v}}{chapter*.2}%
-\contentsline {chapter}{Introducción}{\es@scroman {xiii}}{chapter*.6}%
+\contentsline {chapter}{Introducción}{\es@scroman {xv}}{chapter*.6}%
 \contentsline {chapter}{\numberline {1}¿Será estable un gran sistema complejo?}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Sistema de especies en competencia.}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Caso particular para $N=2$}{2}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Generalizando a N especies}{6}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}Red de incidencias}{9}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}Tipos de interacciones}{12}{subsection.1.3.2}%
-\contentsline {section}{\numberline {1.4}Jacobiano del sistema: Matriz de interacciones}{17}{section.1.4}%
+\contentsline {section}{\numberline {1.1}Antecedentes}{2}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Planteamiento del problema}{4}{section.1.2}%
+\contentsline {chapter}{\numberline {2}Generalizando al sistema de Lotka-Volterra}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Sistema de especies en competencia.}{7}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Caso particular para $N=2$}{8}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Generalizando a N especies}{12}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Red de incidencias}{15}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Tipos de interacciones}{18}{subsection.2.3.2}%
+\contentsline {section}{\numberline {2.4}Jacobiano del sistema: Matriz de interacciones}{23}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Estabilidad}{26}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Distribución de eigenvalores}{27}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Transición de May}{30}{subsection.2.5.2}%
+\contentsline {chapter}{\numberline {3}Condiciones de estabilidad}{35}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Series de tiempo}{36}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Matriz de interacciones}{38}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Leyes Circulares}{41}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Análisis para $N=50$}{43}{subsection.3.3.1}%

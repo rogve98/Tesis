@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{using}\PYG{+w}{ }\PYG{n}{CSV}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{DataFrames}
+\PYG{n}{jacobianos}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{[]}
+\PYG{k}{for}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{l+m+mf}{0.3}\PYG{o}{:}\PYG{l+m+mf}{0.1}\PYG{o}{:}\PYG{l+m+mf}{0.6}
+\PYG{+w}{    }\PYG{n}{ruta}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Datos/Ejemplo Jacobianos/Jacobiano100\PYGZus{}p}\PYG{l+s+si}{\PYGZdl{}i}\PYG{l+s}{.s0.2.csv\PYGZdq{}}
+\PYG{+w}{    }\PYG{n}{df}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{CSV}\PYG{o}{.}\PYG{n}{read}\PYG{p}{(}\PYG{n}{ruta}\PYG{p}{,}\PYG{n}{DataFrame}\PYG{p}{,}\PYG{n}{header}\PYG{o}{=}\PYG{n+nb}{false}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n}{push!}\PYG{p}{(}\PYG{n}{jacobianos}\PYG{p}{,}\PYG{n}{df}\PYG{p}{)}
+\PYG{k}{end}
+\PYG{n}{jacobianos}
+\end{Verbatim}
