@@ -4,19 +4,20 @@ Vamos a probar el cómputo en paralelo para observar si se optimizan los tiempos
 """
 
 function transicionParalel(params::Parametros, p)
-    sol = Vector{Int}(undef, length(p))  # Preasignamos el tamaño del vector para evitar accesos concurrentes
-    medidas::Int = 1500
-    Threads.@threads for idx in 1:length(p)
-        i = p[idx]
-        estables = []
-        params_local = deepcopy(params)  # Asegúrate de copiar los parámetros para evitar conflictos entre hilos
-        params_local.p = i
+    sol = Vector{Int}(undef, length(p))  # Vector preasignado
+    medidas = 1000
+
+    Threads.@threads for idx in eachindex(p)
+        params_local = deepcopy(params)  # Evita conflictos entre hilos
+        params_local.p = p[idx]
+
+        estables = Vector{Int}(undef, medidas)  # Prealoca para evitar push!
+
         for j in 1:medidas
-            xs = integrador(params_local)
-            push!(estables, xs)
+            estables[j] = integrador(params_local)
         end
 
-        sol[idx] = count(x -> x == 1, esEstable.(estables))
+        sol[idx] = count(x -> x == 1, estables)
     end
 
     return sol
@@ -30,17 +31,18 @@ Vamos a probar cómputo en paralelo para revisar si se pueden optimizar tiempos 
 
 function transicionσParalel(params::Parametros,σ)
     sol = Vector{Int}(undef,length(σ))
-    medidas::Int = 1500
+    medidas::Int = 1000
+    
     Threads.@threads for idx in 1:length(σ)
-        i = σ[idx]
-        estables = []
         params_local = deepcopy(params)
-        params_local.σ = i
+        params_local.σ = σ[idx]
+        
+        estables = Vector{Int}(undef,medidas)
+
         for j in 1:medidas 
-            xs = integrador(params_local)
-            push!(estables,xs)
+            estables[j] = integrador(params_local)  
         end
-        sol[idx] = count(x -> x == 1, esEstable.(estables))
+        sol[idx] = count(x -> x == 1, estables)
     end
     return sol    
 end
