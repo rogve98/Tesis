@@ -20,6 +20,7 @@ include("Sistema.jl") #Contiene las funciones del sistema y la transición.
 include("pruebas.jl") #Contiene código reciclado y algunas pruebas importantes por hacer
 include("Scripts.jl") #Contiene scripts para poder guardar los datos en archivos .CSV
 include("paralel.jl") #Vamos a implementar cómputo en paralelo.
+include("Estadistica.jl")
 
 """
 Redes aleatorias que fungen como Jacobianos (matrices de interacciones). Es el estilo 
@@ -110,6 +111,64 @@ function transicionσMay(N,p,σ,red)
         estables = []
         for _ in 1:medidas
             M = interacciones(N,p,i,red)
+            eigs = eigvals(M)
+            push!(estables, eigs)
+        end
+        neg = all.(x -> real(x) < 0, estables)
+        push!(sol,count(x -> x == 1,neg))
+    end
+    return sol
+end
+
+
+"""
+Las siguientes tres funciones servirán como alternativa para sacar los gráficos de transición
+de may para redes dirigidias (completamente aleatorias). La motivación de estas funciones es la de 
+optimizar tiempos de ejecución ya que mediante el método tradicional utilizando red = "dirigida"
+se tarda alrededor de un día en compilar, y justo ahora necesitamos ahorrarnos el mayor tiempo
+posible.
+"""
+
+function interaccionesMayDir(N,p,σ)
+    M = zeros(N,N)
+    dist = Normal(0,σ)
+    for i in 1:N
+        for j in 1:N
+            if i == j 
+                continue
+            end
+            if rand() < p
+                M[i,j] = rand(dist)
+            end
+        end
+    end
+    Id = -1 * Matrix(I,N,N)
+    return M+Id
+end
+
+function transicionMayDir(N,p,σ)
+    sol = []
+    medidas = 1000
+    for i in p
+        estables = []
+        for _ in 1:medidas
+            M = interaccionesMayDir(N,i,σ)
+            eigs = eigvals(M)
+            push!(estables, eigs)
+        end
+        neg = all.(x -> real(x) < 0, estables)
+        push!(sol,count(x -> x == 1,neg))
+    end
+    return sol
+end
+
+function transicionσMayDir(N,p,σ)
+    sol = []
+    medidas = 1000
+    for i in σ
+        estables = []
+        for _ in 1:medidas
+            M = interaccionesMayDir(N,p,i)
             eigs = eigvals(M)
             push!(estables, eigs)
         end
