@@ -136,7 +136,8 @@ function sistema(E::estabilidad)
     r = E.params.r
     K = E.params.K
     N = E.params.N
-    A = E.M.A
+    A = E.sol.A
+    X = E.X
     sis = zeros(N)
     xs = zeros(N)
     for i in 1:N
@@ -154,20 +155,36 @@ función ya no se estará ocupando ya que establidad.X tiene el vector solución
 que se espera para poder ejecutar las funciones anterioes. Sin embargo lo dejaré
 por aquí nada más pal registro/recuerdo jeje.
 
+Retomamos esta función: existen sistemas asitóticamente estables que por falta de tiempo
+de integración, no llegaron al atractor (esta es una hipótesis). Por lo tanto
+vamos a agarrar el último punto de la serie de tiempo para tomarlo como referencia
+para el NR y así conseguir el punto crítico asociado.
+
 Jacobiano := función que nos regresa el jacobiano del sistema.
-x0 := condición inicial; este fue remplazado por E.X
-P := parámetros, [r,K,N,A]; este por el objeto E completo
+E := el struct que tiene la información de la solución del sistema
 n := número de pasos para iterar Newton Rhapson; con 100 o 1000 iteraciones esta chido.
 """
+function update_estado!(E::estabilidad, nuevo_x)
+    E.X .= nuevo_x  # Actualiza el estado
+end
 
-function nrMulti(Jacobiano::Function,E::estabilidad,n::Int)
+function nrMulti(Jacobiano::Function,E::estabilidad,n::Int,tol::Float64 = 1e-10)
     N = E.params.N
     sol = zeros(n,N)
     sol[1,:] = E.X
     for i in 2:n
-        sol[i,:] = sol[i-1,:] - inv(Jacobiano(E))*sistema(E)
+        J_eval = Jacobiano(E)
+        F_eval = sistema(E)
+        if norm(F_eval) < tol
+            return sol[i-1, :]
+        end
+
+        Δx = J_eval \ (-F_eval)  # Resolver el sistema J Δx = -F
+        sol[i, :] = sol[i-1, :] + Δx  
+        update_estado!(E, sol[i, :])  
     end
-    return sol[end,:]
+    println("Advertencia: No convergió en $n iteraciones")
+    E.X = sol[end,:]
 end
 
 
