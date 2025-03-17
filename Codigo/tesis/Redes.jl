@@ -104,10 +104,8 @@ function incidencias(parametros::Parametros)
     end
 
     M = adjacency_matrix(g)
-    M = M.*rand(d,N,N)
-    for i in 1:N
-        M[i,i] = 1
-    end
+    Id = 1* Matrix(I, N, N)
+    M = M.*rand(d,N,N)+Id
     return Matrix(M)
 
 end
