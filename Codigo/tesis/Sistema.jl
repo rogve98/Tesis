@@ -60,11 +60,8 @@ transición. Opera con el mismo objeto Parametros
 
 function integrador(params::Parametros)
     N = params.N
-    p = params.p
     r = params.r
     K = params.K
-    σ = params.σ
-    red = params.Red
     A = incidencias(params)
     function sistema(X::Vector)
         sis = zeros(N)
@@ -77,7 +74,27 @@ function integrador(params::Parametros)
         end
         return sis
     end
-    return RK4(sistema,params.x0,params.t0,params.tf,params.h)[2]
+    X = RK4(sistema,params.x0,params.t0,params.tf,params.h)[2][end,:]
+    if any(isnan,X)
+        return 0
+    else
+        M = zeros(N,N)
+        for i in 1:N
+            for j in 1:N
+                if i == j
+                    xs = zeros(N)
+                    for k in 1:N
+                        xs[i] += A[i,k]*X[k]
+                    end
+                    M[i,i] = r[i]*(1-xs[i]/K[i])-r[i]*X[i]/K[i]
+                else
+                    M[i,j] = -r[i]*X[i]*A[i,j]/K[i]
+                end
+            end
+        end
+        evs = eigvals(M)
+        return Int(all(x->x<0,real(evs)))
+    end
 end
 
 """
@@ -87,15 +104,15 @@ Esta función genera la gráfica de la transición. Opera sobre un conjunto de p
 
 function transicion(params::Parametros,p)
     sol = []
-    medidas = 200
+    medidas = 10
     for i in p
         estables = []
         params.p = i
         for j in 1:medidas
-            xs = integrador(params::Parametros)
+            xs = integrador(params::Parametros)           
             push!(estables, xs)
         end
-        push!(sol,count(x -> x == 1,esEstable.(estables)))
+        push!(sol,count(x -> x == 1,estables))
     end
     return sol
 end
@@ -108,7 +125,7 @@ se centra en las sigmas de la distribución normal.
 
 function transicionσ(params::Parametros,σ)
     sol = []
-    medidas = 1000
+    medidas = 10
     for i in σ
         estables = []
         params.σ = i 
@@ -116,7 +133,7 @@ function transicionσ(params::Parametros,σ)
             xs = integrador(params::Parametros)
             push!(estables,xs)
         end
-        push!(sol,count(x -> x  == 1, esEstable.(estables)))
+        push!(sol,count(x -> x  == 1, estables))
     end
     return sol    
 end
