@@ -77,29 +77,31 @@ function Jacobianos(params::Parametros)
             end
             return sis
         end
-        return RK4(sistema,params.x0,params.t0,params.tf,params.h)[2]
+        return RK4(sistema,params.x0,params.t0,params.tf,params.h)[2][end,:]
+    end
+    function jacobiano(A::Matrix,X::Vector)
+        M = zeros(N,N)
+        for i in 1:N
+            for j in 1:N
+                if i == j
+                    xs = zeros(N)
+                    for k in 1:N
+                        xs[i] += A[i,k]*X[k]
+                    end
+                    M[i,i] = r[i]*(1-xs[i]/K[i])-r[i]*X[i]/K[i]
+                else
+                    M[i,j] = -r[i]*X[i]*A[i,j]/K[i]
+                end
+            end
+        end
+        return M
     end
     LK = Estables(A)
-    while !(esEstable(LK))
+    while any(isnan, LK) || !all(x -> x < 0, real(eigvals(jacobiano(A, LK))))
         A = incidencias(params)
         LK = Estables(A)        
     end
-    X = LK[end,:]
-    M = zeros(N,N)
-    for i in 1:N
-        for j in 1:N
-            if i == j
-                xs = zeros(N)
-                for k in 1:N
-                    xs[i] += A[i,k]*X[k]
-                end
-                M[i,i] = r[i]*(1-xs[i]/K[i])-r[i]*X[i]/K[i]
-            else
-                M[i,j] = -r[i]*X[i]*A[i,j]/K[i]
-            end
-        end
-    end
-    return M
+    return jacobiano(A,LK)
 end
 
 """
@@ -117,7 +119,7 @@ function distDiagonal(params::Parametros,p)
         #jacobianos = []
         params.p = i 
         for i in 1:medidas
-            d = DiagonalJ(params::Parametros)
+            d = Jacobianos(params::Parametros)
         #    push!(jacobianos,J)
             push!(diagonales,d)
         end
@@ -197,3 +199,39 @@ las interacciones a como Robert May estipula en su libro p. 28
 """
 ispositive(x) = x>0 ? true : false
 isnegative(x) = x<0 ? true : false
+
+"""
+Regresión no lineal utilizada para determinar el parámetro crítico de los diagramas de transición
+de forma numérica. Utiliza una sigmoide como referencia y realiza un ajuste de parámetros
+"""
+
+function regresionNoLineal(x::Vector,y::Vector)
+    γ = 0.0001
+    S = 1_000_000
+    N = length(x)
+    J = zeros(N,2)
+    W=Matrix{Float64}(I,N,N)/mean(y)^2
+
+    #Parámetros
+    indice_medio = isnothing(findfirst(x->x == 0,y)) ? Int(round(findfirst(x -> isapprox(x, 0, atol=3e-3), y)/2)) : Int(round(findfirst(x->x == 0,y)/2))
+    a,b = 4*(y[indice_medio]-y[indice_medio+1])/(x[indice_medio]-x[indice_medio+1]),y[indice_medio]
+    function ajustedeParametros(β1,β2)
+        for _ in range(1,S)
+            J[:,1] = (x.-β2).*exp.(-β1*(x.-β2))./(1 .+exp.(-β1*(x.-β2))).^2
+            J[:,2] = β2*exp.(-β1*(x.-β2))./(1 .+exp.(-β1*(x.-β2))).^2 #esta derivada esta bien rara, debería tener signo negativo pero así como esta jala bien
+    
+            r = y .-1 ./(1 .+exp.(-β1*(x.-β2)))    
+            delta=2*γ*transpose(r)*W*J
+    
+            β1 += delta[1]
+            β2 += delta[2]
+        end
+        return (β1,β2)
+    end
+    (β1,β2) = ajustedeParametros(a,b)
+    while β2 < 0
+        γ*=1e-1
+        (β1,β2) = ajustedeParametros(a,b)
+    end
+    return (β1,β2)    
+end
