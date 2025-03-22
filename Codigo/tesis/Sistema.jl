@@ -229,3 +229,51 @@ function transicionB(params::Parametros,m)
     end
     return sol
 end
+
+"""
+Segunda versión de la función intgeración para recuperar todos los Jacobianos que resultaron
+estables de cada simulación exitosa.
+"""
+
+function integradorJacobs(params::Parametros)
+    N = params.N
+    r = params.r
+    K = params.K
+    A = incidencias(params)
+    function sistema(X::Vector)
+        sis = zeros(N)
+        xs = zeros(N)
+        for i in 1:N
+            for j in 1:N
+                xs[i] += A[i,j]*X[j]
+            end
+            sis[i] = r[i]*X[i]*(1-xs[i]/K[i])
+        end
+        return sis
+    end
+    X = RK4(sistema,params.x0,params.t0,params.tf,params.h)[2][end,:]
+    if any(isnan,X)
+        return 0,nothing,A # A es la matriz de incidencias
+    else
+        M = zeros(N,N)
+        for i in 1:N
+            for j in 1:N
+                if i == j
+                    xs = zeros(N)
+                    for k in 1:N
+                        xs[i] += A[i,k]*X[k]
+                    end
+                    M[i,i] = r[i]*(1-xs[i]/K[i])-r[i]*X[i]/K[i]
+                else
+                    M[i,j] = -r[i]*X[i]*A[i,j]/K[i]
+                end
+            end
+        end
+        evs = eigvals(M)
+        if  all(x->x<0,real(evs))
+            return 1,M,A
+        else
+            return 0,nothing,A
+        end
+    end
+end
