@@ -17,7 +17,7 @@ function transicionParalel(params::Parametros, p)
             estables[j] = integrador(params_local)
         end
 
-        sol[idx] = count(x -> x == 1, estables)
+        sol[idx] = sum(estables)
     end
 
     return sol
@@ -42,7 +42,7 @@ function transicionσParalel(params::Parametros,σ)
         for j in 1:medidas 
             estables[j] = integrador(params_local)  
         end
-        sol[idx] = count(x -> x == 1, estables)
+        sol[idx] = sum(estables)
     end
     return sol    
 end
@@ -53,34 +53,79 @@ cores en la ejecución. La ejecución para σ = 0.5 tardó 9 días! Entonces par
 esto se va a volver un relajo. Se busca minimzar tiempos de ejecución
 """
 
-function distDiagonalParalel(params::Parametros,p)
-    medidas = 10
+function distDiagonalParalel(params::Parametros, p)
+    medidas = 100
     σ = params.σ
-    for i in p
-        jacobianos = []
-        params.p = i 
+    # Preasignar el arreglo de resultados (uno para cada valor de p)
+    jacobianoss_total = Vector{Vector{Matrix{Float64}}}(undef, length(p))
 
-        # Crear el lock fuera del ciclo
-        lck = ReentrantLock()
+    Threads.@threads for idx in 1:length(p)
+        i = p[idx]
+        jacobianoss = []  # Este vector será local a cada hilo
+        params.p = i
+        
+        for _ in 1:medidas
+            M = Jacobianos(params)
+            push!(jacobianoss, M)
+        end
+        
+        # Asignar los resultados del hilo a su respectivo índice
+        jacobianoss_total[idx] = jacobianoss
+    end
 
-        # Paralelización en la generación de diagonales
-        Threads.@threads for i in 1:medidas
-            M = Jacobianos(params::Parametros)
+    # Escribir los resultados a archivos CSV después de la paralelización
+    for (i, jacobianos) in enumerate(jacobianoss_total)
+        writedlm("Jacobianos_s$σ.p$(p[i]).csv", jacobianos)
+    end
+end
 
-            # Bloque crítico con el lock
-            lock(lck)  # Bloqueamos antes de modificar el arreglo compartido
-            try
-                push!(jacobianos, M)
-            finally
-                unlock(lck)  # Desbloqueamos después de la operación
+
+"""
+TRansición paralela con jacobianos y matrices de incidencais incluidas
+"""
+
+function transicionParalelCompleto(params::Parametros, p)
+    sol = Vector{Int}(undef, length(p))  # Vector preasignado
+    medidas = 1000
+
+    Threads.@threads for idx in eachindex(p)
+        params_local = deepcopy(params)  # Evita conflictos entre hilos
+        params_local.p = p[idx]
+
+        estables = Vector{Int}(undef, medidas)  # Prealoca para evitar push!
+        Jbs = []
+        IncEstables = []
+        IncInestables = []
+
+        for j in 1:medidas
+            #solJ, solIn, Incidencias, Jacobiano
+            e, J, Λ = integradorJacobs(params_local)
+            estables[j] = e
+            
+            if e == 1
+                push!(Jbs, J)
+                push!(IncEstables,Λ)
+            else
+                push!(IncInestables,Λ)
             end
         end
 
-        # Escritura secuencial de los resultados a un archivo CSV
-        writedlm("Jacobianos_s$σ.p$i.csv", jacobianos)
+        sol[idx] = sum(estables)
+
+        # Guardar los resultados solo si hay datos
+        if !isempty(Jbs)
+            writedlm("Jacobianos_s$(params.σ)_p$(p[idx]).csv", Jbs)
+        end
+        if !isempty(IncEstables)
+            writedlm("IncidenciasEstables_s$(params.σ)_p$(p[idx]).csv", IncEstables)
+        end
+        if !isempty(IncInestables)
+            writedlm("IncidenciasInestables_s$(params.σ)_p$(p[idx]).csv", IncInestables)
+        end
     end
+    return sol
 end
-    
+
     
     
    #=  medidas = 100
