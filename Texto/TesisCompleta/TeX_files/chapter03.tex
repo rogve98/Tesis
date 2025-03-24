@@ -109,16 +109,16 @@ El hecho de que la distribución de la diagonal no sea homogénea impacta direct
 	\label{fig:LeyesCirculares}
 \end{figure}
 
-Esta propuesta sugiere que cada valor de la diagonal funge como un centro y radio de una Ley Circular local que encierra cierta cantidad de eigenvalores mismos que se ajustan a dicho círculo particular. Hemos visto el mínimo valor de la distribución de la diagonal genera un Círculo que encierra 
+Esta propuesta sugiere que cada valor de la diagonal funge como un centro y radio de una Ley 
 \begin{wrapfigure}{l}{0.5 \textwidth} \vspace{-30pt} \begin{center}
 	\includegraphics[scale=0.13]{../Imagenes/LeyCircularParticular}
 	\end{center}
 	\vspace{-20pt} 
 	\caption{Caso particular de la Figura (\ref{fig:LeyesCirculares}) para el valor de la diagonal $\alpha_{ii}=32.46\in\mathcal{I}$.}
-		\vspace{-50pt}
+		\vspace{-10pt}
 	\label{fig:LeyCircularParticular}
 \end{wrapfigure}
-a todos los eigenvalores pero no necesariamente la distribución se ajusta a este círculo más grande. En resumen, la propuesta que aquí se genera es que la distribución de eigenvalores de un sistema generalizado se ajusta a $N$ Leyes Circulares, mismas que se generan a partir de los valores de la diagonal de $\mathcal{I}$. De la Figura (\ref{fig:LeyesCirculares}) analicemos más de cerca un caso particular para el valor de la diagonal $\alpha_{ii}=32.46$ (Figura \ref{fig:LeyCircularParticular}), gran parte de los eigenvalores no tienen parte imaginaria sino solo la parte real negativa mientras que el resto se distribuye por el resto del círculo a excepción de algunos otros eigenvalores que pasan al siguiente nivel o siguiente círculo. Para poder confirmar o refutar esta propuesta, se necesitan de más eigenvalores dibujados en el plano complejo, ya que los eigenvalores de un solo sistema nos brinda información limitada.
+Circular local que encierra cierta cantidad de eigenvalores mismos que se ajustan a dicho círculo particular. Hemos visto el mínimo valor de la distribución de la diagonal genera un Círculo que encierra a todos los eigenvalores pero no necesariamente la distribución se ajusta a este círculo más grande. En resumen, la propuesta que aquí se genera es que la distribución de eigenvalores de un sistema generalizado se ajusta a $N$ Leyes Circulares, mismas que se generan a partir de los valores de la diagonal de $\mathcal{I}$. De la Figura (\ref{fig:LeyesCirculares}) analicemos más de cerca un caso particular para el valor de la diagonal $\alpha_{ii}=32.46$ (Figura \ref{fig:LeyCircularParticular}), gran parte de los eigenvalores no tienen parte imaginaria sino solo la parte real negativa mientras que el resto se distribuye por el resto del círculo a excepción de algunos otros eigenvalores que pasan al siguiente nivel o siguiente círculo. Para poder confirmar o refutar esta propuesta, se necesitan de más eigenvalores dibujados en el plano complejo, ya que los eigenvalores de un solo sistema nos brinda información limitada.
 
 \subsection{Análisis para $N=50$}
 
@@ -210,7 +210,7 @@ Una vez determinando los 78 coeficientes de variación se puede observar que en 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.24]{../Imagenes/CoeficientesVariacion}
-	\caption{Evolución del coeficiente de vaiación en función de $\sigma$ y $p$. Cada coeficiente se muestra para cada distribución disponible según la Tabla (\ref{tab:Simulaciones}).}
+	\caption{Evolución del coeficiente de vaiación en función de $\sigma$ y $p$. Cada coeficiente se muestra para un conjunto de simulaciones dependientes de $\sigma_i$ y $p_j$ según la Tabla (\ref{tab:Simulaciones}).}
 	\label{fig:CoeficientesVariacion}
 \end{figure}
 
@@ -273,7 +273,7 @@ La clave estará en revisar si existe una correlación estadística entre los va
 
 En la distribución de valores propios hay algunas características a analizar: Se ha agregado una ley circular con centro y radio correspondiente al valor medio de su distribución de valores; encierra una gran cantidad de valores propios concentrados en la mancha. Por otro lado se observan valores propios positivos, esto deviene de la discusión que anteriormente se tuvo con respecto de las entradas positivas de las diagonales de los Jacobianos. Hay un porcentaje de éstos que tuvieron valores propios positivos, para evitarlos se debe de considerar en futuras simulaciones un tiempo de integración mayor a 50. En cuanto a la relación entre partes reales de valores propios y elementos de la diagonal de los Jacobianos considerados, existe una relación lineal casi perfecta para el caso particular: $\sigma=0.5$ y $p=0.4$. Sobre todo es interesante ver que incluso existe una relación entre las entradas positivas de las diagonales con los valores propios con parte real positiva, esto ya habla más de la estructura del Jacobiano. En otras distribuciones el ajuste puede ir variando pero en general se sigue esta tendencia entre ambos valores considerados.\\
 \\
-Para explorar más a profundidad sobre el panorama completo de las simulaciones, se verá la relación entre la media, la mediana y la moda de las diagonales con respecto de las partes reales de los valores propios de cada uno de los 78 conjuntos de simulaciones; con ello se verá si es que realmente existe una relación lineal entre estas cantidades. Sin embargo, aunque estos sean valores representativos de cada una de las distribuciones, sigue siendo esbozo general.
+Para explorar más a profundidad sobre el panorama completo de las simulaciones, se verá la relación entre la media, mediana y moda de las diagonales con respecto de las partes reales de los valores propios de cada uno de los 78 conjuntos de simulaciones; con ello se verá si es que realmente existe una relación lineal entre estas cantidades. Sin embargo, aunque estos sean valores representativos de cada una de las distribuciones, sigue siendo esbozo general.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.16]{../Imagenes/AjustesLinMeds}
@@ -281,8 +281,82 @@ Para explorar más a profundidad sobre el panorama completo de las simulaciones,
 	\label{fig:AjustesLinMeds}
 \end{figure}
 
-Lo que se aprecia es que la relación lineal se ajusta mejor para valores $d_{kk}(\sigma_i,p_j)$ y $Re(\overline{\lambda})$ cercanos al cero (donde $\overline{\lambda}$ es el conjunto de valores propios de los Jacobianos), en contraste con los valores cada vez más negativos que se ajustan menos a la recta. 
+Estos ajustes lineales al igual que en la Figura (\ref{fig:CorrelacionMvsStd}) es un ajuste general sobre los 78 conjuntos, lo ideal sería realizar un ajuste lineal para cada conjunto $\sigma_i$. Pero de estos gráficos se puede apreciar que para valores cercanos a cero, los 3 casos se ajustan a la recta. Lo que indica que la correlación entre las $d_{kk}(\sigma_i,p_j)$ y las $Re(\overline{\lambda})$ es compartida para toda $\sigma$ con una baja probabilidad de conectividad. Conforme esta $p$ vaya aumentando, entonces la relación lineal se vuelve específica tal y como se mencionó anteriormente. Esta relación esta sugiriendo que la distribución de $Re(\overline{\lambda})$ es semejante a las distribuciones de $d_{kk}(\sigma_i,p_j)$, es decir, ¡de cola pesada y con sesgo negativo! Sin embargo como se mencionó antes: estas medidas aunque son representativas no muestran el panorama completo como en la Figura (\ref{fig:ReEvs-Diagonales} \textbf{B}), pues solo se esta considerando la relación lineal de 3 casos particulares representativos de las distribuciones consideradas. 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.2]{../Imagenes/CoeficientesCorrelacion}
+	\caption{Coeficientes de correlación en función de $\sigma$ y $p$. Cada coeficiente corresponde para un conjunto $\sigma_i$ y $p_i$ de simulaciones según la Tabla (\ref{tab:Simulaciones}).}
+	\label{fig:CoeficientesCorrelacion}
+\end{figure}
 
-En perspectiva con los jacobianos generados, cuando para cada $\sigma$ cuando $p$ es cada vez mayor, también es mas ancha la distribución de $d_{kk}(\sigma_i,p_j)$ lo que implica que su valor mínimo es cada vez más negativo. Entonces para estos casos se tiene que la relación entre
+Al igual que como se hizo para el coeficiente de variación en la Figura (\ref{fig:CoeficientesVariacion}), se puede armar un mapa de coeficientes de correlación para cada conjunto de simulaciones, de esta manera se podrá ver que tan fuerte o débil es la relación entre $Re(\overline{\lambda})$ y $d_{kk}(\sigma_i,\sigma_j)$. Se puede apreciar que la correlación es sumamente 
+\begin{wrapfigure}{r}{0.5 \textwidth} \vspace{-30pt} \begin{center}
+		\includegraphics[scale=0.135]{../Imagenes/AnomaliaSim21}
+	\end{center}
+	\vspace{-20pt} 
+	\caption{Anomalía de la simulación 21, caso con $\sigma=0.3$ y $p=0.1$.}
+	\vspace{-10pt}
+	\label{fig:AnomaliaSim21}
+\end{wrapfigure}
+fuerte para la gran mayoría de los casos, con valores superiores a $0.98$ lo que indica que las distribuciones de $d_{kk}(\sigma_i,p_j)$ y de $Re(\overline{\lambda})$ no son solamente semejantes sino prácticamente iguales o con muy poca variación. Solamente se tiene una anomalía para el caso $\sigma=0.3$ y $p=0.1$ en el que su coeficiente de correlación es abruptamente más bajo que el resto del conjunto de simulaciones. Viendo como es la relación de este caso particular se observa si hay una tendencia lineal pero hay valores anómalos que no tienen relación entre sí, pues incluso difieren por un orden de magnitud. Sin embargo la tendencia es clara a pesar de las anomalías, el coeficiente es próximo a $0.8654$ y sigue marcando una fuerte correlación entre $Re(\overline{\lambda})$ y $d_{kk}(\sigma_i,p_j)$. Por lo tanto bajo este análisis se puede justificar la propuesta de las $N$ leyes circulares de la Figura (\ref{fig:LeyesCirculares}), los elementos de la diagonal están profundamente relacionados con la distribución de valores propios en el plano complejo. Cada elemento de la diagonal puede ser visto como centro y radio de una ley circular particular y que será capaz de encerrar cierto porcentaje de valores propios que se encuentren a su alcance y dentro de su vecindad.\\
+\\
+Para concluir esta sección se tienen algunos puntos a abordar; en primer lugar se debe de ver que los casos presentados en esta sección son particulares para $N=50$, habría de definir otros tamaños de matrices para verificar si se siguen los patrones descritos anteriormente. Pero para el mismo caso de $N=50$ se deben de probar más experimentos para otros tipos de tasas de crecimiento y de capacidades de carga, diferentes de $r=2$ y $K=5$ e incluso probar para distribuciones de $r_i$ y de $K_i$ pero claro que al hacerlo se le puede subir uno o varios niveles de complejidad al problema. Al hacer esto se podrá ver si verdaderamente la estructura que se vio en esta sección es universal para cualquier parámetro que se maneje.\\
+\\
+Los resultados principales de esta sección se enumeran a continuación, las distribuciones de elementos de la diagonal de los Jacobianos asociados al sistema de Lotka-Volterra generalizado siguen una tendencia de distribución de cola pesada con sesgo negativo. Estas distribuciones guardan una relación entre la media y la desviación estándar de modo que para toda $\sigma$, mientras la $p$ aumenta, se ve como la media se recorre hacia valores negativos mientras que la desviación estándar va aumentando. En esta dirección se pudo apreciar que para $\sigma\geq 0.3$ con $p$ bajas: el coeficiente de variación es más grande lo que indica que existe una mayor dispersión en estas distribuciones que en aquellas con $\sigma\geq 0.3$ y $p$ altas, en donde se tienen cada vez más valores en la cola pesada.\\
+\\
+Las trazas son determinantes para definir la estabilidad del sistema pero no es un criterio absoluto, si se tienen elementos positivos en la diagonal el sistema puede presentar valores propios positivos lo que indica inestabilidad. La misma estructura del Jacobiano del sistema (\ref{eqn:MartizInteracciones}) garantiza los elementos de la diagonal negativos siempre y cuando se evalúe sobre un punto crítico atractor. Las simulaciones nos han confirmado que todo jacobiano evaluado en el atractor produce diagonales con elementos negativos. Por último se ha observado una fuerte correlación entre las $Re(\overline{\lambda})$ y las $d_{kk}(\sigma_i,p_j)$ de los jacobianos del sistema, lo que soporta la justificación de la propuesta de la $N$ leyes circulares que establece que cada uno de los elementos de la diagonal es un centro y radio de una determinada ley circular que encierra cierto porcentaje de valores propios. \\
+\\
+Además de las propuestas antes mencionadas para investigar otros escenarios del Jacobiano del sistema, una de las cosas que haría falta para completar este trabajo es ver como es la distribución de valores de los elementos fuera de la diagonal de los jacbianos del sistema, ver si son de cola pesada o si tienen algún tipo de sesgo. Observar, caracterizar y ajustar a una distribución conocida para poder crear una receta y así generar estas matrices sin la necesidad de pasar por todo los métodos antes descritos en esta tesis. Un pequeño adelanto de esta idea es comenzando por analizar las curtosis y las modas estadísticas de los elementos fuera de la diagonal de los Jacobianos de uno  de los 78 conjuntos de simulaciones únicamente para saber donde se encuentra el pico de la distribución y determinar si también son de cola pesada
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.16]{../Imagenes/CurModasJij}
+	\caption{(\textbf{A}) Coeficientes de curtosis de los elementos fuera de la diagonal de los Jacobianos del sistema. (\textbf{B}) Modas estadísticas de los elementos fuera de la diagonal de los Jacobianos del sistema.}
+	\label{fig:CurModasJij}
+\end{figure}
 
-Esto viene a raíz de la naturaleza de cada simulación, para cada $\sigma$ cuando la $p$ es cada vez más grande: la distribución de valores de la diagonal son cada vez más anchas y su valor mínimo es cada vez menor lo que impacta en la distribución de valores propios, solo que para estos valores extremos, la relación lineal no es tan buena, es decir, que la dependencia de estas $Re(\lambda_k)$ no es tan lineal con respecto de las correspondientes $d_{kk}(\sigma,p_j)$.
+Como se puede observar, son distribuciones muy raras pues en general tienen curtosis muy grandes en particular una que es exageradamente grande con respecto del resto. El valor más frecuente del coeficiente de curtosis para los 78 conjuntos de simulaciones es de 78 lo que sigue siendo muy alto. Además los picos generalmente se encuentran alrededor del cero salvo algunas excepciones. Todo indica que la distribución de valores que conforman los Jacobianos del sistema de Lotka-Volterra generalizado para $N=50$ con $r=2$ y $K=5$ y para cada $\sigma$ y $p$ son sumamente raras: conformados por distribuciones de cola pesada con sesgo negativo para las diagonales, y por distribuciones de cola super pesada centradas en cero para el resto de elementos del Jacobiano. Por lo que realizar la receta de la que se habló anteriormente será una tarea compleja.
+\newpage
+\section{Transiciones de estabilidad}
+
+Para darle seguimiento a los resultados de esta tesis, ésta sección se va a centrar en explorar cuales son las condiciones de la matriz de incidencias (en función de $\sigma$, $p$ y $N$) para que los Jacobianos resultantes muestren estabilidad o no. Recordando una de las conclusiones de May: un sistema será estable si la conectancia del sistema (dada por $p$) es débil mientras que la fuerza de las interacciones (dada por $\sigma$) es considerablemente alta; y ésto es válido en sentido opuesto, si dicha fuerza es baja entonces existe la oportunidad de que el sistema sea estable con una alta conectividad. \\
+\\
+Para ello se van a considerar tres tipos de sistemas, para $N=\{100,50,25\}$. Se pretende ver que tanto cambia la estabilidad con diferentes tamaños del sistema (\ref{eqn:LK}). La metodología que se va a aplicar para resolver este problema es la siguiente: Para cada $N$ se va a realizar exactamente lo mismo salvo algunas variaciones, primero se va a integrar el sistema fijando la fuerza de interacción en los siguientes valores $\tilde{\sigma}=\{0.1,0.2,...,1.0\}$ mientras que para las probabilidades de conectividad se va a considerar la siguiente partición del intervalo $[0,1]$ para cada $N$:
+\begin{equation}\label{eqn:particionLin}
+	p = \{x_i\, |\, x_i=i\cdot\Delta x, i=0,1,2,...,100\},\qquad\text{con }\Delta x=0.01
+\end{equation}
+Con esta configuración de valores se permitirá generar diagramas de transición de estabilidad para cada $N$ en función de $p$ considerando que es una partición equidistante. Hay otros dos diagramas de estabilidad que son de interés; siguiendo en función de la probabilidad de conectividad se define la siguiente partición sobre el intervalo $[0,1]$
+\begin{equation}\label{eqn:particionLog}
+	p_{\log}=\left \{ x_i\, |\, x_i=10^{-\left (10-\frac{10i}{99}\right )},\ i=0,1,...,99\right \}
+\end{equation}
+Se ha considerado particularmente este conjunto de probabilidades de conectividad ya que para ciertas $\sigma$ y para $N=100$ primordialmente, la transición ocurre de manera abrupta de tal modo que en la escala lineal no se aprecia cuando ocurre la transición, por ende se permite visualizar este cambio para valores muy pequeños. Más adelante se irá viendo este fenómeno. Por último pero no menos importante, se van a considerar diagramas en donde se deja fija la $p$ para cada $N$ y se define una partición equidistante en el intervalo $[0,1]$ en función de la fuerza de interacción, es decir:
+\begin{equation}
+	\sigma = \{x_i\, |\, x_i=i\cdot\Delta x, i=0,1,2,...,100\},\qquad\text{con }\Delta x=0.01
+\end{equation}
+Para esta configuración de valores se obtendrán los diagramas de transición en función de $\sigma$ y se verá que tan contrastante es con respecto de los otros diagramas de transición. Teniendo las particiones y los ajustes de parámetros necesarios para generar los diagramas de transición, solamente falta ver cómo y de qué manera se van a generar estos diagramas. Para cada $N$, $\sigma$ y $p$ con sus correspondientes particiones se va a integrar el sistema cierto número de veces por cada elemento de ésta misma:
+\newpage
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		Tamaño del sistema $N$ & Cantidad de simulaciones por cada elemento de la partición  \\ \hline
+		100 & 3000 \\ \hline
+		50  & 6000 \\ \hline
+		25  & 12000 \\ \hline		
+ 	\end{tabular}
+	\caption{Cantidad de simulaciones realizadas por cada $N$ y para cada elemento de la partición definida.}
+	\label{tab:SimulacionesTransicion}
+\end{table} 
+
+De tal forma que se van a determinar cuantos sistemas resultaron estables del total de simulaciones realizadas para dicho elemento y se van a contabilizar. Al final de cuentas esto nos brinda un porcentaje de estabilidad el cual se irá visualizando en sus respectivos diagramas de transición, y lo que se estará observando es que a medida que los valores de la partición aumentan, la estabilidad de los sistemas es cada vez menor. La elección de cada cantidad de simulaciones por elemento de partición, responde a la intención de suavizar las curvas, entre más valores se consideren la curva se hace cada vez más suave; con pocos puntos las curvas no se visualizan suaves. De esta forma, entre más chico sea el tamaño del sistema se requieren mas simulaciones para poder suavizar dicha curva.\\
+\\
+En una primera versión de resultados se consideró un método que generó algunos problemas los cuales se visualizaron en la sección anterior, en la discusión de los sistemas asintótica-mente estables: los cuales no alcanzaron su estabilidad o quizás no eran estables y todo gracias al tiempo de integración de $t_f=50$. Sin embargo se han generado otros resultados en donde se pone una restricción para que solamente se consideren sistemas que se integren en un tiempo máximo de $t_f=50$. Entre ambos tipos de resultados existen algunas desviaciones que requerirán de su análisis más adelante.\\
+\\
+Habiendo conseguido los diagramas de transición mediante todo un proceso computacionalmente arduo, merece preguntarse si acaso estas transiciones corresponden con transiciones de fase, y de ser cierto ¿cuál sería su parámetro crítico? Se tiene una pista en la relación (\ref{eqn:parametroMay}) que re acomodando se tiene
+\begin{equation}\label{eqn:ParametroCritico}
+	\sigma\sqrt{NC}<d
+\end{equation}
+donde en el caso de May corresponde con la diagonal fijada en $-d=-1$. Se explorará si en los diagramas de transición generados existe alguna dependencia/relación con algún valor representativo de las $d_{kk}(\sigma_i,p_j)$ de los Jacobianos del sistema.
+
+\section{Para $N=100$}
+
+hola
