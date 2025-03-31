@@ -40,3 +40,37 @@ function vectorDiagonales(ruta::String,DF::DataFrame)
         return DF,vcat(collect(eachcol(DF))...)
     end
 end
+
+"""
+Analizar parámetro críctico, en términos de las diagonales de las matrices jacobianas
+"""
+
+function promediosJacobianas(σ::Float64)
+    Jbs = []
+    p = range(0,stop=1,length=100)
+    for i in p
+        ruta = "Jacobianos_s$(σ)_p$i.csv"
+        if isfile(ruta)
+            df = CSV.read(ruta,DataFrame,header=false)
+            push!(Jbs,df)
+        end
+    end
+    Jbs = Array.(Jbs)
+    matrices = []
+    for i in 1:length(Jbs)                                                                                                                                      conjuntos = []
+        for j in 1:length(Jbs[i][:,1])
+            ms = reshape(Jbs[i][j,:],100,100)
+            push!(conjuntos,ms)
+        end          
+        push!(matrices,conjuntos)
+    end
+    diags = []
+    for i in 1:length(matrices)
+        push!(diags,diag.(matrices[i]))
+    end
+    promedios = []
+    for i in 1:length(diags)
+        push!(promedios,mean(mean.(diags[i])))
+    end
+    return promedios    
+end
