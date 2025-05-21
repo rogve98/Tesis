@@ -1,22 +1,8 @@
 \chapter{Apéndices}\label{ch:Ap}
 
-\section{Demostraciones del texto}
-\subsection{Solución de un sistema lineal}
-Se anexa la demostración al \textbf{Teorema 1} [\ref{teo:Solgral}]:
-\begin{proof}
-	Se propone la función general $X(t)=e^{\lambda t}\vec{v}_0$. Entonces derivamos la función con respecto del tiempo
-	\begin{align*}
-		\dot{X}(t) &= \lambda e^{\lambda t}\vec{v}_0\\
-				   &= e^{\lambda t}(\lambda\vec{v}_0)\\
-				   &= e^{\lambda t}(A\vec{v}_0)		\\
-				   &= A(e^{\lambda t}\vec{v}_0)\\
-				   &= AX(t)
-	\end{align*}
-\end{proof}
+\section{Solución de la ecuación logística}\label{sec:SolEqLogistica}
 
-\subsection{Solución de la ecuación logística}\label{sec:SolEqLogistica}
-
-La ecuación logística (\ref{eqn:EqLogistica}) es de las pocas ecuaciones no lineales de las que podemos hallar una solución analítica única. A continuación nos adentraremos a hallar dicha solución. Reescribimos la ecuación de la siguiente manera
+La ecuación logística (\ref{eqn:EqLogistica}) es de las pocas ecuaciones no lineales de las que podemos hallar una solución analítica única; a continuación nos adentraremos a hallar dicha solución. Reescribimos la ecuación de la siguiente manera
 $$\frac{dN}{dt}=\frac{rN(K-N)}{K}$$
 se utiliza la separación de variables para poder resolver la ecuación, re acomodando nos queda como
 $$\frac{KdN}{N(K-N)}=rdt\qquad\Longleftrightarrow\qquad \int\frac{KdN}{N(K-N)}=\int rdt$$
@@ -44,10 +30,10 @@ Comparado con la solución numérica se ve de la siguiente forma
 	\caption{Ecuación logística con una tasa de crecimiento $r=2$ y una capacidad de carga $K=10$, se grafica para las mismas condiciones iniciales; (\textbf{A}) Solución analítica. (\textbf{B}) Solución numérica.}
 	\label{fig:EcuacionLogisticaAnalitica}
 \end{figure}
-\newpage
-\subsection{Solución del sistema presa-depredador}\label{sec:SolPresaDepredador}
 
-El sistema (\ref{eqn:PresaDepredador}) tiene la dicha de poderse resolver de forma analítica al igual que la ecuación logística y se verá a continuación el procedimiento. Para ello definimos la siguiente regla de la cadena para $y(t)$
+\section{Solución del sistema presa-depredador}\label{sec:SolPresaDepredador}
+
+El sistema (\ref{eqn:PresaDepredador}) tiene la dicha de poderse resolver de forma analítica aunque a diferencia de la ecuación logística, solo se pueden llegar a conocer sus curvas de nivel; a continuación el procedimiento. Para ello definimos la siguiente regla de la cadena para $y(t)$
 $$\frac{dy}{dt} = \frac{dy}{dx}\cdot\frac{dx}{dt}\qquad\Longleftrightarrow\qquad\frac{dy}{dx}=\frac{\frac{dy}{dt}}{\frac{dx}{dt}}$$
 sustituyendo las ecuaciones de (\ref{eqn:PresaDepredador}) en $\frac{dy}{dx}$ se tiene
 \begin{align*}
@@ -66,25 +52,22 @@ Ahora veamos las curvas de nivel de la solución analítica en contraste con el 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.22]{../Imagenes/Curvas de nivel PD}
-	\caption{(\textbf{A}) Curvas de nivel utilizando la solución analítica (\ref{eqn:CurvasNivelPD}). (\textbf{B}) Espacio fase generado a partir de las ecuaciones de (\ref{eqn:PresaDepredador}) integrando con RK4.}
-	\label{fig:CurvasNivelPD}
-\end{figure}
-\newpage
-Por último realicemos una rápida comparación entre los métodos de integración de RK4 y Euler para poder visualizar la razón principal por la que se ha escogido RK4 como método de integración para los sistemas no lineales de esta tesis.
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=0.23]{../Imagenes/RK4vsEuler}
-	\caption{En ambos ejemplos se integró para $t\in[0,20]$ con un paso de integración de $h=0.01$. (\textbf{A}) Integración del sistema (\ref{eqn:EgPresaDepredador}) con el método de Runge-Kutta de orden 4. (\textbf{B}) Integración del sistema (\ref{eqn:EgPresaDepredador}) con el método de Euler.}
-	\label{fig:Rk4vsEuler}
+	\caption{(\textbf{A}) Curvas de nivel utilizando la solución analítica (\ref{eqn:CurvasNivelPD}). (\textbf{B}) Espacio fase generado a partir de las ecuaciones de (\ref{eqn:PresaDepredador}).}
 \end{figure}
 
-Para fines prácticos, en la siguiente sección se introducen la implementación de ambos métodos en el lenguaje de programación \julia.
+Por último se realizará una comparación entre los métodos de integración de RK4 y Euler para poder visualizar la razón principal por la que se ha escogido RK4 como método de integración para los sistemas no lineales de esta tesis.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.21]{../Imagenes/RK4vsEuler}
+	\caption{En ambos ejemplos se integró para $t\in[0,20]$ con un paso de integración de $h=0.01$. (\textbf{A}) Integración del sistema (\ref{eqn:PresaDepredador}) con RK4. (\textbf{B}) Integración del sistema (\ref{eqn:PresaDepredador}) con Euler.}
+	\label{fig:Rk4vsEuler}
+\end{figure}
 
 \section{Algoritmos y códigos}
 
 \subsection{Códigos para generar imágenes}
-El trabajo presente se ha realizado bajo algoritmos hecho en el lenguaje de programación \julia. En esta sección como en otras se estará anexando código en referencia a elementos presentes en el cuerpo de la tesis. Se anexa código de las figuras de los espacios fase de la sección (\ref{sec:Espacios fase}). Cabe mencionar que el motor de graficación utilizado es \href{https://github.com/JuliaPlots/CairoMakie.jl}{\texttt{CairoMakie.jl}}\footnote{citar} que es ampliamente utilizado para publicaciones científicas por su elegancia, estética y estilo. Se espera que con los bloques de códigos anexados se pueda dar una idea de su uso para su implementación propia del lector.\\
-\\
+El trabajo presente se ha realizado bajo algoritmos hecho en el lenguaje de programación \julia. En esta sección como en otras se estará anexando código en referencia a elementos presentes en el cuerpo de la tesis. Se anexa código de las figuras de los espacios fase de la sección (\ref{sec:Espacios fase}). Cabe mencionar que el motor de graficación utilizado es \href{https://github.com/JuliaPlots/CairoMakie.jl}{\texttt{CairoMakie.jl}}\footnote{citar} que es ampliamente utilizado para publicaciones científicas por su elegancia, estética y estilo. Se espera que con los bloques de códigos anexados se pueda dar una idea de su uso para su implementación propia del lector.
+
 \subsubsection{Espacios fase}
 El bloque de código (\ref{al:EspaciosFase}) funciona para generar la Figura (\ref{fig:EFReales}); sin embargo se puede modificar convenientemente para poder generar todos los espacios fase que se presentan a lo de la tesis, únicamente hay que definir las respectivas funciones del sistema para que se pueda generar el campo de direcciones apropiado.
 \begin{algorithm}

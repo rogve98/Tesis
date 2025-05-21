@@ -1,0 +1,345 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{allesina2012stability}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=3b4c526ad3828396cf670adc9f4f608d}{%
+           family={Allesina},
+           familyi={A\bibinitperiod},
+           given={Stefano},
+           giveni={S\bibinitperiod}}}%
+        {{hash=219d35cdeab44a189e8fdc209139f42e}{%
+           family={Tang},
+           familyi={T\bibinitperiod},
+           given={Si},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group UK London}%
+      }
+      \strng{namehash}{217b7ff6e9a720bda68e0a12a06cf105}
+      \strng{fullhash}{217b7ff6e9a720bda68e0a12a06cf105}
+      \strng{fullhashraw}{217b7ff6e9a720bda68e0a12a06cf105}
+      \strng{bibnamehash}{217b7ff6e9a720bda68e0a12a06cf105}
+      \strng{authorbibnamehash}{217b7ff6e9a720bda68e0a12a06cf105}
+      \strng{authornamehash}{217b7ff6e9a720bda68e0a12a06cf105}
+      \strng{authorfullhash}{217b7ff6e9a720bda68e0a12a06cf105}
+      \strng{authorfullhashraw}{217b7ff6e9a720bda68e0a12a06cf105}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature}
+      \field{number}{7388}
+      \field{title}{Stability criteria for complex ecosystems}
+      \field{volume}{483}
+      \field{year}{2012}
+      \field{pages}{205\bibrangedash 208}
+      \range{pages}{4}
+    \endentry
+    \entry{CauchyLipschitzTheorem}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=4b3c3928bd56d2b455928972518f49d4}{%
+           family={{Encyclopedia of Mathematics}},
+           familyi={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{4b3c3928bd56d2b455928972518f49d4}
+      \strng{fullhash}{4b3c3928bd56d2b455928972518f49d4}
+      \strng{fullhashraw}{4b3c3928bd56d2b455928972518f49d4}
+      \strng{bibnamehash}{4b3c3928bd56d2b455928972518f49d4}
+      \strng{authorbibnamehash}{4b3c3928bd56d2b455928972518f49d4}
+      \strng{authornamehash}{4b3c3928bd56d2b455928972518f49d4}
+      \strng{authorfullhash}{4b3c3928bd56d2b455928972518f49d4}
+      \strng{authorfullhashraw}{4b3c3928bd56d2b455928972518f49d4}
+      \field{extraname}{1}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{http://encyclopediaofmath.org/index.php?title=Cauchy-Lipschitz_theorem&oldid=30822}}
+      \field{note}{Consultado en: 2025-03-29}
+      \field{title}{Cauchy-Lipschitz theorem}
+    \endentry
+    \entry{GershgorinTheorem}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=4b3c3928bd56d2b455928972518f49d4}{%
+           family={{Encyclopedia of Mathematics}},
+           familyi={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{4b3c3928bd56d2b455928972518f49d4}
+      \strng{fullhash}{4b3c3928bd56d2b455928972518f49d4}
+      \strng{fullhashraw}{4b3c3928bd56d2b455928972518f49d4}
+      \strng{bibnamehash}{4b3c3928bd56d2b455928972518f49d4}
+      \strng{authorbibnamehash}{4b3c3928bd56d2b455928972518f49d4}
+      \strng{authornamehash}{4b3c3928bd56d2b455928972518f49d4}
+      \strng{authorfullhash}{4b3c3928bd56d2b455928972518f49d4}
+      \strng{authorfullhashraw}{4b3c3928bd56d2b455928972518f49d4}
+      \field{extraname}{2}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{http://encyclopediaofmath.org/index.php?title=Gershgorin_theorem&oldid=55529}}
+      \field{note}{Consultado en: 2025-04-10}
+      \field{title}{Gershgorin theorem}
+    \endentry
+    \entry{HadamardProduct}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=4b3c3928bd56d2b455928972518f49d4}{%
+           family={{Encyclopedia of Mathematics}},
+           familyi={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{4b3c3928bd56d2b455928972518f49d4}
+      \strng{fullhash}{4b3c3928bd56d2b455928972518f49d4}
+      \strng{fullhashraw}{4b3c3928bd56d2b455928972518f49d4}
+      \strng{bibnamehash}{4b3c3928bd56d2b455928972518f49d4}
+      \strng{authorbibnamehash}{4b3c3928bd56d2b455928972518f49d4}
+      \strng{authornamehash}{4b3c3928bd56d2b455928972518f49d4}
+      \strng{authorfullhash}{4b3c3928bd56d2b455928972518f49d4}
+      \strng{authorfullhashraw}{4b3c3928bd56d2b455928972518f49d4}
+      \field{extraname}{3}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{http://encyclopediaofmath.org/index.php?title=Matrix_multiplication&oldid=54363}}
+      \field{note}{Consultado en: 2025-04-08}
+      \field{title}{Matrix multiplication}
+    \endentry
+    \entry{hirsch2013differential}{book}{}{}
+      \name{author}{3}{}{%
+        {{hash=697b9e10d72a5f4aec2034a99cf01a9b}{%
+           family={Hirsch},
+           familyi={H\bibinitperiod},
+           given={Morris\bibnamedelima W},
+           giveni={M\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=394b6b61c0209947040512295d62d07d}{%
+           family={Smale},
+           familyi={S\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod}}}%
+        {{hash=fc90fa46ed42aa32417d13dd34fc6b48}{%
+           family={Devaney},
+           familyi={D\bibinitperiod},
+           given={Robert\bibnamedelima L},
+           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Academic press}%
+      }
+      \strng{namehash}{285050669278e1f7721cc11eb510eab7}
+      \strng{fullhash}{285050669278e1f7721cc11eb510eab7}
+      \strng{fullhashraw}{285050669278e1f7721cc11eb510eab7}
+      \strng{bibnamehash}{285050669278e1f7721cc11eb510eab7}
+      \strng{authorbibnamehash}{285050669278e1f7721cc11eb510eab7}
+      \strng{authornamehash}{285050669278e1f7721cc11eb510eab7}
+      \strng{authorfullhash}{285050669278e1f7721cc11eb510eab7}
+      \strng{authorfullhashraw}{285050669278e1f7721cc11eb510eab7}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Differential equations, dynamical systems, and an introduction to chaos}
+      \field{year}{2013}
+    \endentry
+    \entry{may2007theoretical}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=84e6e0ad61782a75a62d946e2c68ed62}{%
+           family={May},
+           familyi={M\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+        {{hash=4d4e6cb51f8949b43d79bf20c692b761}{%
+           family={McLean},
+           familyi={M\bibinitperiod},
+           given={Angela\bibnamedelima R},
+           giveni={A\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {OUP Oxford}%
+      }
+      \strng{namehash}{45206cb77d0be64eca9c1a532fc837cc}
+      \strng{fullhash}{45206cb77d0be64eca9c1a532fc837cc}
+      \strng{fullhashraw}{45206cb77d0be64eca9c1a532fc837cc}
+      \strng{bibnamehash}{45206cb77d0be64eca9c1a532fc837cc}
+      \strng{authorbibnamehash}{45206cb77d0be64eca9c1a532fc837cc}
+      \strng{authornamehash}{45206cb77d0be64eca9c1a532fc837cc}
+      \strng{authorfullhash}{45206cb77d0be64eca9c1a532fc837cc}
+      \strng{authorfullhashraw}{45206cb77d0be64eca9c1a532fc837cc}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Theoretical ecology: principles and applications}
+      \field{year}{2007}
+    \endentry
+    \entry{may2019stability}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=46f392962803b157f2a2666260d8c593}{%
+           family={May},
+           familyi={M\bibinitperiod},
+           given={Robert\bibnamedelima M},
+           giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Princeton university press}%
+      }
+      \strng{namehash}{46f392962803b157f2a2666260d8c593}
+      \strng{fullhash}{46f392962803b157f2a2666260d8c593}
+      \strng{fullhashraw}{46f392962803b157f2a2666260d8c593}
+      \strng{bibnamehash}{46f392962803b157f2a2666260d8c593}
+      \strng{authorbibnamehash}{46f392962803b157f2a2666260d8c593}
+      \strng{authornamehash}{46f392962803b157f2a2666260d8c593}
+      \strng{authorfullhash}{46f392962803b157f2a2666260d8c593}
+      \strng{authorfullhashraw}{46f392962803b157f2a2666260d8c593}
+      \field{extraname}{1}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Stability and complexity in model ecosystems}
+      \field{year}{2019}
+    \endentry
+    \entry{may1972will}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=46f392962803b157f2a2666260d8c593}{%
+           family={May},
+           familyi={M\bibinitperiod},
+           given={Robert\bibnamedelima M},
+           giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group UK London}%
+      }
+      \strng{namehash}{46f392962803b157f2a2666260d8c593}
+      \strng{fullhash}{46f392962803b157f2a2666260d8c593}
+      \strng{fullhashraw}{46f392962803b157f2a2666260d8c593}
+      \strng{bibnamehash}{46f392962803b157f2a2666260d8c593}
+      \strng{authorbibnamehash}{46f392962803b157f2a2666260d8c593}
+      \strng{authornamehash}{46f392962803b157f2a2666260d8c593}
+      \strng{authorfullhash}{46f392962803b157f2a2666260d8c593}
+      \strng{authorfullhashraw}{46f392962803b157f2a2666260d8c593}
+      \field{extraname}{2}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature}
+      \field{number}{5364}
+      \field{title}{Will a large complex system be stable?}
+      \field{volume}{238}
+      \field{year}{1972}
+      \field{pages}{413\bibrangedash 414}
+      \range{pages}{2}
+    \endentry
+    \entry{newman2018networks}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=91c825ea422365e0f6cb2597658def75}{%
+           family={Newman},
+           familyi={N\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford university press}%
+      }
+      \strng{namehash}{91c825ea422365e0f6cb2597658def75}
+      \strng{fullhash}{91c825ea422365e0f6cb2597658def75}
+      \strng{fullhashraw}{91c825ea422365e0f6cb2597658def75}
+      \strng{bibnamehash}{91c825ea422365e0f6cb2597658def75}
+      \strng{authorbibnamehash}{91c825ea422365e0f6cb2597658def75}
+      \strng{authornamehash}{91c825ea422365e0f6cb2597658def75}
+      \strng{authorfullhash}{91c825ea422365e0f6cb2597658def75}
+      \strng{authorfullhashraw}{91c825ea422365e0f6cb2597658def75}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Networks}
+      \field{year}{2018}
+    \endentry
+    \entry{posfai2016network}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=5996b175b9fa8551c3fa09da65426167}{%
+           family={Pósfai},
+           familyi={P\bibinitperiod},
+           given={Márton},
+           giveni={M\bibinitperiod}}}%
+        {{hash=15bacd7ddfc866c5dd96976d4b0244d5}{%
+           family={Barabási},
+           familyi={B\bibinitperiod},
+           given={Albert-László},
+           giveni={A\bibinithyphendelim L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Citeseer}%
+      }
+      \strng{namehash}{220bf3587c6ed70d17c43b8827837731}
+      \strng{fullhash}{220bf3587c6ed70d17c43b8827837731}
+      \strng{fullhashraw}{220bf3587c6ed70d17c43b8827837731}
+      \strng{bibnamehash}{220bf3587c6ed70d17c43b8827837731}
+      \strng{authorbibnamehash}{220bf3587c6ed70d17c43b8827837731}
+      \strng{authornamehash}{220bf3587c6ed70d17c43b8827837731}
+      \strng{authorfullhash}{220bf3587c6ed70d17c43b8827837731}
+      \strng{authorfullhashraw}{220bf3587c6ed70d17c43b8827837731}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Network science}
+      \field{volume}{3}
+      \field{year}{2016}
+    \endentry
+    \entry{stickler2016basic}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=3affc3f6759a1cda2110d643a63edd43}{%
+           family={Stickler},
+           familyi={S\bibinitperiod},
+           given={Benjamin\bibnamedelima A},
+           giveni={B\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=f4ae6c5fb375266f13b69428ca74bbd7}{%
+           family={Schachinger},
+           familyi={S\bibinitperiod},
+           given={Ewald},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{7e8a24f3d0c0ea0e9fdeb8fd0c8d99e1}
+      \strng{fullhash}{7e8a24f3d0c0ea0e9fdeb8fd0c8d99e1}
+      \strng{fullhashraw}{7e8a24f3d0c0ea0e9fdeb8fd0c8d99e1}
+      \strng{bibnamehash}{7e8a24f3d0c0ea0e9fdeb8fd0c8d99e1}
+      \strng{authorbibnamehash}{7e8a24f3d0c0ea0e9fdeb8fd0c8d99e1}
+      \strng{authornamehash}{7e8a24f3d0c0ea0e9fdeb8fd0c8d99e1}
+      \strng{authorfullhash}{7e8a24f3d0c0ea0e9fdeb8fd0c8d99e1}
+      \strng{authorfullhashraw}{7e8a24f3d0c0ea0e9fdeb8fd0c8d99e1}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Basic concepts in computational physics}
+      \field{year}{2016}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

@@ -1,0 +1,82 @@
+\documentclass[11pt,a4paper]{article}
+\renewcommand{\baselinestretch}{1.5}
+\usepackage[T1]{fontenc}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{nameref}
+\title{\textbf{Criticalidad}}
+\author{Rodrigo Vega Vilchis}
+\theoremstyle{plain}
+\newtheorem{proposición}{Proposición}
+\theoremstyle{definition}
+\newtheorem{definición}{Definición}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,      
+	urlcolor=cyan,
+}
+\newcommand{\Var}{\mathrm{Var}}
+\begin{document}
+	\maketitle
+	\begin{definición}
+		Sea el sistema de Lotka-Volterra generalizado
+		\begin{equation}\label{eqn:LK}
+			\frac{dx_i}{dt}=r_ix_i\left (1-\frac{\sum_{j=1}^{N}\alpha_{ij}x_j}{K_i}\right )
+		\end{equation}
+		donde $r_i$ y $K_i$ son la tasa de crecimiento y capacidad de carga del sistema, y las $\alpha_{ij}$ coeficientes de una matriz $\Lambda\in\mathrm{M}_n(\mathbb{R})$ tal que 
+		$$\Lambda=
+		\begin{cases}
+			\alpha_{ii}=1,\\
+			\alpha_{ij}=\begin{cases}
+				x,\qquad \text{si }r<p\ \text{ y }\ x\in\mathcal{N}(0,\sigma)\\
+				0,\qquad \text{si }r>p 
+			\end{cases}
+		\end{cases}
+		$$
+		donde $r$ es un número aleatorio en el intervalo $[0,1]$ y $p$ una probabilidad de ocurrencia.
+	\end{definición}
+	\begin{definición}
+		Se define la matriz Jacobiana del sistema (\ref{eqn:LK}) de la siguiente manera
+			\begin{equation}\label{eqn:MartizJacobiana}
+			\mathcal{J}=\begin{cases}
+				\mathcal{J}_{ii} = r_i \left (1-\frac{2\alpha_{ii}x_i+\sum_{k\neq i}\alpha_{ik}x_k}{K_i}\right ),\qquad&\text{para }i\in\{1,...,N\}\\
+				\mathcal{J}_{ij} = -\frac{r_i\alpha_{ij}x_i}{K_i},\qquad&\text{para }i\neq j
+			\end{cases}
+		\end{equation}
+		donde se asegura que los sistemas estables son aquellos que cumplen $J_{ii}<0$ para toda $i\in\{1,...,N\}$. Se deja como ejercicio al lector demostrar esto.
+	\end{definición}
+\setlength{\parindent}{0cm}
+Es de interés determinar puntos fijos en el sistema (\ref{eqn:LK}) que son aquellos que cumplen $\textbf{F}(X^*)=0$, donde $\textbf{F}:\mathbb{R}^n\to\mathbb{R}^n$ es la función vectorial asociada a (\ref{eqn:LK}). Los puntos fijos resultantes de resolver la ecuación, pueden ser múltiples y además ser estables o inestables, dependiendo del signo de la parte real de los valores propios asociados a $\mathcal{J}$. Las entradas de $X^*$ van a depender de los coeficientes de $\Lambda$ y a su vez de los parámetros $\sigma$ y $p$, por lo que en esencia la estabilidad puede depender de dichos parámetros y la condición que deben satisfacer los coeficientes de $\Lambda$ y las $x_j\in X^*$ es $\mathcal{J}_{ii}<0$.\\
+\\
+Para ello comencemos por explorar algunas posibles propiedades de los elementos de $X^*$. Si se asume aproximación de campo medio, entonces se cumple que para toda $x_j\in X^*$
+$$x_j=\langle x\rangle¿$$
+y con base en las ecuaciones (\ref{eqn:LK}) que resuelven al punto fijo se tiene que
+\begin{equation}\label{eqn:1momento}
+	\begin{split}
+		\langle x\rangle+\sum_{j\neq i}\alpha_{ij}\langle x\rangle&=K_i,\qquad\alpha_{ii}=1\\
+		\langle x\rangle&=\frac{K_i}{1+pN\sigma^2},\qquad 
+	\end{split}
+\end{equation}
+asumiendo que $\sum_{j\neq i}\Var(\alpha_{ij})\approx pN\sigma^2$. Siguiendo el camino con el segundo momento, llegaríamos a un resultado similar
+\begin{equation}\label{eqn:2momento}
+	\langle x^2\rangle=\frac{K_i^2}{1+pN\sigma^2}
+\end{equation}
+asumiendo en uno de los pasos intermedios que $\sum_{j\neq i}\langle \alpha_{ij}^2\rangle=pN\sigma^2$. Por lo tanto la varianza de las entradas del punto fijo $X^*$ es
+\begin{equation}\label{eqn:varianza}
+	\begin{split}
+		\Var(x) &=\langle x^2\rangle-\langle x\rangle^2\\
+		&=\frac{K_i}{1+pN\sigma^2}\left (K_i-1\right )
+	\end{split} 
+\end{equation}
+para cualquier $x\in X^*$. Teniendo estas cantidades, podemos explorar $\mathcal{J}_{ii}<0$ en términos de la varianza de $x$, es decir
+$$K_i<2\alpha_{ii}x_i+\sum_{j\neq i}\alpha_{ij}x_j$$
+Para ver los casos favorables de esta desigualdad se pueden usar los momentos y la varianza antes encontrada, sin embargo la sola suposición de campo medio no es tan verás, pues en el punto fijo pueden existir $x_k\gg \langle x\rangle$ o $x_k\ll \langle x\rangle$ lo que rompe con la simetría de la hipótesis planteada. Observando un poco la distribución de las entradas de $X^*$ se puede apreciar que la mayoría de valores se encuentran cerca del cero mientras que el resto se distribuye en una especie de cola pesada. Con esta distribución se podría adaptar un campo medio de sesgo positivo, y con ello comenzar a hacer los mismos cálculos de antes para así intentar acercarse al umbral de estabilidad.
+\\
+\\
+La misión de encontrar el punto fijo se sale de los alcances de la tesis en donde solo se busca un primer acercamiento, exploración del modelo, caracterización de la dinámica y estabilidad en función de los parámetros mencionados y proponer un primer acercamiento de la búsqueda del punto crítico.
+\end{document}

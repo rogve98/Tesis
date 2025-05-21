@@ -28,7 +28,7 @@
 \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
 \usepackage{caption}
 \usepackage{subcaption}
-\usepackage{cite}
+%\usepackage{cite}
 \renewcommand{\baselinestretch}{1.5}
 
 \usepackage{hyperref}
@@ -50,6 +50,12 @@
 \setcounter{secnumdepth}{3}
 \usepackage{svg}
 
+
+\usepackage[backend=biber,style=numeric]{biblatex}
+\bibliography{./TeX_files/referencias.bib}
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%PORTADA%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \author{Rodrigo Vega Vilchis}
@@ -63,6 +69,7 @@
 
 \newcommand{\julia}{\includegraphics[trim=0 1cm 0 -1cm, height=1.2em]{../Imagenes/julia-logo-color}\ }
 \newcommand{\ttt}[1]{\texttt{#1}}
+\newcommand{\Var}{\mathrm{Var}}
 
 \begin{document}
 
@@ -85,16 +92,20 @@
 %\listoftables
 \listofalgorithms
 
-\chapter{Introducción}
+
+%\include{./TeX_files/Introduccion}
 
 \mainmatter
-%\include{./TeX_files/chapter00}
-\include{./TeX_files/chapter01}
-\include{./TeX_files/chapter02}
+
+%\include{./TeX_files/chapter01}
+%\include{./TeX_files/chapter02}
 \include{./TeX_files/chapter03}
-%\include{./TeX_files/Apéndices}
+
+
+
 
 \backmatter
 % bibliography, glossary and index would go here.
-
+\printbibliography
+%\include{./TeX_files/Apéndices}
 \end{document}

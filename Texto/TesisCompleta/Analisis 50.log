@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.14)  20 MAY 2025 23:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.14)  20 MAY 2025 14:19
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
-**./main.tex
-(main.tex
+**"./Analisis 50.tex"
+(Analisis 50.tex
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/base\book.cls
@@ -928,7 +928,8 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@every@listing=\toks71
 \c@listing=\count387
 )
-runsystem(if not exist _minted-main mkdir _minted-main)...executed.
+runsystem(if not exist _minted-Analisis_50 mkdir _minted-Analisis_50)...execute
+d.
 
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcolorbox.s
@@ -1048,7 +1049,7 @@ Package: cancel 2013/04/12 v2.2 Cancel math terms
 )
 
 Package xcolor Warning: Package option `usenames' is obsolete and ignored on in
-put line 29.
+put line 30.
 
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/graphics\dvipsnam.def
@@ -1218,7 +1219,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip87
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 41.
+Package hyperref Info: Option `colorlinks' set `true' on input line 42.
 \c@proposición=\count420
 \c@teorema=\count421
 \c@definición=\count422
@@ -1265,289 +1266,41 @@ Package: transparent-nometadata 2022-10-27 v1.5 Transparency via pdfTeX's color
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )))
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.sty
-Package: biblatex 2024/03/21 v3.20 programmable bibliographies (PK/MW)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
-Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count426
+runsystem(for ^%i in (pygmentize.exe pygmentize.bat pygmentize.cmd) do set > An
+alisis_50.aex <nul: /p x=^%~$PATH:i>> Analisis_50.aex)...executed.
 
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
-File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
-))
-\c@tabx@nest=\count427
-\c@listtotal=\count428
-\c@listcount=\count429
-\c@liststart=\count430
-\c@liststop=\count431
-\c@citecount=\count432
-\c@citetotal=\count433
-\c@multicitecount=\count434
-\c@multicitetotal=\count435
-\c@instcount=\count436
-\c@maxnames=\count437
-\c@minnames=\count438
-\c@maxitems=\count439
-\c@minitems=\count440
-\c@citecounter=\count441
-\c@maxcitecounter=\count442
-\c@savedcitecounter=\count443
-\c@uniquelist=\count444
-\c@uniquename=\count445
-\c@refsection=\count446
-\c@refsegment=\count447
-\c@maxextratitle=\count448
-\c@maxextratitleyear=\count449
-\c@maxextraname=\count450
-\c@maxextradate=\count451
-\c@maxextraalpha=\count452
-\c@abbrvpenalty=\count453
-\c@highnamepenalty=\count454
-\c@lownamepenalty=\count455
-\c@maxparens=\count456
-\c@parenlevel=\count457
-\blx@tempcnta=\count458
-\blx@tempcntb=\count459
-\blx@tempcntc=\count460
-\c@blx@maxsection=\count461
-\blx@maxsegment@0=\count462
-\blx@notetype=\count463
-\blx@parenlevel@text=\count464
-\blx@parenlevel@foot=\count465
-\blx@sectionciteorder@0=\count466
-\blx@sectionciteorderinternal@0=\count467
-\blx@entrysetcounter=\count468
-\blx@biblioinstance=\count469
-\labelnumberwidth=\skip88
-\labelalphawidth=\skip89
-\biblabelsep=\skip90
-\bibitemsep=\skip91
-\bibnamesep=\skip92
-\bibinitsep=\skip93
-\bibparsep=\skip94
-\bibhang=\skip95
-\blx@bcfin=\read8
-\blx@bcfout=\write8
-\blx@langwohyphens=\language80
-\c@mincomprange=\count470
-\c@maxcomprange=\count471
-\c@mincompwidth=\count472
-Package biblatex Info: Trying to load biblatex default data model...
-Package biblatex Info: ... file 'blx-dm.def' found.
+runsystem(del Analisis_50.aex)...executed.
 
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-dm.def
-File: blx-dm.def 2024/03/21 v3.20 biblatex datamodel (PK/MW)
-)
-Package biblatex Info: Trying to load biblatex style data model...
-Package biblatex Info: ... file 'numeric.dbx' not found.
-Package biblatex Info: Trying to load biblatex custom data model...
-Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count473
-\c@savedafterword=\count474
-\c@annotator=\count475
-\c@savedannotator=\count476
-\c@author=\count477
-\c@savedauthor=\count478
-\c@bookauthor=\count479
-\c@savedbookauthor=\count480
-\c@commentator=\count481
-\c@savedcommentator=\count482
-\c@editor=\count483
-\c@savededitor=\count484
-\c@editora=\count485
-\c@savededitora=\count486
-\c@editorb=\count487
-\c@savededitorb=\count488
-\c@editorc=\count489
-\c@savededitorc=\count490
-\c@foreword=\count491
-\c@savedforeword=\count492
-\c@holder=\count493
-\c@savedholder=\count494
-\c@introduction=\count495
-\c@savedintroduction=\count496
-\c@namea=\count497
-\c@savednamea=\count498
-\c@nameb=\count499
-\c@savednameb=\count500
-\c@namec=\count501
-\c@savednamec=\count502
-\c@translator=\count503
-\c@savedtranslator=\count504
-\c@shortauthor=\count505
-\c@savedshortauthor=\count506
-\c@shorteditor=\count507
-\c@savedshorteditor=\count508
-\c@labelname=\count509
-\c@savedlabelname=\count510
-\c@institution=\count511
-\c@savedinstitution=\count512
-\c@lista=\count513
-\c@savedlista=\count514
-\c@listb=\count515
-\c@savedlistb=\count516
-\c@listc=\count517
-\c@savedlistc=\count518
-\c@listd=\count519
-\c@savedlistd=\count520
-\c@liste=\count521
-\c@savedliste=\count522
-\c@listf=\count523
-\c@savedlistf=\count524
-\c@location=\count525
-\c@savedlocation=\count526
-\c@organization=\count527
-\c@savedorganization=\count528
-\c@origlocation=\count529
-\c@savedoriglocation=\count530
-\c@origpublisher=\count531
-\c@savedorigpublisher=\count532
-\c@publisher=\count533
-\c@savedpublisher=\count534
-\c@language=\count535
-\c@savedlanguage=\count536
-\c@origlanguage=\count537
-\c@savedoriglanguage=\count538
-\c@pageref=\count539
-\c@savedpageref=\count540
-\shorthandwidth=\skip96
-\shortjournalwidth=\skip97
-\shortserieswidth=\skip98
-\shorttitlewidth=\skip99
-\shortauthorwidth=\skip100
-\shorteditorwidth=\skip101
-\locallabelnumberwidth=\skip102
-\locallabelalphawidth=\skip103
-\localshorthandwidth=\skip104
-\localshortjournalwidth=\skip105
-\localshortserieswidth=\skip106
-\localshorttitlewidth=\skip107
-\localshortauthorwidth=\skip108
-\localshorteditorwidth=\skip109
-Package biblatex Info: Trying to load compatibility code...
-Package biblatex Info: ... file 'blx-compat.def' found.
-
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-compat.d
-ef
-File: blx-compat.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
-)
-Package biblatex Info: Trying to load generic definitions...
-Package biblatex Info: ... file 'biblatex.def' found.
-
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
-File: biblatex.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
-\c@textcitecount=\count541
-\c@textcitetotal=\count542
-\c@textcitemaxnames=\count543
-\c@biburlbigbreakpenalty=\count544
-\c@biburlbreakpenalty=\count545
-\c@biburlnumpenalty=\count546
-\c@biburlucpenalty=\count547
-\c@biburllcpenalty=\count548
-\biburlbigskip=\muskip19
-\biburlnumskip=\muskip20
-\biburlucskip=\muskip21
-\biburllcskip=\muskip22
-\c@smartand=\count549
-)
-Package biblatex Info: Trying to load bibliography style 'numeric'...
-Package biblatex Info: ... file 'numeric.bbx' found.
-
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\numeric.
-bbx
-File: numeric.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
-Package biblatex Info: Trying to load bibliography style 'standard'...
-Package biblatex Info: ... file 'standard.bbx' found.
-
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard
-.bbx
-File: standard.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count550
-\c@bbx:relatedtotal=\count551
-))
-Package biblatex Info: Trying to load citation style 'numeric'...
-Package biblatex Info: ... file 'numeric.cbx' found.
-
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/cbx\numeric.
-cbx
-File: numeric.cbx 2024/03/21 v3.20 biblatex citation style (PK/MW)
-Package biblatex Info: Redefining '\cite'.
-Package biblatex Info: Redefining '\parencite'.
-Package biblatex Info: Redefining '\footcite'.
-Package biblatex Info: Redefining '\footcitetext'.
-Package biblatex Info: Redefining '\smartcite'.
-Package biblatex Info: Redefining '\supercite'.
-Package biblatex Info: Redefining '\textcite'.
-Package biblatex Info: Redefining '\textcites'.
-Package biblatex Info: Redefining '\cites'.
-Package biblatex Info: Redefining '\parencites'.
-Package biblatex Info: Redefining '\smartcites'.
-)
-Package biblatex Info: Trying to load configuration file...
-Package biblatex Info: ... file 'biblatex.cfg' found.
-
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.cfg
-File: biblatex.cfg 
-)
-Package biblatex Info: Input encoding 'utf8' detected.
-Package biblatex Info: Document encoding is UTF8 ....
- (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
-Package: expl3 2024-07-20 L3 programming layer (loader) 
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-p
 dftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count552
+\l__color_backend_stack_int=\count426
 \l__pdf_internal_box=\box143
-))
-Package biblatex Info: ... and expl3
-(biblatex)             2024-07-20 L3 programming layer (loader) 
-(biblatex)             is new enough (at least 2020/04/06),
-(biblatex)             setting 'casechanger=expl3'.
-
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-case-exp
-l3.sty
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpa
-rse.sty
-Package: xparse 2024-05-08 L3 Experimental document command parser
+) (Analisis 50.aux
+LaTeX Info: Redefining \. on input line 10.
+LaTeX Info: Redefining \% on input line 10.
 )
-Package: blx-case-expl3 2024/03/21 v3.20 expl3 case changing code for biblatex
-))
-runsystem(for ^%i in (pygmentize.exe pygmentize.bat pygmentize.cmd) do set > ma
-in.aex <nul: /p x=^%~$PATH:i>> main.aex)...executed.
+\openout1 = `"Analisis 50.aux"'.
 
-runsystem(del main.aex)...executed.
-
-
-
-Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
-(biblatex)                Loading 'csquotes' recommended.
-
-\@quotelevel=\count553
-\@quotereset=\count554
-(main.aux
-LaTeX Info: Redefining \. on input line 11.
-LaTeX Info: Redefining \% on input line 11.
- (TeX_files/chapter03.aux))
-\openout1 = `main.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1583,22 +1336,22 @@ LaTeX Font Info:    ... okay on input line 74.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \. on input line 74.
-LaTeX Info: Redefining \% on input line 74.
+LaTeX Info: Redefining \. on input line 54.
+LaTeX Info: Redefining \% on input line 54.
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.
 mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count555
+\scratchcounter=\count427
 \scratchdimen=\dimen322
 \scratchbox=\box144
-\nofMPsegments=\count556
-\nofMParguments=\count557
+\nofMPsegments=\count428
+\nofMParguments=\count429
 \everyMPshowfont=\toks77
-\MPscratchCnt=\count558
+\MPscratchCnt=\count430
 \MPscratchDim=\dimen323
-\MPnumerator=\count559
-\makeMPintoPDFobject=\count560
+\MPnumerator=\count431
+\makeMPintoPDFobject=\count432
 \everyMPtoPDFconversion=\toks78
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf
@@ -1614,91 +1367,35 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 74.
- (main.out) (main.out)
-\@outlinefile=\write9
-\openout9 = `main.out'.
+Package hyperref Info: Link coloring ON on input line 54.
+ (Analisis 50.out) (Analisis 50.out)
+\@outlinefile=\write8
+\openout8 = `"Analisis 50.out"'.
 
-Package biblatex Info: Trying to load language 'spanish'...
-Package biblatex Info: ... file 'spanish.lbx' found.
-
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\spanish.
-lbx
-File: spanish.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
-)
-Package biblatex Info: Input encoding 'utf8' detected.
-Package biblatex Info: Automatic encoding selection.
-(biblatex)             Assuming data encoding 'utf8'.
-\openout8 = `main.bcf'.
-
-Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'main.bbl' found.
- (main.bbl)
-Package biblatex Info: Reference section=0 on input line 74.
-Package biblatex Info: Reference segment=0 on input line 74.
-*geometry* verbose mode - [ newgeometry ] result:
-* driver: pdftex
-* paper: a4paper
-* layout: <same size as paper>
-* layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: twoside 
-* h-part:(L,W,R)=(85.35826pt, 426.79135pt, 85.35826pt)
-* v-part:(T,H,B)=(56.9055pt, 717.00946pt, 71.13188pt)
-* \paperwidth=597.50787pt
-* \paperheight=845.04684pt
-* \textwidth=426.79135pt
-* \textheight=717.00946pt
-* \oddsidemargin=13.08827pt
-* \evensidemargin=13.08827pt
-* \topmargin=-47.23828pt
-* \headheight=12.0pt
-* \headsep=19.8738pt
-* \topskip=11.0pt
-* \footskip=27.46295pt
-* \marginparwidth=106.0pt
-* \marginparsep=7.0pt
-* \columnsep=10.0pt
-* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
-* \hoffset=0.0pt
-* \voffset=0.0pt
-* \mag=1000
-* \@twocolumnfalse
-* \@twosidetrue
-* \@mparswitchtrue
-* \@reversemarginfalse
-* (1in=72.27pt=25.4mm, 1cm=28.453pt)
-
-<Escudo-UNAM.pdf, id=46, 300.51309pt x 337.88977pt>
-File: Escudo-UNAM.pdf Graphic file (type pdf)
-<use Escudo-UNAM.pdf>
-Package pdftex.def Info: Escudo-UNAM.pdf  used on input line 79.
-(pdftex.def)             Requested size: 68.77722pt x 77.33466pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 79.
+<escudoCiencias.pdf, id=10, 425.59pt x 480.79625pt>
+File: escudoCiencias.pdf Graphic file (type pdf)
+<use escudoCiencias.pdf>
+Package pdftex.def Info: escudoCiencias.pdf  used on input line 56.
+(pdftex.def)             Requested size: 88.14917pt x 99.58464pt.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 60.
 
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 79.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 60.
 
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<Escudo-FCIENCIAS.pdf, id=47, 359.74399pt x 411.136pt>
-File: Escudo-FCIENCIAS.pdf Graphic file (type pdf)
-<use Escudo-FCIENCIAS.pdf>
-Package pdftex.def Info: Escudo-FCIENCIAS.pdf  used on input line 79.
-(pdftex.def)             Requested size: 67.66591pt x 77.33466pt.
 
-Underfull \hbox (badness 10000) detected at line 79
-\OT1/cmr/bx/n/14.4 T E S I S
- []
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 74.
 
 
-Underfull \hbox (badness 10000) detected at line 79
-\OT1/cmr/m/n/10.95 P R E S E N T A :
- []
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 74.
 
 
 
@@ -1706,526 +1403,310 @@ Underfull \hbox (badness 10000) detected at line 79
 Non-PDF special ignored!
 <special> header=psfrag.pro
 
+{C:/Users/Rodrigo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./escudoCi
+encias.pdf>]
+
+LaTeX Warning: Reference `fig:DistDiagonal' on page 2 undefined on input line 9
+8.
+
+<../Imagenes/distDiagonales50.png, id=46, 2007.5pt x 1505.625pt>
+File: ../Imagenes/distDiagonales50.png Graphic file (type png)
+<use ../Imagenes/distDiagonales50.png>
+Package pdftex.def Info: ../Imagenes/distDiagonales50.png  used on input line 1
+01.
+(pdftex.def)             Requested size: 481.80984pt x 361.35739pt.
+<../Imagenes/CorrelacionMvsStd.png, id=48, 1806.75pt x 1405.25pt>
+File: ../Imagenes/CorrelacionMvsStd.png Graphic file (type png)
+<use ../Imagenes/CorrelacionMvsStd.png>
+Package pdftex.def Info: ../Imagenes/CorrelacionMvsStd.png  used on input line 
+113.
+(pdftex.def)             Requested size: 271.00081pt x 210.7784pt.
+
+Overfull \hbox (29.15237pt too wide) in paragraph at lines 113--114
+ [] 
+ []
 
 
-
-{C:/Users/Rodrigo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./Escudo-U
-NAM.pdf> <./Escudo-FCIENCIAS.pdf
-
-pdfTeX warning: pdflatex.exe (file ./Escudo-FCIENCIAS.pdf): PDF inclusion: mult
-iple pdfs with page group included in a single page
->]
-
-[2]
-
-[3
-
-]
-
-LaTeX Info: Redefining \. on input line 88.
-LaTeX Info: Redefining \% on input line 88.
-[4
-
-]
-
-[5]
-
-LaTeX Info: Redefining \. on input line 90.
-LaTeX Info: Redefining \% on input line 90.
-[6
-
-] (main.toc
-LaTeX Info: Redefining \sptext on input line 1.
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
-(Font)              using `OT1/cmr/bx/n' instead on input line 2.
-
-
-Package spanish Warning: Replacing `OT1/cmr/bx/sc' by 
-(spanish)                faked small caps on input line 2.
-
-
-Package spanish Warning: Replacing `OT1/cmr/bx/sc' by 
-(spanish)                faked small caps on input line 3.
-
-)
-\tf@toc=\write10
-\openout10 = `main.toc'.
-
-
-
-[7]
-
-LaTeX Info: Redefining \. on input line 91.
-LaTeX Info: Redefining \% on input line 91.
-[8
-
-] (main.lof
-LaTeX Info: Redefining \sptext on input line 1.
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
-
-
-LaTeX Warning: Reference `eqn:LKextendida' on page \es@scroman {ix} undefined o
-n input line 5.
-
-)
-\tf@lof=\write11
-\openout11 = `main.lof'.
-
-
-
-[9]
-
-LaTeX Info: Redefining \. on input line 93.
-LaTeX Info: Redefining \% on input line 93.
-[10
-
-] (main.loa)
-\tf@loa=\write12
-\openout12 = `main.loa'.
-
-
-
-[11]
-
-LaTeX Info: Redefining \. on input line 98.
-LaTeX Info: Redefining \% on input line 98.
-[12
-
-]
-\openout2 = `./TeX_files/chapter03.aux'.
-
- (TeX_files/chapter03.tex
-Cap\'{\i }tulo 1.
-
-LaTeX Warning: Reference `eqn:LK' on page 1 undefined on input line 3.
-
-
-LaTeX Warning: Reference `eqn:MatrizIncidencias' on page 1 undefined on input l
-ine 3.
-
-
-LaTeX Warning: Reference `eqn:MartizJacobiana' on page 1 undefined on input lin
-e 3.
-
-
-LaTeX Warning: Reference `prop:paramMay' on page 1 undefined on input line 3.
-
-
-LaTeX Warning: Reference `eqn:paramMay' on page 1 undefined on input line 3.
-
-
-LaTeX Warning: Reference `eqn:LK' on page 1 undefined on input line 5.
-
-
-LaTeX Warning: Reference `ch:Ap' on page 1 undefined on input line 7.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--8
+Underfull \hbox (badness 10000) in paragraph at lines 106--119
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3--8
+Underfull \hbox (badness 10000) in paragraph at lines 106--119
 
  []
 
 
 
-[1
-
-
-]
-
-LaTeX Warning: Reference `eqn:LKextendida' on page 2 undefined on input line 11
-.
-
-
-LaTeX Warning: Reference `eg:2x2' on page 2 undefined on input line 11.
-
-<../Imagenes/Seriesdetiempopositiva.png, id=171, 2107.875pt x 1003.75pt>
-File: ../Imagenes/Seriesdetiempopositiva.png Graphic file (type png)
-<use ../Imagenes/Seriesdetiempopositiva.png>
-Package pdftex.def Info: ../Imagenes/Seriesdetiempopositiva.png  used on input 
-line 14.
-(pdftex.def)             Requested size: 484.80106pt x 230.85764pt.
-
-Overfull \hbox (1.10419pt too wide) in paragraph at lines 14--15
- [][] 
- []
-
-
-LaTeX Warning: Reference `eqn:LKextendida' on page 2 undefined on input line 15
-.
-
-
-LaTeX Warning: Reference `eqn:LKextendida' on page 2 undefined on input line 15
-.
-
-
-LaTeX Warning: Reference `eg:2x2CoopyDemás' on page 2 undefined on input line 
-23.
-
-
-LaTeX Warning: Reference `fig:CooperacionEspecies' on page 2 undefined on input
- line 23.
-
-<../Imagenes/Series de Tiempo LK100.png, id=172, 2107.875pt x 1003.75pt>
-File: ../Imagenes/Series de Tiempo LK100.png Graphic file (type png)
-<use ../Imagenes/Series de Tiempo LK100.png>
-Package pdftex.def Info: ../Imagenes/Series de Tiempo LK100.png  used on input 
-line 26.
-(pdftex.def)             Requested size: 484.80106pt x 230.85764pt.
-
-Overfull \hbox (1.10419pt too wide) in paragraph at lines 26--27
- [][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--30
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--30
+[2 <../Imagenes/distDiagonales50.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 119--143
 
  []
 
 
 
-LaTeX Info: Redefining \. on input line 30.
-LaTeX Info: Redefining \% on input line 30.
-[2 <../Imagenes/Seriesdetiempopositiva.png>]
+[3 <../Imagenes/CorrelacionMvsStd.png>]
 
-LaTeX Warning: Reference `eqn:paramMay' on page 3 undefined on input line 34.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 31--35
-
- []
-
-
-
-LaTeX Info: Redefining \. on input line 35.
-LaTeX Info: Redefining \% on input line 35.
-[3 <../Imagenes/Series de Tiempo LK100.png>]
-
-LaTeX Warning: Reference `eqn:LK' on page 4 undefined on input line 38.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 41--45
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 50--56
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 50--56
-
- []
-
-
-
-LaTeX Info: Redefining \. on input line 56.
-LaTeX Info: Redefining \% on input line 56.
 [4]
-
-LaTeX Warning: Reference `eqn:MartizJacobiana' on page 5 undefined on input lin
-e 59.
-
-
-LaTeX Warning: Reference `eqn:LK' on page 5 undefined on input line 65.
-
-<../Imagenes/julia-logo-color.png, id=199, 321.2pt x 200.75pt>
-File: ../Imagenes/julia-logo-color.png Graphic file (type png)
-<use ../Imagenes/julia-logo-color.png>
-Package pdftex.def Info: ../Imagenes/julia-logo-color.png  used on input line 6
-5.
-(pdftex.def)             Requested size: 21.02086pt x 13.14pt.
-
-LaTeX Warning: Reference `prop:DiagonalI' on page 5 undefined on input line 65.
+<../Imagenes/CoeficientesVariacion.png, id=81, 1806.75pt x 1405.25pt>
+File: ../Imagenes/CoeficientesVariacion.png Graphic file (type png)
+<use ../Imagenes/CoeficientesVariacion.png>
+Package pdftex.def Info: ../Imagenes/CoeficientesVariacion.png  used on input l
+ine 163.
+(pdftex.def)             Requested size: 433.62886pt x 337.26689pt.
 
 
-\openout5 = `main.pyg'.
-
-(_minted-main/default.pygstyle)
-(_minted-main/614716BA474AECBCDCBE3B8A0E2E21E3228C163F5D4C4DD96BE66FA41258E0CF.
-pygtex
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 59--77
-
- []
+LaTeX Warning: Reference `def:MatrizInteracciones' on page 5 undefined on input
+ line 172.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--77
+LaTeX Warning: Reference `def:MatrizIncidencias' on page 5 undefined on input l
+ine 172.
+
+
+LaTeX Warning: Reference `prop:DiagonalI' on page 5 undefined on input line 172
+.
+
+
+LaTeX Warning: Reference `prop:DiagonalI' on page 5 undefined on input line 172
+.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 168--175
 
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 168--175
 
-LaTeX Info: Redefining \. on input line 77.
-LaTeX Info: Redefining \% on input line 77.
-[5]
-\openout5 = `main.pyg'.
+ []
 
 
-(_minted-main/42D9D6C965860FF7F7DDBFC31AE98CCF228C163F5D4C4DD96BE66FA41258E0CF.
-pygtex)
-
-LaTeX Info: Redefining \. on input line 99.
-LaTeX Info: Redefining \% on input line 99.
-[6{C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cm-super/cm-s
-uper-ts1.enc} <../Imagenes/julia-logo-color.png>]
-
-LaTeX Warning: Reference `eqn:MartizJacobiana' on page 7 undefined on input lin
-e 100.
-
-<../Imagenes/DistDiagonal.png, id=214, 3011.25pt x 1304.875pt>
-File: ../Imagenes/DistDiagonal.png Graphic file (type png)
-<use ../Imagenes/DistDiagonal.png>
-Package pdftex.def Info: ../Imagenes/DistDiagonal.png  used on input line 103.
-(pdftex.def)             Requested size: 481.80984pt x 208.78426pt.
-
-LaTeX Warning: Reference `prop:paramMay' on page 7 undefined on input line 111.
-
-
-
-LaTeX Warning: Reference `eqn:paramMay' on page 7 undefined on input line 111.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 108--112
+Underfull \hbox (badness 10000) in paragraph at lines 168--175
 
  []
 
 
 
-LaTeX Info: Redefining \. on input line 112.
-LaTeX Info: Redefining \% on input line 112.
-[7 <../Imagenes/DistDiagonal.png>]
-<../Imagenes/DistEigenvalores.png, id=221, 2007.5pt x 1806.75pt>
-File: ../Imagenes/DistEigenvalores.png Graphic file (type png)
-<use ../Imagenes/DistEigenvalores.png>
-Package pdftex.def Info: ../Imagenes/DistEigenvalores.png  used on input line 1
-19.
-(pdftex.def)             Requested size: 481.80984pt x 433.62886pt.
-<../Imagenes/LeyesCirculares.png, id=224, 3011.25pt x 1405.25pt>
-File: ../Imagenes/LeyesCirculares.png Graphic file (type png)
-<use ../Imagenes/LeyesCirculares.png>
-Package pdftex.def Info: ../Imagenes/LeyesCirculares.png  used on input line 12
-9.
-(pdftex.def)             Requested size: 511.90573pt x 238.88934pt.
+[5 <../Imagenes/CoeficientesVariacion.png>]
 
-Overfull \hbox (28.20886pt too wide) in paragraph at lines 129--130
+[6]
+<../Imagenes/ModasEstadísticas.png, id=108, 1806.75pt x 1405.25pt>
+File: ../Imagenes/ModasEstadísticas.png Graphic file (type png)
+<use ../Imagenes/ModasEstadísticas.png>
+Package pdftex.def Info: ../Imagenes/ModasEstadísticas.png  used on input line
+ 182.
+(pdftex.def)             Requested size: 243.90073pt x 189.70056pt.
+
+Overfull \hbox (2.05229pt too wide) in paragraph at lines 182--183
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 178--188
+
+ []
+
+<../Imagenes/TrMedStd.png, id=113, 3412.75pt x 1204.5pt>
+File: ../Imagenes/TrMedStd.png Graphic file (type png)
+<use ../Imagenes/TrMedStd.png>
+Package pdftex.def Info: ../Imagenes/TrMedStd.png  used on input line 206.
+(pdftex.def)             Requested size: 511.89043pt x 180.6672pt.
+
+Overfull \hbox (28.19356pt too wide) in paragraph at lines 206--207
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 124--133
+Underfull \hbox (badness 10000) in paragraph at lines 193--210
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--210
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--210
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--210
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--210
 
  []
 
 
 
-LaTeX Info: Redefining \. on input line 133.
-LaTeX Info: Redefining \% on input line 133.
-[8 <../Imagenes/DistEigenvalores.png>]
-<../Imagenes/LeyCircularParticular.png, id=230, 1806.75pt x 1405.25pt>
-File: ../Imagenes/LeyCircularParticular.png Graphic file (type png)
-<use ../Imagenes/LeyCircularParticular.png>
-Package pdftex.def Info: ../Imagenes/LeyCircularParticular.png  used on input l
-ine 136.
-(pdftex.def)             Requested size: 234.88574pt x 182.6889pt.
-
-
-LaTeX Warning: Reference `prop:DiagonalI' on page 9 undefined on input line 143
-.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 143--146
-
- []
+[7 <../Imagenes/ModasEstadísticas.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-LaTeX Info: Redefining \. on input line 146.
-LaTeX Info: Redefining \% on input line 146.
-[9 <../Imagenes/LeyesCirculares.png> <../Imagenes/LeyCircularParticular.png>]
+[8]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 147.
+LaTeX Warning: Reference `fig:LeyesCirculares' on page 9 undefined on input lin
+e 215.
 
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 147.
-
-
-
-LaTeX Info: Redefining \. on input line 168.
-LaTeX Info: Redefining \% on input line 168.
-[10]
-<../Imagenes/ReEvs-Diagonales.png, id=252, 2409.0pt x 1405.25pt>
+<../Imagenes/ReEvs-Diagonales.png, id=128, 2409.0pt x 1405.25pt>
 File: ../Imagenes/ReEvs-Diagonales.png Graphic file (type png)
 <use ../Imagenes/ReEvs-Diagonales.png>
-Package pdftex.def Info: ../Imagenes/ReEvs-Diagonales.png  used on input line 1
-71.
+Package pdftex.def Info: ../Imagenes/ReEvs-Diagonales.png  used on input line 2
+20.
 (pdftex.def)             Requested size: 481.79147pt x 281.04501pt.
-<../Imagenes/AjustesLinMeds.png, id=256, 3212.0pt x 1204.5pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--224
+
+ []
+
+
+Underfull \vbox (badness 3250) has occurred while \output is active []
+
+
+
+[9 <../Imagenes/TrMedStd.png>]
+<../Imagenes/AjustesLinMeds.png, id=133, 3212.0pt x 1204.5pt>
 File: ../Imagenes/AjustesLinMeds.png Graphic file (type png)
 <use ../Imagenes/AjustesLinMeds.png>
-Package pdftex.def Info: ../Imagenes/AjustesLinMeds.png  used on input line 181
+Package pdftex.def Info: ../Imagenes/AjustesLinMeds.png  used on input line 230
 .
 (pdftex.def)             Requested size: 513.93051pt x 192.72394pt.
 
-Overfull \hbox (30.23364pt too wide) in paragraph at lines 181--182
+Overfull \hbox (30.23364pt too wide) in paragraph at lines 230--231
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 176--185
-
- []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-
-LaTeX Info: Redefining \. on input line 185.
-LaTeX Info: Redefining \% on input line 185.
-[11 <../Imagenes/ReEvs-Diagonales.png>]
-
-LaTeX Warning: Reference `eqn:LK' on page 12 undefined on input line 190.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 188--191
+Underfull \hbox (badness 10000) in paragraph at lines 225--234
 
  []
 
 
 
-LaTeX Info: Redefining \. on input line 199.
-LaTeX Info: Redefining \% on input line 199.
-[12 <../Imagenes/AjustesLinMeds.png>]
+[10 <../Imagenes/ReEvs-Diagonales.png>]
+<../Imagenes/CoeficientesCorrelacion.png, id=142, 1806.75pt x 1405.25pt>
+File: ../Imagenes/CoeficientesCorrelacion.png Graphic file (type png)
+<use ../Imagenes/CoeficientesCorrelacion.png>
+Package pdftex.def Info: ../Imagenes/CoeficientesCorrelacion.png  used on input
+ line 238.
+(pdftex.def)             Requested size: 361.3436pt x 281.04501pt.
 
-LaTeX Info: Redefining \. on input line 203.
-LaTeX Info: Redefining \% on input line 203.
+
+[11 <../Imagenes/AjustesLinMeds.png>]
+<../Imagenes/AnomaliaSim21.png, id=151, 1806.75pt x 1405.25pt>
+File: ../Imagenes/AnomaliaSim21.png Graphic file (type png)
+<use ../Imagenes/AnomaliaSim21.png>
+Package pdftex.def Info: ../Imagenes/AnomaliaSim21.png  used on input line 245.
+
+(pdftex.def)             Requested size: 243.90073pt x 189.70056pt.
+
+Overfull \hbox (2.05229pt too wide) in paragraph at lines 245--246
+ [] 
+ []
+
+
+LaTeX Warning: Reference `fig:LeyesCirculares' on page 12 undefined on input li
+ne 252.
+
+
+LaTeX Warning: Reference `eqn:MartizInteracciones' on page 12 undefined on inpu
+t line 258.
+
+<../Imagenes/CurModasJij.png, id=152, 3212.0pt x 1204.5pt>
+File: ../Imagenes/CurModasJij.png Graphic file (type png)
+<use ../Imagenes/CurModasJij.png>
+Package pdftex.def Info: ../Imagenes/CurModasJij.png  used on input line 263.
+(pdftex.def)             Requested size: 513.93051pt x 192.72394pt.
+
+Overfull \hbox (30.23364pt too wide) in paragraph at lines 263--264
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 251--267
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 251--267
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 251--267
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 251--267
+
+ []
+
+
+
+[12 <../Imagenes/CoeficientesCorrelacion.png> <../Imagenes/AnomaliaSim21.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
 [13]
 
-LaTeX Warning: Reference `eqn:parametroMay' on page 14 undefined on input line 
-221.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 217--222
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 217--222
-
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 227.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 227.
-
+[14 <../Imagenes/CurModasJij.png>] (Analisis 50.aux
+LaTeX Info: Redefining \. on input line 10.
+LaTeX Info: Redefining \% on input line 10.
 )
-
-LaTeX Info: Redefining \. on input line 102.
-LaTeX Info: Redefining \% on input line 102.
-[14]
-Overfull \hbox (13.05043pt too wide) in paragraph at lines 111--111
-[]\OT1/cmr/m/n/10.95 Robert M May. ``Will a lar-ge com-plex sys-tem be sta-ble?
-'' En: \OT1/cmr/m/it/10.95 Na-tu-re \OT1/cmr/m/n/10.95 238.5364 (1972), p^^Sags
-. 413[]414. 
- []
-
-
-
-[15
-
-
-
-
-] (main.aux
-LaTeX Info: Redefining \sptext on input line 11.
-LaTeX Info: Redefining \. on input line 11.
-LaTeX Info: Redefining \% on input line 11.
- (TeX_files/chapter03.aux))
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
  ***********
 
 
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-
 LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 8E17CCB8DEFA37990B8F03B3EFDEB028;1527.
-runsystem(del main.pyg)...executed.
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
-
-Package logreq Info: Writing requests to 'main.run.xml'.
-\openout1 = `main.run.xml'.
-
+Package rerunfilecheck Info: File `"Analisis 50".out' has not changed.
+(rerunfilecheck)             Checksum: E58F5F4BF5B2182C68F2D0DDB07371E7;149.
  ) 
 Here is how much of TeX's memory you used:
- 43415 strings out of 473899
- 857875 string characters out of 5725556
- 1944960 words of memory out of 5000000
- 65496 multiletter control sequences out of 15000+600000
- 573471 words of font info for 95 fonts, out of 8000000 for 9000
+ 35854 strings out of 473899
+ 702730 string characters out of 5725556
+ 1948960 words of memory out of 5000000
+ 58057 multiletter control sequences out of 15000+600000
+ 571147 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 109i,15n,117p,1075b,1924s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 109i,14n,117p,1359b,516s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
 m/cmbx10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public
 /amsfonts/cm/cmbx12.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmbx8.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Rodrigo/AppData/Local/P
-rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Rodrigo/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/R
-odrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
-<C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmmi6.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
-sfonts/cm/cmmi8.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmmi9.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/f
-onts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Rodrigo/AppData/Local/Program
-s/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Rodrigo/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Rodrigo/Ap
-pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/R
-odrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C
+ype1/public/amsfonts/cm/cmbx9.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Rodrigo/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Rodrigo/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Ro
+drigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C
 :/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
-sl10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmsy10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmsy8.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/f
-onts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Rodrigo/AppData/Local/Progra
-ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/Rodrigo/AppData/L
-ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Users/Rodrigo
-/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><
-C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfrm
-1095.pfb>
-Output written on main.pdf (27 pages, 3566156 bytes).
+mi6.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmmi8.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmmi9.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Rodrigo/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Rodrigo/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Rod
+rigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/
+Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
+nts/cm/cmsy6.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmsy8.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmsy9.pfb><C:/Users/Rodrigo/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Rodrigo/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on "Analisis 50.pdf" (14 pages, 2184384 bytes).
 PDF statistics:
- 416 PDF objects out of 1000 (max. 8388607)
- 74 named destinations out of 1000 (max. 500000)
- 148 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 267 PDF objects out of 1000 (max. 8388607)
+ 39 named destinations out of 1000 (max. 500000)
+ 76 words of extra memory for PDF output out of 10000 (max. 10000000)
 

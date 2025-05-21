@@ -2,125 +2,95 @@
 
 \section{Sistema de especies en competencia.}
 
-El sistema de Lotka-Volterra de especies en competencia es una de las grandes extensiones del \textit{modelo logístico} aplicado a $N$ especies lo que se traduce en $N$ ecuaciones diferenciales. Es uno de los sistemas más utilizados para poder comprender la naturaleza de la dinámica no lineal; en este sistema se exploran espacios fase más complejos con múltiples puntos fijos y por lo tanto una estabilidad que no es trivial de determinar. Los términos no lineales de estas ecuaciones son cuadráticos y representan la interacción entre la especie $i$ y la especie $j$. El conjunto de ecuaciones diferenciales que representa al sistema es el siguiente:
+\setlength{\parindent}{0cm} El sistema de Lotka-Volterra del que se ha hablado anteriormente es una de las grandiosas extensiones del \textit{modelo logístico} (\ref{eqn:EqLogistica}) que puede aplicarse a $N$ especies. En concreto, cuando es únicamente de competencia: las interacciones entre dichas especies son reales y positivas, y la dinámica se encuentra limitada por una o varias capacidades de carga.  Los términos no lineales de estas ecuaciones son cuadráticos y representan la relación entre la especie $i$ y la especie $j$. El conjunto de ecuaciones diferenciales que representa al sistema es el siguiente:
 \begin{equation}\label{eqn:LK}
 	\frac{dx_i}{dt}=r_ix_i\left(1-\frac{\sum_{j=1}^N \alpha_{ij}x_j}{K_i}\right)
 \end{equation}
-Donde $i\in\{1,...,N\}$, las ecuaciones consideran una tasa de crecimiento $r_i$ para la especie $i$, una capacidad de carga $K_i$ que limita hasta cierto punto su crecimiento tal y como se discutió en el capítulo anterior, y se considera su respectiva interacción con la especie $j$ dado por el término $x_ix_j$ cuya ``fuerza'' de interacción esta dada por los coeficientes $\alpha_{ij}$. En un primer acercamiento, cuando nos referimos a ``fuerza'' de interacción nos referimos a la capacidad de la especie $j$ de intervenir sobre la especie $i$, entre más grande sea su coeficiente más afecta a la dinámica de la especie $i$.\\
+Donde $i,j\in\{1,...,N\}$, las ecuaciones consideran tasas de crecimiento $r_i$ y capacidades de carga $K_i$ que por lo general se dejan fijos a un solo valor respectivamente para todas las ecuaciones. Por otro lado, se tienen los coeficientes $\alpha_{ij}$ que representan la fuerza de las interacciones entre las especies $x_j$ con la especie $x_i$. Por fuerza de interacción se refiere únicamente a la magnitud del coeficiente $\alpha_{ij}$ y en función de ésta será el nivel de competencia que existe entre la especie $x_j$ con la $x_i$. Si el coeficiente $\alpha_{ij}$ es mayor que su transpuesto $\alpha_{ji}$, entonces $x_j$ ejerce mayor competencia sobre $x_i$ que en el caso transpuesto, de modo que el crecimiento de $x_i$ se verá más afectado que el crecimiento de $x_j$. La dinámica se acompleja al considerar el resto de las interacciones posibles. \\
 \\
-Como bien sabemos hasta ahora, el sistema llega a ser tan complejo debido a los términos no lineales que ya no es posible poder acceder a una solución analítica general de manera directa o trivial, ya que podrían existir múltiples de ellas tal y como se discutía en el capítulo anterior con base en el teorema de existencia y unicidad\footnote{Referenciar teorema de nuevo.}; para fines de este trabajo únicamente nos concentraremos en las soluciones aproximadas dadas por integración numérica, particularmente con RK4 por su precisión garantizada\footnote{Puedes consultar su implementación en el apéndice, sección (\ref{sec:integradores}).}.
+Anteriormente se ha discutido que debido al número de ecuaciones (llegando a considerar $N \gg 1$), es prácticamente imposible deducir una solución analítica general, pues bien podrían existir múltiples soluciones \cite{CauchyLipschitzTheorem} muy complejas de determinar. Trabajar con un gran número de ecuaciones a mano sugiere ser una labor titánica que se puede evitar mediante el uso de computadoras; esta sección se concentrará en la construcción del modelo teórico para resolver el sistema con herramientas computacionales necesarias que se irán agregando en los apéndices.\footnote{Referencia a los apéndices necesarios de esta sección.}.
 \section{Caso particular para $N=2$}
-
-Conviene resolver y analizar el sistema para 2 especies y con base en su experiencia poder extender los aprendizajes al caso generalizado de $N$ especies. Las ecuaciones de (\ref{eqn:LK}) se reducen al siguiente sistema:
+%CHECKPOINT 03abril2025
+Para comenzar esta labor, conviene resolver y analizar el sistema para 2 especies y con base en su experiencia poder extender los aprendizajes al caso generalizado de $N$ especies. Las ecuaciones de (\ref{eqn:LK}) se reducen al siguiente sistema:
 $$
 \begin{cases}
 	\dot{x}_1&=r_1x_1\left (1-\frac{a_{11}x_1}{k_1}-\frac{a_{12}x_1x_2}{k_1}\right )\\
 	\dot{x}_2&=r_2x_2\left (1-\frac{a_{21}x_1x_2}{k_2}-\frac{a_{22}x_2}{k_2}\right )
 \end{cases}
 $$
-Para este caso particular y en general, normalmente se tendrá una tasa de crecimiento y una capacidad de carga personalizada para cada especie, lo que es razonable con el hecho de que cada especie crece a un ritmo determinado y también es limitada de manera determinada. Por otro lado, los coeficientes $\alpha_{ij}$ formarán parte de una \textit{matriz de incidencias} entre especies definida de la siguiente manera
+Para este caso particular se tendrá una tasa de crecimiento y una capacidad de carga personalizada para cada especie, lo que es razonable con el hecho de que cada especie crece a un ritmo determinado y también es limitada de manera determinada. Por otro lado, los coeficientes $\alpha_{ij}$ formarán parte de una \textit{matriz de incidencias}\footnote{Misma que se definirá más adelante.} que define la interacción entre las especies $x_j$ y $x_i$
 \begin{equation}\label{eqn:mIncidencias}
-	A=
+	\Lambda=
 	\begin{pmatrix}
 		1 & \alpha_{12}\\
 		\alpha_{21} &1
 	\end{pmatrix}
 \end{equation}
-Es apreciable que los términos de la diagonal se encuentran fijados en $\alpha_{ii} = 1$ respectivamente, más adelante se discutirá sobre esta característica y se dará una explicación detallada del por qué debe ser así, por el momento solo nos enfocaremos en la dinámica que produce el sistema. 
+Es importante que los términos de la diagonal de esta matriz se en encuentren fijados a algún valor positivo, en este caso a $\alpha_{ii}=1$ para que la especie $x_i$ tenga capacidad de auto-regularse sin riesgo de que tenga crecimiento exponencial.
 
 \begin{ejemplo}\label{eg:2x2}
-	Para ello definimos el siguiente sistema de especies en competencia
+	Se define el siguiente sistema de especies en competencia
 	\begin{equation}\label{eqn:Sist2x2Comp}
 		\begin{split}
 			\frac{dx}{dt}&=2x\left(1-\frac{x}{2}\right)-xy\\
 			\frac{dy}{dt}&=3y\left(1-\frac{y}{3}\right)-2xy
 		\end{split}
 	\end{equation}
-	De este sistema se pueden notar algunas características: se tiene para cada especie una tasa de crecimiento y una capacidad de carga específica o personalizada. Por ejemplo para la ecuación $\dot{x}$ se tiene una tasa de crecimiento y capacidad de carga de 2 para la especie $x$ y para la especie $y$ estos valores son iguales a 1; para la ecuación $\dot{y}$ se tiene una tasa de crecimiento y capacidad de carga de 3 para la especie $x$ y para la especie $y$ se tiene una tasa de crecimiento de 2 y una capacidad de carga de 1. \\
+	Ya que la solución analítica de este problema puede llegar a ser compleja de determinar, se puede comenzar a esbozar el sistema determinando sus puntos fijos, es decir $X^*=(x^*,y^*)$ tal que $(\dot{x}(x^*),\dot{y}(x^*))=\vec{0}$. El punto fijo más trivial que satisface esta condición es el $\vec{0}$. De ahí se tiene que igualar a cero las ecuaciones de (\ref{eqn:Sist2x2Comp}) para determinar el resto de puntos fijos. Se encomienda al lector corroborar esta búsqueda de forma adecuada y comprobar que el resto de puntos fijos del sistema son $(2,0)$ para $\dot{x}$ (con $\dot{y}=0$), mientras que $\dot{y}$ (con $\dot{x}=0$) tiene el punto fijo $(0,3)$. El último punto fijo que resta es para cuando $\dot{x}=\dot{y}=0$ y se cumple en el punto $(1,1)$.\\
 	\\
-	Aunque este sistema tal cual no tiene una solución analítica, si es posible explorar acerca de su comportamiento. En principio se pueden hallar sus puntos fijos que nos hablan de la estabilidad del sistema. Para hallar puntos fijos es necesario encontrar las raíces de este sistema. La solución trivial siempre será $(0,0)$, de ahí se tienen que igualar a cero las ecuaciones para hallar los otros puntos críticos.
-	\begin{align*}
-		2x-x^2-xy &= 0,\qquad\text{suponiendo que $y = 0$}\\
-		2x &= x^2\\
-		x&=2
-	\end{align*}
-	y para $\dot{y}$ se tiene
-	\begin{align*}
-		3y-y^2-2xy&=0,\qquad\text{suponiendo que $x=0$}\\
-		3y &= y^2\\
-		y &= 3
-	\end{align*}
-	Por tanto tenemos para $\dot{x}$ el punto fijo $(2,0)$ mientras que para $\dot{y}$ se tiene el punto fijo $(0,3)$. Aún es posible hallar un último punto fijo que es para cuando ambas ecuaciones se hacen cero.
-	\begin{align*}
-		2x-x^2-xy&=0,\qquad\text{Se despeja $y$ de esta ecuación.}\\
-		xy &= x(2-x)\\
-		y &= (2-x)\\
-		\\
-		3(x-2)-(x-2)^2-2x(x-2) &= 0\\
-		3x-6-(x^2-4x+4)-2x^2+4x&=0,\qquad\text{Reduciendo términos se tiene.}\\
-		x^2-3x+2 &= 0
-	\end{align*}
-	%%%%%%%%%%%%%%%%%%%%%CHECKPOINT
-	Al resolver esta última ecuación y sustityendo en $y$ se encuentra que el último punto fijo que corresponde a $(1,1)$. Como podemos ver ya no solo tenemos 2 puntos fijos (como en el sistema presa-depredador (\ref{eqn:PresaDepredador})) sino hasta 4 puntos fijos y estos irán aumentando de acuerdo al número de especies consideradas. Sus estabilidades pueden ser variadas pero para este caso  veremos que se tendrá un repulsor (el origen), dos atractores (los puntos que se sitúan en los ejes) y un punto silla (el último que determinamos). 
-	\\
-	\\
-	Dependiendo de la elección de condiciones iniciales es la forma en la que va a evolucionar el sistema, en esencia se tienen dos opciones generales, o converge a un atractor de un eje o al otro, donde cada eje corresponde a una especie y por lo tanto la predominancia de una se traduce en la extinción de la otra. Lo dicho hasta este punto lo podremos sustentar a través de un gráfico de espacio fase (Figura (\ref{fig:CompetenciaEspecies})), sin embargo más adelante veremos una técnica para poder conocer la estabilidad de los puntos fijos de forma analítica ya que no siempre podremos contar con la herramienta visual/cualitativa; cuando se tengan más de 3 especies, el espacio fase es $N-$dimensional y por lo tanto imposible de representar.
-	\newpage
-	
+	Como se puede apreciar, el sistema (\ref{eqn:Sist2x2Comp}) tiene un número de puntos fijos mayor a su dimensión; a diferencia de los sistemas lineales que únicamente tienen un solo punto fijo independientemente de su dimensión. Esto es importante de notar ya que los puntos fijos para sistemas de tamaño $N\gg 1$ no son triviales de determinar ni mucho menos su respectiva estabilidad, a excepción del $\vec{0}$ que siempre es repulsor. Esta labor de búsqueda se hará con estrategia para dichos sistemas, pues es poco práctico realizar una búsqueda de puntos fijos cuando la mayoría de ellos podrían ser inestables. Por fortuna, para el caso $N=2$ tenemos el espacio fase que es más que suficiente para poder visualizar la estabilidad de cada punto crítico sin la necesidad arrastrar el lápiz.
 \end{ejemplo}
+Algo fundamental de notar es que la elección de condiciones iniciales es crucial para sentenciar si la dinámica va a converger o diverger. En la Figura (\ref{fig:CompetenciaEspecies}) se puede ver gráficamente; de acuerdo al punto de partida en el plano de soluciones, la tendencia hacia uno de los dos atractores será inexorable. Si por ejemplo se escoge la condición inicial $(1,1)$ se sabe que el sistema permanecerá constante para cierto periodo de tiempo, pero si por alguna razón existe una ligera perturbación que lo afecte, entonces ahora la dinámica va a diverger de este punto fijo y converger a cualquiera de los otros dos 
 \begin{wrapfigure}{r}{0.5 \textwidth} \vspace{-30pt} \begin{center}
 		\includegraphics[width=0.5\textwidth]{../Imagenes/Competencia de especies} 
 	\end{center} 
 	\vspace{-20pt} 
-	\caption{Campo vectorial de las soluciones del sistema propuesto de dos especies.} 
-	\vspace{-10pt}
+	\caption{Campo vectorial de las soluciones del sistema (\ref{eqn:Sist2x2Comp}) de dos especies.} 
+	\vspace{10pt}
 	\label{fig:CompetenciaEspecies}
 \end{wrapfigure} 
-\setlength{\parindent}{0cm}Una vez determinando el espacio fase del sistema, podemos comprobar la estabilidad de los puntos fijos antes encontrados, de tal modo que todas las posibles soluciones terminan convergiendo a uno de los dos atractores posibles. Además de ello podemos observar las dos isoclinas del sistema que no son más que el conjunto de puntos donde se satisface:
+(dependiendo de la dirección y magnitud de la perturbación).
+\setlength{\parindent}{0cm} Además de obtener información visual acerca de la estabilidad de los puntos críticos, es posible visualizar las isoclinas del sistema que no son más que el conjunto de puntos donde se satisface:
 \begin{equation*}
 	\dot{x}=f(x,y)=0,\qquad\dot{y}=g(x,y)=0
 \end{equation*}
-a lo largo de la isoclina de $x$ la componente en $x$ es cero y sus soluciones únicamente apuntarán hacia arriba o hacia abajo, dependiendo de la zona. De modo similar ocurre para la isoclina de $y$, en donde la componente $y$ es cero y sus sus soluciones a lo largo de la recta solo pueden ir hacia la derecha o izquierda de forma horizontal. Nuevamente podemos apreciar al punto silla como inestable ya que posicionados ahí y ante una mínima perturbación, el sistema se alejará de este punto e irá convergiendo a cualquiera de los dos atractores (dependiendo de la perturbación). Por último es bien sabido que del origen todas las soluciones divergen debido a la tasa de crecimiento que genera un aumento natural en las poblaciones.\\
-\\
-%%%%%%%%%%%%%%%%%%%%%CHECKPOINT
-%% Nada más checar la aseveración de las isoclinas para ver si se queda o se retira del párrafo
-Al tratarse de un sistema simple de dos ecuaciones, se tiene la fortuna poder contar con el espacio fase que nos brinda información crucial sobre su estabilidad, pero ¿Qué ocurre cuando tenemos un sistema de más de 3 especies? como se ha mencionado, la representación visual ya no esta disponible porque cada eje del espacio fase representa a una de las especies que intervienen. A lo mucho podemos acceder a sub-espacios del hiper-espacio fase pero además de que sería engorrosa la generación de cada gráfica, al final solo obtendríamos información a nivel local. 
+de modo que en estas rectas una de las dinámicas permanece constante mientras que la otra tiene se mueve hacia arriba o abajo, izquierda o derecha según sea el caso. Como se puede observar, de la representación visual se pueden deducir muchos elementos importantes del sistema, ¿qué pasa cuando el número de ecuaciones no lineales ya no permite la representación visual del espacio fase? Una alternativa sería generar sub-espacios fase que puedan brindar una idea de como es la dinámica a nivel local, pero para ello se tendría que contar con algunos puntos fijos de interés. Sin embargo generar un gran número de gráficas solo para obtener conclusiones puede no ser una buena práctica, para ello existe una técnica analítica de la que ya se ha hablado, que servirá para determinar la estabilidad sin tener que recurrir a una gráfica.
 \\
 \\
-Si el número de ecuaciones del sistema (\ref{eqn:LK}) llega a ser considerablemente alto, conviene mejor ejecutar una técnica analítica para poder conocer la estabilidad de cada uno de los puntos fijos del sistema, a dicha técnica se le conoce como \textit{linealización}\footnote{agregar referencia}. Particularmente para nuestro sistema, el proceso consiste en bajar el grado de las ecuaciones no lineales para convertirlo a un sistema lineal, y poder operar como se hizo en el capítulo anterior. Los términos no lineales de nuestro sistema (\ref{eqn:LK}) son cuadráticos y basta con bajarles su grado por medio de derivadas parciales. Por lo tanto el proceso de linealización consiste en convertir el sistema (\ref{eqn:LK}) en un sistema lineal aplicándole el \textit{jacobiano}.
+En la sección (\ref{sec:Antecedentes}) se había mencionado que el proceso que llevó a cabo Robert May para poder explorar el sistema a nivel local, consistía en \textit{linealizar} el mismo a través de contar con una función vectorial $\textbf{F}$ no lineal y definir una matriz $A$ tal que sus entradas son $a_{ij}=\left .\frac{\partial f_i(X)}{\partial x_j}\right |_{X^*}$ que es equivalente a definir la matriz Jacobiana de $\textbf{F}$ evaluada en $X^*$.
 \newpage
 \begin{definición}\label{def:LKVectorial}
-	Sea la función vectorial $\mathbf{F}:\mathbb{R}^n\to\mathbb{R}^n$, entonces el sistema de Lotka-Volterra de especies en competencia se define en su forma vectorial del la siguiente manera
+	Sea la función vectorial $\mathbf{F}:\mathbb{R}^n\to\mathbb{R}^n$ no lineal y asociada al sistema de Lotka-Volterra de especies en competencia. Se definen sus entradas de la siguiente manera
 	\begin{equation}\label{eqn:Fmatricial}
-		\mathbf{F}(\vec{x})=\begin{pmatrix}
-			f_1(\vec{x})\\
+		\mathbf{F}(X)=\begin{pmatrix}
+			f_1(X)=r_1x_1\left(1-\frac{\sum_{j=1}^n \alpha_{1j}x_j}{K_1}\right)\\
 			\vdots\\
-			f_n(\vec{x}))
-		\end{pmatrix},\qquad\text{donde $\vec{x}(t)=\left(x_1(t),...,x_n(t))\right)\in\mathbb{R}^n$.}
+			f_n(X)=r_nx_n\left(1-\frac{\sum_{j=1}^n \alpha_{nj}x_j}{K_n}\right)
+		\end{pmatrix},\qquad\text{donde $X(t)=\left(x_1(t),...,x_n(t))\right)\in\mathbb{R}^n$.}
 	\end{equation}
-	donde cada una de las componentes de $\mathbf{F}(\vec{x})$ corresponde con las funciones del sistema (\ref{eqn:LK}), mientras que las componentes del vector $\vec{x}$ corresponden con las especies involucradas. Por lo tanto el sistema (\ref{eqn:LK}) puede ser re-escrito de la siguiente forma
+	Por lo tanto el sistema (\ref{eqn:LK}) puede ser re-escrito de una forma más compacta considerando
 	\begin{equation}\label{eqn:LKmatricial}
-		\dot{X}(t) = \mathbf{F}(X(t)),\qquad\text{considerando $\dot{X}(t)=\frac{d\vec{x}(t)}{dt}$}
+		\dot{X}(t) = \mathbf{F}(X(t))
 	\end{equation}
-	Nos conviene definir al sistema de esta manera para que podamos ver directamente como se aplica el Jacobiano 
+	Teniendo ahora la función vectorial que define al sistema de Lotka-Volterra, es directo definir la matriz Jacobiana para poder linealizar el sistema
 	\begin{equation}\label{eqn:Jacobiano}
-		\mathbb{J}_\mathbf{F}(\vec{x}) = \begin{pmatrix}
-			\frac{\partial f_1(\vec{x})}{\partial x_1} & \cdots &\frac{\partial f_1(\vec{x})}{\partial x_n}\\
+		\mathbb{J}_\mathbf{F}(X^*) = \begin{pmatrix}
+			\frac{\partial f_1(X^*)}{\partial x_1} & \cdots &\frac{\partial f_1(X^*)}{\partial x_n}\\
 			\vdots & \ddots & \vdots\\
-			\frac{\partial f_n(\vec{x})}{\partial x_1} & \cdots &\frac{\partial f_n(\vec{x})}{\partial x_n}
+			\frac{\partial f_n(X^*)}{\partial x_1} & \cdots &\frac{\partial f_n(X^*)}{\partial x_n}
 		\end{pmatrix}
 	\end{equation}
-	El jacobiano resultante al ser evaluado en los puntos fijos del sistema es ahora un sistema lineal al que le podemos extraer sus eigenvalores para poder conocer su estabilidad. Esta matriz es conocida como \textit{matriz de interacciones} ya que guarda en ella la información necesaria para determinar la estabilidad de los puntos fijos del sistema. Sin embargo esta información también se esta limitada a nivel local, pues no será posible que nos brinde información de algún  otro punto fijo.
+	Se necesitarán puntos fijos de interés y evaluarlos para poder obtener el sistema linealizado.
 \end{definición}
 
-\setlength{\parindent}{0cm}Para validar esta aseveración continuaremos con nuestro ejemplo y determinaremos la estabilidad de cada uno de los puntos fijos relacionándolos con lo mostrado en el espacio fase. Para ello aplicamos el jacobiano al sistema de ecuaciones quedándonos con:
+\setlength{\parindent}{0cm}Validando esta aseveración, se continúa con el ejemplo \ref{eg:2x2} determinando cada matriz jacobiana y su estabilidad asociada. Se comparará con lo que se muestra en la Figura (\ref{fig:CompetenciaEspecies}). La matriz jacobiana para este sistema es:
 \begin{equation}\label{eqn:Jacobiano2}
-	\mathbb{J}_\mathbf{F}(\vec{x})=\begin{pmatrix}
-		r_1-\frac{2r_1x_1+r_1a_{12}x_2}{K_1} & -\frac{r_1a_{12}x_1}{K_1}\\
-		-\frac{r_2a_{21}x_2}{K_2} & r_2-\frac{2r_2x_2+r_2a_{21}x_1}{K_2}
+	\mathbb{J}_\mathbf{F}(X)=\begin{pmatrix}
+		r_1-\frac{2r_1\alpha_{11}x_1+r_1\alpha_{12}x_2}{K_1} & -\frac{r_1a_{12}x_1}{K_1}\\
+		-\frac{r_2a_{21}x_2}{K_2} & r_2-\frac{2r_2\alpha_{22}x_2+r_2\alpha_{21}x_1}{K_2}
 	\end{pmatrix}
 \end{equation}
-debido a la matriz de incidencias (\ref{eqn:mIncidencias}), se tiene que los valores de la diagonal son $a_{ii}=1$ y corresponden con las auto-interacciones del sistema. Sustituyendo y operando sobre nuestro sistema, al evaluar los puntos fijos antes encontrados se tienen las siguientes matrices de interacciones:
+considerando que las entradas $\alpha_{ii}=1$ debido a como se define la matriz de incidencias (\ref{eqn:mIncidencias}). Sustituyendo y operando sobre nuestro sistema, al evaluar los puntos fijos antes encontrados se tienen las siguientes matrices de interacciones:
 $$
 \mathbb{J}_{(2,0)} = \begin{pmatrix}
 	-2 & -2\\
@@ -137,23 +107,24 @@ $$
 \end{pmatrix}
 $$
 %%%%%%%%Checkpoint
-Como previamente se ha revisado, los eigenvalores determinan la estabilidad de un sistema lineal. Se establece que mientras ellos tengan parte real negativa se asegurará que el punto fijo será estable y que en otro caso será inestable. Por lo tanto los eigenvalores de las primeras dos matrices de interacciones deben ser negativos para que sustenten los atractores de la figura (\ref{fig:CompetenciaEspecies}). Mientras que los eigenvalores de $\mathbb{J}_{(1,1)}$ deben ser uno negativo y otro positivo para sustentar al punto silla. Para el caso de la matriz $\mathbb{J}_{(0,0)}$ sus eigenvalores deben tener parte real positiva para que sustenten el repulsor. Realizando el álgebra correspondiente se encuentra lo siguiente
+Teniendo las matrices, solo resta determinar sus valores propios y evaluar sus partes reales para concluir con el tipo de estabilidad asociado a cada uno de los puntos fijos. Realizando el álgebra correspondiente se encuentra lo siguiente
+%Por lo tanto los valores propios de las primeras dos matrices de interacciones deben ser negativos para que sustenten los atractores de la figura (\ref{fig:CompetenciaEspecies}). Mientras que los valores propios de $\mathbb{J}_{(1,1)}$ deben ser uno negativo y otro positivo para sustentar al punto silla. Para el caso de la matriz $\mathbb{J}_{(0,0)}$ sus valores propios deben tener parte real positiva para que sustenten el repulsor. 
 \begin{align*}
 	\mathbb{J}_{(2,0)}&\Longrightarrow\ \lambda_1 = -2,\quad\lambda_2 = -1\\
 	\mathbb{J}_{(0,3)}&\Longrightarrow\ \lambda_1 = -3,\quad\lambda_2 = -1\\
 	\mathbb{J}_{(1,1)}&\Longrightarrow\ \lambda_1 = -1+\sqrt{2},\quad\lambda_2 = -1-\sqrt{2}\\
 	\mathbb{J}_{(0,0)}&\Longrightarrow\ \lambda_1 = 2,\quad\lambda_2 = 3\\
 \end{align*}
-Por tanto se termina de validar la consistencia del método de la linealización al menos para este caso particular. Esta técnica resulta muy útil para obtener la estabilidad de los puntos fijos de forma analítica sin tener que recurrir a una representación visual y como bien se ha mencionado, sobre todo para cuando tengamos sistemas $N$ ecuaciones diferenciales en donde los espacios fase ya son $N$-dimensionales. En la siguiente sección se estará generalizando todo lo mencionado hasta ahora para cuando se tenga dicho escenario.
-
+Se puede observar que las partes reales coinciden con la estabilidad de cada punto fijo de la Figura (\ref{fig:CompetenciaEspecies}). Esta técnica resultará muy útil para cuando se tengan que resolver los sistemas con $N\gg 1$ ecuaciones diferenciales. La parte real de los valores propios de $\mathbb{J}_{\textbf{F}}(X^*)$ determinarán su estabilidad.
 %%%%%%%%% Checkpoint
-\section{Generalizando a N especies}
+\section{Generalizando a $N\gg 1$ especies.}
 
-En la sección anterior se ha introducido el sistema de especies en competencia (\ref{eqn:LK}) y se ha definido su forma vectorial (\ref{eqn:LKmatricial}) generalizada; se mostró un ejemplo particular con $n=2$ para observar su dinámica a través de su espacio fase (figura (\ref{fig:CompetenciaEspecies})) en donde se contempla la naturaleza de sus puntos fijos si se trata de atractores, repulsores o puntos silla. Se propone el método de la linealización para conseguir matrices de interacción que determinen de forma analítica la estabilidad de cada uno de los puntos fijos del sistema. En esta sección se profundizará más acerca de lo mencionado comenzando con la construcción matriz de incidencias que será eje fundamental de las interacciones del sistema de $N$ especies. \\
+Con base en la sección anterior, se tiene una idea de como resolver el sistema dinámico de Lotka-Volterra (\ref{eqn:LK}); en principio se requiere hallar puntos fijos que satisfagan $\textbf{F}(X^*)=\vec{0}$ para poder hallar la matriz Jacobiana del sistema (\ref{eqn:Jacobiano}) y así poder explorar su estabilidad. Todo este proceso se debe de implementar mediante algoritmos los cuales se irán revisando en la sección (apéndice tal\footnote{agregar seccion.}). Sin embargo, en lo que corresponde a esta sección será en definir las interacciones entre especies del sistema mediante la \textit{matriz de incidencias} y ver que parámetros la gobiernan para poder plantear una serie de experimentos/simulaciones que resuelvan las conjeturas planteadas.
 \\
-Hasta ahora se ha estado discutiendo puramente sobre dinámica y ecuaciones diferenciales, sin embargo, el lector recordará al principio del primer capítulo que se ha mencionado sobre el uso estratégico de redes para poder modelar cierto sistema dinámico no lineal, en este caso para representar las interacciones de (\ref{eqn:LK}): por lo tanto, ahora toca hablar un poco sobre redes. Una red es considerada una colección de \textit{nodos} que se encuentran unidos por \textit{enlaces}\footnote{definir más adelante el tipo de interacciones con base en el signo y si son dirigidas o no dirigidas. Además de agregar cita del Newman para esta definición.}. Para definir redes siempre es necesario establecer que es lo que representan los nodos y que representan los enlaces, en nuestro caso los nodos representan directamente las especies que participan en el sistema mientras que los enlaces serían sus interacciones, más adelante veremos su naturaleza.\\
 \\
-Si definimos un conjunto de especies $x_i$ y sabemos que se relacionan por medio de los coeficientes $\alpha_{ij}$ de 
+Para comenzar el modelado de las interacciones de (\ref{eqn:LK}), es necesario comenzar a hablar de redes/grafos, ya que con este artilugio matemático se podrán representar a las especies de manera conveniente, sobre todo para poder investigar las implicaciones de poder probar con diversas topologías de red por ejemplo: libres de escala, de mundo pequeño o como en nuestro caso: aleatorias. Una red es considerada una colección de \textit{nodos} que se encuentran unidos por \textit{enlaces} \cite{newman2018networks}. Para definir redes siempre es necesario establecer que es lo que representan los nodos y los enlaces, en nuestro caso los nodos representan directamente las especies que participan en el sistema mientras que los enlaces (con pesos) serían sus interacciones.\\
+\\
+Si se define un conjunto de especies $x_i$ y sabemos que se relacionan por medio de los coeficientes $\alpha_{ij}$ que
 \begin{wrapfigure}{l}{0.45 \textwidth} \vspace{-30pt} \begin{center}
 		\includesvg[width=.5\textwidth]{../Imagenes/karateLu} 
 	\end{center} 
@@ -162,19 +133,20 @@ Si definimos un conjunto de especies $x_i$ y sabemos que se relacionan por medio
 	\vspace{-20pt}
 	\label{fig:RedKarate}
 \end{wrapfigure} 
-(\ref{eqn:LK}), entonces decimos que una interacción entre las especies $x_i$ y $x_j$ (nodos de la red) es para cuando $\alpha_{ij}\neq 0$ y esto representaría un enlace en la red. En el mundo es posible encontrar diferentes tipos de redes con cierto significado, tales como la red de energética de un país, redes de amistades en una universidad o redes de acciones que cotizan en la bolsa de valores; en el caso de la Figura (\ref{fig:RedKarate}) es una red conocida por quienes se dedican a ello y es la representación de una red social llamada \href{https://en.wikipedia.org/wiki/Zachary%27s_karate_club}{Red del club Karate de Zachary}. Para poder representar estas redes y cualquier otro tipo de red conviene introducir el concepto de \textit{matriz de adyacencia.}
+aparecen en las ecuaciones de (\ref{eqn:LK}), entonces las interacciones entre las especies $x_i$ y $x_j$ se dan para cuando $\alpha_{ij}\neq 0$, y éste representaría el peso del enlace $j\to i$ de la red que se tiene en mente. En el mundo es posible encontrar diferentes tipos de redes con cierto significado, tales como la red de energética de un país, redes de amistades en una universidad o redes de acciones que cotizan en la bolsa de valores; en el caso de la Figura (\ref{fig:RedKarate}) es una red conocida como \href{https://en.wikipedia.org/wiki/Zachary%27s_karate_club}{Red del club Karate de Zachary} \cite{newman2018networks}. Todo tipo de red tiene una representación algebraica que conviene mucho tener en cuenta para la construcción del modelo, es conocida como la \textit{matriz de adyacencia.}\\
+\\
 \begin{definición}\label{def:matrizdeadyacencia}
-	Sea $A\in\mathcal{M}_n(\mathbb{R}) $. Se define la matriz de adyacencia tal que sus entradas son de la siguiente forma
-	$$a_{ij}= 
+	Sea $\mathcal{A}\in\mathrm{M}_n(\mathbb{R}) $. Se define la matriz de adyacencia tal que sus entradas son de la siguiente forma
+	$$\mathcal{A}_{ij}= 
 	\begin{cases}
 		1, \ \text{si $\exists$ un enlace entre el nodo $i$ y el nodo $j$.}\\
 		0, \ \text{en otro caso}.
 	\end{cases}$$
-	La matriz de adyacencia será la herramienta para determinar la relación de interacción entre especies, pero solo hablará de su existencia y se tendrán que agregar algunas características para darle los pesos de interacción, mismos que están representados por los coeficientes $\alpha_{ij}$ del sistema (\ref{eqn:LK}) 
+	De esta forma se puede acceder a la estructura de la red sin necesariamente dibujarla como en la Figura (\ref{fig:RedKarate}), cada renglón de la matriz es un nodo y sus columnas son los nodos disponibles que tiene para conectarse, incluso consigo mismo. Si se le agregan pesos al enlace, entonces $\mathcal{A}_{ij}\in\mathbb{R}$. Al pasar a la siguiente etapa de la construcción de la matriz de incidencias $\Lambda$, estos elementos serán escogidos de una distribución estadística. 
 \end{definición}
 %%%%%%% Checkpoint
 \begin{ejemplo}
-	Para poder apreciar la matriz de adyacencia definamos una red de 10 nodos y veamos la matriz de adyacencia que le corresponde. Cada nodo ha sido marcado para poderlo identificar y relacionar con la matriz de adyacencia. Los renglones y columnas de la matriz representan los nodos, siendo el primer renglón el primer nodo (número 1), el quinto renglón será el quinto nodo (número 5); esto pasa de manera equivalente con las columnas, la cuarta columna corresponde con el cuarto nodo (número 4), la octava columna corresponde con el octavo nodo (número 8). Por tanto, mediante la matriz de adyacencia sabemos que el primer nodo (renglón 1) esta enlazado con el noveno nodo (columna 9) ya que existe un uno, mientras que el primer renglón y la quinta columna hay un cero lo que indica que no existe un enlace entre estos nodos. 
+	Para poder apreciar la matriz de adyacencia definamos una red de 10 nodos y veamos la matriz de adyacencia que le corresponde. Cada nodo ha sido marcado para poderlo identificar y relacionar con la matriz de adyacencia. Los renglones y columnas de la matriz representan los nodos, siendo el primer renglón el primer nodo, el quinto renglón será el quinto nodo; esto pasa de manera equivalente con las columnas, la cuarta columna corresponde con el cuarto nodo, la octava columna corresponde con el octavo nodo. Por tanto, mediante la matriz de adyacencia sabemos que el primer nodo (renglón 1) esta enlazado con el noveno nodo (columna 9) ya que existe un uno, mientras que el primer renglón y la quinta columna hay un cero lo que indica que no existe un enlace entre estos nodos. 
 \end{ejemplo}
 \begin{wrapfigure}{r}{0.5 \textwidth} \vspace{-30pt} \begin{center}
 		\includesvg[width=0.5\textwidth]{../Imagenes/red10Lu} 
@@ -198,32 +170,32 @@ A=\begin{pmatrix}
 	1 & 0 & 0 & 0 & 1 & 0 & 1 & 1 & 0 & 1 \\
 	0 & 0 & 0 & 1 & 1 & 1 & 0 & 0 & 1 & 0 \\
 \end{pmatrix}
-$$
-También hay que destacar qué la matriz es simétrica y que la diagonal es igual a cero: para el primer punto se debe notar que la relación de los enlaces entre nodos no tiene dirección, es decir, que exista un enlace entre nodos significa que el nodo $i$ se conecta con $j$ y viceversa, que el nodo $j$ se conecta con el nodo $i$. Por tanto decimos que la red de la figura (\ref{fig:Red10}) es \textit{no dirigida} puesto que no hay una dirección preferencial en el enlace. Para el segundo punto se puede deducir que los nodos podrían relacionarse consigo mismo, en este caso caso particular no lo hacen pero si es posible la existencia de \textit{autoenlaces}. Para el sistema (\ref{eqn:LK}) los autoenlaces representan las autointeracciones que dan el caracter logístico de las ecuaciones. En cuanto se defina la matriz de interacciones se verá el papel que toman los elementos de la diagonal y de porque deben de existir autoenlaces en cada una de las ecuaciones del sistema.	
+$$\\
+\\
+También hay que destacar qué la matriz es simétrica y que la diagonal es igual a cero: para el primer punto se debe notar que la relación de los enlaces entre nodos no tiene dirección, es decir, que exista un enlace entre nodos significa que el nodo $i$ se conecta con $j$ y viceversa. Por tanto la red de la figura (\ref{fig:Red10}) es \textit{no dirigida} puesto que no hay una dirección preferencial en el enlace. Para el segundo punto se puede deducir que los nodos podrían relacionarse consigo mismo, en este caso particular no lo hacen pero si es posible la existencia de \textit{autoenlaces}. Para el sistema (\ref{eqn:LK}) estos autoenlaces representan las auto-interacciones que dan el carácter logístico (\ref{eqn:EqLogistica}) de las ecuaciones. Más adelante se hablará de la importancia de estos autoenlaces.
 \\
 \\
-Cuando se tiene el caso en que los enlaces tienen una dirección preferencial de nodo a nodo, decimos que corresponde a una \textit{red dirigida}. En este caso el enlace podrá ir del nodo $i$ al nodo $j$ pero no necesariamente lo hará en sentido contrario, deberá definirse explícitamente. En el mundo también existe un gran conjunto de redes dirigidas como lo son las citaciones académicas, la propia WWW (World Wide Web), incluso redes tróficas de depredador-presa. Y para este caso también se tiene asociada una matriz de adyacencia con una ligera diferencia con respecto de la definición \ref{def:matrizdeadyacencia}.
+Cuando se tiene el caso en que los enlaces tienen una dirección preferencial de nodo a nodo, se dice que corresponde a una \textit{red dirigida}. En este caso el enlace podrá ir del nodo $i$ al nodo $j$ pero no necesariamente lo hará en sentido contrario, deberá definirse explícitamente. En el mundo también existe un gran conjunto de redes dirigidas como lo son las citaciones académicas, la propia WWW (World Wide Web), incluso redes tróficas. Y para este caso también se tiene asociada una matriz de adyacencia con una ligera modificación con respecto de la definición \ref{def:matrizdeadyacencia}.
 \begin{definición}
-	Sea $D\in\mathcal{M}_n(\mathbb{R})$, matriz de adyacencia de una red dirigida. Se definen sus elementos de la siguiente manera:
+	Sea $\mathcal{D}\in\mathrm{M}_n(\mathbb{R})$, matriz de adyacencia de una red dirigida. Se definen sus elementos de la siguiente manera:
 	$$
-	\alpha_{ij}=\begin{cases}
+	\mathcal{D}_{ij}=\begin{cases}
 		1,\qquad\text{Si existe un enlace del nodo $i$ al nodo $j$}\\
 		0,\qquad\text{otro caso.}
 	\end{cases}
 	$$
-	Los enlaces de las redes dirigidas van a estar representados por flechas para que puedan mostrar adecuadamente las direcciones correspondientes entre los nodos. 
+	Los enlaces de las redes dirigidas van a estar representados por flechas para que puedan mostrar adecuadamente las direcciones correspondientes entre los nodos. Las redes ecológicas que Robert May definió en su trabajo son consideradas dirigidas, ya que el sentido de sus enlace tienen una dirección preferencial.
 \end{definición}
 
 \begin{ejemplo}
 	Se tiene la siguiente red dirigida de 10 nodos con exactamente 14 enlaces. La matriz de adyacencia asociada es la siguiente
 \end{ejemplo}
-
-\begin{wrapfigure}{l}{0.5 \textwidth} \vspace{-30pt} \begin{center}
+\begin{wrapfigure}{l}{0.5 \textwidth} \vspace{-44pt} \begin{center}
 		\includesvg[width=0.52\textwidth]{../Imagenes/Red10DirLu} 
 	\end{center} 
 	\vspace{-20pt} 
-	\caption{Red no dirigida de 10 nodos.} 
-	\vspace{-150pt}
+	\caption{Red dirigida de 10 nodos.} 
+	\vspace{-200pt}
 	\label{fig:Red10Dir}
 \end{wrapfigure} 
 $$
@@ -240,41 +212,39 @@ D = \begin{pmatrix}
 	0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
 \end{pmatrix}
 $$
-
-Ahora se puede notar que la matriz de adyacencia no es simétrica y que por lo tanto los enlaces presentan una dirección preferencial. Ambas visiones se van a tomar en cuenta para modelar al sistema de especies en competencia, sin embargo, preferentemente tendrá mayor protagonismo la \textit{red no dirigida} que la otra ya que como se verá más adelante, producen los mismos resultados y la diferencia recae en el tiempo de obtención de los datos en donde las redes dirigidas requieren mayor tiempo de compilación para generar escenarios estables.\\
-\\
-En este punto el lector ya debe suponer la razón de la presentación de estas dos formas de redes; el sistema dinámico de especies en competencia considera las interacciones dadas por los coeficientes $\alpha_{ij}$, sin embargo puede que exista el coeficiente $\alpha_{ij}$ que relaciona a la especie $x_i$ con la $x_j$ pero bien podría suceder que $\alpha_{ji}=0$ y en consecuencia no exista interacción de la especie $x_j$ con la especie $x_i$. Por lo tanto la matriz de incidencias, esta construida con base en alguna de estas dos formas de red. 
+\newpage
+Ahora se puede notar que la matriz de adyacencia no es simétrica y que en consecuencia los enlaces presentan una dirección preferencial. Ambas visiones se van a tomar en cuenta para modelar al sistema (\ref{eqn:LK}) generalizado, sin embargo, tendrá mayor protagonismo la \textit{red no dirigida} sobre la otra, ya que en un principio los experimentos fueron diseñados bajo esta lógica. Habiendo definido las redes y sus matrices de adyacencia, se debe seguir el camino definiendo que tipo de red se ocupará para el modelo.
 
 \subsection{Red de incidencias}
 
-La \textit{red de incidencias} es el artilugio principal que se va a ocupar para poder modelar las interacciones del sistema de especies en competencia, tiene asociada una matriz de adyacencia que llamaremos \textit{matriz de incidencias} y se va a componer de tres factores: puede ser de una red dirigida o no dirigida, las interacciones son importantes y definir la dirección de las mismas hace más completo al sistema, sin embargo usaremos mayormente redes no dirigidas. La topología de la red que se va a utilizar es la conocida \textit{red aleatoria} de Erdös–Rényi [Cita\footnote{poner cita de esto}] que nos van a modelar interacciones entre las especies de forma aleatoria con base en cierto parámetro. Y aunado a todo ello tendremos una matriz de pesos en donde sus entradas se encuentran en una distribución normal centrada en el cero. La conjunción de estos tres elementos da lugar a la matriz de incidencias y por lo tanto a su red asociada.\\
+La \textit{red de incidencias} será la representación de la relación entre especies bajo la lógica del sistema de Lotka-Volterra generalizado; dicha red tiene asociada su matriz de adyacencia que se denominará \textit{matriz de incidencias} la cual tendrá tres principales características: puede ser de una red dirigida o no dirigida, definir la dirección de las interacciones hace más completo al sistema, sin embargo se usarán mayormente redes no dirigidas. La topología de la red que se va a utilizar es la de Erdös–Rényi \cite{posfai2016network} conocida por tener un carácter aleatorio con base en una probabilidad $p$. Y aunado a todo ello se considerará un peso para cada enlace cuyo valor vendrá de una distribución normal centrada en $\mu=0$ y desviación estándar $\sigma$.\\
 \\
-La red de Erdös–Rényi es ampliamente utilizada para aprender sobre la estructura y propiedades de la redes y con ello poder extender ese aprendizaje al estudio de las llamadas \textit{redes libres de escala}. La diferencia sustancial entre la red aleatoria y la red libre de escala es que la primera tiene muy pocas (o ninguna) aplicaciones en escenarios de la naturaleza, se ha encontrado que las estructuras de las redes en la naturaleza siguen cierto patrón y distribución que se han englobado en las redes libres de escala. Sin embargo este trabajo únicamente se centrará en el uso del modelo de Erdös–Rényi aplicado al sistema (\ref{eqn:LK}) para poder entender la dinámica que produce y con las intenciones de extender el análisis al caso de las redes libres de escala\footnote{Un modelo teórico que rescata todas las propiedades de las redes libres de escala es el de Albert-Barabasi [Cita].}. 
+La red de Erdös–Rényi es ampliamente utilizada para aprender sobre la estructura y propiedades de la redes y con ello poder extender ese aprendizaje al estudio de las llamadas \textit{redes libres de escala}. La diferencia sustancial entre la red aleatoria y la red libre de escala es que la primera tiene muy pocas (o ninguna) aplicaciones en escenarios de la naturaleza \cite{posfai2016network}. Las estructuras en la naturaleza están representadas matemáticamente por las redes libres de escala, siguiendo leyes de potencia y otra variedad de propiedades. Sin embargo este trabajo únicamente se centrará en el uso del modelo de Erdös–Rényi aplicado al sistema (\ref{eqn:LK}) para tener un primer acercamiento a la dinámica que produce, con intenciones de extender el estudio al caso de las redes libres de escala\footnote{Un modelo teórico que rescata todas las propiedades de las redes libres de escala es el de Albert-Barabasi \cite{posfai2016network}.}. 
 \begin{definición}\label{def:redAleatoria}
-	Sea un conjunto de $N$ nodos sin enlaces asociados. Para cada par de nodos $i$ y $j$ de las $\binom{N}{2}$ posibles combinaciones, se definen sus enlaces aleatorios dada una probabilidad $p$ y un número aleatorio $r$ en el intervalo $[0,1]$ de la siguiente forma
+	Sea un conjunto de $N$ nodos sin enlaces asociados. Se define la red aleatoria $\mathcal{G}_\mathcal{E}$ con su matriz de adyacencia asociada $\mathcal{E}\in\mathrm{M}_n(\mathbb{R})$ si para cada par de nodos $n_i$ y $n_j$ de las $\binom{N}{2}$ posibles combinaciones se definen sus enlaces aleatorios dada una probabilidad $p$ y un número aleatorio $r\in[0,1]$ con base en la siguiente regla:
 	$$
 	L_{ij}=\begin{cases}
 		\exists,\qquad\text{Si }r<p\\
 		\nexists,\qquad\text{Si }r\geq p
-	\end{cases}
+	\end{cases},\qquad L_{ii}=0
 	$$
-	desde luego que entre mayor sea la $p$ se tendrá mayor cantidad de enlaces. El conjunto de los $N$ nodos con sus posibles $L_{ij}$ enlaces forman la red aleatoria de Erdös–Rényi. En esta referencia [cita\footnote{referencia a barabasi}] el lector podrá conocer más sobre sus propiedades, nosotros por ahora solamente haremos uso de ella. La matriz de adyacencia de esta red aleatoria es simétrica lo que nos da entender que la red es no dirigida en esencia. Podemos extender esta definición a redes aleatorias dirigidas suponiendo que la conexión va en dirección del nodo $i$ al nodo $j$ y considerar también conexiones del nodo $j$ al nodo $i$, por lo tanto ahora tendremos $N(N-1)$ posibles combinaciones de nodos. \\
+	desde luego que entre mayor sea la $p$ se tendrá mayor cantidad de enlaces. En este caso no se anuncia una dirección preferencial, por lo que la red aleatoria de Erdös–Rényi es \textit{no dirigida}\footnote{En esta referencia \cite{posfai2016network} el lector podrá conocer más sobre sus propiedades.}. Ya que $\mathcal{G}_\mathcal{E}$ es no dirigida, su matriz de adyacencia $\mathcal{E}$ es simétrica. \\
 	\\
-	Si solo se considerara uno de los dos casos, es decir, para $\binom{N}{2}$ combinaciones de nodos entonces tendríamos la mitad de posibles conexiones, la matriz de adyacencia sería triangular superior por haber considerado únicamente la dirección de $i$ a $j$. Para llenar la parte triangular inferior de esta matriz debemos considerar las conexiones de $j$ a $i$ y haciéndolo de esa forma habremos obtenido nuestra red aleatoria dirigida cuya matriz de adyacencia es no simétrica, es decir, que en general se cumple $A_{ij}\neq A_{ji}$. En la sección (\ref{sec:RedesAleatorias}) se encuentra la implementación computacional de ambas visiones de la red aleatoria.
+	Sin embargo, es posible extender esta definición a redes aleatorias dirigidas suponiendo que la conexión tiene dirección preferencial, por lo tanto ahora existirán $N(N-1)$ posibles combinaciones de nodos. Si solo se considerara uno de los dos casos, es decir, para $\binom{N}{2}$ combinaciones de nodos entonces se tendría la mitad de posibles conexiones, la matriz de adyacencia sería triangular superior por haber considerado únicamente la dirección de $n_i$ a $n_j$. Para llenar la parte triangular inferior de esta matriz se deben considerar las conexiones de $n_j$ a $n_i$, como resultado ahora se tiene una red aleatoria dirigida cuya matriz de adyacencia es no simétrica. En la sección (\ref{sec:RedesAleatorias}) se encuentra la implementación computacional de ambas visiones de la red aleatoria.
 \end{definición}
-\newpage
-\setlength{\parindent}{0cm}En este punto estamos a un solo paso de construir finalmente a la matriz de incidencias, únicamente nos falta de considerar la magnitud de las interacciones entre especies y para ello se va a emplear una matriz de $N\times N$ donde $N$ es el número de nodos de la red que vayamos a modelar; esta matriz se va a mapear con una función de densidad de probabilidad (FDP) asociada a una distribución normal en cada entrada
-$$f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
-en esencia será una matriz con entradas aleatorias bajo una FDP normal centrada en $\mu = 0$ y variando a sigma en $[0,1]$ con un paso de $0.1$ (esto se irá detallando más adelante). 
+\setlength{\parindent}{0cm}En este punto solamente falta de considerar la magnitud de las interacciones entre especies para terminar de construir la matriz de incidencias. Para ello se va a tomar en cuenta una matriz de $\mathcal{M}\in\mathrm{M}_n(\mathbb{R})$ que estará mapeada con valores que vienen de una distribución normal centrada en $\mu=0$ y desviación estándar $\sigma$, es decir, $\mathcal{M}_{ij}\in\mathcal{N}(0,\sigma)$.
 \begin{definición}\label{def:MatrizIncidencias}
-	Sea una red aleatoria de $N$ nodos dirigida o no dirigida y $A$ su matriz de adayacencia asociada, definimos así mismo una matriz de entradas aleatorias $M$ mapeada bajo una FDP normal centrada en $\mu=0$ y con $\sigma\in[0,1]$. Definimos a $\Lambda$ la \textit{matriz de incidencias} como el producto de Hadamard (entrada a entrada) de la matriz de adyacencia con la matriz aleatoria sumada con la matriz identidad:
+	Sea una red aleatoria $\mathcal{G}_\mathcal{E}$ dirigida o no dirigida con matriz de adyacencia $\mathcal{E}\in\mathrm{M}_n(\mathbb{R})$. Sea una matriz $\mathcal{M}\in\mathrm{M}_n(\mathbb{R})$ de entradas aleatorias provenientes de una distribución normal $\mathcal{N}(0,\sigma)$. Se define a $\Lambda$ la \textit{matriz de incidencias} como el producto de Hadamard \cite{HadamardProduct} de la matriz de adyacencia con la matriz de entradas aleatorias sumada con la matriz identidad:
 	\begin{equation}\label{eqn:MatrizIncidencias}
-		\Lambda=(A\odot M) + I
+		\Lambda=(\mathcal{E}\odot \mathcal{M}) + I
 	\end{equation}
-	El producto $A\odot M$ simplemente agrega pesos a cada posible enlace de a la matriz de adyacencia asociada a la red aleatoria de nuestra elección, y seguida la suma con la identidad es para poder agregar autoenlaces a cada nodo de la red aleatoria.
+	El producto agrega pesos de la distribución normal a cada posible enlace de la red aleatoria y la suma con de la identidad es para poder agregar autoenlaces de peso $1$ a cada nodo de la misma.
 \end{definición}
-\setlength{\parindent}{0cm}La matriz de incidencias $\Lambda$ puede ser \textit{estructuralmente simétrica}\footnote{Es una matriz cuyas entradas cumplen $B_{ij}\neq B_{ji}\neq 0$ para toda $B_{ij}\in B$, quiere decir que aunque $B$ no sea simétrica, relativo a las posiciones de sus entradas si lo es.} si se escoge una red aleatoria no dirigida, o su contraparte si se escoge una red aleatoria dirigida, además para todo $\alpha_{ii}\in\Lambda$, se tiene que 
-\begin{wrapfigure}{r}{0.5 \textwidth} \vspace{-30pt} \begin{center}
+\setlength{\parindent}{0cm} La matriz de incidencias $\Lambda$ puede ser \textit{estructuralmente simétrica}\footnote{Es una matriz cuyas entradas cumplen $B_{ij}\neq B_{ji}\neq 0$ ó $B_{ij}=B_{ji}=0$ para toda $B_{ij}\in B$, quiere decir que aunque $B$ no sea simétrica, relativo a las posiciones de sus entradas si lo es.} si se escoge una red $\mathcal{G}_\mathcal{E}$ no dirigida, o puramente aleatoria si se escoge la opción  de red dirigida. Las implicaciones más importantes de esta distinción es que para $\Lambda$ estructuralmente simétrica únicamente podrán existir 3 tipos de interacciones mientras que la puramente aleatoria considera hasta 5 de ellas posibles. Los elementos $\alpha_{ij}\in\Lambda$ serán los coeficientes de interacción que aparecen en las ecuaciones de (\ref{eqn:LK}) y en este punto se ha concluido un paso más de la construcción del modelo.\\
+\\
+En la figura (\ref{fig:RedIncidencias}) se muestra una representación visual de las interacciones entre especies de los sistemas por resolver (\ref{eqn:LK}). En la sección (\ref{sec:redIncidencias}) se muestra la implementación computacional de la red de incidencias. En la siguiente sección se hablará acerca de los tipos de interacciones posibles que se pueden tener, para cada caso descrito anteriormente.
+\newpage
+\begin{wrapfigure}{r}{0.5 \textwidth} \vspace{-70pt} \begin{center}
 		\includesvg[width=0.52\textwidth]{../Imagenes/RedIncidencias} 
 	\end{center} 
 	\vspace{-52pt} 
@@ -282,49 +252,55 @@ en esencia será una matriz con entradas aleatorias bajo una FDP normal centrada
 	\vspace{-10pt}
 	\label{fig:RedIncidencias}
 \end{wrapfigure} 
-$\alpha_{ii}=1.0$. Esto nos lleva a asociar esta matriz con una red con pesos y autoenlaces a la que llamaremos \textit{red de incidencias}. Por la forma en como consideramos $M$ para la red de incidencias resultante, decimos que es forzosamente dirigida independientemente de la elección de red aleatoria. Hablando específicamente para el caso en donde se considera $A$ simétrica de la red no dirigida, al momento de realizar el producto punto con $M$, las entradas $\alpha_{ij}$ no necesariamente son iguales a su contraparte simétrica, por lo que se tendrá un peso para el enlace $i\to j$ y otro peso diferente para el enlace $j\to i$; en este caso la matriz podrá ser únicamente estructuralmente simétrica. Para que $\Lambda$ fuera enteramente simétrica necesitaríamos considerar que $M$ estuviera mapeada en la parte triangular superior sus entradas aleatorias y la simetrizáramos hacia su correspondiente triangular inferior, solo así así podríamos conseguir una red de incidencias puramente no dirigida con $\Lambda$ simétrica. La figura (\ref{fig:RedIncidencias}) es una representación visual de los sistemas con los que iremos a trabajar bajo las ecuaciones de (\ref{eqn:LK}). En la sección (\ref{sec:redIncidencias}) se muestra la implementación computacional de la red de incidencias.
+
 
 \subsection{Tipos de interacciones}
 
-La red de incidencias es de tipo dirigida independientemente de la red aleatoria que se decida elegir para su construcción, a lo mucho podrá ser estructuralmente simétrica pero los pesos de los enlaces $i\to j$ y $j\to i$ son diferentes lo que implica que los coeficientes cumplen $\alpha_{ij}\neq\alpha_{ji}$ para toda $\alpha_{ij}\in\Lambda$. Esto genera repercusiones interesantes para el sistema (\ref{eqn:LK}) por lo que conviene conocer que tipos de interacciones pueden darse en $\Lambda$ y como impactan en la dinámica del sistema.\\
-\\
-Hasta ahora sabemos que los $\alpha_{ij}\in\Lambda$ forman parte de una FDP normal centrada en $\mu=0$ y con $\sigma\in[0,1]$, cabe preguntarse si para todo valor posible de $\alpha_{ij}$ tendremos una dinámica homogénea o si se tendrán escenarios particulares. May nos brinda la respuesta [cita\footnote{poner cita  del libro de ecología.}] con un abanico de 5 posibles escenarios. Antes de presentar los escenarios hay que resaltar el hecho de que el signo de $\alpha_{ij}$ importa mucho más que el propio peso que se le asigne, ya que tiene repercusiones en la ecuación (\ref{eqn:LK}) más que nada con el signo negativo de la suma dentro del paréntesis; particularmente si tenemos $\alpha_{ij}<0$ el producto de la especie $x_i$ con la $x_j$ ya no se resta sino lo contrario, de forma que fomenta el propio crecimiento de la especie $x_i$ (suponiendo que nos situamos en la ecuación $\dot{x}_i=f_i(\vec{x})$).\\
-\\
-El tipo de interacciones a las que May se refiere, aplican a la \textit{community matrix} que es para nosotros la martiz de interacciones, es decir, el Jacobiano del sistema (\ref{eqn:Jacobiano}) evaluado en algún punto fijo estable. Estas interacciones no necesariamente aplican a nuestra matriz de incidencias, de hecho más adelante se discutirá que las interacciones de May aplicarán a la red de incidencias si y solo si las volteamos al signo contrario; y en su momento se verá que al aplicar el Jacobiano a las ecuaciones (\ref{eqn:LK}), las interacciones de las especies cerca del equilibrio se ajustan con lo que May estipula.\\
-\\
-Las posibles interacciones se reparten de la siguiente forma: para la red de interacciones\footnote{Refiriéndonos a la \textit{community matriz de May}} no dirigida cuya matriz de adyacencia $A$ es estructuralmente simétrica, únicamente puede acceder a tres tipos de interacciones las de competencia $(--)$ y las de mutualismo o simbiosis\footnote{A mi me gusta llamarles de cooperación, así que de ahora en adelante de esa forma me estaré refiriendo a ellas.} $(++)$ y las de presa-depreador $(+-)$ o $(-+)$. Al ser estructuralmente simétrica sus coeficientes cumplen una de las dos situaciones: $A_{ij}\neq A_{ji}\neq 0$ ó $A_{ij}=A_{ji}=0$ para toda $A_{ij}\in A$, lo que significa que si son diferentes de cero tendrán mismo signo y diferentes pesos. Cuando sus signos son positivos implica que la especie $x_i$ y la(s) especie(s) $x_j$ cooperan y fomentan sus crecimientos aunque la medida de ello dependerá de la magnitud de sus pesos asignados. En el caso en donde los signos de las entradas cuasi simétricas sean negativos entonces existe una relación de competencia y la especie $x_i$ compite con la(s) especie(s) $x_j$ de tal forma que una de las especies intentará sobreponerse en las otras. 
+La red de incidencias es de tipo dirigida independientemente del tipo de red aleatoria que se decida elegir para su construcción, a lo mucho podrá ser estructuralmente simétrica pero los pesos de cada enlace $i\to j$ y $j\to i$ son diferentes lo que implica que $\alpha_{ij}\neq\alpha_{ji}$ para toda $\alpha_{ij}\in\Lambda$. Puede considerarse como un efecto natural puesto que el nivel de interacción entre especies difícilmente va a ser igual. Existen más interacciones además de la competencia que generan dinámicas interesantes, en esta sección se explorarán dichas interacciones y su aplicación en la matriz de incidencias.
 \\
 \\
-Para el caso de la red de interacciones dirigida, pueden acceder a los 5 tipos de interacción ya que en su matriz de adyacencia bien pueden existir entradas cuasi simétricas aunque la matriz en general no lo sea, las que nos faltan son: el comensalismo $(+0)$, amensalismo $(-0)$ y presa-depredador $(+-)$. Para el caso del comensalismo se da para cuando tenemos una interacción de $i\to j$ y la especie $x_i$ obtiene un beneficio mientras que no existe algún impacto para la especie $x_j$. En contraparte el amensalismo es cuando se tiene la interacción $i\to j$ y la especie $x_i$ se ve perjudicada mientras que tampoco existe algún impacto para $x_j$. El caso de la depredación es cuando la interacción $i\to j$ y la especie $x_i$ obtiene un beneficio mientras que $j\to i$ la especie $x_j$ se ve perjudicada. En la sección (\ref{sec:PresaDepredadorCap1}) del capítulo 1 se discute la dinámica de este sistema, sin embargo en este contexto se tienen algunas diferencias. 
+Hasta ahora únicamente se han discutido las ecuaciones de (\ref{eqn:LK}) bajo el escenario de la competencia, es decir para toda $\alpha_{ij}\in\Lambda$ positiva. El caso particular $N=2$ ha develado que este sistema es incapaz de superar sus capacidades de carga, por lo que tienen un crecimiento controlado. Pero ¿qué pasa si se comienzan a considerar $\alpha_{ij}<0$ provenientes de la distribución normal? ¿Cómo podría afectar en la dinámica resultante y qué pasaría con las capacidades de carga del sistema? Para comenzar a explorar las respuestas a estas preguntas hay que definir el tipo de interacciones posibles en $\Lambda$ y May presenta un abanico de 5 de ellas \cite{may2019stability}.\\
+\\
+Las interacciones a las que May refiere, únicamente se aplican a su \textit{community matrix} que sería lo equivalente a las matrices Jacobianas de nuestro sistema evaluadas en algún punto fijo (\ref{eqn:Jacobiano}). Estas interacciones no necesariamente aplican a la matriz de incidencias $\Lambda$, sin embargo podrán aplicarse  si se les voltean el signo tal y como se verá más adelante. Las posibles interacciones se reparten de la siguiente forma: para sistemas de May con matrices estructuralmente simétricas únicamente podrán acceder a tres tipos de interacción, las de competencia $(--)$, las de cooperación\footnote{Conocidas también por mutualismo o simbiosis.} $(++)$ y las de presa-depreador $(+-)$ ó $(-+)$.
+\\
+\\
+Cuando se tienen sistemas de May puramente aleatorios entonces pueden acceder a los 5 tipos de interacción, ya que su matriz de interacciones puede contener entradas estructuralmente simétricas aunque en general no lo sea. Las interacciones que faltan son: el comensalismo $(+0)$, amensalismo $(-0)$. \\
+\\
+La relación de cooperación implica que ambas especies se verán beneficiadas de su interacción mutua, en contraste con la competencia en la que ambas se van a ver perjudicadas. Para el caso de la interacción presa-depredador, una de las especies se verá beneficiada mientras que la otra saldrá perjudicada de dicho beneficio. En el  comensalismo una de las especies se beneficia mientras que la otra no presenta ningún impacto. Por el contrario, en el amensalismo una de las especies se perjudica mientras que la otra no presenta algún cambio.
 
 \subsubsection*{Interacciones de May aplicadas a la red de incidencias}
 
-Las interacciones que se aplican a la red de incidencias son las mismas que las que May estipula para la matriz de interacciones solamente que con el signo contrario. Para el caso de la red de interacciones con matriz de adyacencia estructuralmente simétrica, las interacciones de competencia se darán para cuando los signos de las $\alpha_{ij},\alpha_{ji}\in\Lambda$ con $i\neq j$ sean $(++)$, mientras que las de cooperación se darán cuando se cumpla $(--)$. Esto se debe a lo que brevemente se comentó anteriormente, el sistema
-$$
-\dot{x}_i=r_ix_i\left (1 - \frac{\sum_{j=1}^{N}\alpha_{ij}x_j}{K_i}\right )
-$$
-tiene interacciones $\alpha_{ij}$ que son afectadas por el signo negativo que existe a su izquierda, si se tiene $\alpha_{ij}>0$ entonces el crecimiento $r_ix_i$ se contrarresta con los términos $\alpha_{ij}x_ix_j$ de la población $x_i$ y esta dinámica se desencadenará en ver quien de las $N$ especies se superpone sobre el resto (aunque claro que esto dependerá de los pesos de las $\alpha_{ij}$ y las condiciones iniciales). Por el contrario, cuando los $\alpha_{ij},\alpha_{ji}\in\Lambda$ son negativos entonces el término $\alpha_{ij}x_ix_j$ de la especie $x_i$ se suma al término $r_ix_i$ y propicia su crecimiento.\\
+Las interacciones que se aplican a la matriz de incidencias son las mismas que May estipula para sus matrices de interacción solamente que con el signo contrario. Para el caso de la competencia se tendrán $(++)$, en cooperación serán $(--)$, presa-depredación $(-+)$ ó $(+-)$, comensalismo $(-0)$ y por último amensalismo $(+0)$. Para poder ver de que forma afectan los coeficientes $\alpha_{ij}\in\Lambda$ provenientes de la distribución normal $\mathcal{N}(0,\sigma)$, extendemos las ecuaciones del sistema (\ref{eqn:LK}) de modo que
+\begin{equation}\label{eqn:LKextendida}
+	r_ix_i\left (1 - \frac{\alpha_{ii}x_i+\alpha_{i1}x_1+\cdots+\alpha_{iN}x_N}{K_i}\right )\quad\Longleftrightarrow\quad r_ix_i\left (1-\frac{\alpha_{ii}x_i}{K_i}\right )-r_ix_i\left (\frac{\sum_{j\neq i}\alpha_{ij}x_j}{K_i}\right )
+\end{equation}
+El sistema se puede separar en una componente logística y en una suma de términos no lineales. Para que la componente logística mantenga regulado su crecimiento (omitiendo el resto de términos), es necesario que $\alpha_{ii}>0$, por simplicidad y convenciencia se ha definido en la matriz de incidencias que todos estos elementos sean $\alpha_{ii}=1$, pero en esencia es suficiente con que sean mayor a cero. Observe que si $\alpha_{ii}\leq 0$, entonces el crecimiento será exponencial y sin límites.
 \\
-Cuando tenemos redes de incidencias con matriz de adyacencia no simétrica ni estructuralmente simétrica la competencia y la cooperación también están presentes de la misma forma  que para el caso anterior. En estos casos el comensalismo se da para interacciones $(-0)$ ya que es necesario que la interacción cumpla $\alpha_{ij}<0$ para que la especie $x_i$ obtenga un beneficio de la especie $x_j$, en este caso la especie $x_j$ no obtiene ningún beneficio ni tampoco queda perjudicada pues se tiene $\alpha_{ji}=0$. En contraparte, el amensalismo ahora se da con la interacción $(+0)$, en este caso el término $\alpha_{ij}x_jx_i>0$ y por lo tanto restará al término dado por $r_ix_i$ haciendo que la especie $x_i$ quede perjudicada en su crecimiento, pero al igual que el comensalismo, la especie $x_j$ no se le genera ningún impacto puesto que $\alpha_{ji}=0$. Finalmente para la depredación ahora los papeles se invierten para $(-+)$ y la dinámica sigue la misma lógica que como se plantean los casos anteriores.\\
 \\
-Hay que hacer notar que cada especie tiene la capacidad de tener a lo mucho $N$ interacciones y eso dependerá de como resulte la matriz de incidencias y su red asociada con base en los parámetros $p$ y $\sigma$. Significa que dada especie $x_i$ tiene la capacidad de interactuar con el resto de las $N-1$ especies bajo los 5 escenarios posibles (dependiendo de si la matriz de incidencias es estructuralmente simétrica o no). Puede darse el caso en el que $x_i$ tenga cooperación con alguna $x_j$ y competencia, comensalismo, amensalismo o depredación con alguna otra especie y además eso se repite para el resto de las especies del sistema. Al ser prácticamente aleatorias la elección de las interacciones entre especies la dinámica del sistema se vuelve cada vez más compleja de determinar y de predecir. Por ello es bastante conveniente recurrir a la integración numérica.
+Los términos de la suma de (\ref{eqn:LKextendida}) van a aportar valor al término logístico y va a depender del resto de coeficientes $\alpha_{ij}$ junto con su signo. Si el signo es negativo, con el signo menos de la izquierda se hará positivo y entonces agregará crecimiento a la dinámica de $x_i$, este escenario puede suceder en interacciones de cooperación, en la interacción depredador únicamente y en el comensalismo. Por el contrario si $\alpha_{ij}>0$ entonces va a restar crecimiento a la dinámica de $x_i$ (tal y como se aprecia en el ejemplo \ref{eg:2x2}). En contraparte, este escenario se va a dar en la competencia, en la presa únicamente y en el amensalismo. Nótese que cuando $\alpha_{ij}=0$ no incurre en algún cambio en $x_i$. \\
+\\
+Las interacciones negativas que agregan valor al crecimiento de cada especie, generan la oportunidad de que dicho incremento logre sobrepasar la(s) capacidad(es) de carga del sistema, lo que puede generar que el punto de estabilidad de las especies quede por arriba de dichas $K_i$, algo que no se permite en el sistema puramente de competencia. Sin embargo, debe de existir un balance entre las interacciones positivas y negativas, ya que si las segundas se sobreponen a las primeras, puede ocurrir un colapso del sistema traducido en crecimiento desmedido. Este escenario corresponderá a aquellos sistemas (\ref{eqn:LK}) inestables resultantes de ciertas configuraciones en $p$, $\sigma$ y $N$ de la matriz de incidencias y se irá revisando más adelante.\\
+\\
+Dependiendo de la $p$ que forma la matriz de incidencias, cada especie podrá tener a lo mucho $N$ interacciones posibles con fuerza promedio $\sigma$, lo que implica que cada especie puede tener interacciones de cooperación, competencia, etc, de forma aleatoria (dependiendo si la matriz es estructuralmente simétrica o no). La dinámica resultante se acompleja conforme $N$ es mayor debido a todo el cúmulo de posibles interacciones en la que cada una de ellas afecta significativamente al desarrollo de cada especie. Partiendo de la estructura aleatoria de la red y el peso de las interacciones provenientes de $\mathcal{N}(0,\sigma)$, es complejo de idear tan si quiera un bosquejo de la dinámica resultante del sistema (\ref{eqn:LK}).
+
+\subsubsection*{Interacciones de $\Lambda$ para $N=2$.}
 
 \begin{ejemplo}\label{eg:2x2CoopyDemás}
-	Cuando se tienen sistemas en presencia de cooperación entre especies ocurre algo interesante con los puntos fijos. Veamos como son los espacios fase y las series de tiempo de un sistema de Lotka-Volterra de $2\times 2$ en presencia de la cooperación. Definimos el siguiente sistema similar al del Ejemplo \ref{eg:2x2} con coeficientes de cooperación:
+	Se explorará un caso particular de un sistema (\ref{eqn:LK}) para $N=2$ con interacciones de cooperación. Se corroborará si efectivamente su dinámica es capaz de sobrepasar sus capacidades de carga. A través del espacio fase y las series de tiempo se observará dicho fenómeno. El sistema en concreto es
 	\begin{equation}\label{eqn:Sist2x2Coop}
 		\begin{split}
 			\frac{dx}{dt} &= 2x\left (1-\frac{x}{2}\right )+\frac{1}{2}xy\\
 			\frac{dy}{dt} &= 3y\left (1-\frac{y}{3}\right )+xy
 		\end{split}
 	\end{equation}
-	La matriz de incidencias asociada este caso sería 
+	La matriz de incidencias asociada a este caso sería 
 	$$
 	\Lambda = \begin{pmatrix}
 		1 & -\frac{1}{2}\\
 		-1 & 1
 	\end{pmatrix}
 	$$
-	A diferencia del sistema del Ejemplo \ref{eg:2x2} (Ec. \ref{eqn:Sist2x2Comp}) su anti-diagonal es negativa lo que indica que son coeficientes de interacción $(--)$ que propician la cooperación entre especies y fomentan sus crecimientos. Los puntos fijos para este sistema ahora son: $(0,0)$, $(2,0)$, $(0,3)$ y $(7,10)$; las matrices de interacción asociadas son:
+	A diferencia del sistema del Ejemplo \ref{eg:2x2} (Ec. \ref{eqn:Sist2x2Comp}) su anti-diagonal es negativa lo que indica que son coeficientes de interacción $(--)$ que propician la cooperación entre especies y fomentan sus crecimientos. Los puntos fijos para este sistema ahora son: $(0,0)$, $(2,0)$, $(0,3)$ y $(7,10)$; las matrices jacobianas asociadas son:
 	$$
 	\mathbb{J}_{(0,0)}=\begin{pmatrix}
 		2 & 0 \\
@@ -340,202 +316,256 @@ Hay que hacer notar que cada especie tiene la capacidad de tener a lo mucho $N$ 
 	10 & -10
 	\end{pmatrix}
 	$$
-	Realizando el cálculo de los eigenvalores de cada una de las matrices de interacción se encuentra que para el primer punto fijo se tiene el ya conocido y trivial repulsor con eigenvalores con parte real positiva. En el caso de los puntos fijos de los ejes ahora su estabilidad ha cambiado con respecto del sistema (\ref{eqn:Sist2x2Comp}), ahora su estabilidad es de puntos silla y por tanto son inestables; cada uno tiene un eigenvalor positivo y otro negativo, en consecuencia para $t\to\infty$ las soluciones terminan divergiendo. Por último se encuentra que los eigenvalores del punto fijo restante son negativos, por lo todas las soluciones del sistema irán a converger a este punto.
+	Realizando el cálculo de los valores propios de cada una de las matrices de interacción se encuentra que para el primer punto fijo se tiene el conocido y trivial repulsor. En el caso de los puntos fijos de los ejes ahora su estabilidad ha cambiado con respecto del sistema (\ref{eqn:Sist2x2Comp}), se tienen puntos sillas que resultan ser inestables ya que para $t\to\infty$ las soluciones terminan divergiendo. Por último se encuentra que los valores propios del punto fijo restante son negativos, lo que implica que todas las soluciones del sistema irán a converger a este punto.
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[scale=0.24]{../Imagenes/Cooperacion de especies}
-		\caption{Sistema de Lotka-Volterra con interacciones de cooperación dados por las ecuaciones (\ref{eqn:Sist2x2Coop}). Capacidades de carga: $K_x=2$ y $K_y=3$. \textbf{A}) Series de tiempo del sistema para las especies $x(t)$ y $y(t)$ bajo la condición inicial $(1,2)$. (\textbf{B}) Espacio fase del sistema con sus puntos fijos asociados, se muestra solamente un único punto fijo estable.}
+		\caption{Sistema de Lotka-Volterra con interacciones de cooperación dados por las ecuaciones (\ref{eqn:Sist2x2Coop}). Tasas de crecimiento y capacidades de carga: $r_x=K_x=2$ y $r_y=K_y=3$. \textbf{A}) Series de tiempo del sistema para las especies $x(t)$ y $y(t)$ bajo la condición inicial $(1,2)$. (\textbf{B}) Espacio fase del sistema con sus puntos fijos asociados, se muestra solamente un único punto fijo estable.}
 		\label{fig:CooperacionEspecies}
-	\end{figure}
-	 Esto es cuanto menos interesante porque la cooperación entre las especies $x$ y $y$ es de tal forma que superan su propia capacidad de carga que funge como límite que les impone el sistema. Bajo este escenario el concepto de la capacidad de carga toma otro significado: ahora será un parámetro que regule el crecimiento de las especies, cuanto mayor sea la capacidad de carga más difícil serán sus crecimientos, sin embargo, si la capacidad de carga no es lo suficientemente grande como para contener las interacciones de cooperación entonces el crecimiento podría darse de forma desmedida de modo que todo el sistema sea completamente inestable.\\
+	\end{figure}\\
+	\\
+	 Esto es cuanto menos interesante, ya que se puede observar que efectivamente la cooperación entre las especies $x$ y $y$ es capaz de superar sus propias capacidades de carga que fungían como límites. Bajo este escenario el concepto de la capacidad de carga podría tomar otro significado: ahora será un parámetro que regule el crecimiento de las especies, cuanto mayor sea la capacidad de carga será más difícil el crecimiento de las $x_i$; en caso contrario podrá haber una fácil apertura para el crecimiento desmedido debido a que las $K_i$ no serán capaces de contener las interacciones $\alpha_{ij}<0$. Aunque por su puesto también va dependerá de la magnitud de las $\alpha_{ij}\in\Lambda$.\\
 	 \\
- 	La cooperación entre especies fomenta su crecimiento y ahora su estabilidad se posiciona en puntos que quedan por arriba de sus capacidades de carga. Algo similar ocurre para el comensalismo (-0) y el amensalismo (+0), solo que una de las especies seguirá un comportamiento logístico lo cual indica que no sufre algún impacto mientras que la otra especie se ve beneficiada o perjudicada dependiendo de la interacción que tenga. Para la interacción de depredación $(+-)$ la especie depredadora se beneficia mientras que la presa se ve perjudicada.
- 	\newpage
- 	Ahora modificamos el sistema (\ref{eqn:Sist2x2Coop}) de tal modo que obtengamos cada una de estas interacciones. En este caso se elige que $\alpha_{21}=0$ de la ecuación $\dot{y}$ y $\alpha_{12}=\pm\frac{1}{2}$ de la ecuación $\dot{x}$ para cubrir los casos de comensalismo y amensalismo. La ecuación $\dot{y}$ queda reducida a una ecuación logística normal y pese a la dinámica que ocurra con $\dot{x}$, no se ve afectada y mantiene su estabilidad en su capacidad de carga. 
+ 	La cooperación entre especies fomenta su crecimiento y ahora su estabilidad se posiciona en puntos que quedan por arriba de sus capacidades de carga. Cuando se tienen las interacciones comensalismo (-0) y amensalismo (+0), solo una de las especies seguirá su comportamiento logístico mientras que la otra encontrará su estabilidad arriba o debajo de su capacidad de carga. La interacción de depredación $(-+)$ la especie depredadora se estabiliza arriba de su $K_i$ y la presa por debajo de la misma.\\
+ 	\\
+ 	Se modifica el sistema (\ref{eqn:Sist2x2Coop}) de tal modo que se considere cada una de estas interacciones. En este caso se elige que $\alpha_{21}=0$ de la ecuación $\dot{y}$ y $\alpha_{12}=\pm\frac{1}{2}$ de la ecuación $\dot{x}$ para cubrir los casos de comensalismo y amensalismo. La ecuación $\dot{y}$ queda reducida a una ecuación logística, la cual no se verá afectada por la dinámica de $\dot{x}$ y se mantendrá estable en su capacidad de carga. \\
+ 	\\
  	\begin{figure}[h!]
  		\centering
  		\includegraphics[scale=0.2]{../Imagenes/STrestoInteracciones}
  		\caption{Series de tiempo para las interacciones comensalismo, amensalismo y depredación. (\textbf{A}) Para el comensalismo se definió $\alpha_{21}=0$ y $\alpha_{12}=-\frac{1}{2}$. (\textbf{B}) Para el amensalismo se consideró $\alpha_{21}=0$ y $\alpha_{12}=\frac{1}{2}$ (\textbf{C}) Para la depredación se consideró $\alpha_{21}=-1$ y $\alpha_{12}=\frac{1}{2}$.}
  		\label{fig:RestoInteraccionesST}
  	\end{figure}
-	La especie $x(t)$ es la que se verá impactada por sus coeficientes de interacción correspondientes, cuando recibe un beneficio podemos notar como es capaz de estabilizarse en un valor superior al de su capacidad de carga, mientras que en el caso contrario se ve perjudicada pero al menos no decae a $0$ su población, sino que se establece en un valor menor a su capacidad de carga correspondiente. El caso de depredación es como una combinación de los anteriores, mientras una de las especies se ve beneficiada, logra estabilizarse en un punto superior a la capacidad de carga mientras que para la especie que se ve perjudicada se establece igualmente en algún punto menor a su capacidad de carga pero sin llegar a extinguirse. Por último es importante remarcar que los pesos de la forma $\alpha_{ij}<0$ deben estar soportados por sus capacidades de carga, de lo contrario el sistema será inestable y sus soluciones divergerán.
+ 	
+	Para el caso de depredación se utiliza $\alpha_{12}=\frac{1}{2}$ y $\alpha_{21}=-1$ y es como una combinación de los anteriores, una de las especies logra estabilizarse en un punto superior a su capacidad de carga mientras que la otra se establece en algún punto menor a su capacidad de carga pero sin llegar a extinguirse. En estos casos particulares los coeficientes $\alpha_{ij}<0$ fueron soportados sus capacidades de carga, pero dependiendo de su magnitud es que pudo desenvolver en sistemas estables. Hasta el momento, la estabilidad va a depender de: la magnitud de las capacidades de carga y los coeficientes de interacción en relación a las anteriores.
 \end{ejemplo}
-
-\setlength{\parindent}{0cm} El lector hasta ahora quizás se haga las siguientes preguntas ¿Por qué son necesarios los autoenlaces y por qué deben de ser $\alpha_{ii}=1$ para toda $\alpha_{ii}\in\Lambda$? Se han fijado los pesos de los autoenlaces a $w=1.0$ ¿Podrán ser de otra forma? La respuesta es \textit{depende}; en los ejemplos \ref{eg:2x2} y \ref{eg:2x2CoopyDemás} hallamos una gran pista que nos resuelve esta conjetura: en estos sistemas se han separado los términos en donde tenemos por un lado el carácter logístico del sistema y por el otro lado las interacciones con las otras especies. \\
+En esta sección se ha construido la matriz de incidencias $\Lambda$ necesaria para definir las interacciones del sistema (\ref{eqn:LK}). Se hizo con base en una red de Erdös–Rényi dirigida o no dirigida, contemplando que el peso de los enlaces provienen de una distribución normal centrada en cero y desviación estándar $\sigma$, y agregando autoenlaces con peso $1$. Posteriormente se revisaron las posibles interacciones que se pueden obtener de $\Lambda$ siendo 3 o hasta 5 dependiendo del tipo de red aleatoria escogida. Se ha analizado que los coeficientes $\alpha_{ii}$ deben ser positivos para que respeten el comportamiento logístico de cada especie, y que los coeficientes $\alpha_{ij}<0$ son capaces de agregar valor al crecimiento de las especies hasta sobrepasar sus capacidades de carga. Por último se ha explorado que la estabilidad va a depender del balance entre coeficientes positivos y negativos en conjunción con las capacidades de carga en términos de sus magnitudes.
 \\
-Recordando la discusión que se tuvo sobre la ecuación logística (\ref{eqn:EqLogistica}) en el capítulo pasado, se mencionaba que para cierto tiempo $t^*$ en donde $N(t^*)=K$, la población llegaba a su tope de crecimiento y en ese valor se estabilizaba. El numerador del término $\frac{N}{K}$ bien puede tener un factor $c$ (tal que se tenga $\frac{cN}{K} $) y al final la capacidad de carga estará ahí para definir el tope, la cuestión es como debe  de ser $c$. Para no tener tantos problemas hacemos $c=1$, sin embargo si $c>0$ esto provocará que el valor de la capacidad de carga se modifique de modo que la población se estabilizará en algún otro punto diferente de $K$, pero a final de cuentas se estabilizará. Si $c=0$ entonces tenemos la ecuación (\ref{eqn:CrecimientoExponencial}) y ya sabemos que toda solución de esa ecuación diferencial diverge. Y si $c<0$ entonces la ecuación resultante tendrá un término de la forma $rx_i\left (1+\frac{x_i}{K_i}\right )$ el cual también va a diverger para $t\to\infty$. Por lo tanto, por motivos de simplicidad escogemos el peso de todas las $\alpha_{ii}$ como $w=1.0$. \\
 \\
-En resumen, las auto-interacciones en la red de incidencias son necesarias para regular el crecimiento de cada especie, este es el trabajo del término logístico que tiene cada $x_i$. Sin embargo ese atuo-regulamiento no es todo poderoso pues como se vio anteriormente, las interacciones $\alpha_{ij}$ son clave para determinar si el sistema es estable o no. Hasta ahora tenemos todo lo necesario para poder construir e integrar el sistema (\ref{eqn:LK}) de forma numérica, para ello basta únicamente con implementar correctamente el método RK4 (sec. \ref{sec:RK4}) y aplicarlo para poder obtener las series de tiempo, espacios fase y demás elementos que servirán para el análisis riguroso de lo que viene. En la sección (\ref{sec:poblacionesLK}) se muestra la implementación computacional de este sistema.
+Por lo tanto ya se tiene todo para comenzar a integrar numéricamente el sistema para cualquier $N$, el siguiente paso será determinar la matriz Jacobiana del sistema para analizar aspectos alrededor de ella. En la sección (\ref{sec:poblacionesLK}) se muestra la implementación computacional de este sistema.
 
-\section{Jacobiano del sistema: Matriz de interacciones}
+\section{Jacobiana del sistema}
 
-Anteriormente se ha comentado sobre el método de la \textit{linealización} para poder acceder a matrices de interacciones de forma local alrededor de algún punto fijo. Se definió el \textit{Jacobiano} del sistema (ec. \ref{eqn:Jacobiano}) para efectuar esta tarea y más tarde se determinó el Jacobiano para el caso particular de un sistema de $N=2$ (ec. \ref{eqn:Jacobiano2}). En esta sección nos tocará hablar sobre la matriz de interacciones para un sistema de $N$ especies, se verán las interacciones resultantes y si se aplican con las interacciones de May [cita\footnote{cita}] y se abrirá paso a hablar sobre la estabilidad de este sistema.\\
+Anteriormente se ha comentado sobre la \textit{linealización} del sistema para conocer la estabilidad alrededor de un punto fijo. Se ha definido la forma vectorial del sistema de Lotka-Volterra generalizado (\ref{eqn:LKmatricial}) y se definió su matriz \textit{Jacobiana} (\ref{eqn:Jacobiano}) en su representación general. En esta sección se va a definir la forma explícita de esta matriz Jacobiana para cualquier número de especies, y se corroborará si las interacciones resultantes se ajustan con las May definió en \cite{may2019stability}. Con esto se abrirá paso a hablar sobre la estabilidad de este sistema en términos de los parámetros que gobiernan a $\Lambda$.\\
 \\
-Recordando la definición \ref{def:LKVectorial} se define el sistema de Lotka-Volterra generalizado bajo la función vectorial $\mathbf{F}:\mathbb{R}^n\to\mathbb{R}^n$ donde se tienen las especies como dominio y las funciones de su dinámica en el codominio. Para determinar el Jacobiano de $\mathbf{F}(\vec{x})$ tenemos que aplicar la derivada $i$-ésima a cada $f_i(\vec{x})\in\mathbf{F}(\vec{x})$ para ello separamos en dos casos, para cuando elementos de la diagonal: $\frac{\partial f_i(\vec{x})}{\partial x_i}$, y para elementos fuera de la diagonal: $\frac{\partial f_i(\vec{x})}{\partial x_k}$; tomamos las ecuaciones del sistema (\ref{eqn:LK}) para realizar el cálculo:
+Con base en la definición \ref{def:LKVectorial} se define el sistema de Lotka-Volterra generalizado como $\dot{X}=\textbf{F}(X)$, siendo \textbf{F} la función vectorial no lineal del sistema. Para determinar su matriz Jacobiana se tienen que aplicar las derivadas parciales a cada $f_i(X)\in\mathbf{F}(X)$ y para ello separamos en dos casos: considerando elementos de la diagonal $\frac{\partial f_i(X)}{\partial x_i}$, y para aquellos que quedan fuera de la diagonal: $\frac{\partial f_i(X)}{\partial x_k}$; tomamos las ecuaciones del sistema (\ref{eqn:LK}) para realizar el cálculo:
 $$
-f_i(\vec{x}) = r_ix_i\left (1-\frac{\sum_{j=1}^N \alpha_{ij}x_j}{K_i}\right )
+f_i(X) = r_ix_i\left (1-\frac{\sum_{j=1}^N \alpha_{ij}x_j}{K_i}\right )
 $$
-para los términos de la diagonal tenemos
+para los términos de la diagonal se tiene
 \begin{equation}\label{eqn:Jacobiano_ii}
 	\begin{split}
-			f_i(\vec{x}) &= r_ix_i - \frac{\sum_{j=1}^N r_i\alpha_{ij}x_ix_j}{K_i} \\
-			\frac{\partial f_i(\vec{x})}{\partial x_i} &= r_i -
-			\frac{2\alpha_{ii}x_i+\sum_{j\neq i} r_i\alpha_{ij}x_j}{K_i}\\
-			\frac{\partial f_i(\vec{x})}{\partial x_i} &= r_i \left (1-\frac{2x_i+\sum_{j\neq i}\alpha_{ij}x_j}{K_i}\right )
+			f_i(X) &= r_ix_i - \frac{\sum_{j=1}^N r_i\alpha_{ij}x_ix_j}{K_i} \\
+			\frac{\partial f_i(X)}{\partial x_i} &= r_i -
+			\frac{2r_i\alpha_{ii}x_i+\sum_{j\neq i} r_i\alpha_{ij}x_j}{K_i}\\
+			\frac{\partial f_i(X)}{\partial x_i} &= r_i \left (1-\frac{2\alpha_{ii}x_i+\sum_{j\neq i}\alpha_{ij}x_j}{K_i}\right )
 	\end{split}
 \end{equation}
 y para los términos que quedan fuera de la diagonal tenemos
 \begin{equation}\label{eqn:Jacobiano_ij}
 		\frac{\partial f_i(\vec{x})}{\partial x_k} = -\frac{r_i\alpha_{ik}x_i}{K_i} 
 \end{equation}
-\begin{definición}\label{def:MatrizInteracciones}
-	Sea $\mathcal{I}\in\mathcal{M}_N(\mathbb{R})$ donde $N$ es el número de especies del sistema de Lotka-Volterra generalizado. Definimos la matriz de \textit{interacciones} del sistema de Lotka-Volterra generalizado de la siguiente forma\footnote{La implementación computacional del Jacobiano la puedes consultar en la sección ()}:
-	\begin{equation}\label{eqn:MartizInteracciones}
-		\mathcal{I}=\begin{cases}
-			\mathcal{I}_{ii} = r_i \left (1-\frac{2x_i+\sum_{j\neq i}\alpha_{ij}x_j}{K_i}\right ),\qquad&\text{para }i\in\{1,...,N\}\\
-			\mathcal{I}_{ij} = -\frac{r_i\alpha_{ik}x_i}{K_i},\qquad&\text{para }i\neq j
+\begin{definición}\label{def:MatrizJacobiana}
+	Sea $\mathcal{J}\in\mathrm{M}_N(\mathbb{R})$ donde $N$ es el número de especies del sistema de Lotka-Volterra generalizado. Se define la matriz \textit{Jacobiana} asociada al sistema (\ref{eqn:Fmatricial}) de la siguiente forma
+	\begin{equation}\label{eqn:MartizJacobiana}
+		\mathcal{J}=\begin{cases}
+			\mathcal{J}_{ii} = r_i \left (1-\frac{2\alpha_{ii}x_i+\sum_{k\neq i}\alpha_{ik}x_k}{K_i}\right ),\qquad&\text{para }i\in\{1,...,N\}\\
+			\mathcal{J}_{ij} = -\frac{r_i\alpha_{ij}x_i}{K_i},\qquad&\text{para }i\neq j
 		\end{cases}
 	\end{equation}
 \end{definición}
-Una vez hallando el/los punto(s) fijo(s) del sistema y evaluándolo(s) en $\mathcal{I}$ tendremos finalmente un sistema lineal al que le podemos calcular sus eigenvalores para determinar su estabilidad. A primera vista se puede notar que los coeficientes de $\mathcal{I}$ voltean el signo con respecto de la matriz de incidencias $\Lambda$, esto parece ajustarse perfectamente con las interacciones de May en donde se discutía que tienen signos opuestos con respecto de la red de incidencias; de momento esto aplica únicamente para los elementos fuera de la diagonal. ¿Qué ocurre con los elementos de la diagonal?
+Teniendo el punto fijo de interés del sistema y evaluándolo en $\mathcal{J}$ se podrá conocer su estabilidad a través del cálculo de sus valores propios. Se puede notar que los elementos fuera de la diagonal de $\mathcal{J}$ voltean el signo con respecto de $\Lambda$, lo que parece ajustarse con las interacciones que May define en su \textit{community matrix} \cite{may2019stability}. Además de voltear el signo, la operación sugiere un re-escalamiento del elemento $\alpha_{ij}$ por lo que en esencia, ¡la matriz Jacobiana es un re-escalamiento de la matriz de incidencias! ¿Qué ocurre con los elementos de la diagonal?
 \begin{proposición}\label{prop:DiagonalI}
-	Los elementos de la diagonal de la matriz de interacciones $\mathcal{I}$ son negativos, es decir:
+	Los elementos de la diagonal de la matriz Jacobiana son negativos cuando se evalúa en un punto fijo estable.
 	$$
 	r_i \left (1-\frac{2x_i+\sum_{j\neq i}\alpha_{ij}x_j}{K_i}\right )<0
 	$$	
 	\begin{proof}
-		Revisando los términos de la ecuación comenzamos por $r_i$, sabemos que corresponde con la tasa de crecimiento y que forzosamente debe ser mayor que cero para estimular el crecimiento de las $x_i$. Por lo que realmente debemos demostrar que lo que esta entre paréntesis es menor que cero, es decir:
-		$$
-		1-\frac{2x_i+\sum_{j\neq i}\alpha_{ij}x_j}{K_i}<0\qquad\Longleftrightarrow\qquad K_i<2x_i+\sum_{i\neq j}\alpha_{ij}x_j
-		$$
-		Esto implica que para que la derivada parcial de los elementos de la diagonal sean menores que cero, se debe de cumplir que la suma de las interacciones de la especie $x_i$ con las especies $x_j$ (incluido $2x_i$) debe ser mayor a la capacidad de carga de la especie $x_i$, o sea $K_i$. Esto ya lo habíamos visto en el Ejemplo \ref{eg:2x2CoopyDemás} (ver $\mathbb{J}_{(7,10)}$) en donde las interacciones de cooperación (en este caso las negativas) propician que estabilidad de $x_i$ quede por arriba a de la capacidad de carga, es decir que cuando la estabilidad de $x_i$ es mayor que $K_i$ (sin que tiendan a infinito) entonces los valores de la diagonal de la matriz de interacciones $\mathcal{I}$ serán negativos.
+		Sea $X^*$ un punto fijo estable. Se sabe que la tasa de crecimiento $r_i$ siempre es positiva por lo que la descartamos del análisis. Por otro lado las entradas de $X^*$ son positivas y existen algunas $x_i\in X^*$ tal que son mayores a su capacidad de carga, es decir, $x_i>K_i$ a causa a las $\alpha_{ij}<0$ de la matriz de incidencias. Teniendo en cuenta la siguiente suma
+		\begin{equation}\label{proof1:sumaClave}
+			2x_i+\sum_{j\neq i}\alpha_{ij}x_j
+		\end{equation}
+		no se puede asegurar que sea mayor a cero, pues existen tantas $\alpha_{ij}$ negativas como positivas. Suponiendo que son mayores que cero implica que
+		$$K_i<2x_i+\sum_{j\neq i}\alpha_{ij}x_j\qquad\Longleftrightarrow\qquad 1-\frac{2x_i+\sum_{j\neq i}\alpha_{ij}x_j}{K_i}<0$$
+		Y por lo tanto el elemento $\mathcal{J}_{ii}$ es menor que cero. ¿Qué pasaría si $K_i>2x_i+\sum_{j\neq i}\alpha_{ij}x_j$? La suma (\ref{proof1:sumaClave}) puede ser negativa o positiva pero estrictamente menor a $K_i$ lo que implicaría que el elemento del paréntesis de $\mathcal{J}_{ii}$ sería positivo. Si la matriz Jacobiana tiene elementos de la diagonal positivos entonces se puede asegurar que el sistema será inestable en su punto fijo asociado. Para demostrar esto se recurrirá al \textit{Teorema de Gershgorin} \cite{GershgorinTheorem}. Se asume que la matriz Jacobiana (\ref{eqn:MartizJacobiana}) tendrá valores propios complejos, se define el radio de Gershgorin como
+		$$R_i=\sum_{j\neq i}|\mathcal{J}_{ij}|$$
+		Sea $D(\mathcal{J}_{ii},R_i)\subseteq\mathbb{C}$ el disco centrado en $\mathcal{J}_{ii}$ con radio $R_i$ denominado disco de Gershgorin. El teorema establece que cada valor propio de $\mathcal{J}$ estará contenido en al menos uno de estos discos. Si se demuestra que los $D(\mathcal{J}_{ii},R_i)$ están contenidos en el semiplano negativo de $\mathbb{C}$ entonces todos los valores propios de $\mathcal{J}$ serán negativos y por lo tanto el sistema (\ref{eqn:LK}) será estable en $X^*$. El elemento más importante de esta demostración es considerar el centro del disco, si todos los $\mathcal{J}_{ii}$ son negativos se podría asegurar casi en su totalidad que los valores propios también lo serán. Solamente habría que demostrar que $R_i\leq\mathcal{J}_{ii}$. Para ello comenzamos considerando que cualquier $x_i\in X^*$ cumple
+		\begin{equation}\label{proof1:desigualdad1}
+			x_i>\frac{K_i}{2\alpha_{ii}},\qquad\alpha_{ii}\in\Lambda
+		\end{equation}
+		eso implicaría que $2r_i\alpha_{ii}x_i>r_iK_i$ y por lo tanto 
+		\begin{equation}\label{proof1:sumaClave1}
+			\frac{2r_i\alpha_{ii}x_i}{K_i}-r_i>0
+		\end{equation}
+		Por otro lado supongamos $x_i<\sum_{k\neq i}x_k$ entonces 
+		\begin{equation}\label{proof1:desigualdadClave}
+			\sum_{j\neq i}\left |\frac{r_i\alpha_{ij}x_i}{K_i}\right |<\sum_{k\neq j}\left |\frac{r_i\alpha_{ik}x_k}{K_i}\right |,\qquad\alpha_{ij}\in\Lambda
+		\end{equation}
+		sumando (\ref{proof1:sumaClave1}) con (\ref{proof1:desigualdadClave}) se tiene 
+		\begin{equation*}
+			\begin{split}
+				\underbrace{\sum_{j\neq i}\left |\frac{r_i\alpha_{ij}x_i}{K_i}\right |}_a&<\underbrace{\sum_{k\neq i}\left |\frac{r_i\alpha_{ik}x_k}{K_i}\right |}_b+\underbrace{\frac{2r_i\alpha_{ii}x_i}{K_i}}_c-r_i\\				
+			\end{split}
+		\end{equation*}
+		al reacomodar finalmente se tiene
+		\begin{equation}\label{proof1:Resultado}
+			\begin{split}
+				\sum_{j\neq i}\left |\frac{r_i\alpha_{ij}x_i}{K_i}\right |&<\left |r_i\left (1-\frac{2\alpha_{ii}x_i+\sum_{k\neq i}\alpha_{ij}x_k}{K_i}\right )\right |\\
+				\sum_{j\neq i}|\mathcal{J}_{ij}|&<|\mathcal{J}_{ii}|
+			\end{split}
+		\end{equation}
+		Que pasa si (\ref{proof1:desigualdad1}) es al revés, entonces (\ref{proof1:sumaClave1}) es negativa y hay que realizar algunos ajustes, ahora en la desigualdad (\ref{proof1:Resultado}) no siempre se va a cumplir por lo que hay que delimitar sus casos favorables. De entrada se sabe que el término $\frac{2r_i\alpha_{ii}x_i}{K_i}$ es siempre positivo, entonces hay que ver las configuraciones posibles para que se cumpla la desigualdad deseada. Se tienen los siguientes casos
+		\begin{itemize}
+			\item [1.] Si $1\leq\frac{(b-a)+c}{r_i}$ entonces $R_i\leq|\mathcal{J}_{ii}|$			
+			\item [2.] Si $1>\frac{(b-a)+c}{r_i}$ entonces $R_i>|\mathcal{J}_{ii}|$
+		\end{itemize}
+		Se deja como ejercicio al lector averiguar que pasaría en el caso particular $x_i>\sum_{k\neq i}x_k$\footnote{Hint: A lo mucho podría darse para $x_i=\max(X^*)$}. Cuanto mayor es el número de especies es menos probable que ocurra este incidente, pero es bueno tenerlo en cuenta. La región positiva que puedan tener estos discos será considerablemente menor con respecto de la región negativa. De este análisis se concluyen dos cosas: Si todos $\mathcal{J}_{ii}<0$ hay una alta probabilidad de que los valores propios sean negativos, teniendo incertidumbre en los casos especiales antes mencionados. En el caso contrario se sabrá que existe al menos un disco de Gershgorin en el semiplano positivo de $\mathbb{C}$ en el que estará contenido un valor propio con parte real de mismo signo, lo que desenvolverá en un sistema que resulte ser inestable.
 	\end{proof}
 \end{proposición}
-La conjunción de todo esto nos dice que los valores de autoregulación de la matriz de incidencias (que son autointeracciones positivas que limitan el crecimiento) pasan a ser interacciones de competencia $(--)$ en la martiz de interacciones. Para el resto de las entradas ocurre exactamente lo mismo, las interacciones de cooperación $(--)$ en la matriz de incidencias $\Lambda$ pasan a ser interacciones de cooperación $(++)$ en la matriz de interacciones $\mathcal{I}$, y aplicará de la misma forma para las otras cuatro interacciones posibles de modo que finalmente hemos llegado a comprobar las interacciones de May.\\
-\\
-¿Pueden los valores de la diagonal ser mayores que cero? La respuesta es sí, pero eso implicaría que las interacciones de $x_i$ con el resto de las especies deben ser menores a su respectiva capacidad de carga $K_i$ y esto únicamente se va a cumplir para cuando se tengan puros coeficientes positivos en la matriz de incidencias $\Lambda$, es decir, para cuando se tengan puras interacciones de competencia que no permitan que la estabilidad se posiciones por arriba de $K_i$. Más adelante se analizará este resultado y se verán sus implicaciones.\\
-\\
-Otra de las preguntas importantes sería ¿Cómo determinar el punto fijo \textbf{estable} de un sistema $N$-dimensional? Este autor llegó a considerar que mediante la implementación del método numérico Newton-Rhapson generalizado a un vector de dimensión $N$ sería la solución, sin embargo definir la condición inicial puede llevarte a puntos fijos que no necesariamente son estables e incluso dicha elección puede no llegar a converger oportunamente. Resulta poco práctico esta forma y sin embargo en el Ejemplo \ref{eg:2x2CoopyDemás} nuevamente hallamos una pista para la solución. Si nos fijamos en las serie de tiempo de los sistemas que propusimos integrar numéricamente (fig. \ref{fig:CooperacionEspecies} (\textbf{A}) y la fig. \ref{fig:RestoInteraccionesST}) podemos notar la convergencia hacia el punto fijo estable, de manera provechosa ¡al integrar numéricamente estamos obteniendo el punto fijo estable que necesitamos para evaluar en la matriz de interacciones $\mathcal{I}$! Lo único que restaría hacer es guardar la última iteración de nuestro conjunto solución y listo.\\
-\\
-No obstante, los sistemas no siempre serán estables. Dependiendo de los parámetros $p$ y $\sigma$ para la matriz de incidencias, tendremos situaciones en donde el sistema sea estable o donde no lo sea y por consiguiente (y de manera obvia) no obtengamos ningún punto fijo, por lo que esta extracción solamente será valida mientras el sistema y sus interacciones propicien que sea estable. Esto será de demasiada utilidad ya que al realizar la implementación computacional del Jacobiano, extraer el punto fijo de las series de tiempo y evaluarlo para así obtener la matriz de interacciones y averiguar su estabilidad mediantes sus eigenvalores (poniendo a prueba nuevamente la proposición \ref{prp:Atractores}). En la sección (\ref{sec:Jacobiano}) se encuentra la implementación computacional del Jacobiano considerando al punto fijo estable.
 
-\newpage
+Los valores de la diagonal de $\Lambda$ son considerados como interacciones de competencia que representan más bien una auto-regulación (Ver ec. (\ref{eqn:LKextendida})); al pasar a la matriz Jacobiana mediante cierto punto fijo se tienen dos escenarios: Si el punto fijo es estable, entonces todos los valores de su diagonal serán negativos convirtiéndose en las interacciones de auto-regulación que May define en \cite{may1972will}. Si por el contrario el punto fijo es inestable, existirán elementos de la diagonal con entradas positivas lo que desenvuelve en un sistema inestable.\\
+\\
+La pregunta más importante de esta tesis sería ¿Cómo determinar el punto fijo \textbf{estable} de un sistema $N$-dimensional a partir de $\Lambda$? Este autor tiene dos respuestas para esta pregunta: la primera tiene que ver con las simulaciones realizadas. Al integrar numéricamente y observar que la serie de tiempo se estabiliza, lleva a interpretar como que ha llegado a su punto fijo \textit{estable} por lo tanto se extrae la última iteración de la serie de tiempo y se guarda como un vector de $N$ entradas al que se le considerará el punto fijo estable. Sin embargo, cuando la serie de tiempo muestra que es inestable, las soluciones divergen a infinito e imposibilita conocer el punto fijo inestable. Al tomar la última entrada real de la serie que diverge y escogerla como condición inicial de un Newton-Rhapson multivariado se puede llegar a estimar dicho punto fijo, únicamente para validar que al evaluarlo en la matriz Jacobiana (\ref{eqn:MartizJacobiana}) tendrá elementos positivos en su diagonal.  En la sección (\ref{sec:Jacobiano}) se encuentra la implementación computacional del Jacobiano considerando al punto fijo estable.\\
+\\
+La segunda respuesta es más teórica y es para llegar a estimar un parámetro de crítico que delimite el umbral de estabilidad, tal como el de May (\ref{eqn:paramMay}). Si se quiere determinar la estabilidad de los sistemas con base en $\Lambda$ hay que centrarse en el estudio de su diagonal, ya que sus elementos guardan todas sus entradas en forma de suma (\ref{eqn:MartizJacobiana}). Más en concreto se requiere que dicha suma sea mayor a sus capacidades de carga $K_i$ tal y como se vio en la Proposición \ref{prop:DiagonalI}. Entonces es cuestión de ver como deben ser los $\alpha_{ij}\in\Lambda$ que dependen de $\sigma$, $p$ y $N$ y las $x_i\in X^*$ que dependen de las $\alpha_{ij}$, para que cumplan tal desigualdad. Esto se abordará una vez que se haya abordado el tema de la estabilidad en sistemas de May.
+
+
 \section{Estabilidad}
 
-Habiendo definido al sistema (\ref{eqn:LK}) con todos los elementos discutidos hasta ahora y teniendo la posibilidad de tener una matriz de interacciones $\mathcal{I}$ correspondiente al punto fijo estable del sistema sigue hacerse la pregunta ¿De qué depende que el sistema (\ref{eqn:LK}) de $N$ ecuaciones sea estable? Se irá discutiendo la respuesta en esta última sección de este capítulo para que en el siguiente se puedan explorar todos los resultados de los procesos vistos hasta ahora.\\
+Hasta el momento ya se tiene todo definido para poder resolver el sistema (\ref{eqn:LK}) conviene comenzar a preguntarse si la estabilidad de los sistemas de May esta relacionada con la estabilidad del sistema de Lotka-Volterra generalizado; si el parámetro (\ref{eqn:paramMay}) se ajusta o no a la estabilidad del sistema (\ref{eqn:LK}). Para ello es conveniente entender qué denota dicho parámetro para ajustarlo o en todo caso establecer uno nuevo con base en la experiencia obtenida.\\
 \\
-Robert May [cita\footnote{cita}] y Stefano Allesina [cita\footnote{cita}] respectivamente tienen trabajos sobre esta conjetura, May comenzó con la discusión de la estabilidad para sistemas complejos grandes y de ahí se derivó el trabajo de Allesina que complementó el trabajo de May (extendiendo a la ley elíptica). Este autor se ha inspirado en las propuestas de los anteriores para generar una propia. El trabajo de May consistió en definir un sistema complejo bajo la propuesta de una red ecológica con varias especies interactuando entre sí. Su sistema deviene de un conjunto de $N$ ecuaciones diferenciales no-lineales en las que se halla un punto fijo estable; realizando una expansión en series de Taylor alrededor del punto fijo se obtiene la solución
-$$\frac{d\vec{x}(t)}{dt}=A\vec{x}(t)$$
-de forma local alrededor del punto fijo se trata de un sistema lineal cuya matriz de interacciones $A$ es una matriz aleatoria con la diagonal $a_{ii}=-1$ para toda $a_{ii}\in A$\footnote{En este caso también se trata de una autoregulación para las especies consideradas.}. Las entradas aleatorias están mapeadas bajo ``alguna distribución estadística'' y tienen una magnitud dada por $\alpha$ que corresponde con ``una fuerza de interacción promedio'', la existencia de ``enlaces'' está determinada por otro factor que el autor refiere como conectancia $C$ que es un parámetro tal que existe probabilidad $C$ de que exista un enlace (o una entrada aleatoria en la matriz $A$) en esta red ecológica y, $1-C$ de que no exista (en este caso $a_{ij}=0$); tal y como la $p$ de nuestra red aleatoria. Con esta información May presenta un primer resultado importante: el sistema es estable si se cumple la siguiente relación
-\begin{equation}\label{eqn:parametroMay}
-	\alpha < (nC)^{-1/2}
+Robert May \cite{may2019stability} y Stefano Allesina \cite{allesina2012stability} respectivamente han estudiado la estabilidad en sistemas complejos desde dos perspectivas diferentes. Se ha mencionado en los antecedentes que May comenzó la discusión al expander en series de Taylor un sistema no lineal y encontrar la forma de linealizarlo en el siguiente sistema de ecuaciones
+\begin{equation}\label{eqn:sistemasMay}
+	\frac{dX(t)}{dt}=AX(t),\qquad A\in\mathrm{M}_n(\mathbb{R})
 \end{equation}
-donde $n$ es en este caso el tamaño de la red ecológica (y la matriz $A$ es de $n\times n$). Esta relación puede concebirse como un punto crítico de transición de fase entre sistemas que son estables e inestables. Además demarca que para $n\gg 1$ la transición entre el régimen estable e inestable es muy ``abrupta'' y que además se tiene un ancho de transición de tamaño $n^{-2/3}$. Para que este tipo de sistemas sean estables se debe de cumplir que todos sus eigenvalores deben tener parte real negativa, de no cumplirse se dice que el sistema es inestable. Más adelante, May presenta otro resultado que es sumamente importante: \textit{El sistema podrá ser estable para una red ecológica con una gran conectancia $C$ pero con interacciones débiles $\alpha$, y de manera inversa también podrá ser estable mientras se tengan interacciones fuertes $\alpha$ pero con pocas especies en interacción, es decir, para una conectancia baja.}\\
+Considerando \textit{a priori} que están evaluados sobre puntos fijos (estables o inestables). Ambos autores se centran únicamente en el estudio de las matrices del sistema linealizado para hallar las condiciones de estabilidad y la región del plano complejo en donde se alojan sus valores propios. Allesina extiende el trabajo de May al definir una \textit{Ley Elíptica} donde se alojaran los valores propios de los sistemas resultantes y un nuevo parámetro crítico que define el umbral de estabilidad. 
 \\
-El trabajo de Allesina se extiende al de May al considerar que la matriz de interacciones $A$ esta construida con la diagonal $a_{ii}=-d\in\mathbb{R}$ para toda $a_{ii}\in A$ y con una distribución bivariante, es decir, que la parte triangular superior de $A$ se mapea con una FDP normal centrada en $\mu_1$ y con desviación estándar $\sigma_1$ mientras que la parte triangular inferior de $A$ se mapea con otra FDP normal centrada en $\mu_2$ y con desviación estándar $\sigma_2$. Esto genera cambios importantes en la estabilidad del sistema resultante sin embargo se sigue obteniendo una transición entre un régimen estable y otro inestable [cita\footnote{cita}].
-
-\subsection{Distribución de eigenvalores}
-
-
-Otro de los resultados interesantes de los autores antes mencionados, es la forma de la distribución de los eigenvalores de su respectiva matriz de interacciones. Se tendrán dos tipos de distribuciones una \textit{Circular} para el caso del modelo de May y otra \textit{elíptica} para el caso del modelo de Allesina. La matriz de interacciones de May tiene interacciones aleatorias que de cierto modo se pueden ver como ``independientes'' ya que al ser mapeadas de una FDP normal, se tiene prácticamente una misma probabilidad de que la interacción sea negativa o positiva. Para este caso las especies interactúan sin restricciones ni patrones claros, sino más bien en un supuesto desorden o caos.\\
 \\
-Además la diagonal de la matriz de interacciones se encuentra fijada a un valor $-d$\footnote{Que para May es equivalente a $-1$ pero se puede generalizar a cualquier valor negativo} y representa la \textit{auto-regulación} de las especies por mantenerse en una vecindad de estabilidad; los autores mencionan que es lo equivalente a una ``capacidad de carga'' del sistema en donde las especies mantendrán estabilizado su respectiva dinámica. Este valor al mismo tiempo representa el centro y radio de un círculo que encierra a la distribución de eigenvalores del sistema de May, a esto le denominaron como \textbf{Ley Circular.}\\
+Las matrices de May asociadas a sistemas linealizados tienen su diagonal fijada a un valor $-d$ mientras que el resto de sus entradas siguen la ley de dos parámetros: la conectancia $C$ que es la forma en que las especies del sistema se relacionen, y la desviación estándar $\sigma$ de una distribución normal $\mathcal{N}(0,\sigma)$ considerada como ``fuerza promedio''. De tal modo que la conexión entre nodos se da con una probabilidad $C$ y $a_{ij}=x\in\mathcal{N}(0,\sigma)$ y para el caso contrario $1-C$ dicta que no habrá conexión y entonces $a_{ij}=0$. Con esta información May presenta el resultado de la \textit{Ley Circular} que establece que todos los valores propios de la matriz $A$ están contenidos en un círculo de centro y radio $-d$, y que el umbral de estabilidad se da por medio de la relación (\ref{eqn:paramMay}) considerando el valor de la diagonal. 
+$$\sigma<\frac{d}{\sqrt{NC}}$$
+Si el tamaño del sistema es $N\gg 1$ entonces la transición entre el régimen estable e inestable es muy ``abrupta'' y además establece que tiene un ancho de tamaño $N^{-2/3}$. Anteriormente se había comentado que para que se cumpla esta desigualdad, $C$ debe ser chica en relación a $\sigma$ o viceversa, lo que se interpreta como que: \textit{El sistema podrá ser estable para una red ecológica con una gran conectancia $C$ pero con interacciones débiles $\sigma$, también podrá ser estable cuando se tengan interacciones fuertes $\sigma$ con pocas especies interactuando, es decir, para una conectancia baja.} ¿Por qué tiene que ser de esta forma?
+\begin{proposición}\label{prop:paramMay}
+	Sea $A\in\mathrm{M}_n(\mathbb{R})$ matrices de May asociados a sistemas linealizados cuya diagonal es $-d$. El parámetro $\sigma\sqrt{NC}<d$ denota el umbral de estabilidad en estos sistemas.
+	\begin{proof}
+		Citando nuevamente al \textit{Teorema de Gershgorin} \cite{GershgorinTheorem} definimos el radio de Gershgorin como
+		$$R_i=\sum_{j\neq i}|a_{ij}|,\qquad a_{ij}\in A$$
+		y consigo se definen los discos de Gershgorin $D(a_{ii},R_i)\in\mathbb{C}$. En primera instancia, se sabe que el centro de todos los discos de Gershgorin esta situado en $-d$, entonces hay que ver como cambian los radios en función de $\sigma$ y $p$ para obtener los siguientes casos:
+		\begin{itemize}
+			\item [1.] $R_i<|-d|$
+			\item [2.] $R_i=|-d|$
+			\item [3.] $R_i>|-d|$
+		\end{itemize}
+		Cada $R_i$ parte de una suma de valores de una distribución normal con varianza $\sigma^2$, y además cada $a_{ij}\in A$ tiene una probabilidad $C$ de ser distinta de cero, por lo tanto por cada renglón de $A$ se tiene una probabilidad $(N-1)C$ de que existan valores distintos de cero (excluyendo a los $a_{ii}$). La varianza de esta suma permite definir el tamaño de los radios que pueden ser menor, igual o mayor a $|-d|$:
+		\begin{equation}\label{proof2:Varianza}
+			\Var\left (\sum_{j\neq i}a_{ij}\right )=NC\sigma^2
+		\end{equation}
+		suponiendo que $N\approx N-1$ para $N\gg 1$. Eso implica que para que el radio de Gershgorin se mantenga en el semiplano negativo de $\mathbb{C}$, la varianza de la suma debe ser menor a $|-d|$, es decir
+		\begin{equation}\label{eqn:estabilidadMay}
+			NC\sigma^2<|-d|=d\qquad\Longleftrightarrow\qquad \sigma<\frac{d}{\sqrt{NC}}
+		\end{equation}
+		lo que empata con lo establecido por el parámetro de May (\ref{eqn:paramMay}). Por lo tanto existe una singularidad en $R_i=d$ y para valores $R_i>d$, los discos de Gershgorin son lo suficientemente grandes para alojar valores propios con parte real positiva dando lugar a sistemas inestables. Por lo tanto el parámetro de May (\ref{eqn:paramMay}) define los tamaños del disco de Gershgorin centrado en $-d$ para que los sistemas resultantes sean estables.
+	\end{proof}
+\end{proposición}
+¿Cuál es el sentido de esta prueba? Mostrar al lector que el parámetro de May por sí solo no se ajusta a la estabilidad de los sistemas de Lotka-Volterra generalizados, debido a que el equivalente de las matrices de May serían las Jacobianas (\ref{eqn:MartizJacobiana}) las cuales tienen diagonales heterogéneas que bien pueden tener elementos positivos o negativos según la Proposición \ref{prop:DiagonalI}. Dichos elementos dependen completamente de los coeficientes de la matriz de incidencias y de las entradas del punto fijo asociado, por consiguiente la estabilidad de los sistemas de Lotka-Volterra generalizado dependerá completamente de las interacciones que se guardan en $\Lambda$\footnote{Los coeficientes de esta matriz inducen al punto fijo que bien puede ser estable o inestable.}. Más adelante se retomará este punto, mientras tanto se seguirán explorando los resultados de May y Allesina.\\
 \\
-No importa que la matriz de interacciones de May sea estructuralmente simétrica o completamente aleatoria, la distribución de eigenvalores se sigue ajustando al círculo de centro $-d$ y radio $d$. En la figura (\ref{fig:LeyCircularMay}) se encuentra la distribución de eigenvalores para una matriz de interacciones estructuralmente simétrica (Red no dirigida) y para otra matriz de interacciones completamente aleatoria (Red dirigida). Para cada sistema se ha considerado para $N=100$ especies ($A\in M_{100}(\mathbb{R})$), con una FDP normal centrada en $\mu=0$ con $\sigma=0.2$ y para una conectancia de $C=\frac{1}{\sigma^2 N}-0.03$, considerando que esta $C$ viene de la relación (\ref{eqn:parametroMay}) para que se tuvieran sistemas estables; es decir con eigenvalores con parte real negativa.
+El trabajo de Allesina se extiende al de May al considerar que la matriz de interacciones $A$ esta construida con la diagonal $a_{ii}=-d\in\mathbb{R}$ para toda $a_{ii}\in A$ y con una distribución bivariante, es decir, que la parte triangular superior de $A$ se mapea con una dstribución normal centrada en $\mu_1$ y con desviación estándar $\sigma_1$ mientras que la parte triangular inferior de $A$ se mapea con otra distribución normal centrada en $\mu_2$ y con desviación estándar $\sigma_2$. Esto genera cambios importantes en la estabilidad del sistema resultante sin embargo se sigue obteniendo un umbral de transición \cite{allesina2012stability, may1972will}.
+
+\subsection{Distribución de valores propios}
+
+Debido a que todos los elementos de la diagonal de las matrices de May están fijadas en $-d$ significa que todos sus valores propios estarán en una vecindad alrededor de este centro que irá variando su tamaño en función $\sigma$, $p$ o $N$ considerando el parámetro de May (\ref{eqn:paramMay}). El radio de la Ley Circular de May es $d$ y corresponde al radio más grande posible para considerar sistemas estables; sirve como un distintivo límite para visualizar los valores propios del sistema e identificar a simple vista si es estable o no. Las interacciones que se contemplan en esta matriz son aleatorias y por lo tanto ``independientes'', pues no hay correlación entre ellos e implica que las especies interactúan sin restricciones ni patrones claros, sino más bien en un supuesto desorden o caos.\\
+\\
+Si se consideran matrices de May que sean estructuralmente simétricas, también cumplen la Ley Circular tal y como las matrices completamente aleatorias (\ref{eqn:sistemasMay}). Sus distribuciones de valores propios se siguen ajustando al círculo de centro $-d$ y radio $d$. Sin embargo, más adelante se revisará que para ciertos valores de $\sigma$, la estabilidad ya no cumple el parámetro (\ref{eqn:paramMay}) sugiriendo que hay otras condiciones que determinan la estabilidad del sistema. En la figura (\ref{fig:LeyCircularMay}) se encuentra la distribución de valores propios para una matriz de interacciones estructuralmente simétrica y para otra completamente aleatoria. 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.2]{../Imagenes/LeyCircularMay}
-	\caption{Distribución de eigenvalores que cumplen la Ley Circular de May. Para ambos sistemas se consideró $N=100$, una FDP normal centrada en $\mu=0$ y con $\sigma=0.2$ para una conectancia $C=\frac{1}{\sigma^2 N}-0.03$. (\textbf{A}) Considerando una matriz de interacciones estructuralmente simétrica. (\textbf{B}) Considerando una matriz de interacciones puramente aleatoria.}
+	\caption{Distribución de valores propios que cumplen la Ley Circular de May. Para ambos sistemas se consideró $N=100$, una distribución normal centrada en $\mu=0$ y con $\sigma=0.2$ para una conectancia $C=\frac{1}{\sigma^2 N}-0.03$. (\textbf{A}) Considerando una matriz de interacciones estructuralmente simétrica. (\textbf{B}) Considerando una matriz de interacciones puramente aleatoria.}
 	\label{fig:LeyCircularMay}
 \end{figure}
 
-Si el sistema resultante no es estable entonces no se cumple la Ley circular y los eigenvalores salen del confinamiento del círculo, aunque lo más importante es que existirán algunos eigenvalores con parte real positiva que eventualmente volverán inestable al sistema. Para que esto ocurra se deben de considerar valores de la conectancia de la forma $C>\frac{1}{\sigma^2 N}$, siguiendo nuevamente la relación (\ref{eqn:parametroMay}). Este parámetro de alguna manera sigue la regla que estipula que el sistema podrá ser estable cuando se tenga un valor promedio de interacciones ($\sigma$) bajo pero con alta conectancia $C$ o un valor promedio fuerte de interacciones pero con baja conectancia, la idea es buscar un equilibrio entre ambos parámetros.\\
+Cada sistema se ha considerado para $N=100$ especies ($A\in M_{100}(\mathbb{R})$), considerando una distribución normal centrada en $\mu=0$ con $\sigma=0.2$ y para una conectancia de $C=\frac{1}{\sigma^2 N}-0.03$. Si el sistema resultante no es estable entonces los valores propios se salen del confinamiento circular haciendo que algunos de ellos tengan parte real positiva. Para que esto ocurra se debe de considerar el contrario de la desigualdad (\ref{eqn:estabilidadMay}). \\
 \\
-Para el sistema de Allesina se ha mencionado anteriormente que se consideran matrices de interacciones mapeadas a partir de una distribución bivariante, es decir que la matriz triangular superior se mapea con una FDP normal para una $\mu_1$ y $\sigma_1$ y para la triangular inferior se mapea con otra FDP normal con $\mu_2$ y $\sigma_2$. De esta forma nos permite realizar un cálculo de correlación $\rho$ entre ambas matrices triangulares de la matriz de interacciones. Al calcular la correlación entre ambas partes de la matriz de interacciones se define $a=1+\rho$ y $b=1-\rho$ como semi ejes de la elipse y dependiendo de como se encuentren los signos del resto de la matriz de interacciones es que veremos dos diferentes formas de distribución elíptica. Otro aspecto de esta matriz es que Allesina también consdiera a la diagonal fijada a un valor $A_{ii}= -d$ lo que implica que los eigenvalores estarán en la vecindad elíptica alrededor de $-d$.
+Para el sistema de Allesina \cite{allesina2012stability} se ha mencionado anteriormente que se consideran matrices de interacciones mapeadas a partir de una distribución bivariante, es decir que la matriz triangular superior se mapea con una distribución normal para una $\mu_1$ y $\sigma_1$ y para la triangular inferior se mapea con otra distribución normal con $\mu_2$ y $\sigma_2$. De esta forma nos permite realizar un cálculo de correlación $\rho$ entre ambas matrices triangulares de la matriz de interacciones. Al calcular la correlación entre ambas partes de la matriz de interacciones se define $a=1+\rho$ y $b=1-\rho$ como semi ejes de la elipse y dependiendo de como se encuentren los signos del resto de la matriz de interacciones es que se verán dos diferentes formas de distribución elíptica. Otro aspecto de esta matriz es que Allesina también consdiera a la diagonal fijada a un valor $A_{ii}= -d$ lo que implica que los valores propios estarán en la vecindad elíptica alrededor de $-d$.
 \\
 \\
-La forma de la elipse, que podrá ser vertical u horizontal vendrá dada por el valor de la correlación, si se tienen interacciones ``presa-depredador'' $(+-)$ o $(-+)$ entonces la distribución elíptica resultante será vertical, en este caso habría que escoger una FDP normal con $\mu_1<0$ y otra FDP normal con $\mu_2>0$. Por otro lado si las interacciones son de cooperación $(++)$ y/o competencia $(--)$ entonces la distribución elíptica será horizontal.
+La forma de la elipse, que podrá ser vertical u horizontal vendrá dada por el valor de la correlación, si se tienen interacciones ``presa-depredador'' $(+-)$ o $(-+)$ entonces la distribución elíptica resultante será vertical, en este caso habría que escoger una distribución normal con $\mu_1<0$ y otra con $\mu_2>0$. Por otro lado si las interacciones son de cooperación $(++)$ y/o competencia $(--)$ entonces la distribución elíptica será horizontal.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.2]{../Imagenes/LeyElipticaAllesina}
-	\caption{Distribución de eigenvalores que cumplen la Ley Elíptica de Allesina. Para ambos sistemas se consideró $N=100$, dos FDP normal respectivamente, una conectancia $C=0.12$ y en ambas se debe de considerar a la matriz de interacciones como estructuralmente simétrica. (\textbf{A}) Se considera una FDP normal para la parte triangular superior con $\mu_1=0.1$ y $\sigma_1 = 0.1$ y para la parte inferior se considera otra FDP normal con $\mu_2=0.3$ y $\sigma_2 = 0.2$. (\textbf{B}) Se considera una FDP normal para la parte triangular superior con $\mu_1=-0.1$ y $\sigma_1=0.1$ y para la parte inferior se considera otra FDP normal con $\mu_2=0.3$ y $\sigma_2=0.2$. }
+	\caption{Distribución de valores propios que cumplen la Ley Elíptica de Allesina. Para ambos sistemas se consideró $N=100$, dos distribuciones normales respectivamente, una conectancia $C=0.12$ y en ambos casos se debe de considerar que la matriz de interacciones es estructuralmente simétrica. (\textbf{A}) Se considera una distribución normal para la parte triangular superior con $\mu_1=0.1$ y $\sigma_1 = 0.1$ y para la parte inferior se considera otra distribución normal con $\mu_2=0.3$ y $\sigma_2 = 0.2$. (\textbf{B}) Se considera una distribución normal para la parte triangular superior con $\mu_1=-0.1$ y $\sigma_1=0.1$ y para la parte inferior se considera otra distribución normal con $\mu_2=0.3$ y $\sigma_2=0.2$. }
 	\label{fig:LeyElipticaAllesina}
 \end{figure}
-En la figura (\ref{fig:LeyElipticaAllesina}) se han considerado dos matrices de interacción, una con interacciones de competencia/cooperación y otra con interacciones presa depredador. Para que la distribución de eigenvalores pueda ajustarse a la elipse se deben de considerar matrices estructuralmente simétricas, ya que si fueran puramente aleatorias la correlación $\rho$ sería igual a cero y por lo tanto $a=b$ lo que daría lugar al resultado de May. El resultado de Allesina es interesante porque ya las interacciones poseen un sentido y estructura, no son independientes como en el caso de May. Si por ejemplo se tuviera $\rho>0$ implicaría que las especies tienden a cooperar o competir de forma similar, tal y como ocurre en la fig. (\ref{fig:LeyElipticaAllesina} \textbf{A}). En contra parte, cuando $\rho <0$ entonces las especies tienden a un comportamiento presa-depredador siguiendo la tendencia de $\rho$. Por lo tanto los ejes capturan como las correlaciones afectan la dirección dominante del sistema. \\
+
+En la figura (\ref{fig:LeyElipticaAllesina}) se han considerado dos matrices de interacción, una con interacciones de competencia/cooperación y otra con interacciones presa depredador. Para que la distribución de valores propios pueda ajustarse a la elipse se deben de considerar matrices estructuralmente simétricas, ya que si fueran puramente aleatorias la correlación $\rho$ sería igual a cero y por lo tanto $a=b$ lo que daría lugar al resultado de May. El resultado de Allesina es interesante porque las interacciones ya poseen un sentido y estructura, no son independientes como en el caso de May. Si por ejemplo se tuviera $\rho>0$ implicaría que las especies tienden a cooperar o competir de forma similar. En contra parte, cuando $\rho <0$ entonces las especies tienden a un comportamiento presa-depredador. Por lo tanto los ejes capturan la forma en que las correlaciones afectan la dirección dominante del sistema. \\
 \\
-Si se desea, se recomienda profundizar más en el trabajo de Allesina ya que en este presente no se hará de tal forma. Este trabajo esta basado principalmente en los resultados de May ya que la matriz de incidencias $\Lambda$ y consecuentemente la matriz interacciones $\mathcal{I}$ están construidas sobre redes aleatorias bajo una FDP normal centrada en $\mu=0$ y para diversas $\sigma$. El fin de presentar estos resultados es para mostrar al lector que dirección se va a tomar con el sistema que se ha construido  hasta ahora; la idea es explorar como cambia su estabilidad al variar sus parámetros y también explorar como es la distribución de eigenvalores de $\mathcal{I}$, ya que como se verá más adelante, ¡su diagonal no es homogénea!
+El fin de presentar estos resultados es para mostrar al lector las variantes que pueden existir en la estabilidad asumiendo diversas hipótesis en la construcción del sistema. Cada uno tiene su parámetro de transición de estabilidad y la misión de este trabajo es llegar o acercarse al parámetro de transición de estabilidad del sistema de Lotka-Volterra generalizado, bajo estructuras de red estructuralmente simétricas y puramente aleatorias.
 
 \subsection{Transición de May}
 
-Antes de pasar al siguiente capítulo, en donde exploraremos los resultados de integrar el sistema construido a lo largo de este capítulo, vamos a revisar los resultados de transición de May con base en la relación (\ref{eqn:parametroMay}). A continuación veremos diversos gráficos de estabilidad ya sea en función de la conectancia $C$ o de la fuerza promedio de interacciones $\alpha$. Para ello se van a considerar matrices de May estructuralmente simétricas y puramente aleatorias con el fin de ver que tanto cambia la transición entre ambos tipos de sistemas. Las entradas aleatorias de las matrices consideradas estarán mapeadas a partir de una FDP normal centradas en $\mu=0$ y para diversos valores de $\sigma$, en concreto se considerará el conjunto $\tilde{\sigma}=\{0.1,0.2,...,1.0\}$. Por último, las redes/matrices consideradas van a ser para $N=100$ por lo que se espera que la transición ocurra de forma ``abrupta'' por considerar $N\gg 1$. 
+Una vez vista la distribución de valores propios de las matrices de May y Allesina, resta observar (únicamente para el caso de May) cómo cambia la estabilidad en función de la conectancia $C$ y la fuerza de interacción promedio $\sigma$. Se van a considerar matrices de May puramente aleatorias y se compararán con las que son estructuralmente simétricas, para observar si existen variaciones entre ambos casos. Se comenzará viendo la estabilidad en función de la conectancia $C$, considerando una familia distribuciones normales centradas en $\mu=0$ y con desviaciones estándar $\Sigma = \{0.1,0.2,...,1.0\}$. Todos los sistemas considerados en esta sección se harán para $N=100$. 
 \begin{wrapfigure}{l}{0.5 \textwidth} \vspace{-30pt} \begin{center}
-		\includegraphics[width=0.52\textwidth]{../Imagenes/TransicionMayNoDirLin} 
+		\includegraphics[width=0.52\textwidth]{../Imagenes/TransicionMayDirLin} 
 	\end{center} 
 	\vspace{-20pt} 
-	\caption{Matrices de May estructuralmente simétricas. Se ha integrado el sistema para $100$ conectancias equidistantes en el intervalo $[0,1]$. Se considera también el conjunto promedio de la fuerza de las interacciones $\tilde{\sigma}=\{0.1,0.2,...,1.0\}$. Para cada valor de la conectancia se consideraron $1000$ simulaciones rescatando por cada valor el número de simulaciones que resultaron estables.} 
+	\caption{Estabilidad de sistemas de May integrando para una partición equiespaciada de  $100$ conectancias en el intervalo $[0,1]$ y para una familia de distribuciones normales. Para cada valor de la conectancia se consideraron $3000$ simulaciones de las cuales se contabilizaron únicamente las estables con base en el signo de la parte real de sus valores propios.} 
 	\vspace{-10pt}
-	\label{fig:TransicionMayNoDirLin}
+	\label{fig:TransicionMayDirLin}
 \end{wrapfigure} 
-En cada uno de los gráficos se van a contemplar $1000$ muestras de sistemas de May por cada valor de $C$ o $\sigma$ y se contabilizará el número de sistemas estables resultante con base en el signo de la parte real de los eigenvalores de cada sistema. Comenzando por matrices de May no dirigidas (es decir: estructuralmente simétricas) se investiga en la figura (\ref{fig:TransicionMayNoDirLin}) cómo es la dinámica de transición en función de $C$. Notamos que para $\sigma=0.1$ el sistema mayormente es estable debido a las interacciones débiles que tiene; incluso para una alta conectancia ($C=1$) será estable en un $75\%$ de probabilidad. Para $\sigma=0.2$ muestra una transición moderada, aproximadamente alcanza su punto crítico en $C=0.25$; gracias a ello se considerará de referencia a esta configuración para este y el resto de simulaciones de este trabajo. Para el resto de varianzas la transición ocurre para valores pequeños de la conectancia lo que corresponde con lo estipulado por May.\\
+En cada uno de los diagramas de transición se van a contemplar $3000$ simulaciones por cada valor de $C$ o $\sigma$ (para $\sigma$ se verá más adelante) considerando para cada caso una partición equiespaciada de 100 valores entre 0 y 1. Se contabilizará el número de sistemas que resultaron ser estables con base en la parte real de sus valores propios. La figura (\ref{fig:TransicionMayDirLin}) muestra el cambio de estabilidad en función de la conectancia y para la familia de distribuciones normales con sus respectivas desviaciones estándar provenientes de $\Sigma$. Se aprecia que a medida que la fuerza de las interacciones aumenta es cada vez menos probable que sea estable, obedeciendo como tal al parámetro (\ref{eqn:paramMay}). Convendría realizar un acercamiento para observar la transición para los valores $\sigma>0.3$, misma que se puede hacer considerando valores de escala $\log_{10}$.\\
 \\
-Visualizando el mismo escenario pero para valores de la conectancia en escala $\log_{10}$ se podrán apreciar mejor las transiciones para valores altos de $\sigma$. En este caso podemos ver como las transiciones ocurren para valores de la conectancia entre $10^{-4}$ hasta $10^{-1}$ lo que indica que entre mayor sea $\sigma$ es cada vez menos probable que un sistema sea estable. En estos casos se tiene la ventaja de que cada uno de los 
+Al aplicar dicha visualización se podrán apreciar mejor las transiciones para valores altos de $\sigma$. En este caso se verá como dichas transiciones ocurren para valores de la conectancia entre $10^{-2}$ hasta $10^{-1}$ ajustándose a lo que dicta el parámetro (\ref{eqn:paramMay}). La ventaja de que los sistemas de May consideren las diagonales fijas en $A_{ii}=-1$ para toda $A_{ii}\in A$ es que la transición se percibe muy marcada, pues justamente en $CN\sigma^2=1$ se tiene el disco de Gershgorin más grande en el semiplano
 \begin{wrapfigure}{r}{0.5 \textwidth} \vspace{-30pt} \begin{center}
-		\includegraphics[width=0.52\textwidth]{../Imagenes/TransicionMayNoDirLog} 
+		\includegraphics[width=0.52\textwidth]{../Imagenes/TransicionMayDirLog} 
 	\end{center} 
 	\vspace{-20pt} 
-	\caption{Matrices de May estructuralmente simétricas. Se ha integrado el sistema para $100$ conectancias en escala $\log_{10}$ en el intervalo $[0,1]$. Se considera también el conjunto promedio de la fuerza de las interacciones $\tilde{\sigma}=\{0.1,0.2,...,1.0\}$. Para cada valor de la conectancia se consideraron $1000$ simulaciones rescatando por cada valor el número de simulaciones que resultaron estables.} 
+	\caption{Estabilidad de May de la figura (\ref{fig:TransicionMayDirLin}) en función de $C$ con escala $\log_{10}$.} 
 	\vspace{-10pt}
-	\label{fig:TransicionMayNoDirLog}
+	\label{fig:TransicionMayDirLog}
 \end{wrapfigure} 
 
-sistemas considerados se consideran las diagonales fijas en $A_{ii}=-1$ para toda $A_{ii}\in A$. Lo que muestra una suavidad en la forma de las transiciones, en el siguiente capítulo veremos una gran diferencia cuando la diagonal no es homogénea. Actualmente consideramos únicamente matrices de May estructuralmente simétricas, y nos da un tipo de estabilidad, esta forma cambia ligeramente cuando se consideran matrices de May puramente aleatorias. Se encuentra que la transición para este tipo de matrices es ligeramente más pronunciada que las anteriores y también se encuentra ligeramente recorrida hacia la derecha. Tales diferencias se muestran para todo caso sin embargo lo haremos visible para el caso $\sigma= 0.2$ y $\sigma = 0.6$, esto con el fin de notar la sutil diferencia que existe para el primer caso y la gran diferencia que existe para el segundo caso. A medida que el valor de $\sigma$ aumenta, esta diferencia es cada vez más pronunciada.
+negativo de $\mathbb{C}$ que coincide con la Ley Circular de May, y a partir de ahí, para $CN\sigma^2>1$ los discos comienzan a ser más grandes pudiendo alojar valores propios con parte real positiva. Desde ahora es válido preguntarse como sería la transición cuando la diagonal de las matrices no son homogéneas, se irá abordando en el siguiente capítulo. Actualmente se han considerado únicamente matrices de May puramente aleatorias; al compararlas con sistemas de May estructuralmente simétricos la estabilidad cambia y es lo que se verá a continuación. Los cambios son notorios para cada valor de $\Sigma$ pero es más pronunciado cuanto mayor es $\sigma$. Se visualizarán las diferencias para los casos $\sigma= 0.2$ y $\sigma = 0.6$
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale = 0.165]{../Imagenes/TransicionDirvsNoDir}
-	\caption{Transición entre redes de May dirigidas vs No dirigidas. (\textbf{A}) Se considera para $\sigma = 0.2$ (\textbf{B}) Se considera para $\sigma=0.6$.}
+	\caption{Transición de May puramente aleatoria vs estructuralmente simétrica. (\textbf{A}) Se considera para $\sigma = 0.2$ (\textbf{B}) Se considera para $\sigma=0.6$.}
 	\label{fig:TransicionDirvsNoDir}
 \end{figure}
-Además se puede observar como la red no dirigida de May comienza a decaer primero y de forma más suave en comparación con la red puramente aleatoria de May que respeta fielmente su parámetro de transición.
+en la figura (\ref{fig:TransicionDirvsNoDir}) y percibiendo que el parámetro de transición (\ref{eqn:paramMay}) se ajusta correctamente a las matrices de May puramente aleatorias pero no hace lo mismo para los sistemas estructuralmente simétricos, lo que sugiere que debe de existir algún otro elemento determinante en la estabilidad que tiene que ver con la simetría de las interacciones y con el valor de $\sigma$.
 \\
 \\
-Para el caso de la transición en función de sigma tenemos un resultado similar. Para este caso se consideró el conjunto de conectancias $\tilde{C}=\{0.1,...,1.0\}$. Además la simulación considera 1000 matrices de interacción por cada valor de $\sigma$ y para cada $C\in\tilde{C}$ y en cada uno de ellos se verifica si es estable o no mediante el cálculo de la parte real de los eigenvalores. Se verá que a medida que $\sigma$ y $C$ aumenten, los sistemas tienen menor porbabilidad de ser estables. Para este caso en particular se
+Para el caso de la transición en función de $\sigma$ se tiene un resultado similar. Ahora se consideró la familia de conectancias $\tilde{C}=\{0.1,0.2,...,1.0\}$ y la partición equiespaciada de $\sigma$ con 100 valores entre 0 y 1. La tendencia de la estabilidad igual obedece al parámetro de May (\ref{eqn:paramMay}) aunque de forma distinta pues, el valor crítico $\sigma^*$ es proporcional a $\frac{1}{\sqrt{N}}$ y $C^*\propto \frac{1}{N}$, entonces $\sigma^*>C^*$, y por lo tanto las transiciones en función de $\sigma$ ocurren más hacia la derecha. 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale = 0.165]{../Imagenes/TransicionMaySigma}
-	\caption{Transiciones en función de la fuerza de interacción $\sigma$ (\textbf{A}) Se considera para un conjunto de conectancias $\tilde{C}$. Por cada valor de $\sigma$ se consideran 1000 matrices de May estructuralmente simétricas; en cada simulación se contabilizan los sistemas estables mediante el cálculo de la parte real de sus respectivos eigenvalores. (\textbf{B}) Caso particular para $C=0.1$; se consideran las diferencias entre la matriz de May estructuralmente simétrica y la matriz puramente aleatoria.}
+	\caption{Transición de estabilidad en función de $\sigma$ (\textbf{A}) Se considera para una familia de conectancias $\tilde{C}$ y una partición equiespaciada de 100 valores de $\sigma$ entre 0 y 1. Se consideran 3000 simulaciones por cada valor de $\sigma$ y se contabilizan los sistemas estables con base en la parte real de los valores propios de cada simulación. (\textbf{B}) Caso particular para $C=0.1$; se consideran las diferencias entre la matriz de May estructuralmente simétrica y la matriz puramente aleatoria.}
 	\label{fig:TransicionMaySigma}
 \end{figure}
-logra notar que la transición no ocurre para valores $\sigma\ll 1$ como en el caso de las gráficas en función de la conectancia $C$, sin embargo, estos parámetros están íntimamente relacionados por (\ref{eqn:parametroMay}) por lo que en el fondo esta información es complementaria del mismo fenómeno. Algo importante a notar es que aún con el valor de la conectancia $C=0.1$, a medida que $\sigma$ aumenta los sistemas son cada vez menos estables, a diferencia de la transición en función de $C$ que para $\sigma=0.1$ no se observaba un cambio abrupto en la estabilidad. Esto podría implicar que la fuerza de las interacciones tiene mayor peso que la misma conectividad de la red, sin embargo, al final esto es relativo ya que depende de cada parámetro de transición considerando cada $\sigma$ o $C$ según sea el caso; en función de la conectividad $C$ y para $\sigma=0.1$ el parámetro crítico se encuentra en una vecindad alrededor de $C=1$ mientras que para el caso de la fuerza de las interacciones $\sigma$, su parámetro crítico se encuentra alrededor de $\sigma\approx 0.3162$. Por lo tanto la transición de de cada caso será particular y dependiente de sus parámetros y por ahora no es posible dar una respuesta que nos indique cual de los parámetros juega el papel más relevante para determinar la estabilidad del sistema. 
+Algo importante a notar es que aún con el valor de la conectancia $C=0.1$, a medida que $\sigma$ aumenta los sistemas son cada vez menos estables, a diferencia de la transición en función de $C$ que para $\sigma=0.1$ no se observaba un cambio abrupto en la estabilidad (Fig. (\ref{fig:TransicionMayDirLin})). Esto podría implicar que la fuerza de las interacciones tiene mayor peso que la misma conectividad de la red, lo cual tiene sentido si se considera que en (\ref{eqn:paramMay}) se encuentra la varianza (es decir el cuadrado de $\sigma$), que impone más peso sobre $C$. Lo importante de estos diagramas de transición es observar como cambia la estabilidad cuando una de las cantidades ($\sigma$ ó $C$) se mantiene fija y la otra variable. Los diagramas nos brindan información que será útil para tomar de referencia en las transiciones de estabilidad del sistema de Lokta-Volterra generalizado.\\
+\\
+En la Figura (\ref{fig:TransicionMaySigma} \textbf{B}) se observa la diferencia de estabilidad entre sistemas de May puramente aleatorios y estructuralmente simétricos para $C=0.1$. La desviación que presenta para este caso particular es considerablemente mayor si se compara con los sistemas que tienen conectancia $C=0.6$ tal y como se observa en la Figura (\ref{fig:TransicionσDirvsNoDir}).
 \newpage
 \begin{wrapfigure}{l}{0.5 \textwidth} \vspace{-30pt} \begin{center}
 		\includegraphics[width=0.52\textwidth]{../Imagenes/TransicionσDirvsNoDir} 
 	\end{center} 
 	\vspace{-20pt} 
-	\caption{Variaciones en la transición para la matriz de May estructuralmente simétrica y para matriz puramente aleatoria. Se consideró el valor de la conectancia $C=0.6$.} 
+	\caption{Variaciones en la transición de estabilidad para la matriz de May estructuralmente simétrica y para matriz puramente aleatoria. Se consideró el valor de la conectancia $C=0.6$.} 
 	\vspace{-10pt}
 	\label{fig:TransicionσDirvsNoDir}
 \end{wrapfigure} 
-A diferencia de la conectancia, cuanto mayor sea la $\sigma$ se observa que las variaciones entre la red dirigida de May y la no dirigida son prácticamente nulas, de hecho, estas variaciones únicamente se ven para valores de $\sigma$ pequeños. Esto nos indica que existe una relación inversa entre $\sigma$ y $C$ de modo que para el caso de la transición en función de $C$, cuanto mayor es $\sigma$ las variaciones son cada vez más notorias mientras que para la transición en función de $\sigma$, cuanto mayor es $C$ las variaciones son cada vez menores. En la figura (\ref{fig:TransicionMaySigma}) (\textbf{B}) se muestran las variaciones para $C=0.1$ y en la figura (\ref{fig:TransicionσDirvsNoDir}) las variaciones son notablemente imperceptibles para $C=0.6$.
+A diferencia de las transiciones en función de la conectancia, cuanto mayor sea la $C$ se observa que las variaciones son prácticamente nulas entre los sistemas aleatorios y estructuralmente simétricos y son más notorias para valores de $C$ cercanos a cero. Esto induce a nuevas pistas sobre el parámetro de transición de los sistemas estructuralmente simétricos. Los diagramas de transición se pueden re-escalar en su eje $x$ y ponerlo en función de $\sigma\sqrt{NC}$ con $C$ o $\sigma$ variable según sea el caso. Con ello se verá principalmente que el parámetro de transición se ajusta a $1$, valor correspondiente a la diagonal de las matrices de los sistemas. Además se podrá comparar que tanto cambia la estabilidad entre $C$ y $\sigma$. 
 \\
 \\
-Existe una forma conveniente de juntar ambos gráficos (en función de $C$ y $\sigma$) y con ello podremos observar las diferencias entre los parámetros ajustados. Nos sirve esta forma de visualización para poder reunir la información en un solo lugar, sin embargo, los parámetros ajustables solamente tienen un punto de intersección, es decir que cada una de las gráficas de transición es un conjunto independiente (salvo por las mencionadas intersecciones) que se puede estudiar por separado. La forma de hacerlo es definir al eje $X$ como el producto $\sigma\sqrt{NC}$; esta referencia viene de la relación (\ref{eqn:parametroMay}) en donde se estableve que los sistemas serán estables si se cumple $\sigma\sqrt{NC}<1$. 
-\\
-\\
-Esta visualización posiciona convenientemente a la transición en una vecindad alrededor del 1, independientemente de cual sea el parámetro de transición del caso a evaluar; es conveniente porque se tiene la certeza de que ocurre en 1, cuando las diagonales de las matrices de interacción ya no son homogéneas entonces esta propiedad ya no se cumple en su totalidad: se observa que la vecindad se ensancha y el parámetro de transición se desplaza con respecto de los resultados de May. Esto se irá a explorar y discutir en el siguiente capítulo, por mientras veamos como son los resultados de las 4 opciones disponibles: transiciones en función de $C$ y $\sigma$ con matrices estructuralmente simétricas y matrices puramente aleatorias.
-\\
-\\
-A continuación se muestran un par de escenarios en donde se realiza el reescalamiento del eje $x$, particularmente para $C_1=\sigma_1=0.2$ y $C_2=\sigma_2=0.6$. Curiosamente para el primer caso las gráficas se ajustan casi perfectamente, sugiriendo que existen mucha compatibilidad entre los valores $C_1$ y $\sigma_1$. Mientras que para el segundo caso (figura \ref{fig:Transicionσ√NC06} \textbf{A}) se percibe una gran desviación entre las matrices de May estructuralmente simétricas y las puramente aleatorias y por el contrario en la (\textbf{B}) las desviaciones de este caso son casi imperceptibles, tal y como se venía discutiendo anteriormente.
+A continuación se muestran un par de escenarios en donde se realiza el reescalamiento del eje $x$ bajo $\sigma\sqrt{NC}$ variable según sea el caso. Se verán para los casos $C_1=\sigma_1=0.2$ y $C_2=\sigma_2=0.6$. Se puede observar una gran compatibilidad para los valores $C_1$ y $\sigma_1$ debido a la similitud de sus gráficas. El segundo caso (Figura \ref{fig:Transicionσ√NC06}) se percibe una gran desviación, haciendo notar el peso que tiene $\sigma$ en la estabilidad de los sistemas, particularmente en los que son estructuralmente simétricos.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.160]{../Imagenes/Transicionσ√NC02}
-	\caption{Re-escalamiento del eje $x$ para visualizar las transiciones de la conectancia $C$ y la fuerza promedio de las interacciones $\sigma$. Para este caso particular se escogió $C=\sigma=0.2$. En ambos casos se consideran las transiciones para las matrices de May estructuralmente simétricas y las puramente aleatorias.}
+	\caption{Re-escalamiento del eje $x$ para visualizar las transiciones de la conectancia $C$ y la fuerza promedio de las interacciones $\sigma$. Para este caso particular se escogió $C=\sigma=0.2$. Se consideran sistemas de May aleatorios y estructuralmente simétricos.}
 	\label{fig:Transicionσ√NC02}
 \end{figure}
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.160]{../Imagenes/Transicionσ√NC06}
-	\caption{Re-escalamiento del eje $x$ para visualizar las transiciones de la conectancia $C$ y la fuerza promedio de las interacciones $\sigma$. Para este caso particular se escogió $C=\sigma=0.6$. En este caso a diferencia del anterior, se logra apreciar la desviación que ocurre en (\textbf{A}) cuando $\sigma$ se va acercando a 1.0.}
+	\caption{Re-escalamiento del eje $x$ para visualizar las transiciones de la conectancia $C$ y la fuerza promedio de las interacciones $\sigma$. Para este caso particular se escogió $C=\sigma=0.6$. A diferencia del  caso anterior, se logra apreciar la desviación que ocurre en (\textbf{A}) cuando $\sigma$ se va acercando a 1.0.}
 	\label{fig:Transicionσ√NC06}
 \end{figure}
 
