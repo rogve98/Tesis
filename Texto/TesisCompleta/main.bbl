@@ -55,6 +55,124 @@
       \field{pages}{205\bibrangedash 208}
       \range{pages}{4}
     \endentry
+    \entry{altieri2021properties}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=8cc2c7db5f053aa5c6771e4eef336156}{%
+           family={Altieri},
+           familyi={A\bibinitperiod},
+           given={Ada},
+           giveni={A\bibinitperiod}}}%
+        {{hash=c562726823636ebef5460e155ade56ce}{%
+           family={Roy},
+           familyi={R\bibinitperiod},
+           given={Felix},
+           giveni={F\bibinitperiod}}}%
+        {{hash=29c54fb9d19a63209661bd94ae9ed736}{%
+           family={Cammarota},
+           familyi={C\bibinitperiod},
+           given={Chiara},
+           giveni={C\bibinitperiod}}}%
+        {{hash=a37018f0369a0addf9e4b95c2a5af5d2}{%
+           family={Biroli},
+           familyi={B\bibinitperiod},
+           given={Giulio},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {APS}%
+      }
+      \strng{namehash}{b25f76bb773ff8dce23d3bf822819ee2}
+      \strng{fullhash}{1a1a9a5219c25de3abace6dd1e2483a3}
+      \strng{fullhashraw}{1a1a9a5219c25de3abace6dd1e2483a3}
+      \strng{bibnamehash}{b25f76bb773ff8dce23d3bf822819ee2}
+      \strng{authorbibnamehash}{b25f76bb773ff8dce23d3bf822819ee2}
+      \strng{authornamehash}{b25f76bb773ff8dce23d3bf822819ee2}
+      \strng{authorfullhash}{1a1a9a5219c25de3abace6dd1e2483a3}
+      \strng{authorfullhashraw}{1a1a9a5219c25de3abace6dd1e2483a3}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physical Review Letters}
+      \field{number}{25}
+      \field{title}{Properties of equilibria and glassy phases of the random Lotka-Volterra model with demographic noise}
+      \field{volume}{126}
+      \field{year}{2021}
+      \field{pages}{258301}
+      \range{pages}{1}
+    \endentry
+    \entry{biroli2018marginally}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=a37018f0369a0addf9e4b95c2a5af5d2}{%
+           family={Biroli},
+           familyi={B\bibinitperiod},
+           given={Giulio},
+           giveni={G\bibinitperiod}}}%
+        {{hash=435bc84c1deb3ece4bb9da041218028c}{%
+           family={Bunin},
+           familyi={B\bibinitperiod},
+           given={Guy},
+           giveni={G\bibinitperiod}}}%
+        {{hash=29c54fb9d19a63209661bd94ae9ed736}{%
+           family={Cammarota},
+           familyi={C\bibinitperiod},
+           given={Chiara},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IOP Publishing}%
+      }
+      \strng{namehash}{91c71254a369e4078a4eb7b686310bbb}
+      \strng{fullhash}{91c71254a369e4078a4eb7b686310bbb}
+      \strng{fullhashraw}{91c71254a369e4078a4eb7b686310bbb}
+      \strng{bibnamehash}{91c71254a369e4078a4eb7b686310bbb}
+      \strng{authorbibnamehash}{91c71254a369e4078a4eb7b686310bbb}
+      \strng{authornamehash}{91c71254a369e4078a4eb7b686310bbb}
+      \strng{authorfullhash}{91c71254a369e4078a4eb7b686310bbb}
+      \strng{authorfullhashraw}{91c71254a369e4078a4eb7b686310bbb}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{New Journal of Physics}
+      \field{number}{8}
+      \field{title}{Marginally stable equilibria in critical ecosystems}
+      \field{volume}{20}
+      \field{year}{2018}
+      \field{pages}{083051}
+      \range{pages}{1}
+    \endentry
+    \entry{bunin2017ecological}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=435bc84c1deb3ece4bb9da041218028c}{%
+           family={Bunin},
+           familyi={B\bibinitperiod},
+           given={Guy},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {APS}%
+      }
+      \strng{namehash}{435bc84c1deb3ece4bb9da041218028c}
+      \strng{fullhash}{435bc84c1deb3ece4bb9da041218028c}
+      \strng{fullhashraw}{435bc84c1deb3ece4bb9da041218028c}
+      \strng{bibnamehash}{435bc84c1deb3ece4bb9da041218028c}
+      \strng{authorbibnamehash}{435bc84c1deb3ece4bb9da041218028c}
+      \strng{authornamehash}{435bc84c1deb3ece4bb9da041218028c}
+      \strng{authorfullhash}{435bc84c1deb3ece4bb9da041218028c}
+      \strng{authorfullhashraw}{435bc84c1deb3ece4bb9da041218028c}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physical Review E}
+      \field{number}{4}
+      \field{title}{Ecological communities with Lotka-Volterra dynamics}
+      \field{volume}{95}
+      \field{year}{2017}
+      \field{pages}{042414}
+      \range{pages}{1}
+    \endentry
     \entry{CauchyLipschitzTheorem}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=4b3c3928bd56d2b455928972518f49d4}{%
@@ -123,6 +241,37 @@
       \field{howpublished}{\url{http://encyclopediaofmath.org/index.php?title=Matrix_multiplication&oldid=54363}}
       \field{note}{Consultado en: 2025-04-08}
       \field{title}{Matrix multiplication}
+    \endentry
+    \entry{girko1985circular}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=8c4095ab63ff46e76e5698cc99e524df}{%
+           family={Girko},
+           familyi={G\bibinitperiod},
+           given={Vyacheslav\bibnamedelima L},
+           giveni={V\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {SIAM}%
+      }
+      \strng{namehash}{8c4095ab63ff46e76e5698cc99e524df}
+      \strng{fullhash}{8c4095ab63ff46e76e5698cc99e524df}
+      \strng{fullhashraw}{8c4095ab63ff46e76e5698cc99e524df}
+      \strng{bibnamehash}{8c4095ab63ff46e76e5698cc99e524df}
+      \strng{authorbibnamehash}{8c4095ab63ff46e76e5698cc99e524df}
+      \strng{authornamehash}{8c4095ab63ff46e76e5698cc99e524df}
+      \strng{authorfullhash}{8c4095ab63ff46e76e5698cc99e524df}
+      \strng{authorfullhashraw}{8c4095ab63ff46e76e5698cc99e524df}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Theory of Probability \& Its Applications}
+      \field{number}{4}
+      \field{title}{Circular law}
+      \field{volume}{29}
+      \field{year}{1985}
+      \field{pages}{694\bibrangedash 706}
+      \range{pages}{13}
     \endentry
     \entry{hirsch2013differential}{book}{}{}
       \name{author}{3}{}{%
