@@ -33,11 +33,11 @@ La diferencia evidente entre estas gráficas es debido la matriz de incidencias,
 \\
 En un principio, los resultados de la Figura (\ref{fig:SeriesdeTiempoLK100}) se generaron sin tener un mapa de estabilidad únicamente teniendo como referencia el parámetro de May (\ref{eqn:radioMayGirko}). Además de construir los mapas de estabildiad (que es lo que se hará más adelante), es de interés buscar un parámetro crítico de transición como el de May. Para ello será crucial conocer más sobre $\Lambda$, pues es quien realmente determina la estabilidad de los sistemas.
 
-\subsection{Puntos fijos}
+\subsection{Puntos fijos}\label{subsec:PuntosFijos}
 
 Como bien ya se sabe, los puntos fijos son aquellos en los que se refleja la estabilidad del sistema además de que son vitales para determinar la matriz Jacobiana del sistema de Lotka-Volterra generalizado. Sin embargo, serán los propios coeficientes de la matriz de incidencias los que definan si el sistema es estable o no. Esta conjetura podrá no ser trivial de abordar pero si es posible realizar un análisis exploratorio. Los puntos fijos del sistema se determinan de igualar a cero y resolver las ecuaciones (\ref{eqn:LK}) lo que sería equivalente tener el siguiente sistema
 \begin{equation}\label{eqn:PuntoFijo}
-	x_i=K_i-\sum_{j\neq i}\alpha_{ij}x_j
+	x_i=K_i-\sum_{j\neq i}\alpha_{ij}x_j,\qquad\alpha_{ij}\in\Lambda
 \end{equation}
 considerando que $\alpha_{ii}=1$. Las soluciones que puede tener este sistema son múltiples, se pueden generar combinaciones de casos para poder resolverlo: por ejemplo igualar a cero un subconjunto de ecuaciones de este sistema ($x_{k}=0$) y resolver para dicha/s condición/es. Las soluciones favorables son para cuando todo elemento $x_i\in X$ del punto fijo es mayor o igual que cero; el sistema no restringe soluciones $x_k\in X$ negativas, pero no serán de interés puesto que no hay sentido físico en interpretar poblaciones negativas\footnote{Además de que los experimentos han arrojado sistemas inestables cuando el punto fijo $X$ tiene entradas negativas.}. Por último, de las soluciones favorables es de interés saber que condiciones en $\Lambda$ hace que el punto fijo sea estable o inestable.\\
 \\
@@ -65,14 +65,14 @@ Un elemento importante de este proceso es que no es trivial determinar cuando se
 Comenzando con el análisis de los resultados obtenidos, se han generado cuatro ejemplos arbitrarios para ir observando las características de las matrices Jacobianas de los sistemas (\ref{eqn:LK}) que resultaron estables. En este \href{https://github.com/rogve98/Tesis/tree/master/Notebooks/Datos/Ejemplo\%20Jacobianos}{enlace}\footnote{Consultar: \url{https://github.com/rogve98/Tesis/tree/master/Notebooks/Datos/Ejemplo\%20Jacobianos}} el lector tendrá acceso a 4 de estas matrices para los parámetros $N=100$, $\sigma=0.2$ y $p=\{0.3,0.4,0.5,0.6\}$. A continuación se presenta el código en \julia para validar si las diagonales de cada matriz Jacobiana son negativas siguiendo la Poposición \ref{prop:DiagonalI}
 \begin{tcolorbox}[colback=green!10!white, colframe=black, title=Entrada]
 	\begin{minted}{julia}
-using CSV, DataFrames
-jacobianos = []
-for i in 0.3:0.1:0.6
-    ruta = "Datos/Ejemplo Jacobianos/Jacobiano100_p$i.s0.2.csv"
-    df = CSV.read(ruta,DataFrame,header=false)
-    push!(jacobianos,df)
-end
-jacobianos
+		using CSV, DataFrames
+		jacobianos = []
+		for i in 0.3:0.1:0.6
+		ruta = "Datos/Ejemplo Jacobianos/Jacobiano100_p$i.s0.2.csv"
+		df = CSV.read(ruta,DataFrame,header=false)
+		push!(jacobianos,df)
+		end
+		jacobianos
 	\end{minted}
 \end{tcolorbox}
 
@@ -464,4 +464,21 @@ Como se ha mencionado anteriormente, la diferencia entre un sistema conservativo
 \newpage
 El trasfondo conceptual de que las interacciones sean simétricas, es decir $\alpha_{ij}=\alpha_{ji}$, es el efecto que ejerce la especie $x_i$ sobre $x_j$ es la misma en sentido opuesto, eso implica la generación de una función de energía como se ha visto antes. Eso significa que no hay ciclos de flujos netos\footnote{La energía fluye en una dirección preferencial sin que exista una compensación exacta en sentido inverso.} que generen disipación de energía y se genera una tendencia hacia el equilibrio termodinámico. En contraste con el caso estructuralmente simétrico, las interacciones no necesariamente son iguales ($\alpha_{ij}\neq\alpha_{ji}$), entonces de aquí si pueden generarse ciclos de flujos netos: En la depredación una de las especies pierde biomasa mientras que otra la gana, en la competencia desigual una de las especies puede tener ventaja sobre la otra, en el mutualismo una de las especies puede beneficiarse más sobre la otra; por lo tanto gracias a este flujo de energía en dirección preferencial el sistema de Lotka-Volterra no conservativo se concibe \textit{fuera del equilibrio termodinámico}.\\
 \\
-Por lo tanto, el soporte espectral es la clave para determinar la estabilidad del sistema (\ref{eqn:LK}) y su transición de fase. Anteriormente se ha revisado que para el sistema de Robert May ha sido conveniente usar su Ley Circular sustentada en el trabajo espectral de Girko, gracias a que la diagonal esta fijada en un solo valor se puede definir directamente el radio espectral. Sin embargo, las matrices Jacobianas presentadas en secciones anteriores poseen una diagonal heterogénea y dada por una distribución de cola pesada con sesgo negativo; también se ha discutido y propuesto la posibilidad de tener $N$ Leyes Circulares (Fig. (\ref{fig:LeyesCirculares})), cada una con un radio y centro específico dada por la $i$-ésima entrada de la diagonal de $\mathcal{J}$... Por lo tanto haría falta ver si existe un borde espectral de Girko local para cada renglón de la matriz 
+Durante la tesis se ha mencionado que el soporte espectral define estabilidad del sistema; pero además de ello ¡también definirá su transición de fase! Anteriormente se ha revisado que el sistema de May obedece una Ley Circular que esta sustentada por el trabajo espectral de Girko: el centro del disco esta fijado en el valor constante $-d$ que tiene la diagonal de sus matrices aleatorias y el tamaño del radio espectral obedece (\ref{eqn:radioMayGirko}). Sin embargo, las matrices Jacobianas resultantes de resolver el sistema (\ref{eqn:LK}) tienen una diagonal heterogénea dadas por una distribución de cola pesada con sesgo negativo. Aunque se quisiera determinar un ajuste de la Ley Circular de Girko contemplando las $N$ Leyes Circulares propuestas en la Fig. (\ref{fig:LeyesCirculares}), no sería adecuado ya que los parámetros $\sigma$ y $p$ no inciden directamente sobre la Jacobiana sino sobre la matriz de Incidencias $\Lambda$.\\
+\\
+Anteriormente se ha observado que la distribución espectral de valores propios no sigue una forma simétrica, sino que es amorfa ajustándose a $N$ círculos. Por esta razón es probable que el radio espectral que defina la transición de fase no sea fácil de determinar. En la sección (\ref{subsec:PuntosFijos}) se han introducido las ideas para poder llegar al objetivo. Lo que se plantea es que las interacciones de la matriz de incidencias $\Lambda$: definen la estabilidad del punto fijo. Por lo tanto la misión es hallar las condiciones $(p,\sigma,N)$ tal que la solución del sistema (\ref{eqn:PuntoFijo}) induzca un punto fijo estable. Esta tarea no es trivial de resolver, pues el sistema tiene al menos $N$ soluciones diferentes y no se sabe de su estabilidad hasta que se evalúe en la Jacobiana. La relación heurística comentada anteriormente (\ref{eqn:relacionHeuristica}) puede ser una pista dentro de esta búsqueda pero por ahora se dejará como un problema abierto que llega al límite de esta tesis.
+\newpage
+\subsubsection*{Interpretación ecológica}
+
+Al considerar matrices estructuralmente simétricas se esta restringiendo al sistema con la condición de que toda especie tena una de tres interacciones posibles ($++$, $--$, $+-$, $-+$). Esto implica que exista una dirección preferencial en el flujo de energía, pues las interacciones no son balanceadas. En este sentido, el sistema se estabilizará cuando el acoplamiento de todas las interacciones resulte en una configuración ordenada y el meollo del asunto es poder caracterizar dicha configuración con base en parámetro de control (acoplamiento de $(p,\sigma, N)$) aplicado a $\Lambda$. En este aspecto, sería interesante poder explorar si el flujo de energía neta (dadas por las interacciones) esta relacionado con la estabilidad del sistema.\\
+\\
+Hasta ahora se puede interpretar de manera directa las diferentes fases de estabilidad (al menos matemáticamente) pero físicamente ¿qué es lo que representan? Para el caso de la estabilidad es un punto $N$-dimensional al que todas las especies del sistema llegan y perduran, estos puntos son resistentes ante perturbaciones, cualquiera de ellas las puede mitigar con el tiempo hasta volver a alcanzar su punto estable. En el caso del régimen marginalmente estable representa el punto crítico en que las especies comienzan a ser sensibles en presencia de fluctuaciones y no vuelven a su punto estable pero tampoco divergen, más bien presentan un comportamiento oscilatorio cerca del punto fijo. \\
+\\
+En el caso de la inestabilidad, matemáticamente representa la sensibilidad que tiene el sistema a ser pertubado y diverger. Pero físicamente las poblaciones no crecen exponencialmente; este caso representa que la especie ya no tiene la capacidad de volver a su punto estable. Dependerá de que tan conectada se encuentre esta especie ``inestable'' para trasmitir ese comportamiento al resto del sistema, y eso dependerá de su grado. El modelo de red aleatoria descrita por una distribución de grado binomial implica de alguna manera las especies están relacionadas íntimamente de forma directa o indirecta, por lo que si al menos una especie no logra regresar a su punto estable entonces eso desencadena en la inestabilidad del sistema completo.\\
+\\
+Una de las observaciones de los diagramas de transición antes presentados, es que es más probable tener configuraciones ordenadas cuando el número de especies $N$ es cada vez menor...
+\newpage
+\section{Conclusiones}
+
+En esta tesis se ha investigado sobre la estabilidad del sistema de Lotka-Volterra generalizado abarcando desde su construcción hasta su integración y sus implicaciones con el fin de entender los mecanismos que determinan la persistencia o colapso del sistema. Se ha encontrado que la distribución del punto fijo tiene cola pesada con sesgo positivo. Esto indica que existen pocas especies dominantes que prosperan más que el resto de especies del sistema. La distribución del punto fijo induce a la diagonal de las matrices Jacobianas con la diferencia que ahora tiene sesgo negativo. En este sentido, el soporte espectral de las Jacobianas estará controlado por cada una de los valores de su diagonal generando un conjunto de $N$ Leyes Circulares. Finalmente la estabilidad estará dominada por la tupla $(p,\sigma,N)$ que induce puntos fijos estables en la matriz de incidencias $\Lambda$. \\
+\\

@@ -1,15 +1,14 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {chapter}{Agradecimientos}{\es@scroman {iii}}{chapter*.1}%
 \contentsline {chapter}{Resumen}{\es@scroman {v}}{chapter*.2}%
-\contentsline {chapter}{\numberline {1}Estabilidad del sistema de Lotka-Volterra generalizado}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Series de tiempo}{2}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Puntos fijos}{4}{subsection.1.1.1}%
-\contentsline {section}{\numberline {1.2}Matriz Jacobiana}{5}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Leyes Circulares}{8}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}Análisis para $N=50$}{10}{subsection.1.3.1}%
-\contentsline {section}{\numberline {1.4}Transiciones de estabilidad}{14}{section.1.4}%
-\contentsline {subsection}{\numberline {1.4.1}Para $N=100$}{16}{subsection.1.4.1}%
-\contentsline {subsection}{\numberline {1.4.2}Para $N=50$}{22}{subsection.1.4.2}%
-\contentsline {subsection}{\numberline {1.4.3}Para $N=25$}{23}{subsection.1.4.3}%
-\contentsline {section}{\numberline {1.5}Un acercamiento al parámetro crítico}{25}{section.1.5}%
-\contentsline {subsection}{\numberline {1.5.1}Discusión}{28}{subsection.1.5.1}%
+\contentsline {chapter}{\numberline {1}Generalizando al sistema de Lotka-Volterra}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Sistema de especies en competencia.}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Caso particular para $N=2$}{2}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Generalizando a $N\gg 1$ especies.}{5}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Red de incidencias}{8}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Tipos de interacciones}{10}{subsection.1.3.2}%
+\contentsline {section}{\numberline {1.4}Puntos fijos}{15}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Jacobiana del sistema}{17}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Estabilidad}{21}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1}Distribución de valores propios}{23}{subsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.6.2}Transición de May}{26}{subsection.1.6.2}%
