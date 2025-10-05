@@ -2387,11 +2387,9 @@
     <bcf:citekey order="13" intorder="1">may1972will</bcf:citekey>
     <bcf:citekey order="14" intorder="1">may2019stability</bcf:citekey>
     <bcf:citekey order="15" intorder="1">allesina2012stability</bcf:citekey>
-    <bcf:citekey order="16" intorder="1">GershgorinTheorem</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">may1972will</bcf:citekey>
     <bcf:citekey order="17" intorder="1">girko1985circular</bcf:citekey>
     <bcf:citekey order="18" intorder="1">allesina2012stability</bcf:citekey>
-    <bcf:citekey order="18" intorder="2">may1972will</bcf:citekey>
-    <bcf:citekey order="19" intorder="1">allesina2012stability</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

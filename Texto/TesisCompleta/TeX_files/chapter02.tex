@@ -381,13 +381,9 @@ las derivadas parciales para los términos de la diagonal son
 Sin embargo, hay que tener en cuenta que se evalúa sobre un punto fijo $X^*$ el cual se genera de la siguiente ecuación  
 $$\alpha_{ii}x_i+\sum_{j\neq i}\alpha_{ij}x_j=K_i$$
 Sustituyendo $\sum_{j\neq i}\alpha_{ij}x_j=K_i-\alpha_{ii}x_i$ en (\ref{eqn:EcsJacobiano_ii}) finalmente se tiene
-\begin{equation}
-	\frac{\partial f_i(X^*)}{\partial x_i} = -\frac{r_ix_i^*}{K_i}\alpha_{ii}
-\end{equation}
+$$\frac{\partial f_i(X^*)}{\partial x_i} = -\frac{r_ix_i^*}{K_i}\alpha_{ii}$$
 Para los términos que quedan fuera de la diagonal evaluados en $X^*$ se tiene
-\begin{equation}\label{eqn:Jacobiano_ij}
-		\frac{\partial f_i(X^*)}{\partial x_k} = -\frac{r_ix_i^*}{K_i}\alpha_{ik} 
-\end{equation}
+$$\frac{\partial f_i(X^*)}{\partial x_k} = -\frac{r_ix_i^*}{K_i}\alpha_{ik} $$
 \newpage
 \begin{definición}\label{def:MatrizJacobiana}
 	Sea $\mathcal{J}\in\mathrm{M}_N(\mathbb{R})$ donde $N$ es el número de especies del sistema de Lotka-Volterra generalizado. Se define la matriz \textit{Jacobiana} asociada al sistema (\ref{eqn:Fmatricial}) evaluado en un punto fijo $X^*$ de la siguiente forma
@@ -405,117 +401,144 @@ Para los términos que quedan fuera de la diagonal evaluados en $X^*$ se tiene
 De la matriz Jacobiana se puede observar como todas sus entradas voltean el signo con respecto de $\Lambda$, lo que parece ajustarse con las interacciones que May define en su \textit{community matrix} \cite{may2019stability}, incluso obedece el signo negativo en la diagonal que será sumamente importante para determinar la estabilidad del sistema. La ec. (\ref{eqn:Jacobiana}) deja ver que la matriz Jacobiana ¡es un reescalamiento de la matriz de Incidencias! indicando que la estabilidad únicamente depende de $\Lambda$\footnote{Ya que son las interacciones de $\Lambda$ las que inducen la naturaleza del punto fijo.}. ¿Como se podría verificar la estabilidad del sistema con base en el punto fijo y los valores propios de $\mathcal{J}$?
 
 \begin{proposición}\label{prop:DiagonalI}
-	Los elementos de la diagonal de la matriz Jacobiana son negativos cuando se evalúa en un punto fijo estable.
-	$$
-	r_i \left (1-\frac{2x_i+\sum_{j\neq i}\alpha_{ij}x_j}{K_i}\right )<0
-	$$	
+	Los elementos de la diagonal de la matriz Jacobiana determinan en gran medida la estabilidad del sistema
 	\begin{proof}
-		Sea $X^*$ un punto fijo estable. Se sabe que la tasa de crecimiento $r_i$ siempre es positiva por lo que la descartamos del análisis. Por otro lado las entradas de $X^*$ son positivas y existen algunas $x_i\in X^*$ tal que son mayores a su capacidad de carga, es decir, $x_i>K_i$ a causa a las $\alpha_{ij}<0$ de la matriz de incidencias. Teniendo en cuenta la siguiente suma
-		\begin{equation}\label{proof1:sumaClave}
-			2x_i+\sum_{j\neq i}\alpha_{ij}x_j
+		Para demostrar esta proposición se hará uso del \textit{Teorema de Gershgorin} \cite{GershgorinTheorem}. Para ello se asume que la matriz Jacobiana tendrá valores propios complejos. Se define el radio de Gershgorin como
+		\begin{equation}\label{proof1:RGershgorin}
+			R_i=\sum_{i\neq j}|\mathcal{J}_{ij}|
 		\end{equation}
-		no se puede asegurar que sea mayor a cero, pues existen tantas $\alpha_{ij}$ negativas como positivas (y aún no se sabe la distribución del punto fijo). Suponiendo que son mayores que cero implica que
-		$$K_i<2x_i+\sum_{j\neq i}\alpha_{ij}x_j\qquad\Longleftrightarrow\qquad 1-\frac{2x_i+\sum_{j\neq i}\alpha_{ij}x_j}{K_i}<0$$
-		Y por lo tanto el elemento $\mathcal{J}_{ii}$ es menor que cero. ¿Qué pasaría si $K_i>2x_i+\sum_{j\neq i}\alpha_{ij}x_j$? La suma (\ref{proof1:sumaClave}) puede ser negativa o positiva pero estrictamente menor a $K_i$ lo que implicaría que el elemento del paréntesis de $\mathcal{J}_{ii}$ sería positivo. Si la matriz Jacobiana tiene elementos de la diagonal positivos entonces se puede asegurar que el sistema será inestable en su punto fijo asociado. Para demostrar esto se recurrirá al \textit{Teorema de Gershgorin} \cite{GershgorinTheorem}. Se asume que la matriz Jacobiana (\ref{eqn:MartizJacobiana}) tendrá valores propios complejos, se define el radio de Gershgorin como
-		$$R_i=\sum_{j\neq i}|\mathcal{J}_{ij}|$$
-		Sea $D(\mathcal{J}_{ii},R_i)\subseteq\mathbb{C}$ el disco centrado en $\mathcal{J}_{ii}$ con radio $R_i$ denominado disco de Gershgorin. El teorema establece que cada valor propio de $\mathcal{J}$ estará contenido en al menos uno de estos discos. Si se demuestra que los $D(\mathcal{J}_{ii},R_i)$ están contenidos en el semiplano negativo de $\mathbb{C}$ entonces todos los valores propios de $\mathcal{J}$ serán negativos y por lo tanto el sistema (\ref{eqn:LK}) será estable en $X^*$. El elemento más importante de esta demostración es considerar el centro del disco, si todos los $\mathcal{J}_{ii}$ son negativos se podría asegurar casi en su totalidad que los valores propios también lo serán. Solamente habría que demostrar que $R_i\leq\mathcal{J}_{ii}$. Para ello comenzamos considerando que cualquier $x_i\in X^*$ cumple
-		\begin{equation}\label{proof1:desigualdad1}
-			x_i>\frac{K_i}{2\alpha_{ii}},\qquad\alpha_{ii}\in\Lambda
-		\end{equation}
-		eso implicaría que $2r_i\alpha_{ii}x_i>r_iK_i$ y por lo tanto 
-		\begin{equation}\label{proof1:sumaClave1}
-			\frac{2r_i\alpha_{ii}x_i}{K_i}-r_i>0
-		\end{equation}
-		Por otro lado supongamos $x_i<\sum_{k\neq i}x_k$ entonces 
-		\begin{equation}\label{proof1:desigualdadClave}
-			\sum_{j\neq i}\left |\frac{r_i\alpha_{ij}x_i}{K_i}\right |<\sum_{k\neq j}\left |\frac{r_i\alpha_{ik}x_k}{K_i}\right |,\qquad\alpha_{ij}\in\Lambda
-		\end{equation}
-		sumando (\ref{proof1:sumaClave1}) con (\ref{proof1:desigualdadClave}) se tiene 
-		\begin{equation*}
+		con ello se define $D(\mathcal{J}_{ii},R_i)\subset\mathbb{C}$ como el disco de Gershgorin centrado en $\mathcal{J}_{ii}$ con radio $R_i$. El teorema establece que cada valor propio de $\mathcal{J}$ estará contenido en alguno de estos discos. Demostrando que si todo $D(\mathcal{J}_{ii},R_i)$ se encuentra contenido en el semiplano negativo de $\mathbb{C}$, entonces todos los valores propios de la Jacobiana serán negativos también y por lo tanto el sistema (\ref{eqn:LK}) será estable en $X^*$. El elemento más importante de esta prueba es considerar el centro de los discos; si todos los $\mathcal{J}_{ii}$ son negativos entonces el centro de todos los discos se encuentra en el semiplano negativo de $\mathbb{C}$, y para garantizar que todos los valores propios sean negativos habría que probar $|\mathcal{J}_{ii}|>R_i$ para todo $i\in\{1,...,N\}$, es decir:
+		\begin{equation}\label{proof1:Desigualdad}
 			\begin{split}
-				\underbrace{\sum_{j\neq i}\left |\frac{r_i\alpha_{ij}x_i}{K_i}\right |}_a&<\underbrace{\sum_{k\neq i}\left |\frac{r_i\alpha_{ik}x_k}{K_i}\right |}_b+\underbrace{\frac{2r_i\alpha_{ii}x_i}{K_i}}_c-r_i\\				
-			\end{split}
-		\end{equation*}
-		al reacomodar finalmente se tiene
-		\begin{equation}\label{proof1:Resultado}
-			\begin{split}
-				\sum_{j\neq i}\left |\frac{r_i\alpha_{ij}x_i}{K_i}\right |&<\left |r_i\left (1-\frac{2\alpha_{ii}x_i+\sum_{k\neq i}\alpha_{ij}x_k}{K_i}\right )\right |\\
-				\sum_{j\neq i}|\mathcal{J}_{ij}|&<|\mathcal{J}_{ii}|
+					 \left |-\frac{r_ix_i^*}{K_i}\alpha_{ii}\right |&>\sum_{j\neq i}\left |-\frac{r_ix_i^*}{K_i}\alpha_{ij}\right |\\
+				1&>\sum_{j\neq i}|\alpha_{ij}|
 			\end{split}
 		\end{equation}
-		Que pasa si (\ref{proof1:desigualdad1}) es al revés, entonces (\ref{proof1:sumaClave1}) es negativa y hay que realizar algunos ajustes, ahora en la desigualdad (\ref{proof1:Resultado}) no siempre se va a cumplir por lo que hay que delimitar sus casos favorables. De entrada se sabe que el término $\frac{2r_i\alpha_{ii}x_i}{K_i}$ es siempre positivo, entonces hay que ver las configuraciones posibles para que se cumpla la desigualdad deseada. Se tienen los siguientes casos
-		\begin{itemize}
-			\item [1.] Si $1\leq\frac{(b-a)+c}{r_i}$ entonces $R_i\leq|\mathcal{J}_{ii}|$			
-			\item [2.] Si $1>\frac{(b-a)+c}{r_i}$ entonces $R_i>|\mathcal{J}_{ii}|$
-		\end{itemize}
-		Se deja como ejercicio al lector averiguar que pasaría en el caso particular $x_i>\sum_{k\neq i}x_k$\footnote{Hint: A lo mucho podría darse para $x_i=\max(X^*)$}. Cuanto mayor es el número de especies es menos probable que ocurra este incidente, pero es bueno tenerlo en cuenta. La región positiva que puedan tener estos discos será considerablemente menor con respecto de la región negativa. De este análisis se concluyen dos cosas: Si todos $\mathcal{J}_{ii}<0$ hay una alta probabilidad de que los valores propios sean negativos, teniendo incertidumbre en los casos especiales antes mencionados. En el caso contrario se sabrá que existe al menos un disco de Gershgorin en el semiplano positivo de $\mathbb{C}$ en el que estará contenido un valor propio con parte real de mismo signo, lo que desenvolverá en un sistema que resulte ser inestable.
+		\newpage
+		De la ec. (\ref{eqn:MartizJacobiana}) se puede ver que $\alpha_{ii}>0$ y en particular $\alpha_{ii}=1$, por lo tanto es importante que todo $x_i^*\in X^*$ sea positivo para que el centro de los discos se encuentre en el semiplano negativo de $\mathbb{C}$. En caso contrario habrá al menos un disco con centro en el sempiplano positivo de $\mathbb{C}$ que pueda alojar valores propios positivos que devengan en una dinámica inestable. Es conveniente poder saber cual es el tamaño promedio de los discos de Gershgorin y para ello se define la siguiente variable aleatoria
+		\begin{equation}\label{proof1:VarAlW}
+			W = 
+			\begin{cases}
+				0,\qquad \text{Si }1-p\\
+				Y,\qquad \text{Si }p>0	
+			\end{cases}
+		\end{equation}
+		donde $Y\sim N(0,\sigma^2)$ es una variable aleatoria normal. Ya que $R_i$ considera suma de valores absolutos, es de interés saber el valor esperado de $|W|$ 
+		\begin{equation}\label{proof1:ValorEsperadoW}
+			\mathbb{E}[|W|]=(1-p)\cdot 0 + p\cdot \mathbb{E}[|Y|] = p\cdot\mathbb{E}[|Y|] = p\sigma\sqrt{\frac{2}{\pi}}
+		\end{equation}
+		el término $\sqrt{\frac{2}{\pi}}$ viene de considerar la variable aleatoria $Z\sim N(0,1)$ y la distribución \textit{half-normal} $|Z|$, entonces su valor esperado de es $$\mathbb{E}[|Z|]=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}|z|e^{-z^2/2}\, dz=\frac{2}{\sqrt{2\pi}}\int_0^\infty ze^{-z^2/2}\, dz=\sqrt{\frac{2}{\pi}}$$
+		al considerar la variable aleatoria $Y\sim N(0,\sigma^2)$ entonces basta con escalar $Y=\sigma Z$ y en consecuencia su valor esperado será $$\mathbb{E}[|Y|]=\sigma \mathbb{E}[|Z|]=\sigma\sqrt{\frac{2}{\pi}}$$
+		Por lo tanto, el valor esperado del radio de Gershgorin es
+		$$\mathbb{E}[R_i]=(N-1)p\sigma\sqrt{\frac{2}{\pi}}$$
+		Si este radio promedio es menor a 1 se puede garantizar en cierta medida que los discos de Gershgorin estarán contenidos en el semiplano negativo de $\mathbb{C}$. Sin embargo, pueden existir discos de Gershgorin que se alejen de la media ¿qué tanto se pueden alejar para que se siga cumpliendo $\mathcal{J}_{ii}>R_i$? será conveniente calcular la varianza de los radios de Gershgorin para averiguarlo. Tomando la variable aleatoria $W$, se calcula su segundo momento
+		$$\mathbb{E}(|W|^2)=(1-p)\cdot 0+p\cdot\mathbb{E}(|Y|^2)=p\cdot\mathbb{E}(Y^2)=p\sigma^2$$
+		por otro lado el cuadrado del valor esperado (\ref{proof1:ValorEsperadoW}) es
+		$$\mathbb{E}(|W|)^2=p^2\sigma^2\frac{2}{\pi}$$
+		Finalmente la varianza de $|W|$ es
+		$$\Var(|W|)=p\sigma^2-p^2\sigma^2\frac{2}{\pi}$$
+		Entonces la varianza de los radios de Gershgorin queda envuelta en la siguiente expresión
+		$$\Var(R_i)=(N-1)p\sigma^2\left (1-\frac{2p}{\pi}\right )$$
+		y mientras sea menor a 1 se puede garantizar que los discos de Gershgorin van a cumplir (\ref{proof1:Desigualdad}) y en consecuencia los valores propios de $\mathcal{J}$ estarán contenidos en el semiplano negativo de $\mathbb{C}$. Sin embargo esta prueba tiene algunas limitantes; los discos de Gershgorin únicamente garantizan que contienen valores propios, forzar la condición (\ref{proof1:Desigualdad}) es suficiente para garantizar estabilidad pero no es determinante, ya que este método no menciona nada acerca de la posición de los valores propios. Si dicha desigualdad no se cumple pueden ocurrir dos escenarios: que $\max(|\lambda_\mathcal{J}|)<0$ y el sistema siga siendo estable a pesar de algún $R_i>\mathcal{J}_{ii}$ ó $\max(|\lambda_\mathcal{J}|)>0$ en cuyo caso el sistema será inestable, y eso dependerá de $\Lambda$ y la tupla $(p,\sigma,N)$. En conclusión, esta prueba funciona en un primer nivel para mostrar que los elementos de la diagonal de $\mathcal{J}$ y por consiguiente las entradas de $X^*$ juegan un papel importante en la estabilidad del sistema. 
 	\end{proof}
 \end{proposición}
 
-Los valores de la diagonal de $\Lambda$ son considerados como interacciones de competencia que representan más bien una auto-regulación (Ver ec. (\ref{eqn:LKextendida})); al pasar a la matriz Jacobiana mediante cierto punto fijo se tienen dos escenarios: Si el punto fijo es estable, entonces todos los valores de su diagonal serán negativos convirtiéndose en las interacciones de auto-regulación que May define en \cite{may1972will}. Si por el contrario el punto fijo es inestable, existirán elementos de la diagonal con entradas positivas lo que desenvuelve en un sistema inestable.\\
+Es importante recordar que las interacciones de auto-regulación se mantienen en la diagonal de $\Lambda$ (Ver ec. (\ref{eqn:LKextendida})); cuando la matriz de incidencias se transforma en la Jacobiana, el punto fijo debe de contener entradas positivas para poder respetar las interacciones de auto-regulación que May define en \cite{may1972will}. Si el punto fijo contiene entradas negativas es casi un hecho que el sistema será inestable porque existirá al menos un disco de Gershgorin con centro en el semiplano positivo de $\mathbb{C}$ que independientemente de como sea su radio, es altamente probable que contenga valores propios positivos.\\
 \\
-La pregunta más importante de esta tesis sería ¿Cómo determinar el punto fijo \textbf{estable} de un sistema $N$-dimensional a partir de $\Lambda$? Este autor tiene dos respuestas para esta pregunta: la primera tiene que ver con las simulaciones realizadas. Al integrar numéricamente y observar que la serie de tiempo se estabiliza, lleva a interpretar como que ha llegado a su punto fijo \textit{estable} por lo tanto se extrae la última iteración de la serie de tiempo y se guarda como un vector de $N$ entradas al que se le considerará el punto fijo estable. Sin embargo, cuando la serie de tiempo muestra que es inestable, las soluciones divergen a infinito e imposibilita conocer el punto fijo inestable. Al tomar la última entrada real de la serie que diverge y escogerla como condición inicial de un Newton-Rhapson multivariado se puede llegar a estimar dicho punto fijo, únicamente para validar que al evaluarlo en la matriz Jacobiana (\ref{eqn:MartizJacobiana}) tendrá elementos positivos en su diagonal.  En la sección (\ref{sec:Jacobiano}) se encuentra la implementación computacional del Jacobiano considerando al punto fijo estable.\\
-\\
-La segunda respuesta es más teórica y es para llegar a estimar un parámetro de crítico que delimite el umbral de estabilidad, tal como el de May (\ref{eqn:paramMay}). Si se quiere determinar la estabilidad de los sistemas con base en $\Lambda$ hay que centrarse en el estudio de su diagonal, ya que sus elementos guardan todas sus entradas en forma de suma (\ref{eqn:MartizJacobiana}). Más en concreto se requiere que dicha suma sea mayor a sus capacidades de carga $K_i$ tal y como se vio en la Proposición \ref{prop:DiagonalI}. Entonces es cuestión de ver como deben ser los $\alpha_{ij}\in\Lambda$ que dependen de $\sigma$, $p$ y $N$ y las $x_i\in X^*$ que dependen de las $\alpha_{ij}$, para que cumplan tal desigualdad. Esto se abordará una vez que se haya abordado el tema de la estabilidad en sistemas de May.
-
-
+Para poder determinar un parámetro crítico de transición en la estabilidad de los sistemas, es imprescindible conocer donde se ubica $\max(\lambda_\mathcal{J})$ y encontrar la forma de controlar su posición para poder saber las condiciones que lo llevan a ser negativo, cero o positivo. Aunque existe una forma dada para resolver esta conjetura, la cual se abordará en la siguiente sección, tiene un gran inconveniente: la Jacobiana tiene en su diagonal toda una distribución de valores que dificulta la definición de un radio espectral que determine la posición de Re$(\lambda_{\max}(\mathcal{J}))$. Esta conjetura ligada con la correspondiente de la sección anterior también llega al límite de esta tesis y más adelante se presentará un análisis detallando sus razones.
+\newpage
 \section{Estabilidad}
 
-Hasta el momento ya se tiene todo definido para poder resolver el sistema (\ref{eqn:LK}) conviene comenzar a preguntarse si la estabilidad de los sistemas de May esta relacionada con la estabilidad del sistema de Lotka-Volterra generalizado; si el parámetro (\ref{eqn:paramMay}) se ajusta o no a la estabilidad del sistema (\ref{eqn:LK}). Para ello es conveniente entender qué denota dicho parámetro para ajustarlo o en todo caso establecer uno nuevo con base en la experiencia obtenida.\\
+Hasta el momento ya se tiene todo definido para poder resolver el sistema (\ref{eqn:LK}) conviene comenzar a preguntarse si la estabilidad de los sistemas de May esta relacionada con la estabilidad de sistemas LV generalizado; si el parámetro (\ref{eqn:paramMay}) se ajusta o no a la estabilidad del sistema (\ref{eqn:LK}). Por esta razón es conveniente entender qué denota dicho parámetro para ajustarlo o en todo caso establecer uno nuevo con base en la experiencia obtenida.
 \\
-Robert May \cite{may2019stability} y Stefano Allesina \cite{allesina2012stability} respectivamente han estudiado la estabilidad en sistemas complejos desde dos perspectivas diferentes. Se ha mencionado en los antecedentes que May comenzó la discusión al expander en series de Taylor un sistema no lineal y encontrar la forma de linealizarlo en el siguiente sistema de ecuaciones
+\\
+Robert May \cite{may2019stability} y Stefano Allesina \cite{allesina2012stability} respectivamente han estudiado la estabilidad en sistemas complejos desde dos perspectivas diferentes. En los antecedentes se ha mencionado que May comenzó la discusión al expander en series de Taylor un sistema no lineal y encontrar la forma de linealizarlo en el siguiente sistema de ecuaciones
 \begin{equation}\label{eqn:sistemasMay}
 	\frac{dX(t)}{dt}=AX(t),\qquad A\in\mathrm{M}_n(\mathbb{R})
 \end{equation}
-Considerando \textit{a priori} que están evaluados sobre puntos fijos (estables o inestables). Ambos autores se centran únicamente en el estudio de las matrices del sistema linealizado para hallar las condiciones de estabilidad y la región del plano complejo en donde se alojan sus valores propios. Allesina extiende el trabajo de May al definir una \textit{Ley Elíptica} donde se alojaran los valores propios de los sistemas resultantes y un nuevo parámetro crítico que define el umbral de estabilidad. 
+donde $A$ es su \textit{community matriz} la cual ya se considera evaluada sobre puntos fijos estables o inestables. Ambos autores se centran únicamente en el estudio de las matrices aleatorias que conforman el sistema linealizado, para poder hallar las condiciones de estabilidad y su distribución de valores propios en el plano complejo. Allesina extiende el trabajo de May al definir una \textit{Ley Elíptica} donde se alojaran los valores propios de los sistemas resultantes y un nuevo parámetro crítico que define el umbral de estabilidad. 
 \\
 \\
-Las matrices de May asociadas a sistemas linealizados tienen su diagonal fijada a un valor $-d$ mientras que el resto de sus entradas siguen la ley de dos parámetros: la conectancia $C$ que es la forma en que las especies del sistema se relacionen, y la desviación estándar $\sigma$ de una distribución normal $\mathcal{N}(0,\sigma)$ considerada como ``fuerza promedio''. De tal modo que la conexión entre nodos se da con una probabilidad $C$ y $a_{ij}=x\in\mathcal{N}(0,\sigma)$ y para el caso contrario $1-C$ dicta que no habrá conexión y entonces $a_{ij}=0$. Con esta información May presenta el resultado de la \textit{Ley Circular} que establece que todos los valores propios de la matriz $A$ están contenidos en un círculo de centro y radio $-d$, y que el umbral de estabilidad se da por medio de la relación (\ref{eqn:paramMay}) considerando el valor de la diagonal. 
+Como recordatorio del primer capítulo, las matrices de May fijan su diagonal a un valor $-d$ mientras que el resto de sus entradas se extraen de una distribución normal, donde la desviación estándar $\sigma$ es conocida como ``fuerza promedio''. Estas entradas tendrán una probabilidad de conexión $C$, en cuyo caso existe $a_{ij}\sim\mathcal{N}(0,\sigma)$ y para el caso contrario $1-C$ será $a_{ij}=0$. Con esta información May presenta el resultado de la \textit{Ley Circular} que establece que todos los valores propios de la matriz $A$ están contenidos en un círculo de centro y radio $-d$, y que el umbral de estabilidad se da por medio de la relación (\ref{eqn:paramMay}) considerando el valor de la diagonal. 
 $$\sigma<\frac{d}{\sqrt{NC}}$$
-Si el tamaño del sistema es $N\gg 1$ entonces la transición entre el régimen estable e inestable es muy ``abrupta'' y además establece que tiene un ancho de tamaño $N^{-2/3}$. Anteriormente se había comentado que para que se cumpla esta desigualdad, $C$ debe ser chica en relación a $\sigma$ o viceversa, lo que se interpreta como que: \textit{El sistema podrá ser estable para una red ecológica con una gran conectancia $C$ pero con interacciones débiles $\sigma$, también podrá ser estable cuando se tengan interacciones fuertes $\sigma$ con pocas especies interactuando, es decir, para una conectancia baja.} ¿Por qué tiene que ser de esta forma?
+Si el tamaño del sistema es $N\gg 1$ entonces la transición entre el régimen estable e inestable es muy ``abrupta'' además de tener un ancho de tamaño $N^{-2/3}$ \cite{may1972will}. Para que se cumpla esta desigualdad, $C$ debe ser chica en relación a $\sigma$ o viceversa, lo que se interpreta como que: \textit{El sistema podrá ser estable para una red ecológica con una gran conectancia $C$ pero con interacciones débiles $\sigma$, también podrá ser estable cuando se tengan interacciones fuertes $\sigma$ con pocas especies interactuando, es decir, para una conectancia baja.} ¿Por qué tiene que ser de esta forma?
 \begin{proposición}\label{prop:paramMay}
-	Sea $A\in\mathrm{M}_n(\mathbb{R})$ matriz de May asociada a sistemas linealizados cuya diagonal es $-d$. El parámetro $\sigma\sqrt{NC}<d$ denota el umbral de estabilidad en estos sistemas.
+	Sea $A\in\mathrm{M}_n(\mathbb{R})$ matriz de May asociada a sistemas linealizados cuya diagonal es $-d$. El parámetro $\sigma\sqrt{nC}<d$ denota el umbral de estabilidad en estos sistemas.
 	\begin{proof}
-		Citando nuevamente al \textit{Teorema de Gershgorin} \cite{GershgorinTheorem} definimos el radio de Gershgorin como
-		\begin{equation}\label{proof2:RadioGersh}
-			R_i=\sum_{j\neq i}|a_{ij}|,\qquad a_{ij}\in A
+		Otro modo de entender el enunciado de la proposición \ref{prop:paramMay} es que el parámetro descrito define la posición del $\max(\lambda_A)$, que puede ser negativo, cero o positivo. Por lo tanto, éste será el elemento central de esta demostración. Ahora se utilizará el \textit{Teorema Circular de Girko} \cite{girko1985circular} el cual muestra la forma de obtener el radio espectral de matrices aleatorias como las de May. El teorema establece que para cualquier matriz $B\in \mathrm{M}_n(\mathbb{R})$ con entradas independientes e idénticamente distribuidas de media cero y varianza finita, y al considerar la siguiente matriz reescalada
+		$$\hat{B} = \frac{1}{\sqrt{n}}B$$
+		los valores propios quedan distribuidos en un disco centrado en el origen con radio $\sigma$: $D(0,\sigma)$. Dicho de otro modo el resultado dice que el radio espectral de la matriz $\hat{B}$ es
+		$$\rho(\hat{B})=\max|\lambda_{\hat{B}}|=\sigma$$		
+		El hecho de realizar el reescalamiento es para asegurar que este radio tenga un tamaño finito para cuando $n\to\infty$. Para llegar a este resultado se utilizan argumentos probabilísticos; primero se considera un renglón arbitrario de la matriz $\hat{B}$: $r=\frac{1}{\sqrt{n}}(b_{i1},...,b_{in})$ y se determina su norma cuadrada
+		$$\|r\|^2=\frac{1}{n}\sum_{j=1}^N b_{ij}^2$$
+		cada elemento $b_{ij}^2$ tiene valor esperado $\sigma^2$ implicando que la esperanza de la norma cuadrada es $\mathbb{E}[\|r\|^2]=\frac{n\sigma^2}{n}=\sigma^2$ y su varianza es $\Var(\|r\|^2)=\frac{n}{n^2}(3\sigma^4-\sigma^4)=\frac{2\sigma^4}{n}$ teniendo en cuenta el cuarto momento la distribución normal\footnote{Utilizando la siguiente fórmula para los momentos de orden $n$ de $\mathcal{N}(0,\sigma^2)$: $$\mathbb{E}[X^n]=\begin{cases}
+			0,\qquad&\text{si $n$ es impar}\\
+			\sigma^n(n-1)!!,\qquad&\text{si $n$ es par}
+		\end{cases}$$}. De aquí sigue utilizar el \textit{Teorema Central del Límite} para mostrar que existe una variable estandarizada que esta en función de $\|r\|^2$, $\mathbb{E}[\|r\|^2]$ y $\sqrt{\Var(\|r\|^2)}$, y converge a una distribución normal estándar $\mathcal{N}(0,1)$ cuando $n\to\infty$, la cual es equivalente a la siguiente aproximación
+		$$\|r\|^2\approx \sigma^2+\frac{\eta}{\sqrt{n}}$$
+		donde $\eta\sim\mathcal{N}(0,2\sigma^4)$. Por tanto $\|r\|^2$ converge a una distribución normal con valor esperado $\sigma^2$ y fluctuaciones de orden $1/\sqrt{n}$. En este punto resta determinar la norma euclidiana del renglón arbitrario
+		$$\|r\|=\sqrt{\sigma^2+\frac{\eta}{\sqrt{n}}}=\sigma\sqrt{1+\frac{\eta}{\sigma^2\sqrt{n}}}$$
+		\newpage
+		realizando la expansión en Series de Taylor alrededor del cero de $\sqrt{1+\varepsilon}=1+\frac{\varepsilon}{2}-\frac{\varepsilon^2}{8}+\cdots$ se tiene
+		$$\|r\|\approx\sigma+\frac{\eta}{2\sigma\sqrt{n}}$$
+		Por lo tanto se logra observar que el valor esperado de $\|r\|$ es $\sigma$ y sus fluctuaciones son de orden $1/\sqrt{n}$ lo que implica que para cuando $n\to\infty$, la norma euclidiana será $\|r\|=\sigma$. Sin embargo, cuando se considera la matriz $B$ sin reescalar, entonces las fluctuaciones van con respecto de $\sqrt{n}$ y por lo tanto la norma euclidiana ahora será 
+		$$\|r\|=\sigma\sqrt{n}$$
+		y el radio del disco crecerá conforme $n\to\infty$. Si además de lo anterior se considera que las entradas de la matriz $B$ siguen a una probabilidad de existencia $C$ tal y como la variable aleatoria (\ref{proof1:VarAlW}) de la proposición \ref{prop:DiagonalI} entonces al aplicar el mismo procedimiento de antes se llega al siguiente resultado
+		\begin{equation}\label{proof2:norma}
+			\|r\|=\sigma\sqrt{nC}
 		\end{equation}
-		y consigo se definen los discos de Gershgorin $D(a_{ii},R_i)\in\mathbb{C}$. En primera instancia, se sabe que el centro de todos los discos de Gershgorin esta situado en $-d$, entonces hay que ver como cambian los radios en función de $\sigma$ y $C$ para obtener los siguientes casos:
-		\begin{itemize}
-			\item [1.] $R_i<|-d|$
-			\item [2.] $R_i=|-d|$
-			\item [3.] $R_i>|-d|$
-		\end{itemize}
-		Cada $R_i$ parte de una suma de valores de una distribución normal con varianza $\sigma^2$, y además cada $a_{ij}\in A$ tiene una probabilidad $C$ de ser distinta de cero, entonces por cada renglón de $A$ se tiene una probabilidad $(N-1)C$ de que existan valores distintos de cero (excluyendo a los $a_{ii}$). Si se aplica la varianza a esta suma entonces se podrá ``medir'' la dispersión las interacciones por renglón misma que servirá para hallar el máximo radio de Gershgorin para sistemas estables
-		\begin{equation}\label{proof2:Varianza}
-			\Var\left (\sum_{j\neq i}a_{ij}\right )=NC\sigma^2
-		\end{equation}
-		suponiendo que $N\approx N-1$ para $N\gg 1$. Sin embargo la dispersión no determina la posición de los valores propios, lo cual es importante considerando el signo de sus partes reales. No obstante, si se determina la desviación estándar de la suma (\ref{proof2:RadioGersh}) con base en la ecuación (\ref{proof2:Varianza}) se podrá definir el radio espectral dado por la Ley Circular de Girko\footnote{Considerando que $A$ es un caso particular que cumple la Ley Circular de Girko; tiene entradas i.i.d. con media cero, con varianza $\sigma^2$ y con la diagonal fija a $-d$.} \cite{girko1985circular} que así mismo debe ser menor a $|-d|$, es decir
+		¿Por qué se utiliza la norma euclidiana como referente para el radio espectral de las matrices aleatorias? Si se considera un vector unitario arbitrario $\mathbf{u}$, es de interés saber cual es el efecto que ejerce la matriz $\hat{B}$ sobre dicho vector. Para ello extendemos los procedimientos anteriores pero ahora enfocados a como será el vector $\hat{B}\textbf{u}$ en términos de su tamaño, entonces hay que encontrar nuevamente el valor esperado de $\|\hat{B}\textbf{u}\|$ y sus fluctuaciones. Se define el producto escalar del renglón arbitrario de $\hat{B}$ por $\textbf{u}$
+		$$S_i = \frac{1}{n}\sum_{j=1}^n b_{ij}u_j$$
+		Nuevamente se utiliza el \textit{Teorema Central del Límite} para conocer cual es el valor esperado de $\|\hat{B}\textbf{u}\|^2$ con sus fluctuaciones, para posteriormente conocer los de $\|\hat{B}\textbf{u}\|$
+		$$\mathbb{E}[\|\hat{B}\textbf{u}\|^2]=\sum_{j=1}^n\mathbb{E}[|S_j|^2]=\frac{1}{n}\sum_{j=1}^n|b_{ij}u_j|^2=\frac{n\sigma^2}{n}\cdot\|\textbf{u}\|^2=\sigma^2$$
+		resultado equivalente al valor esperado del renglón arbitrario. Ahora se calcula el segundo momento de $\|\hat{B}\textbf{u}\|^2$ para poder determinar la varianza 
+		$$\mathbb{E}\left [\left (\|\hat{B}\textbf{u}\|^2\right )^2\right ]=\frac{1}{n}\sum_{j=1}^n\mathbb{E}\left [|S_i|^4\right ]=\frac{1}{n}\sum_{j=1}^n\mathbb{E}\left [|b_{ij}u_j|^4\right ]=\frac{n\left (\|\textbf{u}\|^2\right )^2}{n}\cdot3\sigma^4=3\sigma^4$$
+		resultado que también es equivalente al cuarto momento del renglón arbitrario. Por lo tanto la varianza y desviación estándar de la norma cuadrada son 
+		$$\Var\left (\|\hat{B}\textbf{u}\|^2\right )=2\sigma^2,\qquad\text{std}\left (\|\hat{B}\textbf{u}\|^2\right )=\sigma\sqrt{2}$$
+		Con estos elementos se pueden conocer las características de $\|\hat{B}\textbf{u}\|$ y haciendo los procedimientos mostrados anteriormente se concluye que su valor esperado es $\sigma$ y sus fluctuaciones son de orden $1/\sqrt{n}$. Por lo tanto el efecto que ejerce la matriz $\hat{B}$ sobre cualquier vector unitario es la de estirarlos en función de $\sigma$, ya sea que $\sigma>1$, $\sigma<1$ ó dejarlos invariantes en magnitud con $\sigma=1$.
+		\newpage
+		Considerando en particular la ecuación de valores propios $\hat{B}\vec{v}=\lambda\vec{v}$, si normalizamos al vector propio asociado entonces la norma euclidiana será 
+		$$\|\hat{B}\textbf{v}\|=|\hat{\lambda}|\leq\sigma+\mathcal{O}(1/\sqrt{n})$$
+		donde $|\hat{\lambda}|=\frac{|\lambda|}{\|v\|^2}$ y nótese que es un vector propio arbitrario, esto implica que todos los vectores propios son estirados o contraídos en diversas direcciones pero restringidos al valor del radio espectral $\sigma$, es decir, que el máximo valor/vector propio solo podrá tener magnitud $\sigma$. Al considerar la matriz $B$ sin reescalar y tomando el resultado (\ref{proof2:norma}), se concluye finalmente que el radio espectral de esta matriz es
+		$$\rho(B)=\sigma\sqrt{nC}$$
+		y es más grande conforme $n\to\infty$. Ahora como último paso de esta prueba hay que considerar a las matrices de May, que son idénticas a la matriz $B$ solo que con el valor $-d$ en la diagonal. Eso significa que $A$ tendrá una distribución uniforme de valores propios alrededor de $-d$, entonces el radio espectral en este caso será
+		$$\rho(A)=-d+\sigma\sqrt{nC}$$
+		y de aquí se podrá definir la relación de May para delimitar la estabilidad de sus sistemas
 		\begin{equation}\label{eqn:radioMayGirko}
-			\sigma\sqrt{NC}<d
+			\sigma\sqrt{nC}<d
 		\end{equation}
-		Eso implica que el radio de Gershgorin máximo para alojar valores propios en el  semiplano negativo de $\mathbb{C}$ es equivalente al radio espectral de Girko justificando el hallazgo de May (\ref{eqn:paramMay}). Por lo tanto existe una singularidad en $R_i=d$ y para valores $R_i>d$, los discos de Gershgorin son lo suficientemente grandes para alojar valores propios con parte real positiva dando lugar a sistemas inestables. 
-	\end{proof}
+		mientras el radio espectral sea menor al valor absoluto de la diagonal, se podrá garantizar que el sistema es estable, y cuando $n\to\infty$ las fluctuaciones tienden a cero lo cual hace cada vez más abrupta la caída de estabilidad.
+		\end{proof}
 \end{proposición}
-¿Cuál es el sentido de esta prueba? Mostrar al lector en un primer alcance que el parámetro de May por sí solo no se ajustará a la estabilidad de los sistemas de Lotka-Volterra generalizados. El equivalente de las matrices de May son las Jacobianas (\ref{eqn:MartizJacobiana}) las cuales tienen diagonales heterogéneas que bien pueden tener elementos positivos o negativos según la Proposición \ref{prop:DiagonalI}. Dichos elementos dependen completamente de los coeficientes de la matriz de incidencias y de las entradas del punto fijo asociado, por consiguiente la estabilidad de los sistemas de Lotka-Volterra generalizado dependerá completamente de las interacciones que se guardan en $\Lambda$\footnote{Los coeficientes de esta matriz inducen al punto fijo que bien puede ser estable o inestable.}. Más tarde, en el siguiente capítulo se retomará este punto.\\
+¿Cuál es el sentido de esta prueba? Mostrar al lector como es la distribución de valores propios en matrices de May y que se puede restringir su posición con base en la relación (\ref{eqn:radioMayGirko}), lo cual indica que los valores propios dependen directamente de como son las entradas de $A$. Análogamente con las matrices Jacobianas (\ref{eqn:Jacobiana}) del sistema LV generalizado, es de interés conocer ahora el $\max(\lambda_\mathcal{J})$ y en concreto la Re$(\lambda_{\max}(\mathcal{J}))$ que no es el valor propio de mayor magnitud sino el más cercano a cero. La diagonal en estas matrices es \textit{heterogénea} lo cual indica que la distribución de valores propios estará dispersa en función de estos coeficientes, ya no será una distribución uniforme. Para este caso se tendrán que abordar otras estrategias para delimitar la estabilidad de los sistemas.\\
 \\
-El trabajo de Allesina se extiende al de May al considerar que la matriz de interacciones $A$ esta construida con la diagonal $a_{ii}=-d\in\mathbb{R}$ para toda $a_{ii}\in A$ y con una distribución bivariante, es decir, que la parte triangular superior de $A$ se mapea con una dstribución normal centrada en $\mu_1$ y con desviación estándar $\sigma_1$ mientras que su parte inferior se mapea con otra distribución normal centrada en $\mu_2$ y con desviación estándar $\sigma_2$. Esto genera cambios importantes en la estabilidad del sistema resultante, especialmente en su parámetro de transición \cite{allesina2012stability, may1972will}.
+Aunque tener la diagonal fijada a un valor constante $-d$ resulta conveniente para poder definir un radio espectral de una distribución uniforme, las implicaciones ecológicas son cuanto menos extrañas. La matriz Jacobiana (\ref{eqn:MartizJacobiana}) nos ha mostrado que en la diagonal se evalúan los elementos del punto fijo y se multiplican por el factor $r_i/K_i$. La diagonal constante da a entender que todas las especies del sistema llegan a estabilizarse en un solo valor y es muy poco probable que pase. En conclusión, fijar la diagonal es conveniente pero poco realista.
 
 \subsection{Distribución de valores propios}
 
-Debido a que todos los elementos de la diagonal de las matrices de May están fijadas en $-d$ significa que todos sus valores propios estarán en una vecindad alrededor de este centro que irá variando su tamaño en función $\sigma$, $p$ o $N$ considerando el parámetro de May (\ref{eqn:radioMayGirko}). El radio de la Ley Circular de May es $d$ y corresponde al radio más grande posible para considerar sistemas estables; sirve como un distintivo límite para visualizar los valores propios del sistema e identificar a simple vista si es estable o no. Las interacciones que se contemplan en esta matriz son aleatorias y por lo tanto ``independientes'', pues no hay correlación entre ellos e implica que las especies interactúan sin restricciones ni patrones claros, sino más bien en un supuesto desorden o caos.\\
+Los elementos de las matrices de May son variables independientes e idénticamente distribuidas, además las conexiones entre nodos son puramente aleatorias, no existe una estructura subyacente sobre la forma de las interacciones: entonces las especies interactúan sin restricciones ni patrones claros, sino más bien de forma desordenada y/o caótica. En consecuencia, el efecto que ejercen estas matrices sobre sus vectores propios asociados: no tiene una dirección preferencial y por tal razón los valores propios quedan distribuidos de forma isotrópica en el disco de Girko. ¿Qué pasará con la Ley Circular cuando se consideran matrices estructuralmente simétricas? Aunque se sigan considerando variables i.i.d. en este caso ya existe una estructura subyacente de las interacciones: la posibilidad de que para cualquier $a_{ij}\in A$, existirá su elemento transpuesto $a_{ji}$ (no necesariamente igual) ó $a_{ij}=a_{ji}=0$.
 \\
-Si se consideran matrices de May que sean estructuralmente simétricas, también cumplen la Ley Circular tal y como las matrices completamente aleatorias (\ref{eqn:sistemasMay}). Sus distribuciones de valores propios se siguen ajustando al círculo de centro $-d$ y radio $d$. Sin embargo, más adelante se revisará que para ciertos valores de $\sigma$, la estabilidad ya no cumple el parámetro (\ref{eqn:radioMayGirko}) sugiriendo que hay otras condiciones que determinan la estabilidad del sistema. En la figura (\ref{fig:LeyCircularMay}) se encuentra la distribución de valores propios para una matriz de interacciones estructuralmente simétrica y para otra completamente aleatoria. 
+\\
+La simetría estructural esta más relacionado con el trabajo y resultados de Allesina \cite{allesina2012stability} donde define un criterio de estabilidad cuando las interacciones tienen correlaciones diferentes de cero\footnote{Criterio que no se contempla en sistemas de May.}. Las consecuencias de esta estructura es que obliga a los valores propios a concentrarse en alguno de los ejes de $\mathbb{C}$, rompiendo con la isotropía observada en sistemas de May; por lo tanto las matrices estructuralmente simétricas si ejercen orientaciones privilegiadas en sus vectores propios asociados. 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.2]{../Imagenes/LeyCircularMay}
-	\caption{Distribución de valores propios que cumplen la Ley Circular de May. Para ambos sistemas se consideró $N=100$, una distribución normal centrada en $\mu=0$ y con $\sigma=0.2$ para una conectancia $C=\frac{1}{\sigma^2 N}-0.03$. (\textbf{A}) Considerando una matriz de interacciones estructuralmente simétrica. (\textbf{B}) Considerando una matriz de interacciones puramente aleatoria.}
+	\caption{Distribución de valores propios en sistemas estructuralmente simétricos y puramente aleatorios. En ambos casos se consideró $N=100$, una distribución normal centrada en $\mu=0$ y con $\sigma=0.2$, para una conectancia $C=\frac{1}{\sigma^2 N}-0.03$.}
 	\label{fig:LeyCircularMay}
 \end{figure}
 
-Cada sistema se ha considerado para $N=100$ especies ($A\in M_{100}(\mathbb{R})$), considerando una distribución normal centrada en $\mu=0$ con $\sigma=0.2$ y para una conectancia de $C=\frac{1}{\sigma^2 N}-0.03$. Si el sistema resultante no es estable entonces los valores propios se salen del confinamiento circular haciendo que algunos de ellos tengan parte real positiva. Para que esto ocurra se debe de considerar el contrario de la desigualdad (\ref{eqn:estabilidadMay}). 
-\newpage
-Para el sistema de Allesina \cite{allesina2012stability} se ha mencionado anteriormente que se consideran matrices de interacciones mapeadas a partir de una distribución bivariante. De esta forma nos permite realizar un cálculo de correlación $\rho$ entre ambas matrices triangulares de la matriz de interacciones. Al calcular la correlación entre ambas partes de la matriz de interacciones se define $a=1+\rho$ y $b=1-\rho$ como semi ejes de la elipse y dependiendo de como se encuentren los signos del resto de la matriz de interacciones es que se verán dos diferentes formas de distribución elíptica. Otro aspecto de esta matriz es que Allesina también consdiera a la diagonal fijada a un valor $A_{ii}= -d$ lo que implica que los valores propios estarán en la vecindad elíptica alrededor de $-d$.
+La atenuación de la isotropía de los valores propios será más visible cuando la magnitud de las interacciones sea mayor, ya que da más apertura a que las correlaciones aumenten haciendo que la distribución se concentre sobre los ejes. En la Fig. (\ref{fig:LeyCircularMay}) se alcanza a percibir que la distribución de valores propios no es uniforme en el sistema estructuralmente simétrico en comparación con el puramente aleatorio. 
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[scale=0.2]{../Imagenes/LeyCircularMay2.png}
+	\caption{Distribución de valores propios en sistemas estructuralmente simétricos y puramente aleatorios. En ambos casos se consideró $N=100$, una distribución normal centrada en $\mu=0$ y con $\sigma=0.4$, para una conectancia $C=\frac{1}{\sigma^2 N}-0.03$.}
+	\label{fig:LeyCircularMay2}
+\end{figure}
+
+Este efecto se verá cada vez más marcado conforme $\sigma$ vaya aumentando. En la Fig. (\ref{fig:LeyCircularMay2}) ambos sistemas tienen valores propios con parte real negativa indicando que son estables, el estructuralmente simétrico los concentra cada vez más en sus ejes y el círculo ya no es adecuado para representar su distribución. Ambos círculos tienen mismo radio solo que los valores propios del caso de la izquierda se encuentran más dispersos, y se irá haciendo más evidente en función del aumento de $\sigma$.\\
+\\
+Entrando en la descripción de los sistemas de Allesina, son semejantes a los de May salvo por una gran diferencia: las interacciones ahora vienen de una distribución bivariante. Para ello es imprescindible que las matrices de Allesina sean estructuralmente simétricas, de este modo se permite realizar un cálculo de correlación $\rho$ entre la parte triangular superior y la inferior para todo elemento diferente de cero. Este coeficiente de correlación define los semi ejes $a=1+\rho$ y $b=1-\rho$ de una elipse que será la nueva forma de distribución de los valores propios. Dependiendo del signo de $\rho$ se podrán observar elipses horizontales o verticales. Otro aspecto de esta matriz es que Allesina también consdiera a la diagonal fijada a un valor $-d$ lo que implica que los valores propios estarán en la vecindad elíptica alrededor de este valor.
 \\
 \\
 La forma de la elipse, que podrá ser vertical u horizontal vendrá dada por el valor de la correlación, si se tienen interacciones ``presa-depredador'' $(+-)$ o $(-+)$ entonces la distribución elíptica resultante será vertical, en este caso habría que escoger una distribución normal con $\mu_1<0$ y otra con $\mu_2>0$. Por otro lado si las interacciones son de cooperación $(++)$ y/o competencia $(--)$ entonces la distribución elíptica será horizontal.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.14)  25 SEP 2025 16:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.14)  4 OCT 2025 23:05
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1768,7 +1768,7 @@ LaTeX Info: Redefining \sptext on input line 1.
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 4096) has occurred while \output is active []
 
 
 
@@ -1847,7 +1847,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 38--42
 LaTeX Info: Redefining \. on input line 42.
 LaTeX Info: Redefining \% on input line 42.
 [2]
-<../Imagenes/Competencia de especies.png, id=244, 1806.75pt x 1606.0pt>
+<../Imagenes/Competencia de especies.png, id=246, 1806.75pt x 1606.0pt>
 File: ../Imagenes/Competencia de especies.png Graphic file (type png)
 <use ../Imagenes/Competencia de especies.png>
 Package pdftex.def Info: ../Imagenes/Competencia de especies.png  used on input
@@ -1883,7 +1883,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package svg Info: Last page of `./svg-inkscape/karateLu_svg-tex.pdf' is 1 on in
 put line 128.
 (svg-inkscape/karateLu_svg-tex.pdf_tex
-<./svg-inkscape/karateLu_svg-tex.pdf, id=264, page=1, 451.6875pt x 451.6875pt>
+<./svg-inkscape/karateLu_svg-tex.pdf, id=266, page=1, 451.6875pt x 451.6875pt>
 File: ./svg-inkscape/karateLu_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/karateLu_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/karateLu_svg-tex.pdf , page1 used on in
@@ -1930,7 +1930,7 @@ Package wrapfig Warning: Collision between wrapping environments on input line
 Package svg Info: Last page of `./svg-inkscape/red10Lu_svg-tex.pdf' is 1 on inp
 ut line 151.
 (svg-inkscape/red10Lu_svg-tex.pdf_tex
-<./svg-inkscape/red10Lu_svg-tex.pdf, id=292, page=1, 451.6875pt x 451.6875pt>
+<./svg-inkscape/red10Lu_svg-tex.pdf, id=294, page=1, 451.6875pt x 451.6875pt>
 File: ./svg-inkscape/red10Lu_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/red10Lu_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/red10Lu_svg-tex.pdf , page1 used on inp
@@ -1960,7 +1960,7 @@ Package svg Info: Last page of `./svg-inkscape/Red10DirLu_svg-tex.pdf' is 1 on
 input line 193.
 
 (svg-inkscape/Red10DirLu_svg-tex.pdf_tex
-<./svg-inkscape/Red10DirLu_svg-tex.pdf, id=305, page=1, 451.6875pt x 451.6875pt
+<./svg-inkscape/Red10DirLu_svg-tex.pdf, id=307, page=1, 451.6875pt x 451.6875pt
 >
 File: ./svg-inkscape/Red10DirLu_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/Red10DirLu_svg-tex.pdf, page 1>
@@ -2012,7 +2012,7 @@ LaTeX Info: Redefining \% on input line 245.
 Package svg Info: Last page of `./svg-inkscape/RedIncidencias_svg-tex.pdf' is 1
  on input line 247.
  (svg-inkscape/RedIncidencias_svg-tex.pdf_tex
-<./svg-inkscape/RedIncidencias_svg-tex.pdf, id=346, page=1, 451.6875pt x 451.68
+<./svg-inkscape/RedIncidencias_svg-tex.pdf, id=348, page=1, 451.6875pt x 451.68
 75pt>
 File: ./svg-inkscape/RedIncidencias_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/RedIncidencias_svg-tex.pdf, page 1>
@@ -2075,13 +2075,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 275--285
 LaTeX Info: Redefining \. on input line 285.
 LaTeX Info: Redefining \% on input line 285.
 [11]
-<../Imagenes/Cooperacion de especies.png, id=374, 2007.5pt x 1003.75pt>
+<../Imagenes/Cooperacion de especies.png, id=376, 2007.5pt x 1003.75pt>
 File: ../Imagenes/Cooperacion de especies.png Graphic file (type png)
 <use ../Imagenes/Cooperacion de especies.png>
 Package pdftex.def Info: ../Imagenes/Cooperacion de especies.png  used on input
  line 322.
 (pdftex.def)             Requested size: 481.80984pt x 240.90492pt.
-<../Imagenes/STrestoInteracciones.png, id=378, 2409.0pt x 803.0pt>
+<../Imagenes/STrestoInteracciones.png, id=380, 2409.0pt x 803.0pt>
 File: ../Imagenes/STrestoInteracciones.png Graphic file (type png)
 <use ../Imagenes/STrestoInteracciones.png>
 Package pdftex.def Info: ../Imagenes/STrestoInteracciones.png  used on input li
@@ -2162,213 +2162,216 @@ Underfull \hbox (badness 10000) in paragraph at lines 369--372
 
 
 
-LaTeX Info: Redefining \. on input line 391.
-LaTeX Info: Redefining \% on input line 391.
+LaTeX Info: Redefining \. on input line 387.
+LaTeX Info: Redefining \% on input line 387.
 [17]
 
-LaTeX Info: Redefining \. on input line 420.
-LaTeX Info: Redefining \% on input line 420.
+LaTeX Info: Redefining \. on input line 417.
+LaTeX Info: Redefining \% on input line 417.
 [18]
 
-LaTeX Info: Redefining \. on input line 452.
-LaTeX Info: Redefining \% on input line 452.
+LaTeX Info: Redefining \. on input line 443.
+LaTeX Info: Redefining \% on input line 443.
 [19]
-
-LaTeX Warning: Reference `sec:Jacobiano' on page 20 undefined on input line 457
-.
-
-
-LaTeX Warning: Reference `eqn:paramMay' on page 20 undefined on input line 459.
-
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 455--460
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 455--460
+Underfull \hbox (badness 10000) in paragraph at lines 446--449
 
  []
 
 
 
-LaTeX Info: Redefining \. on input line 462.
-LaTeX Info: Redefining \% on input line 462.
+LaTeX Info: Redefining \. on input line 449.
+LaTeX Info: Redefining \% on input line 449.
 [20]
 
-LaTeX Warning: Reference `eqn:paramMay' on page 21 undefined on input line 464.
+LaTeX Warning: Reference `eqn:paramMay' on page 21 undefined on input line 452.
 
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 464--467
-
- []
-
-
-LaTeX Warning: Reference `eqn:paramMay' on page 21 undefined on input line 473.
-
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 469--474
+Underfull \hbox (badness 10000) in paragraph at lines 452--456
 
  []
 
 
+LaTeX Warning: Reference `eqn:paramMay' on page 21 undefined on input line 462.
 
-LaTeX Info: Redefining \. on input line 476.
-LaTeX Info: Redefining \% on input line 476.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 458--463
+
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 468.
+LaTeX Info: Redefining \% on input line 468.
 [21]
 
-LaTeX Warning: Reference `eqn:paramMay' on page 22 undefined on input line 497.
+LaTeX Info: Redefining \. on input line 481.
+LaTeX Info: Redefining \% on input line 481.
+[22]
 
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 500--503
+LaTeX Info: Redefining \. on input line 499.
+LaTeX Info: Redefining \% on input line 499.
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 513--516
 
  []
 
-
-
-LaTeX Info: Redefining \. on input line 503.
-LaTeX Info: Redefining \% on input line 503.
-[22]
-<../Imagenes/LeyCircularMay.png, id=498, 2208.25pt x 1003.75pt>
+<../Imagenes/LeyCircularMay.png, id=491, 2208.25pt x 1003.75pt>
 File: ../Imagenes/LeyCircularMay.png Graphic file (type png)
 <use ../Imagenes/LeyCircularMay.png>
-Package pdftex.def Info: ../Imagenes/LeyCircularMay.png  used on input line 511
+Package pdftex.def Info: ../Imagenes/LeyCircularMay.png  used on input line 525
 .
 (pdftex.def)             Requested size: 441.64218pt x 200.74644pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 506--515
+Underfull \hbox (badness 10000) in paragraph at lines 519--529
 
  []
 
+
+
+LaTeX Info: Redefining \. on input line 529.
+LaTeX Info: Redefining \% on input line 529.
+[24]
+<../Imagenes/LeyCircularMay2.png, id=498, 2208.25pt x 1003.75pt>
+File: ../Imagenes/LeyCircularMay2.png Graphic file (type png)
+<use ../Imagenes/LeyCircularMay2.png>
+Package pdftex.def Info: ../Imagenes/LeyCircularMay2.png  used on input line 53
+4.
+(pdftex.def)             Requested size: 441.64218pt x 200.74644pt.
+<../Imagenes/LeyElipticaAllesina.png, id=500, 2208.25pt x 803.0pt>
+File: ../Imagenes/LeyElipticaAllesina.png Graphic file (type png)
+<use ../Imagenes/LeyElipticaAllesina.png>
+Package pdftex.def Info: ../Imagenes/LeyElipticaAllesina.png  used on input lin
+e 547.
+(pdftex.def)             Requested size: 441.64218pt x 160.59715pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 539--551
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 539--551
+
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 551.
+LaTeX Info: Redefining \% on input line 551.
+[25 <../Imagenes/LeyCircularMay.png>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: Reference `eqn:estabilidadMay' on page 23 undefined on input lin
-e 516.
-
-
-
-LaTeX Info: Redefining \. on input line 517.
-LaTeX Info: Redefining \% on input line 517.
-[23]
-
-LaTeX Info: Redefining \. on input line 517.
-LaTeX Info: Redefining \% on input line 517.
-[24 <../Imagenes/LeyCircularMay.png>]
-<../Imagenes/LeyElipticaAllesina.png, id=510, 2208.25pt x 803.0pt>
-File: ../Imagenes/LeyElipticaAllesina.png Graphic file (type png)
-<use ../Imagenes/LeyElipticaAllesina.png>
-Package pdftex.def Info: ../Imagenes/LeyElipticaAllesina.png  used on input lin
-e 524.
-(pdftex.def)             Requested size: 441.64218pt x 160.59715pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 518--528
+Underfull \hbox (badness 10000) in paragraph at lines 552--555
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 529--532
-
- []
-
-
-Underfull \vbox (badness 3049) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-LaTeX Info: Redefining \. on input line 532.
-LaTeX Info: Redefining \% on input line 532.
-[25 <../Imagenes/LeyElipticaAllesina.png>]
-<../Imagenes/TransicionMayDirLin.png, id=516, 1806.75pt x 1405.25pt>
+LaTeX Info: Redefining \. on input line 555.
+LaTeX Info: Redefining \% on input line 555.
+[26 <../Imagenes/LeyCircularMay2.png>]
+<../Imagenes/TransicionMayDirLin.png, id=511, 1806.75pt x 1405.25pt>
 File: ../Imagenes/TransicionMayDirLin.png Graphic file (type png)
 <use ../Imagenes/TransicionMayDirLin.png>
 Package pdftex.def Info: ../Imagenes/TransicionMayDirLin.png  used on input lin
-e 537.
+e 560.
 (pdftex.def)             Requested size: 251.52443pt x 195.61865pt.
 
-Overfull \hbox (9.676pt too wide) in paragraph at lines 537--538
+Overfull \hbox (9.676pt too wide) in paragraph at lines 560--561
  [] 
  []
 
 
-Package wrapfig Warning: Collision between wrapping environments on input line 
-547.
 
-<../Imagenes/TransicionMayDirLog.png, id=520, 1806.75pt x 1405.25pt>
+LaTeX Info: Redefining \. on input line 566.
+LaTeX Info: Redefining \% on input line 566.
+[27 <../Imagenes/LeyElipticaAllesina.png>]
+
+Package wrapfig Warning: Collision between wrapping environments on input line 
+570.
+
+<../Imagenes/TransicionMayDirLog.png, id=519, 1806.75pt x 1405.25pt>
 File: ../Imagenes/TransicionMayDirLog.png Graphic file (type png)
 <use ../Imagenes/TransicionMayDirLog.png>
 Package pdftex.def Info: ../Imagenes/TransicionMayDirLog.png  used on input lin
-e 548.
+e 571.
 (pdftex.def)             Requested size: 251.52443pt x 195.61865pt.
 
-Overfull \hbox (9.676pt too wide) in paragraph at lines 548--549
+Overfull \hbox (9.676pt too wide) in paragraph at lines 571--572
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 543--554
+Underfull \hbox (badness 10000) in paragraph at lines 566--577
 
  []
 
 
+Package wrapfig Warning: Stationary wrapfigure forced to float on input line 57
+7.
 
-LaTeX Info: Redefining \. on input line 554.
-LaTeX Info: Redefining \% on input line 554.
-[26 <../Imagenes/TransicionMayDirLin.png>]
-
-Package wrapfig Warning: Stationary wrapfigure forced to float on input line 55
-4.
-
-<../Imagenes/TransicionDirvsNoDir.png, id=527, 3011.25pt x 1204.5pt>
+<../Imagenes/TransicionDirvsNoDir.png, id=522, 3011.25pt x 1204.5pt>
 File: ../Imagenes/TransicionDirvsNoDir.png Graphic file (type png)
 <use ../Imagenes/TransicionDirvsNoDir.png>
 Package pdftex.def Info: ../Imagenes/TransicionDirvsNoDir.png  used on input li
-ne 559.
+ne 582.
 (pdftex.def)             Requested size: 496.83482pt x 198.73392pt.
 
-Overfull \hbox (13.13795pt too wide) in paragraph at lines 559--560
+Overfull \hbox (13.13795pt too wide) in paragraph at lines 582--583
  [][] 
  []
 
-<../Imagenes/TransicionMaySigma.png, id=531, 2810.5pt x 1204.5pt>
+<../Imagenes/TransicionMaySigma.png, id=526, 2810.5pt x 1204.5pt>
 File: ../Imagenes/TransicionMaySigma.png Graphic file (type png)
 <use ../Imagenes/TransicionMaySigma.png>
 Package pdftex.def Info: ../Imagenes/TransicionMaySigma.png  used on input line
- 569.
+ 592.
 (pdftex.def)             Requested size: 463.7125pt x 198.73392pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 556--576
+Underfull \hbox (badness 10000) in paragraph at lines 579--599
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 556--576
+Underfull \hbox (badness 10000) in paragraph at lines 579--599
 
  []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 576.
-LaTeX Info: Redefining \% on input line 576.
-[27 <../Imagenes/TransicionMayDirLog.png> <../Imagenes/TransicionDirvsNoDir.png
->]
 
-LaTeX Info: Redefining \. on input line 576.
-LaTeX Info: Redefining \% on input line 576.
-[28 <../Imagenes/TransicionMaySigma.png>]
+
+LaTeX Info: Redefining \. on input line 599.
+LaTeX Info: Redefining \% on input line 599.
+[28 <../Imagenes/TransicionMayDirLin.png> <../Imagenes/TransicionMayDirLog.png>
+]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+
+LaTeX Info: Redefining \. on input line 599.
+LaTeX Info: Redefining \% on input line 599.
+[29 <../Imagenes/TransicionDirvsNoDir.png>]
+
+LaTeX Info: Redefining \. on input line 599.
+LaTeX Info: Redefining \% on input line 599.
+[30 <../Imagenes/TransicionMaySigma.png>]
 <../Imagenes/TransicionσDirvsNoDir.png, id=544, 1806.75pt x 1405.25pt>
 File: ../Imagenes/TransicionσDirvsNoDir.png Graphic file (type png)
 <use ../Imagenes/TransicionσDirvsNoDir.png>
 Package pdftex.def Info: ../Imagenes/TransicionσDirvsNoDir.png  used on input 
-line 578.
+line 601.
 (pdftex.def)             Requested size: 251.52443pt x 195.61865pt.
 
-Overfull \hbox (9.676pt too wide) in paragraph at lines 578--579
+Overfull \hbox (9.676pt too wide) in paragraph at lines 601--602
  [] 
  []
 
@@ -2376,10 +2379,10 @@ Overfull \hbox (9.676pt too wide) in paragraph at lines 578--579
 File: ../Imagenes/Transicionσ√NC02.png Graphic file (type png)
 <use ../Imagenes/Transicionσ√NC02.png>
 Package pdftex.def Info: ../Imagenes/Transicionσ√NC02.png  used on input lin
-e 590.
+e 613.
 (pdftex.def)             Requested size: 481.80984pt x 208.78426pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 585--594
+Underfull \hbox (badness 10000) in paragraph at lines 608--617
 
  []
 
@@ -2387,21 +2390,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 585--594
 File: ../Imagenes/Transicionσ√NC06.png Graphic file (type png)
 <use ../Imagenes/Transicionσ√NC06.png>
 Package pdftex.def Info: ../Imagenes/Transicionσ√NC06.png  used on input lin
-e 598.
+e 621.
 (pdftex.def)             Requested size: 481.80984pt x 208.78426pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-LaTeX Info: Redefining \. on input line 602.
-LaTeX Info: Redefining \% on input line 602.
-[29 <../Imagenes/TransicionσDirvsNoDir.png> <../Imagenes/Transicionσ√NC02.p
+LaTeX Info: Redefining \. on input line 625.
+LaTeX Info: Redefining \% on input line 625.
+[31 <../Imagenes/TransicionσDirvsNoDir.png> <../Imagenes/Transicionσ√NC02.p
 ng>])
 
 LaTeX Info: Redefining \. on input line 100.
 LaTeX Info: Redefining \% on input line 100.
-[30 <../Imagenes/Transicionσ√NC06.png>]
+[32 <../Imagenes/Transicionσ√NC06.png>]
 Overfull \hbox (13.05043pt too wide) in paragraph at lines 109--109
 []\OT1/cmr/m/n/10.95 Robert M May. ``Will a lar-ge com-plex sys-tem be sta-ble?
 '' En: \OT1/cmr/m/it/10.95 Na-tu-re \OT1/cmr/m/n/10.95 238.5364 (1972), p^^Sags
@@ -2410,7 +2413,7 @@ Overfull \hbox (13.05043pt too wide) in paragraph at lines 109--109
 
 
 
-[31
+[33
 
 
 
@@ -2443,13 +2446,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43493 strings out of 473899
- 861955 string characters out of 5725556
+ 43492 strings out of 473899
+ 862044 string characters out of 5725556
  1956960 words of memory out of 5000000
- 65498 multiletter control sequences out of 15000+600000
+ 65499 multiletter control sequences out of 15000+600000
  573263 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 109i,24n,117p,1234b,2313s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 109i,17n,117p,1195b,2313s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
 m/cmbx10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public
 /amsfonts/cm/cmbx12.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/t
@@ -2457,30 +2460,31 @@ ype1/public/amsfonts/cm/cmbx8.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKT
 eX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Rodrigo/AppData/Local/P
 rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Rodrigo/AppD
 ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Use
-rs/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.
-pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
-/cm/cmmi12.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmmi6.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/Rodrigo/AppData/Local/Pr
-ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Rodrigo/AppDat
-a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Rodr
-igo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/U
-sers/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.
-pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
-/cm/cmr9.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmsl10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Rodrigo/AppData/Local/Pr
-ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Rodrigo/AppDat
-a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Users/Rodr
-igo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:
-/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmt
-t10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
-onts/symbols/msbm10.pfb>
-Output written on main.pdf (45 pages, 3285045 bytes).
+rs/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cm
+ex9.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmmi10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/
+public/amsfonts/cm/cmmi12.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Rodrigo/AppData/Local/Program
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Rodrigo/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/Rodrigo/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users
+/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb
+><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
+/cmr6.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmr8.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/
+public/amsfonts/cm/cmr9.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Users/Rodrigo/AppData/Local/Programs
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Rodrigo/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Rodrigo/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users
+/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb
+><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
+/cmti10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmtt10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (47 pages, 3435193 bytes).
 PDF statistics:
- 710 PDF objects out of 1000 (max. 8388607)
- 145 named destinations out of 1000 (max. 500000)
- 227 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 711 PDF objects out of 1000 (max. 8388607)
+ 143 named destinations out of 1000 (max. 500000)
+ 232 words of extra memory for PDF output out of 10000 (max. 10000000)
 
