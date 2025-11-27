@@ -345,8 +345,10 @@ Por último se ha explorado en un primer nivel que la estabilidad puede depender
 \section{Puntos fijos}\label{subsec:PuntosFijos}
 
 En este punto conviene realizar un análisis sobre los puntos fijos del sistema, ya que  es el puente entre $\Lambda$ con la tupla $(p,\sigma,N)$ y la matriz Jacobiana con su distribución espectral, misma que define la estabilidad del sistema. Las diferentes configuraciones de la tupla generarán a su vez diversas configuraciones de $\Lambda$ que devengan en puntos fijos estables o inestables. Por lo tanto será indispensable hallar dichas configuraciones para obtener una noción del mapa de estabilidad del sistema. Para comenzar, es necesario hallar los puntos fijos que se obtienen al resolver el conjunto de ecuaciones que se encuentra entre paréntesis del sistema (\ref{eqn:LK})
-$$1-\frac{\sum_{j=1}^N\alpha_{ij}x_j}{K_i}=0$$
-Es posible resolverlo bajo diversas restricciones, por ejemplo asumiendo que algunas especies no sobreviven y resolver para el subconjunto que no contempla dicha especie, es decir, asumiendo $x_k=0$ para alguna $k\in\{1,...,N\}$. Pero el caso de interés es asumiendo que todas las poblaciones sobreviven; de ese modo las ecuaciones se pueden reescribir de la siguiente manera
+\begin{equation}\label{eqn:EcsPuntoFijo}
+	1-\frac{\sum_{j=1}^N\alpha_{ij}x_j}{K_i}=0
+\end{equation}
+Es posible resolverlo bajo diversas restricciones, por ejemplo asumiendo que algunas especies no sobreviven y resolver para el subconjunto que no contempla dicha especie, es decir, asumiendo $x_k=0$ para alguna (o varias) $k\in\{1,...,N\}$. Pero el caso de interés es asumiendo que todas las poblaciones sobreviven; de ese modo las ecuaciones se pueden reescribir de la siguiente manera
 $$\Lambda X^*=\mathrm{K},\qquad\text{con }\mathrm{K}=(K_1,...,K_n)$$
 %Aqui hay un argumento fuerte para la estabilidad en función de la tupla.
 entonces hallar el punto fijo es resolver el sistema $X^*=\Lambda^{-1}\mathrm{K}$. Gracias a que la diagonal esta fijada al valor $d=1$, mitiga la probabilidad de que sea singular y garantiza que sea invertible con alta probabilidad. Es de interés que el resultado del punto fijo sea positivo puesto que no tiene sentido físico considerar poblaciones negativas (que probablemente devengan en una dinámica inestable). El sistema hasta ahora no garantiza que $x_i^*>0$ para toda $x_i^*\in X^*$, puesto que aunque $\mathrm{K}>0$, las entradas de $\Lambda$ pueden ser positivas y negativas con una misma probabilidad. Si se considera a $\mathrm{K}$ con entradas constantes, es decir, $\mathrm{K}=k\vec{1}$ con $k>0$ entonces la distribución de $X^*$ puede darse a su alrededor con base en $(p,\sigma,N)$. \\
@@ -438,7 +440,9 @@ De la matriz Jacobiana se puede observar como todas sus entradas voltean el sign
 		Finalmente la varianza de $|W|$ es
 		$$\Var(|W|)=p\sigma^2-p^2\sigma^2\frac{2}{\pi}$$
 		Entonces la varianza de los radios de Gershgorin queda envuelta en la siguiente expresión
-		$$\Var(R_i)=(N-1)p\sigma^2\left (1-\frac{2p}{\pi}\right )$$
+		\begin{equation}\label{proof1:paramEstabilidad}
+			\Var(R_i)=(N-1)p\sigma^2\left (1-\frac{2p}{\pi}\right )
+		\end{equation}
 		y mientras sea menor a 1 se puede garantizar que los discos de Gershgorin van a cumplir (\ref{proof1:Desigualdad}) y en consecuencia los valores propios de $\mathcal{J}$ estarán contenidos en el semiplano negativo de $\mathbb{C}$. Sin embargo esta prueba tiene algunas limitantes; los discos de Gershgorin únicamente garantizan que contienen valores propios, forzar la condición (\ref{proof1:Desigualdad}) es suficiente para garantizar estabilidad pero no es determinante, ya que este método no menciona nada acerca de la posición de los valores propios. Si dicha desigualdad no se cumple pueden ocurrir dos escenarios: que $\max(|\lambda_\mathcal{J}|)<0$ y el sistema siga siendo estable a pesar de algún $R_i>\mathcal{J}_{ii}$ ó $\max(|\lambda_\mathcal{J}|)>0$ en cuyo caso el sistema será inestable, y eso dependerá de $\Lambda$ y la tupla $(p,\sigma,N)$. En conclusión, esta prueba funciona en un primer nivel para mostrar que los elementos de la diagonal de $\mathcal{J}$ y por consiguiente las entradas de $X^*$ juegan un papel importante en la estabilidad del sistema. 
 	\end{proof}
 \end{proposición}
@@ -506,7 +510,7 @@ de esta relación puede determinarse el radio del círculo. Si el tamaño del si
 		\\
 		Considerando en particular la ecuación de valores propios $\hat{B}\vec{v}=\lambda\vec{v}$, si normalizamos al vector propio asociado entonces la norma euclidiana será 
 		$$\|\hat{B}\textbf{v}\|=|\hat{\lambda}|\leq\sigma+\mathcal{O}(1/\sqrt{n})$$
-		donde $|\hat{\lambda}|=\frac{|\lambda|}{\|\vec{v}\|^2}$ y nótese que es un vector propio arbitrario, esto implica que todos los vectores propios son estirados o contraídos en diversas direcciones pero restringidos al valor del radio espectral $\sigma$, es decir, que el máximo valor/vector propio solo podrá tener magnitud $\sigma$. Al considerar la matriz $B$ sin re-escalar y tomando el resultado (\ref{proof2:norma}), se concluye finalmente que el radio espectral de esta matriz es
+		donde $|\hat{\lambda}|=\frac{|\lambda|}{\|\vec{v}\|}$ y nótese que es un vector propio arbitrario, esto implica que todos los vectores propios son estirados o contraídos en diversas direcciones pero restringidos al valor del radio espectral $\sigma$, es decir, que el máximo valor/vector propio solo podrá tener magnitud $\sigma$. Al considerar la matriz $B$ sin re-escalar y tomando el resultado (\ref{proof2:norma}), se concluye finalmente que el radio espectral de esta matriz es
 		$$\rho(B)=\sigma\sqrt{nC}$$
 		y es más grande conforme $n\to\infty$. Ahora como último paso de esta prueba hay que considerar a las matrices de May, que son idénticas a la matriz $B$ solo que con el valor $-d$ en la diagonal. Eso significa que $A$ tendrá una distribución uniforme de valores propios alrededor de $-d$, entonces el radio espectral en este caso será
 		$$\rho(A)=-d+\sigma\sqrt{nC}$$

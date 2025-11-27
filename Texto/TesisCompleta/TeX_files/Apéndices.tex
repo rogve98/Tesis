@@ -414,3 +414,30 @@ end
 	\end{minted}
 \end{algorithm}
 
+
+%%Simulación de las sigmas
+\begin{tcolorbox}[colback=green!10!white, colframe=black, title=Entrada]
+\begin{minted}{julia}
+	using Random, Statistics
+	function simula_probabilidad_cumplimiento(sigma; N=100, rep=10000)
+	d = Normal(0,sigma)
+	contador_total = 0
+	contador_cumplen = 0
+	for _ in 1:rep
+	A = rand(d,N, N)  
+	for i in 1:N
+	for j in i+1:N
+	a_ij, a_ji = A[i,j], A[j,i]
+	if a_ij < 0 && a_ji < 0  # caso negativo/negativo -> cooperación
+	contador_total += 1
+	if a_ji > 1 / a_ij
+	contador_cumplen += 1
+	end
+	end
+	end
+	end
+	end
+	return  contador_cumplen/contador_total# contador_total - contador_cumplen
+	end
+\end{minted}
+\end{tcolorbox}

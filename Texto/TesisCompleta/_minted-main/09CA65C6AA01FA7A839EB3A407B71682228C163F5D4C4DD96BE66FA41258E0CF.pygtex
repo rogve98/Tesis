@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{for}\PYG{+w}{ }\PYG{n}{sigma}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{l+m+mf}{0.1}\PYG{o}{:}\PYG{l+m+mf}{0.01}\PYG{o}{:}\PYG{l+m+mf}{1.0}
+\PYG{+w}{   }\PYG{k}{if}\PYG{+w}{ }\PYG{n}{simula\PYGZus{}probabilidad\PYGZus{}cumplimiento}\PYG{p}{(}\PYG{n}{sigma}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{l+m+mf}{1.0}
+\PYG{+w}{      }\PYG{n}{print}\PYG{p}{(}\PYG{n}{sigma}\PYG{p}{,}\PYG{l+s}{\PYGZdq{} \PYGZdq{}}\PYG{p}{,}\PYG{n}{simula\PYGZus{}probabilidad\PYGZus{}cumplimiento}\PYG{p}{(}\PYG{n}{sigma}\PYG{p}{))}
+\PYG{+w}{      }\PYG{k}{break}
+\PYG{+w}{  }\PYG{k}{end}
+\PYG{k}{end}
+\end{Verbatim}

@@ -2,77 +2,94 @@
 
 \setlength{\parindent}{0cm} El capítulo anterior motiva al actual para presentar los resultados de la dinámica que produce el sistema de Lotka-Volterra generalizado (\ref{eqn:LK}) bajo los coeficientes de interacción de la matriz de incidencias (\ref{eqn:MatrizIncidencias}) para posteriormente linearizarlo mediante la Matriz Jacobiana del sistema (\ref{eqn:MatrizJacobiana}). En este capítulo se presentarán los resultados que produce cada etapa del proceso, así como sus características. El objetivo será dar respuesta a cada una de las hipótesis del planteamiento del problema, sobre todo indagar las condiciones de estabilidad del sistema en términos de $\Lambda$ y reforzar la idea consecuente de la proposición \ref{prop:paramMay} en la que se detallaba que el radio espectral (\ref{eqn:radioMayGirko}) no necesariamente se ajusta a la estabilidad del sistema de Lotka-Volterra.\\
 \\
-Se consideraron 3 conjuntos diferentes de simulaciones: sistemas para 25, 50 y 100 especies. Para explorar los resultados se dejaron fijos la mayor cantidad de parámetros que hay en (\ref{eqn:LK}) con el fin de observar cambios significativos con la menor cantidad de fluctuaciones posibles; únicamente se han variado las matrices de incidencias $\Lambda$ que dependen de $p$ y $\sigma$, y al igual que en las transiciones de May se varió una de estas cantidades mientras que la otra permaneció fija. En todas las simulaciones la tasa de crecimiento se dejó fija en $r_i=2$ y la capacidad de carga en $K_i=5$ para toda especie del sistema. Al integrar numéricamente las ecuaciones con RK4 se escogió un intervalo de tiempo entre 0 y 50 con un paso de integración de $h=0.01$.\\
+Se consideraron 3 conjuntos diferentes de simulaciones: sistemas para 25, 50 y 100 especies. Para explorar los resultados se dejaron fijos la mayor cantidad de parámetros que hay en (\ref{eqn:LK}) con el fin de observar cambios significativos con la menor cantidad de fluctuaciones posibles; únicamente se han variado las matrices de incidencias $\Lambda$ que dependen de $p$ y $\sigma$, y al igual que en las transiciones de May y semi Allesina se varió una de estas cantidades mientras que la otra permaneció fija. En todas las simulaciones la tasa de crecimiento se dejó fija en $r_i=2$ y la capacidad de carga en $K_i=5$ para cada especie del sistema. Al integrar numéricamente las ecuaciones con RK4 se escogió un intervalo de tiempo entre 0 y 50 con un paso de integración de $h=0.01$.\\
 \\
-Además de estos parámetros, siempre se inicializó cada simulación con la condición inicial $\vec{x}_0=\vec{1}$ y se consideraron dos escenarios\footnote{solo aplica para $N=100$, el resto de casos se consideraron $\Lambda$ estructuralmente simétricas.}: Matrices de incidencias estructuralmente simétricas y puramente aleatorias, tal y como se visualizó al final del capítulo anterior. En el apéndice (\ref{ch:Ap}), el lector puede darse una idea de como se realizó el proceso de las simulaciones. En cada escenario se presentó cierta cantidad de ruido en las gráficas de estabilidad, por lo que el número de simulaciones fue establecido en función de la disminución de dicho ruido, siguiendo la ley de los grandes números.
+Además de estos parámetros, siempre se inicializó cada simulación con la condición inicial $\vec{x}_0=\vec{1}$ y se consideraron dos escenarios: Matrices de incidencias estructuralmente simétricas y puramente aleatorias\footnote{Solo aplica para $N=100$, el resto de casos se consideraron $\Lambda$ estructuralmente simétricas.}, tal y como se visualizó al final del capítulo anterior. En el apéndice (\ref{ch:Ap}), el lector puede darse una idea de como se realizó el proceso de las simulaciones. En cada escenario se presentó cierta cantidad de ruido en las gráficas de estabilidad, por lo que el número de simulaciones fue establecido en función de la disminución de dicho ruido, siguiendo la ley de los grandes números.
 
 \section{Series de tiempo}
 
-Anteriormente se ha comentado que las interacciones de la matriz de incidencias $\Lambda$ están volteadas con respecto de la matriz de Jacobiana del sistema (\ref{eqn:MatrizJacobiana}); por ejemplo, la cooperación en $\mathcal{J}$ se da para las interacciones (++) mientras que para $\Lambda$ es $(--)$. Si se tuviera un sistema puramente de competencia, es decir para toda $\alpha_{ij}\in\Lambda$ mayor o igual que cero, entonces no hay forma de que ninguna de las poblaciones participantes sobrepasen la capacidad de carga establecida, tal y como se indica en la ecuación (\ref{eqn:LKextendida}) y en el Ejemplo \ref{eg:2x2}. Por lo tanto se obtendrían series de tiempo caóticas para cada una de las especies por debajo de $K=5$.
+Anteriormente se ha comentado que las interacciones de la matriz de incidencias $\Lambda$ están volteadas con respecto de la matriz de Jacobiana del sistema (\ref{eqn:MatrizJacobiana}); por ejemplo, la cooperación en $\mathcal{J}_\Lambda$ se da para las interacciones (++) mientras que para $\Lambda$ es $(--)$. Si se tuviera un sistema puramente de competencia, es decir para toda $\alpha_{ij}\in\Lambda$ mayor o igual que cero, entonces no hay forma de que ninguna de las poblaciones participantes sobrepasen la capacidad de carga establecida, tal y como se indica en la ecuación (\ref{eqn:LKextendida}) y en el Ejemplo \ref{eg:2x2}. Por lo tanto se obtendrían series de tiempo caóticas para cada una de las especies por debajo de $K=5$.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.23]{../Imagenes/Seriesdetiempopositiva}
-	\caption{Series de tiempo para el sistema de competencia de especies. Se emplea una matriz de incidencias para $N=100$ cuyas entradas vienen de una distribución uniforme del intervalo $[0,1]$. Se considera a la totalmente conexa, es decir, con $p=1.0$. En este caso la dinámica no sobrepasa la capacidad de carga puesto que las 100 especies se encuentran compitiendo y obedeciendo el comportamiento logístico que se muestra en (\ref{eqn:LKextendida}).}
+	\caption{Series de tiempo para el sistema de competencia de especies. Se emplea una matriz de incidencias con $N=100$ cuyas entradas vienen de una distribución uniforme del intervalo $[0,1]$. Se considera a la totalmente conexa, es decir, con $p=1.0$. En este caso la dinámica no sobrepasa la capacidad de carga puesto que las 100 especies se encuentran compitiendo y obedeciendo el comportamiento logístico que se muestra en (\ref{eqn:LKextendida}).}
 	\label{fig:Seriesdetiempopostiva}
 \end{figure}
 
-Una de las características que se encontró en esta clase de sistema en particular es que el tiempo en que tarda en estabilizarse es considerablemente mayor que en los sistemas donde se considerarán todas las interacciones antes mencionadas. Las poblaciones al estar confinadas por la capacidad de carga, tienen más oportunidad de interactuar entre sí, generando constantes fluctuaciones que prolongan el tiempo de estabilización.\\
+Una de las características que se encontró en los sistemas de competencia, es el tiempo que tarda en estabilizarse es considerablemente mayor que en sistemas donde se considerarán todas las interacciones que puede ofrecer una distribución normal de media cero y varianza finita (cooperación, presa-depredador, etc.). Las poblaciones en este caso se encuentran limitadas por la capacidad de carga y serán incapaces de superarla ya que el término de la derecha en (\ref{eqn:LKextendida}) es siempre positivo y por tanto resta al término logístico de la izquierda.
 \\
-Por el contrario, el sistema generalizado sí excede la capacidad de carga lo que se traduce en una disminución de la cantidad de fluctuaciones debido a las especies dominantes que regulan el sistema y hace que lleguen al atractor en un tiempo menor. Otro aspecto que se encontró en la red de competencias es que cuando es más conectada tarda más tiempo en estabilizarse. Si se generara una red de competencias con pocas conexiones ($p\leq 0.5$) el número de especies que compiten es considerablemente menor, lo que implica que exista menor cantidad de fluctuaciones y por ende mayor facilidad para llegar a la estabilidad.\\
 \\
-En el Ejemplo \ref{eg:2x2CoopyDemás} del capítulo anterior, se observaba como las interacciones de cooperación $(--)$ en la matriz de incidencias $\Lambda$ genera la aparición de un atractor para ambas especies que se posiciona por arriba de la capacidad de carga (Figura (\ref{fig:CooperacionEspecies})). En el caso extendido a $N\gg 1$ especies ocurrirá algo semejante considerando un atractor $N$-dimensional. En este caso pueden haber especies que sobrepasen por mucho o poco la capacidad de carga, pero también cabe la posibilidad de que algunas no logren sobrepasarla y otras que lleguen a extinguirse. A continuación se muestran dos ejemplos diferentes
+En contraste con el sistema generalizado, éste sí excede la capacidad de carga ya que el término de la derecha en (\ref{eqn:LKextendida}) puede sumar al de la izquierda y permite que pueda superar el límite que la capacidad de carga impone, lo que se traduce en especies dominantes que regulan el sistema y provocan que llegue al atractor en un tiempo menor. Otro aspecto de la red de competencias es que cuando es más conectada el tiempo en estabilizarse también es mayor. La cantidad de fluctuaciones posibles es cada vez mayor, y el sistema no lineal es sensible en presencia de estas fluctuaciones, por lo tanto es esperable que el tiempo en llegar al equilibrio sea prolongado. Por el contrario, si la red de competencias tiene pocas conexiones ($p\leq 0.5$) entonces el sistema tarda menos en estabilizarse.\\
+\\
+En el Ejemplo \ref{eg:2x2CoopyDemás} del capítulo anterior, se observaba como las interacciones de cooperación $(--)$ en la matriz de incidencias $\Lambda$ genera la aparición de un atractor que se posiciona por arriba de la magnitud de la capacidad de carga (Figura (\ref{fig:CooperacionEspecies})). En el caso extendido a $N\gg 1$ especies ocurrirá algo semejante considerando un atractor $N$-dimensional. En este caso pueden haber especies que sobrepasen por mucho o poco la capacidad de carga, pero también cabe la posibilidad de que algunas no logren sobrepasarla y otras que lleguen a extinguirse. A continuación se muestran dos ejemplos diferentes
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.23]{../Imagenes/Series de Tiempo LK100}
-	\caption{(\textbf{A}) Series de tiempo del sistema LV generalizado asociada a una matriz de incidencias de $N=100$, con $\sigma=0.2$ y $p=0.35$. (\textbf{B}) Series de tiempo para el sistema LV generalizado asociada a una matriz de incidencias de $N=100$ nodos con $\sigma=0.2$ y $p=0.5$}
+	\caption{(\textbf{A}) Series de tiempo del sistema LV generalizado asociada a una matriz de incidencias de $N=100$, con $\sigma=0.2$ y $p=0.35$. (\textbf{B}) Series de tiempo para el sistema LV generalizado asociada a una matriz de incidencias de $N=100$, con $\sigma=0.2$ y $p=0.5$}
 	\label{fig:SeriesdeTiempoLK100}
 \end{figure}
-
+\newpage
 La diferencia evidente entre estas gráficas es debido la matriz de incidencias, sus parámetros son $\sigma=0.2$ con $p=0.35$ y $p=0.5$ respectivamente. El segundo caso corresponde con una red más conectada que el primero y eso se traduce en la oportunidad de tener más interacciones con signo negativo que propicien un mayor crecimiento. El tiempo en que llegaron a estabilizarse fue menor a $t=50$, y a su vez considerablemente menor que el sistema de competencia de especies de la Figura (\ref{fig:Seriesdetiempopostiva}). 
-\\
-\\
-En un principio, los resultados de la Figura (\ref{fig:SeriesdeTiempoLK100}) se generaron sin tener un mapa de estabilidad únicamente teniendo como referencia el parámetro de May (\ref{eqn:radioMayGirko}). Además de construir los mapas de estabildiad (que es lo que se hará más adelante), es de interés buscar un parámetro crítico de transición como el de May. Para ello será crucial conocer más sobre $\Lambda$, pues es quien realmente determina la estabilidad de los sistemas.
+
 
 \section{Puntos fijos}\label{subsec:PuntosFijos2.0}
 
-Como bien ya se sabe, los puntos fijos son aquellos en los que se refleja la estabilidad del sistema además de que son vitales para determinar la matriz Jacobiana del sistema de Lotka-Volterra generalizado. Sin embargo, serán los propios coeficientes de la matriz de incidencias los que definan si el sistema es estable o no. Esta conjetura podrá no ser trivial de abordar pero si es posible realizar un análisis exploratorio. Los puntos fijos del sistema se determinan de igualar a cero y resolver las ecuaciones (\ref{eqn:LK}) lo que sería equivalente tener el siguiente sistema
-\begin{equation}\label{eqn:PuntoFijo}
-	x_i=K_i-\sum_{j\neq i}\alpha_{ij}x_j,\qquad\alpha_{ij}\in\Lambda
-\end{equation}
-considerando que $\alpha_{ii}=1$. Las soluciones que puede tener este sistema son múltiples, se pueden generar combinaciones de casos para poder resolverlo: por ejemplo igualar a cero un subconjunto de ecuaciones de este sistema ($x_{k}=0$) y resolver para dicha/s condición/es. Las soluciones favorables son para cuando todo elemento $x_i\in X$ del punto fijo es mayor o igual que cero; el sistema no restringe soluciones $x_k\in X$ negativas, pero no serán de interés puesto que no hay sentido físico en interpretar poblaciones negativas\footnote{Además de que los experimentos han arrojado sistemas inestables cuando el punto fijo $X$ tiene entradas negativas.}. Por último, de las soluciones favorables es de interés saber que condiciones en $\Lambda$ hace que el punto fijo sea estable o inestable.\\
+Algo interesante de notar en los sistemas de competencia es la tendencia del punto fijo. En la sección \ref{subsec:PuntosFijos} se propuso que una posible solución del punto fijo sería $X^*=\Lambda^{-1}\mathrm{K}$, se había discutido que su distribución podría ser de cola pesada con posibilidad de tener entradas negativas. Si $\Lambda$ tiene todos 
+\begin{wrapfigure}{r}{0.5 \textwidth} \vspace{-25pt} \begin{center}
+		\includegraphics[scale=0.13]{../Imagenes/PuntoFijoCompetencia}
+	\end{center}
+	\vspace{-20pt} 
+	\caption{Distribución de punto fijo para caso particular del sistema de competencia de especies, escogiendo $p=0.5$ y considerando una distribución uniforme en los pesos de las interacciones.}
+	\vspace{-10pt}
+	\label{fig:PuntoFijoCompetencia}
+\end{wrapfigure}
+sus coeficientes positivos provenientes de la distribución uniforme en el intervalo $[0,1]$ entonces la distribución de $X^*$ podría ser diferente pero lo que se observa en la Figura (\ref{fig:Seriesdetiempopostiva}) es que la mayoría de las especies tienden a cero (se extinguen) mientras que unas cuantas logran sobrevivir por debajo de la capacidad de carga, empatando con una distribución de cola pesada tal y como se observa en la Figura (\ref{fig:PuntoFijoCompetencia}). Esta evidencia muestra un parteaguas en donde no necesariamente el punto fijo y su distribución estarán dados por $X^*=\Lambda^{-1}\mathrm{K}$, sino que el punto fijo favorable puede ser alguno en donde una o varias especies del sistema se extinguen, es decir, resolver las ecuaciones  del sistema (\ref{eqn:EcsPuntoFijo}) cuando se asume que existe un subconjunto que son cero: $S=\{x_k=0\ |\ k\in\mathcal{I}\, \wedge\,  \mathcal{I}\subset \{1,...,N\}\}$. Pero nuestro caso de mayor interés es lo que se logra observar en la Figura (\ref{fig:SeriesdeTiempoLK100}); se tienen dos sistemas estables que definitivamente muestran una distribución de cola pesada puesto que un número reducido de ellas se encuentran dispersas en valores mayores a la capacidad de carga pero es posible hallar a la mayoría concentradas en valores cercanos al cero (Ver Figura (\ref{fig:PuntoFijoCoop3}) \textbf{A}).
 \\
-Para un primer análisis exploratorio, se utilizará aproximación de campo medio para realizar una estimación general de las soluciones del sistema. Para ello se considerará que toda $x_i\in\Lambda$ cumple $x_i\approx\langle x\rangle$, asumiendo esta hipótesis y aplicándola en (\ref{eqn:PuntoFijo}) se tiene
-\begin{equation}
-	\begin{split}
-		&\langle x\rangle+\sum_{j\neq i}\alpha_{ij}\langle x\rangle=K_i\\
-		&\langle x\rangle=\frac{K_i}{1+pN\sigma^2},\qquad 
-	\end{split}
-\end{equation}
-considerando que $\sum_{j\neq i}\Var(\alpha_{ij})\approx pN\sigma^2$. Este resultado indicaría como son las soluciones del punto fijo en gran o en menor medida, de aquí en adelante se tendría el camino directo para poder estimar el parámetro de transición que tanto se espera sino fuera por algunos aspectos a considerar: La suposición de campo medio excluye soluciones negativas, lo cual se sabe que existen pero para ningún valor de $p$, $N$ y $\sigma$ se generan tales escenarios; el segundo aspecto a considerar es que de acuerdo a los ejemplos de la Figura (\ref{fig:SeriesdeTiempoLK100}), el punto fijo no sigue una distribución de campo medio, sino más bien una tendencia de distribución de cola pesada con sesgo positivo. \\
 \\
-El lector podrá comprobarlo una vez que haya seguido todos los pasos del apéndice para integrar el sistema. Además podrá comprobar que dicha distribución irá variando en función de los parámetros de $\Lambda$ lo cual también se deja ver un poco en las series de tiempo mencionadas. Una alternativa para poder estimar una solución tal y como se hacía considerando aproximación de campo medio sería adecuar este proceso para la distribución de cola pesada. Suponer campo medio es considerar que las entradas del punto fijo siguen una distribución normal, la idea en este caso sería caracterizar estas distribuciones de cola pesada con alguna ya conocida y aplicar campo medio bajo la hipótesis de esta nueva distribución.\\
+Anteriormente se ha discutido que mientras los valores de $\sigma$ y $p$ en la matriz de incidencias $\Lambda$ sean pequeños con respecto del otro, es decir, $\sigma\ll p$ ó $p\ll\sigma$: se obtendría una distribución alrededor del valor fijo de la capacidad de carga, en este caso $K=5$. Bajo esta premisa, se explorará para que escenarios la configuración $X^*=\Lambda^{´-1}\mathrm{K}$ representa correctamente el punto fijo y su distribución. A continuación se presentan una serie de histogramas que muestran gráficamente la comparación entre el resultado numérico y el teórico
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.16]{../Imagenes/PuntoFijoCoop1}
+	\caption{Distribución del punto fijo para un sistema LV generalizado con $p=0.5$ y $\sigma=0.003$. En este caso se cumple $\sigma\ll p$ y por lo tanto la distribución coincide con $X^*=\Lambda^{-1}\mathrm{K}$.}
+	\label{fig:PuntoFijoCoop1}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.16]{../Imagenes/PuntoFijoCoop2}
+	\caption{Distribución del punto fijo para un sistema LV generalizado con $p=0.003$ y $\sigma=0.5$. En este caso se cumple $p\ll \sigma$ y por lo tanto la distribución coincide con $X^*=\Lambda^{-1}\mathrm{K}$.}
+	\label{fig:PuntoFijoCoop2}
+\end{figure}
+En ambos escenarios se puede notar que la distribución del punto fijo se acumula alrededor de $K=5$ y realmente coincide con $X^*=\Lambda^{-1}\mathrm{K}$, se observará en los siguientes histogramas que cuando $\sigma$ y $p$ incrementen sus valores respectivamente, los puntos fijos ya no coincidirán con esta forma.\\
 \\
-Teniendo contexto de la distribución de las entradas del punto fijo (mediante las series de tiempo generadas) y de los coeficientes de $\Lambda$ que inducen a dicha distribución, se podrá acceder a la información necesaria para determinar que condiciones generan sistemas de Lotka-Votlerra generalizados estables. Pero por el momento el análisis quedará hasta aquí esperando que las ideas se retomen más adelante.
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.16]{../Imagenes/PuntoFijoCoop3}
+	\caption{Distribución del punto fijo para un sistema LV generalizado con $p=0.5$ y $\sigma=0.2$. }
+	\label{fig:PuntoFijoCoop3}
+\end{figure}
+
+Con base en estos resultados se complementa la sección \ref{subsec:PuntosFijos} con el hecho de que para los casos $\sigma\ll p$ y $p\ll\sigma$, el punto fijo coincide con $X^*=\Lambda^{-1}\mathrm{K}$. Sin embargo, cuando $\sigma$ y $p$ son del mismo orden de magnitud entonces la distribución de $\Lambda^{-1}\mathrm{K}$ se ensancha hacia valores negativos mismos que no se pueden admitir en una dinámica estable (Figura (\ref{fig:PuntoFijoCoop3} \textbf{B})). Lo que se muestra en las simulaciones es que el punto fijo sigue una distribución de cola pesada con sesgo positivo alrededor del cero, la Figura (\ref{fig:PuntoFijoCoop3} \textbf{A}) indica que al menos un 65\% de las especies se han extinguido ó están cerca de extinguirse, mientras que el resto se ha estabilizado desde valores relativos que van del 10 al 200.\\
+\\
+Los puntos fijos con $p$ y $\sigma$ en el mismo orden de magnitud necesitan tener múltiples especies extintas para que pueda ser estable. Esta característica sigue dependiendo enteramente de las interacciones de $\Lambda$ y más adelante se observará como decae la estabilidad con base en el incremento de estos parámetros. Ya que la distribución del punto fijo es de cola pesada, tendrá un impacto directo en la distribución de valores propios de la matriz Jacobiana asociada a $\Lambda$. Cada valor de la diagonal será un tipo de atractor de valores propios en $\mathbb{C}$ y al estar distribuidos de forma heterogénea y re-escalados según (\ref{eqn:MatrizJacobiana}), la distribución de valores propios ya no será uniforme como en el caso de May o Allesina, sino que tendrá una forma más amorfa y/o dispersa. Por último se debe de aclarar que para obtener las diferentes distribuciones del punto fijo de los resultados numéricos, únicamente bastó con agarrar el último punto de la serie de tiempo y concentrarlo en un arreglo que representará al punto fijo.
+\newpage
 
 \section{Matriz Jacobiana}
 
-Anteriormente se ha definido la matriz Jacobiana del sistema de Lotka-Volterra generalizado (\ref{eqn:MatrizJacobiana}), para que surta efecto es necesario conocer el punto fijo de interés y se hará por medio de la serie de tiempo tal y como aparece en la Figura (\ref{fig:SeriesdeTiempoLK100}). Se recolecta la última entrada de la serie, asumiendo que es un punto fijo estable, y se guarda como vector $N$-dimensional para poderse evaluar en la matriz Jacobiana. Para validar el resultado solamente resta calcular sus valores propios y confirmar la estabilidad por medio de la parte real de los mismos. Por otro lado, si la serie de tiempo diverge entonces se asume que el sistema es inestable.
+Una vez que se obtienen los puntos fijos a partir de las series de tiempo, se evalúan en la Jacobiana (\ref{eqn:MatrizJacobiana}) y se valida su estabilidad con base en la parte real de sus valores propios asociados. En cambio, si la serie de tiempo diverge entonces se asume que el sistema es inestable. Un elemento importante a considerar de este proceso es que no es trivial determinar cuando se estabilizará el sistema. La serie de tiempo puede mostrar una referencia visual pero la información que entrega no es determinante. En general se ha observado que gran parte de las simulaciones realizadas corresponden a sistemas que se estabilizan en un tiempo menor o igual a $t=50$, sin embargo, existen sistemas que se estabilizan en un tiempo superior a este lo que genera inconsistencias en los resultados. Para evitar que esto ocurra se incluye una restricción en los algoritmos para considerar sistemas que se estabilicen en un tiempo menor o igual a $t=50$.
 \\
 \\
-Un elemento importante de este proceso es que no es trivial determinar cuando se estabilizará el sistema por medio de la serie de tiempo, en general se ha observado que gran porcentaje de los sistemas se estabilizan en un tiempo menor o igual a $t=50$, sin embargo, existen sistemas que se estabilizan en un tiempo superior a este lo que ha generado algunos detalles en los resultados obtenidos. En este sentido, se han observado casos en los que se extrae el punto fijo que aparenta ser estable pero al determinar la estabilidad por medio de los valores propios de la matriz Jacobiana se encuentra que  algunos de ellos tienen parte real positiva lo que induce a sistemas inestables. Para evitar que esto ocurra es importante incluir una restricción sobre el tiempo de integración, recolectar sistemas que se estabilicen en un tiempo menor o igual a $t=50$.
-\\
-\\
-Comenzando con el análisis de los resultados obtenidos, se han generado cuatro ejemplos arbitrarios para ir observando las características de las matrices Jacobianas de los sistemas (\ref{eqn:LK}) que resultaron estables. En este \href{https://github.com/rogve98/Tesis/tree/master/Notebooks/Datos/Ejemplo\%20Jacobianos}{enlace}\footnote{Consultar: \url{https://github.com/rogve98/Tesis/tree/master/Notebooks/Datos/Ejemplo\%20Jacobianos}} el lector tendrá acceso a 4 de estas matrices para los parámetros $N=100$, $\sigma=0.2$ y $p=\{0.3,0.4,0.5,0.6\}$. A continuación se presenta el código en \julia para validar si las diagonales de cada matriz Jacobiana son negativas siguiendo la Poposición \ref{prop:DiagonalI}
+La forma de verificar la estabilidad recae en la parte real de los valores propios de la matriz $\mathcal{J}_\Lambda$, si por ejemplo la serie de tiempo aparenta estabilizarse pero los valores propios del sistema tienen parte real positiva, entonces quiere decir que el sistema no ha alcanzado a su punto fijo atractor. A continuación se presentan cuatro ejemplos arbitrarios de sistemas que resultaron estables para ir observando sus características. En este \href{https://github.com/rogve98/Tesis/tree/master/Notebooks/Datos/Ejemplo\%20Jacobianos}{enlace}\footnote{Consultar: \url{https://github.com/rogve98/Tesis/tree/master/Notebooks/Datos/Ejemplo\%20Jacobianos}} el lector tendrá acceso a 4 de estas matrices para los parámetros $N=100$, $\sigma=0.2$ y $p=\{0.3,0.4,0.5,0.6\}$. A continuación se presenta el código en \julia para validar como son sus diagonales.
 \begin{tcolorbox}[colback=green!10!white, colframe=black, title=Entrada]
 	\begin{minted}{julia}
-		using CSV, DataFrames
-		jacobianos = []
-		for i in 0.3:0.1:0.6
-		ruta = "Datos/Ejemplo Jacobianos/Jacobiano100_p$i.s0.2.csv"
-		df = CSV.read(ruta,DataFrame,header=false)
-		push!(jacobianos,df)
-		end
-		jacobianos
+using CSV, DataFrames
+jacobianos = []
+for i in 0.3:0.1:0.6
+  ruta = "Datos/Ejemplo Jacobianos/Jacobiano100_p$i.s0.2.csv"
+  df = CSV.read(ruta,DataFrame,header=false)
+  push!(jacobianos,df)
+end
+jacobianos
 	\end{minted}
 \end{tcolorbox}
 
@@ -81,53 +98,48 @@ Comenzando con el análisis de los resultados obtenidos, se han generado cuatro 
 100×100 DataFrame
 \end{tcolorbox}
 
-Validando las diagonales de cada uno de las matrices consideradas se tiene
-
 \begin{tcolorbox}[colback=green!10!white, colframe=black, title=Entrada]
 	\begin{minted}{julia}
 using LinearAlgebra
-print(all(x -> x<0,diag(Matrix(jacobianos[1]))),", ")
-print(all(x -> x<0,diag(Matrix(jacobianos[2]))),", ")
-print(all(x -> x<0,diag(Matrix(jacobianos[3]))),", ")
-print(all(x -> x<0,diag(Matrix(jacobianos[4]))))
+print(all(x -> x<=0,diag(Matrix(jacobianos[1]))),", ")
+print(all(x -> x<=0,diag(Matrix(jacobianos[2]))),", ")
+print(all(x -> x<=0,diag(Matrix(jacobianos[3]))),", ")
+print(all(x -> x<=0,diag(Matrix(jacobianos[4]))))
 	\end{minted}
 \end{tcolorbox}
 
 \begin{tcolorbox}[colback=red!10!white, colframe=black, title=Salida]
 true, true, true, true
 \end{tcolorbox}
-\newpage
-El siguiente detalle a analizar siguiendo la definición de la matriz Jacobiana (\ref{eqn:MatrizJacobiana}) es que sus diagonales en efecto no son homogéneas como en las matrices de May. Determinando un histograma de cada una de las diagonales de las matrices antes consideradas se puede saber como es su distribución y si cambia con respecto de la $p$ elegida
+
+Si las diagonales de estas matrices son todas negativas o cero quiere decir que el punto fijo asociado tiene entradas mayor o igual que cero ya que $\mathcal{J}_{ii}=-\frac{r_i}{K_i}x^*_i$ con $x_i^*\in X^*$. Por lo tanto, la distribución de la diagonal de $\mathcal{J}_\Lambda$ será de cola pesada pero ahora con sesgo negativo. Esta distribución se ensancha en función de los parámetros, en particular con este ejemplo se observará que cuando la red es más conectada: la distribución será más dispersa. 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.16]{../Imagenes/DistDiagonal}
-	\caption{Distribuciones de diagonales de cada matriz Jacobiana antes considerada considerando para $N=100$, $\sigma=0.2$ y $p\in\{0.3,0.4,0.5,0.6\}$.}
+	\caption{Distribuciones de diagonales de las matrices Jacobianas del ejemplo, considerando los parámetros: $N=100$, $\sigma=0.2$ y $p\in\{0.3,0.4,0.5,0.6\}$.}
 	\label{fig:DistDiagonal}
 \end{figure}
 
-No solo no es homogénea sino que cuanto la probabilidad es mayor, la distribución es más dispersa hacia los valores negativos haciéndola de cola pesada tal como se observa el contraste entre el caso $p=0.6$ y $p=0.3$. Este comportamiento es natural considerando los coeficientes de $\Lambda$ y las entradas del punto fijo que también vienen de una distribución de cola pesada. Más adelante se discutirá acerca de esta cualidad de las distribuciones resultantes.
-\\
-\\
-En el capítulo pasado se vio que la importancia de la diagonal en las matrices de May radica en la forma de la distribución de los valores propios del sistema en el plano complejo, englobado bajo la Ley Circular. En la Proposición \ref{prop:paramMay} se demostró que existen varios discos de Gershgorin centrados en este valor $-d$ de la diagonal, que encierran a los valores propios del sistema en el semiplano negativo de $\mathbb{C}$ y que el parámetro de May (\ref{eqn:radioMayGirko}) determina el límite entre estabilidad e inestabilidad. En el caso de las matrices Jacobianas de los sistemas de Lotka-Volterra generalizado, al no tener un radio/centro definido debido a forma heterogénea de las diagonales ¿qué se puede esperar de la distribución de valores propios de $\mathcal{J}$?
-\newpage
+La distribución de los valores propios en $\mathbb{C}$ dependerá en gran medida de las entradas de la diagonal, entre más dispersa sea también lo serán los valores propios. En la proposición \ref{prop:DiagonalI} se introdujo la importancia de la diagonal de las matrices Jacobianas con respecto de la posición general de sus valores propios. Los discos de Gershgorin están centrados en cada valor de esta diagonal, por lo tanto los valores propios quedarán dispersos sus alrededores. En la proposición \ref{prop:paramMay} se mostró como surge el radio espectral (\ref{eqn:radioMayGirko}) cuando el centro de los discos esta fijado a un solo valor $-d$. Actualmente la pregunta será ver si existe un tipo de radio espectral para delimitar la distribución de valores propios de las matrices $\mathcal{J}_\Lambda$.
 
 \section{Leyes Circulares}
 
-Sabiendo que la distribución de la diagonal de las Jacobianas de los sistemas generalizados no es homogénea y que sigue una distribución de cola pesada con sesgo negativo, se debe analizar como es su distribución de valores propios en el plano complejo y si tiene alguna relación con la distribución de la diagonal. Para ello se comenzará por revisar la distribución de los valores propios de las matrices Jacobianas que se invocaron en la sección anterior
+Si la distribución de la diagonal es dispersa y no necesariamente simétrica (ver Figura (\ref{fig:DistDiagonal})) entonces no tiene sentido definir un radio espectral sino más bien concentrarse en el valor de la diagonal más cercano al cero y los valores propios de su alrededor para conocer las condiciones en $\Lambda$ que llevan a que $\mathcal{J}_\Lambda$ tenga valores propios positivos o negativos en esa región. Para ir desarrollando esta idea primero se revisarán las distribuciones de valores propios de las Jacobianas antes presentadas
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.24]{../Imagenes/DistEigenvalores}
-	\caption{Distribución de valores propios para el conjunto de Jacobianas antes consideradas con los parámetros $N=100$, $\sigma=0.2$ y $p\in\{0.3,0.4,0.5,0.6\}$.}
+	\caption{Distribución de valores propios de las matrices Jacobianas del ejemplo, considerando los parámetros $N=100$, $\sigma=0.2$ y $p\in\{0.3,0.4,0.5,0.6\}$.}
 	\label{fig:DistEigenvalores}
 \end{figure}
 
-Para comenzar se han propuesto como centro y radio la parte real más negativa del conjunto de valores propios de cada ejemplo\footnote{En consecuencia se genera el Círculo con el radio más grande posible de cada sistema.}, y en primera instancia se puede observar que dichos círculos si encierran a cada una de las distribuciones pero no se ajustan al círculo en concreto. Además de que cada distribución se encuentra en el semiplano negativo de $\mathbb{C}$, se puede apreciar de cada distribución que cuando la probabilidad de conexión es mayor entonces  la distribución se ensancha desde el eje real de forma similar a como se observa en la Figura (\ref{fig:DistDiagonal}), lo que podría sugerir una relación entre la distribución de las diagonales de $\mathcal{J}$ y de sus valores propios. \\
+Se ha propuesto en cada distribución un disco con centro y radio con la parte real más negativa del conjunto de valores propios: en consecuencia se genera el disco con el radio más grande posible de cada sistema. Se puede observar que dichos discos si encierran a cada una de las distribuciones pero no se ajustan al círculo en concreto, tal y como sucede en los sistemas de May/Allesina. Sin embargo aún así se observa que toda la distribución se encuentra contenida en el semiplano negativo de $\mathbb{C}$. \\
 \\
-Es evidente que la distribución de la diagonal impacta directamente en la distribución de los valores propios, y si no hay una Ley Ciruclar que se ajuste a dicha distribución entonces se puede proponer la posibilidad de que existan $N$ de ellas. Para dar un acercamiento a esta propuesta, se ocupará la distribución más ancha para $p=0.6$ (de los ejemplos antes presentados) y se considerará cada valor de la diagonal de su matriz Jacobiana como centro y radio de una Ley Circular particular.
+El ensanchamiento y/o dispersión de cada distribución de valores propios parece tener relación con la distribución de la diagonal (Figura (\ref{fig:DistDiagonal})), y ésta a su vez tiene relación directa con los puntos fijos asociados. Por lo tanto el punto fijo determina la dispersión de las distribuciones del sistema. Una forma de poder ajustar esta distribución amorfa es proponiendo $N$ discos cuyos centros y radios sean los valores de la diagonal de $\mathcal{J}_\Lambda$. Para dar un acercamiento a esta propuesta, se ocupará la distribución más ancha para $p=0.6$:
+% Sería una propuesta semejante a los discos de Gershgorin y serviría para enfocarse principalmente en los valores propios que se encuentran cercanos al cero\footnote{Que son de gran interés ya que son los más propensos a desplazarse al semiplano positivo de $\mathbb{C}$, volviendo inestable al sistema.}.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.17]{../Imagenes/LeyesCirculares}
-	\caption{Distribución de valores propios del sistema generalizado para $N=100$, $\sigma=0.2$ y $p=0.6$. Se consideran $N$ Leyes Circulares cuyo centro y radio es cada valor de la diagonal de la matriz Jacobiana asociada. }
+	\caption{Distribución de valores propios del sistema generalizado para $N=100$, $\sigma=0.2$ y $p=0.6$. Se consideran $N$ discos cuyo centro y radio es cada valor de la diagonal de la matriz Jacobiana asociada. }
 	\label{fig:LeyesCirculares}
 \end{figure}
 
@@ -136,17 +148,15 @@ Es evidente que la distribución de la diagonal impacta directamente en la distr
 	\includegraphics[scale=0.13]{../Imagenes/LeyCircularParticular}
 	\end{center}
 	\vspace{-20pt} 
-	\caption{Caso particular de la Figura (\ref{fig:LeyesCirculares}) para el valor de la diagonal $\alpha_{ii}=32.46\in\mathcal{J}$.}
+	\caption{Caso particular de la Figura (\ref{fig:LeyesCirculares}) para el valor de la diagonal $\alpha_{ii}=32.46\in\mathcal{J}_\Lambda$.}
 		\vspace{-10pt}
 	\label{fig:LeyCircularParticular}
 \end{wrapfigure}
-Esta propuesta se inspira de la Proposición \ref{prop:DiagonalI}, en donde se invocaron los discos de Gershgorin que se encuentran centrados en cada valor de la diagonal de $\mathcal{J}$ y se demuestra que los radios pueden ser menores o iguales a cada uno de estos valores. Al ser menores o iguales, la actual propuesta toma el máximo caso posible (es decir la igualdad) y por lo tanto cada círculo encerrará un porcentaje de valores propios que se encuentren en la vecindad alrededor de $\mathcal{J}_{ii}$ de mismo radio.\\
-\\
-Un caso particular de la Figura (\ref{fig:LeyesCirculares}) considerando $\mathcal{J}_{ii}=32.46$ se puede observar en la Figura (\ref{fig:LeyCircularParticular}), cierto porcentaje de valores propios se distribuye por el círculo varios concentrados en el eje real solamente, sin embargo existen algunos otros que se escapan del confinamiento particular y pasan al siguiente nivel o círculo. Para poder confirmar o refutar esta propuesta, se explorarán múltiples sistemas estables con sus respectivas distribuciones de diagonales y valores propios.
+Esta propuesta se inspira de la Proposición \ref{prop:DiagonalI}, sin embargo, éstos discos no corresponden a los de Gershgorin debido a que los radios no necesariamente tienen la misma magnitud que el centro del disco, pueden ser mayores o menores. Se puede observar que esta elección de discos parece ajustarse a la distribución de valores propios, al menos de forma local para ciertos conjuntos. Si la varianza de los radios de Gershgorin (\ref{proof1:paramEstabilidad}) fuera menor o igual a 1, entonces esta propuesta sería más semejante a los discos de Gershgorin, pero en general esto solo se cumple bajo condiciones específicas. Un caso particular de la Figura (\ref{fig:LeyesCirculares}) considerando $\mathcal{J}_{ii}=32.46$ se puede observar en la Figura (\ref{fig:LeyCircularParticular}), cierto porcentaje de valores propios se distribuye por el círculo varios concentrados en el eje real, insinuando que al ser estructuralmente simétrica la matriz $\mathcal{J}_\Lambda$: tiene correlaciones positivas. Sin embargo existen algunos otros valores propios que se escapan del confinamiento particular y pasan al siguiente nivel o círculo. Para poder confirmar o refutar esta propuesta, se explorarán múltiples sistemas estables con sus respectivas distribuciones de diagonales y valores propios.
 
 \subsection{Análisis para $N=50$}
 
-Se tienen a disposición dos conjuntos de datos, ambos son de simulaciones realizadas para diferentes valores de $p$ y $\sigma$. Cada conjunto esta conformado por 78 archivos .csv y son simulaciones de matrices \href{https://github.com/rogve98/Tesis/tree/master/Notebooks/Datos/Jacobianos}{Jacobianas} y de distribuciones de \href{https://github.com/rogve98/Tesis/tree/master/Notebooks/Datos/Diagonales}{Diagonales}\footnote{Para los Jacobianos acceder a: \url{https://github.com/rogve98/Tesis/tree/master/Notebooks/Datos/Jacobianos}. Para las Diagonales acceder a \url{https://github.com/rogve98/Tesis/tree/master/Notebooks/Datos/Diagonales}.}. Así mismo, en cada archivo se encuentran 100 simulaciones que resultaron estables y de los cuales se realizará el análisis correspondiente a la relación entre la distribución de las diagonales y de las partes reales de los valores propios de las matrices Jacobianas. En la siguiente tabla se muestra el esquema de simulaciones para cada $p$ y $\sigma$
+Se tienen a disposición dos conjuntos de datos, ambos son de simulaciones realizadas para diferentes valores de $p$ y $\sigma$ considerando matrices $\Lambda$ estructuralmente simétricas. Cada conjunto esta conformado por 78 archivos .csv y son simulaciones de matrices \href{https://github.com/rogve98/Tesis/tree/master/Notebooks/Datos/Jacobianos}{Jacobianas} y de distribuciones de \href{https://github.com/rogve98/Tesis/tree/master/Notebooks/Datos/Diagonales}{Diagonales}\footnote{Para los Jacobianos acceder a: \url{https://github.com/rogve98/Tesis/tree/master/Notebooks/Datos/Jacobianos}. Para las Diagonales acceder a \url{https://github.com/rogve98/Tesis/tree/master/Notebooks/Datos/Diagonales}.}. Así mismo, en cada archivo se encuentran 100 simulaciones que resultaron estables y de los cuales se realizará el análisis correspondiente a la relación entre la distribución de las diagonales y de las partes reales de los valores propios de las matrices Jacobianas. En la siguiente tabla se muestra el esquema de simulaciones para cada $p$ y $\sigma$
 \begin{table}[h!]
 	\centering
 	\begin{tabular}{|c|c|c|c|}
@@ -164,18 +174,30 @@ Se tienen a disposición dos conjuntos de datos, ambos son de simulaciones reali
 	\label{tab:Simulaciones}
 \end{table} 
 
-La razón principal de escoger los sistemas para $N=50$ es por el costo computacional. Ha resultado muy prolongado el tiempo de compilación de sistemas más grandes (como el de $N=100$) y aún así para valores altos de la fuerza promedio ($\sigma\geq 0.6$) no se obtuvieron los 10 archivos por la misma razón. Habiendo introducido la información experimental, se procede a continuar con el análisis de las $N$ Leyes Circulares. Para ello convendrá determinar la correlación entre estas cantidades así como apreciar una comparativa visual entre la parte real y los valores de la diagonal.
+La razón principal de escoger los sistemas para $N=50$ es por el costo computacional. Ha resultado muy prolongado el tiempo de compilación de sistemas más grandes (como el de $N=100$) y aún así para valores altos de la fuerza promedio ($\sigma\geq 0.6$) no se obtuvieron los 10 archivos por la misma razón. Con esta información se procede a continuar con el análisis de las $N$ Leyes Circulares, observando primero como es la distribución de los valores propios de cada conjunto así como la relación que existe entre la parte real y los valores de la diagonal de las $\mathcal{J}_\Lambda$.
 \newpage
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.2]{../Imagenes/ReEvs-Diagonales}
-	\caption{(\textbf{A}) Distribución de valores propios de 100 jacobianos para el caso $\sigma=0.5$, $p=0.5$. Se agrega una ley circular correspondiente al valor medio de la distribución de diagonales. (\textbf{B}) Relación entre la parte real de los valores propios con las diagonales de los Jacobianos considerados.}
+	\caption{(\textbf{A}) Distribución de valores propios de 100 jacobianos para el caso $\sigma=0.6$, $p=0.7$. Se agrega una ley circular correspondiente al valor medio de la distribución de diagonales. (\textbf{B}) Relación entre la parte real de los valores propios con las diagonales de los Jacobianos considerados.}
 	\label{fig:ReEvs-Diagonales}
 \end{figure}
 
-A simple vista se puede observar una relación lineal, y puede ser casi perfecta en algunos casos pero será cuestión de coincidencia, pues los valores propios se encuentran en las vecindades de Gershgorin alrededor de cada entrada de la diagonal de $\mathcal{J}$. Lo que nos muestra la Figura (\ref{fig:ReEvs-Diagonales} \textbf{B}) es que los $|\mathcal{J}_{ii}|$ más grandes de la distribución tienen un rango amplio en el radio de Gershgorin para alojar valores propios, lo que implica que posiblemente la parte real de de estos no se encuentre cerca de dicho valor $\mathcal{J}_{ii}$ y que por lo tanto no exista una relación tan lineal en estos casos.  A diferencia de los $|\mathcal{J}_{ii}|$ de menor tamaño que parecen tener un radio de Gershgorin proporcional y que ello implique que los valores propios se alojen cerca de dicho centro $\mathcal{J}_{ii}$ pudiendo marcar una mejor relación lineal. Más adelante se mostrará un ejemplo más evidente de este hecho.\\
+La distribución de los valores propios queda contenida por completo en el semiplano negativo de $\mathbb{C}$ asegurando que todas las simulaciones realizadas para el conjunto correspondiente ($\sigma=0.6$, $p=0.7$) están asociadas a sistemas estables. Se puede observar en la Figura (\ref{fig:ReEvs-Diagonales} \textbf{A}) que gran parte de los valores propios se quedan contenidos en el eje real; debido a que todas las simulaciones contempladas son para sistemas estructuralmente simétricos, esta observación refuerza estadisticamente el argumento de poseer correlaciones positivas en las interacciones de $\mathcal{J}_\Lambda$. 
 \\
-En la Figura (\ref{fig:ReEvs-Diagonales} \textbf{A}) se ha agregado una Ley Circular particular con centro y radio correspondiente al valor medio de la distribución, esto con el fin de observar que tan significativa es la media de la distribución en cuanto a ver cuantos valores propios es capaz de encerrar. Aunque encierra una gran cantidad de ellos, también un gran porcentaje queda fuera por lo que la media no es un valor representativo de la distribución en este caso. Para seguir explorando si la relación lineal existe también para el resto de las simulaciones de la Tabla (\ref{tab:Simulaciones}) se tomará la media, mediana y moda de las distribuciones de diagonales $d(\sigma_i,p_j)$ y partes reales de los conjuntos de valores propios $\overline{\lambda}$ para compararlos viendo si existe una correspondencia lineal entre estas cantidades.
+\\
+Por otro lado en la Figura (\ref{fig:ReEvs-Diagonales} \textbf{B}) se observa una relación lineal prácticamente perfecta, insinuando que para este caso particular: hay una dependencia directa entre las entradas de la diagonal y la parte real de los valores propios de las Jacobianas $\mathcal{J}_\Lambda$. Sin embargo el ajuste parece ser mejor para los valores cercanos al cero y la razón puede ser la siguiente: Cada valor de la diagonal es un centro particular de una vecindad de Gershgorin y cada valor propio se encuentra en al menos una de estas vecindades; entonces cuando la magnitud de los centros es cada vez mayor, su radio también lo será y por lo tanto la vecindad es cada vez más amplia, haciendo que el valor propio pueda adoptar una posición considerablemente apartada de su centro y en consecuencia no tener una relación tan proporcional como en los casos donde el centro y radio de Gershgorin es cercano a cero.
+\newpage
+\begin{wrapfigure}{r}{0.5 \textwidth} \vspace{-30pt} \begin{center}
+		\includegraphics[scale=0.13]{../Imagenes/RadsDiagsGersh}
+	\end{center}
+	\vspace{-20pt} 
+	\caption{Relación entre centros y radios de Gershgorin de las Jacobianas asociadas a la Figura (\ref{fig:ReEvs-Diagonales}).}
+	\vspace{-10pt}
+	\label{fig:RadsDiagsGersh}
+\end{wrapfigure}
+En la Figura (\ref{fig:RadsDiagsGersh}) se puede observar la relación entre cada centro y radio de Gershgorin de las Jacobianas asociadas a la Figura (\ref{fig:ReEvs-Diagonales}). En esta gráfica hay dos características a destacar: primero que efectivamente existe una relación creciente entre la magnitud del centro con su radio asociado: son proporcionales; por lo tanto existen valores propios capaces de alejarse del centro de su vecindad de Gershgorin volviendo no tan proporcional la relación entre los valores de la diagonal y autovalores de mayor magnitud. En segundo se puede observar que hay un gran número de centros con radio cero. De acuerdo con la definición de la matriz Jacobiana (\ref{eqn:MatrizJacobiana}) las entradas del punto fijo afectan a cada fila entera de esta matriz, y como se ha visto en las series de tiempo (Figura (\ref{fig:SeriesdeTiempoLK100})) y la distribución del punto fijo (Figura (\ref{fig:PuntoFijoCoop3} \textbf{A})) existen múltiples especies que decaen a cero. Por lo tanto es natural observar este fenómeno, pues son la representación de la cantidad de especies que resultaron extintas.
+%En la Figura (\ref{fig:ReEvs-Diagonales} \textbf{A}) se ha agregado una Ley Circular particular con centro y radio correspondiente al valor medio de la distribución de las partes reales de los valores propios, esto con el fin de observar que tan significativa es esta media en función de cuantos valores propios es capaz de encerrar. Si la distribución de autovalores fuera uniforme, la media podría capturar casi la totalidad de ellos (como en el caso de May), sin embargo al no ser uniforme solo será capaz de encerrar una porción del total. 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.16]{../Imagenes/AjustesLinMeds}
@@ -183,11 +205,11 @@ En la Figura (\ref{fig:ReEvs-Diagonales} \textbf{A}) se ha agregado una Ley Circ
 	\label{fig:AjustesLinMeds}
 \end{figure}
 
-En la Figura (\ref{fig:AjustesLinMeds}) se distingue la media, mediana y moda de cada distribución; cada color se encuentra asociado a los valores de la fuerza promedio $\sigma$ y la cantidad de puntos del mismo color corresponde a cada una de las probabilidades de conectividad del sistema. Se ha visto en la Figuras (\ref{fig:DistDiagonal}, \ref{fig:DistEigenvalores}) que cuando esta probabilidad es cada vez mayor entonces las colas de sus distribuciones son cada vez más anchas debido a la posibilidad de mayor cantidad de interacciones y la dependencia que hay con los valores del punto fijo del sistema. Por lo tanto hacia la izquierda estarán las probabilidades más grandes e irán decreciendo hacia la derecha.\\
+Para seguir explorando si la relación lineal existe también para el resto de las simulaciones de la Tabla (\ref{tab:Simulaciones}) se tomará la media, mediana y moda como cantidades representativas de cada una de las distribuciones de diagonales $d(\sigma_i,p_j)$ y partes reales de los conjuntos de valores propios $\overline{\lambda}$ para compararlos y realizando un ajuste lineal.\\
 \\
-En cada gráfica de esta figura se encuentran las 78 simulaciones realizadas y se nota claramente una correspondencia entre los valores de la diagonal con las partes reales de los valores propios, lo que refuerza la propuesta de las Leyes Circulares antes mencionada. Al igual que en la Figura (\ref{fig:ReEvs-Diagonales}), cada ajuste es mejor para valores cercanos al cero que para los máximos en valor absoluto, esto debido al argumento antes mencionado sobre la amplitud del radio de Gershgorin que implica que los valores propios tengan la posibilidad de alojarse lejos del correspondiente centro $\mathcal{J}_{ii}$.\\
+Cada color se encuentra asociado a los valores de la fuerza promedio $\sigma$ y la cantidad de puntos del mismo color corresponde a cada una de las probabilidades de conectividad del sistema. Se ha visto en la Figuras (\ref{fig:DistDiagonal}, \ref{fig:DistEigenvalores}) que cuando esta probabilidad es cada vez mayor entonces las distribuciones son más dispersas en función de la cantidad de interacciones posibles, y a su vez de la dependencia que hay con los valores del punto fijo del sistema. Por lo tanto hacia la izquierda estarán las probabilidades más grandes e irán decreciendo hacia la derecha.\\
 \\
-Lo que se pudo observar de estas revisiones es que ambas distribuciones siguen una tendencia de distribución de cola pesada con sesgo negativo hacia la derecha. Una hipótesis por comprobar y que se escapa de los objetivos de esta tesis, sería investigar si la distribución de las entradas del punto fijo estable asociadas a las matrices Jacobianas de los sistemas impacta directamente en como son las distribuciones de las diagonales y a su vez las de las partes reales de los valores propios. Para tener mayor certeza de la relación lineal, se presentará la correlación que existen entre ambas distribuciones.	
+En cada gráfica de la figura se contemplan los 78 conjuntos de simulaciones realizadas y se percibe una correspondencia entre los valores de la diagonal con las partes reales de los valores propios. Al igual que en la Figura (\ref{fig:ReEvs-Diagonales}), cada ajuste es mejor para valores cercanos al cero que para aquellos de magnitud máxima, esto debido al argumento antes mencionado sobre la amplitud del radio de Gershgorin que implica que los valores propios tengan la posibilidad de alojarse lejos del correspondiente centro $\mathcal{J}_{ii}$.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.2]{../Imagenes/CoeficientesCorrelacionN}
@@ -195,7 +217,7 @@ Lo que se pudo observar de estas revisiones es que ambas distribuciones siguen u
 	\label{fig:CoeficientesCorrelacionN}
 \end{figure}
 
-Esta muestra contiene un coeficiente de correlación por cada simulación realizada. Para determinar cada uno de ellos se consideró cada distribución, tanto de diagonales como de partes reales de los valores propios. Cada línea verde delimita un conjunto de simulaciones por cada $\sigma$ de acuerdo con la 
+Para tener una confirmación estadística más robusta sobre la relación entre las $d(\sigma,p)$ y Re$(\lambda)$ se construye un diagrama de correlaciones de cada uno de los 78 conjuntos de simulaciones. El diagrama contiene un coeficiente de correlación entre las distribuciones mencionadas para cada caso. Las líneas verdes delimitan los conjuntos de simulaciones por cada $\sigma$ de acuerdo con la Tabla (\ref{tab:Simulaciones}). En general se puede apreciar una correlación muy alta en entre ambas distribuciones, implicando que la propuesta de las Leyes Circulares funciona en un primer nivel: caracterizando al menos los centros de las vecindades que encierran los valores propios. Lo que faltaría sería definir una regla para cada radio de estas vecindades.
 \begin{wrapfigure}{r}{0.5 \textwidth} \vspace{-30pt} \begin{center}
 		\includegraphics[scale=0.135]{../Imagenes/AnomaliaSim11}
 	\end{center}
@@ -204,11 +226,18 @@ Esta muestra contiene un coeficiente de correlación por cada simulación realiz
 	\vspace{-10pt}
 	\label{fig:AnomaliaSim11}
 \end{wrapfigure}
-Tabla (\ref{tab:Simulaciones}). En general se puede apreciar una correlación casi perfecta en entre las distribuciones consideradas, lo que implica que si existe una dependencia en la forma de la distribución de valores propios en función de las entradas de las diagonales. Así mismo, sustenta la propuesta de las Leyes Circulares, pues cada elemento de las diagonales esta íntimamente relacionado con al menos un valor propio de su respectiva matriz Jacobiana. Este diagrama puede servir para tener un mapa general de como es la relación entre distribuciones, se puede observar un caso excepcional para los valores $\sigma=0.2$ y $p=0.1$, en este caso aunque la correlación sigue siendo muy alta, es la menor de todo el conjunto de simulaciones. Viendo la Figura (\ref{fig:AnomaliaSim11}) se puede notar que son los máximos en valor absoluto los que tienen discrepancias a tal nivel que rompe con la linealidad.
+Este diagrama puede servir para tener un mapa general de como es la relación entre cada una de las distribuciones. Se puede observar un caso excepcional para los valores $\sigma=0.2$ y $p=0.1$, en este caso aunque la correlación sigue siendo muy alta, es la menor de todo el conjunto de simulaciones. Corroborando con la Figura (\ref{fig:AnomaliaSim11}) se puede apreciar un desfase en la linealidad justamente par aquellos valores de mayor magnitud, donde es posible que los radios de sus vecindades sean tan grandes que puedan alojarse lejos del centro de la misma.
 
+\subsubsection*{Breve discusión sobre el radio}
+
+El radio que se propuso al principio de la sección no posee un sustento matemático sólido para poder considerarlo, es únicamente una propuesta heurística para darle forma a la distribución de los valores propios. Una propuesta plausible serían los radios de Gershgorin, dados como la suma de los valores absolutos de los renglones sin considerar al elemento de la diagonal, sin embargo, esta opción contempla solo una cota superior de la distribución de los valores propios, es decir, las vecindades de Gershgorin no controlan la posición de los valores propios: únicamente determinan el área en donde podrían estar posicionados (ver Proposición \ref{prop:DiagonalI} y \ref{prop:paramMay}).\\
+\\
+Precisamente en la Proposición \ref{prop:paramMay} se ha mostrado que la norma euclidiana define el desplazamiento y confinamiento de los valores propios en el plano complejo. Entonces parece que la filosofía empleada en dicha proposición nos puede dar una respuesta concreta sobre los radios espectrales locales de los valores propios de esta distribución. El límite de esta opción es que actualmente no se posee información sobre la distribución de los valores fuera de la diagonal. La matriz (\ref{eqn:MatrizJacobiana}) indica que hay un producto entre una variable normal ($\alpha_{ij}\sim\mathcal{N}(0,\sigma^2)$) y el elemento del punto fijo $x_i^*\in X^*$ que viene de una distribución de cola pesada (Figura (\ref{fig:PuntoFijoCoop3} \textbf{A})). Incluso obteniendo dicha información es posible que no sea tan útil, pues no tendrá relación directa con lo que verdaderamente define la estabilidad del sistema: las configuraciones de $\Lambda$ (en función de $\sigma$ y $p$) que generan puntos fijos estables. Por lo tanto, la caracterización de estas distribuciones de valores propios queda solamente al nivel de los centros de las vecindades.
+
+\newpage
 \section{Transiciones de estabilidad: LV generalizado}
 
-Para darle seguimiento a los resultados de esta tesis, esta sección se va a centrar en explorar de forma cualitativa las condiciones de estabilidad de los sistemas de Lotka-Volterra generalizado en función de $\sigma$ y $p$. Posteriormente se presentará un análisis sobre las condiciones de la matriz de incidencias para que exista o no estabilidad en los sistemas relacionados, con miras en presentar un primer esbozo del parámetro crítico de transición que resulta no ser trivial de hallar. Para el caso más robusto ($N=100$) se va a presentar la diferencia entre usar matrices estructuralmente simétricas y puramente aleatorias (como el caso de May), reforzando el hecho de que la simetría entre interacciones presentan elementos adicionales que determinan la estabilidad, tal y como se vio al final del capítulo anterior.\\
+Para darle seguimiento a los resultados de esta tesis, esta sección se va a centrar en explorar de forma cuantitativa las condiciones de estabilidad de los sistemas de Lotka-Volterra generalizado en función de $\sigma$ y $p$. Posteriormente se presentará un análisis sobre las condiciones de la matriz de incidencias para que exista o no estabilidad en los sistemas relacionados, con miras en presentar un primer esbozo del parámetro crítico de transición. Para el caso más robusto ($N=100$) se va a presentar la diferencia entre usar matrices estructuralmente simétricas y puramente aleatorias (como el caso de May), en miras de observar cambios de la dinámica como los que se reportaron al final del capítulo anterior. %A diferencia del caso anterior, este se trata más de como abre el cono convexo considerando que ahora los vectores columna presentan cierta simétría.\\
 \\
 Se van a considerar tres tipos de sistemas, para $N=\{100,50,25\}$. Se pretende ver como cambia la estabilidad con diferentes tamaños del sistema (\ref{eqn:LK}). El proceso para llevar a cabo la construcción de los diagramas de transición es semejante al que se presentó en la sección de las Transiciones de May, se va a integrar el sistema fijando la fuerza de interacción en los siguientes valores ${\Sigma}=\{0.1,0.2,...,1.0\}$ mientras que para las probabilidades de conectividad se va a considerar la siguiente partición del intervalo $[0,1]$ para cada $N$:
 \begin{equation}\label{eqn:particionLin}
@@ -218,13 +247,13 @@ Con esta configuración de valores se permitirá generar diagramas de estabilida
 \begin{equation}\label{eqn:particionLog}
 	p_{\log}=\left \{ x_i\, |\, x_i=10^{-\left (10-\frac{10i}{99}\right )},\ i=0,1,...,99\right \}
 \end{equation}
-Se ha considerado particularmente este conjunto de probabilidades ya que para ciertas $\sigma\in\Sigma$ y para $N=100$ primordialmente, la transición ocurre de manera abrupta de modo que no se aprecia con claridad cuando ocurre. Por este motivo se utiliza esta escala de valores para poder visualizar los cambios para probabilidades muy pequeñas. Por último pero no menos importante, se van a considerar diagramas en donde se deja fija la $p$ para cada $N$ y se define una partición equidistante en el intervalo $[0,1]$ en función de la fuerza de interacción, es decir:
+Se ha considerado particularmente este conjunto de probabilidades ya que para ciertas $\sigma\in\Sigma$ y para $N=100$ particularmente, la transición ocurre de manera abrupta para valores muy pequeños de $p$ de modo que no se aprecia con claridad cuando ocurre; la partición $p_{\log}$ resuelve este detalle. Por último pero no menos importante, se van a considerar diagramas en donde se deja fija la $p$ para cada $N$ y se define una partición equidistante en el intervalo $[0,1]$ en función de la fuerza de interacción, es decir:
 \begin{equation}\label{eqn:particionSigma}
 	\sigma = \{x_i\, |\, x_i=i\cdot\Delta x, i=0,1,2,...,100\},\qquad\text{con }\Delta x=0.01
 \end{equation}
-Para esta configuración de valores se obtendrán los diagramas de transición en función de $\sigma$ y se verá que tan contrastante es con respecto de los otros diagramas de transición; se verá que sigue la tendencia de las transiciones de May, pues estas también ocurren más hacia la derecha que las que van en función de $p$. \\
+Para esta configuración de valores se obtendrán los diagramas de transición en función de $\sigma$ y se podrá tener otra óptica de la dinámica enfocándose en la fuerza de las interacciones del sistema, tal y como se observó en los sistemas de May. Este enfoque considerará 10 tamaños diferentes y definidos de los sistemas (para cada $p$ fija) y se observará su cambio de estabilidad cuando dicha fuerza de interacción aumente. Por otro lado, los sistemas en función de $p$ consideran 10 fuerzas diferentes (para cada $\sigma$ fija) y se observará el cambio de la estabilidad cuando se le aumenten enlaces/interacciones al sistema, partiendo de los nodos aislados ($p=0$) hasta la red completamente conexa ($p=1$). \\
 \\
-Teniendo las particiones y los ajustes de parámetros necesarios para generar los diagramas de transición, solamente falta ver cómo y de qué manera se van a generar estos diagramas. Se integrará el sistema cierto número de veces para cada $N$, $\sigma$ y $p$ con sus correspondientes particiones y por cada elemento de dicha partición:
+Teniendo las particiones y los ajustes de parámetros necesarios para generar los diagramas de transición, solamente falta ver cómo y de qué manera se van a generar estos diagramas: se integrará el sistema cierto número de veces para cada configuración $(N,\sigma,p)$ con sus correspondientes particiones; cada elemento de la partición contempla una configuración particular la cual será integrada el siguiente número de veces con base en $N$:
 \begin{table}[h!]
 	\centering
 	\begin{tabular}{|c|c|}
@@ -238,77 +267,96 @@ Teniendo las particiones y los ajustes de parámetros necesarios para generar lo
 	\label{tab:SimulacionesTransicion}
 \end{table} 
 
-De tal forma que se van a determinar cuantos sistemas resultaron estables del total de simulaciones realizadas para dicho elemento y se contabilizarán. Se podrá percibir como un porcentaje de estabilidad y se podrá observar que cuando los valores de cada partición aumentan, la estabilidad de los sistemas irá decreciendo. La elección de la cantidad de simulaciones realizadas para cada conjunto de sistemas en función de $N$ responde a la intención de suavizar las curvas; entre más valores se consideren, la curva se hace cada vez más suave debido a la ley de los grandes números. Se ha observado que entre más chico sea el tamaño del sistema se requieren mas simulaciones para poder suavizar dicha curva.\\
+De esta manera se va a contabilizar el número de simulaciones estables por cada configuración para posteriormente guardar la información y visualizarla en los diagramas de transición. En el diagrama se podrá interpretar un porcentaje de estabilidad por cada configuración efectuada, viendo como cambia con el avance de los valores de la partición. El número de simulaciones efectuadas por configuración, para cada uno de los sistemas contemplados $N=\{25,50,100\}$, responde a la intención de suavizar las curvas siguiendo la ley de los grandes números. Se ha observado que entre más chico sea el tamaño del sistema se requieren mas simulaciones para poder suavizar dicha curva.\\
 \\
 %En una primera versión de resultados se consideró un método que generó algunos problemas los cuales se visualizaron en la sección anterior, en la discusión de los sistemas asintótica-mente estables: los cuales no alcanzaron su estabilidad o quizás no eran estables y todo gracias al tiempo de integración de $t_f=50$. Sin embargo se han generado otros resultados en donde se pone una restricción para que solamente se consideren sistemas que se integren en un tiempo máximo de $t_f=50$. Entre ambos tipos de resultados existen algunas desviaciones que requerirán de su análisis más adelante. Habiendo conseguido los diagramas de transición mediante todo un proceso computacionalmente arduo, merece preguntarse si acaso estas transiciones  de estabilidad corresponden con transiciones de fase, y de ser cierto ¿cuál sería su parámetro crítico? Se tiene una pista en la relación (\ref{eqn:paramMay}) que re acomodando se tiene
 %\begin{equation}\label{eqn:ParametroCritico}
 %	\sigma\sqrt{NC}<d
 %\end{equation}
 %donde en el caso de May corresponde con la diagonal fijada en $-d=-1$. Se explorará si en los diagramas de transición generados existe alguna dependencia/relación con algún valor representativo de las $d_{kk}(\sigma_i,p_j)$ de los Jacobianos del sistema.
-Retomando la discusión generada en el capítulo anterior derivada de la Proposición \ref{prop:paramMay}, se había concluido que el parámetro de transición de May (\ref{eqn:radioMayGirko}) no puede ajustarse directamente a las transiciones del sistema de Lotka-Volterra generalizado. La razón fundamental de ello se encuentra en la forma que tienen las matrices Jacobianas del Sistema de Lotka-Volterra generalizado. No cumplen la regla de tener entradas i.i.d. con media cero y varianza $\sigma^2$\footnote{Condición necesaria para la Ley Circular de Girko que justifica el resultado del parámetro de May (\ref{eqn:radioMayGirko}).}, sino que la diagonal tiene una forma de distribución de cola pesada y con sesgo negativo, y el resto de las entradas de la matriz no viene necesariamente de una distribución normal (Ver ec. (\ref{eqn:MatrizJacobiana})).
+Ya que el parámetro de May no se ajusta a la forma de la distribución heterogénea de los valores propios de los sistemas LV, éste no será un parámetro crítico que determine la transición de estabilidad de dichos sistemas. Además, la propuesta sobre las $N$ leyes circulares solamente contempla los centros de las vecindades argumentando que para obtener los radios hay que caracterizar la distribución de los elementos fuera de la diagonal, mismos que se conforman del producto de una variable normal ($\alpha_{ij}$) y la entrada í-esima del punto fijo que para ciertas configuraciones $(N,\sigma,p)$ resulta ser de cola pesada con sesgo positivo hacia el cero. Por lo tanto el parámetro de transición deberá obtenerse de otros medios: principalmente enfocándose en el punto fijo que se deriva de la ecuación $\Lambda X^*=\mathrm{K}$.
 \\
 \\
-Por lo tanto habrá que explorar otra alternativa para poder acercarse al parámetro de transición de éstos sistemas. Considerando adicionalmente el impacto de los puntos fijos y su distribución que induce a la forma de las matrices Jacobianas, no dejando atrás el papel que tiene la matriz de incidencias $\Lambda$ para a su vez inducir a estos puntos fijos. Finalmente considerar que $\Lambda$ es estructuralmente simétrica implicando más elementos que inciden en la estabilidad (Ver Fig. (\ref{fig:TransicionDirvsNoDir})).
+En un primer nivel, nos concentraremos en el punto fijo y sus configuraciones $(N,\sigma,p)$, ya que se necesita delimitar los escenarios en donde $X^*\geq 0$ es decir que no posea entradas negativas. Los escenarios en donde existe alguna $x_k\in X^*$ negativa normalmente devienen en dinámicas inestables, incluso si no fuera así: no hay interpretación física para poblaciones negativas. Se dice que este es un primer nivel ya que actualmente no se sabe si existirán puntos fijos $X\geq 0$ que resulten inestables.
+
 
 \subsection{Para $N=100$}
 
 \subsubsection*{En función de $p$}
 
-Este sistema es el más robusto analizado y del que se le podría extraer más información debido a las características de sus diagramas de transición. Como bien se mencionó anteriormente, se necesitó una cantidad de simulaciones considerablemente inferior en comparación con los sistemas $N=50,25$ (Tabla (\ref{tab:SimulacionesTransicion})), lo que por sí mismo demuestra que la cantidad de interacciones esta relacionada con la ley de los grandes números, entre más grande sea el sistema: mayor será su capacidad de ``promediar'' el ruido estocástico interno y por lo tanto sus fluctuaciones irán disminuyendo permitiendo que el promedio converja cada vez mejor al valor esperado.
+Este escenario es el más robusto de los 3 tamaños a analizar, por ende se le pondrá más atención que a los otros dos tamaños. Como bien se mencionó anteriormente, se necesitó una cantidad de simulaciones considerablemente inferior en comparación con los sistemas $N=50,25$ (Tabla (\ref{tab:SimulacionesTransicion})), lo que por sí mismo demuestra que la cantidad de interacciones esta relacionada con la ley de los grandes números, entre más grande sea el sistema: mayor será su capacidad de ``promediar'' el ruido estocástico interno y por lo tanto sus fluctuaciones irán disminuyendo permitiendo que el promedio converja cada vez mejor al valor esperado.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.2]{../Imagenes/EstabilidadLKpLin.png}
-	\caption{Transiciones de estabilidad en el Sistema de Lotka-Votlerra generalizado en función de la probabilidad de conectividad para $N=100$.}
+	\caption{Transiciones de estabilidad en el Sistema de Lotka-Votlerra generalizado estructuralmente simétrico en función de la probabilidad de conectividad para $N=100$.}
 	\label{fig:EstabilidadLKpLin}
 \end{figure}
 
-En este diagrama al igual que en el May (Fig. \ref{fig:TransicionMayDirLin}) también se observa un cambio abrupto para $\sigma>0.3$ ubicado en los primeros valores de la probabilidad, sin embargo, su diferencia radica en la suavidad con la que ocurren en el Sistema de Lotka-Volterra generalizado. Una suavidad muy semejante a la que presentan los sistemas de May que son estructuralmente simétricos, sobre todo mucho más marcadas para los valores de $\sigma$ cercanos a 1. \\
-\\
-En este caso se abre el análisis con matrices de incidencias $\Lambda$ estructuralmente simétricas que dan origen a Jacobianas de la misma naturaleza, más adelante se realizará una comparación (únicamente para el caso $N=100$) entre sistemas con interacciones aleatorias y estructuralmente simétricas.
+En este diagrama al igual que en el May (Fig. \ref{fig:TransicionMayDirLin}) también se observa una transición temprana para los casos $\sigma>0.3$. La diferencia con respecto de los sistemas de May radica en la forma suave de la transición; especialmente para $\sigma=0.2$ no se observa un cambio de fase abrupto delimitado por una probabilidad crítica, sino que la estabilidad va bajando gradualmente conforme el número de enlaces va aumentando. Esta suavidad es semejante a las transiciones de los sistemas semi Allesina del capítulo anterior; más adelante se realizará una comparación entre los escenarios contemplados hasta ahora. En las Figuras (\ref{fig:EstabilidadLKpLin}, \ref{fig:EstabilidadLKpLog}) se muestran los cambios de estabilidad considerando matrices $\Lambda$ estructuralmente simétricas. 
 \newpage
-Nuevamente se ajusta el eje $x$ en escala logarítmica para lograr visualizar las transiciones con $\sigma>0.3$. Se puede observar que aún para valores de $\sigma$ cercanos a 1, sigue presentando una notoria suavidad con respecto de los sistemas de May (Fig. \ref{fig:TransicionMayDirLog}) que son sustancialmente similares a los sistemas de May estructuralmente simétricos.
+Se ajusta el eje $x$ en escala logarítmica para lograr visualizar las transiciones con $\sigma>0.3$. Se puede observar que en casos se sigue presentando una notoria suavidad en la transición con respecto de los sistemas de May (Fig. \ref{fig:TransicionMayDirLog}), y son sustancialmente similares a los sistemas de semi Allesina, por lo tanto la simetría estructural incide significativamente en la forma de las transiciones.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.2]{../Imagenes/EstabilidadLKpLog}
-	\caption{Transiciones de estabilidad en el Sistema de Lotka-Votlerra generalizado en función de la probabilidad con escala logarítmica para $N=100$.}
+	\caption{Transiciones de estabilidad en el Sistema de Lotka-Votlerra generalizado estructuralmente simétrico en función de la probabilidad con escala logarítmica para $N=100$.}
 	\label{fig:EstabilidadLKpLog}
 \end{figure}
 
-A continuación se realizarán una serie de comparaciones entre sistemas de Lotka-Volterra generalizado con $\Lambda$ estructuralmente simétrica y aleatoria, pero también se realizarán comparaciones con respecto de los sistemas de May antes mencionados. En el primer caso para notar cómo es la desviación entre la elección de $\Lambda$ y en el segundo caso para notar la desviación con respecto de sistemas que consideran la diagonal fija.\\
-\begin{wrapfigure}{l}{0.5 \textwidth} \vspace{-30pt} \begin{center}
+Sin embargo, se ha dado un hallazgo que puede aportar información a la estabilidad de los sistemas estructuralmente simétricos. Exclusivamente se da para interacciones de cooperación en la matriz $\Lambda$, es decir: $(--)$. El hallazgo se da para el caso $N=2$ dando apertura a que se pueda generalizar
+\begin{wrapfigure}{l}{0.5 \textwidth} \vspace{-20pt} \begin{center}
 		\includegraphics[scale=0.135]{../Imagenes/Heuristico}
 	\end{center}
 	\vspace{-20pt} 
 	\caption{Sistema inestable que no cumple con la relación (\ref{eqn:relacionHeuristica})}
-	\vspace{-10pt}
+	\vspace{10pt}
 	\label{fig:Heuristico}
 \end{wrapfigure}
-La suavidad de las transiciones de este caso aún es una pregunta abierta al igual que el parámetro de transición, tendrá que ver necesariamente la simetría estructural de las interacciones. Realizando una exploración heurística sobre esta simetría se ha hallado particularmente para el sistema de $2\times 2$ que las interacciones de cooperación  (ambos coeficientes negativos) deben cumplir la relación:
+a dimensiones mayores. La relación heurística hallada (considerando $\alpha_{ij},\alpha_{ji}<0$) es la siguiente:
 \begin{equation}\label{eqn:relacionHeuristica}
-	\alpha_{ij}>\frac{1}{\alpha_{ji}},\qquad \text{con }i\neq j
+	\alpha_{ij}>\frac{1}{\alpha_{ji}},\quad \text{con }i\neq j
 \end{equation}
-para que el sistema (\ref{eqn:LK}) sea estable. Esto implica que $\alpha_{ij}\alpha_{ji}<1$ y si no se cumplen estas condiciones, el sistema deviene a inestable. En la Figura (\ref{fig:Heuristico}) se ha integrado un sistema que no cumple la desigualdad (\ref{eqn:relacionHeuristica}) para un intervalo de tiempo de 0 a 10, y en apenas unos instantes el sistema se disparó a $-\infty$. Esta puede ser una pista importante para hallar una relación de peso que conlleve a la inestabilidad de sistemas generalizados a $N$ especies. 
-\\
-\\
-Al comparar las transiciones del sistema de Lotka-Volterra generalizado con $\Lambda$ aleatoria y estructuralmente simétrica, se observa que las transiciones decaen primero y de forma suave en el segundo caso con respecto del primero. Esto puede deberse en parte por desigualdad (\ref{eqn:relacionHeuristica}), pues es una condición altamente probable conforme $N$ sea más grande. Sin embargo, hace falta generalizar dicha desigualdad a matrices cuadradas con las características de $\Lambda$ y demostrar que la realción esta inmiscuida en este tipo de escenarios, por lo que por ahora no es enteramente concluyente.
+si esta condición se cumple, entonces el sistema (\ref{eqn:LK}) tiene posibilidades de ser estable (más no garantiza estabilidad para sistemas $N\gg 1$); en cambio si no se cumple esta relación entonces el sistema será inestable tal y como se muestra en la Figura (\ref{fig:Heuristico}): se ha integrado un sistema que no cumple esta condición considerando un intervalo de tiempo que va de 0 a 10, se observa que en apenas 0.6 unidades de tiempo el sistema se disparó a $-\infty$. En la Figura (\ref{fig:Heuristico2}) se presenta otro sistema que cumple al límite con la condición (\ref{eqn:relacionHeuristica}), por lo tanto el sistema si se estabiliza aunque lo hace en valores sumamente elevados, mostrando incluso una \\
+
+\begin{wrapfigure}{r}{0.5 \textwidth} \vspace{-30pt} \begin{center}
+		\includegraphics[scale=0.135]{../Imagenes/Heuristico2}
+	\end{center}
+	\vspace{-20pt} 
+	\caption{Sistema estable que cumple al límite con la relación (\ref{eqn:relacionHeuristica})}
+	\vspace{-10pt}
+	\label{fig:Heuristico2}
+\end{wrapfigure}
+fase metaestable en la que oscila hasta llegar a su atractor. En los siguientes diagramas se realizarán una serie de comparaciones entre sistemas LV generalizados con $\Lambda$ estructuralmente simétrica y puramente aleatoria, también se realizarán comparaciones con respecto de los sistemas de May antes mencionados. En la primer comparación se busca observar la desviación entre la elección del tipo de $\Lambda$; en la segunda comparación se busca observar la desviación con respecto de sistemas que consideran la diagonal fija. El tipo de $\Lambda$ utilizada para observar la transición de estabilidad influye mucho en como se comporta, en principio se observa en la Figura (\ref{fig:ComparacionIncidenciasp}) un comportamiento semejante al caso de May con respecto de los semi Allesina. El argumento para este caso mencionado eran las posibles correlaciones que emergen por tener simetría estructural, esto orillaba a que los sistemas semi Allesina tuvieran una distribución achatada de valores propios en el eje real que orillaba a sus partes reales a convertirse en positivas primero que en los sistemas de May. En nuestro caso con $\Lambda$, hay que hallar otras posibles explicaciones: ya que el eje de la estabilidad en sistemas LV son los puntos fijos asociados. ¿De que forma la simetría estructural impacta en la definición de los puntos fijos? La desigualdad (\ref{eqn:relacionHeuristica}) nos puede dar pistas al respecto, ya que las desviaciones son más marcadas conforme $\sigma\geq 3$, escenarios donde es más probable que se cumpla dicha desigualdad. 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.16]{../Imagenes/ComparacionIncidenciasp}
 	\caption{Comparación de la estabilidad entre sistemas de Lotka-Volterra generalizados con $\Lambda$ aleatoria y estructuralmente simétrica.}
 	\label{fig:ComparacionIncidenciasp}
 \end{figure}
+\newpage
+Para notar que distribuciones comienzan a no cumplir la desigualdad, se realiza una simulación (Ver apéndice\footnote{Cita}) que utiliza matrices cuadradas similares a $\Lambda$ solo con la diferencia de que todas sus entradas (incluso la diagonal) se mapean de una distribución normal que toma valores discretos de $\sigma$ tal como en la partición (\ref{eqn:particionSigma}). La simulación considera 10,000 matrices de tamaño $N=100$, y por cada $\sigma$ evalúa cuantos de ellos no cumple la desigualdad y devuelve el resultado en forma de porcentaje. 
+\begin{tcolorbox}[colback=green!10!white, colframe=black, title=Entrada]
+	\begin{minted}{julia}
+for sigma in 0.1:0.01:1.0
+   if simula_probabilidad_cumplimiento(sigma) != 1.0
+      print(sigma," ",simula_probabilidad_cumplimiento(sigma))
+      break
+  end
+end
+	\end{minted}
+\end{tcolorbox}
 
-Lo que llama la atención es que la desviación es cada vez mayor conforme $\sigma$ aumenta, valores cercanos al cero son más probables que cumplan la desigualdad (\ref{eqn:relacionHeuristica}) que aquellos cercanos a 1. Para notar que distribuciones comienzan a no cumplir la desigualdad, se realiza una simulación que utiliza matrices cuadradas similares a $\Lambda$ solo con la diferencia de que todas sus entradas se mapean de una distribución normal que toma valores discretos tal como en la partición (\ref{eqn:particionSigma}), la simulación considera 3000 matrices por cada $\sigma$ y evalúa cuantos de ellos no cumple la desigualdad. \\
-\\
-El hallazgo es que a partir de $\sigma=0.27$ se observa la primer distribución normal que no cumple la desigualdad con menos de 10 casos, de ahí en adelante el número de casos no favorables va aumentando hasta $\sigma=1.0$ teniendo hasta una cantidad de 6 cifras de ellos. Y tal cual se nota en la Figura (\ref{fig:ComparacionIncidenciasp}), a partir de $\sigma=0.3$ en adelante se va observando una desviación progresiva hasta $\sigma=1.0$.\\
-\\
-A partir de esta observación es que se ha relacionado la desigualdad con la estabilidad de los sistemas, tanto de May como el de Lotka-Volterra generalizado. Viendo las diferencias que tiene el sistema (\ref{eqn:LK}) considerando $\Lambda$ estructuralmente simétrica y aleatoria, ahora se mostrará que diferencias existen entre este par de sistemas con los respectivos de May.
+\begin{tcolorbox}[colback=red!10!white, colframe=black, title=Salida]
+0.27 0.9999998383552714
+\end{tcolorbox}
+El hallazgo es que a partir de $\sigma=0.27$ se observa la primer distribución normal que no cumple la desigualdad (\ref{eqn:relacionHeuristica}) con menos de 10 casos. Cuando $\sigma$ va aumentando, el número de casos no favorables también lo hace hasta tener 2,585,708 (79\%) de ellos. Y tal cual se nota en la Figura (\ref{fig:ComparacionIncidenciasp}), a partir de $\sigma=0.3$ en adelante se va observando una desviación cada vez más marcada hasta $\sigma=1.0$. Por lo tanto, la relación heurística puede tener un peso significativo en la estabilidad de los sistemas LV. Ahora se mostrarán las diferencias que existen entre ambos sistemas LV con respecto de May y semi Allesina.
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.16]{../Imagenes/ComparacionLKMay.png}
 \caption{Comparación de la estabilidad entre sistemas de Lotka-Volterra y May en función de $p$ con matrices aleatorias.}
 \label{fig:ComparacionLKMay}
 \end{figure}
+
+En esta ocasión se percibe que la estabilidad de los sistemas de May y semi Allesina decaen primero que los LV, para ambos casos distinguiendo entre las matrices aleatorias y estructuralmente simétricas. En los diagramas con escala logarítmica se puede apreciar que cada decaimiento de estabilidad en sistemas LV es considerablemente similar su respectivo análogo, al menos de forma cualitativa. Por tanto, cada decaimiento muestra que existe una clara relación entre los sistemas LV y de May y/o semi Allesina. 
 
 \begin{figure}[h!]
 	\centering
@@ -317,21 +365,23 @@ A partir de esta observación es que se ha relacionado la desigualdad con la est
 	\label{fig:ComparacionLKMayESim}
 \end{figure}
 
-En esta ocasión se percibe que la estabilidad de los sistemas de May decaen primero que los de Lotka-Volterra generalizado, para ambos casos distinguiendo entre las matrices aleatorias y estructuralmente simétricas. Además de ello lo hacen de forma similar para $\sigma\geq0.2$; a pesar de ello la diferencia esta presente en la estructura de las matrices jacobianas y las de May, principalmente por el hecho de que están regidas por distribuciones completamente diferentes.
-
-Una suposición válida que se puede derivar de la estructura de las matrices con respecto de la forma de transición de sus estabilidades, es que lo harán en función de la distribución estadística con las que estén formadas. Se podrían formar otro tipo de sistemas con otras distribuciones para poder observar de que forma decaen y si siguen las tendencias que se muestran en las formas aleatorias y estructuralmente simétricas.
-
 \subsubsection*{En función de $\sigma$}
 
-Otra perspectiva que se tiene de la estabilidad del sistema (\ref{eqn:LK}) es utilizando la partición (\ref{eqn:particionSigma}) y ver de que manera cambia considerando varias probabilidad tal y como se mostró anteriormente con los diagramas de transición en función de $p$. Al igual que con las transiciones de May en función de $\sigma$, estas también ocurrirán hacia la derecha con respecto de las transiciones en función de $p$. En el caso de May se le atribuía al hecho de que su parámetro de transición $\sigma^*$ es proporcional a $\frac{1}{\sqrt{N}}$ mientras que $C^*\propto\frac{1}{N}$. Ya se sabe que el parámetro (\ref{eqn:radioMayGirko}) no aplica enteramente a las transiciones de Lotka-Volterra generalizado, sin embargo, podría estar involucrado de alguna forma mediante esta pista.
+Hasta ahora se ha visto como cambia la estabilidad en función de ir agregando enlaces a la red de incidencias considerando 10 diferentes fuerzas de interacción. Ahora el siguiente análisis será contemplar el cambio de estabilidad considerando 10 tamaños diferentes de red variando la fuerza de interacción promedio mediante la partición (\ref{eqn:particionSigma}). En el capítulo anterior se ha observado que las desviaciones más notorias entre sistemas de May y semi Allesina se daban cuando el número de enlaces era escaso y menos notorio conforme dicha cantidad fuera aumentando. El argumento principal se centraba en los tamaños fijos de las redes y que el aumento gradual de la magnitud de sus interacciones volvía las matrices estructuralmente simétricas indistinguibles de las totalmente aleatorias.\\
+\\
+En nuestro caso con $\Lambda$ puede que ocurra algo semejante, pero se deberá centrar el análisis en los puntos fijos que se generan en cada configuración para desenvolver en el nivel de estabilidad correspondiente. Al igual que en la Figura (\ref{fig:ComparacionIncidenciasp}), se va a mostrar como cambia la estabilidad cuando se consideran matrices de incidencias $\Lambda$ aleatorias y estructuralmente simétricas. Así mismo se observarán las desviaciones con respecto de los escenarios de May y semi Allesina respectivamente, tal como en las Figuras (\ref{fig:ComparacionLKMay}, \ref{fig:ComparacionLKMayESim}).
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.2]{../Imagenes/EstabilidadLKσLin}
-	\caption{Transiciones de estabilidad en el Sistema de Lotka-Volterra generalizado en función de la fuerza de interacción promedio para $N=100$.}
+	\caption{Transiciones de estabilidad en el Sistema de Lotka-Volterra generalizado estructuralmente simétrico en función de la fuerza de interacción promedio para $N=100$.}
 	\label{fig:EstabilidadLKσLin}
 \end{figure}
 
-Este escenario en particular puede ayudar a develar la relación entre la estabilidad y la simetría estructural de las interacciones. Al igual que en la Figura (\ref{fig:ComparacionIncidenciasp}), se va a mostrar como cambia la estabilidad cuando se consideran matrices de incidencias $\Lambda$ aleatorias y estructuralmente simétricas. En su caso análogo, se observaba que las transiciones de $\Lambda$ aleatoria se muestra hacia la derecha con respecto de la estructuralmente simétrica. 
+Se observa que las transiciones en función de $\sigma$ también se muestran más graduales tal y como en los sistemas de May y semi Allesina. El cambio gradual de la magnitud de las interacciones es proporcional al procentaje de estabilidad, ya no es tan abrupto como en el caso anterior en función de $p$. Algo importante de destacar es que conforme el tamaño de la red aumenta: las transiciones se van estrechando cada vez más, de modo que casi no exista diferencia entre el caso $p=0.9$ y $p=1.0$. \\
+\\
+Otro elemento que se hace evidente es lo que ocurre para $\sigma\geq 0.27$, para el caso $p=0.1$ prácticamente marca la pauta de la estabilidad pero para el resto de las redes, el decaimiento de la estabilidad comienza desde antes de esta cota. Es por ello que la relación heurística (\ref{eqn:relacionHeuristica}) es un ingrediente más a considerar en la estabilidad de los sistemas estructuralmente simétricos más no es enteramente determinante.\\
+\\
+Al comparar $\Lambda$ estructuralmente simétricas y aleatorias se puede percibir que el decaimiento de las estructuralmente simétricas es primero con respecto de las $\Lambda$ aleatorias, tal y como se observó entre sistemas de May y semi Allesina. En la Figura (\ref{fig:ComparacionIncidenciasσ}) también se muestra evidente que conforme la red es más grande: las desviaciones entre ambas $\Lambda$ va disminuyendo hasta mostrar el mismo decaimiento. En términos de la matriz de incidencias, se puede argumentar lo mismo que en el caso de May y semi Allesina: conforme la magnitud de las interacciones aumente para cada sistema de tamaño fijo, la matriz $\Lambda$ estructuralmente simétrica va siendo indistinguible de su homóloga aleatoria. Por lo tanto, es congruente que las desviaciones vayan siendo mínimas. Será de interés analizar cómo son sus puntos fijos y sus diferencias.
 \newpage
 \begin{figure}[h!]
 	\centering
@@ -340,7 +390,7 @@ Este escenario en particular puede ayudar a develar la relación entre la estabi
 	\label{fig:ComparacionIncidenciasσ}
 \end{figure}
 
-En este caso las transiciones con $\Lambda$ aleatoria también ocurren hacia la derecha de las estructuralmente simétricas, pero a diferencia del caso de la Figura (\ref{fig:ComparacionIncidenciasp}), las desviaciones van disminuyendo conforme la conectividad aumenta, tal y como se observó con el caso de May (Figuras (\ref{fig:TransicionMaySigma} \textbf{B}, \ref{fig:TransicionσDirvsNoDir})). El las transiciones estructuralmente simétricas se logra observar como comienzan a ocurrir desde un rango alrededor del 0.2 al 0.4, lo que empata con la simulación realizada para observar el cumplimiento de la desigualdad (\ref{eqn:relacionHeuristica}). 
+Al comparar la estabilidad de los sistemas LV con respecto de May y semi Allesina, las diferencias son similares a las Figuras (\ref{fig:ComparacionLKMay}, \ref{fig:ComparacionLKMayESim}): las transiciones de May y semi Allesina se muestran hacia la izquierda con respecto de las transiciones LV. Sin embargo se puede observar que también siguen la tendencia de cambiar su estabilidad entorno a valores que se encuentran alrededor en el mismo orden de magnitud, lo que muestra una relación entre ambos sistemas. En realidad, la única diferencia entre las Jacobianas aleatorias y estructuralmente simétricas con respecto de May y semi Allesina es la injerencia que tiene el punto fijo sobre ellas (\ref{eqn:MatrizJacobiana}).
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.16]{../Imagenes/ComparacionLKMayσ}
@@ -348,35 +398,37 @@ En este caso las transiciones con $\Lambda$ aleatoria también ocurren hacia la 
 	\label{fig:ComparacionLKMayσ}
 \end{figure}
 \newpage
-Para las comparaciones entre sistemas de May y de Lotka-Volterra generalizado, las diferencias son similares a las Figuras (\ref{fig:ComparacionLKMay}, \ref{fig:ComparacionLKMayESim}) en el sentido de que las transiciones de May se notan hacia la izquierda con respecto de las transiciones de Lotka-Volterra. Las formas de transición dependen de la estructura de las matrices que los representan, específicamente hablando de la diagonal: en el caso de May el radio Gershgorin \cite{GershgorinTheorem} y el radio espectral de Girko \cite{girko1985circular} define ``fácilmente'' el punto de transición que para los sistemas de Lokta-Volterra no es tan simple debido a su diagonal heterogénea. 
+Para concluir el caso $N=100$ se puntualiza a partir de las Figuras (\ref{fig:EstabilidadLKpLin}, \ref{fig:EstabilidadLKσLin}) que genera más impacto en la estabilidad pequeños cambios en $p$ que en $\sigma$, es decir, en términos de estabilidad es más agresivo agregar enlaces a una red de interacciones que aumentar la magnitud de las mismas para redes de tamaño fijo.
 
 \subsection{Para $N=50$}
 
 \subsubsection*{En función de $p$}
 
-Se ha utilizado la misma metodología para generar los diagramas de transición para este caso y para $N=25$. Las particiones y los parámetros de (\ref{eqn:LK}) son los mismos. Lo único que ha cambiado es el número de simulaciones por punto (Tabla (\ref{tab:SimulacionesTransicion})), pues entre menos especies se contemplen se debe de compensar con el número de simulaciones para cumplir la ley de los grandes números. Algo que se podrá observar en estas transiciones es que son cada vez más suaves y tienen mayor rango de estabilidad, lo que sugiere que es más probable hallar sistemas estables cuando su tamaño es cada vez menor.
+Se ha utilizado la misma metodología para generar los diagramas de transición para este caso y para $N=25$. Las particiones y los parámetros del sistema (\ref{eqn:LK}) son los mismos. Lo único que ha cambiado es el número de simulaciones por punto (Tabla (\ref{tab:SimulacionesTransicion})), pues entre menos especies se contemplen se debe de compensar con el número de simulaciones para suavizar las curvas con base en la ley de los grandes números. Algo que se podrá observar en estas transiciones es que son cada vez más suaves y tienen mayor rango de estabilidad (ver caso $\sigma=0.2$). Esto sugiere que es más probable hallar sistemas estables cuando su tamaño es cada vez menor.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.16]{../Imagenes/EstabilidadLKp50}
-	\caption{Transiciones de estabilidad en el Sistema de Lotka-Volterra generalizado en función de la probabilidad de conectividad para $N=50$.}
+	\caption{Transiciones de estabilidad en el Sistema de Lotka-Volterra generalizado estructuralmente simétrico en función de la probabilidad de conectividad para $N=50$.}
 	\label{fig:EstabilidadLKp50}
 \end{figure}
 
-Se puede observar sutilmente como el caso $\sigma=0.2$ tiene hasta un 60\% de probabilidad de ser estable aún cuando la red es completamente conectada, hecho que contrasta con el caso $N=100$. Sin embargo aún así se sigue observando  que la estabilidad para $\sigma$ cercana a 1 se da para valores $p$ pequeños, del orden de $10^{-4}$. Si se realiza una simulación como la que se mencionó anteriormente para observar el cumplimiento de la desigualdad (\ref{eqn:relacionHeuristica}) los valores son similares al caso $N=100$, lo que indica que a partir de $\sigma=0.27$ comienzan a emerger casos inestables que no cumplen dicha desigualdad.
+Se puede observar que el caso $\sigma=0.2$ tiene hasta un 60\% de probabilidad de ser estable aún cuando la red es completamente conectada, hecho que contrasta con el caso $N=100$. Sin embargo aún así se sigue observando que el cambio de estabilidad para $\sigma$ cercano a 1.0 se da para valores de $p$ del orden de $10^{-4}$. Al realizar la simulación (Apéndice\footnote{Cita}) para observar el cumplimiento de la relación heurística (\ref{eqn:relacionHeuristica}) se encuentra que para $\sigma=0.27$ comienzan a emerger casos que no cumplen dicha desigualdad. Sin embargo solos se toma en cuenta como elemento adicional a considerar para las transiciones de estabilidad.
 
 \subsubsection*{En función de $\sigma$}
 
-Se podrá observar mejor con el diagrama de transición en función de $\sigma$, únicamente cambiará la forma en que decrece con respecto del sistema $N=100$ siendo para este caso más suave en lugar de abrupto.
+En las transiciones que dependen de $\sigma$ también se aprecia que son más suaves y desplazadas un poco a la derecha con respecto del caso $N=100$. Además se sigue observando que las diferencias entre los sistemas $p=0.9$ y $p=1.0$ son muy mínimas en comparación con las desviaciones entre los sistemas $p=0.1$ y $p=0.2$. En este sentido se logra ver que los cambios de estabilidad son más sustanciales cuando se tienen redes escasamente pobladas en comparación con redes densas y casi conexas.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.2]{../Imagenes/EstabilidadLKσ50}
-	\caption{Transiciones de estabilidad en el Sistema de Lotka-Volterra generalizado en función de la fuerza de interacción para $N=50$.}
+	\caption{Transiciones de estabilidad en el Sistema de Lotka-Volterra generalizado estructuralmente simétrico en función de la fuerza de interacción para $N=50$.}
 	\label{fig:EstabilidadLKσ50}
 \end{figure}
 
 \subsection{Para $N=25$}
 
 \subsubsection*{En función de $p$}
+
+Finalmente para el último caso se encuentran transiciones de estabilidad todavía más suaves, a su vez con un rango de estabilidad mayor con respecto de los sistemas anteriores. Se contempla un número mayor de simulaciones por punto (Tabla \ref{tab:SimulacionesTransicion}) para poder suavizar las curvas. En este caso se puede observar que el sistema con $\sigma=0.2$ es 99\% estable aún con la red totalmente conexa. Se observa que la cantidad de interacciones influye significativamente en el cambio de estabilidad de los sistemas: tienen mayor probabilidad de ser estables. En la proposición \ref{prop:paramMay} se ha mencionado que el radio de Girko (\ref{eqn:radioMayGirko}) tiene un valor esperado $\sigma$\footnote{Considerando matrices de Ginibre, que se encuentran normalizadas por el factor $1/\sqrt{N}$.} con fluctuaciones de orden $1/\sqrt{N}$; eso implica que entre más grande sea el sistema: es más estrecha la incertidumbre de ser estable o no. Por esta razón los sistemas $N=100$ se les observa una transición abrupta. Sin embargo si el sistema es de menor tamaño, entonces las fluctuaciones son más grandes y la probabilidad de ser estables es mayor.
 
 \begin{figure}[h!]
 	\centering
@@ -385,20 +437,22 @@ Se podrá observar mejor con el diagrama de transición en función de $\sigma$,
 	\label{fig:EstabilidadLKp25}
 \end{figure}
 
-Para este último caso se encuentran transiciones de estabilidad todavía más suaves, a su vez con un rango de estabilidad mayor con respecto de los sistemas anteriores. Sin embargo también se contempla un número mayor de simulaciones por punto (Tabla \ref{tab:SimulacionesTransicion}) para poder suavizar las curvas. En este caso se puede observar que el sistema con $\sigma=0.2$ es 99\% estable aún con la red totalmente conexa. En el caso de las transiciones en función de $\sigma$ también se presentan más suaves con respecto de los sistemas anteriores incluso se logra observar para $p=0.1$ que el sistema es estable en un 30\% de probabilidad con $\sigma=1.0$, hecho que no se logró observar en los casos anteriores.
+En el caso $N=100$ se ha observado que existe una relación sutil entre los sistemas con diagonal fija y las Jacobianas de los LV. No se puede concluir directamente que los sistemas LV tienen fluctuaciones de orden $1/\sqrt{N}$, puesto que no los describe una ley circular por no tener una distribución uniforme de valores propios. Sin embargo se puede suponer que tienen fluctuaciones similares debido a la forma de las transiciones vistas hasta ahora, y para garantizarlo se deberá tener una estimación del parámetro crítico de transición.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.2]{../Imagenes/EstabilidadLKσ25}
 	\caption{Transiciones de estabilidad en el Sistema de Lotka-Votlerra generalizado en función de la fuerza de interacción para $N=25$.}
 	\label{fig:EstabilidadLKσ25}
 \end{figure}
-
-Con esto se concluye la presentación de los resultados más importantes de esta tesis, en este punto se tiene un mapa general de como se comporta la estabilidad en sistemas de Lotka-Volterra generalizado para diversos conjuntos de $p$, $\sigma$ y $N$. Haría falta reconocer si puede existir o no un parámetro crítico de transición además de revisar si la relación (\ref{eqn:relacionHeuristica}) tiene alguna relevancia en dicho parámetro de transición. En la siguiente y última sección de este trabajo se estará discutiendo las posibles implicaciones de esto.
 \newpage
+Las transiciones en función de $\sigma$ también se muestran más suaves con respecto de los sistemas anteriores incluso se logra observar que el sistema con la red totalmente conexa ($p=1.0$) es estable con un 30\% de probabilidad para $\sigma=0.1$, hecho que no se logró observar en los casos anteriores. El mapeo de este caso particular sugiere que se requerirían interacciones de mayor magnitud para poder observar el decaimiento de la estabilidad a cero, es decir, considerar valores $\sigma\geq 1.0$ para el caso $p=0.1$. La simulación del apéndice(\footnote{Cita}) para la relación heurística (\ref{eqn:relacionHeuristica}) indica que para $\sigma=0.29$ se cumple la desigualdad y comienza a no cumplirlos para valores posteriores.
+\\
+\\
+Con esto se concluye la presentación de los resultados más importantes de esta tesis, en este punto se tiene un mapa general de como se comporta la estabilidad de los sistemas LV para diversos configuraciones $(p,\sigma,N)$. Hace falta reconocer si puede existir o no un parámetro crítico de transición además de revisar si la relación (\ref{eqn:relacionHeuristica}) tiene alguna relevancia en dicho parámetro de transición específicamente para los sistemas estructuralmente simétricos. En la siguiente y última sección de este trabajo se estará discutiendo las posibles implicaciones de esto.
 
 \section{Un acercamiento al parámetro crítico}
 
-Existen antecedentes sobre transiciones de fase aplicando el modelo de Lotka-Volterra \cite{bunin2017ecological, biroli2018marginally, altieri2021properties}, específicamente dados en el enfoque de \textit{spin glasees}. Cada uno de los trabajos construye de forma particular el sistema y lo conlleva a resultados interesantes, en esta última sección se explorará brevemente cada enfoque y se abrirá la discusión sobre nuestra transición de fase entre régimen estable de un solo punto de equilibrio al inestable, tal y como se mostró en los diagramas de transición antes presentados.
+Existen antecedentes sobre transiciones de fase aplicando el modelo de Lotka-Volterra \cite{bunin2017ecological, biroli2018marginally, altieri2021properties}, específicamente dados en el enfoque de \textit{spin glasses}. Cada uno de los trabajos construye de forma particular el sistema y lo conlleva a resultados interesantes, en esta última sección se explorará brevemente cada enfoque y se abrirá la discusión sobre nuestra transición de fase entre régimen estable de un solo punto de equilibrio al inestable, tal y como se mostró en los diagramas de transición antes presentados.
 \\
 \\
 Para el trabajo aportado por Bunin en 2017 \cite{bunin2017ecological} se consideran las ecuaciones comunes del sistema de Lotka-Volterra (\ref{eqn:LK}) considerando que las interacciones se mapean de forma independiente cumpliendo $\mu\equiv N\langle\alpha_{ij}\rangle$ y $\sigma^2\equiv N\, \Var(\alpha_{ij})$. Además de ello, se define un parámetro $\gamma$ que muestra la correlación entre cada una de las interacciones intervinientes, es decir:
