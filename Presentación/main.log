@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.14)  7 MAR 2025 11:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.14)  24 NOV 2025 17:53
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -907,9 +907,6 @@ Language: spanish.ldf 2021/05/27 v5.0q Spanish support from the babel system
 \es@quottoks=\toks50
 \es@quotdepth=\count357
 Package babel Info: Making " an active character on input line 570.
-Package babel Info: Making . an active character on input line 675.
-Package babel Info: Making < an active character on input line 722.
-Package babel Info: Making > an active character on input line 722.
 ))
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/es\bab
 el-spanish.tex
@@ -919,390 +916,45 @@ Package babel Info: Importing font and identification data for spanish
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 )
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\helvet.sty
-Package: helvet 2020/03/25 PSNFSS-v9.3 (WaS) 
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.sty
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/l3keys2e\l
-3keys2e.sty
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
-Package: expl3 2024-07-20 L3 programming layer (loader) 
+\c@proposición=\count358
+\c@teorema=\count359
+\c@definición=\count360
+\c@ejemplo=\count361
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 20.
+
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-p
 dftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count358
+\l__color_backend_stack_int=\count362
 \l__pdf_internal_box=\box82
-))
-Package: l3keys2e 2024-05-08 LaTeX2e option processing using LaTeX3 keys
-)
-Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
-\g__lipsum_par_int=\count359
-\l__lipsum_a_int=\count360
-\l__lipsum_b_int=\count361
-
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.ltd.tex
-))
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/physics\physics.sty
-Package: physics 
-
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpa
-rse.sty
-Package: xparse 2024-05-08 L3 Experimental document command parser
-))
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/framed\framed.sty
-Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip75
-\fb@frw=\dimen311
-\fb@frh=\dimen312
-\FrameRule=\dimen313
-\FrameSep=\dimen314
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/graphics\epsfig.sty
-Package: epsfig 2024/01/14 v1.7b (e)psfig emulation (SPQR)
-\epsfxsize=\dimen315
-\epsfysize=\dimen316
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/acronym\acronym.sty
-Package: acronym 2025/01/17 v1.50 Support for acronyms (Tobias Oetiker)
-
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/bigfoot\suffix.sty
-Package: suffix 2006/07/15 1.5a Variant command support
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/xstring\xstring.sty
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/xstring\xstring.tex
-\xs_counta=\count362
-\xs_countb=\count363
-)
-Package: xstring 2023/08/22 v1.86 String manipulations (CT)
-)
-\AC@clearlist=\toks51
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
-Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
-\multirow@colwidth=\skip76
-\multirow@cntb=\count364
-\multirow@dima=\skip77
-\bigstrutjot=\dimen317
-) (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
-Package: array 2024/06/14 v2.6d Tabular extension package (FMi)
-\col@sep=\dimen318
-\ar@mcellbox=\box83
-\extrarowheight=\dimen319
-\NC@list=\toks52
-\extratabsurround=\skip78
-\backup@length=\skip79
-\ar@cellbox=\box84
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count365
-\float@exts=\toks53
-\float@box=\box85
-\@float@everytoks=\toks54
-\@floatcapt=\box86
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
-Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 11
-6.
-
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1phv.fd
-File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
-))
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/natbib\natbib.sty
-Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip80
-\bibsep=\skip81
-LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count366
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
-Package: fancyhdr 2024/07/23 v4.3.1 Extensive control of page headers and foote
-rs
-\f@nch@headwidth=\skip82
-\f@nch@O@elh=\skip83
-\f@nch@O@erh=\skip84
-\f@nch@O@olh=\skip85
-\f@nch@O@orh=\skip86
-\f@nch@O@elf=\skip87
-\f@nch@O@erf=\skip88
-\f@nch@O@olf=\skip89
-\f@nch@O@orf=\skip90
-) (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/tools\multicol.sty
-Package: multicol 2024/05/23 v1.9h multicolumn formatting (FMi)
-\c@tracingmulticols=\count367
-\mult@box=\box87
-\multicol@leftmargin=\dimen320
-\c@unbalance=\count368
-\c@collectmore=\count369
-\doublecol@number=\count370
-\multicoltolerance=\count371
-\multicolpretolerance=\count372
-\full@width=\dimen321
-\page@free=\dimen322
-\premulticols=\dimen323
-\postmulticols=\dimen324
-\multicolsep=\skip91
-\multicolbaselineskip=\skip92
-\partial@page=\box88
-\last@line=\box89
-\mc@boxedresult=\box90
-\maxbalancingoverflow=\dimen325
-\mult@rightbox=\box91
-\mult@grightbox=\box92
-\mult@firstbox=\box93
-\mult@gfirstbox=\box94
-\@tempa=\box95
-\@tempa=\box96
-\@tempa=\box97
-\@tempa=\box98
-\@tempa=\box99
-\@tempa=\box100
-\@tempa=\box101
-\@tempa=\box102
-\@tempa=\box103
-\@tempa=\box104
-\@tempa=\box105
-\@tempa=\box106
-\@tempa=\box107
-\@tempa=\box108
-\@tempa=\box109
-\@tempa=\box110
-\@tempa=\box111
-\@tempa=\box112
-\@tempa=\box113
-\@tempa=\box114
-\@tempa=\box115
-\@tempa=\box116
-\@tempa=\box117
-\@tempa=\box118
-\@tempa=\box119
-\@tempa=\box120
-\@tempa=\box121
-\@tempa=\box122
-\@tempa=\box123
-\@tempa=\box124
-\@tempa=\box125
-\@tempa=\box126
-\@tempa=\box127
-\@tempa=\box128
-\@tempa=\box129
-\@tempa=\box130
-\c@minrows=\count373
-\c@columnbadness=\count374
-\c@finalcolumnbadness=\count375
-\last@try=\dimen326
-\multicolovershoot=\dimen327
-\multicolundershoot=\dimen328
-\mult@nat@firstbox=\box131
-\colbreak@box=\box132
-\mc@col@check@num=\count376
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/mdframed\mdframed.sty
-Package: mdframed 2013/07/01 1.9b: mdframed
-
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/zref\zref-abspage.sty
-Package: zref-abspage 2023-09-14 v2.35 Module abspage for zref (HO)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/zref\zref-base.sty
-Package: zref-base 2023-09-14 v2.35 Module base for zref (HO)
-
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.s
-ty
-Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
-Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
-)
-Package zref Info: New property list: main on input line 767.
-Package zref Info: New property: default on input line 768.
-Package zref Info: New property: page on input line 769.
-)
-\c@abspage=\count377
-Package zref Info: New property: abspage on input line 67.
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/needspace\needspace.s
-ty
-Package: needspace 2010/09/12 v1.3d reserve vertical space
-)
-\mdf@templength=\skip93
-\c@mdf@globalstyle@cnt=\count378
-\mdf@skipabove@length=\skip94
-\mdf@skipbelow@length=\skip95
-\mdf@leftmargin@length=\skip96
-\mdf@rightmargin@length=\skip97
-\mdf@innerleftmargin@length=\skip98
-\mdf@innerrightmargin@length=\skip99
-\mdf@innertopmargin@length=\skip100
-\mdf@innerbottommargin@length=\skip101
-\mdf@splittopskip@length=\skip102
-\mdf@splitbottomskip@length=\skip103
-\mdf@outermargin@length=\skip104
-\mdf@innermargin@length=\skip105
-\mdf@linewidth@length=\skip106
-\mdf@innerlinewidth@length=\skip107
-\mdf@middlelinewidth@length=\skip108
-\mdf@outerlinewidth@length=\skip109
-\mdf@roundcorner@length=\skip110
-\mdf@footenotedistance@length=\skip111
-\mdf@userdefinedwidth@length=\skip112
-\mdf@needspace@length=\skip113
-\mdf@frametitleaboveskip@length=\skip114
-\mdf@frametitlebelowskip@length=\skip115
-\mdf@frametitlerulewidth@length=\skip116
-\mdf@frametitleleftmargin@length=\skip117
-\mdf@frametitlerightmargin@length=\skip118
-\mdf@shadowsize@length=\skip119
-\mdf@extratopheight@length=\skip120
-\mdf@subtitleabovelinewidth@length=\skip121
-\mdf@subtitlebelowlinewidth@length=\skip122
-\mdf@subtitleaboveskip@length=\skip123
-\mdf@subtitlebelowskip@length=\skip124
-\mdf@subtitleinneraboveskip@length=\skip125
-\mdf@subtitleinnerbelowskip@length=\skip126
-\mdf@subsubtitleabovelinewidth@length=\skip127
-\mdf@subsubtitlebelowlinewidth@length=\skip128
-\mdf@subsubtitleaboveskip@length=\skip129
-\mdf@subsubtitlebelowskip@length=\skip130
-\mdf@subsubtitleinneraboveskip@length=\skip131
-\mdf@subsubtitleinnerbelowskip@length=\skip132
-
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/mdframed\md-frame-0.m
-df
-File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
-)
-\mdf@frametitlebox=\box133
-\mdf@footnotebox=\box134
-\mdf@splitbox@one=\box135
-\mdf@splitbox@two=\box136
-\mdf@splitbox@save=\box137
-\mdfsplitboxwidth=\skip133
-\mdfsplitboxtotalwidth=\skip134
-\mdfsplitboxheight=\skip135
-\mdfsplitboxdepth=\skip136
-\mdfsplitboxtotalheight=\skip137
-\mdfframetitleboxwidth=\skip138
-\mdfframetitleboxtotalwidth=\skip139
-\mdfframetitleboxheight=\skip140
-\mdfframetitleboxdepth=\skip141
-\mdfframetitleboxtotalheight=\skip142
-\mdffootnoteboxwidth=\skip143
-\mdffootnoteboxtotalwidth=\skip144
-\mdffootnoteboxheight=\skip145
-\mdffootnoteboxdepth=\skip146
-\mdffootnoteboxtotalheight=\skip147
-\mdftotallinewidth=\skip148
-\mdfboundingboxwidth=\skip149
-\mdfboundingboxtotalwidth=\skip150
-\mdfboundingboxheight=\skip151
-\mdfboundingboxdepth=\skip152
-\mdfboundingboxtotalheight=\skip153
-\mdf@freevspace@length=\skip154
-\mdf@horizontalwidthofbox@length=\skip155
-\mdf@verticalmarginwhole@length=\skip156
-\mdf@horizontalspaceofbox=\skip157
-\mdfsubtitleheight=\skip158
-\mdfsubsubtitleheight=\skip159
-\c@mdfcountframes=\count379
-
-****** mdframed patching \endmdf@trivlist
-
-****** -- failed******
-
-\mdf@envdepth=\count380
-\c@mdf@env@i=\count381
-\c@mdf@env@ii=\count382
-\c@mdf@zref@counter=\count383
-Package zref Info: New property: mdf@pagevalue on input line 895.
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/endnotes\endnotes.sty
-Package: endnotes 2020-01-02 endnotes package
-\c@endnote=\count384
-\endnotesep=\dimen329
-\@enotes=\write5
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
-\lst@mode=\count385
-\lst@gtempboxa=\box138
-\lst@token=\toks55
-\lst@length=\count386
-\lst@currlwidth=\dimen330
-\lst@column=\count387
-\lst@pos=\count388
-\lst@lostspace=\dimen331
-\lst@width=\dimen332
-\lst@newlines=\count389
-\lst@lineno=\count390
-\lst@maxwidth=\dimen333
-
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty
-File: lstpatch.sty 2024/05/25 1.10b (Carsten Heinz)
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
-File: lstmisc.sty 2024/05/25 1.10b (Carsten Heinz)
-\c@lstnumber=\count391
-\lst@skipnumbers=\count392
-\lst@framebox=\box139
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
-File: listings.cfg 2024/05/25 1.10b listings configuration
-))
-Package: listings 2024/05/25 1.10b (Carsten Heinz)
- (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/tensor\tensor.sty
-Package: tensor 2023/07/18 v2.2 tensor indices package (PGR)
-\tnsr@Sps=\toks56
-\tnsr@Sbs=\toks57
-\tnsr@Spe=\toks58
-\tnsr@Sbe=\toks59
-\ncld@Mno=\toks60
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.sty
-Package: csquotes 2024-04-04 v5.2o context-sensitive quotations (JAW)
-\csq@reset=\count393
-\csq@gtype=\count394
-\csq@glevel=\count395
-\csq@qlevel=\count396
-\csq@maxlvl=\count397
-\csq@tshold=\count398
-\csq@ltx@everypar=\toks61
-
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.def
-File: csquotes.def 2024-04-04 v5.2o csquotes generic definitions (JAW)
-)
-Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
-Package csquotes Info: ... configuration file loaded successfully.
-
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.cfg
-File: csquotes.cfg 
-))
-Package csquotes Info: Checking for multilingual support...
-Package csquotes Info: ... found 'babel' package.
-Package csquotes Info: Adjusting default style.
-Package csquotes Info: Redefining alias 'default' -> 'spanish'.
- (main.aux
-LaTeX Info: Redefining \. on input line 13.
-LaTeX Info: Redefining \% on input line 13.
+) (main.aux
+LaTeX Info: Redefining \. on input line 8.
+LaTeX Info: Redefining \% on input line 8.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1342,75 +994,98 @@ LaTeX Font Info:    ... okay on input line 53.
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.
 mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count399
-\scratchdimen=\dimen334
-\scratchbox=\box140
-\nofMPsegments=\count400
-\nofMParguments=\count401
-\everyMPshowfont=\toks62
-\MPscratchCnt=\count402
-\MPscratchDim=\dimen335
-\MPnumerator=\count403
-\makeMPintoPDFobject=\count404
-\everyMPtoPDFconversion=\toks63
+\scratchcounter=\count363
+\scratchdimen=\dimen311
+\scratchbox=\box83
+\nofMPsegments=\count364
+\nofMParguments=\count365
+\everyMPshowfont=\toks51
+\MPscratchCnt=\count366
+\MPscratchDim=\dimen312
+\MPnumerator=\count367
+\makeMPintoPDFobject=\count368
+\everyMPtoPDFconversion=\toks52
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf
 -base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/grfext\grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys
 .cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 53.
+Package hyperref Info: Link coloring OFF on input line 24.
  (main.out) (main.out)
-\@outlinefile=\write6
-\openout6 = `main.out'.
+\@outlinefile=\write5
+\openout5 = `main.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 53.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 24.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 53.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 24.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/cmr/m/n on input line 53.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 53.
+(Font)                  OT1/cmss/m/n --> T1/cmr/m/n on input line 24.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> T1/phv/b/n on input line 53.
+(Font)                  OT1/cmr/bx/n --> T1/cmss/b/n on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> T1/phv/b/n on input line 53.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 53.
+(Font)                  OT1/cmr/bx/n --> T1/cmss/b/n on input line 24.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/phv/m/n on input line 53.
+(Font)                  OT1/cmss/m/n --> T1/cmss/m/n on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/phv/m/n on input line 53.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 53.
+(Font)                  OT1/cmss/bx/n --> T1/cmss/m/n on input line 24.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> T1/phv/m/it on input line 53.
+(Font)                  OT1/cmr/m/it --> T1/cmss/m/it on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> T1/phv/m/it on input line 53.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 53.
+(Font)                  OT1/cmr/bx/it --> T1/cmss/m/it on input line 24.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 53.
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 53.
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 24.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/phv/m/n --> T1/phv/b/n on input line 53.
+(Font)                  T1/cmss/m/n --> T1/cmss/b/n on input line 24.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/phv/m/it --> T1/phv/b/it on input line 53.
+(Font)                  T1/cmss/m/it --> T1/cmss/b/it on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> T1/cmr/b/n on input line 53.
+(Font)                  OT1/cmss/b/n --> T1/cmr/b/n on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/phv/b/n --> T1/phv/b/n on input line 53.
+(Font)                  T1/cmss/b/n --> T1/cmss/b/n on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/phv/m/n --> T1/phv/b/n on input line 53.
+(Font)                  T1/cmss/m/n --> T1/cmss/b/n on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/phv/m/it --> T1/phv/b/it on input line 53.
+(Font)                  T1/cmss/m/it --> T1/cmss/b/it on input line 24.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/cmtt/m/n --> T1/cmtt/b/n on input line 53.
+(Font)                  T1/cmtt/m/n --> T1/cmtt/b/n on input line 24.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 24.
+LaTeX Font Info:    Encoding `T1' has changed to `OT1' for symbol font
+(Font)              `pureletters' in the math version `normal' on input line 24
+.
+LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
+(Font)                  T1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 24
+.
+LaTeX Font Info:    Encoding `T1' has changed to `OT1' for symbol font
+(Font)              `pureletters' in the math version `bold' on input line 24.
+LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
+(Font)                  T1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 24
+.
+LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
+(Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
+ut line 24.
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/translator\translator
 -basic-dictionary-English.dict
@@ -1436,63 +1111,68 @@ Dictionary: translator-numbers-dictionary, Language: English
 -theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \. on input line 53.
-LaTeX Info: Redefining \% on input line 53.
-\c@lstlisting=\count405
+LaTeX Info: Redefining \. on input line 24.
+LaTeX Info: Redefining \% on input line 24.
  (main.nav)
-<Feathergraphics/2.png, id=14, 899.36pt x 1027.84pt>
+<Feathergraphics/2.png, id=26, 899.36pt x 1027.84pt>
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 53.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 24.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 
 Missing character: There is no ; in font nullfont!
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 68.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 29.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 Missing character: There is no ; in font nullfont!
-LaTeX Font Info:    Trying to load font information for U+msa on input line 68.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 29.
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 68.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 29.
 
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 68.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 68.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <5> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 68.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <14.4> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 68.
+LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on inp
+ut line 29.
+
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/sansmathaccent\ot1mat
+hkerncmss.fd
+File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
+thkerncmss.
+)
+Overfull \vbox (43.67912pt too high) detected at line 29
+ []
+
 
 
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 68.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 29.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 Missing character: There is no ; in font nullfont!
 [1{C:/Users/Rodrigo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/
-Rodrigo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
+Rodrigo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 
  <./Feathergraphics/2.png>]
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 79.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 33.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 
 Missing character: There is no ; in font nullfont!
-
+(main.toc
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+)
 
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 79.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 33.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 Missing character: There is no ; in font nullfont!
 [2
@@ -1500,7 +1180,7 @@ Missing character: There is no ; in font nullfont!
 ]
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 91.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 45.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 
 Missing character: There is no ; in font nullfont!
@@ -1508,7 +1188,7 @@ Missing character: There is no ; in font nullfont!
 
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 91.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 45.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 Missing character: There is no ; in font nullfont!
 [3
@@ -1516,7 +1196,7 @@ Missing character: There is no ; in font nullfont!
 ]
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 103.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 52.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 
 Missing character: There is no ; in font nullfont!
@@ -1524,7 +1204,7 @@ Missing character: There is no ; in font nullfont!
 
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 103.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 52.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 Missing character: There is no ; in font nullfont!
 [4
@@ -1532,7 +1212,7 @@ Missing character: There is no ; in font nullfont!
 ]
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 112.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 65.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 
 Missing character: There is no ; in font nullfont!
@@ -1540,7 +1220,7 @@ Missing character: There is no ; in font nullfont!
 
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 112.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 65.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 Missing character: There is no ; in font nullfont!
 [5
@@ -1548,7 +1228,7 @@ Missing character: There is no ; in font nullfont!
 ]
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 120.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 72.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 
 Missing character: There is no ; in font nullfont!
@@ -1556,7 +1236,7 @@ Missing character: There is no ; in font nullfont!
 
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 120.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 72.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 Missing character: There is no ; in font nullfont!
 [6
@@ -1564,7 +1244,7 @@ Missing character: There is no ; in font nullfont!
 ]
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 130.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 81.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 
 Missing character: There is no ; in font nullfont!
@@ -1572,7 +1252,7 @@ Missing character: There is no ; in font nullfont!
 
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 130.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 81.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 Missing character: There is no ; in font nullfont!
 [7
@@ -1580,7 +1260,7 @@ Missing character: There is no ; in font nullfont!
 ]
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 140.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 93.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 
 Missing character: There is no ; in font nullfont!
@@ -1588,7 +1268,7 @@ Missing character: There is no ; in font nullfont!
 
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 140.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 93.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 Missing character: There is no ; in font nullfont!
 [8
@@ -1596,7 +1276,7 @@ Missing character: There is no ; in font nullfont!
 ]
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 145.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 105.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 
 Missing character: There is no ; in font nullfont!
@@ -1604,7 +1284,7 @@ Missing character: There is no ; in font nullfont!
 
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 145.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 105.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 Missing character: There is no ; in font nullfont!
 [9
@@ -1612,7 +1292,7 @@ Missing character: There is no ; in font nullfont!
 ]
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 154.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 117.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 
 Missing character: There is no ; in font nullfont!
@@ -1620,7 +1300,7 @@ Missing character: There is no ; in font nullfont!
 
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 154.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 117.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 Missing character: There is no ; in font nullfont!
 [10
@@ -1628,7 +1308,7 @@ Missing character: There is no ; in font nullfont!
 ]
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 165.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 133.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 
 Missing character: There is no ; in font nullfont!
@@ -1636,7 +1316,7 @@ Missing character: There is no ; in font nullfont!
 
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 165.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 133.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 Missing character: There is no ; in font nullfont!
 [11
@@ -1644,103 +1324,71 @@ Missing character: There is no ; in font nullfont!
 ]
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 175.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 145.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 
 Missing character: There is no ; in font nullfont!
-<../Texto/Imagenes/LeyCircularMay.png, id=140, 2208.25pt x 1003.75pt>
-File: ../Texto/Imagenes/LeyCircularMay.png Graphic file (type png)
-<use ../Texto/Imagenes/LeyCircularMay.png>
-Package pdftex.def Info: ../Texto/Imagenes/LeyCircularMay.png  used on input li
-ne 175.
-(pdftex.def)             Requested size: 287.08258pt x 130.49208pt.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 175.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <6> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 175.
-
-Overfull \vbox (5.22821pt too high) detected at line 175
- []
-
 
 
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 175.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 145.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 Missing character: There is no ; in font nullfont!
 [12
 
- <../Texto/Imagenes/LeyCircularMay.png>]
+]
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 185.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 158.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 
 Missing character: There is no ; in font nullfont!
-<../Texto/Imagenes/LeyElipticaAllesina.png, id=155, 2208.25pt x 803.0pt>
-File: ../Texto/Imagenes/LeyElipticaAllesina.png Graphic file (type png)
-<use ../Texto/Imagenes/LeyElipticaAllesina.png>
-Package pdftex.def Info: ../Texto/Imagenes/LeyElipticaAllesina.png  used on inp
-ut line 185.
-(pdftex.def)             Requested size: 220.83794pt x 80.3047pt.
 
 
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 185.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 158.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 Missing character: There is no ; in font nullfont!
 [13
 
- <../Texto/Imagenes/LeyElipticaAllesina.png>]
+]
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 195.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 171.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 
 Missing character: There is no ; in font nullfont!
-<../Texto/Imagenes/TransicionDirvsNoDir.png, id=167, 3011.25pt x 1204.5pt>
-File: ../Texto/Imagenes/TransicionDirvsNoDir.png Graphic file (type png)
-<use ../Texto/Imagenes/TransicionDirvsNoDir.png>
-Package pdftex.def Info: ../Texto/Imagenes/TransicionDirvsNoDir.png  used on in
-put line 195.
-(pdftex.def)             Requested size: 301.14264pt x 120.45705pt.
 
 
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 195.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 171.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 Missing character: There is no ; in font nullfont!
 [14
 
- <../Texto/Imagenes/TransicionDirvsNoDir.png>]
+]
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 205.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 180.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 
 Missing character: There is no ; in font nullfont!
-<../Texto/Imagenes/TransicionσDirvsNoDir.png, id=178, 1806.75pt x 1405.25pt>
-File: ../Texto/Imagenes/TransicionσDirvsNoDir.png Graphic file (type png)
-<use ../Texto/Imagenes/TransicionσDirvsNoDir.png>
-Package pdftex.def Info: ../Texto/Imagenes/TransicionσDirvsNoDir.png  used on 
-input line 205.
-(pdftex.def)             Requested size: 159.79204pt x 124.27992pt.
 
 
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 205.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 180.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 Missing character: There is no ; in font nullfont!
 [15
 
- <../Texto/Imagenes/TransicionσDirvsNoDir.png>]
+]
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 208.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 188.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 
 Missing character: There is no ; in font nullfont!
@@ -1748,7 +1396,7 @@ Missing character: There is no ; in font nullfont!
 
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 208.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 188.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 Missing character: There is no ; in font nullfont!
 [16
@@ -1756,7 +1404,7 @@ Missing character: There is no ; in font nullfont!
 ]
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 211.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 198.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 
 Missing character: There is no ; in font nullfont!
@@ -1764,7 +1412,7 @@ Missing character: There is no ; in font nullfont!
 
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 211.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 198.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 Missing character: There is no ; in font nullfont!
 [17
@@ -1772,7 +1420,7 @@ Missing character: There is no ; in font nullfont!
 ]
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 214.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 208.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 
 Missing character: There is no ; in font nullfont!
@@ -1780,7 +1428,7 @@ Missing character: There is no ; in font nullfont!
 
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 214.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 208.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 Missing character: There is no ; in font nullfont!
 [18
@@ -1788,7 +1436,7 @@ Missing character: There is no ; in font nullfont!
 ]
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 217.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 213.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 
 Missing character: There is no ; in font nullfont!
@@ -1796,7 +1444,7 @@ Missing character: There is no ; in font nullfont!
 
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 217.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 213.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 Missing character: There is no ; in font nullfont!
 [19
@@ -1804,23 +1452,29 @@ Missing character: There is no ; in font nullfont!
 ]
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 220.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 223.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 
 Missing character: There is no ; in font nullfont!
+<../Texto/Imagenes/Cooperacion de especies.png, id=241, 2007.5pt x 1003.75pt>
+File: ../Texto/Imagenes/Cooperacion de especies.png Graphic file (type png)
+<use ../Texto/Imagenes/Cooperacion de especies.png>
+Package pdftex.def Info: ../Texto/Imagenes/Cooperacion de especies.png  used on
+ input line 223.
+(pdftex.def)             Requested size: 220.82568pt x 110.41284pt.
 
 
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 220.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 223.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 Missing character: There is no ; in font nullfont!
 [20
 
-]
+ <../Texto/Imagenes/Cooperacion de especies.png>]
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 223.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 232.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 
 Missing character: There is no ; in font nullfont!
@@ -1828,7 +1482,7 @@ Missing character: There is no ; in font nullfont!
 
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 223.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 232.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 Missing character: There is no ; in font nullfont!
 [21
@@ -1836,7 +1490,7 @@ Missing character: There is no ; in font nullfont!
 ]
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 226.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 243.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 
 Missing character: There is no ; in font nullfont!
@@ -1844,7 +1498,7 @@ Missing character: There is no ; in font nullfont!
 
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 226.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 243.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 Missing character: There is no ; in font nullfont!
 [22
@@ -1852,15 +1506,19 @@ Missing character: There is no ; in font nullfont!
 ]
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 229.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 260.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 
 Missing character: There is no ; in font nullfont!
 
+LaTeX Warning: Reference `eqn:Fmatricial' on page 23 undefined on input line 26
+0.
+
+
 
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 229.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 260.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 Missing character: There is no ; in font nullfont!
 [23
@@ -1868,15 +1526,19 @@ Missing character: There is no ; in font nullfont!
 ]
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 232.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 274.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 
 Missing character: There is no ; in font nullfont!
 
+LaTeX Warning: Citation `GershgorinTheorem' on page 24 undefined on input line 
+274.
+
+
 
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 232.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 274.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 Missing character: There is no ; in font nullfont!
 [24
@@ -1884,7 +1546,7 @@ Missing character: There is no ; in font nullfont!
 ]
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 235.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 290.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 
 Missing character: There is no ; in font nullfont!
@@ -1892,7 +1554,7 @@ Missing character: There is no ; in font nullfont!
 
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 235.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 290.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 Missing character: There is no ; in font nullfont!
 [25
@@ -1900,7 +1562,7 @@ Missing character: There is no ; in font nullfont!
 ]
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 238.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 305.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 
 Missing character: There is no ; in font nullfont!
@@ -1908,7 +1570,7 @@ Missing character: There is no ; in font nullfont!
 
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 238.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 305.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 Missing character: There is no ; in font nullfont!
 [26
@@ -1916,7 +1578,7 @@ Missing character: There is no ; in font nullfont!
 ]
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 241.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 317.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 
 Missing character: There is no ; in font nullfont!
@@ -1924,7 +1586,7 @@ Missing character: There is no ; in font nullfont!
 
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 241.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 317.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 Missing character: There is no ; in font nullfont!
 [27
@@ -1932,7 +1594,7 @@ Missing character: There is no ; in font nullfont!
 ]
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 244.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 327.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 
 Missing character: There is no ; in font nullfont!
@@ -1940,7 +1602,7 @@ Missing character: There is no ; in font nullfont!
 
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 244.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 327.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 Missing character: There is no ; in font nullfont!
 [28
@@ -1948,7 +1610,7 @@ Missing character: There is no ; in font nullfont!
 ]
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 247.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 340.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 
 Missing character: There is no ; in font nullfont!
@@ -1956,7 +1618,7 @@ Missing character: There is no ; in font nullfont!
 
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 247.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 340.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 Missing character: There is no ; in font nullfont!
 [29
@@ -1964,7 +1626,7 @@ Missing character: There is no ; in font nullfont!
 ]
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 250.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 351.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 
 Missing character: There is no ; in font nullfont!
@@ -1972,7 +1634,7 @@ Missing character: There is no ; in font nullfont!
 
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 250.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 351.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 Missing character: There is no ; in font nullfont!
 [30
@@ -1980,296 +1642,173 @@ Missing character: There is no ; in font nullfont!
 ]
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 253.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 362.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 
 Missing character: There is no ; in font nullfont!
+<../Texto/Imagenes/LeyCircularMay.png, id=476, 2208.25pt x 1003.75pt>
+File: ../Texto/Imagenes/LeyCircularMay.png Graphic file (type png)
+<use ../Texto/Imagenes/LeyCircularMay.png>
+Package pdftex.def Info: ../Texto/Imagenes/LeyCircularMay.png  used on input li
+ne 362.
+(pdftex.def)             Requested size: 287.08258pt x 130.49208pt.
+
+Overfull \vbox (4.0545pt too high) detected at line 362
+ []
+
 
 
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 253.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 362.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 Missing character: There is no ; in font nullfont!
 [31
 
-]
+ <../Texto/Imagenes/LeyCircularMay.png>]
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 256.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 372.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 
 Missing character: There is no ; in font nullfont!
+<../Texto/Imagenes/LeyElipticaAllesina.png, id=491, 2208.25pt x 803.0pt>
+File: ../Texto/Imagenes/LeyElipticaAllesina.png Graphic file (type png)
+<use ../Texto/Imagenes/LeyElipticaAllesina.png>
+Package pdftex.def Info: ../Texto/Imagenes/LeyElipticaAllesina.png  used on inp
+ut line 372.
+(pdftex.def)             Requested size: 220.83794pt x 80.3047pt.
 
 
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 256.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 372.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 Missing character: There is no ; in font nullfont!
 [32
 
-]
+ <../Texto/Imagenes/LeyElipticaAllesina.png>]
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 259.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 382.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 
 Missing character: There is no ; in font nullfont!
+<../Texto/Imagenes/TransicionDirvsNoDir.png, id=502, 3011.25pt x 1204.5pt>
+File: ../Texto/Imagenes/TransicionDirvsNoDir.png Graphic file (type png)
+<use ../Texto/Imagenes/TransicionDirvsNoDir.png>
+Package pdftex.def Info: ../Texto/Imagenes/TransicionDirvsNoDir.png  used on in
+put line 382.
+(pdftex.def)             Requested size: 301.14264pt x 120.45705pt.
 
 
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 259.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 382.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 Missing character: There is no ; in font nullfont!
 [33
 
-]
+ <../Texto/Imagenes/TransicionDirvsNoDir.png>]
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 262.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 392.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 
 Missing character: There is no ; in font nullfont!
+<../Texto/Imagenes/TransicionσDirvsNoDir.png, id=513, 1806.75pt x 1405.25pt>
+File: ../Texto/Imagenes/TransicionσDirvsNoDir.png Graphic file (type png)
+<use ../Texto/Imagenes/TransicionσDirvsNoDir.png>
+Package pdftex.def Info: ../Texto/Imagenes/TransicionσDirvsNoDir.png  used on 
+input line 392.
+(pdftex.def)             Requested size: 159.79204pt x 124.27992pt.
 
 
 File: Feathergraphics/2.png Graphic file (type png)
 <use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 262.
+Package pdftex.def Info: Feathergraphics/2.png  used on input line 392.
 (pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
 Missing character: There is no ; in font nullfont!
 [34
 
-]
-File: Feathergraphics/2.png Graphic file (type png)
-<use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 265.
-(pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
+ <../Texto/Imagenes/TransicionσDirvsNoDir.png>]
+\tf@nav=\write6
+\openout6 = `main.nav'.
 
-Missing character: There is no ; in font nullfont!
+\tf@toc=\write7
+\openout7 = `main.toc'.
 
-
-File: Feathergraphics/2.png Graphic file (type png)
-<use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 265.
-(pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
-Missing character: There is no ; in font nullfont!
-[35
-
-]
-File: Feathergraphics/2.png Graphic file (type png)
-<use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 268.
-(pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
-
-Missing character: There is no ; in font nullfont!
-
-
-File: Feathergraphics/2.png Graphic file (type png)
-<use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 268.
-(pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
-Missing character: There is no ; in font nullfont!
-[36
-
-]
-File: Feathergraphics/2.png Graphic file (type png)
-<use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 271.
-(pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
-
-Missing character: There is no ; in font nullfont!
-
-
-File: Feathergraphics/2.png Graphic file (type png)
-<use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 271.
-(pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
-Missing character: There is no ; in font nullfont!
-[37
-
-]
-File: Feathergraphics/2.png Graphic file (type png)
-<use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 274.
-(pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
-
-Missing character: There is no ; in font nullfont!
-
-
-File: Feathergraphics/2.png Graphic file (type png)
-<use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 274.
-(pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
-Missing character: There is no ; in font nullfont!
-[38
-
-]
-File: Feathergraphics/2.png Graphic file (type png)
-<use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 277.
-(pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
-
-Missing character: There is no ; in font nullfont!
-
-
-File: Feathergraphics/2.png Graphic file (type png)
-<use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 277.
-(pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
-Missing character: There is no ; in font nullfont!
-[39
-
-]
-File: Feathergraphics/2.png Graphic file (type png)
-<use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 280.
-(pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
-
-Missing character: There is no ; in font nullfont!
-
-
-File: Feathergraphics/2.png Graphic file (type png)
-<use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 280.
-(pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
-Missing character: There is no ; in font nullfont!
-[40
-
-]
-File: Feathergraphics/2.png Graphic file (type png)
-<use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 283.
-(pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
-
-Missing character: There is no ; in font nullfont!
-
-
-File: Feathergraphics/2.png Graphic file (type png)
-<use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 283.
-(pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
-Missing character: There is no ; in font nullfont!
-[41
-
-]
-File: Feathergraphics/2.png Graphic file (type png)
-<use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 286.
-(pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
-
-Missing character: There is no ; in font nullfont!
-
-
-File: Feathergraphics/2.png Graphic file (type png)
-<use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 286.
-(pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
-Missing character: There is no ; in font nullfont!
-[42
-
-]
-File: Feathergraphics/2.png Graphic file (type png)
-<use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 289.
-(pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
-
-Missing character: There is no ; in font nullfont!
-
-
-File: Feathergraphics/2.png Graphic file (type png)
-<use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 289.
-(pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
-Missing character: There is no ; in font nullfont!
-[43
-
-]
-File: Feathergraphics/2.png Graphic file (type png)
-<use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 292.
-(pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
-
-Missing character: There is no ; in font nullfont!
-
-
-File: Feathergraphics/2.png Graphic file (type png)
-<use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 292.
-(pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
-Missing character: There is no ; in font nullfont!
-[44
-
-]
-File: Feathergraphics/2.png Graphic file (type png)
-<use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 295.
-(pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
-
-Missing character: There is no ; in font nullfont!
-
-
-File: Feathergraphics/2.png Graphic file (type png)
-<use Feathergraphics/2.png>
-Package pdftex.def Info: Feathergraphics/2.png  used on input line 295.
-(pdftex.def)             Requested size: 37.40611pt x 42.73769pt.
-Missing character: There is no ; in font nullfont!
-[45
-
-]
-\tf@nav=\write7
-\openout7 = `main.nav'.
-
-\tf@toc=\write8
-\openout8 = `main.toc'.
-
-\tf@snm=\write9
-\openout9 = `main.snm'.
+\tf@snm=\write8
+\openout8 = `main.snm'.
 
  (main.aux
-LaTeX Info: Redefining \. on input line 13.
-LaTeX Info: Redefining \% on input line 13.
+LaTeX Info: Redefining \. on input line 8.
+LaTeX Info: Redefining \% on input line 8.
 )
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+(rerunfilecheck)             Checksum: D8D366AF887030D27A5E4D6F9737EB0E;383.
  ) 
 Here is how much of TeX's memory you used:
- 32474 strings out of 473899
- 624436 string characters out of 5725556
- 1940960 words of memory out of 5000000
- 54590 multiletter control sequences out of 15000+600000
- 613618 words of font info for 98 fonts, out of 8000000 for 9000
+ 27115 strings out of 473899
+ 540868 string characters out of 5725556
+ 1941960 words of memory out of 5000000
+ 49349 multiletter control sequences out of 15000+600000
+ 585417 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,17n,123p,691b,954s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmex10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/amsfonts/cmextra/cmex7.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Rodrigo/AppData/Local/Programs
-/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Rodrigo/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Rodrigo/Ap
-pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/
-Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb
-><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmss8.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmss9.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Rodrigo/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Rodrigo/AppData/L
-ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Users/Rodrigo
-/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><
-C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symb
-ols/msbm10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/
-helvetic/uhvb8a.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1
-/urw/helvetic/uhvr8a.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/
-type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (45 pages, 921930 bytes).
+ 128i,20n,123p,691b,952s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{eqn:Fmatricial} has been referenced but does not ex
+ist, replaced by a fixed one
+
+<C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmex10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmmi10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Rodrigo/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/Rodrigo/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/Rodrig
+o/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Us
+ers/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss9.
+pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
+/cm/cmssi10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmssi8.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmssi9.pfb><C:/Users/Rodrigo/AppData/Local/Programs/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Rodrigo/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Rodrigo/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/
+Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
+<C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/sym
+bols/msam10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/amsfonts/symbols/msbm10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/cm-super/sfbx1440.pfb><C:/Users/Rodrigo/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/cm-super/sfrm0900.pfb><C:/Users/Rodrigo/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/cm-super/sfrm1000.pfb><C:/Users/Rodrigo
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfrm1200.pfb><C:/Use
+rs/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfsi1000.p
+fb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/
+sfss0500.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/cm-super/sfss0600.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/cm-super/sfss0700.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/cm-super/sfss0900.pfb><C:/Users/Rodrigo/AppData/Local/Prog
+rams/MiKTeX/fonts/type1/public/cm-super/sfss1000.pfb><C:/Users/Rodrigo/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfss1200.pfb><C:/Users/Rodrig
+o/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfss1440.pfb><C:/Us
+ers/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfsx0500.
+pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super
+/sfsx0700.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/cm-super/sfsx0900.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/cm-super/sfsx1000.pfb>
+Output written on main.pdf (34 pages, 1501942 bytes).
 PDF statistics:
- 559 PDF objects out of 1000 (max. 8388607)
- 96 named destinations out of 1000 (max. 500000)
- 68 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 677 PDF objects out of 1000 (max. 8388607)
+ 89 named destinations out of 1000 (max. 500000)
+ 427 words of extra memory for PDF output out of 10000 (max. 10000000)
 

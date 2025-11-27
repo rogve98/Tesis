@@ -1,57 +1,122 @@
 \documentclass[10pt]{beamer}
-\usetheme[]{Feather}
-\setbeamercolor{Feather}{fg=black!20,bg=black}
-\setbeamercolor{structure}{fg=black}
+
+\usetheme{Feather}
+
 \usepackage[utf8]{inputenc}
-\usepackage[spanish]{babel}
+\usepackage[spanish,mexico]{babel}
 \usepackage[T1]{fontenc}
-\usepackage{helvet}
-\usepackage{lipsum}
-\usepackage{amsmath,amssymb,amsfonts}
-\usepackage{amsthm}
-\usepackage{physics}
-\usepackage{framed, color}
-\usepackage{epsfig}
-\usepackage{acronym}
-\usepackage{multirow, array} 
-\usepackage{float}
-\usepackage[T1]{fontenc}
-\usepackage{natbib}
-\usepackage{fancyhdr}
-\usepackage{xcolor}
-\usepackage{multicol}
-\usepackage{mdframed}
-\usepackage{endnotes}
-\usepackage{listings}
-\usepackage{tensor}
-\usepackage{csquotes}
-\renewcommand{\thefootnote}{\arabic{footnote}}
-\newcommand{\chref}[2]{
-  \href{#1}{{\usebeamercolor[bg]{Feather}#2}}
-}
-\title[]
-{
-      \textbf{Estabilidad y transiciones de fase en el sistema de Lotka-Volterra generalizado.}
-}
 
-\subtitle[Tema o materia]
-{Examen profesional}
+\theoremstyle{plain}
+\newtheorem{proposición}{Proposición}
+\newtheorem{teorema}{Teorema}
+\theoremstyle{definition}
+\newtheorem{definición}{Definición}
+\newtheorem{ejemplo}{Ejemplo}
 
-\author[Autor]
-{      Rodrigo Vega Vilchis
-}
-\subtitle{Asesor: Sergio A. Alcalá Corona.}
+\newcommand{\Var}{\mathrm{Var}}
 
-\institute[]
-{
-      \large{Facultad de Ciencias}\\
-      Universidad Nacional Autónoma de México
-  
-  %there must be an empty line above this line - otherwise some unwanted space is added between the university and the country (I do not know why;( )
-}
+\title{\textbf{Estabilidad y transiciones de fase en el sistema de Lotka-Volterra generalizado}}
+\subtitle{Examen profesional}
+\author{Rodrigo Vega Vilchis \\[4pt] \small Asesor: Sergio A. Alcalá Corona}
+\institute{\large Facultad de Ciencias \\ Universidad Nacional Autónoma de México}
 \date{}
+
 \begin{document}
 
+\begin{frame}
+	\vspace*{1.5cm}
+	\titlepage
+\end{frame}
+\begin{frame}
+	\frametitle{Contenido}
+	\tableofcontents
+\end{frame}
+\section{Antecedentes}
+
+\begin{frame}
+	\frametitle{Antecedentes}
+	Sea $\textbf{F}:\mathbb{R}^n\to\mathbb{R}^n$ no lineal, entonces se define el sistema de ecuaciones diferenciales no lineal
+	$$\frac{dX(t)}{dt}=\textbf{F}(X(t))$$
+	y se busca caracterizar su estabilidad. Usando teoría de perturbaciones alrededor de un punto crítico $X^*(t)$ que cumple $\textbf{F}(X^*(t))=0$ se encuentra:
+	\begin{equation}\label{eqn:Linealizado}
+		\frac{d\textbf{p}(t)}{dt}=A\textbf{p}(t)
+	\end{equation}
+	donde $\textbf{p}(t)$ es el conjunto de perturbaciones alrededor de $X^*$ y $a_{ij}=\left. \frac{\partial f_i(X)}{\partial X_j}\right  |_{X^*}$ con $f_i\in\textbf{F}$ y $a_{ij}\in A$.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Antecedentes}
+	Robert May en 1972 realizó esta propuesta de linealización de sistemas no lineales multivariados para poder conocer su estabilidad en términos de la matriz $A$ que él denomina como \textit{community matrix} o \textit{matriz de interacciones.} Las soluciones de un sistema lineal son:
+	$$\textbf{p}(t)=\sum_{j=1}^N c_je^{\lambda_j t}\vec{v}_j$$
+	Las cuales pueden ser reales o complejas. Por lo tanto el sistema linealizado será estable si todos sus valores propios son negativos.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Antecedentes}
+	May propone una forma de construir sus matrices de interacciones:
+	\newline
+	\begin{itemize}
+		\item La diagonal queda fija en un valor $-d\in\mathbb{R}^-$ 
+		\item Los elementos $a_{ij}\in A$ fuera de la diagonal serán muestreados de una distribución normal de varianza finita $\sigma^2$ centrada en cero.
+		\item La existencia de cada $a_{ij}\neq 0$ será por medio de una probabilidad $C$, de modo que para $1-C$ se tendrán $a_{ij}=0$.
+	\end{itemize}
+
+	Al parámetro $\sigma$ (desviación estándar de la distribución normal), lo denomina como \textit{fuerza de interacción} y al parámetro $C$ como \textit{conectancia.}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Antecedentes}
+	May propone una Ley Circular que ajusta la distribución de valores propios de $A$. El centro de dicho círculo es el valor $-d$ de la diagonal y el radio esta dado por $\sigma\sqrt{NC}$. De aquí se deriva el parámetro de May que ajusta la estabilidad de estos sistemas
+	$$\sigma\sqrt{NC}<|-d|$$
+	Si esta relación se cumple, entones se puede asegurar con gran probabilidad que el sistema será estable.
+\end{frame}
+
+\section{Planteamiento del problema}
+
+\begin{frame}
+	\frametitle{Planteamiento del problema}
+	Un ejemplo de sistema no lineal que representa una dinámica ecológica semejante a la de Robert May es el siguiente:
+	$$\frac{dx_i}{dt}=r_ix_i\left (1-\frac{\sum_{j=1}^N\alpha_{ij}x_j}{K_i}\right )$$
+	Conocido como \textit{Sistema de Lokta-Volterra generalizado.} Considera una tasa de crecimiento $r_i$, una capacidad de carga $K_i$ y un conjunto de interacciones $\alpha_{ij}\in\Lambda$.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Planteamiento del problema}
+	Se define la \textit{matriz de incidencias} $\Lambda$ como aquella que posee las interacciones del sistema de poblaciones. Esta matriz se genera de forma similar a las matrices de May:
+	\newline
+	\begin{itemize}
+		\item La diagonal en este caso se fija a un valor positivo $d\in\mathbb{R}^+$.
+		\item Cada $\alpha_{ij}\in\Lambda$ proviene de una distribución normal de varianza finita $\sigma^2$ y centrada en cero.
+		\item Cada interacción tiene una probabilidad $p$ de existir, y $1-p$ de ser igual a cero.
+	\end{itemize}
+	Esta matriz se puede construir con base en la matriz de adyacencia de una \textit{red aleatoria} de Erdös–Rényi.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Planteamiento del problema}
+	El sistema de Lotka-Volterra generalizado para $N\gg1$ es complejo de resolver analíticamente, sin embargo, se puede aproximar su solución mediante un proceso de integración numérica, por ejemplo con Runge-Kutta de orden 4. Por consiguiente, se plantean las siguientes preguntas:
+	\newline
+	\begin{itemize}
+		\item ¿Qué resultado genera la integración del sistema?
+		\item ¿Existe una matriz equivalente a la \textit{community matrix} de May?
+		\item Si existe: ¿Cual es la distribución de sus valores propios?
+		\item ¿Cómo se puede medir la estabilidad de los sistemas LV?
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Planteamiento del problema: Hipótesis}
+	Para ello se presentan las siguientes hipótesis del planteamiento del problema:
+	\newline
+	\begin{itemize}
+		\item Las series de tiempo divergen o se estabilizan entorno a un punto fijo del sistema.
+		\item Los sistemas LV se linealizan a partir de su matriz Jacobiana, la cual se conforma de la combinación del producto entre variables normales y entradas del punto fijo.
+		\item La distribución de valores propios es heterogénea debido a la diagonal de la matriz Jacobiana.
+		\item La estabilidad depende de los parámetros $\sigma$, $p$ y $N$, a su vez depende de configuraciones de $\Lambda$ que resulten en puntos fijos no negativos.
+	\end{itemize}
+\end{frame}
+
+\section{Metodología}
 
 \begin{frame}
   \frametitle{Sistema de Lotka-Volterra generalizado}
@@ -66,49 +131,52 @@
   	\item $\alpha_{ij}x_j$ con las especies que interaccionan con $x_i$ con cierto valor $\alpha_{ij}$.
   \end{itemize}  
 \end{frame}
+
 \begin{frame}
   \frametitle{Sistema de Lotka-Volterra generalizado}
-	  Sea $\textbf{F}:\mathbb{R}^n\to\mathbb{R}^n$, se define su aspecto matricial de la siguiente forma
-	  $$\textbf{F}(\vec{x})=\begin{pmatrix}
-	  	f_1(\vec{x})\\
+  Cada ecuación del sistema equivale a una función de $\textbf{F}:\mathbb{R}^n\to\mathbb{R}^n$, es decir, $\dot{x}_i=f_i(X)$. Entonces:
+	$$\textbf{F}(X)=\begin{pmatrix}
+	  	f_1(X)\\
 	  	\vdots\\
-	  	f_n(\vec{x})
-	  \end{pmatrix},\qquad\text{donde }\vec{x}=(x_1(t),...,x_n(t))$$   
-	  y cada una de las $f_i(\vec{x})$ corresponde con las funciones del sistema (\ref{eqn:LK}). El sistema puede ser re-escrito de la siguiente forma
-	  $$\dot{\vec{x}}=\textbf{F}(\vec{x}(t))$$
+	  	f_n(X)
+	\end{pmatrix},\qquad\text{donde } X=(x_1(t),...,x_n(t))$$   
+	por lo tanto, el sistema puede ser re-escrito de la siguiente forma
+	  $$\dot{X}=\textbf{F}(X)$$
 \end{frame}
+
 \begin{frame}
   \frametitle{Sistema de Lotka-Volterra generalizado}
-  Para conocer la estabilidad de este sistema, se propone Linearizarlo y determinar sus valores propios que dictarán este comportamiento. Se define entonces el Jacobiano del sistema
+  El resultado de Robert May ha sido proponer la matriz Jacobiana como la \textit{community matrix} (ver ec. \ref{eqn:Linealizado}). Por lo tanto es de interés determinar la matriz Jacobiana del sistema y evaluarlo en el punto crítico correspondiente:
   \begin{equation}
-  	\mathbb{J}_{\textbf{F}}(\vec{x})=\begin{pmatrix}
-  		\frac{\partial f_1(\vec{x})}{\partial x_1}&\cdots&\frac{\partial f_1(\vec{x})}{\partial x_n}\\
+  	\mathbb{J}_{\textbf{F}}(X)=\begin{pmatrix}
+  		\frac{\partial f_1(X)}{\partial x_1}&\cdots&\frac{\partial f_1(X)}{\partial x_n}\\
   		\vdots&\ddots&\vdots\\
-  		\frac{\partial f_{n}(\vec{x})}{\partial x_1}&\cdots&\frac{\partial f_n(\vec{x})}{\partial x_n}
+  		\frac{\partial f_{n}(X)}{\partial x_1}&\cdots&\frac{\partial f_n(X)}{\partial x_n}
   	\end{pmatrix}
   \end{equation}  
-  y se necesita de un punto crítico $\vec{x}^*$ que cumple $\textbf{F}(\vec{x}^*)=0$ tal que al evaluarlo en el jacobiano nos de el sistema linearizado localmente alrededor de dicho punto crítico.
+  Un punto crítico $X^*$ es aquel que cumple $\textbf{F}(X^*)=0$. Linealizar el sistema significa poder conocer y acceder a las propiedades del mismo de forma local alrededor de este $X^*$.
 \end{frame}
+
 \begin{frame}
   \frametitle{Matriz de incidencias}
-  Para definir las interacciones $\alpha_{ij}$ del sistema (\ref{eqn:LK}) se va a construir a partir de una red de Erdös–Rényi que puede ser no dirigida o dirigida.
+  A continuación se presentan los pasos para construir la \textit{matriz de incidencias} $\Lambda$ que contiene las $\alpha_{ij}$ de las ecuaciones (\ref{eqn:LK}).
   \newline
   \newline
-  Para ello se define su matriz de adyacencia asociada $A\in\mathcal{M}_n(\mathbb{R})$ cuyos elementos son de la forma
-  $$\alpha_{ij}=\begin{cases}
+  Se toma una red aleatoria de Erdös–Rényi y se extrae su matriz de adyacencia asociada $\mathcal{E}\in\mathrm{M}_n(\mathbb{R})$ cuyos elementos son de la forma
+  $$\mathcal{E}_{ij}=\begin{cases}
   	1,\qquad\text{si }r<p\\
   	0,\qquad\text{si }r\geq p
   \end{cases},\qquad\text{para cada }i\neq j$$  
-  donde $r$ es un número aleatorio entre 0 y 1. Para el caso de la red aleatoria dirigida hay que repetir este proceso para los elementos $\alpha_{ji}$.
+  donde $r$ es un número aleatorio entre 0 y 1 y $p$ una probabilidad en el mismo rango. $\mathcal{E}$ puede ser simétrica, o puede ser de una red dirigida de modo que $\mathcal{E}_{ij}\neq \mathcal{E}_{ji}$.
 \end{frame}
 \begin{frame}
   \frametitle{Matriz de incidencias}
-  Teniendo la red de Erdös–Rényi (no dirigida o dirigida), se define una matriz $R$ cuyas entradas estarán mapeadas de una distribución Normal con $\mu=0$ y $\sigma=\{0.1,0.2,...,1.0\}$.
+  Teniendo la red de Erdös–Rényi (no dirigida o dirigida), se define una matriz $\mathcal{M}$ cuyas entradas estarán muestreadas de una distribución Normal con $\mu=0$ y $\sigma=\{0.1,0.2,...,1.0\}$.
   \newline
   \newline
   Con ello se define la \textbf{matriz de incidencias} asociada a una red de incidencias que guarda las interacciones del sistema (\ref{eqn:LK})
-  $$\Lambda=(A\odot R)+I$$
-  Dependiendo de si $A$ es dirigida o no, $\Lambda$ será estructuralmente simétrica o puramente aleatoria.
+  $$\Lambda=(\mathcal{E}\odot \mathcal{M})+I$$
+  Dependiendo de si $\mathcal{E}$ es dirigida o no, $\Lambda$ será estructuralmente simétrica o puramente aleatoria. 	
 \end{frame}
 \begin{frame}
   \frametitle{Matriz de incidencias}
@@ -143,26 +211,145 @@
 	Por lo tanto las interacciones $(--)$, $(++)$, $(-+)$, $(+0)$ y $(0-)$ pesan en la dinámica del sistema
 	$$\frac{dx_i}{dt}=r_ix_i\left (1-\frac{x_i}{K_i}\right )-r_ix_i\left (\frac{\alpha_{i1}x_1+\cdots+\alpha_{iN}x_N}{K_i}\right )$$
 \end{frame}
+
+\begin{frame}
+	\frametitle{Interacciones de cooperación}
+		\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.11]{../Texto/Imagenes/Cooperacion de especies}
+		\caption{Sistema de Lotka-Volterra con interacciones de cooperación dados por las ecuaciones (\ref{eqn:LK}). Tasas de crecimiento y capacidades de carga: $r_x=K_x=2$ y $r_y=K_y=3$. \textbf{A}) Series de tiempo del sistema para las especies $x(t)$ y $y(t)$ bajo la condición inicial $(1,2)$. (\textbf{B}) Espacio fase del sistema con sus puntos fijos asociados, se muestra solamente un único punto fijo estable.}
+		\label{fig:CooperacionEspecies}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Punto Fijo}
+	Para hallar puntos fijos se debe resolver $\textbf{F}(X)=0$ o lo que es equivalente bajos las ecuaciones (\ref{eqn:LK}):
+	$$1-\frac{\sum_{j=1}^N \alpha_{ij}x_j}{K_i}=0$$
+	que es equivalente a encontrar una solución del sistema 
+	$$\Lambda X^*=\mathrm{K}$$
+	Este ensamble tiene múltiples soluciones con la forma $X^*=\Lambda^{-1}\mathrm{K}$, cada forma irá en función del número de $x_k=0$ que se contemplen para las diversas soluciones
+\end{frame}
+
+\begin{frame}
+	\frametitle{Punto Fijo}
+	La distribución del punto fijo se posicionará alrededor de $\mathrm{K}$. Mientras $\sigma$ y $p$ sean $\ll 1$ respectivamente, la distribución estará muy próxima a $\mathrm{K}$, y mientras vayan aumentando sus valores, dicha distribución se ensanchará.
+	\newline
+	\newline
+	Si por alguna razón $\det(\Lambda)=0$, entonces la matriz es singular y las entradas de $\Lambda^{-1}$ divergen a $\infty$. Si $\det(\Lambda)<1$ entonces
+	$$\text{Adj}(\Lambda)\cdot\Lambda=\det(\Lambda)\cdot \mathrm{I}$$
+	implicando que Adj$(\Lambda)$ tiene entradas de magnitud semejante con respecto de $\Lambda$. Si $\det(\Lambda)>1$, las entradas de $\Lambda$ son las mismas implicando que los elementos Adj$(\Lambda)$ se van amplificando cada vez más.
+	$$\Lambda^{-1}=\frac{1}{\det(\Lambda)}\text{Adj}(\Lambda)$$
+\end{frame}
+
 \begin{frame}
   \frametitle{Jacobiano del sistema de Lotka-Volterra}
-  Sea $\mathcal{I}\in\mathcal{M}_N(\mathbb{R})$. Se define el jacobiano del sistema de Lotka-Volterra generalizado de la siguiente forma:
-  $$\mathcal{I}=\begin{cases}
-  	\mathcal{I}_{ii}=r_i\left (1-\frac{2x_i+\sum_{j\neq i}\alpha_{ij}x_j}{K_i}\right ),\qquad&\text{para }i\in\{1,...,N\}\\
-  	\mathcal{I}_{ij}=-\frac{r_i\alpha_{ik}x_i}{K_i},\qquad&\text{para }i\neq j
-  \end{cases}$$
-  Y se ha asumido $\alpha_{ii}=1$. En este contexto ya se esta evaluando sobre el punto crítico del sistema, es decir, $\vec{x}^*=(x_1,...,x_N)$ es el punto crítico a evaluar.
+  \begin{definición}\label{def:MatrizJacobiana}
+  	Sea $\mathcal{J}\in\mathrm{M}_N(\mathbb{R})$ donde $N$ es el número de especies del sistema LV generalizado. Se define la matriz \textit{Jacobiana} asociada al sistema (\ref{eqn:Fmatricial}) evaluado en un punto fijo $X^*$ de la siguiente forma
+  	\begin{equation}\label{eqn:MatrizJacobiana}
+  		\mathcal{J}_{ij}=\begin{cases}
+  			-\frac{r_ix_i^*}{K_i}\alpha_{ii},\qquad&\text{para }i=j\\
+  			-\frac{r_ix_i^*}{K_i}\alpha_{ij},\qquad&\text{para }i\neq j
+  		\end{cases}
+  	\end{equation}
+  	considerando que $\alpha_{ii}>0$ y particularmente se ha fijado en $\alpha_{ii}=1$ para todo $i\in\{1,...,N\}$. Si se considera una matriz diagonal cuyos elementos son $-\frac{r_ix_i^*}{K_i}$, entonces la Jacobiana se puede reescribir de la siguiente manera
+  	\begin{equation}\label{eqn:Jacobiana}
+  		\mathcal{J}=-\text{diag}\left (\frac{r_ix_i^*}{K_i}\right )\Lambda
+  	\end{equation}
+  \end{definición}
 \end{frame}
+
 \begin{frame}
-  \frametitle{Jacobiano del sistema Lotka-Volterra}
-  ¿Qué signo tendrán los elementos de la diagonal del Jacobiano del sistema de Lotka-Volterra generalizado?
-  \begin{itemize}
-  	\item [1.] $r_i>0$ siempre, por lo que descartamos.
-  	\item [2.] Todas las entradas de $\vec{x}^*\geq 0$ y existen algunas $x_i\in\vec{x}^*$ tal que $x_i>K_i$ por el factor de la cooperación.
-  	\item [3.] $2x_i\geq 0$ y la suma no necesariamente es mayor o igual que cero pero supongamos que es así.\\
-  	\item [4.] Entonces se puede asumir $$K_i< 2x_i+\sum_{j\neq i}\alpha_{ij}x_j$$\\
-  	\item [5.] Reacomodando se tiene $$1-\frac{2x_i+\sum_{j\neq i}\alpha_{ij}x_j}{K_i}<0$$  
-  \end{itemize}  
+	\frametitle{Proposición}
+	\begin{proposición}\label{prop:DiagonalI}
+		Los elementos de la diagonal de la matriz Jacobiana determinan en gran medida la estabilidad del sistema
+	\end{proposición}
+	\begin{proof}
+		Para demostrar esta proposición se hará uso del \textit{Teorema de Gershgorin} \cite{GershgorinTheorem}. Para ello se asume que la matriz Jacobiana tendrá valores propios complejos. Se define el radio de Gershgorin como
+		\begin{equation}\label{proof1:RGershgorin}
+			R_i=\sum_{i\neq j}|\mathcal{J}_{ij}|
+		\end{equation}
+		con ello se define $D(\mathcal{J}_{ii},R_i)\subset\mathbb{C}$ como el disco de Gershgorin centrado en $\mathcal{J}_{ii}$ con radio $R_i$. El teorema establece que cada valor propio de $\mathcal{J}$ estará contenido en alguno de estos discos. 
+	\end{proof}
 \end{frame}
+
+\begin{frame}
+	\frametitle{Proposición}
+	\begin{proof}
+		Demostrando que si todo $D(\mathcal{J}_{ii},R_i)$ se encuentra contenido en el semiplano negativo de $\mathbb{C}$, entonces todos los valores propios de la Jacobiana serán negativos también y por lo tanto el sistema (\ref{eqn:LK}) será estable en $X^*$. El elemento más importante de esta prueba es considerar el centro de los discos; si todos los $\mathcal{J}_{ii}$ son negativos entonces el centro de todos los discos se encuentra en el semiplano negativo de $\mathbb{C}$, y para garantizar que todos los valores propios sean negativos habría que probar $|\mathcal{J}_{ii}|>R_i$ para todo $i\in\{1,...,N\}$, es decir:
+		\begin{equation}\label{proof1:Desigualdad}
+			\begin{split}
+				\left |-\frac{r_ix_i^*}{K_i}\alpha_{ii}\right |&>\sum_{j\neq i}\left |-\frac{r_ix_i^*}{K_i}\alpha_{ij}\right |\\
+				1&>\sum_{j\neq i}|\alpha_{ij}|
+			\end{split}
+		\end{equation}
+		
+		
+	\end{proof}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Proposición}
+	\begin{proof}
+		De la ec. (\ref{eqn:MatrizJacobiana}) se puede ver que $\alpha_{ii}>0$ y en particular $\alpha_{ii}=1$, por lo tanto es importante que todo $x_i^*\in X^*$ sea positivo para que el centro de los discos se encuentre en el semiplano negativo de $\mathbb{C}$. En caso contrario habrá al menos un disco con centro en el sempiplano positivo de $\mathbb{C}$ que pueda alojar valores propios positivos que devengan en una dinámica inestable. Es conveniente poder saber cual es el tamaño promedio de los discos de Gershgorin y para ello se define la siguiente variable aleatoria
+		\begin{equation}\label{proof1:VarAlW}
+			W = 
+			\begin{cases}
+				0,\qquad \text{Si }1-p\\
+				Y,\qquad \text{Si }p>0	
+			\end{cases}
+		\end{equation}
+		donde $Y\sim N(0,\sigma^2)$ es una variable aleatoria normal. Ya que $R_i$ considera suma de valores absolutos.
+	\end{proof}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Proposición}
+	\begin{proof}
+		Es de interés saber el valor esperado de $|W|$ 
+		\begin{equation}\label{proof1:ValorEsperadoW}
+			\mathbb{E}[|W|]=(1-p)\cdot 0 + p\cdot \mathbb{E}[|Y|] = p\cdot\mathbb{E}[|Y|] = p\sigma\sqrt{\frac{2}{\pi}}
+		\end{equation}
+		el término $\sqrt{\frac{2}{\pi}}$ viene de considerar la variable aleatoria $Z\sim N(0,1)$ y la distribución \textit{half-normal} $|Z|$, entonces su valor esperado es $$\mathbb{E}[|Z|]=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}|z|e^{-z^2/2}\, dz=\frac{2}{\sqrt{2\pi}}\int_0^\infty ze^{-z^2/2}\, dz=\sqrt{\frac{2}{\pi}}$$
+		
+	\end{proof}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Proposición}
+	\begin{proof}
+		al considerar la variable aleatoria $Y\sim N(0,\sigma^2)$ entonces basta con escalar $Y=\sigma Z$ y en consecuencia su valor esperado será $$\mathbb{E}[|Y|]=\sigma \mathbb{E}[|Z|]=\sigma\sqrt{\frac{2}{\pi}}$$
+		Por lo tanto, el valor esperado del radio de Gershgorin es
+		$$\mathbb{E}[R_i]=(N-1)p\sigma\sqrt{\frac{2}{\pi}}$$
+		Si este radio promedio es menor a 1 se puede garantizar en cierta medida que los discos de Gershgorin estarán contenidos en el semiplano negativo de $\mathbb{C}$. Sin embargo, pueden existir discos de Gershgorin que se alejen de la media ¿qué tanto se pueden alejar para que se siga cumpliendo $\mathcal{J}_{ii}>R_i$? 
+	\end{proof}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Proposición}
+	\begin{proof}
+		Será conveniente calcular la varianza de los radios de Gershgorin para averiguarlo. Tomando la variable aleatoria $W$, se calcula su segundo momento
+		$$\mathbb{E}(|W|^2)=(1-p)\cdot 0+p\cdot\mathbb{E}(|Y|^2)=p\cdot\mathbb{E}(Y^2)=p\sigma^2$$
+		por otro lado el cuadrado del valor esperado (\ref{proof1:ValorEsperadoW}) es
+		$$\mathbb{E}(|W|)^2=p^2\sigma^2\frac{2}{\pi}$$
+		Finalmente la varianza de $|W|$ es
+		$$\Var(|W|)=p\sigma^2-p^2\sigma^2\frac{2}{\pi}$$
+	
+	\end{proof}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Proposición}
+	\begin{proof}
+		Entonces la varianza de los radios de Gershgorin queda envuelta en la siguiente expresión
+		\begin{equation}\label{proof1:paramEstabilidad}
+			\Var(R_i)=(N-1)p\sigma^2\left (1-\frac{2p}{\pi}\right )
+		\end{equation}
+		y mientras sea menor a 1 se puede garantizar que los discos de Gershgorin van a cumplir (\ref{proof1:Desigualdad}) y en consecuencia los valores propios de $\mathcal{J}$ estarán contenidos en el semiplano negativo de $\mathbb{C}$.
+	\end{proof}
+\end{frame}
+
 \begin{frame}
   \frametitle{Resultados de May}
   Ley Circular
@@ -203,95 +390,6 @@
   	\label{fig:TransicionσDirvsNoDir}
   \end{figure} 
 \end{frame}
-\begin{frame}
-  \frametitle{Test}
-\end{frame}
-\begin{frame}
-  \frametitle{Test}
-\end{frame}
-\begin{frame}
-  \frametitle{Test}
-\end{frame}
-\begin{frame}
-  \frametitle{Test}
-\end{frame}
-\begin{frame}
-  \frametitle{Test}
-\end{frame}
-\begin{frame}
-  \frametitle{Test}
-\end{frame}
-\begin{frame}
-  \frametitle{Test}
-\end{frame}
-\begin{frame}
-  \frametitle{Test}
-\end{frame}
-\begin{frame}
-  \frametitle{Test}
-\end{frame}
-\begin{frame}
-  \frametitle{Test}
-\end{frame}
-\begin{frame}
-  \frametitle{Test}
-\end{frame}
-\begin{frame}
-  \frametitle{Test}
-\end{frame}
-\begin{frame}
-  \frametitle{Test}
-\end{frame}
-\begin{frame}
-  \frametitle{Test}
-\end{frame}
-\begin{frame}
-  \frametitle{Test}
-\end{frame}
-\begin{frame}
-  \frametitle{Test}
-\end{frame}
-\begin{frame}
-  \frametitle{Test}
-\end{frame}
-\begin{frame}
-  \frametitle{Test}
-\end{frame}
-\begin{frame}
-  \frametitle{Test}
-\end{frame}
-\begin{frame}
-  \frametitle{Test}
-\end{frame}
-\begin{frame}
-  \frametitle{Test}
-\end{frame}
-\begin{frame}
-  \frametitle{Test}
-\end{frame}
-\begin{frame}
-  \frametitle{Test}
-\end{frame}
-\begin{frame}
-  \frametitle{Test}
-\end{frame}
-\begin{frame}
-  \frametitle{Test}
-\end{frame}
-\begin{frame}
-  \frametitle{Test}
-\end{frame}
-\begin{frame}
-  \frametitle{Test}
-\end{frame}
-\begin{frame}
-  \frametitle{Test}
-\end{frame}
-\begin{frame}
-  \frametitle{Test}
-\end{frame}
-\begin{frame}
-  \frametitle{Test}
-\end{frame}
+
 
 \end{document}
