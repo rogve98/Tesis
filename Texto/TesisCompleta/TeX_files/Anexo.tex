@@ -108,7 +108,6 @@ Para una revisión más extensa de este sistema se recomienda consultar el capí
 \end{figure}
 \newpage
 
-
 \subsubsection*{Introducción al modelo especies en competencia}
 
 El sistema de presa-depredador se puede extender al realizar una combinación sutil con la ecuación logística (\ref{eqn:EqLogistica}), es decir, es agregarle una capacidad de carga y la premisa de que ahora no hay especies que depredan y que son depredadas\footnote{Aunque más adelante se verá que si existe una configuración presa-depredador en este sistema.} sino que ahora las especies compiten por los recursos disponibles de un ambiente. Este es el conocido \textit{sistema de competencia de especies} o de Lotka-Volterra de competencia
@@ -118,8 +117,8 @@ El sistema de presa-depredador se puede extender al realizar una combinación su
 		\frac{dy}{dt} &= \gamma y\left (1-\frac{y}{k_2}\right )-\delta xy
 	\end{split}
 \end{equation}
-Este sistema de ecuaciones aumenta el número de términos no lineales con respecto del presa depredador, teniendo $x^2$ y $xy$ (para el caso de $\dot{x}$) por lo que también aumenta la complejidad al quererlo resolver de forma analítica\footnote{Si es que tiene solución.}; la solución y análisis de este sistema también se puede hallar en \cite{hirsch2013differential}. A consideración de este autor, esta es la forma más simple de visualizar este sistema. La descripción de ``competencia'' es solamente una de las interacciones posibles del sistema, en el desarrollo de esta tesis se verá que hay otras interacciones posibles que enriquecen la dinámica del sistema y producen escenarios interesantes de analizar.
-\newpage
+Este sistema de ecuaciones aumenta el número de términos no lineales con respecto del presa depredador, teniendo $x^2$ y $xy$ (para el caso de $\dot{x}$) por lo que también aumenta la complejidad al quererlo resolver de forma analítica\footnote{Si es que tiene solución.}; la solución y análisis de este sistema también se puede hallar en \cite{hirsch2013differential}. A consideración de este autor, esta es la forma más simple de visualizar este sistema. La descripción de ``competencia'' es solamente una de las interacciones posibles del sistema, en el desarrollo de esta tesis se verá que hay otras interacciones posibles que enriquecen la dinámica del sistema y producen escenarios interesantes de analizar.\\
+\\
 Como es de esperar, la forma de modelar los sistemas y resolverlos será por medio de integración numérica y muchas herramientas computacionales que se irán describiendo en los apéndices. Se utilizará \textit{Runge-Kutta} de orden 4 como método de integración numérica para resolver los sistemas debido a su precisión; aunque es sabido que el coste computacional es mayor que con otros métodos como Euler, se prefiere asumirlo con tal de tener la mayor precisión posible, pues se sabe que en sistemas no lineales se encuentra muy presente la sensibilidad ante pequeñas perturbaciones, entonces se requiere tener el error mínimo posible.\\
 \\
 En \cite{stickler2016basic} se pueden consultar la deducción y aplicación de los métodos de Euler y RK4, particularmente las reglas de correspondencia que siguen son 

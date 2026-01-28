@@ -342,7 +342,7 @@ En esta sección se ha construido la matriz de incidencias $\Lambda$ necesaria p
 \\
 Por último se ha explorado en un primer nivel que la estabilidad puede depender del balance entre coeficientes positivos y negativos, y que la capacidad de carga juega un papel importante en la contención de los crecimientos. Por lo tanto ya se tiene todo para comenzar a integrar numéricamente el sistema para cualquier $N$, el siguiente paso será determinar los puntos fijos y la matriz Jacobiana del sistema para analizar aspectos alrededor de ella. En la sección (\ref{sec:poblacionesLK}) se muestra la implementación computacional de este sistema.
 \newpage
-\section{Puntos fijos}\label{subsec:PuntosFijos}
+\section{Puntos fijos}\label{sec:PuntosFijos}
 
 En este punto conviene realizar un análisis sobre los puntos fijos del sistema, ya que  es el puente entre $\Lambda$ con la tupla $(p,\sigma,N)$ y la matriz Jacobiana con su distribución espectral, misma que define la estabilidad del sistema. Las diferentes configuraciones de la tupla generarán a su vez diversas configuraciones de $\Lambda$ que devengan en puntos fijos estables o inestables. Por lo tanto será indispensable hallar dichas configuraciones para obtener una noción del mapa de estabilidad del sistema. Para comenzar, es necesario hallar los puntos fijos que se obtienen al resolver el conjunto de ecuaciones que se encuentra entre paréntesis del sistema (\ref{eqn:LK})
 \begin{equation}\label{eqn:EcsPuntoFijo}
@@ -432,7 +432,9 @@ De la matriz Jacobiana se puede observar como todas sus entradas voltean el sign
 		el término $\sqrt{\frac{2}{\pi}}$ viene de considerar la variable aleatoria $Z\sim N(0,1)$ y la distribución \textit{half-normal} $|Z|$, entonces su valor esperado es $$\mathbb{E}[|Z|]=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}|z|e^{-z^2/2}\, dz=\frac{2}{\sqrt{2\pi}}\int_0^\infty ze^{-z^2/2}\, dz=\sqrt{\frac{2}{\pi}}$$
 		al considerar la variable aleatoria $Y\sim N(0,\sigma^2)$ entonces basta con escalar $Y=\sigma Z$ y en consecuencia su valor esperado será $$\mathbb{E}[|Y|]=\sigma \mathbb{E}[|Z|]=\sigma\sqrt{\frac{2}{\pi}}$$
 		Por lo tanto, el valor esperado del radio de Gershgorin es
-		$$\mathbb{E}[R_i]=(N-1)p\sigma\sqrt{\frac{2}{\pi}}$$
+		\begin{equation}\label{proof1:E[RadioG]}
+			\mathbb{E}[R_i]=(N-1)p\sigma\sqrt{\frac{2}{\pi}}
+		\end{equation}
 		Si este radio promedio es menor a 1 se puede garantizar en cierta medida que los discos de Gershgorin estarán contenidos en el semiplano negativo de $\mathbb{C}$. Sin embargo, pueden existir discos de Gershgorin que se alejen de la media ¿qué tanto se pueden alejar para que se siga cumpliendo $\mathcal{J}_{ii}>R_i$? será conveniente calcular la varianza de los radios de Gershgorin para averiguarlo. Tomando la variable aleatoria $W$, se calcula su segundo momento
 		$$\mathbb{E}(|W|^2)=(1-p)\cdot 0+p\cdot\mathbb{E}(|Y|^2)=p\cdot\mathbb{E}(Y^2)=p\sigma^2$$
 		por otro lado el cuadrado del valor esperado (\ref{proof1:ValorEsperadoW}) es
@@ -440,7 +442,7 @@ De la matriz Jacobiana se puede observar como todas sus entradas voltean el sign
 		Finalmente la varianza de $|W|$ es
 		$$\Var(|W|)=p\sigma^2-p^2\sigma^2\frac{2}{\pi}$$
 		Entonces la varianza de los radios de Gershgorin queda envuelta en la siguiente expresión
-		\begin{equation}\label{proof1:paramEstabilidad}
+		\begin{equation}\label{proof1:VarRadioG}
 			\Var(R_i)=(N-1)p\sigma^2\left (1-\frac{2p}{\pi}\right )
 		\end{equation}
 		y mientras sea menor a 1 se puede garantizar que los discos de Gershgorin van a cumplir (\ref{proof1:Desigualdad}) y en consecuencia los valores propios de $\mathcal{J}$ estarán contenidos en el semiplano negativo de $\mathbb{C}$. Sin embargo esta prueba tiene algunas limitantes; los discos de Gershgorin únicamente garantizan que contienen valores propios, forzar la condición (\ref{proof1:Desigualdad}) es suficiente para garantizar estabilidad pero no es determinante, ya que este método no menciona nada acerca de la posición de los valores propios. Si dicha desigualdad no se cumple pueden ocurrir dos escenarios: que $\max(|\lambda_\mathcal{J}|)<0$ y el sistema siga siendo estable a pesar de algún $R_i>\mathcal{J}_{ii}$ ó $\max(|\lambda_\mathcal{J}|)>0$ en cuyo caso el sistema será inestable, y eso dependerá de $\Lambda$ y la tupla $(p,\sigma,N)$. En conclusión, esta prueba funciona en un primer nivel para mostrar que los elementos de la diagonal de $\mathcal{J}$ y por consiguiente las entradas de $X^*$ juegan un papel importante en la estabilidad del sistema. 
@@ -605,7 +607,7 @@ Para el caso de la transición en función de $\sigma$ se tiene un resultado sim
 \end{figure}
 Aunque de alguna manera el radio de Girko sea el parámetro que limite la estabilidad de los sistemas de May, variar $C$ o $\sigma$ representan marcos conceptualmente distintos. En el primer caso se esta variando el tamaño del sistema desde las pocas conexiones (red dispersa) hasta la red totalmente conexa, contemplando las 10 fuerzas de interacción promedio de $\Sigma$. En el caso de $\sigma$ se esta trabajando con 10 tamaños de red diferentes (dados por el conjunto $\tilde{C}$) y únicamente se varía como cambia la fuerza de interacción promedio en cada uno. Claramente las transiciones son completamente diferentes y a continuación se dará una breve explicación de por qué. Para notar como son los cambios en el radio de Girko se toman sus derivadas parciales, considere $R=\sigma\sqrt{nC}$ entonces:
 $$\frac{\partial R}{\partial C}=\frac{\sigma\sqrt{n}}{2\sqrt{C}},\qquad\frac{\partial R}{\partial\sigma}=\sqrt{nC},\qquad\frac{\partial R}{\partial n}=\frac{\sigma\sqrt{C}}{2\sqrt{n}}$$
-la primer derivada indica que pequeñas variaciones en la conectancia generan un cambio drástico en el radio espectral, al aumentar el número de enlaces en función de $C$ modifica fuertemente el soporte espectral y por lo tanto el sistema responde de forma más violenta. El impacto de estas variaciones provoca un cambio abrupto en la estabilidad misma que se observa en las Figuras (\ref{fig:TransicionMayDirLin}, \ref{fig:TransicionMayDirLog}), es por ello que el sistema tiene gran susceptibilidad en pequeñas variaciones de $C$.\\
+la primer derivada indica que pequeñas variaciones en la conectancia generan un cambio drástico en el radio espectral, al aumentar el número de enlaces en función de $C$ modifica fuertemente el soporte espectral y por lo tanto el sistema responde de forma más abrupta. El impacto de estas variaciones provoca un cambio abrupto en la estabilidad misma que se observa en las Figuras (\ref{fig:TransicionMayDirLin}, \ref{fig:TransicionMayDirLog}), es por ello que el sistema tiene gran susceptibilidad en pequeñas variaciones de $C$.\\
 \\
 Al variar $\sigma$ solo se cambian las intensidades de las interacciones de la red, pero la estructura y número de enlaces persiste (en promedio). La derivada $\frac{\partial R}{\partial\sigma}$ indica que los cambios en $\sigma$ son más proporcionales haciendo que el cambio de estabilidad sea más lineal y suave. En este caso el soporte espectral se va expandiendo gradualmente con el aumento de $\sigma$, pudiendo cruzar linealmente hacia el régimen inestable. Para los cambios en $n$, la derivada $\frac{\partial R}{\partial n}$ indica que el cambio en el radio espectral es imperceptible a medida que $n\to\infty$, será más notorio cuando se contemplen escenarios de pocas especies pero para sistemas grandes el radio no sufrirá mucha fluctuación debido a $n$.
 \\
