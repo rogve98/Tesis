@@ -1,44 +1,49 @@
-\chapter{Generalizando al sistema de Lotka-Volterra}
+\chapter{El modelo de Lotka-Volterra generalizado}
 
-\section{Sistema de especies en competencia.}
-
-\setlength{\parindent}{0cm} El sistema de Lotka-Volterra del que se ha hablado anteriormente es una de las grandiosas extensiones del \textit{modelo logístico} (\ref{eqn:EqLogistica}) que puede aplicarse a $N$ especies. En concreto, cuando es únicamente de competencia: las interacciones entre dichas especies son reales y positivas, y la dinámica se encuentra limitada por una o varias capacidades de carga.  Los términos no lineales de estas ecuaciones son cuadráticos y representan la relación entre la especie $i$ y la especie $j$. El conjunto de ecuaciones diferenciales que representa al sistema es el siguiente:
+%En este capítulo solo se define y se construye el modelo, se deja listo para que en el siguiente capítulo pueda ser analizado.
+\setlength{\parindent}{0cm} En este capítulo se introduce el modelo de Lotka-Volterra generalizado que será utilizado a lo largo de esta tesis. Se define el sistema dinámico, se especifican sus parámetros y la estructura de las interacciones, y posteriormente se analizan los puntos de equilibrio del sistema y su matriz Jacobiana.
 \begin{equation}\label{eqn:LK}
-	\frac{dx_i}{dt}=r_ix_i\left(1-\frac{\sum_{j=1}^N \alpha_{ij}x_j}{K_i}\right)
+	\frac{dx_i}{dt}=r_ix_i\left(1-\frac{\sum_{j=1}^N \alpha_{ij}x_j}{K_i}\right),\qquad i=1,...,N
 \end{equation}
-Las ecuaciones consideran tasas de crecimiento $r_i$ y capacidades de carga $K_i$ que por lo general se dejan fijos a un solo valor respectivamente para todas las ecuaciones. Por otro lado, se tienen los coeficientes $\alpha_{ij}$ que representan la magnitud de las interacciones entre las especies $x_j$ con la especie $x_i$. Por ejemplo, si el coeficiente $\alpha_{ij}>0$ es mayor que su transpuesto $\alpha_{ji}>0$, entonces $x_j$ ejerce mayor competencia sobre $x_i$ que en el caso transpuesto, de modo que el crecimiento de $x_i$ se verá más afectado que el crecimiento de $x_j$. La dinámica se acompleja al considerar el resto de las interacciones posibles. \\
+En el sistema \eqref{eqn:LK}, $x_i(t)$ representa la abundancia de la especie $i$, $r_i$ denota su tasa intrínseca de crecimiento y $K_i$ su capacidad de carga, heredados del modelo logístico \eqref{eqn:EqLogistica}. Los coeficientes $\alpha_{ij}$ codifican la intensidad y el signo de las interacciones entre las especies $i$ y $j$; dependiendo de su signo, estas interacciones pueden corresponder a escenarios de competencia, cooperación o a un régimen mixto generalizado.\\
 \\
-Anteriormente se ha discutido que debido al número de ecuaciones (llegando a considerar $N \gg 1$), es prácticamente imposible deducir una solución analítica general, pues bien podrían existir múltiples soluciones \cite{CauchyLipschitzTheorem} muy complejas de determinar. Por tanto, este capítulo se concentrará en la construcción del modelo teórico para resolver el sistema con herramientas computacionales que se irán agregando en los apéndices.
+A continuación, se analiza el comportamiento del sistema en el caso particular de dos especies, con el fin de fijar intuiciones antes de abordar el régimen de alta dimensión. En este último caso, debido al carácter no lineal y la alta dimensionalidad del sistema, el análisis se apoya en herramientas computacionales.
+
 \section{Caso particular para $N=2$}
-%CHECKPOINT 03abril2025
-Para comenzar esta labor, conviene resolver y analizar el sistema para 2 especies y con base en su experiencia poder extender los aprendizajes al caso generalizado de $N$ especies. Las ecuaciones de (\ref{eqn:LK}) se reducen al siguiente sistema:
-$$
-\begin{cases}
-	\dot{x}_1&=r_1x_1\left (1-\frac{a_{11}x_1}{k_1}-\frac{a_{12}x_2}{k_1}\right )\\
-	\dot{x}_2&=r_2x_2\left (1-\frac{a_{21}x_1}{k_2}-\frac{a_{22}x_2}{k_2}\right )
-\end{cases}
-$$
-Para este caso particular se tendrá una tasa de crecimiento y una capacidad de carga personalizada para cada especie, lo que es razonable con el hecho de que cada especie crece a un ritmo determinado y también es limitada de manera determinada. Por otro lado, los coeficientes $\alpha_{ij}$ formarán parte de una \textit{matriz de incidencias}\footnote{Misma que se definirá más adelante.} que define la interacción entre las especies $x_j$ y $x_i$
+
+En el caso particular $N=2$, el sistema \eqref{eqn:LK} se reduce a un par de ecuaciones diferenciales que conservan la misma estructura funcional y parámetros del modelo general,
+\begin{align*}
+	\frac{dx_1}{dt}&=r_1 x_1\left(1-\frac{\alpha_{11}x_1}{K_1}-\frac{\alpha_{12}x_2}{K_1}\right),\\
+	\frac{dx_2}{dt}&=r_2 x_2\left(1-\frac{\alpha_{21}x_1}{K_2}-\frac{\alpha_{22}x_2}{K_2}\right).
+\end{align*}
+
+Dada la estructura del sistema, los coeficientes de interacción entre especies pueden organizarse en una \textbf{matriz de coeficientes de interacción $\Lambda$}, cuyos elementos $\alpha_{ij}$ cuantifican la relación entre las especies $j$ con $i$.
 \begin{equation}\label{eqn:mIncidencias}
 	\Lambda=
 	\begin{pmatrix}
-		1 & \alpha_{12}\\
-		\alpha_{21} &1
+		\alpha_{11} & \alpha_{12}\\
+		\alpha_{21} & \alpha_{22}
 	\end{pmatrix}
 \end{equation}
-Es importante que los términos de la diagonal de esta matriz se en encuentren fijados a algún valor positivo, en este caso a $\alpha_{ii}=1$ para que la especie $x_i$ tenga capacidad de auto-regularse sin riesgo de que tenga crecimiento exponencial.
+En esta representación, los coeficientes de la diagonal se fijan a un valor positivo, en particular $\alpha_{ii}=1$, lo que induce un término de autorregulación para cada especie. Este término actúa como un mecanismo disipativo que limita el crecimiento no acotado del sistema y garantiza la existencia de una escala de saturación en las abundancias. Cabe destacar que esta matriz no corresponde con la Jacobiana el sistema linealiado alrededor de un estado estacionario, sino que representa los coeficientes de interacción que aparecen directamente en el modelo no lineal. En capítulos posteriores se introducirá la matriz Jacobiana, la cual se construye a partir de $\Lambda$ pero posee una interpretación dinámica diferente.
 
 \begin{ejemplo}\label{eg:2x2}
-	Se define el siguiente sistema de especies en competencia
+	A continuación se considera un sistema de Lotka-Volterra para $N=2$ especies, con coeficientes de interacción constantes y positivos, de modo que el sistema muestre un escenario competitivo.
 	\begin{equation}\label{eqn:Sist2x2Comp}
 		\begin{split}
 			\frac{dx}{dt}&=2x\left(1-\frac{x}{2}\right)-xy\\
 			\frac{dy}{dt}&=3y\left(1-\frac{y}{3}\right)-2xy
 		\end{split}
 	\end{equation}
-	Ya que la solución analítica de este problema puede llegar a ser compleja de determinar, se puede comenzar a esbozar el sistema determinando sus puntos fijos, es decir $X^*=(x^*,y^*)$ tal que $(\dot{x}(x^*),\dot{y}(x^*))=\vec{0}$. El punto fijo más trivial que satisface esta condición es el $\vec{0}$. De ahí se tiene que igualar a cero las ecuaciones de (\ref{eqn:Sist2x2Comp}) para determinar el resto de puntos fijos. Se encomienda al lector corroborar esta búsqueda de forma adecuada y comprobar que el resto de puntos fijos del sistema son $(2,0)$ para $\dot{x}$ (con $\dot{y}=0$), mientras que $\dot{y}$ (con $\dot{x}=0$) tiene el punto fijo $(0,3)$. El último punto fijo que resta es para cuando $\dot{x}=\dot{y}=0$ y se cumple en el punto $(1,1)$.\\
+	Para revelar su dinámica, se procede con la determinación de sus puntos de equilibrio, regiones en donde se mantiene constante. Para ello es necesario igualar a cero y resolver las ecuaciones del sistema \eqref{eqn:Sist2x2Comp}. El caso trivial esta asociado a $\vec{0}$, mientras que para el resto de casos es necesario aplicar un manejo algebráico para poder llegar a las soluciones. Respectivamente, el resto de puntos de equilibrio son $(2,0)$, $(0,3)$ y $(1,1)$ y se encomienda al lector corroborar estos resultados.\\
 	\\
-	Como se puede apreciar, el sistema (\ref{eqn:Sist2x2Comp}) tiene un número de puntos fijos mayor a su dimensión; a diferencia de los sistemas lineales que únicamente tienen un solo punto fijo independientemente de su dimensión. Esto es importante de notar ya que los puntos fijos para sistemas de tamaño $N\gg 1$ no son triviales de determinar ni mucho menos su respectiva estabilidad, a excepción del $\vec{0}$ que siempre es repulsor. Esta labor de búsqueda se hará con estrategia para dichos sistemas, pues es poco práctico realizar una búsqueda de puntos fijos cuando la mayoría de ellos podrían ser inestables. Por fortuna, para el caso $N=2$ tenemos el espacio fase que es más que suficiente para poder visualizar la estabilidad de cada punto crítico sin la necesidad arrastrar el lápiz.
+	Como se puede apreciar, el sistema (\ref{eqn:Sist2x2Comp}) tiene asociados un número multiple de puntos de equilibrio en contraste con los sistemas lineales que solo poseen uno. Es importante destacarlo, ya que en sistemas de mayor dimensión se tendrá un gran conjunto de estados estacionarios no triviales de determinar, de los cuales al menos uno es de interés. En este contexto, se conocen los estados estacionarios y por lo tanto se puede determinar su estabilidad a través de su matriz Jacobiana evaluada en dichos puntos. 
+	\begin{equation}\label{eqn:Jacobiano2}
+		\mathbb{J}(X)=\begin{pmatrix}
+			r_1-\frac{2r_1\alpha_{11}x_1+r_1\alpha_{12}x_2}{K_1} & -\frac{r_1a_{12}x_1}{K_1}\\
+			-\frac{r_2a_{21}x_2}{K_2} & r_2-\frac{2r_2\alpha_{22}x_2+r_2\alpha_{21}x_1}{K_2}
+		\end{pmatrix}
+	\end{equation}
 \end{ejemplo}
 Algo fundamental de notar es que la elección de condiciones iniciales es crucial para sentenciar si la dinámica va a converger o diverger. En la Figura (\ref{fig:CompetenciaEspecies}) se puede ver gráficamente; de acuerdo al punto de partida en el plano de soluciones, la tendencia hacia uno de los dos atractores será inexorable. Si por ejemplo se escoge la condición inicial $(1,1)$ se sabe que el sistema permanecerá constante para cierto periodo de tiempo, pero si por alguna razón existe una ligera perturbación que lo afecte, entonces ahora la dinámica va a diverger de este punto fijo y converger a cualquiera de los otros dos 
 \begin{wrapfigure}{r}{0.5 \textwidth} \vspace{-30pt} \begin{center}
@@ -453,201 +458,3 @@ Es importante recordar que las interacciones de auto-regulación se mantienen en
 \\
 Para poder determinar un parámetro crítico de transición en la estabilidad de los sistemas, es imprescindible conocer donde se ubica el $\max(\lambda_\mathcal{J})$ y encontrar la forma de controlar su posición para poder saber las condiciones que lo llevan a ser negativo, cero o positivo. Aunque existe una forma dada para resolver esta conjetura, la cual se abordará en la siguiente sección, tiene un gran inconveniente: la Jacobiana tiene en su diagonal toda una distribución de valores que dificulta la definición de un radio espectral que determine la posición de Re$(\lambda_{\max}(\mathcal{J}))$. Esta conjetura ligada con la correspondiente de la sección anterior también llega al límite de esta tesis y más adelante se presentará un análisis detallando sus razones.
 \newpage
-\section{Estabilidad}
-
-Hasta el momento ya se tiene todo definido para poder resolver el sistema (\ref{eqn:LK}) conviene comenzar a preguntarse si la estabilidad de los sistemas de May esta relacionada con la estabilidad de sistemas LV generalizado; si el parámetro (\ref{eqn:paramMay}) se ajusta o no a la estabilidad del sistema (\ref{eqn:LK}). Por esta razón es conveniente entender qué denota dicho parámetro para ajustarlo o en todo caso establecer uno nuevo con base en la experiencia obtenida.
-\\
-\\
-Robert May \cite{may2019stability} y Stefano Allesina \cite{allesina2012stability} respectivamente han estudiado la estabilidad en sistemas complejos desde dos perspectivas diferentes. En los antecedentes se ha mencionado que May comenzó la discusión al expander en series de Taylor un sistema no lineal y encontrar la forma de linealizarlo en el siguiente sistema de ecuaciones
-\begin{equation}\label{eqn:sistemasMay}
-	\frac{dX(t)}{dt}=AX(t),\qquad A\in\mathrm{M}_n(\mathbb{R})
-\end{equation}
-donde $A$ es su \textit{community matriz} la cual ya se considera evaluada sobre puntos fijos estables o inestables. Ambos autores se centran únicamente en el estudio de las matrices aleatorias que conforman el sistema linealizado, para poder hallar las condiciones de estabilidad y su distribución de valores propios en el plano complejo. Allesina extiende el trabajo de May al definir una \textit{Ley Elíptica} donde se alojarán los valores propios de los sistemas resultantes y un nuevo parámetro crítico que define el umbral de estabilidad. 
-\\
-\\
-Como recordatorio del primer capítulo, las matrices de May fijan su diagonal a un valor $-d$ mientras que el resto de sus entradas se extraen de una distribución normal, donde la desviación estándar $\sigma$ es conocida como ``fuerza promedio''. Estas entradas tendrán una probabilidad de conexión $C$, en cuyo caso existe $a_{ij}\sim\mathcal{N}(0,\sigma)$ y para el caso contrario $1-C$ será $a_{ij}=0$. Con esta información May presenta el resultado de la \textit{Ley Circular} que establece que todos los valores propios de la matriz $A$ están contenidos en un círculo de centro $-d$ y que el umbral de estabilidad se da por medio de la relación (\ref{eqn:paramMay}) considerando el valor de la diagonal. 
-$$\sigma<\frac{d}{\sqrt{NC}}$$
-de esta relación puede determinarse el radio del círculo. Si el tamaño del sistema es $N\gg 1$ entonces la transición entre el régimen estable e inestable es muy ``abrupta'' además de tener un ancho de tamaño $N^{-2/3}$. Para que se cumpla esta desigualdad, $C$ debe ser chica en relación a $\sigma$ o viceversa, interpretando lo siguiente: \textit{El sistema podrá ser estable para una red ecológica con una gran conectancia pero con interacciones débiles, también podrá ser estable cuando se tengan interacciones fuertes con baja conectancia, es decir, con pocas especies interactuando} \cite{may1972will}. ¿Por qué tiene que ser de esta forma?
-\begin{proposición}\label{prop:paramMay}
-	Sea $A\in\mathrm{M}_n(\mathbb{R})$ matriz de May asociada a sistemas linealizados cuya diagonal es $-d$. El parámetro $\sigma\sqrt{nC}<d$ denota el umbral de estabilidad en estos sistemas.
-	\begin{proof}
-		Otro modo de entender el enunciado de la proposición \ref{prop:paramMay} es que el parámetro descrito define la posición del $\max(|\lambda_A|)$, que puede ser negativo, cero o positivo. Por lo tanto, éste será el elemento central de esta demostración. Ahora se utilizará el \textit{Teorema Circular de Girko} \cite{girko1985circular} el cual muestra la forma de obtener el radio espectral de matrices aleatorias como las de May. El teorema establece que para cualquier matriz $B\in \mathrm{M}_n(\mathbb{R})$ con entradas independientes e idénticamente distribuidas de media cero y varianza finita, y al considerar la siguiente matriz re-escalada\footnote{Conocida como matriz de Ginibre.}
-		$$\hat{B} = \frac{1}{\sqrt{n}}B$$
-		los valores propios quedan distribuidos en un disco centrado en el origen con radio $\sigma$: $D(0,\sigma)$. Dicho de otro modo el resultado dice que el radio espectral de la matriz $\hat{B}$ es
-		$$\rho(\hat{B})=\max|\lambda_{\hat{B}}|=\sigma$$		
-		El hecho de realizar el re-escalamiento es para asegurar que este radio tenga un tamaño finito para cuando $n\to\infty$. Para llegar a este resultado se utilizan argumentos probabilísticos; primero se considera un renglón arbitrario de la matriz $\hat{B}$: $r=\frac{1}{\sqrt{n}}(b_{i1},...,b_{in})$ y se determina su norma cuadrada
-		$$\|r\|^2=\frac{1}{n}\sum_{j=1}^N b_{ij}^2$$
-		cada elemento $b_{ij}^2$ tiene valor esperado $\sigma^2$ implicando que la esperanza de la norma cuadrada es $\mathbb{E}[\|r\|^2]=\frac{n\sigma^2}{n}=\sigma^2$ y su varianza es $\Var(\|r\|^2)=\frac{n}{n^2}(3\sigma^4-\sigma^4)=\frac{2\sigma^4}{n}$ teniendo en cuenta el cuarto momento la distribución normal\footnote{Utilizando la siguiente fórmula para los momentos de orden $n$ de $\mathcal{N}(0,\sigma^2)$: $$\mathbb{E}[X^n]=\begin{cases}
-			0,\qquad&\text{si $n$ es impar}\\
-			\sigma^n(n-1)!!,\qquad&\text{si $n$ es par}
-		\end{cases}$$}. De aquí sigue utilizar el \textit{Teorema Central del Límite} para mostrar que existe una variable estandarizada que esta en función de $\|r\|^2$, $\mathbb{E}[\|r\|^2]$ y $\sqrt{\Var(\|r\|^2)}$, y converge a una distribución normal estándar $\mathcal{N}(0,1)$ cuando $n\to\infty$, la cual es equivalente a la siguiente aproximación
-		$$\|r\|^2\approx \sigma^2+\frac{\eta}{\sqrt{n}}$$
-		donde $\eta\sim\mathcal{N}(0,2\sigma^4)$. Por tanto $\|r\|^2$ converge a una distribución normal con valor esperado $\sigma^2$ y fluctuaciones de orden $1/\sqrt{n}$. En este punto resta determinar la norma euclidiana del renglón arbitrario
-		$$\|r\|=\sqrt{\sigma^2+\frac{\eta}{\sqrt{n}}}=\sigma\sqrt{1+\frac{\eta}{\sigma^2\sqrt{n}}}$$
-		\newpage
-		realizando la expansión en Series de Taylor alrededor del cero de $\sqrt{1+\varepsilon}=1+\frac{\varepsilon}{2}-\frac{\varepsilon^2}{8}+\cdots$ se tiene
-		$$\|r\|\approx\sigma+\frac{\eta}{2\sigma\sqrt{n}}$$
-		Por lo tanto se logra observar que el valor esperado de $\|r\|$ es $\sigma$ y sus fluctuaciones son de orden $1/\sqrt{n}$ lo que implica que para cuando $n\to\infty$, la norma euclidiana será $\|r\|=\sigma$. Sin embargo cuando se considera la matriz $B$ sin re-escalar, entonces existe un factor $\sqrt{n}$ en el valor esperado de $\|r\|$ con fluctuaciones de orden $1/\sqrt{n}$, entonces cuando $n\to\infty$ la norma será
-		$$\|r\|=\sigma\sqrt{n}$$
-		y en consecuencia el disco irá creciendo en función de $n$. Si además de lo anterior se considera que las entradas de la matriz $B$ siguen a una probabilidad de existencia $C$ tal como la variable aleatoria (\ref{proof1:VarAlW}) de la proposición \ref{prop:DiagonalI} entonces al aplicar el mismo procedimiento de antes se llega al siguiente resultado
-		\begin{equation}\label{proof2:norma}
-			\|r\|=\sigma\sqrt{nC}
-		\end{equation}
-		¿Por qué se utiliza la norma euclidiana como referente para el radio espectral de las matrices aleatorias? Si se considera un vector unitario arbitrario $\mathbf{u}$, es de interés saber cual es el efecto que ejerce la matriz $\hat{B}$ sobre dicho vector. Para ello extendemos los procedimientos anteriores pero ahora enfocados a como será el vector $\hat{B}\textbf{u}$ en términos de su magnitud, entonces hay que encontrar nuevamente el valor esperado de $\|\hat{B}\textbf{u}\|$ y sus fluctuaciones. Se define el producto escalar del renglón arbitrario de $\hat{B}$ por $\textbf{u}$
-		\begin{equation}\label{proof2:prodEscalar}
-			S_i = \frac{1}{\sqrt{n}}\sum_{j=1}^n b_{ij}u_j
-		\end{equation}
-		será conveniente conocer su valor esperado de $|S_i|^2$ para determinar los próximos cálculos, entonces:
-		$$\mathbb{E}[|S_i|^2]=\frac{1}{n}\sum_{j=1}^n\mathbb{E}[b_{ij}^2]|u_j|^2=\frac{\sigma^2	}{n}\cdot\|\textbf{u}\|^2$$
-		Nuevamente se utiliza el \textit{Teorema Central del Límite} para conocer cual es el valor esperado de $\|\hat{B}\textbf{u}\|^2$ con sus fluctuaciones, para posteriormente conocer los de $\|\hat{B}\textbf{u}\|$
-		$$\mathbb{E}[\|\hat{B}\textbf{u}\|^2]=\sum_{i=1}^n\mathbb{E}[|S_i|^2]=\sum_{i=1}^n\frac{\sigma^2}{n}\cdot\|\textbf{u}\|^2=\sigma^2$$
-		resultado equivalente al valor esperado de la norma cuadrada del renglón arbitrario $\mathbb{E}[\|r\|^2]$. Ahora se calcula el segundo momento de $|S_i|^2$ para poder armar el camino para determinar la varianza de $\|\hat{B}\textbf{u}\|^2$ 
-		$$\mathbb{E}\left [|S_i|^4 \right ]=\frac{1}{n^2}\sum_{j=1}^n\mathbb{E}\left [b_{ij}^4\right ]|u_j|^4=\frac{3\sigma^4}{n^2}\cdot\left (\|\textbf{u}\|^2\right )^2$$
-		esto indica que la varianza del producto escalar (\ref{proof2:prodEscalar}) al cuadrado es 
-		$$\Var(|S_i|^2)=\frac{1}{n^2}(3\sigma^4-\sigma^4)=\frac{2\sigma^4}{n^2}$$ 
-		Entonces la varianza de la norma cuadrada es
-		$$\Var(\|\hat{B}\textbf{u}\|^2)=\sum_{i=1}^n\Var(|S_i|^2)=\frac{2\sigma^4}{n}$$
-		resultado que también es equivalente a la varianza de la norma cuadrada del renglón arbitrario $\Var(\|r\|^2)$.	Con estos elementos y con base en los procedimientos mostrados anteriormente se concluye que la norma $\|\hat{B}\textbf{u}\|$ tiene un valor esperado $\sigma$ con fluctuaciones de orden $1/\sqrt{n}$. Por lo tanto el efecto que ejerce la matriz $\hat{B}$ sobre cualquier vector unitario es la de estirarlos en función de $\sigma$, ya sea que $\sigma>1$, $\sigma<1$ ó dejarlos invariantes en magnitud con $\sigma=1$.
-		\\
-		\\
-		Considerando en particular la ecuación de valores propios $\hat{B}\vec{v}=\lambda\vec{v}$, si normalizamos al vector propio asociado entonces la norma euclidiana será 
-		$$\|\hat{B}\textbf{v}\|=|\hat{\lambda}|\leq\sigma+\mathcal{O}(1/\sqrt{n})$$
-		donde $|\hat{\lambda}|=\frac{|\lambda|}{\|\vec{v}\|}$ y nótese que es un vector propio arbitrario, esto implica que todos los vectores propios son estirados o contraídos en diversas direcciones pero restringidos al valor del radio espectral $\sigma$, es decir, que el máximo valor/vector propio solo podrá tener magnitud $\sigma$. Al considerar la matriz $B$ sin re-escalar y tomando el resultado (\ref{proof2:norma}), se concluye finalmente que el radio espectral de esta matriz es
-		$$\rho(B)=\sigma\sqrt{nC}$$
-		y es más grande conforme $n\to\infty$. Ahora como último paso de esta prueba hay que considerar a las matrices de May, que son idénticas a la matriz $B$ solo que con el valor $-d$ en la diagonal. Eso significa que $A$ tendrá una distribución uniforme de valores propios alrededor de $-d$, entonces el radio espectral en este caso será
-		$$\rho(A)=-d+\sigma\sqrt{nC}$$
-		y de aquí se podrá definir la relación de May para delimitar la estabilidad de sus sistemas
-		\begin{equation}\label{eqn:radioMayGirko}
-			\sigma\sqrt{nC}<d
-		\end{equation}
-		mientras el radio espectral sea menor al valor absoluto de la diagonal, se podrá garantizar que el sistema es estable, y cuando $n\to\infty$ las fluctuaciones tienden a cero lo cual hace cada vez más estrecho el radio y abrupta la caída de estabilidad.
-		\end{proof}
-\end{proposición}
-\newpage
-Esta prueba ha servido para mostrar al lector como se concibe el radio espectral y la forma en que restringe la posición de los valores propios con base en (\ref{eqn:radioMayGirko}). Análogamente con las matrices Jacobianas (\ref{eqn:Jacobiana}) del sistema LV generalizado, es de interés conocer ahora el $\max(\lambda_\mathcal{J})$ y en concreto la Re$(\lambda_{\max}(\mathcal{J}))$ que no es el valor propio de mayor magnitud sino el más cercano a cero. La diagonal en estas matrices es \textit{heterogénea} lo cual indica que la distribución de valores propios estará dispersa en función de estos coeficientes, ya no será una distribución uniforme. Para este caso se tendrán que abordar otras estrategias para delimitar la estabilidad de los sistemas.\\
-\\
-Aunque tener la diagonal fijada a un valor constante $-d$ resulta conveniente para poder definir un radio espectral de una distribución uniforme de valores propios, las implicaciones ecológicas son cuanto menos extrañas. La matriz Jacobiana (\ref{eqn:MatrizJacobiana}) nos ha mostrado que en la diagonal se evalúan los elementos del punto fijo y se multiplican por el factor $r_i/K_i$. La diagonal constante da a entender que todas las especies del sistema llegan a estabilizarse en un solo valor y es muy poco probable que pase. En conclusión, fijar la diagonal es conveniente pero poco realista.
-
-\subsection{Distribución de valores propios}
-
-Los elementos de las matrices de May son variables independientes e idénticamente distribuidas, además las conexiones entre nodos son puramente aleatorias, no existe una estructura subyacente sobre la forma de las interacciones: entonces las especies interactúan sin restricciones ni patrones claros, sino más bien de forma desordenada y/o caótica. En consecuencia, el efecto que ejercen estas matrices sobre sus vectores propios asociados: no tiene una dirección preferencial y por tal razón los valores propios quedan distribuidos de forma isotrópica en el disco de Girko. ¿Qué pasará con la Ley Circular cuando se consideran matrices estructuralmente simétricas? Aunque se sigan considerando variables i.i.d. en este caso ya existe una estructura subyacente de las interacciones: la posibilidad de que para cualquier $a_{ij}\in A$, existirá su elemento transpuesto $a_{ji}$ (no necesariamente igual) ó $a_{ij}=a_{ji}=0$.
-\\
-\\
-La simetría estructural esta más relacionado con el trabajo y resultados de Allesina \cite{allesina2012stability} donde define un criterio de estabilidad cuando las interacciones tienen correlaciones diferentes de cero\footnote{Criterio que no se contempla en sistemas de May.}. Las consecuencias de esta estructura es que obliga a los valores propios a concentrarse en alguno de los ejes de $\mathbb{C}$, rompiendo con la isotropía observada en sistemas de May; por lo tanto las matrices estructuralmente simétricas si ejercen orientaciones privilegiadas en sus vectores propios asociados. Esto quiere decir que en este escenario los valores propios tendrán una tendencia a ser reales o imaginarios disminuyendo los que son de la forma $a+ib$ como en los sistemas de May. Por lo tanto los vectores propios serán mayormente reales o imaginarios.
-\newpage
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=0.185]{../Imagenes/LeyCircularMay}
-	\caption{Distribución de valores propios en sistemas estructuralmente simétricos y puramente aleatorios. En ambos casos se consideró $N=100$, una distribución normal centrada en $\mu=0$ y con $\sigma=0.2$, para una conectancia $C=\frac{1}{\sigma^2 N}-0.03$.}
-	\label{fig:LeyCircularMay}
-\end{figure}
-
-La atenuación de la isotropía de los valores propios será más visible cuando la magnitud de las interacciones sea mayor, ya que da más apertura a que las correlaciones aumenten haciendo que la distribución se concentre sobre los ejes. En la Fig. (\ref{fig:LeyCircularMay}) se alcanza a percibir que la distribución de valores propios no es uniforme en el sistema estructuralmente simétrico en comparación con el puramente aleatorio. 
-
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=0.185]{../Imagenes/LeyCircularMay2.png}
-	\caption{Distribución de valores propios en sistemas estructuralmente simétricos y puramente aleatorios. En ambos casos se consideró $N=100$, una distribución normal centrada en $\mu=0$ y con $\sigma=0.4$, para una conectancia $C=\frac{1}{\sigma^2 N}-0.03$.}
-	\label{fig:LeyCircularMay2}
-\end{figure}
-
-Este efecto se verá cada vez más marcado conforme $\sigma$ vaya aumentando. En la Fig. (\ref{fig:LeyCircularMay2}) ambos sistemas tienen valores propios con parte real negativa indicando que son estables, el estructuralmente simétrico los concentra cada vez más en sus ejes y el círculo ya no es adecuado para representar su distribución. Ambos círculos tienen mismo radio solo que los valores propios del caso de la izquierda se encuentran más dispersos, y se irá haciendo más evidente en función del aumento de $\sigma$.\\
-\\
-Entrando en la descripción de los sistemas de Allesina, son semejantes a los de May salvo por una gran diferencia: las interacciones ahora vienen de una distribución bivariante. Para ello es imprescindible que las matrices de Allesina sean estructuralmente simétricas, de este modo se permite realizar un cálculo de correlación $\rho$ entre la parte triangular superior y la inferior para todo elemento diferente de cero. Este coeficiente de correlación define los semi ejes $a=1+\rho$ y $b=1-\rho$ de una elipse que será la nueva forma de distribución de los valores propios. Dependiendo del signo de $\rho$ se podrán observar elipses horizontales o verticales. Otro aspecto de esta matriz es que Allesina también consdiera a la diagonal fijada a un valor $-d$ lo que implica que los valores propios estarán en la vecindad elíptica alrededor de este valor.
-\\
-\\
-La orientación de la elipse y su distribución asociada, vendrá dada por el signo de las correlaciones $\rho$ ya que es la forma de medir la tendencia de la matriz a volverse simétrica o antisimétrica en cuyos casos los valores propios serían puramente reales o imaginarios respectivamente. Si se tienen interacciones presa-depredador $(+-)$ o $(-+)$ entonces la distribución elíptica resultante será vertical ya que es una tendencia a ser antisimétrica, en este caso habría que escoger una distribución normal con $\mu_1<0$ y otra con $\mu_2>0$. Por otro lado si las interacciones son de cooperación $(++)$ ($\mu_1,\mu_2>0$) y/o competencia $(--)$ ($\mu_1,\mu_2<0$) entonces la distribución elíptica será horizontal por tener la tendencia a ser simétrica.
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=0.2]{../Imagenes/LeyElipticaAllesina}
-	\caption{Ley Elíptica de Allesina. Ambos sistemas son de tamaño $N=100$. Se consideró una conectancia $C=0.12$ con matrices estructuralmente simétricas. (\textbf{A}) Considera una distribución normal con $\mu_1=0.1$ y $\sigma_1 = 0.1$ para la parte triangular superior y otra distribución normal con $\mu_2=0.3$ y $\sigma_2 = 0.2$ para la triangular inferior. (\textbf{B}) Considera una distribución con $\mu_1=-0.1$ y $\sigma_1=0.1$ para la parte triangular superior otra distribución normal con $\mu_2=0.3$ y $\sigma_2=0.2$ para la triangular inferior. }
-	\label{fig:LeyElipticaAllesina}
-\end{figure}
-\newpage
-En la figura (\ref{fig:LeyElipticaAllesina}) se han considerado matrices con interacciones de competencia/cooperación y de presa depredador y es clara la tendencia de los valores propios a concentrarse en el eje real o imaginario. Es importante que las matrices sean estructuralmente simétricas para que las correlaciones sean diferentes de cero y mitiguen la isotropía del escenario de May. El resultado de Allesina es interesante porque en este caso los ejes de $\mathbb{C}$ y la tendencia de la distribución de valores propios captura la forma dominante de las interacciones del sistema, si $\rho>0$ se sabe que las especies tienden a cooperar o competir de forma similar mientras que si $\rho<0$ las especies del sistema presentan un comportamiento de presa-depredador.
-
-\subsection{Transiciones de estabilidad: May y Semi Allesina}
-
-Para terminar este capítulo, se va a mostrar el cambio de estabilidad en sistemas de May y sistemas estructuralmente simétricos con variables independientes e idénticamente distribuidas. Al tener interacciones estructuralmente simétricas habrá una baja correlación entre ellas (Ver Fig. (\ref{fig:LeyCircularMay}, \ref{fig:LeyCircularMay2})). Aunque no se emplee una distribución bivariante, dicha simetría  generará pequeñas correlaciones diferentes de cero. Por lo tanto a estas matrices se les denominará sistemas \textit{semi Allesina}. La intención será observar que tanto varía la estabilidad, contrastando estos sistemas en función de la conectancia $C$ y la fuerza de interacción promedio $\sigma$. Se comenzará viendo la estabilidad en función de la conectancia $C$, considerando una familia distribuciones normales centradas en $\mu=0$ y con desviaciones estándar 
-\begin{wrapfigure}{l}{0.5 \textwidth} \vspace{-30pt} \begin{center}
-		\includegraphics[width=0.52\textwidth]{../Imagenes/TransicionMayDirLin} 
-	\end{center} 
-	\vspace{-20pt} 
-	\caption{Estabilidad de sistemas de May en función de 100 conectancias equiespaciadas en el intervalo $[0,1]$ y para una familia de distribuciones normales. En cada valor de la conectancia se consideraron $3000$ simulaciones de las cuales se contabilizaron únicamente las estables con base en el signo de la parte real de sus valores propios.} 
-	\vspace{-10pt}
-	\label{fig:TransicionMayDirLin}
-\end{wrapfigure} 
-$\Sigma = \{0.1,0.2,...,1.0\}$. Todos los sistemas considerados en esta sección se harán para $N=100$. En cada uno de los diagramas de transición se van a contemplar $3000$ simulaciones por cada valor de $C$ o $\sigma$, de particiones equiespaciadas de 100 valores entre 0 y 1. Se contabilizará el número de sistemas que resultaron ser estables con base en la parte real de los valores propios de cada simulación. La Figura (\ref{fig:TransicionMayDirLin}) muestra el cambio de estabilidad en función de la conectancia y para cada valor en $\Sigma$. Se aprecia que a medida que la fuerza de las interacciones aumenta es cada vez menos probable que sea estable, obedeciendo y observando el efecto del radio espectral (\ref{eqn:radioMayGirko}). Convendría realizar un acercamiento para observar la transición en valores $\sigma>0.3$, misma que se puede hacer considerando valores de escala $\log_{10}$.
-\newpage
-Al aplicar el re-escalamiento se podrá apreciar mejor donde ocurren las transiciones para valores  $\sigma>3$. En este caso particular se tienen fluctuaciones del orden de $1/10$ (teniendo en cuenta que $N=100$), de modo que existe un margen de 0.1 en que la estimación del parámetro (\ref{eqn:radioMayGirko}) puede fallar, y aún así las caídas de estabilidad son muy abruptas y lo seguirán siendo a medida que $n\to\infty$.
-\begin{wrapfigure}{r}{0.5 \textwidth} \vspace{-30pt} \begin{center}
-		\includegraphics[width=0.52\textwidth]{../Imagenes/TransicionMayDirLog} 
-	\end{center} 
-	\vspace{-20pt} 
-	\caption{Estabilidad de May de la figura (\ref{fig:TransicionMayDirLin}) en función de $C$ con escala $\log_{10}$.} 
-	\vspace{-10pt}
-	\label{fig:TransicionMayDirLog}
-\end{wrapfigure} 
-Este diagrama representa el cambio de estabilidad en sistemas de May, donde existe isotropía en la distribución de valores propios. En los sistemas semi Allesina se ha observado que los valores propios se dispersan y ensanchan sobre el eje real de $\mathbb{C}$ (Ver Fig. (\ref{fig:LeyCircularMay2})), este comportamiento insinúa que para el radio de Girko $\sigma\sqrt{nC}=1$ donde los sistemas de May están al borde de la estabilidad, en el caso semi Allesina ya existen algunos valores propios que cruzan al semiplano positivo de $\mathbb{C}$, indicando que su estabilidad puede decaer primero que en los sistemas de May. Los cambios serán notorios para cada valor de $\Sigma$ pero a medida que el valor de $\sigma$ sea mayor, el efecto será más pronunciado ya que es una forma de ir aumentando el valor de las correlaciones de las interacciones. Se visualizarán las diferencias para los casos $\sigma= 0.2$ y $\sigma = 0.6$
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale = 0.165]{../Imagenes/TransicionDirvsNoDir}
-	\caption{Transición de May puramente aleatoria vs estructuralmente simétrica. (\textbf{A}) Se considera para $\sigma = 0.2$ (\textbf{B}) Se considera para $\sigma=0.6$.}
-	\label{fig:TransicionDirvsNoDir}
-\end{figure}
-en la Figura (\ref{fig:TransicionDirvsNoDir}) y percibiendo que el parámetro de transición (\ref{eqn:radioMayGirko}) se ajusta correctamente a las matrices de May puramente aleatorias pero no hace lo mismo para los sistemas semi Allesina, sugiriendo que su transición probablemente se ajuste mejor al parámetro que Allesina describe en su trabajo.
-\\
-\\
-Para el caso de la transición en función de $\sigma$ se tiene un resultado similar. Ahora se consideró la familia de conectancias $\tilde{C}=\{0.1,0.2,...,1.0\}$ y la partición equiespaciada de $\sigma$ con 100 valores entre 0 y 1. La tendencia de la estabilidad igual obedece al parámetro de May (\ref{eqn:radioMayGirko}) aunque de forma distinta pues, el valor crítico $\sigma^*$ es proporcional a $\frac{1}{\sqrt{N}}$ y en el caso de la conectancia $C^*\propto \frac{1}{N}$, entonces $\sigma^*>C^*$, y por lo tanto las transiciones en función de $\sigma$ ocurren más hacia la derecha. 
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale = 0.165]{../Imagenes/TransicionMaySigma}
-	\caption{Transición de estabilidad en función de $\sigma$ (\textbf{A}) Se considera para una familia de conectancias $\tilde{C}$ y una partición equiespaciada de 100 valores de $\sigma$ entre 0 y 1. Se consideran 3000 simulaciones por cada valor de $\sigma$ y se contabilizan los sistemas estables con base en la parte real de los valores propios de cada simulación. (\textbf{B}) Caso particular para $C=0.1$; se consideran las diferencias entre sistemas estructuralmente simétricos y matrices puramente aleatorias.}
-	\label{fig:TransicionMaySigma}
-\end{figure}
-Aunque de alguna manera el radio de Girko sea el parámetro que limite la estabilidad de los sistemas de May, variar $C$ o $\sigma$ representan marcos conceptualmente distintos. En el primer caso se esta variando el tamaño del sistema desde las pocas conexiones (red dispersa) hasta la red totalmente conexa, contemplando las 10 fuerzas de interacción promedio de $\Sigma$. En el caso de $\sigma$ se esta trabajando con 10 tamaños de red diferentes (dados por el conjunto $\tilde{C}$) y únicamente se varía como cambia la fuerza de interacción promedio en cada uno. Claramente las transiciones son completamente diferentes y a continuación se dará una breve explicación de por qué. Para notar como son los cambios en el radio de Girko se toman sus derivadas parciales, considere $R=\sigma\sqrt{nC}$ entonces:
-$$\frac{\partial R}{\partial C}=\frac{\sigma\sqrt{n}}{2\sqrt{C}},\qquad\frac{\partial R}{\partial\sigma}=\sqrt{nC},\qquad\frac{\partial R}{\partial n}=\frac{\sigma\sqrt{C}}{2\sqrt{n}}$$
-la primer derivada indica que pequeñas variaciones en la conectancia generan un cambio drástico en el radio espectral, al aumentar el número de enlaces en función de $C$ modifica fuertemente el soporte espectral y por lo tanto el sistema responde de forma más abrupta. El impacto de estas variaciones provoca un cambio abrupto en la estabilidad misma que se observa en las Figuras (\ref{fig:TransicionMayDirLin}, \ref{fig:TransicionMayDirLog}), es por ello que el sistema tiene gran susceptibilidad en pequeñas variaciones de $C$.\\
-\\
-Al variar $\sigma$ solo se cambian las intensidades de las interacciones de la red, pero la estructura y número de enlaces persiste (en promedio). La derivada $\frac{\partial R}{\partial\sigma}$ indica que los cambios en $\sigma$ son más proporcionales haciendo que el cambio de estabilidad sea más lineal y suave. En este caso el soporte espectral se va expandiendo gradualmente con el aumento de $\sigma$, pudiendo cruzar linealmente hacia el régimen inestable. Para los cambios en $n$, la derivada $\frac{\partial R}{\partial n}$ indica que el cambio en el radio espectral es imperceptible a medida que $n\to\infty$, será más notorio cuando se contemplen escenarios de pocas especies pero para sistemas grandes el radio no sufrirá mucha fluctuación debido a $n$.
-\\
-\\
-El caso $\sigma=0.1$ de la Figura (\ref{fig:TransicionMayDirLin}) es interesante porque no muestra un decaimiento abrupto en la estabilidad, aún para cuando la red es totalmente conexa. Aunque la derivada $\frac{\partial R}{\partial C}$ indica que el radio y en consecuencia la estabilidad es susceptible a los cambios de $C$, parece que la intensidad de las interacciones logra mitigar el efecto de estos cambios. Es un fenómeno particular porque para $\sigma\geq0.2$ el decaimiento es evidente y cada vez más abrupto. Este caso especial enseña que la relación y armonía de la tupla $(p,\sigma,N)$ en el radio de Girko es la que genera diversos escenarios estables, ya que cada parámetro por si solo brinda información parcial sobre la estabilidad.\\
-
-En la Figura (\ref{fig:TransicionMaySigma} \textbf{B}) se observa que la diferencia de estabilidad entre sistemas de May puramente aleatorios y semi Allesina estructuralmente simétricos para $C=0.1$ es considerablemente mayor que para la conectancia $C=0.6$ mostrada en la Figura (\ref{fig:TransicionσDirvsNoDir}). A diferencia de las transiciones en función de la 
-\begin{wrapfigure}{l}{0.5 \textwidth} \vspace{-30pt} \begin{center}
-		\includegraphics[width=0.5\textwidth]{../Imagenes/TransicionσDirvsNoDir} 
-	\end{center} 
-	\vspace{-20pt} 
-	\caption{Variaciones en la transición de estabilidad para matrices estructuralmente simétricas y puramente aleatorias. Se consideró el valor de la conectancia $C=0.6$.} 
-	\vspace{-10pt}
-	\label{fig:TransicionσDirvsNoDir}
-\end{wrapfigure} 
-conectancia, cuando se fija la conectividad $C$ y ésta es mayor: se observa que las variaciones en la estabilidad son prácticamente nulas, y son más evidentes cuando la red tiene pocas conexiones. Si el sistema tiene poca conectividad ($C<0.5$) existen pocas interacciones que son influyentes para distinguir correlaciones que lleven al sistema a tener una tendencia elíptica; cuando la conectividad aumenta, habrá tantas interacciones simétricas que se promediarán en un efecto de bulto haciéndolo prácticamente indistinguible de los sistemas isotrópicos de May. La diferencia entre lo que se observa en la Figura (\ref{fig:TransicionDirvsNoDir} \textbf{B}) es que en este escenario se agregan interacciones de misma intensidad que aumenta las correlaciones existentes debido a la simetría estructural, además también se observan cambios fuertes en $R$ debido a $\frac{\partial R}{\partial C}$; en contraste con la Figura (\ref{fig:TransicionσDirvsNoDir}) en donde se mantiene fijo el tamaño de la red, la derivada $\frac{\partial R}{\partial\sigma}$ genera cambios lineales en $R$ y al incrementar la intensidad de las interacciones: la máscara estructuralmente simétrica se promedia resultando indistinguible de los sistemas puramente aleatorios con isotropía en la distribución de valores propios. \\
-\\
-Para culminar con el análisis de la estabilidad en estos sistemas, se va a mostrar como son las transiciones considerando las variaciones en el radio espectral (\ref{eqn:radioMayGirko}). Por un lado se tomará en cuenta el radio que varía $C$ y deja $\sigma$ y $N$ fijos y por otro lado se tomará el radio que varía $\sigma$ y deja fijos $C$ y $N$. Para cada escenario únicamente se tomará el re-escalamiento correspondiente y se deberá observar la transición en $R=|-d|=1$, región en donde se puede tener el máximo disco de Girko que aloje valores propios negativos. Este disco tendrá fluctuaciones de $1/10$, en consecuencia habrá una incertidumbre de esta magnitud para que el disco de Girko con $R=1$ falle en su predicción de determinar sistemas estables con valores propios negativos.
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=0.160]{../Imagenes/Transicionσ√NC02}
-	\caption{Re-escalamiento del eje $x$ para visualizar las transiciones de la conectancia $C$ y la fuerza promedio de las interacciones $\sigma$. Para este caso particular se escogió $\sigma=C=0.2$. Se consideran matrices de puramente aleatorias y estructuralmente simétricas.}
-	\label{fig:Transicionσ√NC02}
-\end{figure}
-
-Así mismo, se mostrarán las desviaciones de estabilidad entre los sistemas puramente aleatorios y los estructuralmente simétricos; en este punto se sabe que los discos de Girko no necesariamente encajan en la distribución de valores propios de sistemas semi Allesina. En la Figura (\ref{fig:Transicionσ√NC02}) se puede observar que las desviaciones son similares para valores pequeños de $C$ y $\sigma$, en particular se muestra para los valores fijos: $C_1=\sigma_1=0.2$. Aunque exista una tendencia elíptica en los sistemas semi Allesina, la desviación del escenario isotrópico no es tan crítica. 
-\newpage
-Cuando los valores fijos de $C$ y $\sigma$ aumentan, emerge un gran contraste el cual se observa en la Figura (\ref{fig:Transicionσ√NC06}) considerando $C_2=\sigma_2=0.6$ fijos. Para el caso (\textbf{A}) definitivamente el radio de Girko ya no se ajusta a la distribución de los valores propios, sino que probablemente necesite del ajuste elíptico de Allesina. En contraste con (\textbf{B}) que por el contrario parecen sistemas indistinguibles de los isotrópicos a pesar de poseer simetría estructural. Estas comparaciones de alguna manera sirven para poder medir la isotropía de los sistemas estructuralmente simétricos en diversas zonas de $C$ y $\sigma$. 
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=0.160]{../Imagenes/Transicionσ√NC06}
-	\caption{Re-escalamiento del eje $x$ para visualizar las transiciones de la conectancia $C$ y la fuerza promedio de las interacciones $\sigma$. Para este caso particular se escogió $\sigma=C=0.6$. Se consideran matrices de puramente aleatorias y estructuralmente simétricas.}
-	\label{fig:Transicionσ√NC06}
-\end{figure}
-
-Básicamente la conclusión de esta sección es: Cualquier sistema estructuralmente simétrico al que se le añaden enlaces/interacciones conservando la intensidad de las mismas tiende a mitigar la isotropía en la distribución de sus valores propios y ajustarse a una estructura elíptica. Por el otro lado, cualquier sistema estructuralmente simétrico que conserva un tamaño definido y aumenta la intensidad de sus interacciones tiende a convertirse en sistema con isotropía en la distribución de sus valores propios, es decir, equivalente a los sistemas puramente aleatorios de May. ¿Cómo se extrapola esto a los sistemas LV generalizados? En el siguiente capítulo se explorará la respuesta.
-
-
-
-%Esta última sección está motivada para que el lector se dé una idea de lo que iremos a explorar con los resultados del siguiente capítulo. Se tiene en primera instancia lo de la distribución de eigenvalores pero también se pretenderá explorar el parámetro crítico que demarca las condiciones de estabilidad e inestabilidad para los sistemas.
-
-
-%Estos elementos son claves para que podamos concebir la estabilidad para el sistema que hemos creado hasta ahora. Se tienen diferencias muy marcadas, nuestra matriz de interacciones $\mathcal{I}$ y la matriz de interacciones de May $A$: difícilmente tendrá su diagonal en $-1$ tal como $A$, sobre todo si se considera un sistema $n\gg 1$ especies. Esto genera un impacto en la distribución de los eigenvalores en el espacio complejo sin embargo al final de cuentas es estabilidad. Por esta misma razón, el parámetro de May (\ref{eqn:parametroMay}) puede no ajustarse perfectamente con nuestros resultados.

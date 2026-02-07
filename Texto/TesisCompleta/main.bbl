@@ -19,6 +19,45 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global/global}
+    \entry{Koppen2005Interdisciplina}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=6875223031750d89520db071a3a8c313}{%
+           family={Köppen},
+           familyi={K\bibinitperiod},
+           given={Elke},
+           giveni={E\bibinitperiod}}}%
+        {{hash=af0a7c834bf7f739b11566cf5a8e9b16}{%
+           family={Mansilla},
+           familyi={M\bibinitperiod},
+           given={Ricardo},
+           giveni={R\bibinitperiod}}}%
+        {{hash=649dc31d61a19c8e848654a33ac2b345}{%
+           family={Miramontes},
+           familyi={M\bibinitperiod},
+           given={Pedro},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{56d5c84c75bcc9384d6b15d6d295de36}
+      \strng{fullhash}{56d5c84c75bcc9384d6b15d6d295de36}
+      \strng{fullhashraw}{56d5c84c75bcc9384d6b15d6d295de36}
+      \strng{bibnamehash}{56d5c84c75bcc9384d6b15d6d295de36}
+      \strng{authorbibnamehash}{56d5c84c75bcc9384d6b15d6d295de36}
+      \strng{authornamehash}{56d5c84c75bcc9384d6b15d6d295de36}
+      \strng{authorfullhash}{56d5c84c75bcc9384d6b15d6d295de36}
+      \strng{authorfullhashraw}{56d5c84c75bcc9384d6b15d6d295de36}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Ciencias}
+      \field{month}{7}
+      \field{note}{Julio--septiembre. Disponible en línea}
+      \field{number}{79}
+      \field{title}{La interdisciplina desde la teoría de los sistemas complejos}
+      \field{year}{2005}
+      \field{pages}{4\bibrangedash 12}
+      \range{pages}{9}
+    \endentry
     \entry{may2007theoretical}{book}{}{}
       \name{author}{2}{}{%
         {{hash=84e6e0ad61782a75a62d946e2c68ed62}{%
@@ -109,6 +148,30 @@
       \field{pages}{413\bibrangedash 414}
       \range{pages}{2}
     \endentry
+    \entry{miramontes2005sistemas}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=c4f2aaaf329e2d102d589dc4c4cbd17a}{%
+           family={Miramontes},
+           familyi={M\bibinitperiod},
+           given={Octavio},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{c4f2aaaf329e2d102d589dc4c4cbd17a}
+      \strng{fullhash}{c4f2aaaf329e2d102d589dc4c4cbd17a}
+      \strng{fullhashraw}{c4f2aaaf329e2d102d589dc4c4cbd17a}
+      \strng{bibnamehash}{c4f2aaaf329e2d102d589dc4c4cbd17a}
+      \strng{authorbibnamehash}{c4f2aaaf329e2d102d589dc4c4cbd17a}
+      \strng{authornamehash}{c4f2aaaf329e2d102d589dc4c4cbd17a}
+      \strng{authorfullhash}{c4f2aaaf329e2d102d589dc4c4cbd17a}
+      \strng{authorfullhashraw}{c4f2aaaf329e2d102d589dc4c4cbd17a}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista Ciencia y Desarrollo}
+      \field{title}{Sistemas Complejos: entre el orden y el desorden}
+      \field{year}{2005}
+    \endentry
     \entry{newman2018networks}{book}{}{}
       \name{author}{1}{}{%
         {{hash=91c825ea422365e0f6cb2597658def75}{%
@@ -166,6 +229,59 @@
       \field{title}{Network science}
       \field{volume}{3}
       \field{year}{2016}
+    \endentry
+    \entry{ramirez1999perspectivas}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=68bdf42bedfc8377e79a555c116a79fa}{%
+           family={Ramírez},
+           familyi={R\bibinitperiod},
+           given={Santiago},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Siglo XXI}%
+      }
+      \strng{namehash}{68bdf42bedfc8377e79a555c116a79fa}
+      \strng{fullhash}{68bdf42bedfc8377e79a555c116a79fa}
+      \strng{fullhashraw}{68bdf42bedfc8377e79a555c116a79fa}
+      \strng{bibnamehash}{68bdf42bedfc8377e79a555c116a79fa}
+      \strng{authorbibnamehash}{68bdf42bedfc8377e79a555c116a79fa}
+      \strng{authornamehash}{68bdf42bedfc8377e79a555c116a79fa}
+      \strng{authorfullhash}{68bdf42bedfc8377e79a555c116a79fa}
+      \strng{authorfullhashraw}{68bdf42bedfc8377e79a555c116a79fa}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Perspectivas en las teorías de sistemas}
+      \field{year}{1999}
+    \endentry
+    \entry{strogatz2001nonlinear}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=b0115f77df78376c68429033349375fc}{%
+           family={Strogatz},
+           familyi={S\bibinitperiod},
+           given={Steven\bibnamedelima H},
+           giveni={S\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Westview press}%
+      }
+      \strng{namehash}{b0115f77df78376c68429033349375fc}
+      \strng{fullhash}{b0115f77df78376c68429033349375fc}
+      \strng{fullhashraw}{b0115f77df78376c68429033349375fc}
+      \strng{bibnamehash}{b0115f77df78376c68429033349375fc}
+      \strng{authorbibnamehash}{b0115f77df78376c68429033349375fc}
+      \strng{authornamehash}{b0115f77df78376c68429033349375fc}
+      \strng{authorfullhash}{b0115f77df78376c68429033349375fc}
+      \strng{authorfullhashraw}{b0115f77df78376c68429033349375fc}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Nonlinear dynamics and chaos: with applications to physics, biology, chemistry, and engineering (studies in nonlinearity)}
+      \field{volume}{1}
+      \field{year}{2001}
     \endentry
   \enddatalist
 \endrefsection

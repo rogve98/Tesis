@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.14)  28 JAN 2026 13:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.14)  6 FEB 2026 21:17
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1527,7 +1527,7 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (main.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
- (TeX_files/Introducción.aux))
+ (TeX_files/Introducción.aux) (TeX_files/chapter01.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 74.
@@ -1668,7 +1668,7 @@ Package biblatex Info: Reference segment=0 on input line 74.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<Escudo-UNAM.pdf, id=18, 300.51309pt x 337.88977pt>
+<Escudo-UNAM.pdf, id=30, 300.51309pt x 337.88977pt>
 File: Escudo-UNAM.pdf Graphic file (type pdf)
 <use Escudo-UNAM.pdf>
 Package pdftex.def Info: Escudo-UNAM.pdf  used on input line 79.
@@ -1685,7 +1685,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 79.
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<Escudo-FCIENCIAS.pdf, id=19, 359.74399pt x 411.136pt>
+<Escudo-FCIENCIAS.pdf, id=31, 359.74399pt x 411.136pt>
 File: Escudo-FCIENCIAS.pdf Graphic file (type pdf)
 <use Escudo-FCIENCIAS.pdf>
 Package pdftex.def Info: Escudo-FCIENCIAS.pdf  used on input line 79.
@@ -1815,48 +1815,83 @@ LaTeX Info: Redefining \% on input line 1.
 [14
 
 
-])
-Underfull \hbox (badness 10000) in paragraph at lines 3--95
+]
+Underfull \hbox (badness 10000) in paragraph at lines 3--39
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3--95
+Underfull \hbox (badness 10000) in paragraph at lines 3--39
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3--95
+Underfull \hbox (badness 10000) in paragraph at lines 3--39
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3--95
+Underfull \hbox (badness 10000) in paragraph at lines 3--39
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3--95
+Underfull \hbox (badness 10000) in paragraph at lines 3--39
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3--95
+Underfull \hbox (badness 10000) in paragraph at lines 3--39
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3--95
+Underfull \hbox (badness 10000) in paragraph at lines 3--39
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3--95
+Underfull \hbox (badness 10000) in paragraph at lines 3--39
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3--95
+Underfull \hbox (badness 10000) in paragraph at lines 3--39
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--39
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--39
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--39
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--39
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--39
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--39
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--39
 
  []
 
@@ -1866,16 +1901,26 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [15]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+LaTeX Info: Redefining \. on input line 39.
+LaTeX Info: Redefining \% on input line 39.
+[16]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[17])
 
 LaTeX Info: Redefining \. on input line 95.
 LaTeX Info: Redefining \% on input line 95.
-[16]
-Overfull \hbox (7.57542pt too wide) in paragraph at lines 108--108
-[]\OT1/cmr/m/n/10.95 Robert M May. ``Will a lar-ge com-plex sys-tem be sta-ble?
-'' En: \OT1/cmr/m/it/10.95 Na-tu-re \OT1/cmr/m/n/10.95 238.5364 (1972), p^^Sags
-. 413[]414. 
- []
+[18]
+\openout2 = `./TeX_files/chapter01.aux'.
 
+ (TeX_files/chapter01.tex
+Cap\'{\i }tulo 1.
 
 
 [1
@@ -1884,11 +1929,91 @@ Overfull \hbox (7.57542pt too wide) in paragraph at lines 108--108
 
 
 
+]
+Underfull \hbox (badness 10000) in paragraph at lines 15--19
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--28
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--28
+
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 28.
+LaTeX Info: Redefining \% on input line 28.
+[2]
+
+LaTeX Info: Redefining \. on input line 32.
+LaTeX Info: Redefining \% on input line 32.
+[3]
+<../Imagenes/TransicionesdeMay.png, id=177, 3011.25pt x 1204.5pt>
+File: ../Imagenes/TransicionesdeMay.png Graphic file (type png)
+<use ../Imagenes/TransicionesdeMay.png>
+Package pdftex.def Info: ../Imagenes/TransicionesdeMay.png  used on input line 
+35.
+(pdftex.def)             Requested size: 481.80984pt x 192.72394pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--49
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--49
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--49
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--49
+
+ []
+
+
+Underfull \vbox (badness 8056) has occurred while \output is active []
+
+
+
+LaTeX Info: Redefining \. on input line 49.
+LaTeX Info: Redefining \% on input line 49.
+[4 <../Imagenes/TransicionesdeMay.png>])
+
+LaTeX Info: Redefining \. on input line 98.
+LaTeX Info: Redefining \% on input line 98.
+[5]
+
+LaTeX Info: Redefining \. on input line 105.
+LaTeX Info: Redefining \% on input line 105.
+[6
+
+
+
+]
+Overfull \hbox (7.57542pt too wide) in paragraph at lines 108--108
+[]\OT1/cmr/m/n/10.95 Robert M May. ``Will a lar-ge com-plex sys-tem be sta-ble?
+'' En: \OT1/cmr/m/it/10.95 Na-tu-re \OT1/cmr/m/n/10.95 238.5364 (1972), p^^Sags
+. 413[]414. 
+ []
+
+
+
+[7
+
 ] (main.aux
 LaTeX Info: Redefining \sptext on input line 11.
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
- (TeX_files/Introducción.aux))
+ (TeX_files/Introducción.aux) (TeX_files/chapter01.aux))
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
@@ -1897,39 +2022,45 @@ L3 programming layer <2024-07-20>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 609923AE22DECEE1EC106F7D67644CA0;305.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
-
+(rerunfilecheck)             Checksum: C918CA765DA8A7CBCC4A72DC7F565296;933.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 42985 strings out of 473899
- 847051 string characters out of 5725556
- 1939960 words of memory out of 5000000
- 65131 multiletter control sequences out of 15000+600000
- 566144 words of font info for 65 fonts, out of 8000000 for 9000
+ 43093 strings out of 473899
+ 850111 string characters out of 5725556
+ 1947960 words of memory out of 5000000
+ 65206 multiletter control sequences out of 15000+600000
+ 569611 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 109i,8n,117p,898b,1917s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 109i,8n,117p,1023b,1917s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
 m/cmbx10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public
 /amsfonts/cm/cmbx12.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/t
 ype1/public/amsfonts/cm/cmbx8.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Rodrigo/AppData/Local/P
-rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Rodrigo/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Users/Ro
-drigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on main.pdf (17 pages, 299308 bytes).
+eX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/Rodrigo/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Rodrigo/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users
+/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pf
+b><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmmi6.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmmi8.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmr10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Rodrigo/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Rodrigo/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Rodrigo/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Users
+/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pf
+b><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmsy6.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmsy8.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmti10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (25 pages, 572122 bytes).
 PDF statistics:
- 153 PDF objects out of 1000 (max. 8388607)
- 31 named destinations out of 1000 (max. 500000)
- 47 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 290 PDF objects out of 1000 (max. 8388607)
+ 49 named destinations out of 1000 (max. 500000)
+ 76 words of extra memory for PDF output out of 10000 (max. 10000000)
 
