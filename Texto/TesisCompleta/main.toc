@@ -1,4 +1,10 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {chapter}{Agradecimientos}{\es@scroman {iii}}{chapter*.1}%
 \contentsline {chapter}{Resumen}{\es@scroman {v}}{chapter*.2}%
-\contentsline {chapter}{Introducción}{\es@scroman {xv}}{chapter*.7}%
+\contentsline {chapter}{\numberline {1}El modelo de Lotka-Volterra generalizado}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Caso particular para $N=2$}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Generalizando a $N\gg 1$ especies.}{4}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Red de interacciones ponderada}{5}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Tipos de interacciones}{7}{subsection.1.2.2}%
+\contentsline {section}{\numberline {1.3}Puntos fijos}{13}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Jacobiana del sistema}{15}{section.1.4}%

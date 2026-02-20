@@ -2372,12 +2372,12 @@
     <bcf:datasource type="file" datatype="bibtex">./TeX_files/referencias.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1" intorder="1">posfai2016network</bcf:citekey>
-    <bcf:citekey order="1" intorder="2">newman2018networks</bcf:citekey>
-    <bcf:citekey order="2" intorder="1">Koppen2005Interdisciplina</bcf:citekey>
-    <bcf:citekey order="3" intorder="1">ramirez1999perspectivas</bcf:citekey>
-    <bcf:citekey order="4" intorder="1">miramontes2005sistemas</bcf:citekey>
-    <bcf:citekey order="5" intorder="1">strogatz2001nonlinear</bcf:citekey>
+    <bcf:citekey order="1" intorder="1">HadamardProduct</bcf:citekey>
+    <bcf:citekey order="2" intorder="1">may2019stability</bcf:citekey>
+    <bcf:citekey order="3" intorder="1">may2019stability</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">may2019stability</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">GershgorinTheorem</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">may1972will</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

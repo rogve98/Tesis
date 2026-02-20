@@ -25,7 +25,7 @@ Dada la estructura del sistema, los coeficientes de interacción entre especies 
 		\alpha_{21} & \alpha_{22}
 	\end{pmatrix}
 \end{equation}
-En esta representación, los coeficientes de la diagonal se fijan a un valor positivo, en particular $\alpha_{ii}=1$, lo que induce un término de autorregulación para cada especie. Este término actúa como un mecanismo disipativo que limita el crecimiento no acotado del sistema y garantiza la existencia de una escala de saturación en las abundancias. Cabe destacar que esta matriz no corresponde con la Jacobiana el sistema linealiado alrededor de un estado estacionario, sino que representa los coeficientes de interacción que aparecen directamente en el modelo no lineal. En capítulos posteriores se introducirá la matriz Jacobiana, la cual se construye a partir de $\Lambda$ pero posee una interpretación dinámica diferente.
+En esta representación, los coeficientes de la diagonal se fijan a un valor positivo, en particular $\alpha_{ii}=1$, lo que induce un término de autorregulación para cada especie. Este término actúa como un mecanismo disipativo que limita el crecimiento no acotado del sistema y garantiza la existencia de una escala de saturación en las abundancias. Cabe destacar que esta matriz no corresponde con la Jacobiana el sistema linealiado alrededor de un estado estacionario, sino que representa los coeficientes de interacción que aparecen directamente en el modelo no lineal. En secciones posteriores se introducirá la matriz Jacobiana, la cual se construye a partir de $\Lambda$ pero posee una interpretación dinámica diferente.
 
 \begin{ejemplo}\label{eg:2x2}
 	A continuación se considera un sistema de Lotka-Volterra para $N=2$ especies, con coeficientes de interacción constantes y positivos, de modo que el sistema muestre un escenario competitivo.
@@ -35,17 +35,21 @@ En esta representación, los coeficientes de la diagonal se fijan a un valor pos
 			\frac{dy}{dt}&=3y\left(1-\frac{y}{3}\right)-2xy
 		\end{split}
 	\end{equation}
-	Para revelar su dinámica, se procede con la determinación de sus puntos de equilibrio, regiones en donde se mantiene constante. Para ello es necesario igualar a cero y resolver las ecuaciones del sistema \eqref{eqn:Sist2x2Comp}. El caso trivial esta asociado a $\vec{0}$, mientras que para el resto de casos es necesario aplicar un manejo algebráico para poder llegar a las soluciones. Respectivamente, el resto de puntos de equilibrio son $(2,0)$, $(0,3)$ y $(1,1)$ y se encomienda al lector corroborar estos resultados.\\
+	Para analizar la dinámica del sistema se procede a la determinación de sus puntos de equilibrio, definidos como aquellos estados del sistema donde su dinámica se anula. Esto se logra igualando a cero y resolviendo las ecuaciones del sistema \eqref{eqn:Sist2x2Comp}. El equilibrio trivial corresponde con el estado $\vec{0}$, el cual representa la extinción de ambas especies. Para los casos no triviales, la resolución del sistema algebráico conduce a los puntos de equilibrio $(2,0)$, $(0,3)$ y $(1,1)$.\\
 	\\
-	Como se puede apreciar, el sistema (\ref{eqn:Sist2x2Comp}) tiene asociados un número multiple de puntos de equilibrio en contraste con los sistemas lineales que solo poseen uno. Es importante destacarlo, ya que en sistemas de mayor dimensión se tendrá un gran conjunto de estados estacionarios no triviales de determinar, de los cuales al menos uno es de interés. En este contexto, se conocen los estados estacionarios y por lo tanto se puede determinar su estabilidad a través de su matriz Jacobiana evaluada en dichos puntos. 
-	\begin{equation}\label{eqn:Jacobiano2}
-		\mathbb{J}(X)=\begin{pmatrix}
-			r_1-\frac{2r_1\alpha_{11}x_1+r_1\alpha_{12}x_2}{K_1} & -\frac{r_1a_{12}x_1}{K_1}\\
-			-\frac{r_2a_{21}x_2}{K_2} & r_2-\frac{2r_2\alpha_{22}x_2+r_2\alpha_{21}x_1}{K_2}
+	Como se puede apreciar, el sistema (\ref{eqn:Sist2x2Comp}) presenta múltiples puntos de equilibrio, en contraste con los sistemas lineales, que admiten a lo sumo uno. Este hecho es relevante, ya que en sistemas no lineales de mayor dimensión la determinación explícita de los puntos de equilibrio se vuelve cada vez más compleja. En el caso presente, se conocen los puntos de equilibrio y por tanto es posible estudiar su estabilidad local mediante la evaluación de la matriz Jacobiana del sistema en dichos estados.\\
+	\\
+	Al evaluar el Jacobiano en el estado coexistente se obtiene 
+	\begin{equation}\label{eqn:Jacobiano(1,1)}
+		\mathbb{J}_{(1,1)}=\begin{pmatrix}
+			-1 & -1\\
+			-2 & -1
 		\end{pmatrix}
 	\end{equation}
+	Los valores propios asociados a esta matriz son
+	$$\lambda_{1}=-1+\sqrt{2}>0,\qquad\lambda_2=-1-\sqrt{2}<0$$
 \end{ejemplo}
-Algo fundamental de notar es que la elección de condiciones iniciales es crucial para sentenciar si la dinámica va a converger o diverger. En la Figura (\ref{fig:CompetenciaEspecies}) se puede ver gráficamente; de acuerdo al punto de partida en el plano de soluciones, la tendencia hacia uno de los dos atractores será inexorable. Si por ejemplo se escoge la condición inicial $(1,1)$ se sabe que el sistema permanecerá constante para cierto periodo de tiempo, pero si por alguna razón existe una ligera perturbación que lo afecte, entonces ahora la dinámica va a diverger de este punto fijo y converger a cualquiera de los otros dos 
+
 \begin{wrapfigure}{r}{0.5 \textwidth} \vspace{-30pt} \begin{center}
 		\includegraphics[width=0.5\textwidth]{../Imagenes/Competencia de especies} 
 	\end{center} 
@@ -54,156 +58,70 @@ Algo fundamental de notar es que la elección de condiciones iniciales es crucia
 	\vspace{10pt}
 	\label{fig:CompetenciaEspecies}
 \end{wrapfigure} 
-(dependiendo de la dirección y magnitud de la perturbación).
-\setlength{\parindent}{0cm} Además de obtener información visual acerca de la estabilidad de los puntos críticos, es posible visualizar las isoclinas del sistema que no son más que el conjunto de puntos donde se satisface:
-\begin{equation*}
-	\dot{x}=f(x,y)=0,\qquad\dot{y}=g(x,y)=0
-\end{equation*}
-de modo que en estas rectas una de las dinámicas permanece constante mientras que la otra tiene se mueve hacia arriba o abajo, izquierda o derecha según sea el caso. Como se puede observar, de la representación visual se pueden deducir muchos elementos importantes del sistema, ¿qué pasa cuando el número de ecuaciones no lineales ya no permite la representación visual del espacio fase? Una alternativa sería generar sub-espacios fase que puedan brindar una idea de como es la dinámica a nivel local, pero para ello se tendría que contar con algunos puntos fijos de interés. Sin embargo generar un gran número de gráficas solo para obtener conclusiones puede no ser una buena práctica, para ello existe una técnica analítica de la que ya se ha hablado, que servirá para determinar la estabilidad sin tener que recurrir a una gráfica.
-\\
-\\
-En la sección (\ref{sec:Antecedentes}) se había mencionado que el proceso que llevó a cabo Robert May para poder explorar el sistema a nivel local, consistía en \textit{linealizar} el mismo a través de contar con una función vectorial $\textbf{F}$ no lineal y definir una matriz $A$ tal que sus entradas son $a_{ij}=\left .\frac{\partial f_i(X)}{\partial x_j}\right |_{X^*}$ que es equivalente a definir la matriz Jacobiana de $\textbf{F}$ evaluada en $X^*$.
-\newpage
+Lo que caracteriza al punto de equilibrio $(1,1)$ como un \textbf{equilibrio tipo silla}, y por tanto localmente inestable. En consecuencia, las trayectorias se alejan de este punto y la dinámica converge hacia los atractores del sistema. Esta estructura puede apreciarse en la representación del espacio de fases del sistema (Figura (\ref{fig:CompetenciaEspecies})), donde se observan las regiones de atracción asociadas a los estados $(2,0)$ o $(0,3)$. Este procedimiento, aunque no admite una generalización analítica directa a sistemas de gran dimensión, puede extenderse de manera sistemática y será desarrollado progresivamente en las secciones siguientes. Como se ha señalado, el análisis de estabilidad se basa en el proceso de linealización local del sistema no lineal alrededor de un punto de equilibrio. La matriz Jacobiana constituye la representación del sistema linealizado, por lo que resulta conveniente introducir a continuación su forma general.
 \begin{definición}\label{def:LKVectorial}
-	Sea la función vectorial $\mathbf{F}:\mathbb{R}^n\to\mathbb{R}^n$ no lineal y asociada al sistema de Lotka-Volterra de especies en competencia. Se definen sus entradas de la siguiente manera
+	Sea $\mathbf{F}:\mathbb{R}^N\to\mathbb{R}^N$ el campo vectorial no lineal asociado al sistema de Lotka-Volterra generalizado, cuyas componentes están definidas por 
 	\begin{equation}\label{eqn:Fmatricial}
 		\mathbf{F}(X)=\begin{pmatrix}
-			f_1(X)=r_1x_1\left(1-\frac{\sum_{j=1}^n \alpha_{1j}x_j}{K_1}\right)\\
+			f_1(X)=r_1x_1\left(1-\frac{\sum_{j=1}^N \alpha_{1j}x_j}{K_1}\right)\\
 			\vdots\\
-			f_n(X)=r_nx_n\left(1-\frac{\sum_{j=1}^n \alpha_{nj}x_j}{K_n}\right)
-		\end{pmatrix},\qquad\text{donde $X(t)=\left(x_1(t),...,x_n(t))\right)\in\mathbb{R}^n$.}
+			f_N(X)=r_Nx_N\left(1-\frac{\sum_{j=1}^N \alpha_{Nj}x_j}{K_N}\right)
+		\end{pmatrix},
 	\end{equation}
-	Por lo tanto el sistema (\ref{eqn:LK}) puede ser re-escrito de una forma más compacta considerando
-	\begin{equation}\label{eqn:LKmatricial}
-		\dot{X}(t) = \mathbf{F}(X(t))
-	\end{equation}
-	Teniendo ahora la función vectorial que define al sistema de Lotka-Volterra, es directo definir la matriz Jacobiana para poder linealizar el sistema
+	donde $X(t)=\left(x_1(t),\dots,x_N(t))\right)\in\mathbb{R}^N$. Sea $X^*$ un punto de equilibrio del sistema, es decir, cumple $\mathbf{F}(X^*)=\mathbf{0}$. La matriz Jacobiana asociada al sistema evaluada en $X^*$ esta dada por
 	\begin{equation}\label{eqn:Jacobiano}
 		\mathbb{J}_\mathbf{F}(X^*) = \begin{pmatrix}
-			\frac{\partial f_1(X^*)}{\partial x_1} & \cdots &\frac{\partial f_1(X^*)}{\partial x_n}\\
+			\frac{\partial f_1(X^*)}{\partial x_1} & \cdots &\frac{\partial f_1(X^*)}{\partial x_N}\\
 			\vdots & \ddots & \vdots\\
-			\frac{\partial f_n(X^*)}{\partial x_1} & \cdots &\frac{\partial f_n(X^*)}{\partial x_n}
+			\frac{\partial f_N(X^*)}{\partial x_1} & \cdots &\frac{\partial f_N(X^*)}{\partial x_N}
 		\end{pmatrix}
 	\end{equation}
 \end{definición}
 
-\setlength{\parindent}{0cm}	Se necesitarán puntos fijos de interés y evaluarlos para poder obtener el sistema linealizado. Validando esta aseveración, se continúa con el ejemplo \ref{eg:2x2} determinando cada matriz jacobiana y su estabilidad asociada. Se comparará con lo que se muestra en la Figura (\ref{fig:CompetenciaEspecies}). La matriz jacobiana para este sistema es:
-\begin{equation}\label{eqn:Jacobiano2}
-	\mathbb{J}_\mathbf{F}(X)=\begin{pmatrix}
-		r_1-\frac{2r_1\alpha_{11}x_1+r_1\alpha_{12}x_2}{K_1} & -\frac{r_1a_{12}x_1}{K_1}\\
-		-\frac{r_2a_{21}x_2}{K_2} & r_2-\frac{2r_2\alpha_{22}x_2+r_2\alpha_{21}x_1}{K_2}
-	\end{pmatrix}
-\end{equation}
-considerando que las entradas $\alpha_{ii}=1$ debido a como se define la matriz de incidencias (\ref{eqn:mIncidencias}). Sustituyendo y operando sobre nuestro sistema, al evaluar los puntos fijos antes encontrados se tienen las siguientes matrices de interacciones:
-$$
-\mathbb{J}_{(2,0)} = \begin{pmatrix}
-	-2 & -2\\
-	0 & -1
-\end{pmatrix},\qquad \mathbb{J}_{(0,3)}=\begin{pmatrix}
-	-1 & 0\\
-	-6 & -3
-\end{pmatrix},\qquad \mathbb{J}_{(1,1)}=\begin{pmatrix}
-	-1 & -1\\
-	-2 & -1
-\end{pmatrix},\qquad \mathbb{J}_{(0,0)}=\begin{pmatrix}
-	2 & 0 \\
-	0 & 3
-\end{pmatrix}
-$$
-%%%%%%%%Checkpoint
-Teniendo las matrices, solo resta determinar sus valores propios y evaluar sus partes reales para concluir con el tipo de estabilidad asociado a cada uno de los puntos fijos. Realizando el álgebra correspondiente se encuentra lo siguiente
-%Por lo tanto los valores propios de las primeras dos matrices de interacciones deben ser negativos para que sustenten los atractores de la figura (\ref{fig:CompetenciaEspecies}). Mientras que los valores propios de $\mathbb{J}_{(1,1)}$ deben ser uno negativo y otro positivo para sustentar al punto silla. Para el caso de la matriz $\mathbb{J}_{(0,0)}$ sus valores propios deben tener parte real positiva para que sustenten el repulsor. 
-\begin{align*}
-	\mathbb{J}_{(2,0)}&\Longrightarrow\ \lambda_1 = -2,\quad\lambda_2 = -1\\
-	\mathbb{J}_{(0,3)}&\Longrightarrow\ \lambda_1 = -3,\quad\lambda_2 = -1\\
-	\mathbb{J}_{(1,1)}&\Longrightarrow\ \lambda_1 = -1+\sqrt{2},\quad\lambda_2 = -1-\sqrt{2}\\
-	\mathbb{J}_{(0,0)}&\Longrightarrow\ \lambda_1 = 2,\quad\lambda_2 = 3\\
-\end{align*}
-Se puede observar que las partes reales coinciden con la estabilidad de cada punto fijo de la Figura (\ref{fig:CompetenciaEspecies}). Esta técnica resultará muy útil para cuando se tengan que resolver los sistemas con $N\gg 1$ ecuaciones diferenciales. La parte real de los valores propios de $\mathbb{J}_{\textbf{F}}(X^*)$ determinarán su estabilidad.
-%%%%%%%%% Checkpoint
+Con esta formulación queda establecido el marco general para el análisis de la dinámica y la estabilidad del sistema de Lotka-Votlerra generalizado. En lo que sigue, el estudio se centrará en la estructura de la matriz Jacobiana con base en las interacciones entre especies. En particular, será necesario especificar cómo se modela la conectividad del sistema y la distribución de las intensidades de interacción, aspectos que resultan clave para abordar el régimen de gran dimensión $N\gg1$.
+
 \section{Generalizando a $N\gg 1$ especies.}
 
-Con base en la sección anterior, se tiene una idea de como resolver el sistema dinámico de Lotka-Volterra (\ref{eqn:LK}); en principio se requiere hallar puntos fijos que satisfagan $\textbf{F}(X^*)=\vec{0}$ para poder hallar la matriz Jacobiana del sistema (\ref{eqn:Jacobiano}) y así poder explorar su estabilidad. Todo este proceso se debe de implementar mediante algoritmos los cuales se irán revisando en la sección (apéndice tal\footnote{agregar seccion.}). Sin embargo, en lo que corresponde a esta sección será en definir las interacciones entre especies del sistema mediante la \textit{matriz de incidencias} y ver que parámetros la gobiernan para poder plantear una serie de experimentos/simulaciones que resuelvan las conjeturas planteadas.
+En esta sección se establece la estructura de las interacciones del sistema Lotka-Votlerra generalizado mediante la \textbf{matriz de coeficientes de interacción}. Se introducirán los parámetros que gobiernan su construcción, con el propósito de especificar un régimen estructural del sistema y formular el esquema de simulaciones que permitirán analizar los objetivos planteados.
 \\
 \\
-Para comenzar el modelado de las interacciones de (\ref{eqn:LK}), es necesario comenzar a hablar de redes/grafos, ya que con este artilugio matemático se podrán representar a las especies de manera conveniente, sobre todo para investigar las implicaciones de probar con diversas topologías de red por ejemplo: libres de escala, de mundo pequeño o como en nuestro caso: aleatorias. Una red es considerada una colección de \textit{nodos} que se encuentran unidos por \textit{enlaces} \cite{newman2018networks}. Para definir redes siempre es necesario establecer que es lo que representan los nodos y los enlaces, en nuestro caso los nodos representan directamente las especies que participan en el sistema mientras que los enlaces (con pesos) serían sus interacciones.\\
-\\
-Si se define un conjunto de especies $x_i$ y sabemos que se relacionan por medio de los coeficientes $\alpha_{ij}$ que
+Para modelar la estructura de las interacciones se recurre al formalismo de \textit{redes}. En este contexto, el sistema puede representarse como una red dirigida ponderada $G=(V,E)$, donde los \textit{nodos} $V$ corresponden a las especies y los enlaces $E$ describen las interacciones entre ellas. A modo ilustrativo, en la Figura (\ref{fig:RedKarate}) se muestra la red del club de karate estudiada por Wayne Zachary (1977), un ejemplo clásico en teoría de redes en donde los nodos representan individuos y los enlaces sus relaciones sociales.
 \begin{wrapfigure}{l}{0.45 \textwidth} \vspace{-30pt} \begin{center}
 		\includesvg[width=.5\textwidth]{../Imagenes/karateLu} 
 	\end{center} 
 	\vspace{-20pt} 
 	\caption{Red de Karate de Zachary} 
-	\vspace{-20pt}
+	\vspace{10pt}
 	\label{fig:RedKarate}
 \end{wrapfigure} 
-aparecen en las ecuaciones de (\ref{eqn:LK}), entonces las interacciones entre las especies $x_i$ y $x_j$ se dan para cuando $\alpha_{ij}\neq 0$, y éste representaría el peso del enlace $j\to i$ de la red que se tiene en mente. En el mundo es posible encontrar diferentes tipos de redes con cierto significado, tales como la red de energética de un país, redes de amistades en una universidad o redes de acciones que cotizan en la bolsa de valores; en el caso de la Figura (\ref{fig:RedKarate}) es una red conocida como \href{https://en.wikipedia.org/wiki/Zachary%27s_karate_club}{Red del club Karate de Zachary} \cite{newman2018networks}. Todo tipo de red tiene una representación algebraica que conviene mucho tener en cuenta para la construcción del modelo, es conocida como la \textit{matriz de adyacencia.}\\
-\\
-\begin{definición}\label{def:matrizdeadyacencia}
-	Sea $\mathcal{A}\in\mathrm{M}_n(\mathbb{R}) $. Se define la matriz de adyacencia tal que sus entradas son de la siguiente forma
-	$$\mathcal{A}_{ij}= 
-	\begin{cases}
-		1, \ \text{si $\exists$ un enlace entre el nodo $i$ y el nodo $j$.}\\
-		0, \ \text{en otro caso}.
-	\end{cases}$$
-	De esta forma se puede acceder a la estructura de la red sin tener que dibujarla como en la Figura (\ref{fig:RedKarate}), cada renglón de la matriz es un nodo y sus columnas son los nodos disponibles que tiene para conectarse, incluso consigo mismo. Si se le agregan pesos al enlace, entonces $\mathcal{A}_{ij}\in\mathbb{R}$. Al pasar a la siguiente etapa de la construcción de la matriz de incidencias $\Lambda$, estos elementos serán escogidos de una distribución estadística. 
-\end{definición}
-%%%%%%% Checkpoint
-\begin{ejemplo}
-	Para poder apreciar la matriz de adyacencia definamos una red de 10 nodos y veamos la matriz de adyacencia que le corresponde. Cada nodo ha sido marcado para poderlo identificar y relacionar con la matriz de adyacencia. Los renglones y columnas de la matriz representan los nodos, siendo el primer renglón el primer nodo, el quinto renglón será el quinto nodo; esto pasa de manera equivalente con las columnas, la cuarta columna corresponde con el cuarto nodo, la octava columna corresponde con el octavo nodo. Por tanto, mediante la matriz de adyacencia sabemos que el primer nodo (renglón 1) esta enlazado con el noveno nodo (columna 9) ya que existe un uno, mientras que el primer renglón y la quinta columna hay un cero lo que indica que no existe un enlace entre estos nodos. 
-\end{ejemplo}
-\begin{wrapfigure}{r}{0.5 \textwidth} \vspace{-30pt} \begin{center}
-		\includesvg[width=0.5\textwidth]{../Imagenes/red10Lu} 
-	\end{center} 
-	\vspace{-20pt} 
-	\caption{Red no dirigida de 10 nodos.} 
-	\vspace{-150pt}
-	\label{fig:Red10}
-\end{wrapfigure} 
+No obstante, la estructura de las redes puede codificarse algebraicamente mediante su \textit{matriz de adyacencia}, la cual describe la conectividad del sistema independientemente de la intensidad de las interacciones que se perciben. En el modelo de Lotka-Volterra generalizado, los coeficientes $\alpha_{ij}$ cuantifican la influencia entre la especie $j$ sobre la especie $i$. En particular, si $\alpha_{ij}=0$, no existe interacción directa entre especies. De esta manera, los coeficientes de interacción $\alpha_{ij}$ pueden interpretarse como los pesos asociados a los enlaces de una red dirigida. En consecuencia, una red ponderada cuya matriz de pesos este dada por $(\alpha_{ij})$ es algebraicamente equivalente a la matriz de coeficientes de interacción del sistema, la cual se formaliza en esta sección.
 
-$$
-A=\begin{pmatrix}
-	0 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 1 & 0 \\
-	1 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
-	0 & 1 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 \\
-	1 & 0 & 0 & 0 & 1 & 1 & 1 & 0 & 0 & 1 \\
-	0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 1 & 1 \\
-	0 & 1 & 0 & 1 & 0 & 0 & 1 & 1 & 0 & 1 \\
-	0 & 0 & 1 & 1 & 0 & 1 & 0 & 0 & 1 & 0 \\
-	0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 1 & 0 \\
-	1 & 0 & 0 & 0 & 1 & 0 & 1 & 1 & 0 & 1 \\
-	0 & 0 & 0 & 1 & 1 & 1 & 0 & 0 & 1 & 0 \\
-\end{pmatrix}
-$$\\
-\\
-También hay que destacar qué la matriz es simétrica y que la diagonal es igual a cero: para el primer punto se debe notar que la relación de los enlaces entre nodos no tiene dirección, es decir, que exista un enlace entre nodos significa que el nodo $i$ se conecta con $j$ y viceversa. Por tanto la red de la figura (\ref{fig:Red10}) es \textit{no dirigida} puesto que no hay una dirección preferencial en el enlace. Para el segundo punto se puede deducir que los nodos podrían relacionarse consigo mismo, en este caso particular no lo hacen pero si es posible la existencia de \textit{autoenlaces}. Para el sistema (\ref{eqn:LK}) estos autoenlaces representan las auto-interacciones que dan el carácter logístico (\ref{eqn:EqLogistica}). Más adelante se hablará de la importancia de estos autoenlaces.
-\\
-\\
-Cuando se tiene el caso en que los enlaces tienen una dirección preferencial de nodo a nodo, se dice que corresponde a una \textit{red dirigida}. En este caso el enlace podrá ir del nodo $i$ al nodo $j$ pero no necesariamente lo hará en sentido contrario, deberá definirse explícitamente. En el mundo también existe un gran conjunto de redes dirigidas como lo son las citaciones académicas, la propia WWW (World Wide Web), incluso redes tróficas. Y para este caso también se tiene asociada una matriz de adyacencia con una ligera modificación con respecto de la definición \ref{def:matrizdeadyacencia}.
+
 \begin{definición}
-	Sea $\mathcal{D}\in\mathrm{M}_n(\mathbb{R})$, matriz de adyacencia de una red dirigida. Se definen sus elementos de la siguiente manera:
+	Una \textbf{red dirigida} se define como un par ordenado $G=(V,E)$, donde $V=\{1,\dots,n\}$ es el conjunto de nodos y $E\subseteq V\times V$ es el conjunto de enlaces ordenados. El par $(i,j)\in E$ representa una interacción dirigida desde el nodo $i$ hasta el nodo $j$. A esta red se le asocia su \textbf{matriz de adyacencia} dirigida $\mathcal{D}\in\mathrm{M}_n(\mathbb{R})$, cuyos elementos se definen como
 	$$
 	\mathcal{D}_{ij}=\begin{cases}
-		1,\qquad\text{Si existe un enlace del nodo $i$ al nodo $j$}\\
-		0,\qquad\text{otro caso.}
+		1,\quad\text{si } (i,j)\in E\\
+		0,\quad\text{en otro caso.}
 	\end{cases}
 	$$
-	Los enlaces de las redes dirigidas van a estar representados por flechas para que puedan mostrar adecuadamente las direcciones correspondientes entre los nodos. Las redes ecológicas que Robert May definió en su trabajo son consideradas dirigidas, ya que el sentido de sus enlace tienen una dirección preferencial.
+	En el contexto ecológico, este tipo de estructura es natural, ya que las interacciones entre especies poseen una direccionalidad inherente: la influencia de la especie $i$ sobre $j$ no necesariamente coincide en el sentido contrario. Este es precisamente el tipo de estructura considerada en el análisis de estabilidad de comunidades complejas desarrollado por Robert May. Obsérvese que, en el modelo de Lotka-Volterra generalizado, la matriz de coeficientes $(\alpha_{ij})$ puede interpretarse como una matriz de pesos asociada a esta estructura dirigida, de modo que la conectividad y la intensidad de las interacciones quedan codificadas simultáneamente.
 \end{definición}
 
 \begin{ejemplo}
-	Se tiene la siguiente red dirigida de 10 nodos con exactamente 14 enlaces. La matriz de adyacencia asociada es la siguiente
+	Considérese una red dirigida con $n=10$ nodos y 14 enlaces.
 \end{ejemplo}
+
 \begin{wrapfigure}{l}{0.5 \textwidth} \vspace{-44pt} \begin{center}
 		\includesvg[width=0.52\textwidth]{../Imagenes/Red10DirLu} 
 	\end{center} 
 	\vspace{-20pt} 
 	\caption{Red dirigida de 10 nodos.} 
-	\vspace{-200pt}
+	\vspace{-150pt}
 	\label{fig:Red10Dir}
 \end{wrapfigure} 
-$$
-D = \begin{pmatrix}
+
+$$	\mathcal{D} = \begin{pmatrix}
 	0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
 	1 & 0 & 1 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
 	0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 1 \\
@@ -214,45 +132,54 @@ D = \begin{pmatrix}
 	0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
 	0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
 	0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
-\end{pmatrix}
-$$
-\newpage
-Ahora se puede notar que la matriz de adyacencia no es simétrica y que en consecuencia los enlaces presentan una dirección preferencial. Ambas visiones se van a tomar en cuenta para modelar al sistema (\ref{eqn:LK}) generalizado, sin embargo, tendrá mayor protagonismo la \textit{red no dirigida} sobre la otra, ya que en un principio los experimentos fueron diseñados bajo esta lógica. Habiendo definido las redes y sus matrices de adyacencia, se debe seguir el camino definiendo que tipo de red se ocupará para el modelo.
+\end{pmatrix}$$
+\newline
+Su matriz de adyacencia $\mathcal{D}$ no es simétrica como lo sería en un contexto de \textit{red no dirigida}, los enlaces presentan una dirección preferencial entre nodos. Esta representación codifica únicamente la existencia de enlaces $(\mathcal{D}_{ij}\in\{0,1\})$, sin incorporar información sobre su intensidad. En este ejemplo se tiene $\mathcal{D}_{ii}=0$, es decir, no se consideran autoenlaces. Sin embargo, en el modelo dinámico subyacente los términos de la diagonal $\Lambda_{ii}$ desempeñan un papel fundamental al representar los mecanismos de regulación, los cuales serán incorporados explícitamente en la construcción de la martiz de coeficientes de interacción. Las \textbf{redes de interacción ponderadas} consideradas en esta tesis se construyen a partir de una matriz de adyacencia que podrá ser simétrica o dirigidaX, determinando así la estructura de conectividad del sistema.
 
-\subsection{Red de incidencias}
+\subsection{Red de interacciones ponderada}
 
-La \textit{red de incidencias} será la representación de la relación entre especies bajo la lógica del sistema de Lotka-Volterra generalizado; dicha red tiene asociada su matriz de adyacencia que se denominará \textit{matriz de incidencias} la cual tendrá tres principales características: puede ser de una red dirigida o no dirigida, definir la dirección de las interacciones hace más completo al sistema, sin embargo se usarán mayormente redes no dirigidas. La topología de la red que se va a utilizar es la de Erdös–Rényi \cite{posfai2016network} conocida por tener un carácter aleatorio con base en una probabilidad $p$. Y aunado a todo ello se considerará un peso para cada enlace cuyo valor vendrá de una distribución normal centrada en $\mu=0$ y desviación estándar $\sigma$.\\
+La red de interacciones ponderada constituye el objeto matemático que codifica la estructura de interacciones del modelo de Lotka-Volterra generalizado. Su representación matricial corresponde a la matriz de coeficientes de interacción, la cual determina tanto la conectividad de las especies como la intensidad de dichas interacciones. En general, esta red se construye a partir de un soporte estructural que puede ser simétrico o dirigido, junto con un conjunto de pesos que no necesariamente satisfacen simetría. \\
 \\
-La red de Erdös–Rényi es ampliamente utilizada para aprender sobre la estructura y propiedades de la redes y con ello poder extender ese aprendizaje al estudio de las llamadas \textit{redes libres de escala}. La diferencia sustancial entre la red aleatoria y la red libre de escala es que la primera tiene muy pocas (o ninguna) aplicaciones en escenarios de la naturaleza \cite{posfai2016network}. Las estructuras en la naturaleza están representadas matemáticamente por las redes libres de escala, siguiendo leyes de potencia y otra variedad de propiedades. Sin embargo este trabajo únicamente se centrará en el uso del modelo de Erdös–Rényi aplicado al sistema (\ref{eqn:LK}) para tener un primer acercamiento a la dinámica que produce, con intenciones de extender el estudio al caso de las redes libres de escala\footnote{Un modelo teórico que rescata todas las propiedades de las redes libres de escala es el de Albert-Barabasi \cite{posfai2016network}.}. 
+Su formulación depende de un conjunto de parámetros estructurales que serán especificados más adelante. Para modelar la estructura de conectividad se emplea la \textit{red aleatoria} de Erdös–Rényi, en la cual cada posible enlace entre pares de nodos se establece de manera independiente con probabilidad $p$. Por otra parte, la intensidad de las interacciones se modela mediante variables aleatorias independientes e idénticamente distribuidas con media cero y varianza finita. \\
+\\
+Como resultado, la red de interacciones ponderada considerada en este trabajo corresponde a una \textbf{red aleatoria ponderada}, donde la topología y los pesos se introducen de manera independiente. Este enfoque puede extenderse a otras topologías, como redes libres de escala o de mundo pequeño, aunque tales generalizaciones no se contemplan en este trabajo.
+
 \begin{definición}\label{def:redAleatoria}
-	Sea un conjunto de $N$ nodos sin enlaces asociados. Se define la red aleatoria $\mathcal{G}_\mathcal{E}$ con su matriz de adyacencia asociada $\mathcal{E}\in\mathrm{M}_n(\mathbb{R})$ si para cada par de nodos $n_i$ y $n_j$ de las $\binom{N}{2}$ posibles combinaciones se definen sus enlaces aleatorios dada una probabilidad $p$ y un número aleatorio $r\in[0,1]$ con base en la siguiente regla:
+	Sea un conjunto de $N$ nodos. Una red aleatoria no dirigida $\mathcal{G}_\mathcal{E}$ se define por su matriz de adyacencia  $\mathcal{E}\in\mathrm{M}_N(\{0,1\})$ tal que
 	$$
-	L_{ij}=\begin{cases}
-		\exists,\qquad\text{Si }r<p\\
-		\nexists,\qquad\text{Si }r\geq p
-	\end{cases},\qquad L_{ii}=0
+	\mathcal{E}_{ij}=\begin{cases}
+		X_{ij},\quad &i<j,\\
+		X_{ji},\quad &i>j,\\
+		0,\quad &i=j
+	\end{cases},\qquad X_{ij}\sim \text{Bernoulli}(p)
 	$$
-	desde luego que entre mayor sea la $p$ se tendrá mayor cantidad de enlaces. En este caso no se anuncia una dirección preferencial, por lo que la red aleatoria de Erdös–Rényi es \textit{no dirigida}\footnote{En esta referencia \cite{posfai2016network} el lector podrá conocer más sobre sus propiedades.}. Ya que $\mathcal{G}_\mathcal{E}$ es no dirigida, su matriz de adyacencia $\mathcal{E}$ es simétrica. \\
-	\\
-	Sin embargo, es posible extender esta definición a redes aleatorias dirigidas suponiendo que la conexión tiene dirección preferencial, por lo tanto ahora existirán $N(N-1)$ posibles combinaciones de nodos. Si solo se considerara uno de los dos casos, es decir, para $\binom{N}{2}$ combinaciones de nodos entonces se tendría la mitad de posibles conexiones, la matriz de adyacencia sería triangular superior por haber considerado únicamente la dirección de $n_i$ a $n_j$. Para llenar la parte triangular inferior de esta matriz se deben considerar las conexiones de $n_j$ a $n_i$, como resultado ahora se tiene una red aleatoria dirigida cuya matriz de adyacencia es no simétrica. En la sección (\ref{sec:RedesAleatorias}) se encuentra la implementación computacional de ambas visiones de la red aleatoria.
+	donde las variables $X_{ij}$ son independientes. En consecuencia, $\mathcal{E}$ es simétrica y cada enlace aparece con probabilidad $p$. En contraste, su versión dirigida contempla
+	$$
+	\mathcal{E}_{ij}=\begin{cases}
+		X_{ij},\quad &i\neq j,\\
+		0,\quad &i=j
+	\end{cases},\qquad X_{ij}\sim\text{Bernoulli}(p)
+	$$
+	con $X_{ij}$ independientes, por lo que $\mathcal{E}$ no es necesariamente simétrica y existen $N(N-1)$ enlaces posibles.
 \end{definición}
-\setlength{\parindent}{0cm}En este punto solamente falta de considerar la magnitud de las interacciones entre especies para terminar de construir la matriz de incidencias. Para ello se va a tomar en cuenta una matriz de $\mathcal{M}\in\mathrm{M}_n(\mathbb{R})$ que estará mapeada con valores que vienen de una distribución normal centrada en $\mu=0$ y desviación estándar $\sigma$, es decir, $\mathcal{M}_{ij}\in\mathcal{N}(0,\sigma)$.
+
+Para completar la construcción de la estructura de las interacciones, resta incorporar la magnitud de los enlaces. Para ello se introduce una matriz aleatoria $\mathcal{M}\in \mathrm{M}_N(\mathbb{R})$, cuyas entradas se suponen independientes e idénticamente distribuidas con $\mathcal{M}_{ij}\sim\mathcal{N}(0,\sigma^2)$. Esta matriz representará la intensidad de las interacciones y, combinada con la matriz de adyacencia previamente definida, permitirá construir la matriz de coeficientes de interacción $\Lambda$.
 \begin{definición}\label{def:MatrizIncidencias}
-	Sea una red aleatoria $\mathcal{G}_\mathcal{E}$ dirigida o no dirigida con matriz de adyacencia $\mathcal{E}\in\mathrm{M}_n(\mathbb{R})$. Sea una matriz $\mathcal{M}\in\mathrm{M}_n(\mathbb{R})$ de entradas aleatorias provenientes de una distribución normal $\mathcal{N}(0,\sigma)$. Se define a $\Lambda$ la \textit{matriz de incidencias} como el producto de Hadamard \cite{HadamardProduct} de la matriz de adyacencia con la matriz de entradas aleatorias sumada con la matriz identidad:
+	Sea una red aleatoria $\mathcal{G}_\mathcal{E}$ dirigida o no dirigida con matriz de adyacencia $\mathcal{E}\in\mathrm{M}_N(\{0,1\})$. Sea una matriz $\mathcal{M}\in\mathrm{M}_N(\mathbb{R})$ con entradas i.i.d. con media cero y varianza finita $\mathcal{M}_{ij}\sim\mathcal{N}(0,\sigma^2)$. La \textbf{matriz de coeficientes de interacción} $\Lambda$ se define como el producto de Hadamard \cite{HadamardProduct} de la matriz de adyacencia con la matriz de entradas aleatorias sumada con la matriz identidad
 	\begin{equation}\label{eqn:MatrizIncidencias}
 		\Lambda=(\mathcal{E}\odot \mathcal{M}) + I
 	\end{equation}
-	El producto agrega pesos de la distribución normal a cada posible enlace de la red aleatoria y la suma con de la identidad es para poder agregar autoenlaces de peso $1$ a cada nodo de la misma.
+	El producto de Hadamard restringe los coeficientes aleatorios a los enlaces de la red, mientras que la suma con la identidad introduce términos de auto-interacción que funcionan como mecanismo de auto-regulación. Se dirá que la matriz $\Lambda$ es \textbf{estructuralmente simétrica} si su matriz de adyacencia $\mathcal{E}$ es simétrica, es decir, si existe interacción entre $i$ con $j$ en ambos sentidos $(\mathcal{E}_{ij}=\mathcal{E}_{ji})$, aunque las intensidades correspondientes puedan diferir ($\Lambda_{ij}\neq\Lambda_{ji}$). Esta distinción permite separar la simetría del soporte topológico de la simetría dinámica de las interacciones.
+	\newline
 \end{definición}
-\setlength{\parindent}{0cm} La matriz de incidencias $\Lambda$ puede ser \textit{estructuralmente simétrica}\footnote{Es una matriz cuyas entradas cumplen $B_{ij}\neq B_{ji}\neq 0$ ó $B_{ij}=B_{ji}=0$ para toda $B_{ij}\in B$, quiere decir que aunque $B$ no sea simétrica, relativo a las posiciones de sus entradas si lo es.} si se escoge una red $\mathcal{G}_\mathcal{E}$ no dirigida, o puramente aleatoria si se escoge la opción  de red dirigida. Las implicaciones más importantes de esta distinción es que para $\Lambda$ estructuralmente simétrica únicamente podrán existir 3 tipos de interacciones mientras que la puramente aleatoria considera hasta 5 de ellas posibles. Los elementos $\alpha_{ij}\in\Lambda$ serán los coeficientes de interacción que aparecen en las ecuaciones de (\ref{eqn:LK}) y en este punto se ha concluido un paso más de la construcción del modelo.\\
-\\
-En la figura (\ref{fig:RedIncidencias}) se muestra una representación visual de las interacciones entre especies de los sistemas por resolver (\ref{eqn:LK}). En la sección (\ref{sec:redIncidencias}) se muestra la implementación computacional de la red de incidencias. En la siguiente sección se hablará acerca de los tipos de interacciones posibles que se pueden tener, para cada caso descrito anteriormente.
-\newpage
-\begin{wrapfigure}{r}{0.5 \textwidth} \vspace{-70pt} \begin{center}
+
+Por lo tanto, las matrices de coeficientes de interacción quedan parametrizadas por la probabilidad de conectividad $p$, la intensidad típica de las interacciones $\sigma$ y el tamaño del sistema $N$. En la Figura (\ref{fig:RedIncidencias}) se muestra una representación visual de una red de interacciones ponderada de 8 nodos, donde se ilustran tanto la estructura de conectividad como los pesos asociados. A continuación, se procede a caracterizar los distintos tipos de interacciones que pueden presentarse en este sistema dinámico.
+
+\begin{wrapfigure}{r}{0.51 \textwidth} \vspace{-70pt} \begin{center}
 		\includesvg[width=0.52\textwidth]{../Imagenes/RedIncidencias} 
 	\end{center} 
 	\vspace{-52pt} 
-	\caption{Red de incidencias de 8 nodos bajo la topología de una red aleatoria dirigida con $p=0.15$ y una matriz aleatoria con $\mu=0$ y $\sigma=0.2$.} 
+	\caption{Red de interacciones ponderada de 8 nodos con topología de red aleatoria dirigida $p=0.15$ y una matriz aleatoria con $\mu=0$ y $\sigma=0.2$.} 
 	\vspace{-10pt}
 	\label{fig:RedIncidencias}
 \end{wrapfigure} 

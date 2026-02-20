@@ -19,6 +19,52 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global/global}
+    \entry{GershgorinTheorem}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=4b3c3928bd56d2b455928972518f49d4}{%
+           family={{Encyclopedia of Mathematics}},
+           familyi={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{4b3c3928bd56d2b455928972518f49d4}
+      \strng{fullhash}{4b3c3928bd56d2b455928972518f49d4}
+      \strng{fullhashraw}{4b3c3928bd56d2b455928972518f49d4}
+      \strng{bibnamehash}{4b3c3928bd56d2b455928972518f49d4}
+      \strng{authorbibnamehash}{4b3c3928bd56d2b455928972518f49d4}
+      \strng{authornamehash}{4b3c3928bd56d2b455928972518f49d4}
+      \strng{authorfullhash}{4b3c3928bd56d2b455928972518f49d4}
+      \strng{authorfullhashraw}{4b3c3928bd56d2b455928972518f49d4}
+      \field{extraname}{1}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{http://encyclopediaofmath.org/index.php?title=Gershgorin_theorem&oldid=55529}}
+      \field{note}{Consultado en: 2025-04-10}
+      \field{title}{Gershgorin theorem}
+    \endentry
+    \entry{HadamardProduct}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=4b3c3928bd56d2b455928972518f49d4}{%
+           family={{Encyclopedia of Mathematics}},
+           familyi={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{4b3c3928bd56d2b455928972518f49d4}
+      \strng{fullhash}{4b3c3928bd56d2b455928972518f49d4}
+      \strng{fullhashraw}{4b3c3928bd56d2b455928972518f49d4}
+      \strng{bibnamehash}{4b3c3928bd56d2b455928972518f49d4}
+      \strng{authorbibnamehash}{4b3c3928bd56d2b455928972518f49d4}
+      \strng{authornamehash}{4b3c3928bd56d2b455928972518f49d4}
+      \strng{authorfullhash}{4b3c3928bd56d2b455928972518f49d4}
+      \strng{authorfullhashraw}{4b3c3928bd56d2b455928972518f49d4}
+      \field{extraname}{2}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{http://encyclopediaofmath.org/index.php?title=Matrix_multiplication&oldid=54363}}
+      \field{note}{Consultado en: 2025-04-08}
+      \field{title}{Matrix multiplication}
+    \endentry
     \entry{Koppen2005Interdisciplina}{article}{}{}
       \name{author}{3}{}{%
         {{hash=6875223031750d89520db071a3a8c313}{%
@@ -57,6 +103,65 @@
       \field{year}{2005}
       \field{pages}{4\bibrangedash 12}
       \range{pages}{9}
+    \endentry
+    \entry{may2019stability}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=46f392962803b157f2a2666260d8c593}{%
+           family={May},
+           familyi={M\bibinitperiod},
+           given={Robert\bibnamedelima M},
+           giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Princeton university press}%
+      }
+      \strng{namehash}{46f392962803b157f2a2666260d8c593}
+      \strng{fullhash}{46f392962803b157f2a2666260d8c593}
+      \strng{fullhashraw}{46f392962803b157f2a2666260d8c593}
+      \strng{bibnamehash}{46f392962803b157f2a2666260d8c593}
+      \strng{authorbibnamehash}{46f392962803b157f2a2666260d8c593}
+      \strng{authornamehash}{46f392962803b157f2a2666260d8c593}
+      \strng{authorfullhash}{46f392962803b157f2a2666260d8c593}
+      \strng{authorfullhashraw}{46f392962803b157f2a2666260d8c593}
+      \field{extraname}{1}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Stability and complexity in model ecosystems}
+      \field{year}{2019}
+    \endentry
+    \entry{may1972will}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=46f392962803b157f2a2666260d8c593}{%
+           family={May},
+           familyi={M\bibinitperiod},
+           given={Robert\bibnamedelima M},
+           giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group UK London}%
+      }
+      \strng{namehash}{46f392962803b157f2a2666260d8c593}
+      \strng{fullhash}{46f392962803b157f2a2666260d8c593}
+      \strng{fullhashraw}{46f392962803b157f2a2666260d8c593}
+      \strng{bibnamehash}{46f392962803b157f2a2666260d8c593}
+      \strng{authorbibnamehash}{46f392962803b157f2a2666260d8c593}
+      \strng{authornamehash}{46f392962803b157f2a2666260d8c593}
+      \strng{authorfullhash}{46f392962803b157f2a2666260d8c593}
+      \strng{authorfullhashraw}{46f392962803b157f2a2666260d8c593}
+      \field{extraname}{2}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature}
+      \field{number}{5364}
+      \field{title}{Will a large complex system be stable?}
+      \field{volume}{238}
+      \field{year}{1972}
+      \field{pages}{413\bibrangedash 414}
+      \range{pages}{2}
     \endentry
     \entry{miramontes2005sistemas}{article}{}{}
       \name{author}{1}{}{%
