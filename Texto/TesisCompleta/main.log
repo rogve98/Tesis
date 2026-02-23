@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.14)  19 FEB 2026 20:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.14)  23 FEB 2026 15:38
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1100,6 +1100,26 @@ Package caption Info: New subtype `subfigure' on input line 238.
 Package caption Info: New subtype `subtable' on input line 238.
 \c@subtable=\count408
 )
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen318
+\lightrulewidth=\dimen319
+\cmidrulewidth=\dimen320
+\belowrulesep=\dimen321
+\belowbottomsep=\dimen322
+\aboverulesep=\dimen323
+\abovetopsep=\dimen324
+\cmidrulesep=\dimen325
+\cmidrulekern=\dimen326
+\defaultaddspace=\dimen327
+\@cmidla=\count409
+\@cmidlb=\count410
+\@aboverulesep=\dimen328
+\@belowrulesep=\dimen329
+\@thisruleclass=\count411
+\@lastruleclass=\count412
+\@thisrulewidth=\dimen330
+)
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2024-07-10 v7.01j Hypertext links for LaTeX
 
@@ -1124,16 +1144,16 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 itlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count409
+\c@section@level=\count413
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc
 .sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
-\@linkdim=\dimen318
-\Hy@linkcounter=\count410
-\Hy@pagecounter=\count411
+\@linkdim=\dimen331
+\Hy@linkcounter=\count414
+\Hy@pagecounter=\count415
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2024-07-10 v7.01j Hyperref: PDFDocEncoding definition (HO)
@@ -1143,7 +1163,7 @@ Now handling font encoding PD1 ...
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count412
+\Hy@SavedSpaceFactor=\count416
  (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2024-07-10 v7.01j Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -1156,13 +1176,13 @@ Package hyperref Info: Plain pages OFF on input line 4172.
 Package hyperref Info: Backreferencing OFF on input line 4177.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4424.
-\c@Hy@tempcnt=\count413
+\c@Hy@tempcnt=\count417
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4763.
-\XeTeXLinkMargin=\dimen319
+\XeTeXLinkMargin=\dimen332
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -1172,9 +1192,9 @@ lc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count414
-\Field@Width=\dimen320
-\Fld@charsize=\dimen321
+\Fld@menulength=\count418
+\Field@Width=\dimen333
+\Fld@charsize=\dimen334
 Package hyperref Info: Hyper figures OFF on input line 6042.
 Package hyperref Info: Link nesting OFF on input line 6047.
 Package hyperref Info: Hyper index ON on input line 6050.
@@ -1187,9 +1207,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6072.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count415
-\c@Item=\count416
-\c@Hfootnote=\count417
+\Hy@abspage=\count419
+\c@Item=\count420
+\c@Hfootnote=\count421
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
@@ -1202,8 +1222,8 @@ Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
 kage
 with kernel methods
 )
-\Fld@listcount=\count418
-\c@bookmark@seq@number=\count419
+\Fld@listcount=\count422
+\c@bookmark@seq@number=\count423
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunf
 ilecheck.sty
@@ -1218,11 +1238,11 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip87
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 41.
-\c@proposición=\count420
-\c@teorema=\count421
-\c@definición=\count422
-\c@ejemplo=\count423
+Package hyperref Info: Option `colorlinks' set `true' on input line 43.
+\c@proposición=\count424
+\c@teorema=\count425
+\c@definición=\count426
+\c@ejemplo=\count427
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/svg\svg.sty
 Package: svg 2020/11/26 v2.02k (include SVG pictures)
@@ -1249,9 +1269,9 @@ Applying: [2021/05/01] Usage of raw or classic option list on input line 252.
 Already applied: [0000/00/00] Usage of raw or classic option list on input line
  368.
 )
-\c@svg@param@lastpage=\count424
+\c@svg@param@lastpage=\count428
 \svg@box=\box142
-\c@svg@param@currpage=\count425
+\c@svg@param@currpage=\count429
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/transparent\transpare
 nt.sty
@@ -1269,54 +1289,54 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 Package: biblatex 2024/03/21 v3.20 programmable bibliographies (PK/MW)
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count426
+\lrq@indent=\count430
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
-\c@tabx@nest=\count427
-\c@listtotal=\count428
-\c@listcount=\count429
-\c@liststart=\count430
-\c@liststop=\count431
-\c@citecount=\count432
-\c@citetotal=\count433
-\c@multicitecount=\count434
-\c@multicitetotal=\count435
-\c@instcount=\count436
-\c@maxnames=\count437
-\c@minnames=\count438
-\c@maxitems=\count439
-\c@minitems=\count440
-\c@citecounter=\count441
-\c@maxcitecounter=\count442
-\c@savedcitecounter=\count443
-\c@uniquelist=\count444
-\c@uniquename=\count445
-\c@refsection=\count446
-\c@refsegment=\count447
-\c@maxextratitle=\count448
-\c@maxextratitleyear=\count449
-\c@maxextraname=\count450
-\c@maxextradate=\count451
-\c@maxextraalpha=\count452
-\c@abbrvpenalty=\count453
-\c@highnamepenalty=\count454
-\c@lownamepenalty=\count455
-\c@maxparens=\count456
-\c@parenlevel=\count457
-\blx@tempcnta=\count458
-\blx@tempcntb=\count459
-\blx@tempcntc=\count460
-\c@blx@maxsection=\count461
-\blx@maxsegment@0=\count462
-\blx@notetype=\count463
-\blx@parenlevel@text=\count464
-\blx@parenlevel@foot=\count465
-\blx@sectionciteorder@0=\count466
-\blx@sectionciteorderinternal@0=\count467
-\blx@entrysetcounter=\count468
-\blx@biblioinstance=\count469
+\c@tabx@nest=\count431
+\c@listtotal=\count432
+\c@listcount=\count433
+\c@liststart=\count434
+\c@liststop=\count435
+\c@citecount=\count436
+\c@citetotal=\count437
+\c@multicitecount=\count438
+\c@multicitetotal=\count439
+\c@instcount=\count440
+\c@maxnames=\count441
+\c@minnames=\count442
+\c@maxitems=\count443
+\c@minitems=\count444
+\c@citecounter=\count445
+\c@maxcitecounter=\count446
+\c@savedcitecounter=\count447
+\c@uniquelist=\count448
+\c@uniquename=\count449
+\c@refsection=\count450
+\c@refsegment=\count451
+\c@maxextratitle=\count452
+\c@maxextratitleyear=\count453
+\c@maxextraname=\count454
+\c@maxextradate=\count455
+\c@maxextraalpha=\count456
+\c@abbrvpenalty=\count457
+\c@highnamepenalty=\count458
+\c@lownamepenalty=\count459
+\c@maxparens=\count460
+\c@parenlevel=\count461
+\blx@tempcnta=\count462
+\blx@tempcntb=\count463
+\blx@tempcntc=\count464
+\c@blx@maxsection=\count465
+\blx@maxsegment@0=\count466
+\blx@notetype=\count467
+\blx@parenlevel@text=\count468
+\blx@parenlevel@foot=\count469
+\blx@sectionciteorder@0=\count470
+\blx@sectionciteorderinternal@0=\count471
+\blx@entrysetcounter=\count472
+\blx@biblioinstance=\count473
 \labelnumberwidth=\skip88
 \labelalphawidth=\skip89
 \biblabelsep=\skip90
@@ -1328,9 +1348,9 @@ File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 \blx@bcfin=\read8
 \blx@bcfout=\write8
 \blx@langwohyphens=\language80
-\c@mincomprange=\count470
-\c@maxcomprange=\count471
-\c@mincompwidth=\count472
+\c@mincomprange=\count474
+\c@maxcomprange=\count475
+\c@mincompwidth=\count476
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -1341,74 +1361,74 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'numeric.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count473
-\c@savedafterword=\count474
-\c@annotator=\count475
-\c@savedannotator=\count476
-\c@author=\count477
-\c@savedauthor=\count478
-\c@bookauthor=\count479
-\c@savedbookauthor=\count480
-\c@commentator=\count481
-\c@savedcommentator=\count482
-\c@editor=\count483
-\c@savededitor=\count484
-\c@editora=\count485
-\c@savededitora=\count486
-\c@editorb=\count487
-\c@savededitorb=\count488
-\c@editorc=\count489
-\c@savededitorc=\count490
-\c@foreword=\count491
-\c@savedforeword=\count492
-\c@holder=\count493
-\c@savedholder=\count494
-\c@introduction=\count495
-\c@savedintroduction=\count496
-\c@namea=\count497
-\c@savednamea=\count498
-\c@nameb=\count499
-\c@savednameb=\count500
-\c@namec=\count501
-\c@savednamec=\count502
-\c@translator=\count503
-\c@savedtranslator=\count504
-\c@shortauthor=\count505
-\c@savedshortauthor=\count506
-\c@shorteditor=\count507
-\c@savedshorteditor=\count508
-\c@labelname=\count509
-\c@savedlabelname=\count510
-\c@institution=\count511
-\c@savedinstitution=\count512
-\c@lista=\count513
-\c@savedlista=\count514
-\c@listb=\count515
-\c@savedlistb=\count516
-\c@listc=\count517
-\c@savedlistc=\count518
-\c@listd=\count519
-\c@savedlistd=\count520
-\c@liste=\count521
-\c@savedliste=\count522
-\c@listf=\count523
-\c@savedlistf=\count524
-\c@location=\count525
-\c@savedlocation=\count526
-\c@organization=\count527
-\c@savedorganization=\count528
-\c@origlocation=\count529
-\c@savedoriglocation=\count530
-\c@origpublisher=\count531
-\c@savedorigpublisher=\count532
-\c@publisher=\count533
-\c@savedpublisher=\count534
-\c@language=\count535
-\c@savedlanguage=\count536
-\c@origlanguage=\count537
-\c@savedoriglanguage=\count538
-\c@pageref=\count539
-\c@savedpageref=\count540
+\c@afterword=\count477
+\c@savedafterword=\count478
+\c@annotator=\count479
+\c@savedannotator=\count480
+\c@author=\count481
+\c@savedauthor=\count482
+\c@bookauthor=\count483
+\c@savedbookauthor=\count484
+\c@commentator=\count485
+\c@savedcommentator=\count486
+\c@editor=\count487
+\c@savededitor=\count488
+\c@editora=\count489
+\c@savededitora=\count490
+\c@editorb=\count491
+\c@savededitorb=\count492
+\c@editorc=\count493
+\c@savededitorc=\count494
+\c@foreword=\count495
+\c@savedforeword=\count496
+\c@holder=\count497
+\c@savedholder=\count498
+\c@introduction=\count499
+\c@savedintroduction=\count500
+\c@namea=\count501
+\c@savednamea=\count502
+\c@nameb=\count503
+\c@savednameb=\count504
+\c@namec=\count505
+\c@savednamec=\count506
+\c@translator=\count507
+\c@savedtranslator=\count508
+\c@shortauthor=\count509
+\c@savedshortauthor=\count510
+\c@shorteditor=\count511
+\c@savedshorteditor=\count512
+\c@labelname=\count513
+\c@savedlabelname=\count514
+\c@institution=\count515
+\c@savedinstitution=\count516
+\c@lista=\count517
+\c@savedlista=\count518
+\c@listb=\count519
+\c@savedlistb=\count520
+\c@listc=\count521
+\c@savedlistc=\count522
+\c@listd=\count523
+\c@savedlistd=\count524
+\c@liste=\count525
+\c@savedliste=\count526
+\c@listf=\count527
+\c@savedlistf=\count528
+\c@location=\count529
+\c@savedlocation=\count530
+\c@organization=\count531
+\c@savedorganization=\count532
+\c@origlocation=\count533
+\c@savedoriglocation=\count534
+\c@origpublisher=\count535
+\c@savedorigpublisher=\count536
+\c@publisher=\count537
+\c@savedpublisher=\count538
+\c@language=\count539
+\c@savedlanguage=\count540
+\c@origlanguage=\count541
+\c@savedoriglanguage=\count542
+\c@pageref=\count543
+\c@savedpageref=\count544
 \shorthandwidth=\skip96
 \shortjournalwidth=\skip97
 \shortserieswidth=\skip98
@@ -1435,19 +1455,19 @@ Package biblatex Info: ... file 'biblatex.def' found.
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
 File: biblatex.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
-\c@textcitecount=\count541
-\c@textcitetotal=\count542
-\c@textcitemaxnames=\count543
-\c@biburlbigbreakpenalty=\count544
-\c@biburlbreakpenalty=\count545
-\c@biburlnumpenalty=\count546
-\c@biburlucpenalty=\count547
-\c@biburllcpenalty=\count548
+\c@textcitecount=\count545
+\c@textcitetotal=\count546
+\c@textcitemaxnames=\count547
+\c@biburlbigbreakpenalty=\count548
+\c@biburlbreakpenalty=\count549
+\c@biburlnumpenalty=\count550
+\c@biburlucpenalty=\count551
+\c@biburllcpenalty=\count552
 \biburlbigskip=\muskip19
 \biburlnumskip=\muskip20
 \biburlucskip=\muskip21
 \biburllcskip=\muskip22
-\c@smartand=\count549
+\c@smartand=\count553
 )
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
@@ -1461,8 +1481,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard
 .bbx
 File: standard.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count550
-\c@bbx:relatedtotal=\count551
+\c@bbx:relatedcount=\count554
+\c@bbx:relatedtotal=\count555
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
@@ -1496,7 +1516,7 @@ Package: expl3 2024-07-20 L3 programming layer (loader)
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-p
 dftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count552
+\l__color_backend_stack_int=\count556
 \l__pdf_internal_box=\box143
 ))
 Package biblatex Info: ... and expl3
@@ -1522,32 +1542,32 @@ runsystem(del main.aex)...executed.
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count553
-\@quotereset=\count554
+\@quotelevel=\count557
+\@quotereset=\count558
 (main.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
  (TeX_files/chapter02.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1583,22 +1603,22 @@ LaTeX Font Info:    ... okay on input line 74.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \. on input line 74.
-LaTeX Info: Redefining \% on input line 74.
+LaTeX Info: Redefining \. on input line 76.
+LaTeX Info: Redefining \% on input line 76.
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.
 mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count555
-\scratchdimen=\dimen322
+\scratchcounter=\count559
+\scratchdimen=\dimen335
 \scratchbox=\box144
-\nofMPsegments=\count556
-\nofMParguments=\count557
+\nofMPsegments=\count560
+\nofMParguments=\count561
 \everyMPshowfont=\toks77
-\MPscratchCnt=\count558
-\MPscratchDim=\dimen323
-\MPnumerator=\count559
-\makeMPintoPDFobject=\count560
+\MPscratchCnt=\count562
+\MPscratchDim=\dimen336
+\MPnumerator=\count563
+\makeMPintoPDFobject=\count564
 \everyMPtoPDFconversion=\toks78
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf
@@ -1614,7 +1634,7 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 74.
+Package hyperref Info: Link coloring ON on input line 76.
  (main.out) (main.out)
 \@outlinefile=\write9
 \openout9 = `main.out'.
@@ -1634,8 +1654,8 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (main.bbl)
-Package biblatex Info: Reference section=0 on input line 74.
-Package biblatex Info: Reference segment=0 on input line 74.
+Package biblatex Info: Reference section=0 on input line 76.
+Package biblatex Info: Reference segment=0 on input line 76.
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: a4paper
@@ -1671,15 +1691,15 @@ Package biblatex Info: Reference segment=0 on input line 74.
 <Escudo-UNAM.pdf, id=42, 300.51309pt x 337.88977pt>
 File: Escudo-UNAM.pdf Graphic file (type pdf)
 <use Escudo-UNAM.pdf>
-Package pdftex.def Info: Escudo-UNAM.pdf  used on input line 79.
+Package pdftex.def Info: Escudo-UNAM.pdf  used on input line 81.
 (pdftex.def)             Requested size: 68.77722pt x 77.33466pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 79.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 81.
 
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 79.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 81.
 
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -1688,15 +1708,15 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <Escudo-FCIENCIAS.pdf, id=43, 359.74399pt x 411.136pt>
 File: Escudo-FCIENCIAS.pdf Graphic file (type pdf)
 <use Escudo-FCIENCIAS.pdf>
-Package pdftex.def Info: Escudo-FCIENCIAS.pdf  used on input line 79.
+Package pdftex.def Info: Escudo-FCIENCIAS.pdf  used on input line 81.
 (pdftex.def)             Requested size: 67.66591pt x 77.33466pt.
 
-Underfull \hbox (badness 10000) detected at line 79
+Underfull \hbox (badness 10000) detected at line 81
 \OT1/cmr/bx/n/14.4 T E S I S
  []
 
 
-Underfull \hbox (badness 10000) detected at line 79
+Underfull \hbox (badness 10000) detected at line 81
 \OT1/cmr/m/n/10.95 P R E S E N T A :
  []
 
@@ -1722,16 +1742,16 @@ iple pdfs with page group included in a single page
 
 ]
 
-LaTeX Info: Redefining \. on input line 88.
-LaTeX Info: Redefining \% on input line 88.
+LaTeX Info: Redefining \. on input line 90.
+LaTeX Info: Redefining \% on input line 90.
 [4
 
 ]
 
 [5]
 
-LaTeX Info: Redefining \. on input line 90.
-LaTeX Info: Redefining \% on input line 90.
+LaTeX Info: Redefining \. on input line 92.
+LaTeX Info: Redefining \% on input line 92.
 [6
 
 ] (main.toc
@@ -1759,8 +1779,8 @@ Package spanish Warning: Replacing `OT1/cmr/bx/sc' by
 
 [7]
 
-LaTeX Info: Redefining \. on input line 91.
-LaTeX Info: Redefining \% on input line 91.
+LaTeX Info: Redefining \. on input line 93.
+LaTeX Info: Redefining \% on input line 93.
 [8
 
 ] (main.lof
@@ -1775,8 +1795,8 @@ LaTeX Info: Redefining \% on input line 1.
 
 [9]
 
-LaTeX Info: Redefining \. on input line 92.
-LaTeX Info: Redefining \% on input line 92.
+LaTeX Info: Redefining \. on input line 94.
+LaTeX Info: Redefining \% on input line 94.
 [10
 
 ] (main.lot
@@ -1791,8 +1811,8 @@ LaTeX Info: Redefining \% on input line 1.
 
 [11]
 
-LaTeX Info: Redefining \. on input line 93.
-LaTeX Info: Redefining \% on input line 93.
+LaTeX Info: Redefining \. on input line 95.
+LaTeX Info: Redefining \% on input line 95.
 [12
 
 ] (main.loa)
@@ -1803,8 +1823,8 @@ LaTeX Info: Redefining \% on input line 93.
 
 [13]
 
-LaTeX Info: Redefining \. on input line 97.
-LaTeX Info: Redefining \% on input line 97.
+LaTeX Info: Redefining \. on input line 99.
+LaTeX Info: Redefining \% on input line 99.
 [14
 
 ]
@@ -1844,7 +1864,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 37--43
 
  []
 
-<../Imagenes/Competencia de especies.png, id=165, 1806.75pt x 1606.0pt>
+<../Imagenes/Competencia de especies.png, id=169, 1806.75pt x 1606.0pt>
 File: ../Imagenes/Competencia de especies.png Graphic file (type png)
 <use ../Imagenes/Competencia de especies.png>
 Package pdftex.def Info: ../Imagenes/Competencia de especies.png  used on input
@@ -1870,7 +1890,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package svg Info: Last page of `./svg-inkscape/karateLu_svg-tex.pdf' is 1 on in
 put line 90.
 (svg-inkscape/karateLu_svg-tex.pdf_tex
-<./svg-inkscape/karateLu_svg-tex.pdf, id=179, page=1, 451.6875pt x 451.6875pt>
+<./svg-inkscape/karateLu_svg-tex.pdf, id=183, page=1, 451.6875pt x 451.6875pt>
 File: ./svg-inkscape/karateLu_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/karateLu_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/karateLu_svg-tex.pdf , page1 used on in
@@ -1899,7 +1919,7 @@ Package svg Info: Last page of `./svg-inkscape/Red10DirLu_svg-tex.pdf' is 1 on
 input line 116.
 
 (svg-inkscape/Red10DirLu_svg-tex.pdf_tex
-<./svg-inkscape/Red10DirLu_svg-tex.pdf, id=200, page=1, 451.6875pt x 451.6875pt
+<./svg-inkscape/Red10DirLu_svg-tex.pdf, id=204, page=1, 451.6875pt x 451.6875pt
 >
 File: ./svg-inkscape/Red10DirLu_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/Red10DirLu_svg-tex.pdf, page 1>
@@ -1938,7 +1958,7 @@ LaTeX Info: Redefining \% on input line 174.
 Package svg Info: Last page of `./svg-inkscape/RedIncidencias_svg-tex.pdf' is 1
  on input line 179.
  (svg-inkscape/RedIncidencias_svg-tex.pdf_tex
-<./svg-inkscape/RedIncidencias_svg-tex.pdf, id=220, page=1, 451.6875pt x 451.68
+<./svg-inkscape/RedIncidencias_svg-tex.pdf, id=224, page=1, 451.6875pt x 451.68
 75pt>
 File: ./svg-inkscape/RedIncidencias_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/RedIncidencias_svg-tex.pdf, page 1>
@@ -1955,163 +1975,142 @@ Package wrapfig Warning: Stationary wrapfigure forced to float on input line 18
 8.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 190--201
+Underfull \hbox (badness 10000) in paragraph at lines 190--216
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 190--201
+Underfull \hbox (badness 10000) in paragraph at lines 190--216
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 190--201
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 190--201
+Underfull \hbox (badness 10000) in paragraph at lines 190--216
 
  []
 
 
 
-LaTeX Info: Redefining \. on input line 201.
-LaTeX Info: Redefining \% on input line 201.
+LaTeX Info: Redefining \. on input line 216.
+LaTeX Info: Redefining \% on input line 216.
 [7 <./svg-inkscape/RedIncidencias_svg-tex.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 207--217
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 207--217
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 207--217
-
- []
-
-
-
-LaTeX Info: Redefining \. on input line 217.
-LaTeX Info: Redefining \% on input line 217.
+LaTeX Info: Redefining \. on input line 224.
+LaTeX Info: Redefining \% on input line 224.
 [8]
+Underfull \hbox (badness 10000) in paragraph at lines 226--233
 
-LaTeX Info: Redefining \. on input line 250.
-LaTeX Info: Redefining \% on input line 250.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--233
+
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 255.
+LaTeX Info: Redefining \% on input line 255.
 [9]
-<../Imagenes/Cooperacion de especies.png, id=254, 2007.5pt x 1003.75pt>
+<../Imagenes/Cooperacion de especies.png, id=253, 2007.5pt x 1003.75pt>
 File: ../Imagenes/Cooperacion de especies.png Graphic file (type png)
 <use ../Imagenes/Cooperacion de especies.png>
 Package pdftex.def Info: ../Imagenes/Cooperacion de especies.png  used on input
- line 254.
+ line 259.
 (pdftex.def)             Requested size: 481.80984pt x 240.90492pt.
 <../Imagenes/STrestoInteracciones.png, id=258, 2409.0pt x 803.0pt>
 File: ../Imagenes/STrestoInteracciones.png Graphic file (type png)
 <use ../Imagenes/STrestoInteracciones.png>
 Package pdftex.def Info: ../Imagenes/STrestoInteracciones.png  used on input li
-ne 266.
+ne 271.
 (pdftex.def)             Requested size: 481.79147pt x 160.59715pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 250--270
+Underfull \hbox (badness 10000) in paragraph at lines 264--275
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 250--270
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 250--270
+Underfull \hbox (badness 10000) in paragraph at lines 264--275
 
  []
 
 
 
-LaTeX Info: Redefining \. on input line 270.
-LaTeX Info: Redefining \% on input line 270.
+LaTeX Info: Redefining \. on input line 275.
+LaTeX Info: Redefining \% on input line 275.
 [10 <../Imagenes/Cooperacion de especies.png>]
 
-LaTeX Warning: Reference `sec:poblacionesLK' on page 11 undefined on input line
- 275.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 273--276
-
- []
-
-
-
-LaTeX Info: Redefining \. on input line 276.
-LaTeX Info: Redefining \% on input line 276.
+LaTeX Info: Redefining \. on input line 281.
+LaTeX Info: Redefining \% on input line 281.
 [11 <../Imagenes/STrestoInteracciones.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 287--294
 
-LaTeX Info: Redefining \. on input line 276.
-LaTeX Info: Redefining \% on input line 276.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 287--294
+
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 294.
+LaTeX Info: Redefining \% on input line 294.
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 284--291
+Underfull \hbox (badness 10000) in paragraph at lines 296--303
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 284--291
+Underfull \hbox (badness 10000) in paragraph at lines 296--303
 
  []
 
 
 
-LaTeX Info: Redefining \. on input line 291.
-LaTeX Info: Redefining \% on input line 291.
+LaTeX Info: Redefining \. on input line 303.
+LaTeX Info: Redefining \% on input line 303.
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 293--300
+
+LaTeX Warning: Reference `eqn:LKmatricial' on page 14 undefined on input line 3
+06.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 306--309
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 293--300
 
- []
-
-
-
-LaTeX Info: Redefining \. on input line 300.
-LaTeX Info: Redefining \% on input line 300.
+LaTeX Info: Redefining \. on input line 324.
+LaTeX Info: Redefining \% on input line 324.
 [14]
 
-LaTeX Warning: Reference `eqn:LKmatricial' on page 15 undefined on input line 3
-03.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 303--306
-
- []
-
-
-
-LaTeX Info: Redefining \. on input line 321.
-LaTeX Info: Redefining \% on input line 321.
+LaTeX Info: Redefining \. on input line 354.
+LaTeX Info: Redefining \% on input line 354.
 [15]
 
-LaTeX Info: Redefining \. on input line 351.
-LaTeX Info: Redefining \% on input line 351.
+LaTeX Info: Redefining \. on input line 384.
+LaTeX Info: Redefining \% on input line 384.
 [16]
-
-LaTeX Info: Redefining \. on input line 381.
-LaTeX Info: Redefining \% on input line 381.
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 384--387
+Underfull \hbox (badness 10000) in paragraph at lines 387--390
 
  []
 
 
 
-LaTeX Info: Redefining \. on input line 387.
-LaTeX Info: Redefining \% on input line 387.
-[18])
-Overfull \hbox (13.05043pt too wide) in paragraph at lines 108--108
+LaTeX Info: Redefining \. on input line 390.
+LaTeX Info: Redefining \% on input line 390.
+[17])
+
+LaTeX Info: Redefining \. on input line 107.
+LaTeX Info: Redefining \% on input line 107.
+[18
+
+
+
+]
+Overfull \hbox (7.57542pt too wide) in paragraph at lines 110--110
 []\OT1/cmr/m/n/10.95 Robert M May. ``Will a lar-ge com-plex sys-tem be sta-ble?
 '' En: \OT1/cmr/m/it/10.95 Na-tu-re \OT1/cmr/m/n/10.95 238.5364 (1972), p^^Sags
 . 413[]414. 
@@ -2120,9 +2119,6 @@ Overfull \hbox (13.05043pt too wide) in paragraph at lines 108--108
 
 
 [19
-
-
-
 
 ] (main.aux
 LaTeX Info: Redefining \sptext on input line 11.
@@ -2141,24 +2137,19 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 27DB9B0B58EF7A4E4354F1D9E634B5E1;1518.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
-
+(rerunfilecheck)             Checksum: CBFD9CA4F7989B6967B57DDAA6F2F06E;1563.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43288 strings out of 473899
- 855212 string characters out of 5725556
+ 43337 strings out of 473899
+ 855352 string characters out of 5725556
  1952960 words of memory out of 5000000
- 65343 multiletter control sequences out of 15000+600000
+ 65394 multiletter control sequences out of 15000+600000
  573263 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 109i,17n,117p,1195b,1940s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 109i,17n,117p,1153b,1955s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
 m/cmbx10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public
 /amsfonts/cm/cmbx12.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/t
@@ -2187,9 +2178,9 @@ igo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:
 /Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmt
 t10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
 onts/symbols/msbm10.pfb>
-Output written on main.pdf (33 pages, 1651041 bytes).
+Output written on main.pdf (33 pages, 1645431 bytes).
 PDF statistics:
- 473 PDF objects out of 1000 (max. 8388607)
- 98 named destinations out of 1000 (max. 500000)
+ 467 PDF objects out of 1000 (max. 8388607)
+ 92 named destinations out of 1000 (max. 500000)
  140 words of extra memory for PDF output out of 10000 (max. 10000000)
 

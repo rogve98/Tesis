@@ -145,7 +145,7 @@ Su formulación depende de un conjunto de parámetros estructurales que serán e
 Como resultado, la red de interacciones ponderada considerada en este trabajo corresponde a una \textbf{red aleatoria ponderada}, donde la topología y los pesos se introducen de manera independiente. Este enfoque puede extenderse a otras topologías, como redes libres de escala o de mundo pequeño, aunque tales generalizaciones no se contemplan en este trabajo.
 
 \begin{definición}\label{def:redAleatoria}
-	Sea un conjunto de $N$ nodos. Una red aleatoria no dirigida $\mathcal{G}_\mathcal{E}$ se define por su matriz de adyacencia  $\mathcal{E}\in\mathrm{M}_N(\{0,1\})$ tal que
+	Sea un conjunto de $N$ nodos. Una red aleatoria \textbf{no dirigida} $\mathcal{G}_\mathcal{E}$ se define por su matriz de adyacencia  $\mathcal{E}\in\mathrm{M}_N(\{0,1\})$ tal que
 	$$
 	\mathcal{E}_{ij}=\begin{cases}
 		X_{ij},\quad &i<j,\\
@@ -153,7 +153,7 @@ Como resultado, la red de interacciones ponderada considerada en este trabajo co
 		0,\quad &i=j
 	\end{cases},\qquad X_{ij}\sim \text{Bernoulli}(p)
 	$$
-	donde las variables $X_{ij}$ son independientes. En consecuencia, $\mathcal{E}$ es simétrica y cada enlace aparece con probabilidad $p$. En contraste, su versión dirigida contempla
+	donde las variables $X_{ij}$ son independientes. En consecuencia, $\mathcal{E}$ es simétrica y cada enlace aparece con probabilidad $p$. En contraste, su versión \textbf{dirigida} contempla
 	$$
 	\mathcal{E}_{ij}=\begin{cases}
 		X_{ij},\quad &i\neq j,\\
@@ -169,7 +169,7 @@ Para completar la construcción de la estructura de las interacciones, resta inc
 	\begin{equation}\label{eqn:MatrizIncidencias}
 		\Lambda=(\mathcal{E}\odot \mathcal{M}) + I
 	\end{equation}
-	El producto de Hadamard restringe los coeficientes aleatorios a los enlaces de la red, mientras que la suma con la identidad introduce términos de auto-interacción que funcionan como mecanismo de auto-regulación. Se dirá que la matriz $\Lambda$ es \textbf{estructuralmente simétrica} si su matriz de adyacencia $\mathcal{E}$ es simétrica, es decir, si existe interacción entre $i$ con $j$ en ambos sentidos $(\mathcal{E}_{ij}=\mathcal{E}_{ji})$, aunque las intensidades correspondientes puedan diferir ($\Lambda_{ij}\neq\Lambda_{ji}$). Esta distinción permite separar la simetría del soporte topológico de la simetría dinámica de las interacciones.
+	El producto de Hadamard restringe los coeficientes aleatorios a los enlaces de la red, mientras que la suma con la identidad introduce términos de auto-interacción que funcionan como mecanismo de autoregulación. Se dirá que la matriz $\Lambda$ es \textbf{estructuralmente simétrica} si su matriz de adyacencia $\mathcal{E}$ es simétrica, es decir, si existe interacción entre $i$ con $j$ en ambos sentidos $(\mathcal{E}_{ij}=\mathcal{E}_{ji})$, aunque las intensidades correspondientes puedan diferir ($\Lambda_{ij}\neq\Lambda_{ji}$). Por el contrario, si $\mathcal{E}$ tiene un soporte dirigido entonces se dirá que $\Lambda$ es \textbf{estructuralmente no simétrica}. Esta distinción permite separar y distinguir entre la simetría del soporte topológico y la simetría dinámica de las interacciones. 
 	\newline
 \end{definición}
 
@@ -187,103 +187,106 @@ Por lo tanto, las matrices de coeficientes de interacción quedan parametrizadas
 
 \subsection{Tipos de interacciones}
 
-La red de incidencias es de tipo dirigida independientemente del tipo de red aleatoria que se decida elegir para su construcción, a lo mucho podrá ser estructuralmente simétrica pero los pesos de cada enlace $i\to j$ y $j\to i$ son diferentes lo que implica que $\alpha_{ij}\neq\alpha_{ji}$ para toda $\alpha_{ij}\in\Lambda$. Puede considerarse como un efecto natural puesto que el nivel de interacción entre especies difícilmente va a ser igual. Existen más interacciones además de la competencia que generan dinámicas interesantes, en esta sección se explorarán dichas interacciones y su aplicación en la matriz de incidencias.
+La red de interacciones ponderada induce, en general, una estructura dirigida en la dinámica independientemente del soporte estructural que posea. Esto implica que las interacciones entre especies no necesariamente están balanceadas y pueden existir influencias preferenciales entre especies. Esta perspectiva resulta natural en contextos ecológicos, donde las interacciones suelen presentar una direccionalidad efectiva. En esta sección se explorarán los distintos tipos de interacciones que pueden surgir de sistemas de Lotka-Volterra generalizados bajo contextos estructuralmente simétricos y con interacciones aleatorias.\\
+\\
+Hasta ahora solo se han discutido interacciones de competencia en el Ejemplo \ref{eg:2x2}, donde los coeficientes $\alpha_{ij}\in\Lambda$ se consideran positivos. Bajo esta hipótesis, el crecimiento de las especies se ve limitado por sus respectivas capacidades de carga, lo que induce una dinámica acotada. Resulta entonces natural preguntarse como cambia el comportamiento del sistema cuando se permiten coeficientes $\alpha_{ij}$ negativos, los cuales representan distintos tipos de interacción biológica. Siguiendo la clasificación clásica de Robert May \cite{may2019stability}, pueden distinguirse cinco tipos fundamentales de interacciones. \\
+\\
+Estas interacciones se clasifican en función de los signos de las matrices de comunidad (\textit{community matrices}), introducidas previamente en el capítulo 1. En consecuencia, no se definen directamente sobre la matriz de coeficientes de interacción $\Lambda$, sino sobre la Jacobiana del sistema evaluada en un estado estacionario. En sistemas estructuralmente simétricos, las posibles interacciones son: competencia $(--)$, cooperación\footnote{También conocida como mutualismo o simbiosis} $(++)$ y presa-depredador $(-+)$ ó $(+-)$. Cuando se consideran sistemas sin esta restricción estructural, pueden presentarse además $(+0)$ y amensalismo $(-0)$, dando lugar a cinco tipos de interacción en total, en contraste con los tres del caso estructuralmente simétrico.
 \\
 \\
-Hasta ahora únicamente se han discutido las ecuaciones de (\ref{eqn:LK}) bajo el escenario de la competencia, es decir para toda $\alpha_{ij}\in\Lambda$ positiva. El caso particular $N=2$ ha develado que este sistema es incapaz de superar sus capacidades de carga, por lo que tienen un crecimiento controlado. Pero ¿qué pasa si se comienzan a considerar $\alpha_{ij}<0$ provenientes de la distribución normal? ¿Cómo podría afectar en la dinámica resultante y qué pasaría con las capacidades de carga del sistema? Para comenzar a explorar las respuestas a estas preguntas hay que definir el tipo de interacciones posibles en $\Lambda$ y May presenta un abanico de 5 de ellas \cite{may2019stability}.\\
-\\
-Las interacciones a las que May refiere, únicamente se aplican a su \textit{community matrix} que sería lo equivalente a las matrices Jacobianas de nuestro sistema evaluadas en algún punto fijo (\ref{eqn:Jacobiano}). Estas interacciones no necesariamente aplican a la matriz de incidencias $\Lambda$, sin embargo podrán aplicarse  si se les voltean el signo tal y como se verá más adelante. Las posibles interacciones se reparten de la siguiente forma: para sistemas de May con matrices estructuralmente simétricas únicamente podrán acceder a tres tipos de interacción, las de competencia $(--)$, las de cooperación\footnote{Conocidas también por mutualismo o simbiosis.} $(++)$ y las de presa-depreador $(+-)$ ó $(-+)$.
-\\
-\\
-En sistemas de May puramente aleatorios se tienen 5 tipos de interacción, ya que su matriz de interacciones no necesariamente es estructuralmente simétrica. Las que se agregan son: comensalismo $(+0)$ y amensalismo $(-0)$. \\
-\\
-La relación de cooperación implica que ambas especies se verán beneficiadas de su interacción mutua, en contraste con la competencia en la que ambas se van a ver perjudicadas. Para el caso de la interacción presa-depredador, una de las especies se verá beneficiada mientras que la otra saldrá perjudicada de dicho beneficio. En el  comensalismo una de las especies se beneficia mientras que la otra no presenta ningún impacto. Por el contrario, en el amensalismo una de las especies se perjudica mientras que la otra no presenta algún cambio.
+La cooperación implica que ambas especies se benefician de la interacción $(++)$, mientras que en la competencia ambas resultan perjudicadas $(--)$. En la interacción presa-depredador, una especie se beneficia y la otra se ve perjudicada $(+-)$ ó $(-+)$. En el comensalismo, una especie obtiene un beneficio sin afectar a la otra $(+0)$, mientras que en el amensalismo una especie resulta perjudicada y la otra permanece sin efecto apreciable $(-0)$. 
+\newline
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{lll}
+		\toprule
+		\rowcolor{gray!15}
+		Tipo de interacción & Signo & Interpretación ecológica \\
+		\midrule
+		Cooperación        & $(++)$ & Ambas especies aumentan sus poblaciones.\\
+		Competencia        & $(--)$ & Ambas especies limitan o disminuyen sus poblaciones.\\
+		Presa--depredador  & $(+-)$ ó $(-+)$ & Una especie aumenta su población y la otra la disminuye.\\
+		Comensalismo       & $(+0)$ & Una especie aumenta su población sin afectar a la otra. \\
+		Amensalismo        & $(-0)$ & Una especie disminuye su población sin afectar a la otra. \\
+		\bottomrule
+	\end{tabular}
+	\caption{Tipos de interacciones posibles en sistemas de Lotka--Volterra generalizados.}
+	\label{tab:Interacciones}
+\end{table}
 
-\subsubsection*{Interacciones de May aplicadas a la red de incidencias}
 
-Las interacciones que se aplican a la matriz de incidencias son las mismas que May estipula para sus matrices de interacción solamente que con el signo contrario. Para el caso de la competencia se tendrán $(++)$, en cooperación serán $(--)$, presa-depredación $(-+)$ ó $(+-)$, comensalismo $(-0)$ y por último amensalismo $(+0)$. Para poder ver de que forma afectan los coeficientes $\alpha_{ij}\in\Lambda$  a la dinámica del sistema, extendemos sus ecuaciones (\ref{eqn:LK}) de la siguiente manera:
+\subsubsection*{Interacciones en $\Lambda$}
+
+Las interacciones en la matriz de coeficientes $\Lambda$ se relacionan con la clasificación de May (Tabla \ref{tab:Interacciones}), pero bajo una convención de signo opuesta. En esta formulación, la cooperación se representa como $(--)$, la competencia como $(++)$, la depredación como $(-+)$ ó $(+-)$, y el comensalismo y amensalismo como $(-0)$ y $(+0)$ respectivamente. Esta inversión se debe a que los coeficientes $\alpha_{ij}$ aparecen dentro del término de limitación del crecimiento; por tanto, valores positivos incrementan la presión limitante sobre la especie $i$, mientras que valores negativos la reducen. Para analizar cómo éstos coeficientes afectan la dinámica, reescribimos las ecuaciones \eqref{eqn:LK} separando la contribución de autoregulación de las interacciones interespecíficas:
+
 \begin{equation}\label{eqn:LKextendida}
-	r_ix_i\left (1 - \frac{\alpha_{ii}x_i+\alpha_{i1}x_1+\cdots+\alpha_{iN}x_N}{K_i}\right )\quad\Longleftrightarrow\quad r_ix_i\left (1-\frac{\alpha_{ii}x_i}{K_i}\right )-r_ix_i\left (\frac{\sum_{j\neq i}\alpha_{ij}x_j}{K_i}\right )
+r_ix_i\left (1-\frac{\sum_{j=1}^N\alpha_{ij}x_j}{K_i}\right ) = r_ix_i\left (1-\frac{\alpha_{ii}x_i}{K_i}\right )-r_ix_i\left (\frac{\sum_{j\neq i}\alpha_{ij}x_j}{K_i}\right )
 \end{equation}
-El sistema se puede separar en una componente logística y en una suma de términos no lineales. Para que la componente logística mantenga regulado su crecimiento (omitiendo el resto de términos), es necesario que $\alpha_{ii}>0$, por simplicidad y convenciencia se ha definido en la matriz de incidencias que todos estos elementos sean $\alpha_{ii}=1$, pero en esencia es suficiente con que sean mayor a cero. Observe que si $\alpha_{ii}\leq 0$, entonces el crecimiento será exponencial y sin límites.
-\\
-\\
-Los términos de la suma de (\ref{eqn:LKextendida}) van a aportar valor al término logístico y va a depender del resto de coeficientes $\alpha_{ij}$ junto con su signo. Tomando alguna $\alpha_{ij}$ arbitraria, si su signo es negativo entonces se vuelve positivo con el signo menos de la izquierda y aportará crecimiento a la dinámica de $x_i$, este escenario puede suceder en interacciones de cooperación, en la interacción depredador únicamente y en el comensalismo. Por el contrario si $\alpha_{ij}>0$ entonces va a restar crecimiento a la dinámica de $x_i$ (tal y como se aprecia en el ejemplo \ref{eg:2x2}). En contraparte, este escenario se va a dar en la competencia, en la presa únicamente y en el amensalismo. Nótese que cuando $\alpha_{ij}=0$ no impacta en la evolución de $x_i$. \\
-\\
-Las interacciones negativas que agregan valor al crecimiento de cada especie, generan la oportunidad de que dicho incremento logre sobrepasar la(s) capacidad(es) de carga del sistema, lo que puede generar que el punto de estabilidad de las especies quede por arriba de dichas $K_i$, algo que no se permite en el sistema puramente de competencia. Explorar el balance de las interacciones (positivas y negativas) puede ser un elemento importante que defina el tipo de estabilidad del sistema.\\
-\\
-%Sin embargo, debe de existir un balance entre las interacciones positivas y negativas, ya que si las segundas se sobreponen a las primeras, puede ocurrir un colapso del sistema traducido en crecimiento desmedido. Este escenario corresponderá a aquellos sistemas (\ref{eqn:LK}) inestables resultantes de ciertas configuraciones en $p$, $\sigma$ y $N$ de la matriz de incidencias y se irá revisando más adelante.\\\\
-Dependiendo de la $p$ que forma la matriz de incidencias, cada especie podrá tener a lo mucho $N$ interacciones posibles con diversas magnitudes en función de $\sigma$, lo que implica que cada especie puede tener interacciones de cooperación, competencia, etc, de forma aleatoria (dependiendo si la matriz es estructuralmente simétrica o no). La dinámica resultante se acompleja conforme $N$ es mayor debido a todas las posibles interacciones que afectan significativamente al desarrollo de cada especie. Partiendo de la estructura aleatoria de la red y el peso de las interacciones provenientes de $\mathcal{N}(0,\sigma)$, es complejo de idear tan si quiera un bosquejo de la dinámica resultante del sistema (\ref{eqn:LK}).
 
-\subsubsection*{Interacciones de $\Lambda$ para $N=2$.}
+El segundo término correspondiente a las interacciones interespecíficas, produce un efecto neto sobre la tasa de crecimiento de la especie $i$: sera positivo si $\alpha_{ij}<0$ y negativo si $\alpha_{ij}>0$. En consecuencia, desde la perspectiva de la especie $i$, las interacciones de cooperación, depredación (cuando $i$ es el depredador) y comensalismo favorecen su crecimiento poblacional, mientras que  la competencia, la depredación  (cuando $i$ es la presa) y amensalismo lo reducen. Nótese que si $\alpha_{ij}=0$, la especie $j$ no genera impacto sobre la dinámica de $i$.\\
+\\
+En este contexto, los coeficientes $\alpha_{ii}$ deben ser positivos; por convención, en este trabajo se fija $\alpha_{ii}=1$. Si se tomara $\alpha_{ii}\leq0$, se perdería el mecanismo intrínseco de regulación logística asociada a la especie, eliminando la auto-limitación de su crecimiento. Por esta razón, la contribución de la identidad en $\Lambda$ representa auto-interacciones que inducen un mecanismo de autoregulación del sistema. Por otro lado, coeficientes $\alpha_{ij}<0$ pueden favorecer el crecimiento poblacional de la especie $i$, desplazando el equilibrio efectivo por encima de su capacidad de carga $K_i$, fenómeno que no se aprecia en sistemas competitivos.
+\\
+\\
+%Explorar el balance de las interacciones (positivas y negativas) puede ser un elemento importante que defina el tipo de estabilidad del sistema. Sin embargo, debe de existir un balance entre las interacciones positivas y negativas, ya que si las segundas se sobreponen a las primeras, puede ocurrir un colapso del sistema traducido en crecimiento desmedido. Este escenario corresponderá a aquellos sistemas (\ref{eqn:LK}) inestables resultantes de ciertas configuraciones en $p$, $\sigma$ y $N$ de la matriz de incidencias y se irá revisando más adelante.\\\\
+Dependiendo de los parámetros asociados a $\Lambda$, la probabilidad de conectividad $p$ controla el número esperado de interacciones por especie, mientras que $\sigma$ fija la escala típica de sus magnitudes. En general, cada especie puede interactuar con hasta $N-1$ especies adicionales, dando lugar a cualquiera de los tipos de interacción antes descritos, de acuerdo con el soporte topológico de la red. A medida que el tamaño del sistema \eqref{eqn:LK} crece, su dinámica resultante se vuelve difícil de visualizar de manera directa, por lo que resulta conveniente analizar ejemplos de baja dimensión. En particular, a continuación se extiende el ejemplo bidimensional previo para ilustrar los casos con interacciones de cooperación. 
 
 \begin{ejemplo}\label{eg:2x2CoopyDemás}
-	Se explorará un caso particular de un sistema (\ref{eqn:LK}) para $N=2$ con interacciones de cooperación. Se corroborará si efectivamente su dinámica es capaz de sobrepasar sus capacidades de carga. A través del espacio fase y las series de tiempo se observará dicho fenómeno. El sistema en concreto es
+	En este ejemplo se ajustan los signos del sistema \eqref{eqn:Sist2x2Comp} como a continuación se muestra 
 	\begin{equation}\label{eqn:Sist2x2Coop}
 		\begin{split}
 			\frac{dx}{dt} &= 2x\left (1-\frac{x}{2}\right )+\frac{1}{2}xy\\
 			\frac{dy}{dt} &= 3y\left (1-\frac{y}{3}\right )+xy
 		\end{split}
 	\end{equation}
-	La matriz de incidencias asociada a este caso sería 
+	La matriz de coeficientes de interacción asociada es
 	$$
 	\Lambda = \begin{pmatrix}
 		1 & -\frac{1}{2}\\
 		-1 & 1
 	\end{pmatrix}
 	$$
-	A diferencia del sistema del Ejemplo \ref{eg:2x2} (Ec. \ref{eqn:Sist2x2Comp}) su anti-diagonal es negativa lo que indica que son coeficientes de interacción $(--)$ que propician la cooperación entre ambas especies y fomentan sus crecimientos. Los puntos fijos para este sistema ahora son: $(0,0)$, $(2,0)$, $(0,3)$ y $(7,10)$; las matrices jacobianas asociadas son:
+	Se puede apreciar una interacción de cooperación entre las especies $x$ y $y$; en este caso, dicha interacción favorece el crecimiento de ambas poblaciones, permitiendo que el equilibrio de coexistencia se ubique por encima de sus respectivas capacidades de carga. Los estados estacionarios del sistema son $(0,0)$, $(2,0)$, $(0,3)$ y $(7,10)$. Evaluando la matriz Jacobiana en el estado coexistente se obtiene 
 	$$
-	\mathbb{J}_{(0,0)}=\begin{pmatrix}
-		2 & 0 \\
-		0 & 3
-	\end{pmatrix},\qquad\mathbb{J}_{(2,0)}=\begin{pmatrix}
-	-2 & 1\\
-	0 & 5
-	\end{pmatrix},\qquad\mathbb{J}_{(0,3)}=\begin{pmatrix}
-	3.5 & 0 \\
-	3 & -3
-	\end{pmatrix},\qquad\mathbb{J}_{(7,10)}=\begin{pmatrix}
+	\mathbb{J}_{(7,10)}=\begin{pmatrix}
 	-7 & 3.5\\
 	10 & -10
 	\end{pmatrix}
 	$$
-	Realizando el cálculo de los valores propios de cada una de las matrices de interacción se encuentra que para el primer punto fijo se tiene el conocido y trivial repulsor. En el caso de los puntos fijos de los ejes ahora su estabilidad ha cambiado con respecto del sistema (\ref{eqn:Sist2x2Comp}), se tienen puntos sillas que resultan ser inestables, ya que para $t\to\infty$ las soluciones terminan divergiendo. Por último se encuentra que los valores propios del punto fijo restante son negativos, lo que implica que todas las soluciones del sistema irán a converger a este punto.
+	cuyos valores propios son $\lambda_{1,2}=\frac{-17\pm\sqrt{149}}{2}<0$. Por lo tanto, el punto $(7,10)$ es localmente asintóticamente estable, lo que implica que trayectorias cercanas convergen a este punto de equilibrio conforme $t\to\infty$. En la Figura \eqref{fig:CooperacionEspecies} se muestran las series de tiempo y el espacio fase, donde se observa que las poblaciones se estabilizan en valores superiores a sus respectivas capacidades de carga.
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[scale=0.24]{../Imagenes/Cooperacion de especies}
-		\caption{Sistema de Lotka-Volterra con interacciones de cooperación dados por las ecuaciones (\ref{eqn:Sist2x2Coop}). Tasas de crecimiento y capacidades de carga: $r_x=K_x=2$ y $r_y=K_y=3$. \textbf{A}) Series de tiempo del sistema para las especies $x(t)$ y $y(t)$ bajo la condición inicial $(1,2)$. (\textbf{B}) Espacio fase del sistema con sus puntos fijos asociados, se muestra solamente un único punto fijo estable.}
+		\caption{Sistema de Lotka-Volterra con interacciones de cooperación dados por las ecuaciones (\ref{eqn:Sist2x2Coop}). Tasas de crecimiento y capacidades de carga: $r_x=K_x=2$ y $r_y=K_y=3$. (\textbf{A}) Series de tiempo del sistema para las especies $x(t)$ y $y(t)$ bajo la condición inicial $(1,2)$. (\textbf{B}) Espacio fase del sistema con sus puntos fijos asociados, se muestra solamente un único punto fijo estable.}
 		\label{fig:CooperacionEspecies}
-	\end{figure}\\
-	\\
-	 Esto es cuanto menos interesante, ya que se puede observar que efectivamente la cooperación entre las especies $x$ y $y$ es capaz de superar sus propias capacidades de carga que fungían como límites. Bajo este escenario el concepto de la capacidad de carga podría tomar otro significado: ahora será un parámetro que regule el crecimiento de las especies, cuanto mayor sea la capacidad de carga será más difícil el crecimiento de las $x_i$; en caso contrario podrá haber una fácil apertura para el crecimiento desmedido debido a que las $K_i$ no serán capaces de contener las interacciones $\alpha_{ij}<0$, aunque por su puesto también dependerá de la magnitud de las $\alpha_{ij}\in\Lambda$.\\
+	\end{figure}
+	
+	En este contexto, el concepto de capacidad de carga deja de interpretarse como una cota rígida para la población y pasa a entenderse como un parámetro regulador de crecimiento. En ausencia de interacciones interespecíficas, $K_i$ fija el nivel de saturación logística; sin embargo, cuando se incorporan las interacciones, el término $\sum_j \alpha_{ij}x_j$ puede modificar de forma sustancial esta regulación. Si las contribuciones efectivas asociadas a interacciones que favorecen el crecimiento dominan sobre el término autoregulatorio, el sistema puede presentar equilibrios por encima de $K_i$ o incluso dinámicas no acotadas. \\
 	 \\
- 	La cooperación entre especies fomenta su crecimiento y ahora su estabilidad se posiciona en puntos que quedan por arriba de sus capacidades de carga. Cuando se tienen las interacciones comensalismo (-0) y amensalismo (+0), solo una de las especies seguirá su comportamiento logístico mientras que la otra encontrará su estabilidad arriba o debajo de su capacidad de carga. La interacción de depredación $(-+)$ la especie depredadora se estabiliza arriba de su $K_i$ y la presa por debajo de la misma.\\
+ 	En sistemas de baja dimensión pueden obtenerse condiciones explícitas que relacionen la estabilidad con la intensidad de las interacciones; este tipo de resultados se retoman más adelante. \\
  	\\
- 	Modificando el sistema (\ref{eqn:Sist2x2Coop}) de tal modo que se considere cada una de estas interacciones. En este caso se elige que $\alpha_{21}=0$ de la ecuación $\dot{y}$ y $\alpha_{12}=\pm\frac{1}{2}$ de la ecuación $\dot{x}$ para cubrir los casos de comensalismo y amensalismo. La ecuación $\dot{y}$ queda reducida a una ecuación logística, la cual no se verá afectada por la dinámica de $\dot{x}$ y se mantendrá estable en su capacidad de carga. 	Para el caso de depredación se utiliza $\alpha_{12}=\frac{1}{2}$ y $\alpha_{21}=-1$ y es como una combinación de los anteriores, una de las especies logra estabilizarse en un punto superior a su capacidad de carga mientras que la otra se establece en algún punto menor a su capacidad de carga pero sin llegar a extinguirse. En estos casos particulares los coeficientes $\alpha_{ij}<0$ fueron soportados sus capacidades de carga, pero dependiendo de su magnitud es que pudo desenvolver en sistemas estables. Hasta el momento, la estabilidad va a depender de: la magnitud de las capacidades de carga y los coeficientes de interacción en relación a las anteriores.
+ 	Para ilustrar el papel del signo de los coeficientes, se modifica nuevamente al sistema \eqref{eqn:Sist2x2Coop} para considerar interacciones de comensalismo, amensalismo y depredación. Las simulaciones correspondientes muestran que en el comensalismo la especie beneficiada puede alcanzar niveles superiores a su capacidad de carga efectiva mientras la otra permanece prácticamente inalterada; en el amensalismo, una especie ve reducido su nivel poblacional mientras la otra no experimenta cambios apreciables; finalmente, la depredación combina ambos efectos, con una especie favorecida y la otra perjudicada. Las series de tiempo se muestran en la Figura \eqref{fig:RestoInteraccionesST}
  	\begin{figure}[h!]
  		\centering
  		\includegraphics[scale=0.2]{../Imagenes/STrestoInteracciones}
- 		\caption{Series de tiempo para las interacciones comensalismo, amensalismo y depredación. (\textbf{A}) Para el comensalismo se definió $\alpha_{21}=0$ y $\alpha_{12}=-\frac{1}{2}$. (\textbf{B}) Para el amensalismo se consideró $\alpha_{21}=0$ y $\alpha_{12}=\frac{1}{2}$ (\textbf{C}) Para la depredación se consideró $\alpha_{21}=-1$ y $\alpha_{12}=\frac{1}{2}$.}
+ 		\caption{Series de tiempo para las interacciones comensalismo, amensalismo y depredación modificando el sistema \eqref{eqn:Sist2x2Coop}. (\textbf{A}) Para el comensalismo se definió $\alpha_{21}=0$ y $\alpha_{12}=-\frac{1}{2}$. (\textbf{B}) Para el amensalismo se consideró $\alpha_{21}=0$ y $\alpha_{12}=\frac{1}{2}$ (\textbf{C}) Para la depredación se consideró $\alpha_{21}=-1$ y $\alpha_{12}=\frac{1}{2}$.}
  		\label{fig:RestoInteraccionesST}
  	\end{figure}
- 	
-
 \end{ejemplo}
-En esta sección se ha construido la matriz de incidencias $\Lambda$ necesaria para definir las interacciones del sistema (\ref{eqn:LK}). Se hizo con base en una red de Erdös–Rényi dirigida o no dirigida, contemplando que el peso de los enlaces provienen de una distribución normal centrada en cero y desviación estándar $\sigma$, y agregando autoenlaces con peso $1$. Posteriormente se revisaron las posibles interacciones que se pueden obtener de $\Lambda$ siendo 3 o hasta 5 dependiendo del tipo de red aleatoria escogida. Se ha analizado que los coeficientes $\alpha_{ii}$ deben ser positivos para que respeten el comportamiento logístico de cada especie, y que los coeficientes $\alpha_{ij}<0$ son capaces de agregar valor al crecimiento de las especies. \\
-\\
-Por último se ha explorado en un primer nivel que la estabilidad puede depender del balance entre coeficientes positivos y negativos, y que la capacidad de carga juega un papel importante en la contención de los crecimientos. Por lo tanto ya se tiene todo para comenzar a integrar numéricamente el sistema para cualquier $N$, el siguiente paso será determinar los puntos fijos y la matriz Jacobiana del sistema para analizar aspectos alrededor de ella. En la sección (\ref{sec:poblacionesLK}) se muestra la implementación computacional de este sistema.
-\newpage
-\section{Puntos fijos}\label{sec:PuntosFijos}
+En esta sección se estableció la forma en que la estructura de la conectividad en conjunto con la magnitud de las interacciones determinan la matriz de coeficientes $\Lambda$, así como la clasificación de los distintos tipos de interacción ecológica y su efecto cualitativo sobre la dinámica poblacional. Estos elementos permiten pasar de una descripción estructural del sistema a una análisis dinámico propiamente dicho. En particular, la información obtenida en $\Lambda$ condiciona la existencia y naturaleza de los estados estacionarios del sistema, por lo que en la siguiente sección se abordará el estudio de los puntos de equilibrio y su estabilidad.
 
-En este punto conviene realizar un análisis sobre los puntos fijos del sistema, ya que  es el puente entre $\Lambda$ con la tupla $(p,\sigma,N)$ y la matriz Jacobiana con su distribución espectral, misma que define la estabilidad del sistema. Las diferentes configuraciones de la tupla generarán a su vez diversas configuraciones de $\Lambda$ que devengan en puntos fijos estables o inestables. Por lo tanto será indispensable hallar dichas configuraciones para obtener una noción del mapa de estabilidad del sistema. Para comenzar, es necesario hallar los puntos fijos que se obtienen al resolver el conjunto de ecuaciones que se encuentra entre paréntesis del sistema (\ref{eqn:LK})
+\section{Estados estacionarios}\label{sec:PuntosFijos}
+
+El análisis de los estados estacionarios es fundamental para comprender la estabilidad dinámica del sistema. La naturaleza de los puntos de equilibrio depende de las interacciones entre especies, codificadas en la matriz de coeficientes de interacción $\Lambda$. En esta sección se bosquejará un análisis exploratorio centrado en el estado estacionario coexistente, sin perder de vista que constituye solo uno de los múltiples equilibrios posibles. Este estado resulta de particular interés porque representa la coexistencia simultánea en todas las especies y permite examinar, de manera tratable, cómo su estabilidad puede variar en función de los parámetros $(p,\sigma,N)$. Para determinar los estados estacionarios se imponen $\dot{x}_i=0$ en el sistema \eqref{eqn:LK}. Esto implica que para cada $i$,
 \begin{equation}\label{eqn:EcsPuntoFijo}
-	1-\frac{\sum_{j=1}^N\alpha_{ij}x_j}{K_i}=0
+	x_i=0\quad\text{ó}\quad 1-\frac{\sum_{j=1}^N\alpha_{ij}x_j}{K_i}=0
 \end{equation}
-Es posible resolverlo bajo diversas restricciones, por ejemplo asumiendo que algunas especies no sobreviven y resolver para el subconjunto que no contempla dicha especie, es decir, asumiendo $x_k=0$ para alguna (o varias) $k\in\{1,...,N\}$. Pero el caso de interés es asumiendo que todas las poblaciones sobreviven; de ese modo las ecuaciones se pueden reescribir de la siguiente manera
+Por tanto, el sistema admite múltiples soluciones asociadas a la extinción de una o varias especies. El caso de interés es el estado coexistente, en el cual $x_i^*>0$ para toda $i$. En este caso las ecuaciones se reducen a 
+$$\sum_{j=1}^N\alpha_{ij}x_j^*=K_i$$
+lo cual puede escribirse de forma matricial como
 $$\Lambda X^*=\mathrm{K},\qquad\text{con }\mathrm{K}=(K_1,...,K_n)$$
 %Aqui hay un argumento fuerte para la estabilidad en función de la tupla.
-entonces hallar el punto fijo es resolver el sistema $X^*=\Lambda^{-1}\mathrm{K}$. Gracias a que la diagonal esta fijada al valor $d=1$, mitiga la probabilidad de que sea singular y garantiza que sea invertible con alta probabilidad. Es de interés que el resultado del punto fijo sea positivo puesto que no tiene sentido físico considerar poblaciones negativas (que probablemente devengan en una dinámica inestable). El sistema hasta ahora no garantiza que $x_i^*>0$ para toda $x_i^*\in X^*$, puesto que aunque $\mathrm{K}>0$, las entradas de $\Lambda$ pueden ser positivas y negativas con una misma probabilidad. Si se considera a $\mathrm{K}$ con entradas constantes, es decir, $\mathrm{K}=k\vec{1}$ con $k>0$ entonces la distribución de $X^*$ puede darse a su alrededor con base en $(p,\sigma,N)$. \\
+Siempre que $\Lambda$ sea invertible, el coexistente viene dado por $X^*=\Lambda^{-1}\mathrm{K}$. La fijación de la diagonal en $d=1$ introduce un término de autoregulación que desplaza Gracias a que la diagonal esta fijada al valor $d=1$, mitiga la probabilidad de que sea singular y garantiza que sea invertible con alta probabilidad. El sistema hasta ahora no garantiza que $x_i^*>0$ para toda $x_i^*\in X^*$, puesto que aunque $\mathrm{K}>0$, las entradas de $\Lambda$ pueden ser positivas y negativas con una misma probabilidad. Si se considera a $\mathrm{K}$ con entradas constantes, es decir, $\mathrm{K}=k\vec{1}$ con $k>0$ entonces la distribución de $X^*$ puede darse a su alrededor con base en $(p,\sigma,N)$. \\
 \\
 Se proponen las siguientes suposiciones: Cuando $p\ll 1$ entonces $\Lambda\approx I$ y por lo tanto $\Lambda^{-1}\approx I$, en consecuencia $X^* \approx \mathrm{K}$. Sin embargo cuando $p$ llega a valores intermedios o grandes, existe mayor cantidad de interacciones que ensancha la distribución alrededor de $\mathrm{K}$ hacia valores negativos, haciendo que $X^*$ contenga entradas negativas. Analizando a $\sigma$ se tiene el caso trivial cuando $\sigma=0$ entonces $\Lambda=I$ y por tanto $X^*=K$. Cuando $\sigma\ll 1$ se generan pequeñas fluctuaciones y la distribución comienza a ensancharse alrededor de $\mathrm{K}$. Cuando $\sigma$ toma valores intermedios $0.3<\sigma<0.5$ entonces la distribución se ensancha de tal forma que comienzan a emerger términos negativos en las entradas de $X^*$. Finalmente cuando $\sigma>0.5$ la cantidad de entradas negativas se amplifica de modo que va disminuyendo la probabilidad de que existan puntos fijos con entradas positivas.\\
 \\
@@ -381,7 +384,7 @@ De la matriz Jacobiana se puede observar como todas sus entradas voltean el sign
 	\end{proof}
 \end{proposición}
 
-Es importante recordar que las interacciones de auto-regulación se mantienen en la diagonal de $\Lambda$ (Ver ec. (\ref{eqn:LKextendida})); cuando la matriz de incidencias se transforma en la Jacobiana, el punto fijo debe de contener entradas positivas para poder respetar las interacciones de auto-regulación que May define en \cite{may1972will}. Si el punto fijo contiene entradas negativas es casi un hecho que el sistema será inestable porque existirá al menos un disco de Gershgorin con centro en el semiplano positivo de $\mathbb{C}$ que independientemente de como sea su radio, es altamente probable que contenga valores propios positivos.\\
+Es importante recordar que las interacciones de autoregulación se mantienen en la diagonal de $\Lambda$ (Ver ec. (\ref{eqn:LKextendida})); cuando la matriz de incidencias se transforma en la Jacobiana, el punto fijo debe de contener entradas positivas para poder respetar las interacciones de autoregulación que May define en \cite{may1972will}. Si el punto fijo contiene entradas negativas es casi un hecho que el sistema será inestable porque existirá al menos un disco de Gershgorin con centro en el semiplano positivo de $\mathbb{C}$ que independientemente de como sea su radio, es altamente probable que contenga valores propios positivos.\\
 \\
 Para poder determinar un parámetro crítico de transición en la estabilidad de los sistemas, es imprescindible conocer donde se ubica el $\max(\lambda_\mathcal{J})$ y encontrar la forma de controlar su posición para poder saber las condiciones que lo llevan a ser negativo, cero o positivo. Aunque existe una forma dada para resolver esta conjetura, la cual se abordará en la siguiente sección, tiene un gran inconveniente: la Jacobiana tiene en su diagonal toda una distribución de valores que dificulta la definición de un radio espectral que determine la posición de Re$(\lambda_{\max}(\mathcal{J}))$. Esta conjetura ligada con la correspondiente de la sección anterior también llega al límite de esta tesis y más adelante se presentará un análisis detallando sus razones.
 \newpage
