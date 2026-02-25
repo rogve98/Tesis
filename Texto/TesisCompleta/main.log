@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.14)  23 FEB 2026 15:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.14)  25 FEB 2026 03:06
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1241,8 +1241,9 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 Package hyperref Info: Option `colorlinks' set `true' on input line 43.
 \c@proposición=\count424
 \c@teorema=\count425
-\c@definición=\count426
-\c@ejemplo=\count427
+\c@corolario=\count426
+\c@definición=\count427
+\c@ejemplo=\count428
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/svg\svg.sty
 Package: svg 2020/11/26 v2.02k (include SVG pictures)
@@ -1269,9 +1270,9 @@ Applying: [2021/05/01] Usage of raw or classic option list on input line 252.
 Already applied: [0000/00/00] Usage of raw or classic option list on input line
  368.
 )
-\c@svg@param@lastpage=\count428
+\c@svg@param@lastpage=\count429
 \svg@box=\box142
-\c@svg@param@currpage=\count429
+\c@svg@param@currpage=\count430
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/transparent\transpare
 nt.sty
@@ -1289,54 +1290,54 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 Package: biblatex 2024/03/21 v3.20 programmable bibliographies (PK/MW)
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count430
+\lrq@indent=\count431
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
-\c@tabx@nest=\count431
-\c@listtotal=\count432
-\c@listcount=\count433
-\c@liststart=\count434
-\c@liststop=\count435
-\c@citecount=\count436
-\c@citetotal=\count437
-\c@multicitecount=\count438
-\c@multicitetotal=\count439
-\c@instcount=\count440
-\c@maxnames=\count441
-\c@minnames=\count442
-\c@maxitems=\count443
-\c@minitems=\count444
-\c@citecounter=\count445
-\c@maxcitecounter=\count446
-\c@savedcitecounter=\count447
-\c@uniquelist=\count448
-\c@uniquename=\count449
-\c@refsection=\count450
-\c@refsegment=\count451
-\c@maxextratitle=\count452
-\c@maxextratitleyear=\count453
-\c@maxextraname=\count454
-\c@maxextradate=\count455
-\c@maxextraalpha=\count456
-\c@abbrvpenalty=\count457
-\c@highnamepenalty=\count458
-\c@lownamepenalty=\count459
-\c@maxparens=\count460
-\c@parenlevel=\count461
-\blx@tempcnta=\count462
-\blx@tempcntb=\count463
-\blx@tempcntc=\count464
-\c@blx@maxsection=\count465
-\blx@maxsegment@0=\count466
-\blx@notetype=\count467
-\blx@parenlevel@text=\count468
-\blx@parenlevel@foot=\count469
-\blx@sectionciteorder@0=\count470
-\blx@sectionciteorderinternal@0=\count471
-\blx@entrysetcounter=\count472
-\blx@biblioinstance=\count473
+\c@tabx@nest=\count432
+\c@listtotal=\count433
+\c@listcount=\count434
+\c@liststart=\count435
+\c@liststop=\count436
+\c@citecount=\count437
+\c@citetotal=\count438
+\c@multicitecount=\count439
+\c@multicitetotal=\count440
+\c@instcount=\count441
+\c@maxnames=\count442
+\c@minnames=\count443
+\c@maxitems=\count444
+\c@minitems=\count445
+\c@citecounter=\count446
+\c@maxcitecounter=\count447
+\c@savedcitecounter=\count448
+\c@uniquelist=\count449
+\c@uniquename=\count450
+\c@refsection=\count451
+\c@refsegment=\count452
+\c@maxextratitle=\count453
+\c@maxextratitleyear=\count454
+\c@maxextraname=\count455
+\c@maxextradate=\count456
+\c@maxextraalpha=\count457
+\c@abbrvpenalty=\count458
+\c@highnamepenalty=\count459
+\c@lownamepenalty=\count460
+\c@maxparens=\count461
+\c@parenlevel=\count462
+\blx@tempcnta=\count463
+\blx@tempcntb=\count464
+\blx@tempcntc=\count465
+\c@blx@maxsection=\count466
+\blx@maxsegment@0=\count467
+\blx@notetype=\count468
+\blx@parenlevel@text=\count469
+\blx@parenlevel@foot=\count470
+\blx@sectionciteorder@0=\count471
+\blx@sectionciteorderinternal@0=\count472
+\blx@entrysetcounter=\count473
+\blx@biblioinstance=\count474
 \labelnumberwidth=\skip88
 \labelalphawidth=\skip89
 \biblabelsep=\skip90
@@ -1348,9 +1349,9 @@ File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 \blx@bcfin=\read8
 \blx@bcfout=\write8
 \blx@langwohyphens=\language80
-\c@mincomprange=\count474
-\c@maxcomprange=\count475
-\c@mincompwidth=\count476
+\c@mincomprange=\count475
+\c@maxcomprange=\count476
+\c@mincompwidth=\count477
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -1361,74 +1362,74 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'numeric.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count477
-\c@savedafterword=\count478
-\c@annotator=\count479
-\c@savedannotator=\count480
-\c@author=\count481
-\c@savedauthor=\count482
-\c@bookauthor=\count483
-\c@savedbookauthor=\count484
-\c@commentator=\count485
-\c@savedcommentator=\count486
-\c@editor=\count487
-\c@savededitor=\count488
-\c@editora=\count489
-\c@savededitora=\count490
-\c@editorb=\count491
-\c@savededitorb=\count492
-\c@editorc=\count493
-\c@savededitorc=\count494
-\c@foreword=\count495
-\c@savedforeword=\count496
-\c@holder=\count497
-\c@savedholder=\count498
-\c@introduction=\count499
-\c@savedintroduction=\count500
-\c@namea=\count501
-\c@savednamea=\count502
-\c@nameb=\count503
-\c@savednameb=\count504
-\c@namec=\count505
-\c@savednamec=\count506
-\c@translator=\count507
-\c@savedtranslator=\count508
-\c@shortauthor=\count509
-\c@savedshortauthor=\count510
-\c@shorteditor=\count511
-\c@savedshorteditor=\count512
-\c@labelname=\count513
-\c@savedlabelname=\count514
-\c@institution=\count515
-\c@savedinstitution=\count516
-\c@lista=\count517
-\c@savedlista=\count518
-\c@listb=\count519
-\c@savedlistb=\count520
-\c@listc=\count521
-\c@savedlistc=\count522
-\c@listd=\count523
-\c@savedlistd=\count524
-\c@liste=\count525
-\c@savedliste=\count526
-\c@listf=\count527
-\c@savedlistf=\count528
-\c@location=\count529
-\c@savedlocation=\count530
-\c@organization=\count531
-\c@savedorganization=\count532
-\c@origlocation=\count533
-\c@savedoriglocation=\count534
-\c@origpublisher=\count535
-\c@savedorigpublisher=\count536
-\c@publisher=\count537
-\c@savedpublisher=\count538
-\c@language=\count539
-\c@savedlanguage=\count540
-\c@origlanguage=\count541
-\c@savedoriglanguage=\count542
-\c@pageref=\count543
-\c@savedpageref=\count544
+\c@afterword=\count478
+\c@savedafterword=\count479
+\c@annotator=\count480
+\c@savedannotator=\count481
+\c@author=\count482
+\c@savedauthor=\count483
+\c@bookauthor=\count484
+\c@savedbookauthor=\count485
+\c@commentator=\count486
+\c@savedcommentator=\count487
+\c@editor=\count488
+\c@savededitor=\count489
+\c@editora=\count490
+\c@savededitora=\count491
+\c@editorb=\count492
+\c@savededitorb=\count493
+\c@editorc=\count494
+\c@savededitorc=\count495
+\c@foreword=\count496
+\c@savedforeword=\count497
+\c@holder=\count498
+\c@savedholder=\count499
+\c@introduction=\count500
+\c@savedintroduction=\count501
+\c@namea=\count502
+\c@savednamea=\count503
+\c@nameb=\count504
+\c@savednameb=\count505
+\c@namec=\count506
+\c@savednamec=\count507
+\c@translator=\count508
+\c@savedtranslator=\count509
+\c@shortauthor=\count510
+\c@savedshortauthor=\count511
+\c@shorteditor=\count512
+\c@savedshorteditor=\count513
+\c@labelname=\count514
+\c@savedlabelname=\count515
+\c@institution=\count516
+\c@savedinstitution=\count517
+\c@lista=\count518
+\c@savedlista=\count519
+\c@listb=\count520
+\c@savedlistb=\count521
+\c@listc=\count522
+\c@savedlistc=\count523
+\c@listd=\count524
+\c@savedlistd=\count525
+\c@liste=\count526
+\c@savedliste=\count527
+\c@listf=\count528
+\c@savedlistf=\count529
+\c@location=\count530
+\c@savedlocation=\count531
+\c@organization=\count532
+\c@savedorganization=\count533
+\c@origlocation=\count534
+\c@savedoriglocation=\count535
+\c@origpublisher=\count536
+\c@savedorigpublisher=\count537
+\c@publisher=\count538
+\c@savedpublisher=\count539
+\c@language=\count540
+\c@savedlanguage=\count541
+\c@origlanguage=\count542
+\c@savedoriglanguage=\count543
+\c@pageref=\count544
+\c@savedpageref=\count545
 \shorthandwidth=\skip96
 \shortjournalwidth=\skip97
 \shortserieswidth=\skip98
@@ -1455,19 +1456,19 @@ Package biblatex Info: ... file 'biblatex.def' found.
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
 File: biblatex.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
-\c@textcitecount=\count545
-\c@textcitetotal=\count546
-\c@textcitemaxnames=\count547
-\c@biburlbigbreakpenalty=\count548
-\c@biburlbreakpenalty=\count549
-\c@biburlnumpenalty=\count550
-\c@biburlucpenalty=\count551
-\c@biburllcpenalty=\count552
+\c@textcitecount=\count546
+\c@textcitetotal=\count547
+\c@textcitemaxnames=\count548
+\c@biburlbigbreakpenalty=\count549
+\c@biburlbreakpenalty=\count550
+\c@biburlnumpenalty=\count551
+\c@biburlucpenalty=\count552
+\c@biburllcpenalty=\count553
 \biburlbigskip=\muskip19
 \biburlnumskip=\muskip20
 \biburlucskip=\muskip21
 \biburllcskip=\muskip22
-\c@smartand=\count553
+\c@smartand=\count554
 )
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
@@ -1481,8 +1482,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard
 .bbx
 File: standard.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count554
-\c@bbx:relatedtotal=\count555
+\c@bbx:relatedcount=\count555
+\c@bbx:relatedtotal=\count556
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
@@ -1516,7 +1517,7 @@ Package: expl3 2024-07-20 L3 programming layer (loader)
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-p
 dftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count556
+\l__color_backend_stack_int=\count557
 \l__pdf_internal_box=\box143
 ))
 Package biblatex Info: ... and expl3
@@ -1542,32 +1543,34 @@ runsystem(del main.aex)...executed.
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count557
-\@quotereset=\count558
+\@quotelevel=\count558
+\@quotereset=\count559
 (main.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
- (TeX_files/chapter02.aux))
+ (TeX_files/Introducción.aux) (TeX_files/chapter01.aux)
+(TeX_files/chapter02.aux) (TeX_files/chapter03.aux) (TeX_files/Conclusiones.aux
+) (TeX_files/Apéndices.aux) (TeX_files/Anexo.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1603,22 +1606,22 @@ LaTeX Font Info:    ... okay on input line 76.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \. on input line 76.
-LaTeX Info: Redefining \% on input line 76.
+LaTeX Info: Redefining \. on input line 77.
+LaTeX Info: Redefining \% on input line 77.
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.
 mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count559
+\scratchcounter=\count560
 \scratchdimen=\dimen335
 \scratchbox=\box144
-\nofMPsegments=\count560
-\nofMParguments=\count561
+\nofMPsegments=\count561
+\nofMParguments=\count562
 \everyMPshowfont=\toks77
-\MPscratchCnt=\count562
+\MPscratchCnt=\count563
 \MPscratchDim=\dimen336
-\MPnumerator=\count563
-\makeMPintoPDFobject=\count564
+\MPnumerator=\count564
+\makeMPintoPDFobject=\count565
 \everyMPtoPDFconversion=\toks78
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf
@@ -1634,7 +1637,7 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 76.
+Package hyperref Info: Link coloring ON on input line 77.
  (main.out) (main.out)
 \@outlinefile=\write9
 \openout9 = `main.out'.
@@ -1654,8 +1657,8 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (main.bbl)
-Package biblatex Info: Reference section=0 on input line 76.
-Package biblatex Info: Reference segment=0 on input line 76.
+Package biblatex Info: Reference section=0 on input line 77.
+Package biblatex Info: Reference segment=0 on input line 77.
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: a4paper
@@ -1688,35 +1691,35 @@ Package biblatex Info: Reference segment=0 on input line 76.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<Escudo-UNAM.pdf, id=42, 300.51309pt x 337.88977pt>
+<Escudo-UNAM.pdf, id=198, 300.51309pt x 337.88977pt>
 File: Escudo-UNAM.pdf Graphic file (type pdf)
 <use Escudo-UNAM.pdf>
-Package pdftex.def Info: Escudo-UNAM.pdf  used on input line 81.
+Package pdftex.def Info: Escudo-UNAM.pdf  used on input line 82.
 (pdftex.def)             Requested size: 68.77722pt x 77.33466pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 81.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 82.
 
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 81.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 82.
 
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<Escudo-FCIENCIAS.pdf, id=43, 359.74399pt x 411.136pt>
+<Escudo-FCIENCIAS.pdf, id=199, 359.74399pt x 411.136pt>
 File: Escudo-FCIENCIAS.pdf Graphic file (type pdf)
 <use Escudo-FCIENCIAS.pdf>
-Package pdftex.def Info: Escudo-FCIENCIAS.pdf  used on input line 81.
+Package pdftex.def Info: Escudo-FCIENCIAS.pdf  used on input line 82.
 (pdftex.def)             Requested size: 67.66591pt x 77.33466pt.
 
-Underfull \hbox (badness 10000) detected at line 81
+Underfull \hbox (badness 10000) detected at line 82
 \OT1/cmr/bx/n/14.4 T E S I S
  []
 
 
-Underfull \hbox (badness 10000) detected at line 81
+Underfull \hbox (badness 10000) detected at line 82
 \OT1/cmr/m/n/10.95 P R E S E N T A :
  []
 
@@ -1742,16 +1745,16 @@ iple pdfs with page group included in a single page
 
 ]
 
-LaTeX Info: Redefining \. on input line 90.
-LaTeX Info: Redefining \% on input line 90.
+LaTeX Info: Redefining \. on input line 91.
+LaTeX Info: Redefining \% on input line 91.
 [4
 
 ]
 
 [5]
 
-LaTeX Info: Redefining \. on input line 92.
-LaTeX Info: Redefining \% on input line 92.
+LaTeX Info: Redefining \. on input line 93.
+LaTeX Info: Redefining \% on input line 93.
 [6
 
 ] (main.toc
@@ -1771,33 +1774,59 @@ Package spanish Warning: Replacing `OT1/cmr/bx/sc' by
 Package spanish Warning: Replacing `OT1/cmr/bx/sc' by 
 (spanish)                faked small caps on input line 3.
 
-)
+
+Package spanish Warning: Replacing `OT1/cmr/bx/sc' by 
+(spanish)                faked small caps on input line 4.
+
+
+
+[7])
 \tf@toc=\write10
 \openout10 = `main.toc'.
 
 
 
-[7]
-
-LaTeX Info: Redefining \. on input line 93.
-LaTeX Info: Redefining \% on input line 93.
-[8
-
-] (main.lof
+LaTeX Info: Redefining \. on input line 94.
+LaTeX Info: Redefining \% on input line 94.
+[8] (main.lof
 LaTeX Info: Redefining \sptext on input line 1.
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-)
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[9
+
+]
+
+LaTeX Info: Redefining \sptext on input line 28.
+LaTeX Info: Redefining \. on input line 28.
+LaTeX Info: Redefining \% on input line 28.
+[10]
+
+LaTeX Info: Redefining \sptext on input line 44.
+LaTeX Info: Redefining \. on input line 44.
+LaTeX Info: Redefining \% on input line 44.
+[11]
+
+LaTeX Info: Redefining \sptext on input line 63.
+LaTeX Info: Redefining \. on input line 63.
+LaTeX Info: Redefining \% on input line 63.
+[12])
 \tf@lof=\write11
 \openout11 = `main.lof'.
 
 
 
-[9]
+LaTeX Info: Redefining \. on input line 95.
+LaTeX Info: Redefining \% on input line 95.
+[13]
 
-LaTeX Info: Redefining \. on input line 94.
-LaTeX Info: Redefining \% on input line 94.
-[10
+LaTeX Info: Redefining \. on input line 95.
+LaTeX Info: Redefining \% on input line 95.
+[14
 
 ] (main.lot
 LaTeX Info: Redefining \sptext on input line 1.
@@ -1809,11 +1838,11 @@ LaTeX Info: Redefining \% on input line 1.
 
 
 
-[11]
+[15]
 
-LaTeX Info: Redefining \. on input line 95.
-LaTeX Info: Redefining \% on input line 95.
-[12
+LaTeX Info: Redefining \. on input line 96.
+LaTeX Info: Redefining \% on input line 96.
+[16
 
 ] (main.loa)
 \tf@loa=\write13
@@ -1821,21 +1850,197 @@ LaTeX Info: Redefining \% on input line 95.
 
 
 
-[13]
+[17]
+\openout2 = `./TeX_files/Introducción.aux'.
 
-LaTeX Info: Redefining \. on input line 99.
-LaTeX Info: Redefining \% on input line 99.
-[14
+ (TeX_files/Introducción.tex
+
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+[18
+
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 3--34
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--34
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--34
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--34
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--34
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--34
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--34
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--34
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--34
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--34
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--34
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--34
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--34
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--34
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[19]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+LaTeX Info: Redefining \. on input line 34.
+LaTeX Info: Redefining \% on input line 34.
+[20]
+
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 35--39
+
+ []
+
+)
+
+LaTeX Info: Redefining \. on input line 98.
+LaTeX Info: Redefining \% on input line 98.
+[22]
+\openout2 = `./TeX_files/chapter01.aux'.
+
+ (TeX_files/chapter01.tex
+Cap\'{\i }tulo 1.
+
+
+[1
+
+
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 15--19
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--28
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--28
+
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 28.
+LaTeX Info: Redefining \% on input line 28.
+[2]
+
+LaTeX Info: Redefining \. on input line 32.
+LaTeX Info: Redefining \% on input line 32.
+[3]
+<../Imagenes/TransicionesdeMay.png, id=655, 3011.25pt x 1204.5pt>
+File: ../Imagenes/TransicionesdeMay.png Graphic file (type png)
+<use ../Imagenes/TransicionesdeMay.png>
+Package pdftex.def Info: ../Imagenes/TransicionesdeMay.png  used on input line 
+35.
+(pdftex.def)             Requested size: 481.80984pt x 192.72394pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--49
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--49
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--49
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--49
+
+ []
+
+
+Underfull \vbox (badness 8056) has occurred while \output is active []
+
+
+
+LaTeX Info: Redefining \. on input line 49.
+LaTeX Info: Redefining \% on input line 49.
+[4 <../Imagenes/TransicionesdeMay.png>])
+
+LaTeX Info: Redefining \. on input line 101.
+LaTeX Info: Redefining \% on input line 101.
+[5]
 \openout2 = `./TeX_files/chapter02.aux'.
 
  (TeX_files/chapter02.tex
-Cap\'{\i }tulo 1.
 
-LaTeX Warning: Reference `eqn:EqLogistica' on page 1 undefined on input line 8.
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+[6
 
 
+
+
+]
+Cap\'{\i }tulo 2.
 
 Underfull \hbox (badness 10000) in paragraph at lines 7--11
 
@@ -1851,10 +2056,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 
-[1
-
-
-]
+[7]
 Underfull \hbox (badness 10000) in paragraph at lines 37--43
 
  []
@@ -1864,7 +2066,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 37--43
 
  []
 
-<../Imagenes/Competencia de especies.png, id=169, 1806.75pt x 1606.0pt>
+<../Imagenes/Competencia de especies.png, id=683, 1806.75pt x 1606.0pt>
 File: ../Imagenes/Competencia de especies.png Graphic file (type png)
 <use ../Imagenes/Competencia de especies.png>
 Package pdftex.def Info: ../Imagenes/Competencia de especies.png  used on input
@@ -1874,7 +2076,7 @@ Package pdftex.def Info: ../Imagenes/Competencia de especies.png  used on input
 
 LaTeX Info: Redefining \. on input line 61.
 LaTeX Info: Redefining \% on input line 61.
-[2]
+[8]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 83.
@@ -1890,7 +2092,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package svg Info: Last page of `./svg-inkscape/karateLu_svg-tex.pdf' is 1 on in
 put line 90.
 (svg-inkscape/karateLu_svg-tex.pdf_tex
-<./svg-inkscape/karateLu_svg-tex.pdf, id=183, page=1, 451.6875pt x 451.6875pt>
+<./svg-inkscape/karateLu_svg-tex.pdf, id=696, page=1, 451.6875pt x 451.6875pt>
 File: ./svg-inkscape/karateLu_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/karateLu_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/karateLu_svg-tex.pdf , page1 used on in
@@ -1910,16 +2112,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 85--96
 
 LaTeX Info: Redefining \. on input line 96.
 LaTeX Info: Redefining \% on input line 96.
-[3 <../Imagenes/Competencia de especies.png>]
+[9 <../Imagenes/Competencia de especies.png>]
 
 LaTeX Info: Redefining \. on input line 109.
 LaTeX Info: Redefining \% on input line 109.
-[4 <./svg-inkscape/karateLu_svg-tex.pdf>]
+[10 <./svg-inkscape/karateLu_svg-tex.pdf>]
 Package svg Info: Last page of `./svg-inkscape/Red10DirLu_svg-tex.pdf' is 1 on 
 input line 116.
 
 (svg-inkscape/Red10DirLu_svg-tex.pdf_tex
-<./svg-inkscape/Red10DirLu_svg-tex.pdf, id=204, page=1, 451.6875pt x 451.6875pt
+<./svg-inkscape/Red10DirLu_svg-tex.pdf, id=714, page=1, 451.6875pt x 451.6875pt
 >
 File: ./svg-inkscape/Red10DirLu_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/Red10DirLu_svg-tex.pdf, page 1>
@@ -1945,7 +2147,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 141--146
 
 LaTeX Info: Redefining \. on input line 146.
 LaTeX Info: Redefining \% on input line 146.
-[5 <./svg-inkscape/Red10DirLu_svg-tex.pdf>]
+[11 <./svg-inkscape/Red10DirLu_svg-tex.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 171--174
 
  []
@@ -1954,11 +2156,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 171--174
 
 LaTeX Info: Redefining \. on input line 174.
 LaTeX Info: Redefining \% on input line 174.
-[6]
+[12]
 Package svg Info: Last page of `./svg-inkscape/RedIncidencias_svg-tex.pdf' is 1
  on input line 179.
  (svg-inkscape/RedIncidencias_svg-tex.pdf_tex
-<./svg-inkscape/RedIncidencias_svg-tex.pdf, id=224, page=1, 451.6875pt x 451.68
+<./svg-inkscape/RedIncidencias_svg-tex.pdf, id=733, page=1, 451.6875pt x 451.68
 75pt>
 File: ./svg-inkscape/RedIncidencias_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/RedIncidencias_svg-tex.pdf, page 1>
@@ -1993,11 +2195,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 190--216
 
 LaTeX Info: Redefining \. on input line 216.
 LaTeX Info: Redefining \% on input line 216.
-[7 <./svg-inkscape/RedIncidencias_svg-tex.pdf>]
+[13 <./svg-inkscape/RedIncidencias_svg-tex.pdf>]
 
 LaTeX Info: Redefining \. on input line 224.
 LaTeX Info: Redefining \% on input line 224.
-[8]
+[14]
 Underfull \hbox (badness 10000) in paragraph at lines 226--233
 
  []
@@ -2011,14 +2213,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 226--233
 
 LaTeX Info: Redefining \. on input line 255.
 LaTeX Info: Redefining \% on input line 255.
-[9]
-<../Imagenes/Cooperacion de especies.png, id=253, 2007.5pt x 1003.75pt>
+[15]
+<../Imagenes/Cooperacion de especies.png, id=760, 2007.5pt x 1003.75pt>
 File: ../Imagenes/Cooperacion de especies.png Graphic file (type png)
 <use ../Imagenes/Cooperacion de especies.png>
 Package pdftex.def Info: ../Imagenes/Cooperacion de especies.png  used on input
  line 259.
 (pdftex.def)             Requested size: 481.80984pt x 240.90492pt.
-<../Imagenes/STrestoInteracciones.png, id=258, 2409.0pt x 803.0pt>
+<../Imagenes/STrestoInteracciones.png, id=765, 2409.0pt x 803.0pt>
 File: ../Imagenes/STrestoInteracciones.png Graphic file (type png)
 <use ../Imagenes/STrestoInteracciones.png>
 Package pdftex.def Info: ../Imagenes/STrestoInteracciones.png  used on input li
@@ -2038,79 +2240,97 @@ Underfull \hbox (badness 10000) in paragraph at lines 264--275
 
 LaTeX Info: Redefining \. on input line 275.
 LaTeX Info: Redefining \% on input line 275.
-[10 <../Imagenes/Cooperacion de especies.png>]
-
-LaTeX Info: Redefining \. on input line 281.
-LaTeX Info: Redefining \% on input line 281.
-[11 <../Imagenes/STrestoInteracciones.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 287--294
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 287--294
+[16 <../Imagenes/Cooperacion de especies.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 280--283
 
  []
 
 
 
-LaTeX Info: Redefining \. on input line 294.
-LaTeX Info: Redefining \% on input line 294.
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 296--303
+LaTeX Info: Redefining \. on input line 283.
+LaTeX Info: Redefining \% on input line 283.
+[17 <../Imagenes/STrestoInteracciones.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 289--323
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 296--303
+Underfull \hbox (badness 10000) in paragraph at lines 289--323
 
  []
 
 
-
-LaTeX Info: Redefining \. on input line 303.
-LaTeX Info: Redefining \% on input line 303.
-[13]
-
-LaTeX Warning: Reference `eqn:LKmatricial' on page 14 undefined on input line 3
-06.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 306--309
+Underfull \hbox (badness 10000) in paragraph at lines 289--323
 
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 289--323
 
-LaTeX Info: Redefining \. on input line 324.
-LaTeX Info: Redefining \% on input line 324.
-[14]
+ []
 
-LaTeX Info: Redefining \. on input line 354.
-LaTeX Info: Redefining \% on input line 354.
-[15]
 
-LaTeX Info: Redefining \. on input line 384.
-LaTeX Info: Redefining \% on input line 384.
-[16]
-Underfull \hbox (badness 10000) in paragraph at lines 387--390
+Underfull \hbox (badness 10000) in paragraph at lines 289--323
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 289--323
 
  []
 
 
 
-LaTeX Info: Redefining \. on input line 390.
-LaTeX Info: Redefining \% on input line 390.
-[17])
+LaTeX Info: Redefining \. on input line 323.
+LaTeX Info: Redefining \% on input line 323.
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 326--330
 
-LaTeX Info: Redefining \. on input line 107.
-LaTeX Info: Redefining \% on input line 107.
-[18
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+LaTeX Info: Redefining \. on input line 330.
+LaTeX Info: Redefining \% on input line 330.
+[19]
+
+LaTeX Info: Redefining \. on input line 352.
+LaTeX Info: Redefining \% on input line 352.
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 356--360
+
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 379.
+LaTeX Info: Redefining \% on input line 379.
+[21]
+
+LaTeX Info: Redefining \. on input line 412.
+LaTeX Info: Redefining \% on input line 412.
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 414--419
+
+ []
+
+)
+
+LaTeX Info: Redefining \. on input line 102.
+LaTeX Info: Redefining \% on input line 102.
+[23]
+
+LaTeX Info: Redefining \. on input line 108.
+LaTeX Info: Redefining \% on input line 108.
+[24
 
 
 
 ]
-Overfull \hbox (7.57542pt too wide) in paragraph at lines 110--110
+Overfull \hbox (13.05043pt too wide) in paragraph at lines 111--111
 []\OT1/cmr/m/n/10.95 Robert M May. ``Will a lar-ge com-plex sys-tem be sta-ble?
 '' En: \OT1/cmr/m/it/10.95 Na-tu-re \OT1/cmr/m/n/10.95 238.5364 (1972), p^^Sags
 . 413[]414. 
@@ -2118,13 +2338,72 @@ Overfull \hbox (7.57542pt too wide) in paragraph at lines 110--110
 
 
 
-[19
+[25
 
-] (main.aux
+]
+runsystem(del _minted-main\default.pygstyle)...executed.
+
+runsystem(del _minted-main\A5140291610043C105F8BA3198EDF5B5228C163F5D4C4DD96BE6
+6FA41258E0CF.pygtex)...executed.
+
+runsystem(del _minted-main\B884E593BDC07CD7DCDD60757CD0FCE7228C163F5D4C4DD96BE6
+6FA41258E0CF.pygtex)...executed.
+
+runsystem(del _minted-main\09CA65C6AA01FA7A839EB3A407B71682228C163F5D4C4DD96BE6
+6FA41258E0CF.pygtex)...executed.
+
+runsystem(del _minted-main\110BB64F80AA053F59405D80775BBED0228C163F5D4C4DD96BE6
+6FA41258E0CF.pygtex)...executed.
+
+runsystem(del _minted-main\D177E853D4DBA5900EC96AB1696F3F45228C163F5D4C4DD96BE6
+6FA41258E0CF.pygtex)...executed.
+
+runsystem(del _minted-main\E09519E506D21B4D207ACCE581D1FDD4228C163F5D4C4DD96BE6
+6FA41258E0CF.pygtex)...executed.
+
+runsystem(del _minted-main\3CE300108AC35E4D1CC0E881B4F9611F228C163F5D4C4DD96BE6
+6FA41258E0CF.pygtex)...executed.
+
+runsystem(del _minted-main\C6EF61E6936803134ABAE926063E4EB4228C163F5D4C4DD96BE6
+6FA41258E0CF.pygtex)...executed.
+
+runsystem(del _minted-main\FE9635A1800FE3D62F0EC1BBC25CB18B228C163F5D4C4DD96BE6
+6FA41258E0CF.pygtex)...executed.
+
+runsystem(del _minted-main\60E22F2ADD49F9A8A308B67F8AB42340228C163F5D4C4DD96BE6
+6FA41258E0CF.pygtex)...executed.
+
+runsystem(del _minted-main\7CF7F971A2A34692032F93DD3AFCD5B4228C163F5D4C4DD96BE6
+6FA41258E0CF.pygtex)...executed.
+
+runsystem(del _minted-main\C954C3AA825442544F6EF7B5B3D6B3A5228C163F5D4C4DD96BE6
+6FA41258E0CF.pygtex)...executed.
+
+runsystem(del _minted-main\00B03787013A1BDE2BC374F57969C1EE228C163F5D4C4DD96BE6
+6FA41258E0CF.pygtex)...executed.
+
+runsystem(del _minted-main\D73B4D388FEF70447E3BD76504AA3DAB228C163F5D4C4DD96BE6
+6FA41258E0CF.pygtex)...executed.
+
+runsystem(del _minted-main\9227541495FB3D1E26B084FC12E8BF3B228C163F5D4C4DD96BE6
+6FA41258E0CF.pygtex)...executed.
+
+runsystem(del _minted-main\5119E79E9EEB63FB0AEBCA9122A40987228C163F5D4C4DD96BE6
+6FA41258E0CF.pygtex)...executed.
+
+runsystem(del _minted-main\1331274708C36F17ABC4E91B7308C935228C163F5D4C4DD96BE6
+6FA41258E0CF.pygtex)...executed.
+
+
+
+LaTeX Info: Redefining \. on input line 114.
+LaTeX Info: Redefining \% on input line 114.
+[26] (main.aux
 LaTeX Info: Redefining \sptext on input line 11.
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
- (TeX_files/chapter02.aux))
+ (TeX_files/Introducción.aux) (TeX_files/chapter01.aux)
+(TeX_files/chapter02.aux))
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
@@ -2136,51 +2415,461 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: CBFD9CA4F7989B6967B57DDAA6F2F06E;1563.
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: B2A85E848D21E2BDCC1AE60987E15145;8715
+(rerunfilecheck)             After:  AC5C03421034A29094CFCCFBFB9157C1;2302.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                main
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43337 strings out of 473899
- 855352 string characters out of 5725556
- 1952960 words of memory out of 5000000
- 65394 multiletter control sequences out of 15000+600000
- 573263 words of font info for 93 fonts, out of 8000000 for 9000
+ 43818 strings out of 473899
+ 871752 string characters out of 5725556
+ 1964960 words of memory out of 5000000
+ 65714 multiletter control sequences out of 15000+600000
+ 573622 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 109i,17n,117p,1153b,1955s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmbx10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmbx12.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmbx8.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Rodrigo/AppData/Local/P
-rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Rodrigo/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Use
-rs/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.
+ 109i,16n,117p,1072b,2313s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{equation.Alph0.3.4} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{algocf.9} has been referenced but does not exist, r
+eplaced by a fixed one
+
+
+pdfTeX warning (dest): name{algocf.8} has been referenced but does not exist, r
+eplaced by a fixed one
+
+
+pdfTeX warning (dest): name{algocf.7} has been referenced but does not exist, r
+eplaced by a fixed one
+
+
+pdfTeX warning (dest): name{algocf.6} has been referenced but does not exist, r
+eplaced by a fixed one
+
+
+pdfTeX warning (dest): name{algocf.5} has been referenced but does not exist, r
+eplaced by a fixed one
+
+
+pdfTeX warning (dest): name{algocf.4} has been referenced but does not exist, r
+eplaced by a fixed one
+
+
+pdfTeX warning (dest): name{algocf.3} has been referenced but does not exist, r
+eplaced by a fixed one
+
+
+pdfTeX warning (dest): name{algocf.2} has been referenced but does not exist, r
+eplaced by a fixed one
+
+
+pdfTeX warning (dest): name{algocf.1} has been referenced but does not exist, r
+eplaced by a fixed one
+
+
+pdfTeX warning (dest): name{table.caption.45} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.90} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.89} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.88} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.87} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.86} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.74} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.Alph0.3.5} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.Alph0.2.2} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.73} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.72} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.69} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.68} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.67} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.64} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.63} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.61} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.59} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.57} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.56} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.55} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.53} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.52} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.51} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.50} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.3.4.8} has been referenced but does not ex
+ist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.49} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.48} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.47} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.43} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{table.caption.38} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.42} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.41} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.40} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.39} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.37} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.36} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.35} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.34} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.33} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.32} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.31} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.30} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.29} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.28} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.27} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.26} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.25} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.24} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.23} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.22} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.21} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.20} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.19} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.18} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{appendix*.84} has been referenced but does not exis
+t, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.Alph0.3.5} has been referenced but does 
+not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.Alph0.3.4} has been referenced but does 
+not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.Alph0.3.3.1} has been referenced but 
+does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.Alph0.3.3} has been referenced but does 
+not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.Alph0.3.2.2} has been referenced but 
+does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.Alph0.3.2.1} has been referenced but 
+does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.Alph0.3.2} has been referenced but does 
+not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.Alph0.3.1.2} has been referenced but 
+does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.Alph0.3.1.1} has been referenced but 
+does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.Alph0.3.1} has been referenced but does 
+not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{section.Alph0.3} has been referenced but does not e
+xist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{section.Alph0.2} has been referenced but does not e
+xist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{section.Alph0.1} has been referenced but does not e
+xist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{appendix*.71} has been referenced but does not exis
+t, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{chapter.4} has been referenced but does not exist, 
+replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.3.6.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.3.6.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{section.3.6} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{section.3.5} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.3.4.3} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.3.4.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.3.4.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{section.3.4} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.3.3.1.1} has been referenced but does
+ not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.3.3.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{section.3.3} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.3.2.3} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.3.2.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.3.2.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{section.3.2} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.3.1.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.3.1.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{section.3.1} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{chapter.3} has been referenced but does not exist, 
+replaced by a fixed one
+
+<C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmbx10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmbx12.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmbx8.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/Rodrigo/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Rodrigo/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/R
+odrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.
 pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
-/cm/cmmi12.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmmi6.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/Rodrigo/AppData/Local/Pr
-ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Rodrigo/AppDat
-a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Rodr
-igo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/U
-sers/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.
-pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
-/cm/cmr9.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmsl10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Rodrigo/AppData/Local/Pr
-ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Rodrigo/AppDat
-a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Users/Rodr
-igo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:
-/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmt
-t10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
-onts/symbols/msbm10.pfb>
-Output written on main.pdf (33 pages, 1645431 bytes).
+/cm/cmmi10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmmi12.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Rodrigo/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Rodrigo/AppData/Local/P
+rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Rodrigo/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Rod
+rigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/
+Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8
+.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
+s/cm/cmr9.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmsl10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Rodrigo/AppData/Local/P
+rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Rodrigo/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Ro
+drigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><
+C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symb
+ols/msbm10.pfb>
+Output written on main.pdf (48 pages, 1878869 bytes).
 PDF statistics:
- 467 PDF objects out of 1000 (max. 8388607)
- 92 named destinations out of 1000 (max. 500000)
- 140 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 999 PDF objects out of 1000 (max. 8388607)
+ 226 named destinations out of 1000 (max. 500000)
+ 457 words of extra memory for PDF output out of 10000 (max. 10000000)
 

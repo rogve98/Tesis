@@ -35,7 +35,7 @@ En esta representación, los coeficientes de la diagonal se fijan a un valor pos
 			\frac{dy}{dt}&=3y\left(1-\frac{y}{3}\right)-2xy
 		\end{split}
 	\end{equation}
-	Para analizar la dinámica del sistema se procede a la determinación de sus puntos de equilibrio, definidos como aquellos estados del sistema donde su dinámica se anula. Esto se logra igualando a cero y resolviendo las ecuaciones del sistema \eqref{eqn:Sist2x2Comp}. El equilibrio trivial corresponde con el estado $\vec{0}$, el cual representa la extinción de ambas especies. Para los casos no triviales, la resolución del sistema algebráico conduce a los puntos de equilibrio $(2,0)$, $(0,3)$ y $(1,1)$.\\
+	Para analizar la dinámica del sistema se procede a la determinación de sus puntos de equilibrio, definidos como aquellos estados del sistema donde su dinámica se anula. Esto se logra igualando a cero y resolviendo las ecuaciones del sistema \eqref{eqn:Sist2x2Comp}. El equilibrio trivial corresponde con el estado $\vec{0}$, el cual representa la extinción de ambas especies. Para los casos no triviales, la resolución del sistema algebraico conduce a los puntos de equilibrio $(2,0)$, $(0,3)$ y $(1,1)$.\\
 	\\
 	Como se puede apreciar, el sistema (\ref{eqn:Sist2x2Comp}) presenta múltiples puntos de equilibrio, en contraste con los sistemas lineales, que admiten a lo sumo uno. Este hecho es relevante, ya que en sistemas no lineales de mayor dimensión la determinación explícita de los puntos de equilibrio se vuelve cada vez más compleja. En el caso presente, se conocen los puntos de equilibrio y por tanto es posible estudiar su estabilidad local mediante la evaluación de la matriz Jacobiana del sistema en dichos estados.\\
 	\\
@@ -169,7 +169,7 @@ Para completar la construcción de la estructura de las interacciones, resta inc
 	\begin{equation}\label{eqn:MatrizIncidencias}
 		\Lambda=(\mathcal{E}\odot \mathcal{M}) + I
 	\end{equation}
-	El producto de Hadamard restringe los coeficientes aleatorios a los enlaces de la red, mientras que la suma con la identidad introduce términos de auto-interacción que funcionan como mecanismo de autoregulación. Se dirá que la matriz $\Lambda$ es \textbf{estructuralmente simétrica} si su matriz de adyacencia $\mathcal{E}$ es simétrica, es decir, si existe interacción entre $i$ con $j$ en ambos sentidos $(\mathcal{E}_{ij}=\mathcal{E}_{ji})$, aunque las intensidades correspondientes puedan diferir ($\Lambda_{ij}\neq\Lambda_{ji}$). Por el contrario, si $\mathcal{E}$ tiene un soporte dirigido entonces se dirá que $\Lambda$ es \textbf{estructuralmente no simétrica}. Esta distinción permite separar y distinguir entre la simetría del soporte topológico y la simetría dinámica de las interacciones. 
+	El producto de Hadamard restringe los coeficientes aleatorios a los enlaces de la red, mientras que la suma con la identidad introduce términos de auto-interacción que funcionan como mecanismo de autorregulación. Se dirá que la matriz $\Lambda$ es \textbf{estructuralmente simétrica} si su matriz de adyacencia $\mathcal{E}$ es simétrica, es decir, si existe interacción entre $i$ con $j$ en ambos sentidos $(\mathcal{E}_{ij}=\mathcal{E}_{ji})$, aunque las intensidades correspondientes puedan diferir ($\Lambda_{ij}\neq\Lambda_{ji}$). Por el contrario, si $\mathcal{E}$ tiene un soporte dirigido entonces se dirá que $\Lambda$ es \textbf{estructuralmente no simétrica}. Esta distinción permite separar y distinguir entre la simetría del soporte topológico y la simetría dinámica de las interacciones. 
 	\newline
 \end{definición}
 
@@ -217,7 +217,7 @@ La cooperación implica que ambas especies se benefician de la interacción $(++
 
 \subsubsection*{Interacciones en $\Lambda$}
 
-Las interacciones en la matriz de coeficientes $\Lambda$ se relacionan con la clasificación de May (Tabla \ref{tab:Interacciones}), pero bajo una convención de signo opuesta. En esta formulación, la cooperación se representa como $(--)$, la competencia como $(++)$, la depredación como $(-+)$ ó $(+-)$, y el comensalismo y amensalismo como $(-0)$ y $(+0)$ respectivamente. Esta inversión se debe a que los coeficientes $\alpha_{ij}$ aparecen dentro del término de limitación del crecimiento; por tanto, valores positivos incrementan la presión limitante sobre la especie $i$, mientras que valores negativos la reducen. Para analizar cómo éstos coeficientes afectan la dinámica, reescribimos las ecuaciones \eqref{eqn:LK} separando la contribución de autoregulación de las interacciones interespecíficas:
+Las interacciones en la matriz de coeficientes $\Lambda$ se relacionan con la clasificación de May (Tabla \ref{tab:Interacciones}), pero bajo una convención de signo opuesta. En esta formulación, la cooperación se representa como $(--)$, la competencia como $(++)$, la depredación como $(-+)$ ó $(+-)$, y el comensalismo y amensalismo como $(-0)$ y $(+0)$ respectivamente. Esta inversión se debe a que los coeficientes $\alpha_{ij}$ aparecen dentro del término de limitación del crecimiento; por tanto, valores positivos incrementan la presión limitante sobre la especie $i$, mientras que valores negativos la reducen. Para analizar cómo éstos coeficientes afectan la dinámica, reescribimos las ecuaciones \eqref{eqn:LK} separando la contribución de autorregulación de las interacciones interespecíficas:
 
 \begin{equation}\label{eqn:LKextendida}
 r_ix_i\left (1-\frac{\sum_{j=1}^N\alpha_{ij}x_j}{K_i}\right ) = r_ix_i\left (1-\frac{\alpha_{ii}x_i}{K_i}\right )-r_ix_i\left (\frac{\sum_{j\neq i}\alpha_{ij}x_j}{K_i}\right )
@@ -225,7 +225,7 @@ r_ix_i\left (1-\frac{\sum_{j=1}^N\alpha_{ij}x_j}{K_i}\right ) = r_ix_i\left (1-\
 
 El segundo término correspondiente a las interacciones interespecíficas, produce un efecto neto sobre la tasa de crecimiento de la especie $i$: sera positivo si $\alpha_{ij}<0$ y negativo si $\alpha_{ij}>0$. En consecuencia, desde la perspectiva de la especie $i$, las interacciones de cooperación, depredación (cuando $i$ es el depredador) y comensalismo favorecen su crecimiento poblacional, mientras que  la competencia, la depredación  (cuando $i$ es la presa) y amensalismo lo reducen. Nótese que si $\alpha_{ij}=0$, la especie $j$ no genera impacto sobre la dinámica de $i$.\\
 \\
-En este contexto, los coeficientes $\alpha_{ii}$ deben ser positivos; por convención, en este trabajo se fija $\alpha_{ii}=1$. Si se tomara $\alpha_{ii}\leq0$, se perdería el mecanismo intrínseco de regulación logística asociada a la especie, eliminando la auto-limitación de su crecimiento. Por esta razón, la contribución de la identidad en $\Lambda$ representa auto-interacciones que inducen un mecanismo de autoregulación del sistema. Por otro lado, coeficientes $\alpha_{ij}<0$ pueden favorecer el crecimiento poblacional de la especie $i$, desplazando el equilibrio efectivo por encima de su capacidad de carga $K_i$, fenómeno que no se aprecia en sistemas competitivos.
+En este contexto, los coeficientes $\alpha_{ii}$ deben ser positivos; por convención, en este trabajo se fija $\alpha_{ii}=1$. Si se tomara $\alpha_{ii}\leq0$, se perdería el mecanismo intrínseco de regulación logística asociada a la especie, eliminando la auto-limitación de su crecimiento. Por esta razón, la contribución de la identidad en $\Lambda$ representa auto-interacciones que inducen un mecanismo de autorregulación del sistema. Por otro lado, coeficientes $\alpha_{ij}<0$ pueden favorecer el crecimiento poblacional de la especie $i$, desplazando el equilibrio efectivo por encima de su capacidad de carga $K_i$, fenómeno que no se aprecia en sistemas competitivos.
 \\
 \\
 %Explorar el balance de las interacciones (positivas y negativas) puede ser un elemento importante que defina el tipo de estabilidad del sistema. Sin embargo, debe de existir un balance entre las interacciones positivas y negativas, ya que si las segundas se sobreponen a las primeras, puede ocurrir un colapso del sistema traducido en crecimiento desmedido. Este escenario corresponderá a aquellos sistemas (\ref{eqn:LK}) inestables resultantes de ciertas configuraciones en $p$, $\sigma$ y $N$ de la matriz de incidencias y se irá revisando más adelante.\\\\
@@ -261,7 +261,7 @@ Dependiendo de los parámetros asociados a $\Lambda$, la probabilidad de conecti
 		\label{fig:CooperacionEspecies}
 	\end{figure}
 	
-	En este contexto, el concepto de capacidad de carga deja de interpretarse como una cota rígida para la población y pasa a entenderse como un parámetro regulador de crecimiento. En ausencia de interacciones interespecíficas, $K_i$ fija el nivel de saturación logística; sin embargo, cuando se incorporan las interacciones, el término $\sum_j \alpha_{ij}x_j$ puede modificar de forma sustancial esta regulación. Si las contribuciones efectivas asociadas a interacciones que favorecen el crecimiento dominan sobre el término autoregulatorio, el sistema puede presentar equilibrios por encima de $K_i$ o incluso dinámicas no acotadas. \\
+	En este contexto, el concepto de capacidad de carga deja de interpretarse como una cota rígida para la población y pasa a entenderse como un parámetro regulador de crecimiento. En ausencia de interacciones interespecíficas, $K_i$ fija el nivel de saturación logística; sin embargo, cuando se incorporan las interacciones, el término $\sum_j \alpha_{ij}x_j$ puede modificar de forma sustancial esta regulación. Si las contribuciones efectivas asociadas a interacciones que favorecen el crecimiento dominan sobre el término autorregulatorio, el sistema puede presentar equilibrios por encima de $K_i$ o incluso dinámicas no acotadas. \\
 	 \\
  	En sistemas de baja dimensión pueden obtenerse condiciones explícitas que relacionen la estabilidad con la intensidad de las interacciones; este tipo de resultados se retoman más adelante. \\
  	\\
@@ -277,7 +277,9 @@ En esta sección se estableció la forma en que la estructura de la conectividad
 
 \section{Estados estacionarios}\label{sec:PuntosFijos}
 
-El análisis de los estados estacionarios es fundamental para comprender la estabilidad dinámica del sistema. La naturaleza de los puntos de equilibrio depende de las interacciones entre especies, codificadas en la matriz de coeficientes de interacción $\Lambda$. En esta sección se bosquejará un análisis exploratorio centrado en el estado estacionario coexistente, sin perder de vista que constituye solo uno de los múltiples equilibrios posibles. Este estado resulta de particular interés porque representa la coexistencia simultánea en todas las especies y permite examinar, de manera tratable, cómo su estabilidad puede variar en función de los parámetros $(p,\sigma,N)$. Para determinar los estados estacionarios se imponen $\dot{x}_i=0$ en el sistema \eqref{eqn:LK}. Esto implica que para cada $i$,
+El análisis de los estados estacionarios es fundamental para comprender la estabilidad dinámica del sistema. La naturaleza de los puntos de equilibrio depende de las interacciones entre especies, codificadas en la matriz de coeficientes de interacción $\Lambda$. En esta sección se bosquejará un análisis exploratorio centrado en el estado estacionario coexistente, sin perder de vista que constituye solo uno de los múltiples equilibrios posibles. \\
+\\
+Este estado resulta de particular interés porque representa la coexistencia simultánea en todas las especies y permite examinar, de manera tratable, cómo su estabilidad puede variar en función de los parámetros $(p,\sigma,N)$. Para determinar los estados estacionarios se imponen $\dot{x}_i=0$ en el sistema \eqref{eqn:LK}. Esto implica que para cada $i$,
 \begin{equation}\label{eqn:EcsPuntoFijo}
 	x_i=0\quad\text{ó}\quad 1-\frac{\sum_{j=1}^N\alpha_{ij}x_j}{K_i}=0
 \end{equation}
@@ -286,105 +288,132 @@ $$\sum_{j=1}^N\alpha_{ij}x_j^*=K_i$$
 lo cual puede escribirse de forma matricial como
 $$\Lambda X^*=\mathrm{K},\qquad\text{con }\mathrm{K}=(K_1,...,K_n)$$
 %Aqui hay un argumento fuerte para la estabilidad en función de la tupla.
-Siempre que $\Lambda$ sea invertible, el coexistente viene dado por $X^*=\Lambda^{-1}\mathrm{K}$. La fijación de la diagonal en $d=1$ introduce un término de autoregulación que desplaza Gracias a que la diagonal esta fijada al valor $d=1$, mitiga la probabilidad de que sea singular y garantiza que sea invertible con alta probabilidad. El sistema hasta ahora no garantiza que $x_i^*>0$ para toda $x_i^*\in X^*$, puesto que aunque $\mathrm{K}>0$, las entradas de $\Lambda$ pueden ser positivas y negativas con una misma probabilidad. Si se considera a $\mathrm{K}$ con entradas constantes, es decir, $\mathrm{K}=k\vec{1}$ con $k>0$ entonces la distribución de $X^*$ puede darse a su alrededor con base en $(p,\sigma,N)$. \\
+Siempre que $\Lambda$ sea invertible, el coexistente viene dado por $X^*=\Lambda^{-1}\mathrm{K}$. La fijación de la diagonal en $d=1$ desplaza el espectro de $\Lambda$ y reduce la probabilidad de singularidad, de modo que la matriz resulta invertible con alta probabilidad dentro del ensamble considerado. No obstante, esto no garantiza que $x_i^*>0$ para toda especie aunque $\mathrm{K}>0$, las entradas de $\Lambda$ pueden tomar signos positivos o negativos, lo que puede producir componentes negativas en $X^*$. Si además se toma $\mathrm{K}=K\textbf{1}$ con $k>0$, entonces el vector coexistente $X^*$ se convierte en una variable aleatoria cuya distribución queda determinada por los parámetros estructurales $(p,\sigma,N)$.\\
 \\
-Se proponen las siguientes suposiciones: Cuando $p\ll 1$ entonces $\Lambda\approx I$ y por lo tanto $\Lambda^{-1}\approx I$, en consecuencia $X^* \approx \mathrm{K}$. Sin embargo cuando $p$ llega a valores intermedios o grandes, existe mayor cantidad de interacciones que ensancha la distribución alrededor de $\mathrm{K}$ hacia valores negativos, haciendo que $X^*$ contenga entradas negativas. Analizando a $\sigma$ se tiene el caso trivial cuando $\sigma=0$ entonces $\Lambda=I$ y por tanto $X^*=K$. Cuando $\sigma\ll 1$ se generan pequeñas fluctuaciones y la distribución comienza a ensancharse alrededor de $\mathrm{K}$. Cuando $\sigma$ toma valores intermedios $0.3<\sigma<0.5$ entonces la distribución se ensancha de tal forma que comienzan a emerger términos negativos en las entradas de $X^*$. Finalmente cuando $\sigma>0.5$ la cantidad de entradas negativas se amplifica de modo que va disminuyendo la probabilidad de que existan puntos fijos con entradas positivas.\\
+En este contexto, cuando se considera el régimen disperso $p\ll 1$, la matriz $\Lambda$ permanece cercana a la identidad en sentido perturbativo, por lo que también $\Lambda^{-1}\approx I$ y en consecuencia $X^*\approx \mathrm{K}$. En este caso, las interacciones apenas modifican capacidades de carga individuales. Conforme $p$ aumenta, crece el número efectivo de interacciones por especie y la desviación de $\Lambda$ respecto a la identidad se vuelve significativa. Esto introduce correlaciones entre especies y provoca que la distribución $X^*$ se disperse respecto de $\mathrm{K}$; en particular, pueden aparecer componentes negativas, lo que indica la pérdida de viabilidad biológica coexistente.\\
 \\
-Finalmente el papel de $N$ en la tupla que gobierna a $\Lambda$, será el de amplificar los efectos que produce la combinación de $p$ y $\sigma$, ya que al tener mayor cantidad de entradas: se amplifica la posibilidad de que $\Lambda^{-1}\mathrm{K}$ sea más dispersa. ¿Cuál será el efecto de $\Lambda^{-1}$ en la distribución del punto fijo? Esta matriz como tal no será una combinación lineal de normales, sino que dependerá del determinante de $\Lambda$ y sus valores propios\footnote{Considerando que el producto de sus valores propios es igual a su determinante ya que si $\lambda=0$ en el polinomio característico se tiene $p(0)=\det(A-0I)=\det(A)=\lambda_1\cdots\lambda_n$.}. Si por alguna razón $\det(\Lambda)=0$ entonces la matriz es singular y todas las entradas de $\Lambda^{-1}$ divergen a $\infty$. Si $\det(\Lambda)<1$ y además se sabe que 
-\begin{equation}\label{eqn:determinante}
-	\text{Adj}(\Lambda)\cdot \Lambda = \det(\Lambda)\cdot I
-\end{equation}
-se puede conjeturar que las entradas de Adj$(\Lambda)$ son comparables en magnitud con las entradas de $\Lambda$. Por lo tanto $\Lambda^{-1}=\frac{1}{\det(\Lambda)}\text{Adj}(\Lambda)$ tendrá entradas ligeramente amplificadas con respecto de $\Lambda$ debido a $\frac{1}{\det(\Lambda)}>1$. Cuando $\det(\Lambda)>1$ y $\Lambda$ mantiene las mismas condiciones que antes, entonces las entradas de su matriz adjunta deberán ser uno o varios ordenes de magnitud mayor que las entradas de $\Lambda$ para poder satisfacer el producto (\ref{eqn:determinante}). Dichas magnitudes irán en función de que tan grande es el el valor del determinante. En este caso la matriz inversa $\Lambda^{-1}$ tendrá entradas amplificadas debido a Adj$(\Lambda)$ pero con un efecto amortiguador proveniente de $\frac{1}{\det(\Lambda)}<1$.
+Un efecto análogo ocurre al variar la amplitud típica de las interacciones. Cuando $\sigma=0$, se tiene trivialmente $\Lambda=I$ y por tanto $X^*=\mathrm{K}$. Para $\sigma$ pequeño, las interacciones actúan como una perturbación débil y $X^*$ permanece concentrado cerca de $\mathrm{K}$. A medida que $\sigma$ aumenta, la dispersión de los valores propios de $\Lambda$ crece y el inverso amplifica las fluctuaciones, ensanchando la distribución de $X^*$. Para valores suficientemente grandes de $\sigma$, esta amplificación incrementa la probabilidad de obtener componentes negativas, reduciendo la probabilidad de coexistencia positiva.
 \\
 \\
-Entonces en cualquiera de los dos casos mencionados, la matriz inversa $\Lambda^{-1}$ presenta entradas amplificadas con respecto de $\Lambda$ en función de la magnitud del determinante. Al realizar la multiplicación $\Lambda^{-1}\mathrm{K}$ se obtiene una distribución alrededor de $\mathrm{K}$ considerablemente más dispersa que si se tomara el producto $\Lambda\mathrm{K}$. Esta dispersión estará dada en función de $p$ y $\sigma$ haciendo que la distribución se quede en valores positivos, cuando estos parámetros son pequeños, o se disperse hacia valores negativos cuando dichos parámetros aumenten.\\
+Finalmente, el tamaño del sistema $N$ modula el efecto conjunto de $p$ y $\sigma$. Al aumentar $N$ crece la escala típica de las fluctuaciones colectivas de la matriz $\Lambda$, lo que tiende a ensanchar la distribución de $X^*=\Lambda^{-1}\mathrm{K}$ y a incrementar la probabilidad de componentes negativas. No obstante, este efecto no depende únicamente de $N$, sino del ensamble de los tres parámetros: la conectividad $p$, la magnitud típica de las interacciones $\sigma$ y el tamaño del sistema $N$, cuya combinación fija el régimen efectivo en el que opera $\Lambda$.
 \\
-Viendo como el determinante de $\Lambda$ afecta en $\Lambda^{-1}$ y en la distribución de $X^*$, queda preguntarse qué sucede cuando existe un número impar de valores propios negativos que propicie $\det(\Lambda)<0$, ¿devendrán en puntos fijos con entradas negativas? Más aún, ¿existirá una relación entre el espectro de valores propios de $\Lambda$ con la determinación de los puntos fijos? de modo que el signo de la parte real de los valores propios de $\Lambda$ sea determinante del carácter de las entradas del punto fijo. Estas son conjeturas que llegan al límite de esta tesis.
-\newpage
+\\
+¿Cuál es el efecto de $\Lambda^{-1}$ en la distribución del punto de equilibrio? La estructura de esta matriz no puede describirse como una combinación lineal simple de variables normales; depende de la geometría espectral de $\Lambda$. En particular, la magnitud de $\Lambda^{-1}$ esta gobernada por la cercanía de los valores propios de $\Lambda$ al origen. Si $\Lambda$ es singular, es decir, si alguno de sus valores propios es cero, entonces la matriz no es invertible y el estado coexistente deja de estar bien definido. Más generalmente, cuando existe un valor propio $|\lambda_{\min}|$ cercano a cero, la inversa contiene factores del orden $1/\lambda_{\min}$, lo que produce una fuerte amplificación en las entradas de $\Lambda^{-1}$ y, por tanto, en $X^*=\Lambda^{-1}\mathrm{K}$.
+\\
+\\
+En este sentido, el espectro de $\Lambda$ se encuentra controlado por la escala efectiva $\sigma\sqrt{Np}$, la cual regula simultáneamente la dispersión del punto de equilibrio y la proximidad del espectro de $\Lambda$ al origen. Cuando este parámetro se aproxima a la unidad, la matriz tiende a mal condicionarse, la variabilidad de $X^*$ aumenta significativamente y disminuye la probabilidad de \textbf{factibilidad positiva}. Este mismo umbral coincide con la transición de estabilidad dinámica identificada en el criterio clásico de May, sugiriendo que la pérdida de estabilidad y la pérdida de factibilidad emergen del mismo mecanismo estructural. \\
+\\
+Sin embargo, este no constituye un criterio suficiente de estabilidad para el sistema de Lotka-Volterra, ya que el análisis se ha restringido al estado coexistente y no excluye la aparición de otros estados estacionarios o regímenes dinámicos alternativos.
+\newline
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ll}
+		\toprule
+		\rowcolor{gray!15}
+		Condición & Interpretación\\
+		\midrule
+		$\sigma\sqrt{Np}\ll 1$        & Coexistencia cerca de $\mathrm{K}$. Sistema estable\\
+		$\sigma\sqrt{Np}\approx 1$    & La dispersión del coexistente aumenta. Borde de estabilidad.\\
+		$\sigma\sqrt{Np}>1$ 	   	  & Coexistencia muy dispersa. Sistema inestable\\
+		\bottomrule
+	\end{tabular}
+	\caption{Estabilidad del estado coexistente en función del parámetro $\sigma\sqrt{Np}$.}
+	\label{tab:lambdaMay}
+\end{table}
+
 \section{Jacobiana del sistema}
 
-¿Existirán puntos fijos con entradas positivas que devengan en una dinámica inestable? En esta sección se explorará sobre la estabilidad en términos de la matriz Jacobiana. Anteriormente se ha comentado sobre la \textit{linealización} del sistema para conocer la estabilidad alrededor de un punto fijo. A estas alturas ya se cuenta con lo necesario para calcular la matriz Jacobiana explícita del sistema (\ref{eqn:LKmatricial}) para cualquier número de especies. El resultado deberá coincidir con una forma semejante a las interacciones que May definió en \cite{may2019stability}. Una vez hallado el punto fijo de interés, se podrá determinar si el sistema es estable o no con base en los valores propios de esta matriz Jacobiana, considerando diversas configuraciones de la tupla $(p,\sigma,N)$ que gobiernan a $\Lambda$.\\
+En esta sección se definirá la matriz Jacobiana del sistema \eqref{eqn:LK}, se analizará su relación estructural con la matriz de coeficientes $\Lambda$ y se discutirá un criterio de estabilidad local obtenido al evaluarla en un estado estacionario. La Jacobiana evaluada en equilibrio coincide con la \textit{community matrix} empleada en el análisis ecológico clásico, introducida por Robert May, y constituye una forma de codificar las interacciones efectivas del sistema. En particular, como se verá, los términos interespecíficos aparecen con signo opuesto a los coeficientes correspondientes en $\Lambda$, por lo que la clasificación de interacciones discutida previamente aplica de manera natural en este contexto \cite{may2019stability}.
 \\
-Con base en la definición \ref{def:LKVectorial} se define el sistema de Lotka-Volterra generalizado como $\dot{X}=\textbf{F}(X)$, siendo \textbf{F} la función vectorial no lineal del sistema. Para determinar su matriz Jacobiana se tiene que aplicar las derivadas parciales a cada $f_i(X)\in\mathbf{F}(X)$ y para ello separamos en dos casos: considerando elementos de la diagonal $\frac{\partial f_i(X)}{\partial x_i}$ y elementos fuera de la diagonal: $\frac{\partial f_i(X)}{\partial x_k}$. Para comenzar el cálculo considere las ecuaciones del sistema (\ref{eqn:LK}) 
+\\
+Recordando que la estabilidad local del sistema está determinada por los valores propios de la matriz Jacobiana evaluada en un estado estacionario, resulta fundamental analizar su espectro, lo cual se abordará en el siguiente capítulo. Con base en la Definición \ref{def:LKVectorial}, se considera el sistema en forma vectorial $\dot{X}=\textbf{F}(X)$, donde $\textbf{F}$ es la función del modelo de Lotka-Volterra generalizado, y se calcula su matriz Jacobiana \eqref{eqn:Jacobiano} a partir de sus derivadas parciales correspondientes, distinguiendo entre los términos diagonales y las interacciones interespecíficas. Se considera una función arbitraria de $\textbf{F}$
 $$
-f_i(X) = r_ix_i\left (1-\frac{\sum_{j=1}^N \alpha_{ij}x_j}{K_i}\right )
+f_i = r_ix_i\left (1 - \frac{S_i}{K_i}\right ),\qquad S_i=\sum_{j=1}^N \alpha_{ij}x_j
 $$
 las derivadas parciales para los términos de la diagonal son
-\begin{equation}\label{eqn:EcsJacobiano_ii}
-	\begin{split}
-			\frac{\partial f_i(X)}{\partial x_i} &= r_i \left (1-\frac{2\alpha_{ii}x_i+\sum_{j\neq i}\alpha_{ij}x_j}{K_i}\right )
-	\end{split}
-\end{equation}
-Sin embargo, hay que tener en cuenta que se evalúa sobre un punto fijo $X^*$ el cual se genera de la siguiente ecuación  
-$$\alpha_{ii}x_i+\sum_{j\neq i}\alpha_{ij}x_j=K_i$$
-Sustituyendo $\sum_{j\neq i}\alpha_{ij}x_j=K_i-\alpha_{ii}x_i$ en (\ref{eqn:EcsJacobiano_ii}) finalmente se tiene
-$$\frac{\partial f_i(X^*)}{\partial x_i} = -\frac{r_ix_i^*}{K_i}\alpha_{ii}$$
+$$\frac{\partial f_i}{\partial x_i} = r_i\left (1-\frac{S_i}{K_i}\right )-\frac{r_ix_i}{K_i}\alpha_{ii}$$
 Para los términos que quedan fuera de la diagonal evaluados en $X^*$ se tiene
-$$\frac{\partial f_i(X^*)}{\partial x_k} = -\frac{r_ix_i^*}{K_i}\alpha_{ik} $$
-\newpage
-\begin{definición}\label{def:MatrizJacobiana}
-	Sea $\mathcal{J}\in\mathrm{M}_N(\mathbb{R})$ donde $N$ es el número de especies del sistema LV generalizado. Se define la matriz \textit{Jacobiana} asociada al sistema (\ref{eqn:Fmatricial}) evaluado en un punto fijo $X^*$ de la siguiente forma
-	\begin{equation}\label{eqn:MatrizJacobiana}
-		\mathcal{J}_{ij}=\begin{cases}
-			-\frac{r_ix_i^*}{K_i}\alpha_{ii},\qquad&\text{para }i=j\\
-			-\frac{r_ix_i^*}{K_i}\alpha_{ij},\qquad&\text{para }i\neq j
-		\end{cases}
-	\end{equation}
-	considerando que $\alpha_{ii}>0$ y particularmente se ha fijado en $\alpha_{ii}=1$ para todo $i\in\{1,...,N\}$. Si se considera una matriz diagonal cuyos elementos son $-\frac{r_ix_i^*}{K_i}$, entonces la Jacobiana se puede reescribir de la siguiente manera
-	\begin{equation}\label{eqn:Jacobiana}
-		\mathcal{J}=-\text{diag}\left (\frac{r_ix_i^*}{K_i}\right )\Lambda
-	\end{equation}
-\end{definición}
-De la matriz Jacobiana se puede observar como todas sus entradas voltean el signo con respecto de $\Lambda$, lo que parece ajustarse con las interacciones que May define en su \textit{community matrix} \cite{may2019stability}, incluso obedece el signo negativo en la diagonal que será sumamente importante para determinar la estabilidad del sistema. La ec. (\ref{eqn:Jacobiana}) deja ver que la matriz Jacobiana ¡es un re-escalamiento de la matriz de Incidencias! indicando que la estabilidad únicamente depende de $\Lambda$\footnote{Ya que son las interacciones de $\Lambda$ las que inducen la naturaleza del punto fijo.}. ¿Como se podría verificar la estabilidad del sistema con base en el punto fijo y los valores propios de $\mathcal{J}$?
-
-\begin{proposición}\label{prop:DiagonalI}
-	Los elementos de la diagonal de la matriz Jacobiana determinan en gran medida la estabilidad del sistema
-	\begin{proof}
-		Para demostrar esta proposición se hará uso del \textit{Teorema de Gershgorin} \cite{GershgorinTheorem}. Para ello se asume que la matriz Jacobiana tendrá valores propios complejos. Se define el radio de Gershgorin como
-		\begin{equation}\label{proof1:RGershgorin}
-			R_i=\sum_{i\neq j}|\mathcal{J}_{ij}|
-		\end{equation}
-		con ello se define $D(\mathcal{J}_{ii},R_i)\subset\mathbb{C}$ como el disco de Gershgorin centrado en $\mathcal{J}_{ii}$ con radio $R_i$. El teorema establece que cada valor propio de $\mathcal{J}$ estará contenido en alguno de estos discos. Demostrando que si todo $D(\mathcal{J}_{ii},R_i)$ se encuentra contenido en el semiplano negativo de $\mathbb{C}$, entonces todos los valores propios de la Jacobiana serán negativos también y por lo tanto el sistema (\ref{eqn:LK}) será estable en $X^*$. El elemento más importante de esta prueba es considerar el centro de los discos; si todos los $\mathcal{J}_{ii}$ son negativos entonces el centro de todos los discos se encuentra en el semiplano negativo de $\mathbb{C}$, y para garantizar que todos los valores propios sean negativos habría que probar $|\mathcal{J}_{ii}|>R_i$ para todo $i\in\{1,...,N\}$, es decir:
-		\begin{equation}\label{proof1:Desigualdad}
-			\begin{split}
-					 \left |-\frac{r_ix_i^*}{K_i}\alpha_{ii}\right |&>\sum_{j\neq i}\left |-\frac{r_ix_i^*}{K_i}\alpha_{ij}\right |\\
-				1&>\sum_{j\neq i}|\alpha_{ij}|
-			\end{split}
-		\end{equation}
-		\newpage
-		De la ec. (\ref{eqn:MatrizJacobiana}) se puede ver que $\alpha_{ii}>0$ y en particular $\alpha_{ii}=1$, por lo tanto es importante que todo $x_i^*\in X^*$ sea positivo para que el centro de los discos se encuentre en el semiplano negativo de $\mathbb{C}$. En caso contrario habrá al menos un disco con centro en el sempiplano positivo de $\mathbb{C}$ que pueda alojar valores propios positivos que devengan en una dinámica inestable. Es conveniente poder saber cual es el tamaño promedio de los discos de Gershgorin y para ello se define la siguiente variable aleatoria
-		\begin{equation}\label{proof1:VarAlW}
-			W = 
-			\begin{cases}
-				0,\qquad \text{Si }1-p\\
-				Y,\qquad \text{Si }p>0	
-			\end{cases}
-		\end{equation}
-		donde $Y\sim N(0,\sigma^2)$ es una variable aleatoria normal. Ya que $R_i$ considera suma de valores absolutos, es de interés saber el valor esperado de $|W|$ 
-		\begin{equation}\label{proof1:ValorEsperadoW}
-			\mathbb{E}[|W|]=(1-p)\cdot 0 + p\cdot \mathbb{E}[|Y|] = p\cdot\mathbb{E}[|Y|] = p\sigma\sqrt{\frac{2}{\pi}}
-		\end{equation}
-		el término $\sqrt{\frac{2}{\pi}}$ viene de considerar la variable aleatoria $Z\sim N(0,1)$ y la distribución \textit{half-normal} $|Z|$, entonces su valor esperado es $$\mathbb{E}[|Z|]=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}|z|e^{-z^2/2}\, dz=\frac{2}{\sqrt{2\pi}}\int_0^\infty ze^{-z^2/2}\, dz=\sqrt{\frac{2}{\pi}}$$
-		al considerar la variable aleatoria $Y\sim N(0,\sigma^2)$ entonces basta con escalar $Y=\sigma Z$ y en consecuencia su valor esperado será $$\mathbb{E}[|Y|]=\sigma \mathbb{E}[|Z|]=\sigma\sqrt{\frac{2}{\pi}}$$
-		Por lo tanto, el valor esperado del radio de Gershgorin es
-		\begin{equation}\label{proof1:E[RadioG]}
-			\mathbb{E}[R_i]=(N-1)p\sigma\sqrt{\frac{2}{\pi}}
-		\end{equation}
-		Si este radio promedio es menor a 1 se puede garantizar en cierta medida que los discos de Gershgorin estarán contenidos en el semiplano negativo de $\mathbb{C}$. Sin embargo, pueden existir discos de Gershgorin que se alejen de la media ¿qué tanto se pueden alejar para que se siga cumpliendo $\mathcal{J}_{ii}>R_i$? será conveniente calcular la varianza de los radios de Gershgorin para averiguarlo. Tomando la variable aleatoria $W$, se calcula su segundo momento
-		$$\mathbb{E}(|W|^2)=(1-p)\cdot 0+p\cdot\mathbb{E}(|Y|^2)=p\cdot\mathbb{E}(Y^2)=p\sigma^2$$
-		por otro lado el cuadrado del valor esperado (\ref{proof1:ValorEsperadoW}) es
-		$$\mathbb{E}(|W|)^2=p^2\sigma^2\frac{2}{\pi}$$
-		Finalmente la varianza de $|W|$ es
-		$$\Var(|W|)=p\sigma^2-p^2\sigma^2\frac{2}{\pi}$$
-		Entonces la varianza de los radios de Gershgorin queda envuelta en la siguiente expresión
-		\begin{equation}\label{proof1:VarRadioG}
-			\Var(R_i)=(N-1)p\sigma^2\left (1-\frac{2p}{\pi}\right )
-		\end{equation}
-		y mientras sea menor a 1 se puede garantizar que los discos de Gershgorin van a cumplir (\ref{proof1:Desigualdad}) y en consecuencia los valores propios de $\mathcal{J}$ estarán contenidos en el semiplano negativo de $\mathbb{C}$. Sin embargo esta prueba tiene algunas limitantes; los discos de Gershgorin únicamente garantizan que contienen valores propios, forzar la condición (\ref{proof1:Desigualdad}) es suficiente para garantizar estabilidad pero no es determinante, ya que este método no menciona nada acerca de la posición de los valores propios. Si dicha desigualdad no se cumple pueden ocurrir dos escenarios: que $\max(|\lambda_\mathcal{J}|)<0$ y el sistema siga siendo estable a pesar de algún $R_i>\mathcal{J}_{ii}$ ó $\max(|\lambda_\mathcal{J}|)>0$ en cuyo caso el sistema será inestable, y eso dependerá de $\Lambda$ y la tupla $(p,\sigma,N)$. En conclusión, esta prueba funciona en un primer nivel para mostrar que los elementos de la diagonal de $\mathcal{J}$ y por consiguiente las entradas de $X^*$ juegan un papel importante en la estabilidad del sistema. 
-	\end{proof}
-\end{proposición}
-
-Es importante recordar que las interacciones de autoregulación se mantienen en la diagonal de $\Lambda$ (Ver ec. (\ref{eqn:LKextendida})); cuando la matriz de incidencias se transforma en la Jacobiana, el punto fijo debe de contener entradas positivas para poder respetar las interacciones de autoregulación que May define en \cite{may1972will}. Si el punto fijo contiene entradas negativas es casi un hecho que el sistema será inestable porque existirá al menos un disco de Gershgorin con centro en el semiplano positivo de $\mathbb{C}$ que independientemente de como sea su radio, es altamente probable que contenga valores propios positivos.\\
+$$\frac{\partial f_i}{\partial x_k} = -\frac{r_ix_i}{K_i}\alpha_{ik},\qquad i\neq k$$
+De este modo, la matriz Jacobiana $\mathcal{J}$ del sistema de Lotka-Volterra generalizado queda dada por la siguiente estructura al evaluar en un punto de equlibrio $X^*$ arbitrario
+\begin{equation}\label{eqn:MatrizJacobiana} 
+	\mathcal{J}_{ij}(X^*)=\begin{cases} r_i\left (1-\frac{\sum_j\alpha_{ij}x_j^*}{K_i}\right )-\frac{r_ix_i^*}{K_i}\alpha_{ii},\qquad&\text{para }i=j\\ -\frac{r_ix_i^*}{K_i}\alpha_{ij},\qquad&\text{para }i\neq j 
+	\end{cases}
+\end{equation}
+Sin embargo, hay que realizar una distinción de dos posibles escenarios: contemplando un estado coexistente ($x_i^*>0$ para toda $i$), donde los términos logísticos se anulan, entonces $1-\frac{\sum_j\alpha_{ij}x_j^*}{K_i}=0$ para toda $i$, y la Jacobiana del coexistente puede reescribirse como 
+$$\mathcal{J}=-\text{diag}\left (\frac{r_ix_i^*}{K_i}\right )\Lambda$$
+es decir, constituye un reescalamiento fila a fila de la matriz de coeficientes $\Lambda$. Por otro lado, en un estado estacionario con especies extintas, donde hay una combinación $x_i^*\geq0$ de especies. 
+\newline
+En este caso, los términos de la diagonal satisfacen
+$$
+\mathcal{J}_{ii}(X^*)=\begin{cases}
+	-\frac{r_ix_i^*}{K_i}\alpha_{ii},\qquad& x_i^*>0\\
+	r_i\left (1-\frac{\sum_j\alpha_{ij}x_j^*}{K_i}\right ),\qquad& x_i^*=0
+\end{cases}
+$$
+mientras que para $i\neq j$ sigue cumpliendo
+$$
+\mathcal{J}(X^*)=\frac{r_ix_i^*}{K_i}\alpha_{ij}
+$$
+Es importante remarcar la distinción entre estados coexistentes y estados con extinción parcial para tener presentes los posibles escenarios del sistema. En las simulaciones, los estados estacionarios no se obtienen como soluciones algebraicas independientes, sino como los valores asintóticos de las trayectorias numéricas; por construcción, estos corresponden a configuraciones factibles, es decir, con $x_i^*\geq0$. Una vez identificados, su estabilidad local se evalúa mediante el signo de los valores propios de la matriz Jacobiana asociada. \\
 \\
-Para poder determinar un parámetro crítico de transición en la estabilidad de los sistemas, es imprescindible conocer donde se ubica el $\max(\lambda_\mathcal{J})$ y encontrar la forma de controlar su posición para poder saber las condiciones que lo llevan a ser negativo, cero o positivo. Aunque existe una forma dada para resolver esta conjetura, la cual se abordará en la siguiente sección, tiene un gran inconveniente: la Jacobiana tiene en su diagonal toda una distribución de valores que dificulta la definición de un radio espectral que determine la posición de Re$(\lambda_{\max}(\mathcal{J}))$. Esta conjetura ligada con la correspondiente de la sección anterior también llega al límite de esta tesis y más adelante se presentará un análisis detallando sus razones.
+En este contexto, el análisis de estabilidad admite múltiples enfoques dependiendo de la estructura del equilibrio considerado y de las interacciones del sistema. Con esta motivación, a continuación se introduce un umbral suficiente que permite garantizar estabilidad bajo ciertas condiciones, el cual servirá como antesala al estudio más detallado de la estabilidad dinámica que se desarrolla en el siguiente capítulo.
+
+\begin{proposición}[Criterio suficiente de estabilidad]\label{prop:DiagonalI}
+	Sea $X^*$ un estado estacionario del sistema. Si para todo $i$
+	$$\mathcal{J}_{ii}(X^*)+\sum_{j\neq i}|\mathcal{J}_{ij}(X^*)|<0,$$
+	entonces todos los valores propios del Jacobiano evaluado en $X^*$ tienen parte real negativa y, por lo tanto, su equilibrio es linealmente estable.
+\end{proposición}
+\begin{proof}
+	Para demostrar la proposición se utiliza el \textit{Teorema de Gershgorin} \cite{GershgorinTheorem}. Sea 
+	$$R_i=\sum_{j\neq i}|\mathcal{J}_{ij}|$$
+	y considérese el disco
+	$$D(\mathcal{J}_{ii},R_i)=\{z\in\mathbb{C}:|z-\mathcal{J}_{ii}|\leq R_i\}$$
+	El teorema establece que todo valor propio de $\mathcal{J}$ pertenece a la unión de estos discos. Si para cada $i$ se cumple 
+	\begin{equation}\label{proof:CondicionGershgorin}
+		\mathcal{J}_{ii}+R_i<0
+	\end{equation}
+	entonces el disco esta completamente contenido en el semiplano izquierdo ($z:\operatorname{Re}z<0$). Por lo tanto todos los valores propios satisfacen ($\operatorname{Re}\lambda<0$) lo cual implica estabilidad local en el punto de equilibrio considerado.	
+\end{proof}
+
+Para que el \textit{criterio suficiente de estabilidad} se cumpla, los elementos de la diagonal necesariamente deben ser negativos. En particular, existe una relación tangible entre radios y centros de Gershgorin para observar el cumplimiento del criterio. De la ecuación \eqref{proof:CondicionGershgorin} se sigue
+$$r_i\left (1-\frac{S_i^*}{K_i}\right )-\frac{r_ix_i^*}{K_i}\alpha_{ii}+\frac{r_ix_i^*}{K_i}\sum_{j\neq i}|\alpha_{ij}|<0,\qquad S_i^*=\sum_{j=1}^N\alpha_{ij}x_j^*$$
+dividiendo entre $r_i>0$:
+$$1-\frac{S_i^*}{K_i}-\frac{x_i^*}{K_i}\left (\sum_{j\neq i}|\alpha_{ij}|-\alpha_{ii}\right )<0$$
+reordenando, finalmente se tiene
+\begin{equation}\label{eqn:DesigualdadSuficiente}
+	\sum_{j\neq i}|\alpha_{ij}|<\alpha_{ii}+\frac{S_i^*-K_i}{x_i^*}
+\end{equation}
+Válido para todo $i$, esta condición garantiza el cumplimiento de la Proposición \ref{prop:DiagonalI}. El término $\frac{S_i^*-K_i}{x_i^*}$ mide que tan lejos se encuentra la especie del equilibrio logístico local. 
+\begin{corolario}
+	Bajo el supuesto de coexistencia $x_i^*>0$ para toda $i$, la condición general de estabilidad dada en la Proposición \ref{prop:DiagonalI} se reduce a 
+	\begin{equation}\label{eqn:DesigualdadCoexistencia}
+		\sum_{j\neq i}|\alpha_{ij}|<\alpha_{ii}
+	\end{equation}
+\end{corolario}
+\begin{proof}
+	En estados coexistentes, se cumple $S_i^*=K_i$, por lo que el término $\frac{S_i^*-K_i}{x_i^*}$ se anula en la desigualdad \eqref{eqn:DesigualdadSuficiente}, obteniéndose inmediatamente el resultado.
+\end{proof}
+Asumiendo que $\mathcal{J}_{ii}<0$, resulta conveniente estimar el tamaño típico de los radios de Gershgorin para verificar la condición \eqref{eqn:DesigualdadCoexistencia}. Para modelar las entradas fuera de la diagonal, se introduce la variable aleatoria
+$$	W = 
+\begin{cases}
+	0,\qquad \text{Si }1-p\\
+	Y,\qquad \text{Si }p>0	
+\end{cases}$$
+donde $Y\sim N(0,\sigma^2)$. Dado que $R_i=\sum_{j\neq i}|\alpha_{ij}|$ involucra valores absolutos, es de interés calcular $\mathbb{E}|W|$: 
+$$\mathbb{E}[|W|]=(1-p)\cdot 0 + p\cdot \mathbb{E}[|Y|] = p\sigma\sqrt{\frac{2}{\pi}}$$
+%El término $\sqrt{\frac{2}{\pi}}$ viene de considerar la variable aleatoria $Z\sim N(0,1)$ y la distribución \textit{half-normal} $|Z|$, entonces su valor esperado es $$\mathbb{E}[|Z|]=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}|z|e^{-z^2/2}\, dz=\frac{2}{\sqrt{2\pi}}\int_0^\infty ze^{-z^2/2}\, dz=\sqrt{\frac{2}{\pi}}$$ considerar la variable aleatoria $Y\sim N(0,\sigma^2)$ entonces basta con escalar $Y=\sigma Z$ y en consecuencia su valor esperado será $$\mathbb{E}[|Y|]=\sigma \mathbb{E}[|Z|]=\sigma\sqrt{\frac{2}{\pi}}$$
+Por linealidad de la esperanza, el tamaño promedio del radio de Gershgorin es entonces 
+$$\mathbb{E}[R_i]=(N-1)p\sigma\sqrt{\frac{2}{\pi}}$$
+En consecuencia, si este radio típico satisface 
+\begin{equation}\label{eqn:CriterioDebil}
+	(N-1)p\sigma\sqrt{\frac{2}{\pi}}<1
+\end{equation}
+puede esperarse que, en promedio los discos de Gershgorin permanezcan contenidos en el semiplano negativo de $\mathbb{C}$, proporcionando así una condición suficiente típica para la estabilidad local en el estado coexistente.
 \newpage
+¿Qué ocurre al considerar estados con extinción parcial? En este caso la desigualdad \eqref{eqn:DesigualdadSuficiente} deja de ser aplicable debido a la aparición de $x_i^*=0$. Considérese un equilibrio $X^*$ donde $x_i^*=0$, es decir, la especie $i$ esta extinta. Evaluando su ecuación dinámica para perturbaciones pequeñas $x_i>0$, se obtiene la siguiente aproximación 
+$$\dot{x}_i\approx x_ir_i\left (1-\frac{\sum_j\alpha_{ij}x_j^*}{K_i}\right )$$
+donde el coeficiente que multiplica a $x_i$ coincide con el elemento de la diagonal $\mathcal{J}_{ii}$ de la Jacobiana. Este término representa la tasa de crecimiento per cápita ante una perturbación positiva infinitesimal de la especie $i$. Si $K_i>\sum_j\alpha_{ij}x_j^*$, entonces $\mathcal{J}_{ii}>0$ y la perturbación crece, lo que indica que la especie puede invadir el sistema y el equilibrio resulta inestable frente a esa perturbación. En cambio si $\mathcal{J}_{ii}<0$, la especie no puede establecerse y la perturbación decae, siendo el equilibrio locamente estable respecto a esa especie.\\
+\\
+Este criterio, conocido como condición de \textbf{invasibilidad}, proporciona una interpretación biológica del análisis espectral y muestra que la estabilidad no depende únicamente de la estructura global de las interacciones, sino también de la respuesta local del sistema ante perturbaciones en cada especie. Por tanto, una condición necesaria para la estabilidad dinámica frente a especies ausentes es que $\mathcal{J}_{ii}<0$. En el siguiente capítulo se analizará como estas condiciones se reflejan en el soporte espectral de la matriz Jacobiana y en la estabilidad dinámica del sistema.
+%Sin embargo esta prueba tiene algunas limitantes; los discos de Gershgorin únicamente garantizan que contienen valores propios, forzar la condición (\ref{proof1:Desigualdad}) es suficiente para garantizar estabilidad pero no es determinante, ya que este método no menciona nada acerca de la posición de los valores propios. Si dicha desigualdad no se cumple pueden ocurrir dos escenarios: que $\max(|\lambda_\mathcal{J}|)<0$ y el sistema siga siendo estable a pesar de algún $R_i>\mathcal{J}_{ii}$ ó $\max(|\lambda_\mathcal{J}|)>0$ en cuyo caso el sistema será inestable, y eso dependerá de $\Lambda$ y la tupla $(p,\sigma,N)$. En conclusión, esta prueba funciona en un primer nivel para mostrar que los elementos de la diagonal de $\mathcal{J}$ y por consiguiente las entradas de $X^*$ juegan un papel importante en la estabilidad del sistema. 
+
