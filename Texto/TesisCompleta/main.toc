@@ -1,0 +1,20 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{Agradecimientos}{\es@scroman {iii}}{chapter*.1}%
+\contentsline {chapter}{Resumen}{\es@scroman {v}}{chapter*.2}%
+\contentsline {chapter}{\numberline {1}Estabilidad del sistema de Lotka-Volterra generalizado}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Consideraciones generales sobre estabilidad}{2}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Implementación numérica y metodología}{10}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Series de tiempo}{11}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Puntos fijos}{13}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Matriz Jacobiana}{16}{subsection.1.2.3}%
+\contentsline {section}{\numberline {1.3}Espectro del LV generalizado}{18}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Leyes Circulares}{18}{subsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.1.1}Análisis para $N=50$}{20}{subsubsection.1.3.1.1}%
+\contentsline {section}{\numberline {1.4}Transiciones de estabilidad del LV generalizado}{25}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Para $N=100$}{27}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Para $N=50$}{34}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.3}Para $N=25$}{35}{subsection.1.4.3}%
+\contentsline {section}{\numberline {1.5}Indicador espectral de transición de estabilidad}{37}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Discusión}{40}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1}Interpretación ecológica}{42}{subsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.6.2}Cono convexo}{43}{subsection.1.6.2}%

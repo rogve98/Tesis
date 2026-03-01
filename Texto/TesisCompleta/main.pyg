@@ -1,6 +1,0 @@
-for sigma in 0.1:0.01:1.0
-   if simula_probabilidad_cumplimiento(sigma) != 1.0
-      print(sigma," ",simula_probabilidad_cumplimiento(sigma))
-      break
-  end
-end
