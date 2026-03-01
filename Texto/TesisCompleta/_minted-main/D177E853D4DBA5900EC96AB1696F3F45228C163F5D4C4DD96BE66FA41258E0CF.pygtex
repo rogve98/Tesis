@@ -1,0 +1,19 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{using}\PYG{+w}{ }\PYG{n}{Graphs}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{GraphPlot}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Karnak}
+\PYG{c}{\PYGZsh{}Ejemplo de la red de karate usando GraphPlot}
+\PYG{n}{gkarate}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{smallgraph}\PYG{p}{(}\PYG{l+s+ss}{:karate}\PYG{p}{)}
+\PYG{n}{gplot}\PYG{p}{(}\PYG{n}{gkarate}\PYG{p}{,}\PYG{n}{nodelabel}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{nv}\PYG{p}{(}\PYG{n}{gkarate}\PYG{p}{))}\PYG{+w}{ }\PYG{c}{\PYGZsh{}Grafica y agrega un label a cada nodo.}
+\PYG{c}{\PYGZsh{}Ejemplo de red aleatoria usando GraphPlot}
+\PYG{n}{g}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{redAleatoria}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{,}\PYG{l+m+mf}{0.3}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}no dirigida\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{gplot}\PYG{p}{(}\PYG{n}{g}\PYG{p}{,}\PYG{n}{nodelabel}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{o}{:}\PYG{l+m+mi}{10}\PYG{p}{)}
+
+\PYG{c}{\PYGZsh{}Ejemplo de la red de karate usando Karanak}
+\PYG{n+nd}{@drawsvg}\PYG{+w}{ }\PYG{k}{begin}
+\PYG{+w}{  }\PYG{n}{background}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}white\PYGZdq{}}\PYG{p}{)}
+\PYG{+w}{  }\PYG{n}{sethue}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}deepskyblue2\PYGZdq{}}\PYG{p}{)}
+\PYG{+w}{  }\PYG{n}{drawgraph}\PYG{p}{(}\PYG{n}{gkarate}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{layout}\PYG{o}{=}\PYG{n}{spring}\PYG{p}{,}
+\PYG{+w}{  }\PYG{n}{vertexlabels}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{nv}\PYG{p}{(}\PYG{n}{gkarate}\PYG{p}{),}
+\PYG{+w}{  }\PYG{n}{vertexshapesizes}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{10}
+\PYG{p}{)}
+\PYG{k}{end}
+\end{Verbatim}

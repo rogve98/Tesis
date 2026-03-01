@@ -1,0 +1,24 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{mutable}\PYG{+w}{ }\PYG{k}{struct} \PYG{k+kt}{Parametros}
+\PYG{+w}{	}\PYG{n}{N}\PYG{o}{::}\PYG{k+kt}{Int}
+\PYG{+w}{	}\PYG{n}{sigma}\PYG{o}{::}\PYG{k+kt}{Float64}
+\PYG{+w}{	}\PYG{n}{p}\PYG{o}{::}\PYG{k+kt}{Float64}
+\PYG{+w}{	}\PYG{n}{x0}\PYG{o}{::}\PYG{k+kt}{Vector}
+\PYG{+w}{	}\PYG{n}{t0}\PYG{o}{::}\PYG{k+kt}{Int}
+\PYG{+w}{	}\PYG{n}{tf}\PYG{o}{::}\PYG{k+kt}{Int}
+\PYG{+w}{	}\PYG{n}{h}\PYG{o}{::}\PYG{k+kt}{Float64}
+\PYG{+w}{	}\PYG{n}{r}\PYG{o}{::}\PYG{k+kt}{Vector}
+\PYG{+w}{	}\PYG{n}{K}\PYG{o}{::}\PYG{k+kt}{Vector}
+\PYG{+w}{	}\PYG{n}{Red}\PYG{o}{::}\PYG{k+kt}{String}
+\PYG{k}{end}
+\PYG{k}{mutable}\PYG{+w}{ }\PYG{k}{struct} \PYG{k+kt}{Soluciones}
+\PYG{+w}{	}\PYG{n}{t}\PYG{o}{::}\PYG{k+kt}{StepRangeLen}\PYG{p}{\PYGZob{}}\PYG{k+kt}{Float64}\PYG{p}{,}
+\PYG{+w}{	}\PYG{k+kt}{Base}\PYG{o}{.}\PYG{k+kt}{TwicePrecision}\PYG{p}{\PYGZob{}}\PYG{k+kt}{Float64}\PYG{p}{\PYGZcb{},}
+\PYG{+w}{	}\PYG{k+kt}{Base}\PYG{o}{.}\PYG{k+kt}{TwicePrecision}\PYG{p}{\PYGZob{}}\PYG{k+kt}{Float64}\PYG{p}{\PYGZcb{},}
+\PYG{+w}{	}\PYG{k+kt}{Int64}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}\PYG{n}{rk4}\PYG{o}{::}\PYG{k+kt}{Matrix}
+\PYG{+w}{	}\PYG{n}{Euler}\PYG{o}{::}\PYG{k+kt}{Matrix}
+\PYG{+w}{	}\PYG{n}{A}\PYG{o}{::}\PYG{k+kt}{Matrix}
+\PYG{+w}{	}\PYG{n}{g}\PYG{o}{::}\PYG{k+kt}{Union}\PYG{p}{\PYGZob{}}\PYG{k+kt}{SimpleGraph}\PYG{p}{\PYGZob{}}\PYG{k+kt}{Int64}\PYG{p}{\PYGZcb{},}\PYG{k+kt}{SimpleDiGraph}\PYG{p}{\PYGZob{}}\PYG{k+kt}{Int64}\PYG{p}{\PYGZcb{}\PYGZcb{}}
+\PYG{k}{end}
+\end{Verbatim}

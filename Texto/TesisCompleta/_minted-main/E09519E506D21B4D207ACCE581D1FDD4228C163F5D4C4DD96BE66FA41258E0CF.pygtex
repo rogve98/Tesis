@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Drawing}\PYG{p}{(}\PYG{l+m+mi}{500}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{500}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}KARATE2.svg\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{origin}\PYG{p}{()}\PYG{+w}{  }\PYG{c}{\PYGZsh{} Define el origen en el centro del lienzo}
+
+\PYG{c}{\PYGZsh{} Dibuja algo}
+\PYG{n}{background}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}white\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{sethue}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}deepskyblue2\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{drawgraph}\PYG{p}{(}\PYG{n}{gkarate}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{layout}\PYG{o}{=}\PYG{n}{spring}\PYG{p}{,}
+\PYG{n}{vertexlabels}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{nv}\PYG{p}{(}\PYG{n}{gkarate}\PYG{p}{),}
+\PYG{n}{vertexshapesizes}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{10}
+\PYG{p}{)}
+
+\PYG{c}{\PYGZsh{} Finaliza y guarda el dibujo}
+\PYG{n}{finish}\PYG{p}{()}
+\end{Verbatim}

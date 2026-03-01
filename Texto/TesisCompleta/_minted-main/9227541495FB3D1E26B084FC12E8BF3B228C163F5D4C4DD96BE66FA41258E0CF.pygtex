@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{mutable}\PYG{+w}{ }\PYG{k}{struct} \PYG{k+kt}{estabilidad}
+\PYG{+w}{	}\PYG{n}{params}\PYG{o}{::}\PYG{k+kt}{Parametros}
+\PYG{+w}{	}\PYG{n}{sol}\PYG{o}{::}\PYG{k+kt}{Soluciones}
+\PYG{+w}{	}\PYG{n}{X}\PYG{o}{::}\PYG{k+kt}{Vector}
+\PYG{k}{end}
+\PYG{k}{function}\PYG{+w}{ }\PYG{n}{Interacciones}\PYG{p}{(}\PYG{n}{params}\PYG{o}{::}\PYG{k+kt}{Parametros}\PYG{p}{,}\PYG{n}{sol}\PYG{o}{::}\PYG{k+kt}{Soluciones}\PYG{p}{)}
+\PYG{+w}{	}\PYG{n}{X}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{sol}\PYG{o}{.}\PYG{n}{rk4}\PYG{p}{[}\PYG{k}{end}\PYG{p}{,}\PYG{o}{:}\PYG{p}{]}
+\PYG{+w}{	}\PYG{k}{return}\PYG{+w}{ }\PYG{n}{estabilidad}\PYG{p}{(}\PYG{n}{params}\PYG{p}{,}\PYG{n}{sol}\PYG{p}{,}\PYG{n}{X}\PYG{p}{)}
+\PYG{k}{end}
+\end{Verbatim}

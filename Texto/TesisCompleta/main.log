@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.14)  25 FEB 2026 03:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.14)  28 FEB 2026 20:14
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -201,54 +201,208 @@ File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
 \Gin@req@height=\dimen160
 \Gin@req@width=\dimen161
 ))
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/tikz-network\tikz-net
-work.sty
-Package: tikz-network 2019/08/15 tikz-network v1.1
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/algorithm2e\algorithm
+2e.sty
+Package: algorithm2e 2017/07/18 v5.2 algorithms environments
+\c@AlgoLine=\count290
 
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/etex-pkg\etex.sty
-Package: etex 2016/08/01 v2.7 eTeX basic definition package (PEB,DPC)
-
-
-Package etex Warning: Extended allocation already in use.
-(etex)                etex.sty code will not be used.
-(etex)                To force etex package to load, add
-(etex)                \RequirePackage{etex}
-(etex)                at the start of the document.
-
-) (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/xifthen\xifthen.sty
-Package: xifthen 2015/11/05 v1.4.0 Extended ifthen features
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
-Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count290
-\calc@Bcount=\count291
-\calc@Adimen=\dimen162
-\calc@Bdimen=\dimen163
-\calc@Askip=\skip57
-\calc@Bskip=\skip58
-LaTeX Info: Redefining \setlength on input line 80.
-LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count292
-\calc@Cskip=\skip59
-)
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 )
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/ifmtarg\ifmtarg.sty
-Package: ifmtarg 2018/04/16 v1.2b check for an empty argument
-)) (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/xkeyval\xkeyval.st
-y
-Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+\algocf@hangindent=\skip57
 
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyval.tex
-
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvutils.te
-x
-\XKV@toks=\toks33
-\XKV@tempa@toks=\toks34
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/ifoddpage\ifoddpage.s
+ty
+Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
+\c@checkoddpage=\count291
+) (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/tools\xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+) (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/relsize\relsize.sty
+Package: relsize 2013/03/29 ver 4.1
 )
-\XKV@depth=\count293
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+\skiptotal=\skip58
+\skiplinenumber=\skip59
+\skiprule=\skip60
+\skiphlne=\skip61
+\skiptext=\skip62
+\skiplength=\skip63
+\algomargin=\skip64
+\skipalgocfslide=\skip65
+\algowidth=\dimen162
+\inoutsize=\dimen163
+\inoutindent=\dimen164
+\interspacetitleruled=\dimen165
+\interspacealgoruled=\dimen166
+\interspacetitleboxruled=\dimen167
+\algocf@ruledwidth=\skip66
+\algocf@inoutbox=\box54
+\algocf@inputbox=\box55
+\AlCapSkip=\skip67
+\AlCapHSkip=\skip68
+\algoskipindent=\skip69
+\algocf@nlbox=\box56
+\algocf@hangingbox=\box57
+\algocf@untilbox=\box58
+\algocf@skipuntil=\skip70
+\algocf@capbox=\box59
+\algocf@lcaptionbox=\skip71
+\algoheightruledefault=\skip72
+\algoheightrule=\skip73
+\algotitleheightruledefault=\skip74
+\algotitleheightrule=\skip75
+\c@algocfline=\count292
+\c@algocfproc=\count293
+\c@algocf=\count294
+\algocf@algoframe=\box60
+\algocf@algobox=\box61
+) (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/minted\minted.sty
+Package: minted 2023/12/18 v2.9 Yet another Pygments shim for LaTeX
+
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.s
+ty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.s
+ty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 ))
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/fvextra\fvextra.sty
+Package: fvextra 2024/05/16 v1.7.0 fvextra - extensions and patches for fancyvr
+b
+
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count295
+)
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/fancyvrb\fancyvrb.sty
+Package: fancyvrb 2024/01/20 4.5c verbatim text (tvz,hv)
+\FV@CodeLineNo=\count296
+\FV@InFile=\read3
+\FV@TabBox=\box62
+\c@FancyVerbLine=\count297
+\FV@StepNumber=\count298
+\FV@OutFile=\write3
+) (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/upquote\upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+) (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/lineno\lineno.sty
+Package: lineno 2023/05/20 line numbers on paragraphs v5.3
+\linenopenalty=\count299
+\output=\toks33
+\linenoprevgraf=\count300
+\linenumbersep=\dimen168
+\linenumberwidth=\dimen169
+\c@linenumber=\count301
+\c@pagewiselinenumber=\count302
+\c@LN@truepage=\count303
+\c@internallinenumber=\count304
+\c@internallinenumbers=\count305
+\quotelinenumbersep=\dimen170
+\bframerule=\dimen171
+\bframesep=\dimen172
+\bframebox=\box63
+\linenoamsmath@ams@eqpen=\count306
+LaTeX Info: Redefining \\ on input line 3180.
+)
+\c@FancyVerbWriteLine=\count307
+\c@FancyVerbBufferIndex=\count308
+\c@FancyVerbBufferLength=\count309
+\c@FancyVerbBufferLine=\count310
+\c@FV@oldbufferlength=\count311
+\c@FV@TrueTabGroupLevel=\count312
+\c@FV@TrueTabCounter=\count313
+\FV@TabBox@Group=\box64
+\FV@TmpLength=\skip76
+\c@FV@HighlightLinesStart=\count314
+\c@FV@HighlightLinesStop=\count315
+\FV@LoopCount=\count316
+\FV@NCharsBox=\box65
+\FV@BreakIndent=\dimen173
+\FV@BreakIndentNChars=\count317
+\FV@BreakSymbolSepLeft=\dimen174
+\FV@BreakSymbolSepLeftNChars=\count318
+\FV@BreakSymbolSepRight=\dimen175
+\FV@BreakSymbolSepRightNChars=\count319
+\FV@BreakSymbolIndentLeft=\dimen176
+\FV@BreakSymbolIndentLeftNChars=\count320
+\FV@BreakSymbolIndentRight=\dimen177
+\FV@BreakSymbolIndentRightNChars=\count321
+\c@FancyVerbLineBreakLast=\count322
+\FV@LineBox=\box66
+\FV@LineIndentBox=\box67
+\c@FV@BreakBufferDepth=\count323
+\FV@LineWidth=\dimen178
+) (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/tools\shellesc.sty
+Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
+Package shellesc Info: Unrestricted shell escape enabled on input line 75.
+)
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/ifplatform\ifplatform
+.sty
+Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
+
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcm
+ds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr
+.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/catchfile\catchfile
+.sty
+Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
+
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.s
+ty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+))
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+)) (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/xstring\xstring.st
+y
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/xstring\xstring.tex
+\xs_counta=\count324
+\xs_countb=\count325
+)
+Package: xstring 2023/08/22 v1.86 String manipulations (CT)
+) (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/framed\framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip77
+\fb@frw=\dimen179
+\fb@frh=\dimen180
+\FrameRule=\dimen181
+\FrameSep=\dimen182
+) (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count326
+\float@exts=\toks34
+\float@box=\box68
+\@float@everytoks=\toks35
+\@floatcapt=\box69
+)
+\minted@appexistsfile=\read4
+\minted@bgbox=\box70
+\minted@code=\write4
+\c@minted@FancyVerbLineTemp=\count327
+\c@minted@pygmentizecounter=\count328
+\@float@every@listing=\toks36
+\c@listing=\count329
+)
+runsystem(if not exist _minted-main mkdir _minted-main)...executed.
+
+
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcolorbox.s
+ty
+Package: tcolorbox 2024/07/10 version 6.3.0 text color boxes
+
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tik
 z.sty
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.st
@@ -257,13 +411,13 @@ y
 sty
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfut
 il-common.tex
-\pgfutil@everybye=\toks35
-\pgfutil@tempdima=\dimen164
-\pgfutil@tempdimb=\dimen165
+\pgfutil@everybye=\toks37
+\pgfutil@tempdima=\dimen183
+\pgfutil@tempdimb=\dimen184
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfut
 il-latex.def
-\pgfutil@abb=\box54
+\pgfutil@abb=\box71
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrc
 s.code.tex
@@ -283,33 +437,33 @@ Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfke
 ys.code.tex
-\pgfkeys@pathtoks=\toks36
-\pgfkeys@temptoks=\toks37
+\pgfkeys@pathtoks=\toks38
+\pgfkeys@temptoks=\toks39
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfke
 yslibraryfiltered.code.tex
-\pgfkeys@tmptoks=\toks38
+\pgfkeys@tmptoks=\toks40
 ))
-\pgf@x=\dimen166
-\pgf@y=\dimen167
-\pgf@xa=\dimen168
-\pgf@ya=\dimen169
-\pgf@xb=\dimen170
-\pgf@yb=\dimen171
-\pgf@xc=\dimen172
-\pgf@yc=\dimen173
-\pgf@xd=\dimen174
-\pgf@yd=\dimen175
-\w@pgf@writea=\write3
-\r@pgf@reada=\read3
-\c@pgf@counta=\count294
-\c@pgf@countb=\count295
-\c@pgf@countc=\count296
-\c@pgf@countd=\count297
-\t@pgf@toka=\toks39
-\t@pgf@tokb=\toks40
-\t@pgf@tokc=\toks41
-\pgf@sys@id@count=\count298
+\pgf@x=\dimen185
+\pgf@y=\dimen186
+\pgf@xa=\dimen187
+\pgf@ya=\dimen188
+\pgf@xb=\dimen189
+\pgf@yb=\dimen190
+\pgf@xc=\dimen191
+\pgf@yc=\dimen192
+\pgf@xd=\dimen193
+\pgf@yd=\dimen194
+\w@pgf@writea=\write5
+\r@pgf@reada=\read5
+\c@pgf@counta=\count330
+\c@pgf@countb=\count331
+\c@pgf@countc=\count332
+\c@pgf@countd=\count333
+\t@pgf@toka=\toks41
+\t@pgf@tokb=\toks42
+\t@pgf@tokc=\toks43
+\pgf@sys@id@count=\count334
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf
 .cfg
@@ -328,8 +482,8 @@ File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf
 syssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfsyssoftpath@smallbuffer@items=\count299
-\pgfsyssoftpath@bigbuffer@items=\count300
+\pgfsyssoftpath@smallbuffer@items=\count335
+\pgfsyssoftpath@bigbuffer@items=\count336
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf
 sysprotocol.code.tex
@@ -366,12 +520,12 @@ de.tex
 l.code.tex)
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathpar
 ser.code.tex
-\pgfmath@dimen=\dimen176
-\pgfmath@count=\count301
-\pgfmath@box=\box55
-\pgfmath@toks=\toks42
-\pgfmath@stack@operand=\toks43
-\pgfmath@stack@operation=\toks44
+\pgfmath@dimen=\dimen195
+\pgfmath@count=\count337
+\pgfmath@box=\box72
+\pgfmath@toks=\toks44
+\pgfmath@stack@operand=\toks45
+\pgfmath@stack@operation=\toks46
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfun
 ctions.code.tex)
@@ -395,59 +549,59 @@ ctions.integerarithmetics.code.tex)
 c.code.tex)
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathflo
 at.code.tex
-\c@pgfmathroundto@lastzeros=\count302
+\c@pgfmathroundto@lastzeros=\count338
 ))
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.cod
 e.tex)
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
 orepoints.code.tex
 File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@picminx=\dimen177
-\pgf@picmaxx=\dimen178
-\pgf@picminy=\dimen179
-\pgf@picmaxy=\dimen180
-\pgf@pathminx=\dimen181
-\pgf@pathmaxx=\dimen182
-\pgf@pathminy=\dimen183
-\pgf@pathmaxy=\dimen184
-\pgf@xx=\dimen185
-\pgf@xy=\dimen186
-\pgf@yx=\dimen187
-\pgf@yy=\dimen188
-\pgf@zx=\dimen189
-\pgf@zy=\dimen190
+\pgf@picminx=\dimen196
+\pgf@picmaxx=\dimen197
+\pgf@picminy=\dimen198
+\pgf@picmaxy=\dimen199
+\pgf@pathminx=\dimen256
+\pgf@pathmaxx=\dimen257
+\pgf@pathminy=\dimen258
+\pgf@pathmaxy=\dimen259
+\pgf@xx=\dimen260
+\pgf@xy=\dimen261
+\pgf@yx=\dimen262
+\pgf@yy=\dimen263
+\pgf@zx=\dimen264
+\pgf@zy=\dimen265
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
 orepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@path@lastx=\dimen191
-\pgf@path@lasty=\dimen192
+\pgf@path@lastx=\dimen266
+\pgf@path@lasty=\dimen267
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
 orepathusage.code.tex
 File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@shorten@end@additional=\dimen193
-\pgf@shorten@start@additional=\dimen194
+\pgf@shorten@end@additional=\dimen268
+\pgf@shorten@start@additional=\dimen269
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
 orescopes.code.tex
 File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfpic=\box56
-\pgf@hbox=\box57
-\pgf@layerbox@main=\box58
-\pgf@picture@serial@count=\count303
+\pgfpic=\box73
+\pgf@hbox=\box74
+\pgf@layerbox@main=\box75
+\pgf@picture@serial@count=\count339
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
 oregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgflinewidth=\dimen195
+\pgflinewidth=\dimen270
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
 oretransformations.code.tex
 File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@pt@x=\dimen196
-\pgf@pt@y=\dimen197
-\pgf@pt@temp=\dimen198
+\pgf@pt@x=\dimen271
+\pgf@pt@y=\dimen272
+\pgf@pt@temp=\dimen273
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
 orequick.code.tex
@@ -464,14 +618,14 @@ File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
 orearrows.code.tex
 File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowsep=\dimen199
+\pgfarrowsep=\dimen274
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
 oreshade.code.tex
 File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@max=\dimen256
-\pgf@sys@shading@range@num=\count304
-\pgf@shadingcount=\count305
+\pgf@max=\dimen275
+\pgf@sys@shading@range@num=\count340
+\pgf@shadingcount=\count341
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
 oreimage.code.tex
@@ -480,7 +634,7 @@ File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
 oreexternal.code.tex
 File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfexternal@startupbox=\box59
+\pgfexternal@startupbox=\box76
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfc
 orelayers.code.tex
@@ -501,7 +655,7 @@ File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodu
 leshapes.code.tex
 File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfnodeparttextbox=\box60
+\pgfnodeparttextbox=\box77
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodu
 leplot.code.tex
@@ -510,8 +664,8 @@ File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgf
 comp-version-0-65.sty
 Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
-\pgf@nodesepstart=\dimen257
-\pgf@nodesepend=\dimen258
+\pgf@nodesepstart=\dimen276
+\pgf@nodesepend=\dimen277
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgf
 comp-version-1-18.sty
@@ -529,10 +683,10 @@ de.tex))
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffo
 r.code.tex
 Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
-\pgffor@iter=\dimen259
-\pgffor@skip=\dimen260
-\pgffor@stack=\toks45
-\pgffor@toks=\toks46
+\pgffor@iter=\dimen278
+\pgffor@skip=\dimen279
+\pgffor@stack=\toks47
+\pgffor@toks=\toks48
 ))
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/t
 ikz\tikz.code.tex
@@ -541,454 +695,101 @@ Package: tikz 2023-01-15 v3.1.10 (3.1.10)
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgfli
 braryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@plot@mark@count=\count306
-\pgfplotmarksize=\dimen261
+\pgf@plot@mark@count=\count342
+\pgfplotmarksize=\dimen280
 )
-\tikz@lastx=\dimen262
-\tikz@lasty=\dimen263
-\tikz@lastxsaved=\dimen264
-\tikz@lastysaved=\dimen265
-\tikz@lastmovetox=\dimen266
-\tikz@lastmovetoy=\dimen267
-\tikzleveldistance=\dimen268
-\tikzsiblingdistance=\dimen269
-\tikz@figbox=\box61
-\tikz@figbox@bg=\box62
-\tikz@tempbox=\box63
-\tikz@tempbox@bg=\box64
-\tikztreelevel=\count307
-\tikznumberofchildren=\count308
-\tikznumberofcurrentchild=\count309
-\tikz@fig@count=\count310
+\tikz@lastx=\dimen281
+\tikz@lasty=\dimen282
+\tikz@lastxsaved=\dimen283
+\tikz@lastysaved=\dimen284
+\tikz@lastmovetox=\dimen285
+\tikz@lastmovetoy=\dimen286
+\tikzleveldistance=\dimen287
+\tikzsiblingdistance=\dimen288
+\tikz@figbox=\box78
+\tikz@figbox@bg=\box79
+\tikz@tempbox=\box80
+\tikz@tempbox@bg=\box81
+\tikztreelevel=\count343
+\tikznumberofchildren=\count344
+\tikznumberofcurrentchild=\count345
+\tikz@fig@count=\count346
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodu
 lematrix.code.tex
 File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfmatrixcurrentrow=\count311
-\pgfmatrixcurrentcolumn=\count312
-\pgf@matrix@numberofcolumns=\count313
+\pgfmatrixcurrentrow=\count347
+\pgfmatrixcurrentcolumn=\count348
+\pgf@matrix@numberofcolumns=\count349
 )
-\tikz@expandcount=\count314
+\tikz@expandcount=\count350
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/t
 ikz/libraries\tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )))
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/datatool\datatool.sty
-Package: datatool 2019/09/27 v2.32 (NLCT)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/xfor\xfor.sty
-Package: xfor 2009/02/05 v1.05 (NLCT)
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/tools\verbatim.sty
+Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks49
+\verbatim@line=\toks50
+\verbatim@in@stream=\read6
 )
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/substr\substr.sty
-Package: substr 2009/10/20 v1.2 Handle substrings
-\c@su@anzahl=\count315
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
-Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count316
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/datatool\datatool-bas
-e.sty
-Package: datatool-base 2019/09/27 v2.32 (NLCT)
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/environ\environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
 
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/datatool\datatool-fp.
-sty
-Package: datatool-fp 2019/09/27 v2.32 (NLCT)
- (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/fp\fp.sty
-Package: fp 1995/04/02
-
-`Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/fp\defpattern.sty
-Package: defpattern 1994/10/12
-\actioncount=\count317
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/fp\fp-basic.sty
-Package: fp-basic 1996/05/13
-\FP@xs=\count318
-\FP@xia=\count319
-\FP@xib=\count320
-\FP@xfa=\count321
-\FP@xfb=\count322
-\FP@rega=\count323
-\FP@regb=\count324
-\FP@regs=\count325
-\FP@times=\count326
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/fp\fp-addons.sty
-Package: fp-addons 1995/03/15
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/fp\fp-snap.sty
-Package: fp-snap 1995/04/05
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/fp\fp-exp.sty
-Package: fp-exp 1995/04/03
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/fp\fp-trigo.sty
-Package: fp-trigo 1995/04/14
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/fp\fp-pas.sty
-Package: fp-pas 1994/08/29
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/fp\fp-random.sty
-Package: fp-random 1995/02/23
-\FPseed=\count327
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/fp\fp-eqn.sty
-Package: fp-eqn 1995/04/03
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/fp\fp-upn.sty
-Package: fp-upn 1996/10/21
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/fp\fp-eval.sty
-Package: fp-eval 1995/04/03
-)))
-\@dtl@toks=\toks47
-\@dtl@tmpcount=\count328
-\dtl@tmplength=\skip60
-\dtl@sortresult=\count329
-\@dtl@numgrpsepcount=\count330
-\@dtl@datatype=\count331
-\dtl@codeA=\count332
-\dtl@codeB=\count333
-\@dtl@foreach@level=\count334
-)
-\dtlcolumnnum=\count335
-\dtlrownum=\count336
-\@dtl@before=\toks48
-\@dtl@after=\toks49
-\@dtl@colhead=\toks50
-\dtlcurrentrow=\toks51
-\dtlbeforerow=\toks52
-\dtlafterrow=\toks53
-\dtlforeachlevel=\count337
-\c@DTLrowi=\count338
-\c@DTLrowii=\count339
-\c@DTLrowiii=\count340
-\c@DTLrow=\count341
-\dtl@rowi=\count342
-\dtl@rowii=\count343
-\dtl@rowiii=\count344
-\@dtl@curi=\toks54
-\@dtl@previ=\toks55
-\@dtl@nexti=\toks56
-\@dtl@curii=\toks57
-\@dtl@previi=\toks58
-\@dtl@nextii=\toks59
-\@dtl@curiii=\toks60
-\@dtl@previii=\toks61
-\@dtl@nextiii=\toks62
-\@dtl@elements=\count345
-\@dtl@list=\toks63
-\@dtl@rowa=\toks64
-\@dtl@rowb=\toks65
-\@dtl@toksA=\toks66
-\@dtl@toksB=\toks67
-\@dtl@write=\write4
-\@dtl@read=\read4
-\dtl@entrycr=\count346
-\dtl@omitlines=\count347
-)
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/trimspaces\trimspaces
 .sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/t
-ikz/libraries\tikzlibraryarrows.code.tex
-File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgfli
-braryarrows.code.tex
-File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\arrowsize=\dimen270
 ))
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/t
-ikz/libraries\tikzlibrarypositioning.code.tex
-File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/t
-ikz/libraries\tikzlibrary3d.code.tex
-File: tikzlibrary3d.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/t
-ikz/libraries\tikzlibraryfit.code.tex
-File: tikzlibraryfit.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/t
-ikz/libraries\tikzlibrarycalc.code.tex
-File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/t
-ikz/libraries\tikzlibrarybackgrounds.code.tex
-File: tikzlibrarybackgrounds.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@layerbox@background=\box65
-\pgf@layerboxsaved@background=\box66
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgfli
-braryarrows.meta.code.tex
-File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowinset=\dimen271
-\pgfarrowlength=\dimen272
-\pgfarrowwidth=\dimen273
-\pgfarrowlinewidth=\dimen274
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/t
-ikz/libraries\tikzlibraryshapes.geometric.code.tex
-File: tikzlibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
-
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shape
-s\pgflibraryshapes.geometric.code.tex
-File: pgflibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))
-\c@LayerCounter=\count348
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/algorithm2e\algorithm
-2e.sty
-Package: algorithm2e 2017/07/18 v5.2 algorithms environments
-\c@AlgoLine=\count349
-\algocf@hangindent=\skip61
-
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/ifoddpage\ifoddpage.s
-ty
-Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
-\c@checkoddpage=\count350
-) (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/tools\xspace.sty
-Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
-) (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/relsize\relsize.sty
-Package: relsize 2013/03/29 ver 4.1
-)
-\skiptotal=\skip62
-\skiplinenumber=\skip63
-\skiprule=\skip64
-\skiphlne=\skip65
-\skiptext=\skip66
-\skiplength=\skip67
-\algomargin=\skip68
-\skipalgocfslide=\skip69
-\algowidth=\dimen275
-\inoutsize=\dimen276
-\inoutindent=\dimen277
-\interspacetitleruled=\dimen278
-\interspacealgoruled=\dimen279
-\interspacetitleboxruled=\dimen280
-\algocf@ruledwidth=\skip70
-\algocf@inoutbox=\box67
-\algocf@inputbox=\box68
-\AlCapSkip=\skip71
-\AlCapHSkip=\skip72
-\algoskipindent=\skip73
-\algocf@nlbox=\box69
-\algocf@hangingbox=\box70
-\algocf@untilbox=\box71
-\algocf@skipuntil=\skip74
-\algocf@capbox=\box72
-\algocf@lcaptionbox=\skip75
-\algoheightruledefault=\skip76
-\algoheightrule=\skip77
-\algotitleheightruledefault=\skip78
-\algotitleheightrule=\skip79
-\c@algocfline=\count351
-\c@algocfproc=\count352
-\c@algocf=\count353
-\algocf@algoframe=\box73
-\algocf@algobox=\box74
-) (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/minted\minted.sty
-Package: minted 2023/12/18 v2.9 Yet another Pygments shim for LaTeX
-
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.s
-ty
-Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
-
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
-Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.s
-ty
-Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-))
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/fvextra\fvextra.sty
-Package: fvextra 2024/05/16 v1.7.0 fvextra - extensions and patches for fancyvr
-b
-
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/fancyvrb\fancyvrb.sty
-Package: fancyvrb 2024/01/20 4.5c verbatim text (tvz,hv)
-\FV@CodeLineNo=\count354
-\FV@InFile=\read5
-\FV@TabBox=\box75
-\c@FancyVerbLine=\count355
-\FV@StepNumber=\count356
-\FV@OutFile=\write5
-) (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/upquote\upquote.sty
-Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
-tim
-) (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/lineno\lineno.sty
-Package: lineno 2023/05/20 line numbers on paragraphs v5.3
-\linenopenalty=\count357
-\output=\toks68
-\linenoprevgraf=\count358
-\linenumbersep=\dimen281
-\linenumberwidth=\dimen282
-\c@linenumber=\count359
-\c@pagewiselinenumber=\count360
-\c@LN@truepage=\count361
-\c@internallinenumber=\count362
-\c@internallinenumbers=\count363
-\quotelinenumbersep=\dimen283
-\bframerule=\dimen284
-\bframesep=\dimen285
-\bframebox=\box76
-\linenoamsmath@ams@eqpen=\count364
-LaTeX Info: Redefining \\ on input line 3180.
-)
-\c@FancyVerbWriteLine=\count365
-\c@FancyVerbBufferIndex=\count366
-\c@FancyVerbBufferLength=\count367
-\c@FancyVerbBufferLine=\count368
-\c@FV@oldbufferlength=\count369
-\c@FV@TrueTabGroupLevel=\count370
-\c@FV@TrueTabCounter=\count371
-\FV@TabBox@Group=\box77
-\FV@TmpLength=\skip80
-\c@FV@HighlightLinesStart=\count372
-\c@FV@HighlightLinesStop=\count373
-\FV@LoopCount=\count374
-\FV@NCharsBox=\box78
-\FV@BreakIndent=\dimen286
-\FV@BreakIndentNChars=\count375
-\FV@BreakSymbolSepLeft=\dimen287
-\FV@BreakSymbolSepLeftNChars=\count376
-\FV@BreakSymbolSepRight=\dimen288
-\FV@BreakSymbolSepRightNChars=\count377
-\FV@BreakSymbolIndentLeft=\dimen289
-\FV@BreakSymbolIndentLeftNChars=\count378
-\FV@BreakSymbolIndentRight=\dimen290
-\FV@BreakSymbolIndentRightNChars=\count379
-\c@FancyVerbLineBreakLast=\count380
-\FV@LineBox=\box79
-\FV@LineIndentBox=\box80
-\c@FV@BreakBufferDepth=\count381
-\FV@LineWidth=\dimen291
-) (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/tools\shellesc.sty
-Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
-Package shellesc Info: Unrestricted shell escape enabled on input line 75.
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/ifplatform\ifplatform
-.sty
-Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
-
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcm
-ds.sty
-Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
-)
-
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr
-.sty
-Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-)
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/catchfile\catchfile
-.sty
-Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
-
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.s
-ty
-Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
-))
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifluatex.sty
-Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
-)) (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/xstring\xstring.st
-y
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/xstring\xstring.tex
-\xs_counta=\count382
-\xs_countb=\count383
-)
-Package: xstring 2023/08/22 v1.86 String manipulations (CT)
-) (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/framed\framed.sty
-Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip81
-\fb@frw=\dimen292
-\fb@frh=\dimen293
-\FrameRule=\dimen294
-\FrameSep=\dimen295
-) (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count384
-\float@exts=\toks69
-\float@box=\box81
-\@float@everytoks=\toks70
-\@floatcapt=\box82
-)
-\minted@appexistsfile=\read6
-\minted@bgbox=\box83
-\minted@code=\write6
-\c@minted@FancyVerbLineTemp=\count385
-\c@minted@pygmentizecounter=\count386
-\@float@every@listing=\toks71
-\c@listing=\count387
-)
-runsystem(if not exist _minted-main mkdir _minted-main)...executed.
-
-
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcolorbox.s
-ty
-Package: tcolorbox 2024/07/10 version 6.3.0 text color boxes
- (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/tools\verbatim.sty
-Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks72
-\verbatim@line=\toks73
-\verbatim@in@stream=\read7
-) (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/environ\environ.sty
-Package: environ 2014/05/04 v0.3 A new way to define environments
-)
-\tcb@titlebox=\box84
-\tcb@upperbox=\box85
-\tcb@lowerbox=\box86
-\tcb@phantombox=\box87
-\c@tcbbreakpart=\count388
-\c@tcblayer=\count389
-\c@tcolorbox@number=\count390
-\l__tcobox_tmpa_box=\box88
-\l__tcobox_tmpa_dim=\dimen296
+\tcb@titlebox=\box82
+\tcb@upperbox=\box83
+\tcb@lowerbox=\box84
+\tcb@phantombox=\box85
+\c@tcbbreakpart=\count351
+\c@tcblayer=\count352
+\c@tcolorbox@number=\count353
+\l__tcobox_tmpa_box=\box86
+\l__tcobox_tmpa_dim=\dimen289
+\tcb@temp=\box87
+\tcb@temp=\box88
 \tcb@temp=\box89
 \tcb@temp=\box90
-\tcb@temp=\box91
-\tcb@temp=\box92
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/captdef\captdef.sty
 Package: captdef 1998/12/17 non-floating captions
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/psfrag\psfrag.sty
 Package: psfrag 1998/04/11 v3.04 PSfrag (MCG)
-\pfg@pcount=\count391
-\pfg@scount=\count392
-\pfg@temp=\write7
+\pfg@pcount=\count354
+\pfg@scount=\count355
+\pfg@temp=\write6
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/tools\multicol.sty
 Package: multicol 2024/05/23 v1.9h multicolumn formatting (FMi)
-\c@tracingmulticols=\count393
-\mult@box=\box93
-\multicol@leftmargin=\dimen297
-\c@unbalance=\count394
-\c@collectmore=\count395
-\doublecol@number=\count396
-\multicoltolerance=\count397
-\multicolpretolerance=\count398
-\full@width=\dimen298
-\page@free=\dimen299
-\premulticols=\dimen300
-\postmulticols=\dimen301
-\multicolsep=\skip82
-\multicolbaselineskip=\skip83
-\partial@page=\box94
-\last@line=\box95
-\mc@boxedresult=\box96
-\maxbalancingoverflow=\dimen302
-\mult@rightbox=\box97
-\mult@grightbox=\box98
-\mult@firstbox=\box99
-\mult@gfirstbox=\box100
+\c@tracingmulticols=\count356
+\mult@box=\box91
+\multicol@leftmargin=\dimen290
+\c@unbalance=\count357
+\c@collectmore=\count358
+\doublecol@number=\count359
+\multicoltolerance=\count360
+\multicolpretolerance=\count361
+\full@width=\dimen291
+\page@free=\dimen292
+\premulticols=\dimen293
+\postmulticols=\dimen294
+\multicolsep=\skip78
+\multicolbaselineskip=\skip79
+\partial@page=\box92
+\last@line=\box93
+\mc@boxedresult=\box94
+\maxbalancingoverflow=\dimen295
+\mult@rightbox=\box95
+\mult@grightbox=\box96
+\mult@firstbox=\box97
+\mult@gfirstbox=\box98
+\@tempa=\box99
+\@tempa=\box100
 \@tempa=\box101
 \@tempa=\box102
 \@tempa=\box103
@@ -1023,24 +824,22 @@ Package: multicol 2024/05/23 v1.9h multicolumn formatting (FMi)
 \@tempa=\box132
 \@tempa=\box133
 \@tempa=\box134
-\@tempa=\box135
-\@tempa=\box136
-\c@minrows=\count399
-\c@columnbadness=\count400
-\c@finalcolumnbadness=\count401
-\last@try=\dimen303
-\multicolovershoot=\dimen304
-\multicolundershoot=\dimen305
-\mult@nat@firstbox=\box137
-\colbreak@box=\box138
-\mc@col@check@num=\count402
+\c@minrows=\count362
+\c@columnbadness=\count363
+\c@finalcolumnbadness=\count364
+\last@try=\dimen296
+\multicolovershoot=\dimen297
+\multicolundershoot=\dimen298
+\mult@nat@firstbox=\box135
+\colbreak@box=\box136
+\mc@col@check@num=\count365
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/wrapfig\wrapfig.sty
-\wrapoverhang=\dimen306
-\WF@size=\dimen307
-\c@WF@wrappedlines=\count403
-\WF@box=\box139
-\WF@everypar=\toks74
+\wrapoverhang=\dimen299
+\WF@size=\dimen300
+\c@WF@wrappedlines=\count366
+\WF@box=\box137
+\WF@everypar=\toks51
 Package: wrapfig 2003/01/31  v 3.6
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/cancel\cancel.sty
@@ -1060,35 +859,40 @@ File: svgnam.def 2023/11/15 v3.01 Predefined colors according to SVG 1.1 (UK)
 Package: colortbl 2024/07/06 v1.0i Color table columns (DPC)
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
 Package: array 2024/06/14 v2.6d Tabular extension package (FMi)
-\col@sep=\dimen308
-\ar@mcellbox=\box140
-\extrarowheight=\dimen309
-\NC@list=\toks75
-\extratabsurround=\skip84
-\backup@length=\skip85
-\ar@cellbox=\box141
+\col@sep=\dimen301
+\ar@mcellbox=\box138
+\extrarowheight=\dimen302
+\NC@list=\toks52
+\extratabsurround=\skip80
+\backup@length=\skip81
+\ar@cellbox=\box139
 )
-\everycr=\toks76
-\minrowclearance=\skip86
-\rownum=\count404
+\everycr=\toks53
+\minrowclearance=\skip82
+\rownum=\count367
 )
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/subfiles\subfiles.sty
+Package: subfiles 2020/11/14 v2.2 Multi-file projects (package)
+(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/import\import.sty
+Package: import 2020/04/01  v 6.2
+))
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen310
-\captionmargin=\dimen311
-\caption@leftmargin=\dimen312
-\caption@rightmargin=\dimen313
-\caption@width=\dimen314
-\caption@indent=\dimen315
-\caption@parindent=\dimen316
-\caption@hangindent=\dimen317
+\caption@tempdima=\dimen303
+\captionmargin=\dimen304
+\caption@leftmargin=\dimen305
+\caption@rightmargin=\dimen306
+\caption@width=\dimen307
+\caption@indent=\dimen308
+\caption@parindent=\dimen309
+\caption@hangindent=\dimen310
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count405
-\c@continuedfloat=\count406
+\c@caption@flags=\count368
+\c@continuedfloat=\count369
 Package caption Info: float package is loaded.
 Package caption Info: wrapfig package is loaded.
 )
@@ -1096,29 +900,29 @@ Package caption Info: wrapfig package is loaded.
 y
 Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
 Package caption Info: New subtype `subfigure' on input line 238.
-\c@subfigure=\count407
+\c@subfigure=\count370
 Package caption Info: New subtype `subtable' on input line 238.
-\c@subtable=\count408
+\c@subtable=\count371
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen318
-\lightrulewidth=\dimen319
-\cmidrulewidth=\dimen320
-\belowrulesep=\dimen321
-\belowbottomsep=\dimen322
-\aboverulesep=\dimen323
-\abovetopsep=\dimen324
-\cmidrulesep=\dimen325
-\cmidrulekern=\dimen326
-\defaultaddspace=\dimen327
-\@cmidla=\count409
-\@cmidlb=\count410
-\@aboverulesep=\dimen328
-\@belowrulesep=\dimen329
-\@thisruleclass=\count411
-\@lastruleclass=\count412
-\@thisrulewidth=\dimen330
+\heavyrulewidth=\dimen311
+\lightrulewidth=\dimen312
+\cmidrulewidth=\dimen313
+\belowrulesep=\dimen314
+\belowbottomsep=\dimen315
+\aboverulesep=\dimen316
+\abovetopsep=\dimen317
+\cmidrulesep=\dimen318
+\cmidrulekern=\dimen319
+\defaultaddspace=\dimen320
+\@cmidla=\count372
+\@cmidlb=\count373
+\@aboverulesep=\dimen321
+\@belowrulesep=\dimen322
+\@thisruleclass=\count374
+\@lastruleclass=\count375
+\@thisrulewidth=\dimen323
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2024-07-10 v7.01j Hypertext links for LaTeX
@@ -1144,16 +948,16 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 itlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count413
+\c@section@level=\count376
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc
 .sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
-\@linkdim=\dimen331
-\Hy@linkcounter=\count414
-\Hy@pagecounter=\count415
+\@linkdim=\dimen324
+\Hy@linkcounter=\count377
+\Hy@pagecounter=\count378
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2024-07-10 v7.01j Hyperref: PDFDocEncoding definition (HO)
@@ -1163,7 +967,7 @@ Now handling font encoding PD1 ...
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count416
+\Hy@SavedSpaceFactor=\count379
  (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2024-07-10 v7.01j Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -1176,13 +980,13 @@ Package hyperref Info: Plain pages OFF on input line 4172.
 Package hyperref Info: Backreferencing OFF on input line 4177.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4424.
-\c@Hy@tempcnt=\count417
+\c@Hy@tempcnt=\count380
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4763.
-\XeTeXLinkMargin=\dimen332
+\XeTeXLinkMargin=\dimen325
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -1192,9 +996,9 @@ lc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count418
-\Field@Width=\dimen333
-\Fld@charsize=\dimen334
+\Fld@menulength=\count381
+\Field@Width=\dimen326
+\Fld@charsize=\dimen327
 Package hyperref Info: Hyper figures OFF on input line 6042.
 Package hyperref Info: Link nesting OFF on input line 6047.
 Package hyperref Info: Hyper index ON on input line 6050.
@@ -1207,9 +1011,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6072.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count419
-\c@Item=\count420
-\c@Hfootnote=\count421
+\Hy@abspage=\count382
+\c@Item=\count383
+\c@Hfootnote=\count384
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
@@ -1222,8 +1026,8 @@ Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
 kage
 with kernel methods
 )
-\Fld@listcount=\count422
-\c@bookmark@seq@number=\count423
+\Fld@listcount=\count385
+\c@bookmark@seq@number=\count386
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunf
 ilecheck.sty
@@ -1236,14 +1040,14 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 85.
 )
-\Hy@SectionHShift=\skip87
+\Hy@SectionHShift=\skip83
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 43.
-\c@proposición=\count424
-\c@teorema=\count425
-\c@corolario=\count426
-\c@definición=\count427
-\c@ejemplo=\count428
+Package hyperref Info: Option `colorlinks' set `true' on input line 45.
+\c@proposición=\count387
+\c@teorema=\count388
+\c@corolario=\count389
+\c@definición=\count390
+\c@ejemplo=\count391
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/svg\svg.sty
 Package: svg 2020/11/26 v2.02k (include SVG pictures)
@@ -1270,9 +1074,9 @@ Applying: [2021/05/01] Usage of raw or classic option list on input line 252.
 Already applied: [0000/00/00] Usage of raw or classic option list on input line
  368.
 )
-\c@svg@param@lastpage=\count429
-\svg@box=\box142
-\c@svg@param@currpage=\count430
+\c@svg@param@lastpage=\count392
+\svg@box=\box140
+\c@svg@param@currpage=\count393
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/transparent\transpare
 nt.sty
@@ -1290,68 +1094,68 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 Package: biblatex 2024/03/21 v3.20 programmable bibliographies (PK/MW)
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count431
+\lrq@indent=\count394
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
-\c@tabx@nest=\count432
-\c@listtotal=\count433
-\c@listcount=\count434
-\c@liststart=\count435
-\c@liststop=\count436
-\c@citecount=\count437
-\c@citetotal=\count438
-\c@multicitecount=\count439
-\c@multicitetotal=\count440
-\c@instcount=\count441
-\c@maxnames=\count442
-\c@minnames=\count443
-\c@maxitems=\count444
-\c@minitems=\count445
-\c@citecounter=\count446
-\c@maxcitecounter=\count447
-\c@savedcitecounter=\count448
-\c@uniquelist=\count449
-\c@uniquename=\count450
-\c@refsection=\count451
-\c@refsegment=\count452
-\c@maxextratitle=\count453
-\c@maxextratitleyear=\count454
-\c@maxextraname=\count455
-\c@maxextradate=\count456
-\c@maxextraalpha=\count457
-\c@abbrvpenalty=\count458
-\c@highnamepenalty=\count459
-\c@lownamepenalty=\count460
-\c@maxparens=\count461
-\c@parenlevel=\count462
-\blx@tempcnta=\count463
-\blx@tempcntb=\count464
-\blx@tempcntc=\count465
-\c@blx@maxsection=\count466
-\blx@maxsegment@0=\count467
-\blx@notetype=\count468
-\blx@parenlevel@text=\count469
-\blx@parenlevel@foot=\count470
-\blx@sectionciteorder@0=\count471
-\blx@sectionciteorderinternal@0=\count472
-\blx@entrysetcounter=\count473
-\blx@biblioinstance=\count474
-\labelnumberwidth=\skip88
-\labelalphawidth=\skip89
-\biblabelsep=\skip90
-\bibitemsep=\skip91
-\bibnamesep=\skip92
-\bibinitsep=\skip93
-\bibparsep=\skip94
-\bibhang=\skip95
-\blx@bcfin=\read8
-\blx@bcfout=\write8
+\c@tabx@nest=\count395
+\c@listtotal=\count396
+\c@listcount=\count397
+\c@liststart=\count398
+\c@liststop=\count399
+\c@citecount=\count400
+\c@citetotal=\count401
+\c@multicitecount=\count402
+\c@multicitetotal=\count403
+\c@instcount=\count404
+\c@maxnames=\count405
+\c@minnames=\count406
+\c@maxitems=\count407
+\c@minitems=\count408
+\c@citecounter=\count409
+\c@maxcitecounter=\count410
+\c@savedcitecounter=\count411
+\c@uniquelist=\count412
+\c@uniquename=\count413
+\c@refsection=\count414
+\c@refsegment=\count415
+\c@maxextratitle=\count416
+\c@maxextratitleyear=\count417
+\c@maxextraname=\count418
+\c@maxextradate=\count419
+\c@maxextraalpha=\count420
+\c@abbrvpenalty=\count421
+\c@highnamepenalty=\count422
+\c@lownamepenalty=\count423
+\c@maxparens=\count424
+\c@parenlevel=\count425
+\blx@tempcnta=\count426
+\blx@tempcntb=\count427
+\blx@tempcntc=\count428
+\c@blx@maxsection=\count429
+\blx@maxsegment@0=\count430
+\blx@notetype=\count431
+\blx@parenlevel@text=\count432
+\blx@parenlevel@foot=\count433
+\blx@sectionciteorder@0=\count434
+\blx@sectionciteorderinternal@0=\count435
+\blx@entrysetcounter=\count436
+\blx@biblioinstance=\count437
+\labelnumberwidth=\skip84
+\labelalphawidth=\skip85
+\biblabelsep=\skip86
+\bibitemsep=\skip87
+\bibnamesep=\skip88
+\bibinitsep=\skip89
+\bibparsep=\skip90
+\bibhang=\skip91
+\blx@bcfin=\read7
+\blx@bcfout=\write7
 \blx@langwohyphens=\language80
-\c@mincomprange=\count475
-\c@maxcomprange=\count476
-\c@mincompwidth=\count477
+\c@mincomprange=\count438
+\c@maxcomprange=\count439
+\c@mincompwidth=\count440
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -1362,88 +1166,88 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'numeric.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count478
-\c@savedafterword=\count479
-\c@annotator=\count480
-\c@savedannotator=\count481
-\c@author=\count482
-\c@savedauthor=\count483
-\c@bookauthor=\count484
-\c@savedbookauthor=\count485
-\c@commentator=\count486
-\c@savedcommentator=\count487
-\c@editor=\count488
-\c@savededitor=\count489
-\c@editora=\count490
-\c@savededitora=\count491
-\c@editorb=\count492
-\c@savededitorb=\count493
-\c@editorc=\count494
-\c@savededitorc=\count495
-\c@foreword=\count496
-\c@savedforeword=\count497
-\c@holder=\count498
-\c@savedholder=\count499
-\c@introduction=\count500
-\c@savedintroduction=\count501
-\c@namea=\count502
-\c@savednamea=\count503
-\c@nameb=\count504
-\c@savednameb=\count505
-\c@namec=\count506
-\c@savednamec=\count507
-\c@translator=\count508
-\c@savedtranslator=\count509
-\c@shortauthor=\count510
-\c@savedshortauthor=\count511
-\c@shorteditor=\count512
-\c@savedshorteditor=\count513
-\c@labelname=\count514
-\c@savedlabelname=\count515
-\c@institution=\count516
-\c@savedinstitution=\count517
-\c@lista=\count518
-\c@savedlista=\count519
-\c@listb=\count520
-\c@savedlistb=\count521
-\c@listc=\count522
-\c@savedlistc=\count523
-\c@listd=\count524
-\c@savedlistd=\count525
-\c@liste=\count526
-\c@savedliste=\count527
-\c@listf=\count528
-\c@savedlistf=\count529
-\c@location=\count530
-\c@savedlocation=\count531
-\c@organization=\count532
-\c@savedorganization=\count533
-\c@origlocation=\count534
-\c@savedoriglocation=\count535
-\c@origpublisher=\count536
-\c@savedorigpublisher=\count537
-\c@publisher=\count538
-\c@savedpublisher=\count539
-\c@language=\count540
-\c@savedlanguage=\count541
-\c@origlanguage=\count542
-\c@savedoriglanguage=\count543
-\c@pageref=\count544
-\c@savedpageref=\count545
-\shorthandwidth=\skip96
-\shortjournalwidth=\skip97
-\shortserieswidth=\skip98
-\shorttitlewidth=\skip99
-\shortauthorwidth=\skip100
-\shorteditorwidth=\skip101
-\locallabelnumberwidth=\skip102
-\locallabelalphawidth=\skip103
-\localshorthandwidth=\skip104
-\localshortjournalwidth=\skip105
-\localshortserieswidth=\skip106
-\localshorttitlewidth=\skip107
-\localshortauthorwidth=\skip108
-\localshorteditorwidth=\skip109
+\c@afterword=\count441
+\c@savedafterword=\count442
+\c@annotator=\count443
+\c@savedannotator=\count444
+\c@author=\count445
+\c@savedauthor=\count446
+\c@bookauthor=\count447
+\c@savedbookauthor=\count448
+\c@commentator=\count449
+\c@savedcommentator=\count450
+\c@editor=\count451
+\c@savededitor=\count452
+\c@editora=\count453
+\c@savededitora=\count454
+\c@editorb=\count455
+\c@savededitorb=\count456
+\c@editorc=\count457
+\c@savededitorc=\count458
+\c@foreword=\count459
+\c@savedforeword=\count460
+\c@holder=\count461
+\c@savedholder=\count462
+\c@introduction=\count463
+\c@savedintroduction=\count464
+\c@namea=\count465
+\c@savednamea=\count466
+\c@nameb=\count467
+\c@savednameb=\count468
+\c@namec=\count469
+\c@savednamec=\count470
+\c@translator=\count471
+\c@savedtranslator=\count472
+\c@shortauthor=\count473
+\c@savedshortauthor=\count474
+\c@shorteditor=\count475
+\c@savedshorteditor=\count476
+\c@labelname=\count477
+\c@savedlabelname=\count478
+\c@institution=\count479
+\c@savedinstitution=\count480
+\c@lista=\count481
+\c@savedlista=\count482
+\c@listb=\count483
+\c@savedlistb=\count484
+\c@listc=\count485
+\c@savedlistc=\count486
+\c@listd=\count487
+\c@savedlistd=\count488
+\c@liste=\count489
+\c@savedliste=\count490
+\c@listf=\count491
+\c@savedlistf=\count492
+\c@location=\count493
+\c@savedlocation=\count494
+\c@organization=\count495
+\c@savedorganization=\count496
+\c@origlocation=\count497
+\c@savedoriglocation=\count498
+\c@origpublisher=\count499
+\c@savedorigpublisher=\count500
+\c@publisher=\count501
+\c@savedpublisher=\count502
+\c@language=\count503
+\c@savedlanguage=\count504
+\c@origlanguage=\count505
+\c@savedoriglanguage=\count506
+\c@pageref=\count507
+\c@savedpageref=\count508
+\shorthandwidth=\skip92
+\shortjournalwidth=\skip93
+\shortserieswidth=\skip94
+\shorttitlewidth=\skip95
+\shortauthorwidth=\skip96
+\shorteditorwidth=\skip97
+\locallabelnumberwidth=\skip98
+\locallabelalphawidth=\skip99
+\localshorthandwidth=\skip100
+\localshortjournalwidth=\skip101
+\localshortserieswidth=\skip102
+\localshorttitlewidth=\skip103
+\localshortauthorwidth=\skip104
+\localshorteditorwidth=\skip105
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
 
@@ -1456,19 +1260,19 @@ Package biblatex Info: ... file 'biblatex.def' found.
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
 File: biblatex.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
-\c@textcitecount=\count546
-\c@textcitetotal=\count547
-\c@textcitemaxnames=\count548
-\c@biburlbigbreakpenalty=\count549
-\c@biburlbreakpenalty=\count550
-\c@biburlnumpenalty=\count551
-\c@biburlucpenalty=\count552
-\c@biburllcpenalty=\count553
+\c@textcitecount=\count509
+\c@textcitetotal=\count510
+\c@textcitemaxnames=\count511
+\c@biburlbigbreakpenalty=\count512
+\c@biburlbreakpenalty=\count513
+\c@biburlnumpenalty=\count514
+\c@biburlucpenalty=\count515
+\c@biburllcpenalty=\count516
 \biburlbigskip=\muskip19
 \biburlnumskip=\muskip20
 \biburlucskip=\muskip21
 \biburllcskip=\muskip22
-\c@smartand=\count554
+\c@smartand=\count517
 )
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
@@ -1482,8 +1286,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard
 .bbx
 File: standard.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count555
-\c@bbx:relatedtotal=\count556
+\c@bbx:relatedcount=\count518
+\c@bbx:relatedtotal=\count519
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
@@ -1517,8 +1321,8 @@ Package: expl3 2024-07-20 L3 programming layer (loader)
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-p
 dftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count557
-\l__pdf_internal_box=\box143
+\l__color_backend_stack_int=\count520
+\l__pdf_internal_box=\box141
 ))
 Package biblatex Info: ... and expl3
 (biblatex)             2024-07-20 L3 programming layer (loader) 
@@ -1543,34 +1347,32 @@ runsystem(del main.aex)...executed.
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count558
-\@quotereset=\count559
+\@quotelevel=\count521
+\@quotereset=\count522
 (main.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
- (TeX_files/Introducción.aux) (TeX_files/chapter01.aux)
-(TeX_files/chapter02.aux) (TeX_files/chapter03.aux) (TeX_files/Conclusiones.aux
-) (TeX_files/Apéndices.aux) (TeX_files/Anexo.aux))
+ (TeX_files/chapter03.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1606,23 +1408,23 @@ LaTeX Font Info:    ... okay on input line 77.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \. on input line 77.
-LaTeX Info: Redefining \% on input line 77.
+LaTeX Info: Redefining \. on input line 80.
+LaTeX Info: Redefining \% on input line 80.
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.
 mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count560
-\scratchdimen=\dimen335
-\scratchbox=\box144
-\nofMPsegments=\count561
-\nofMParguments=\count562
-\everyMPshowfont=\toks77
-\MPscratchCnt=\count563
-\MPscratchDim=\dimen336
-\MPnumerator=\count564
-\makeMPintoPDFobject=\count565
-\everyMPtoPDFconversion=\toks78
+\scratchcounter=\count523
+\scratchdimen=\dimen328
+\scratchbox=\box142
+\nofMPsegments=\count524
+\nofMParguments=\count525
+\everyMPshowfont=\toks54
+\MPscratchCnt=\count526
+\MPscratchDim=\dimen329
+\MPnumerator=\count527
+\makeMPintoPDFobject=\count528
+\everyMPtoPDFconversion=\toks55
 )
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf
 -base.sty
@@ -1637,10 +1439,10 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 77.
+Package hyperref Info: Link coloring ON on input line 80.
  (main.out) (main.out)
-\@outlinefile=\write9
-\openout9 = `main.out'.
+\@outlinefile=\write8
+\openout8 = `main.out'.
 
 Package biblatex Info: Trying to load language 'spanish'...
 Package biblatex Info: ... file 'spanish.lbx' found.
@@ -1652,13 +1454,13 @@ File: spanish.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout8 = `main.bcf'.
+\openout7 = `main.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (main.bbl)
-Package biblatex Info: Reference section=0 on input line 77.
-Package biblatex Info: Reference segment=0 on input line 77.
+Package biblatex Info: Reference section=0 on input line 80.
+Package biblatex Info: Reference segment=0 on input line 80.
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: a4paper
@@ -1691,35 +1493,35 @@ Package biblatex Info: Reference segment=0 on input line 77.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<Escudo-UNAM.pdf, id=198, 300.51309pt x 337.88977pt>
+<Escudo-UNAM.pdf, id=82, 300.51309pt x 337.88977pt>
 File: Escudo-UNAM.pdf Graphic file (type pdf)
 <use Escudo-UNAM.pdf>
-Package pdftex.def Info: Escudo-UNAM.pdf  used on input line 82.
+Package pdftex.def Info: Escudo-UNAM.pdf  used on input line 85.
 (pdftex.def)             Requested size: 68.77722pt x 77.33466pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 82.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 85.
 
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 82.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 85.
 
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<Escudo-FCIENCIAS.pdf, id=199, 359.74399pt x 411.136pt>
+<Escudo-FCIENCIAS.pdf, id=83, 359.74399pt x 411.136pt>
 File: Escudo-FCIENCIAS.pdf Graphic file (type pdf)
 <use Escudo-FCIENCIAS.pdf>
-Package pdftex.def Info: Escudo-FCIENCIAS.pdf  used on input line 82.
+Package pdftex.def Info: Escudo-FCIENCIAS.pdf  used on input line 85.
 (pdftex.def)             Requested size: 67.66591pt x 77.33466pt.
 
-Underfull \hbox (badness 10000) detected at line 82
+Underfull \hbox (badness 10000) detected at line 85
 \OT1/cmr/bx/n/14.4 T E S I S
  []
 
 
-Underfull \hbox (badness 10000) detected at line 82
+Underfull \hbox (badness 10000) detected at line 85
 \OT1/cmr/m/n/10.95 P R E S E N T A :
  []
 
@@ -1745,16 +1547,16 @@ iple pdfs with page group included in a single page
 
 ]
 
-LaTeX Info: Redefining \. on input line 91.
-LaTeX Info: Redefining \% on input line 91.
+LaTeX Info: Redefining \. on input line 94.
+LaTeX Info: Redefining \% on input line 94.
 [4
 
 ]
 
 [5]
 
-LaTeX Info: Redefining \. on input line 93.
-LaTeX Info: Redefining \% on input line 93.
+LaTeX Info: Redefining \. on input line 96.
+LaTeX Info: Redefining \% on input line 96.
 [6
 
 ] (main.toc
@@ -1774,1102 +1576,845 @@ Package spanish Warning: Replacing `OT1/cmr/bx/sc' by
 Package spanish Warning: Replacing `OT1/cmr/bx/sc' by 
 (spanish)                faked small caps on input line 3.
 
-
-Package spanish Warning: Replacing `OT1/cmr/bx/sc' by 
-(spanish)                faked small caps on input line 4.
-
-
-
-[7])
-\tf@toc=\write10
-\openout10 = `main.toc'.
+)
+\tf@toc=\write9
+\openout9 = `main.toc'.
 
 
 
-LaTeX Info: Redefining \. on input line 94.
-LaTeX Info: Redefining \% on input line 94.
-[8] (main.lof
+[7]
+
+LaTeX Info: Redefining \. on input line 97.
+LaTeX Info: Redefining \% on input line 97.
+[8
+
+] (main.lof
 LaTeX Info: Redefining \sptext on input line 1.
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Warning: Reference `eqn:LKextendida' on page \es@scroman {ix} undefined o
+n input line 14.
 
 
 
-[9
+[9]
 
-]
+LaTeX Info: Redefining \sptext on input line 31.
+LaTeX Info: Redefining \. on input line 31.
+LaTeX Info: Redefining \% on input line 31.
+[10])
+\tf@lof=\write10
+\openout10 = `main.lof'.
 
-LaTeX Info: Redefining \sptext on input line 28.
-LaTeX Info: Redefining \. on input line 28.
-LaTeX Info: Redefining \% on input line 28.
-[10]
 
-LaTeX Info: Redefining \sptext on input line 44.
-LaTeX Info: Redefining \. on input line 44.
-LaTeX Info: Redefining \% on input line 44.
+
+LaTeX Info: Redefining \. on input line 98.
+LaTeX Info: Redefining \% on input line 98.
 [11]
 
-LaTeX Info: Redefining \sptext on input line 63.
-LaTeX Info: Redefining \. on input line 63.
-LaTeX Info: Redefining \% on input line 63.
-[12])
-\tf@lof=\write11
-\openout11 = `main.lof'.
-
-
-
-LaTeX Info: Redefining \. on input line 95.
-LaTeX Info: Redefining \% on input line 95.
-[13]
-
-LaTeX Info: Redefining \. on input line 95.
-LaTeX Info: Redefining \% on input line 95.
-[14
+LaTeX Info: Redefining \. on input line 98.
+LaTeX Info: Redefining \% on input line 98.
+[12
 
 ] (main.lot
 LaTeX Info: Redefining \sptext on input line 1.
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
-\tf@lot=\write12
-\openout12 = `main.lot'.
+\tf@lot=\write11
+\openout11 = `main.lot'.
+
+
+
+[13]
+
+LaTeX Info: Redefining \. on input line 99.
+LaTeX Info: Redefining \% on input line 99.
+[14
+
+] (main.loa)
+\tf@loa=\write12
+\openout12 = `main.loa'.
 
 
 
 [15]
 
-LaTeX Info: Redefining \. on input line 96.
-LaTeX Info: Redefining \% on input line 96.
+LaTeX Info: Redefining \. on input line 103.
+LaTeX Info: Redefining \% on input line 103.
 [16
 
-] (main.loa)
-\tf@loa=\write13
-\openout13 = `main.loa'.
-
-
-
-[17]
-\openout2 = `./TeX_files/Introducción.aux'.
-
- (TeX_files/Introducción.tex
-
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
-[18
-
-
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 3--34
+\openout2 = `./TeX_files/chapter03.aux'.
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--34
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--34
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--34
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--34
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--34
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--34
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--34
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--34
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--34
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--34
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--34
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--34
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--34
-
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[19]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-LaTeX Info: Redefining \. on input line 34.
-LaTeX Info: Redefining \% on input line 34.
-[20]
-
-[21]
-Underfull \hbox (badness 10000) in paragraph at lines 35--39
-
- []
-
-)
-
-LaTeX Info: Redefining \. on input line 98.
-LaTeX Info: Redefining \% on input line 98.
-[22]
-\openout2 = `./TeX_files/chapter01.aux'.
-
- (TeX_files/chapter01.tex
+ (TeX_files/chapter03.tex
 Cap\'{\i }tulo 1.
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--11
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--11
+
+ []
+
 
 
 [1
 
 
-
-
-
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 15--19
+
+LaTeX Warning: Reference `prop:DiagonalI' on page 2 undefined on input line 23.
+
+
+
+LaTeX Warning: Reference `eqn:CriterioDebil' on page 2 undefined on input line 
+23.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--26
+
+ []
+
+<../Imagenes/LeyCircularMay.png, id=348, 2208.25pt x 1003.75pt>
+File: ../Imagenes/LeyCircularMay.png Graphic file (type png)
+<use ../Imagenes/LeyCircularMay.png>
+Package pdftex.def Info: ../Imagenes/LeyCircularMay.png  used on input line 38.
+
+(pdftex.def)             Requested size: 408.51985pt x 185.69084pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--42
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 22--28
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 22--28
+Underfull \hbox (badness 10000) in paragraph at lines 31--42
 
  []
 
 
 
-LaTeX Info: Redefining \. on input line 28.
-LaTeX Info: Redefining \% on input line 28.
+LaTeX Info: Redefining \. on input line 42.
+LaTeX Info: Redefining \% on input line 42.
 [2]
 
-LaTeX Info: Redefining \. on input line 32.
-LaTeX Info: Redefining \% on input line 32.
-[3]
-<../Imagenes/TransicionesdeMay.png, id=655, 3011.25pt x 1204.5pt>
-File: ../Imagenes/TransicionesdeMay.png Graphic file (type png)
-<use ../Imagenes/TransicionesdeMay.png>
-Package pdftex.def Info: ../Imagenes/TransicionesdeMay.png  used on input line 
-35.
-(pdftex.def)             Requested size: 481.80984pt x 192.72394pt.
+LaTeX Warning: Reference `sec:PuntosFijos' on page 3 undefined on input line 45
+.
 
-Underfull \hbox (badness 10000) in paragraph at lines 40--49
+
+LaTeX Warning: Reference `tab:lambdaMay' on page 3 undefined on input line 45.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--46
+
+ []
+
+<../Imagenes/LeyCircularMay2.png, id=358, 2208.25pt x 1003.75pt>
+File: ../Imagenes/LeyCircularMay2.png Graphic file (type png)
+<use ../Imagenes/LeyCircularMay2.png>
+Package pdftex.def Info: ../Imagenes/LeyCircularMay2.png  used on input line 49
+.
+(pdftex.def)             Requested size: 408.51985pt x 185.69084pt.
+
+Underfull \vbox (badness 1048) has occurred while \output is active []
+
+
+
+LaTeX Info: Redefining \. on input line 55.
+LaTeX Info: Redefining \% on input line 55.
+[3 <../Imagenes/LeyCircularMay.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 58--61
+
+ []
+
+<../Imagenes/TransicionMayDirLin.png, id=365, 1806.75pt x 1405.25pt>
+File: ../Imagenes/TransicionMayDirLin.png Graphic file (type png)
+<use ../Imagenes/TransicionMayDirLin.png>
+Package pdftex.def Info: ../Imagenes/TransicionMayDirLin.png  used on input lin
+e 63.
+(pdftex.def)             Requested size: 251.52443pt x 195.61865pt.
+
+Overfull \hbox (9.676pt too wide) in paragraph at lines 63--64
+ [] 
+ []
+
+
+Underfull \vbox (badness 3179) has occurred while \output is active []
+
+
+
+LaTeX Info: Redefining \. on input line 70.
+LaTeX Info: Redefining \% on input line 70.
+[4 <../Imagenes/LeyCircularMay2.png>]
+
+Package wrapfig Warning: Collision between wrapping environments on input line 
+73.
+
+<../Imagenes/TransicionMayDirLog.png, id=372, 1806.75pt x 1405.25pt>
+File: ../Imagenes/TransicionMayDirLog.png Graphic file (type png)
+<use ../Imagenes/TransicionMayDirLog.png>
+Package pdftex.def Info: ../Imagenes/TransicionMayDirLog.png  used on input lin
+e 74.
+(pdftex.def)             Requested size: 251.52443pt x 195.61865pt.
+
+Overfull \hbox (9.676pt too wide) in paragraph at lines 74--75
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 70--80
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 40--49
+Package wrapfig Warning: Stationary wrapfigure forced to float on input line 80
+.
+
+
+
+LaTeX Info: Redefining \. on input line 85.
+LaTeX Info: Redefining \% on input line 85.
+[5 <../Imagenes/TransicionMayDirLin.png> <../Imagenes/TransicionMayDirLog.png>]
+<../Imagenes/TransicionDirvsNoDir.png, id=379, 3011.25pt x 1204.5pt>
+File: ../Imagenes/TransicionDirvsNoDir.png Graphic file (type png)
+<use ../Imagenes/TransicionDirvsNoDir.png>
+Package pdftex.def Info: ../Imagenes/TransicionDirvsNoDir.png  used on input li
+ne 89.
+(pdftex.def)             Requested size: 496.83482pt x 198.73392pt.
+
+Overfull \hbox (13.13795pt too wide) in paragraph at lines 89--90
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 94--97
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 40--49
+
+LaTeX Info: Redefining \. on input line 97.
+LaTeX Info: Redefining \% on input line 97.
+[6 <../Imagenes/TransicionDirvsNoDir.png>]
+<../Imagenes/TransicionMaySigma.png, id=385, 2810.5pt x 1204.5pt>
+File: ../Imagenes/TransicionMaySigma.png Graphic file (type png)
+<use ../Imagenes/TransicionMaySigma.png>
+Package pdftex.def Info: ../Imagenes/TransicionMaySigma.png  used on input line
+ 100.
+(pdftex.def)             Requested size: 463.7125pt x 198.73392pt.
+<../Imagenes/TransicionσDirvsNoDir.png, id=387, 1806.75pt x 1405.25pt>
+File: ../Imagenes/TransicionσDirvsNoDir.png Graphic file (type png)
+<use ../Imagenes/TransicionσDirvsNoDir.png>
+Package pdftex.def Info: ../Imagenes/TransicionσDirvsNoDir.png  used on input 
+line 107.
+(pdftex.def)             Requested size: 241.84843pt x 188.09239pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 113--118
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 40--49
+
+LaTeX Info: Redefining \. on input line 118.
+LaTeX Info: Redefining \% on input line 118.
+[7 <../Imagenes/TransicionMaySigma.png> <../Imagenes/TransicionσDirvsNoDir.png
+>]
+<../Imagenes/Transicionσ√NC02.png, id=394, 3011.25pt x 1304.875pt>
+File: ../Imagenes/Transicionσ√NC02.png Graphic file (type png)
+<use ../Imagenes/Transicionσ√NC02.png>
+Package pdftex.def Info: ../Imagenes/Transicionσ√NC02.png  used on input lin
+e 137.
+(pdftex.def)             Requested size: 481.80984pt x 208.78426pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 128--141
 
  []
 
 
-Underfull \vbox (badness 8056) has occurred while \output is active []
 
-
-
-LaTeX Info: Redefining \. on input line 49.
-LaTeX Info: Redefining \% on input line 49.
-[4 <../Imagenes/TransicionesdeMay.png>])
-
-LaTeX Info: Redefining \. on input line 101.
-LaTeX Info: Redefining \% on input line 101.
-[5]
-\openout2 = `./TeX_files/chapter02.aux'.
-
- (TeX_files/chapter02.tex
-
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
-[6
-
-
-
-
-]
-Cap\'{\i }tulo 2.
-
-Underfull \hbox (badness 10000) in paragraph at lines 7--11
-
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 12.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 12.
-
-
-
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 37--43
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 37--43
-
- []
-
-<../Imagenes/Competencia de especies.png, id=683, 1806.75pt x 1606.0pt>
-File: ../Imagenes/Competencia de especies.png Graphic file (type png)
-<use ../Imagenes/Competencia de especies.png>
-Package pdftex.def Info: ../Imagenes/Competencia de especies.png  used on input
- line 54.
-(pdftex.def)             Requested size: 241.84843pt x 214.96272pt.
-
-
-LaTeX Info: Redefining \. on input line 61.
-LaTeX Info: Redefining \% on input line 61.
+LaTeX Info: Redefining \. on input line 141.
+LaTeX Info: Redefining \% on input line 141.
 [8]
+Underfull \hbox (badness 10000) in paragraph at lines 142--145
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 83.
+ []
+
+<../Imagenes/Transicionσ√NC06.png, id=400, 3011.25pt x 1304.875pt>
+File: ../Imagenes/Transicionσ√NC06.png Graphic file (type png)
+<use ../Imagenes/Transicionσ√NC06.png>
+Package pdftex.def Info: ../Imagenes/Transicionσ√NC06.png  used on input lin
+e 148.
+(pdftex.def)             Requested size: 481.80984pt x 208.78426pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+(TeX_files/AuxiliarComp.tex
+
+LaTeX Warning: Reference `eqn:LK' on page 9 undefined on input line 7.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\gg' on input line 83.
+LaTeX Warning: Reference `eqn:MatrizIncidencias' on page 9 undefined on input l
+ine 7.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 83.
+LaTeX Warning: Reference `eqn:MatrizJacobiana' on page 9 undefined on input lin
+e 7.
 
-Package svg Info: Last page of `./svg-inkscape/karateLu_svg-tex.pdf' is 1 on in
-put line 90.
-(svg-inkscape/karateLu_svg-tex.pdf_tex
-<./svg-inkscape/karateLu_svg-tex.pdf, id=696, page=1, 451.6875pt x 451.6875pt>
-File: ./svg-inkscape/karateLu_svg-tex.pdf Graphic file (type pdf)
-<use ./svg-inkscape/karateLu_svg-tex.pdf, page 1>
-Package pdftex.def Info: ./svg-inkscape/karateLu_svg-tex.pdf , page1 used on in
-put line 56.
-(pdftex.def)             Requested size: 241.84843pt x 241.85373pt.
+
+LaTeX Warning: Reference `eqn:radioMayGirko' on page 9 undefined on input line 
+7.
+
+
+LaTeX Warning: Reference `eqn:LK' on page 9 undefined on input line 9.
+
+
+LaTeX Warning: Reference `ch:Ap' on page 9 undefined on input line 11.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--12
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--12
+
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 12.
+LaTeX Info: Redefining \% on input line 12.
+[9 <../Imagenes/Transicionσ√NC02.png>]
+
+LaTeX Info: Redefining \. on input line 12.
+LaTeX Info: Redefining \% on input line 12.
+[10 <../Imagenes/Transicionσ√NC06.png>])
+
+LaTeX Warning: Reference `eqn:MatrizJacobiana' on page 11 undefined on input li
+ne 168.
+
+
+LaTeX Warning: Reference `eqn:LKextendida' on page 11 undefined on input line 1
+68.
+
+
+LaTeX Warning: Reference `eg:2x2' on page 11 undefined on input line 168.
+
+<../Imagenes/Seriesdetiempopositiva.png, id=412, 2107.875pt x 1003.75pt>
+File: ../Imagenes/Seriesdetiempopositiva.png Graphic file (type png)
+<use ../Imagenes/Seriesdetiempopositiva.png>
+Package pdftex.def Info: ../Imagenes/Seriesdetiempopositiva.png  used on input 
+line 171.
+(pdftex.def)             Requested size: 484.80106pt x 230.85764pt.
+
+Overfull \hbox (1.10419pt too wide) in paragraph at lines 171--172
+ [][] 
+ []
+
+
+LaTeX Warning: Reference `eqn:LKextendida' on page 11 undefined on input line 1
+72.
+
+
+LaTeX Warning: Reference `eqn:LKextendida' on page 11 undefined on input line 1
+72.
+
+
+LaTeX Warning: Reference `eqn:LKextendida' on page 11 undefined on input line 1
+76.
+
+
+LaTeX Warning: Reference `eqn:LKextendida' on page 11 undefined on input line 1
+79.
+
+
+LaTeX Warning: Reference `eg:2x2CoopyDemás' on page 11 undefined on input line
+ 181.
+
+
+LaTeX Warning: Reference `fig:CooperacionEspecies' on page 11 undefined on inpu
+t line 181.
+
+<../Imagenes/Series de Tiempo LK100.png, id=413, 2107.875pt x 1003.75pt>
+File: ../Imagenes/Series de Tiempo LK100.png Graphic file (type png)
+<use ../Imagenes/Series de Tiempo LK100.png>
+Package pdftex.def Info: ../Imagenes/Series de Tiempo LK100.png  used on input 
+line 184.
+(pdftex.def)             Requested size: 484.80106pt x 230.85764pt.
+
+Overfull \hbox (1.10419pt too wide) in paragraph at lines 184--185
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--188
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--188
+
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 188.
+LaTeX Info: Redefining \% on input line 188.
+[11 <../Imagenes/Seriesdetiempopositiva.png>]
+
+LaTeX Info: Redefining \. on input line 188.
+LaTeX Info: Redefining \% on input line 188.
+[12 <../Imagenes/Series de Tiempo LK100.png>]
+
+LaTeX Warning: Reference `sec:PuntosFijos' on page 13 undefined on input line 1
+94.
+
+<../Imagenes/PuntoFijoCompetencia.png, id=426, 1806.75pt x 1405.25pt>
+File: ../Imagenes/PuntoFijoCompetencia.png Graphic file (type png)
+<use ../Imagenes/PuntoFijoCompetencia.png>
+Package pdftex.def Info: ../Imagenes/PuntoFijoCompetencia.png  used on input li
+ne 196.
+(pdftex.def)             Requested size: 234.88574pt x 182.6889pt.
+
+LaTeX Warning: Reference `eqn:EcsPuntoFijo' on page 13 undefined on input line 
+203.
+
+
+LaTeX Warning: Command \textasciiacute invalid in math mode on input line 206.
+
+
+LaTeX Warning: Command \textasciiacute invalid in math mode on input line 206.
+
+Missing character: There is no � in font cmr8!
+<../Imagenes/PuntoFijoCoop1.png, id=431, 3011.25pt x 1405.25pt>
+File: ../Imagenes/PuntoFijoCoop1.png Graphic file (type png)
+<use ../Imagenes/PuntoFijoCoop1.png>
+Package pdftex.def Info: ../Imagenes/PuntoFijoCoop1.png  used on input line 209
+.
+(pdftex.def)             Requested size: 481.80984pt x 224.84459pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 202--213
+
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 213.
+LaTeX Info: Redefining \% on input line 213.
+[13 <../Imagenes/PuntoFijoCompetencia.png>]
+<../Imagenes/PuntoFijoCoop2.png, id=436, 3011.25pt x 1405.25pt>
+File: ../Imagenes/PuntoFijoCoop2.png Graphic file (type png)
+<use ../Imagenes/PuntoFijoCoop2.png>
+Package pdftex.def Info: ../Imagenes/PuntoFijoCoop2.png  used on input line 216
+.
+(pdftex.def)             Requested size: 481.80984pt x 224.84459pt.
+<../Imagenes/PuntoFijoCoop3.png, id=437, 3011.25pt x 1405.25pt>
+File: ../Imagenes/PuntoFijoCoop3.png Graphic file (type png)
+<use ../Imagenes/PuntoFijoCoop3.png>
+Package pdftex.def Info: ../Imagenes/PuntoFijoCoop3.png  used on input line 224
+.
+(pdftex.def)             Requested size: 481.80984pt x 224.84459pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 220--228
+
+ []
+
+
+LaTeX Warning: Reference `sec:PuntosFijos' on page 14 undefined on input line 2
+29.
+
+
+LaTeX Warning: Reference `eqn:MatrizJacobiana' on page 14 undefined on input li
+ne 231.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 229--232
+
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 232.
+LaTeX Info: Redefining \% on input line 232.
+[14 <../Imagenes/PuntoFijoCoop1.png> <../Imagenes/PuntoFijoCoop2.png>]
+
+LaTeX Info: Redefining \. on input line 232.
+LaTeX Info: Redefining \% on input line 232.
+[15 <../Imagenes/PuntoFijoCoop3.png>]
+
+LaTeX Warning: Reference `eqn:MatrizJacobiana' on page 16 undefined on input li
+ne 236.
+
+<../Imagenes/julia-logo-color.png, id=452, 321.2pt x 200.75pt>
+File: ../Imagenes/julia-logo-color.png Graphic file (type png)
+<use ../Imagenes/julia-logo-color.png>
+Package pdftex.def Info: ../Imagenes/julia-logo-color.png  used on input line 2
+39.
+(pdftex.def)             Requested size: 21.02086pt x 13.14pt.
+\openout3 = `main.pyg'.
+
+(_minted-main/default.pygstyle)
+(_minted-main/A5140291610043C105F8BA3198EDF5B5228C163F5D4C4DD96BE66FA41258E0CF.
+pygtex
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
 )
-Overfull \hbox (24.18633pt too wide) in paragraph at lines 90--91
- [] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 85--96
+Underfull \hbox (badness 10000) in paragraph at lines 236--251
 
  []
 
+\openout3 = `main.pyg'.
 
 
-LaTeX Info: Redefining \. on input line 96.
-LaTeX Info: Redefining \% on input line 96.
-[9 <../Imagenes/Competencia de especies.png>]
-
-LaTeX Info: Redefining \. on input line 109.
-LaTeX Info: Redefining \% on input line 109.
-[10 <./svg-inkscape/karateLu_svg-tex.pdf>]
-Package svg Info: Last page of `./svg-inkscape/Red10DirLu_svg-tex.pdf' is 1 on 
-input line 116.
-
-(svg-inkscape/Red10DirLu_svg-tex.pdf_tex
-<./svg-inkscape/Red10DirLu_svg-tex.pdf, id=714, page=1, 451.6875pt x 451.6875pt
->
-File: ./svg-inkscape/Red10DirLu_svg-tex.pdf Graphic file (type pdf)
-<use ./svg-inkscape/Red10DirLu_svg-tex.pdf, page 1>
-Package pdftex.def Info: ./svg-inkscape/Red10DirLu_svg-tex.pdf , page1 used on 
-input line 56.
-(pdftex.def)             Requested size: 251.52443pt x 251.53036pt.
-)
-Overfull \hbox (9.676pt too wide) in paragraph at lines 116--117
- [] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 141--146
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 141--146
-
- []
-
-
-
-LaTeX Info: Redefining \. on input line 146.
-LaTeX Info: Redefining \% on input line 146.
-[11 <./svg-inkscape/Red10DirLu_svg-tex.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 171--174
-
- []
-
-
-
-LaTeX Info: Redefining \. on input line 174.
-LaTeX Info: Redefining \% on input line 174.
-[12]
-Package svg Info: Last page of `./svg-inkscape/RedIncidencias_svg-tex.pdf' is 1
- on input line 179.
- (svg-inkscape/RedIncidencias_svg-tex.pdf_tex
-<./svg-inkscape/RedIncidencias_svg-tex.pdf, id=733, page=1, 451.6875pt x 451.68
-75pt>
-File: ./svg-inkscape/RedIncidencias_svg-tex.pdf Graphic file (type pdf)
-<use ./svg-inkscape/RedIncidencias_svg-tex.pdf, page 1>
-Package pdftex.def Info: ./svg-inkscape/RedIncidencias_svg-tex.pdf , page1 used
- on input line 56.
-(pdftex.def)             Requested size: 251.52443pt x 251.53036pt.
-)
-Overfull \hbox (4.84169pt too wide) in paragraph at lines 179--180
- [] 
- []
-
-
-Package wrapfig Warning: Stationary wrapfigure forced to float on input line 18
-8.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 190--216
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 190--216
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 190--216
-
- []
-
-
-
-LaTeX Info: Redefining \. on input line 216.
-LaTeX Info: Redefining \% on input line 216.
-[13 <./svg-inkscape/RedIncidencias_svg-tex.pdf>]
-
-LaTeX Info: Redefining \. on input line 224.
-LaTeX Info: Redefining \% on input line 224.
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 226--233
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 226--233
-
- []
-
-
-
-LaTeX Info: Redefining \. on input line 255.
-LaTeX Info: Redefining \% on input line 255.
-[15]
-<../Imagenes/Cooperacion de especies.png, id=760, 2007.5pt x 1003.75pt>
-File: ../Imagenes/Cooperacion de especies.png Graphic file (type png)
-<use ../Imagenes/Cooperacion de especies.png>
-Package pdftex.def Info: ../Imagenes/Cooperacion de especies.png  used on input
- line 259.
-(pdftex.def)             Requested size: 481.80984pt x 240.90492pt.
-<../Imagenes/STrestoInteracciones.png, id=765, 2409.0pt x 803.0pt>
-File: ../Imagenes/STrestoInteracciones.png Graphic file (type png)
-<use ../Imagenes/STrestoInteracciones.png>
-Package pdftex.def Info: ../Imagenes/STrestoInteracciones.png  used on input li
-ne 271.
-(pdftex.def)             Requested size: 481.79147pt x 160.59715pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 264--275
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 264--275
-
- []
-
-
-
-LaTeX Info: Redefining \. on input line 275.
-LaTeX Info: Redefining \% on input line 275.
-[16 <../Imagenes/Cooperacion de especies.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 280--283
-
- []
-
-
-
-LaTeX Info: Redefining \. on input line 283.
-LaTeX Info: Redefining \% on input line 283.
-[17 <../Imagenes/STrestoInteracciones.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 289--323
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 289--323
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 289--323
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 289--323
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 289--323
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 289--323
-
- []
-
-
-
-LaTeX Info: Redefining \. on input line 323.
-LaTeX Info: Redefining \% on input line 323.
-[18]
-Underfull \hbox (badness 10000) in paragraph at lines 326--330
-
- []
-
-
+(_minted-main/B884E593BDC07CD7DCDD60757CD0FCE7228C163F5D4C4DD96BE66FA41258E0CF.
+pygtex)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-LaTeX Info: Redefining \. on input line 330.
-LaTeX Info: Redefining \% on input line 330.
-[19]
+LaTeX Info: Redefining \. on input line 267.
+LaTeX Info: Redefining \% on input line 267.
+[16{C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cm-super/cm-
+super-ts1.enc} <../Imagenes/julia-logo-color.png>]
+<../Imagenes/DistDiagonal.png, id=463, 3011.25pt x 1304.875pt>
+File: ../Imagenes/DistDiagonal.png Graphic file (type png)
+<use ../Imagenes/DistDiagonal.png>
+Package pdftex.def Info: ../Imagenes/DistDiagonal.png  used on input line 275.
+(pdftex.def)             Requested size: 481.80984pt x 208.78426pt.
 
-LaTeX Info: Redefining \. on input line 352.
-LaTeX Info: Redefining \% on input line 352.
+
+LaTeX Warning: Reference `prop:DiagonalI' on page 17 undefined on input line 28
+0.
+
+
+LaTeX Warning: Reference `eqn:radioMayGirko' on page 17 undefined on input line
+ 280.
+
+<../Imagenes/DistEigenvalores.png, id=466, 2007.5pt x 1806.75pt>
+File: ../Imagenes/DistEigenvalores.png Graphic file (type png)
+<use ../Imagenes/DistEigenvalores.png>
+Package pdftex.def Info: ../Imagenes/DistEigenvalores.png  used on input line 2
+89.
+(pdftex.def)             Requested size: 481.80984pt x 433.62886pt.
+
+
+LaTeX Info: Redefining \. on input line 293.
+LaTeX Info: Redefining \% on input line 293.
+[17 <../Imagenes/DistDiagonal.png>]
+<../Imagenes/LeyesCirculares.png, id=473, 3011.25pt x 1405.25pt>
+File: ../Imagenes/LeyesCirculares.png Graphic file (type png)
+<use ../Imagenes/LeyesCirculares.png>
+Package pdftex.def Info: ../Imagenes/LeyesCirculares.png  used on input line 30
+0.
+(pdftex.def)             Requested size: 511.90573pt x 238.88934pt.
+
+Overfull \hbox (28.20886pt too wide) in paragraph at lines 300--301
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 294--304
+
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 304.
+LaTeX Info: Redefining \% on input line 304.
+[18 <../Imagenes/DistEigenvalores.png>]
+<../Imagenes/LeyCircularParticular.png, id=478, 1806.75pt x 1405.25pt>
+File: ../Imagenes/LeyCircularParticular.png Graphic file (type png)
+<use ../Imagenes/LeyCircularParticular.png>
+Package pdftex.def Info: ../Imagenes/LeyCircularParticular.png  used on input l
+ine 307.
+(pdftex.def)             Requested size: 234.88574pt x 182.6889pt.
+
+
+LaTeX Warning: Reference `prop:DiagonalI' on page 19 undefined on input line 31
+4.
+
+
+LaTeX Warning: Reference `proof1:paramEstabilidad' on page 19 undefined on inpu
+t line 314.
+
+
+
+LaTeX Info: Redefining \. on input line 315.
+LaTeX Info: Redefining \% on input line 315.
+[19 <../Imagenes/LeyesCirculares.png> <../Imagenes/LeyCircularParticular.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 316.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 316.
+
+
+
+LaTeX Info: Redefining \. on input line 337.
+LaTeX Info: Redefining \% on input line 337.
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 356--360
+<../Imagenes/ReEvs-Diagonales.png, id=497, 2409.0pt x 1405.25pt>
+File: ../Imagenes/ReEvs-Diagonales.png Graphic file (type png)
+<use ../Imagenes/ReEvs-Diagonales.png>
+Package pdftex.def Info: ../Imagenes/ReEvs-Diagonales.png  used on input line 3
+40.
+(pdftex.def)             Requested size: 481.79147pt x 281.04501pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 345--349
 
  []
 
 
 
-LaTeX Info: Redefining \. on input line 379.
-LaTeX Info: Redefining \% on input line 379.
-[21]
+LaTeX Info: Redefining \. on input line 349.
+LaTeX Info: Redefining \% on input line 349.
+[21 <../Imagenes/ReEvs-Diagonales.png>]
+<../Imagenes/RadsDiagsGersh.png, id=505, 1606.0pt x 1405.25pt>
+File: ../Imagenes/RadsDiagsGersh.png Graphic file (type png)
+<use ../Imagenes/RadsDiagsGersh.png>
+Package pdftex.def Info: ../Imagenes/RadsDiagsGersh.png  used on input line 351
+.
+(pdftex.def)             Requested size: 208.78732pt x 182.6889pt.
 
-LaTeX Info: Redefining \. on input line 412.
-LaTeX Info: Redefining \% on input line 412.
-[22]
-Underfull \hbox (badness 10000) in paragraph at lines 414--419
+
+LaTeX Warning: Reference `eqn:MatrizJacobiana' on page 22 undefined on input li
+ne 358.
+
+<../Imagenes/AjustesLinMeds.png, id=512, 3212.0pt x 1204.5pt>
+File: ../Imagenes/AjustesLinMeds.png Graphic file (type png)
+<use ../Imagenes/AjustesLinMeds.png>
+Package pdftex.def Info: ../Imagenes/AjustesLinMeds.png  used on input line 362
+.
+(pdftex.def)             Requested size: 513.93051pt x 192.72394pt.
+
+Overfull \hbox (30.23364pt too wide) in paragraph at lines 362--363
+ [][] 
+ []
+
+<../Imagenes/CoeficientesCorrelacionN.png, id=517, 1806.75pt x 1405.25pt>
+File: ../Imagenes/CoeficientesCorrelacionN.png Graphic file (type png)
+<use ../Imagenes/CoeficientesCorrelacionN.png>
+Package pdftex.def Info: ../Imagenes/CoeficientesCorrelacionN.png  used on inpu
+t line 374.
+(pdftex.def)             Requested size: 361.3436pt x 281.04501pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 367--378
 
  []
 
-)
 
-LaTeX Info: Redefining \. on input line 102.
-LaTeX Info: Redefining \% on input line 102.
-[23]
+Underfull \hbox (badness 10000) in paragraph at lines 367--378
 
-LaTeX Info: Redefining \. on input line 108.
-LaTeX Info: Redefining \% on input line 108.
-[24
-
-
-
-]
-Overfull \hbox (13.05043pt too wide) in paragraph at lines 111--111
-[]\OT1/cmr/m/n/10.95 Robert M May. ``Will a lar-ge com-plex sys-tem be sta-ble?
-'' En: \OT1/cmr/m/it/10.95 Na-tu-re \OT1/cmr/m/n/10.95 238.5364 (1972), p^^Sags
-. 413[]414. 
  []
 
 
 
-[25
+LaTeX Info: Redefining \. on input line 378.
+LaTeX Info: Redefining \% on input line 378.
+[22 <../Imagenes/RadsDiagsGersh.png> <../Imagenes/AjustesLinMeds.png>]
+<../Imagenes/AnomaliaSim11.png, id=525, 1806.75pt x 1405.25pt>
+File: ../Imagenes/AnomaliaSim11.png Graphic file (type png)
+<use ../Imagenes/AnomaliaSim11.png>
+Package pdftex.def Info: ../Imagenes/AnomaliaSim11.png  used on input line 381.
 
-]
-runsystem(del _minted-main\default.pygstyle)...executed.
+(pdftex.def)             Requested size: 243.90073pt x 189.70056pt.
 
-runsystem(del _minted-main\A5140291610043C105F8BA3198EDF5B5228C163F5D4C4DD96BE6
-6FA41258E0CF.pygtex)...executed.
+Overfull \hbox (2.05229pt too wide) in paragraph at lines 381--382
+ [] 
+ []
 
-runsystem(del _minted-main\B884E593BDC07CD7DCDD60757CD0FCE7228C163F5D4C4DD96BE6
-6FA41258E0CF.pygtex)...executed.
 
-runsystem(del _minted-main\09CA65C6AA01FA7A839EB3A407B71682228C163F5D4C4DD96BE6
-6FA41258E0CF.pygtex)...executed.
 
-runsystem(del _minted-main\110BB64F80AA053F59405D80775BBED0228C163F5D4C4DD96BE6
-6FA41258E0CF.pygtex)...executed.
+LaTeX Info: Redefining \. on input line 387.
+LaTeX Info: Redefining \% on input line 387.
+[23 <../Imagenes/CoeficientesCorrelacionN.png>]
 
-runsystem(del _minted-main\D177E853D4DBA5900EC96AB1696F3F45228C163F5D4C4DD96BE6
-6FA41258E0CF.pygtex)...executed.
+LaTeX Warning: Reference `prop:DiagonalI' on page 24 undefined on input line 39
+2.
 
-runsystem(del _minted-main\E09519E506D21B4D207ACCE581D1FDD4228C163F5D4C4DD96BE6
-6FA41258E0CF.pygtex)...executed.
 
-runsystem(del _minted-main\3CE300108AC35E4D1CC0E881B4F9611F228C163F5D4C4DD96BE6
-6FA41258E0CF.pygtex)...executed.
+LaTeX Warning: Reference `eqn:MatrizJacobiana' on page 24 undefined on input li
+ne 394.
 
-runsystem(del _minted-main\C6EF61E6936803134ABAE926063E4EB4228C163F5D4C4DD96BE6
-6FA41258E0CF.pygtex)...executed.
 
-runsystem(del _minted-main\FE9635A1800FE3D62F0EC1BBC25CB18B228C163F5D4C4DD96BE6
-6FA41258E0CF.pygtex)...executed.
+Underfull \hbox (badness 10000) in paragraph at lines 392--395
 
-runsystem(del _minted-main\60E22F2ADD49F9A8A308B67F8AB42340228C163F5D4C4DD96BE6
-6FA41258E0CF.pygtex)...executed.
+ []
 
-runsystem(del _minted-main\7CF7F971A2A34692032F93DD3AFCD5B4228C163F5D4C4DD96BE6
-6FA41258E0CF.pygtex)...executed.
 
-runsystem(del _minted-main\C954C3AA825442544F6EF7B5B3D6B3A5228C163F5D4C4DD96BE6
-6FA41258E0CF.pygtex)...executed.
 
-runsystem(del _minted-main\00B03787013A1BDE2BC374F57969C1EE228C163F5D4C4DD96BE6
-6FA41258E0CF.pygtex)...executed.
+LaTeX Info: Redefining \. on input line 396.
+LaTeX Info: Redefining \% on input line 396.
+[24 <../Imagenes/AnomaliaSim11.png>]
 
-runsystem(del _minted-main\D73B4D388FEF70447E3BD76504AA3DAB228C163F5D4C4DD96BE6
-6FA41258E0CF.pygtex)...executed.
+LaTeX Warning: Reference `eqn:LK' on page 25 undefined on input line 401.
 
-runsystem(del _minted-main\9227541495FB3D1E26B084FC12E8BF3B228C163F5D4C4DD96BE6
-6FA41258E0CF.pygtex)...executed.
 
-runsystem(del _minted-main\5119E79E9EEB63FB0AEBCA9122A40987228C163F5D4C4DD96BE6
-6FA41258E0CF.pygtex)...executed.
+Underfull \hbox (badness 10000) in paragraph at lines 412--428
 
-runsystem(del _minted-main\1331274708C36F17ABC4E91B7308C935228C163F5D4C4DD96BE6
-6FA41258E0CF.pygtex)...executed.
+ []
 
 
+Overfull \hbox (1.7841pt too wide) in paragraph at lines 412--428
+\OT1/cmr/m/n/10.95 Teniendo las par-ti-cio-nes y los ajus-tes de par^^Same-tros
+ ne-ce-sa-rios pa-ra ge-ne-rar los dia-gra-mas de transici^^Son,
+ []
 
-LaTeX Info: Redefining \. on input line 114.
-LaTeX Info: Redefining \% on input line 114.
-[26] (main.aux
-LaTeX Info: Redefining \sptext on input line 11.
-LaTeX Info: Redefining \. on input line 11.
-LaTeX Info: Redefining \% on input line 11.
- (TeX_files/Introducción.aux) (TeX_files/chapter01.aux)
-(TeX_files/chapter02.aux))
- ***********
-LaTeX2e <2024-06-01> patch level 2
-L3 programming layer <2024-07-20>
- ***********
 
 
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+LaTeX Info: Redefining \. on input line 428.
+LaTeX Info: Redefining \% on input line 428.
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 429--440
 
+ []
 
-LaTeX Warning: There were undefined references.
 
+Underfull \hbox (badness 10000) in paragraph at lines 429--440
 
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
+ []
 
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: B2A85E848D21E2BDCC1AE60987E15145;8715
-(rerunfilecheck)             After:  AC5C03421034A29094CFCCFBFB9157C1;2302.
 
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 442.
 
-Package logreq Info: Writing requests to 'main.run.xml'.
-\openout1 = `main.run.xml'.
 
- ) 
-Here is how much of TeX's memory you used:
- 43818 strings out of 473899
- 871752 string characters out of 5725556
- 1964960 words of memory out of 5000000
- 65714 multiletter control sequences out of 15000+600000
- 573622 words of font info for 94 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 109i,16n,117p,1072b,2313s stack positions out of 10000i,1000n,20000p,200000b,200000s
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 442.
 
-pdfTeX warning (dest): name{equation.Alph0.3.4} has been referenced but does no
-t exist, replaced by a fixed one
+<../Imagenes/EstabilidadLKpLin.png, id=548, 1806.75pt x 1204.5pt>
+File: ../Imagenes/EstabilidadLKpLin.png Graphic file (type png)
+<use ../Imagenes/EstabilidadLKpLin.png>
+Package pdftex.def Info: ../Imagenes/EstabilidadLKpLin.png  used on input line 
+449.
+(pdftex.def)             Requested size: 361.3436pt x 240.89574pt.
 
+Underfull \vbox (badness 1072) has occurred while \output is active []
 
-pdfTeX warning (dest): name{algocf.9} has been referenced but does not exist, r
-eplaced by a fixed one
 
 
-pdfTeX warning (dest): name{algocf.8} has been referenced but does not exist, r
-eplaced by a fixed one
+LaTeX Info: Redefining \. on input line 453.
+LaTeX Info: Redefining \% on input line 453.
+[26]
 
+LaTeX Info: Redefining \. on input line 455.
+LaTeX Info: Redefining \% on input line 455.
+[27 <../Imagenes/EstabilidadLKpLin.png>]
+<../Imagenes/EstabilidadLKpLog.png, id=565, 1806.75pt x 1204.5pt>
+File: ../Imagenes/EstabilidadLKpLog.png Graphic file (type png)
+<use ../Imagenes/EstabilidadLKpLog.png>
+Package pdftex.def Info: ../Imagenes/EstabilidadLKpLog.png  used on input line 
+459.
+(pdftex.def)             Requested size: 361.3436pt x 240.89574pt.
+<../Imagenes/Heuristico.png, id=566, 1606.0pt x 1204.5pt>
+File: ../Imagenes/Heuristico.png Graphic file (type png)
+<use ../Imagenes/Heuristico.png>
+Package pdftex.def Info: ../Imagenes/Heuristico.png  used on input line 466.
+(pdftex.def)             Requested size: 216.80064pt x 162.60048pt.
 
-pdfTeX warning (dest): name{algocf.7} has been referenced but does not exist, r
-eplaced by a fixed one
 
+LaTeX Warning: Reference `eqn:LK' on page 28 undefined on input line 477.
 
-pdfTeX warning (dest): name{algocf.6} has been referenced but does not exist, r
-eplaced by a fixed one
 
+Underfull \hbox (badness 10000) in paragraph at lines 476--478
 
-pdfTeX warning (dest): name{algocf.5} has been referenced but does not exist, r
-eplaced by a fixed one
+ []
 
+<../Imagenes/Heuristico2.png, id=572, 1606.0pt x 1204.5pt>
+File: ../Imagenes/Heuristico2.png Graphic file (type png)
+<use ../Imagenes/Heuristico2.png>
+Package pdftex.def Info: ../Imagenes/Heuristico2.png  used on input line 480.
+(pdftex.def)             Requested size: 216.80064pt x 162.60048pt.
 
-pdfTeX warning (dest): name{algocf.4} has been referenced but does not exist, r
-eplaced by a fixed one
 
+LaTeX Info: Redefining \. on input line 487.
+LaTeX Info: Redefining \% on input line 487.
+[28 <../Imagenes/EstabilidadLKpLog.png> <../Imagenes/Heuristico.png>]
+<../Imagenes/ComparacionIncidenciasp.png, id=581, 3212.0pt x 1204.5pt>
+File: ../Imagenes/ComparacionIncidenciasp.png Graphic file (type png)
+<use ../Imagenes/ComparacionIncidenciasp.png>
+Package pdftex.def Info: ../Imagenes/ComparacionIncidenciasp.png  used on input
+ line 490.
+(pdftex.def)             Requested size: 513.93051pt x 192.72394pt.
 
-pdfTeX warning (dest): name{algocf.3} has been referenced but does not exist, r
-eplaced by a fixed one
+Overfull \hbox (30.23364pt too wide) in paragraph at lines 490--491
+ [][] 
+ []
 
 
-pdfTeX warning (dest): name{algocf.2} has been referenced but does not exist, r
-eplaced by a fixed one
 
+LaTeX Info: Redefining \. on input line 494.
+LaTeX Info: Redefining \% on input line 494.
+[29 <../Imagenes/Heuristico2.png> <../Imagenes/ComparacionIncidenciasp.png>]
+\openout3 = `main.pyg'.
 
-pdfTeX warning (dest): name{algocf.1} has been referenced but does not exist, r
-eplaced by a fixed one
 
+(_minted-main/09CA65C6AA01FA7A839EB3A407B71682228C163F5D4C4DD96BE66FA41258E0CF.
+pygtex)
+<../Imagenes/ComparacionLKMay.png, id=590, 3212.0pt x 1204.5pt>
+File: ../Imagenes/ComparacionLKMay.png Graphic file (type png)
+<use ../Imagenes/ComparacionLKMay.png>
+Package pdftex.def Info: ../Imagenes/ComparacionLKMay.png  used on input line 5
+13.
+(pdftex.def)             Requested size: 513.93051pt x 192.72394pt.
 
-pdfTeX warning (dest): name{table.caption.45} has been referenced but does not 
-exist, replaced by a fixed one
+Overfull \hbox (30.23364pt too wide) in paragraph at lines 513--514
+ [][] 
+ []
 
 
-pdfTeX warning (dest): name{figure.caption.90} has been referenced but does not
- exist, replaced by a fixed one
 
+LaTeX Info: Redefining \. on input line 519.
+LaTeX Info: Redefining \% on input line 519.
+[30 <../Imagenes/ComparacionLKMay.png>]
+<../Imagenes/ComparacionLKMayESim.png, id=596, 3212.0pt x 1204.5pt>
+File: ../Imagenes/ComparacionLKMayESim.png Graphic file (type png)
+<use ../Imagenes/ComparacionLKMayESim.png>
+Package pdftex.def Info: ../Imagenes/ComparacionLKMayESim.png  used on input li
+ne 522.
+(pdftex.def)             Requested size: 513.93051pt x 192.72394pt.
 
-pdfTeX warning (dest): name{figure.caption.89} has been referenced but does not
- exist, replaced by a fixed one
+Overfull \hbox (30.23364pt too wide) in paragraph at lines 522--523
+ [][] 
+ []
 
+<../Imagenes/EstabilidadLKσLin.png, id=601, 1806.75pt x 1204.5pt>
+File: ../Imagenes/EstabilidadLKσLin.png Graphic file (type png)
+<use ../Imagenes/EstabilidadLKσLin.png>
+Package pdftex.def Info: ../Imagenes/EstabilidadLKσLin.png  used on input line
+ 534.
+(pdftex.def)             Requested size: 361.3436pt x 240.89574pt.
 
-pdfTeX warning (dest): name{figure.caption.88} has been referenced but does not
- exist, replaced by a fixed one
+Underfull \hbox (badness 10000) in paragraph at lines 529--538
 
+ []
 
-pdfTeX warning (dest): name{figure.caption.87} has been referenced but does not
- exist, replaced by a fixed one
 
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-pdfTeX warning (dest): name{figure.caption.86} has been referenced but does not
- exist, replaced by a fixed one
 
+Underfull \hbox (badness 10000) in paragraph at lines 539--544
 
-pdfTeX warning (dest): name{figure.caption.74} has been referenced but does not
- exist, replaced by a fixed one
+ []
 
 
-pdfTeX warning (dest): name{equation.Alph0.3.5} has been referenced but does no
-t exist, replaced by a fixed one
+Underfull \hbox (badness 10000) in paragraph at lines 539--544
 
+ []
 
-pdfTeX warning (dest): name{equation.Alph0.2.2} has been referenced but does no
-t exist, replaced by a fixed one
 
 
-pdfTeX warning (dest): name{figure.caption.73} has been referenced but does not
- exist, replaced by a fixed one
+LaTeX Info: Redefining \. on input line 544.
+LaTeX Info: Redefining \% on input line 544.
+[31 <../Imagenes/ComparacionLKMayESim.png>]
 
-
-pdfTeX warning (dest): name{figure.caption.72} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.69} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.68} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.67} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.64} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.63} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.61} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.59} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.57} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.56} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.55} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.53} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.52} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.51} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.50} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{equation.3.4.8} has been referenced but does not ex
-ist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.49} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.48} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.47} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.43} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{table.caption.38} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.42} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.41} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.40} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.39} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.37} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.36} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.35} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.34} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.33} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.32} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.31} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.30} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.29} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.28} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.27} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.26} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.25} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.24} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.23} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.22} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.21} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.20} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.19} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{figure.caption.18} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{appendix*.84} has been referenced but does not exis
-t, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.Alph0.3.5} has been referenced but does 
-not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.Alph0.3.4} has been referenced but does 
-not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.Alph0.3.3.1} has been referenced but 
-does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.Alph0.3.3} has been referenced but does 
-not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.Alph0.3.2.2} has been referenced but 
-does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.Alph0.3.2.1} has been referenced but 
-does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.Alph0.3.2} has been referenced but does 
-not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.Alph0.3.1.2} has been referenced but 
-does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.Alph0.3.1.1} has been referenced but 
-does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.Alph0.3.1} has been referenced but does 
-not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.Alph0.3} has been referenced but does not e
-xist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.Alph0.2} has been referenced but does not e
-xist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.Alph0.1} has been referenced but does not e
-xist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{appendix*.71} has been referenced but does not exis
-t, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{chapter.4} has been referenced but does not exist, 
-replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.6.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.6.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.3.6} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.3.5} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.4.3} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.4.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.4.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.3.4} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.3.3.1.1} has been referenced but does
- not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.3.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.3.3} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.2.3} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.2.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.2.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.3.2} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.1.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.1.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.3.1} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{chapter.3} has been referenced but does not exist, 
-replaced by a fixed one
-
-<C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmbx10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmbx12.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/typ
-e1/public/amsfonts/cm/cmbx8.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/Rodrigo/AppData/Local/Pr
-ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Rodrigo/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/R
-odrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.
-pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
-/cm/cmmi10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmmi12.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Rodrigo/AppData/Local/Programs/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Rodrigo/AppData/Local/P
-rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Rodrigo/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Rod
-rigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/
-Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8
-.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
-s/cm/cmr9.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmsl10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Rodrigo/AppData/Local/P
-rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Rodrigo/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Ro
-drigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><
-C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symb
-ols/msbm10.pfb>
-Output written on main.pdf (48 pages, 1878869 bytes).
-PDF statistics:
- 999 PDF objects out of 1000 (max. 8388607)
- 226 named destinations out of 1000 (max. 500000)
- 457 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+LaTeX Info: Redefining \. on input line 544.
+LaTeX Info: Redefining \% on input line 544.
+[32 <../Imagenes/EstabilidadLKσLin.png>]
+<../Imagenes/ComparacionIncidenciasσ.p

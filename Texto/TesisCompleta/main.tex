@@ -3,11 +3,11 @@
 \usepackage[utf8]{inputenc}
 \usepackage[spanish,mexico]{babel}
 
+
 \usepackage{amsmath, amssymb, amsthm}
 %\usepackage{mathrsfs}
 \usepackage{appendix}
 \usepackage{bachelorstitlepageUNAM}
-\usepackage{tikz-network}
 \usepackage[linesnumbered,ruled,vlined]{algorithm2e}
 \usepackage{minted}	
 \usepackage{tcolorbox}
@@ -26,12 +26,14 @@
 
 \usepackage{cancel}
 \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{subfiles}
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{booktabs}
 \usepackage[table]{xcolor}
 %\usepackage{cite}
 \renewcommand{\baselinestretch}{1.5}
+
 
 \usepackage{hyperref}
 %\usepackage[hidelinks]{hyperref} 
@@ -56,6 +58,7 @@
 
 \usepackage[backend=biber,style=numeric]{biblatex}
 \bibliography{./TeX_files/referencias.bib}
+
 
 
 
@@ -95,20 +98,23 @@
 \listoftables
 \listofalgorithms
 
-\include{./TeX_files/Introducción.tex}
+%\include{./TeX_files/Introducción.tex}
 
 \mainmatter
-\include{./TeX_files/chapter01}
-\include{./TeX_files/chapter02}
-%\include{./TeX_files/chapter03}
+%\include{./TeX_files/chapter01}
+%\include{./TeX_files/chapter02}
+\include{./TeX_files/chapter03}
 %\include{./TeX_files/Conclusiones}
 
+\appendix
+%\include{./TeX_files/Apéndices}
+%\include{./TeX_files/ApendiceX}
 
 
 \backmatter
 % bibliography, glossary and index would go here.
 \printbibliography
-\appendix
-%\include{./TeX_files/Apéndices}
+
 %\include{./TeX_files/Anexo.tex}
+
 \end{document}

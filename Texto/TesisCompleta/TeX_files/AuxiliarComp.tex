@@ -1,0 +1,14 @@
+%%% !TeX root = ../main.tex
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+	
+
+\setlength{\parindent}{0cm} El capítulo anterior motiva al actual para presentar los resultados de la dinámica que produce el sistema de Lotka-Volterra generalizado (\ref{eqn:LK}) bajo los coeficientes de interacción de la matriz de incidencias (\ref{eqn:MatrizIncidencias}) para posteriormente linearizarlo mediante la Matriz Jacobiana del sistema (\ref{eqn:MatrizJacobiana}). En este capítulo se presentarán los resultados que produce cada etapa del proceso, así como sus características. El objetivo será dar respuesta a cada una de las hipótesis del planteamiento del problema, sobre todo indagar las condiciones de estabilidad del sistema en términos de $\Lambda$ y reforzar la idea consecuente de la proposición \ref{prop:paramMay} en la que se detallaba que el radio espectral (\ref{eqn:radioMayGirko}) no necesariamente se ajusta a la estabilidad del sistema de Lotka-Volterra.\\
+\\
+Se consideraron 3 conjuntos diferentes de simulaciones: sistemas para 25, 50 y 100 especies. Para explorar los resultados se dejaron fijos la mayor cantidad de parámetros que hay en (\ref{eqn:LK}) con el fin de observar cambios significativos con la menor cantidad de fluctuaciones posibles; únicamente se han variado las matrices de incidencias $\Lambda$ que dependen de $p$ y $\sigma$, y al igual que en las transiciones de May y semi Allesina se varió una de estas cantidades mientras que la otra permaneció fija. En todas las simulaciones la tasa de crecimiento se dejó fija en $r_i=2$ y la capacidad de carga en $K_i=5$ para cada especie del sistema. Al integrar numéricamente las ecuaciones con RK4 se escogió un intervalo de tiempo entre 0 y 50 con un paso de integración de $h=0.01$.\\
+\\
+Además de estos parámetros, siempre se inicializó cada simulación con la condición inicial $\vec{x}_0=\vec{1}$ y se consideraron dos escenarios: Matrices de incidencias estructuralmente simétricas y puramente aleatorias\footnote{Solo aplica para $N=100$, el resto de casos se consideraron $\Lambda$ estructuralmente simétricas.}, tal y como se visualizó al final del capítulo anterior. En el apéndice (\ref{ch:Ap}), el lector puede darse una idea de como se realizó el proceso de las simulaciones. En cada escenario se presentó cierta cantidad de ruido en las gráficas de estabilidad, por lo que el número de simulaciones fue establecido en función de la disminución de dicho ruido, siguiendo la ley de los grandes números.
+
+
+\end{document}

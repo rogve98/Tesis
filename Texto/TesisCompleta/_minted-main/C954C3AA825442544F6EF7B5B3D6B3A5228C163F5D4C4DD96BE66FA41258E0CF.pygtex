@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{using}\PYG{+w}{ }\PYG{n}{Distributions}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Graphs}
+\PYG{k}{function}\PYG{+w}{ }\PYG{n}{randomMatrix}\PYG{p}{(}\PYG{n}{N}\PYG{p}{,}\PYG{n}{p}\PYG{p}{,}\PYG{n}{sigma}\PYG{p}{,}\PYG{n}{red}\PYG{o}{::}\PYG{k+kt}{String}\PYG{p}{)}
+\PYG{+w}{   }\PYG{n}{d}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Normal}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{n}{sigma}\PYG{p}{)}
+\PYG{+w}{   }\PYG{n}{g}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{redAleatoria}\PYG{p}{(}\PYG{n}{N}\PYG{p}{,}\PYG{n}{p}\PYG{p}{,}\PYG{n}{red}\PYG{p}{)}
+\PYG{+w}{   }\PYG{n}{M}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{adjacency\PYGZus{}matrix}\PYG{p}{(}\PYG{n}{g}\PYG{p}{)}
+\PYG{+w}{   }\PYG{n}{Id}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{o}{*}\PYG{+w}{ }\PYG{k+kt}{Matrix}\PYG{p}{(}\PYG{n}{I}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{N}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{N}\PYG{p}{)}
+\PYG{+w}{   }\PYG{n}{M}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{M}\PYG{o}{.*}\PYG{n}{rand}\PYG{p}{(}\PYG{n}{d}\PYG{p}{,}\PYG{n}{N}\PYG{p}{,}\PYG{n}{N}\PYG{p}{)}\PYG{o}{+}\PYG{n}{Id}
+\PYG{+w}{   }\PYG{k}{return}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{Matrix}\PYG{p}{(}\PYG{n}{M}\PYG{p}{),}\PYG{+w}{ }\PYG{n}{g}\PYG{p}{)}
+\PYG{k}{end}
+\end{Verbatim}

@@ -1,0 +1,23 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{	}\PYG{k}{using}\PYG{+w}{ }\PYG{n}{Random}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Statistics}
+\PYG{+w}{	}\PYG{k}{function}\PYG{+w}{ }\PYG{n}{simula\PYGZus{}probabilidad\PYGZus{}cumplimiento}\PYG{p}{(}\PYG{n}{sigma}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{N}\PYG{o}{=}\PYG{l+m+mi}{100}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{rep}\PYG{o}{=}\PYG{l+m+mi}{10000}\PYG{p}{)}
+\PYG{+w}{	}\PYG{n}{d}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Normal}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{n}{sigma}\PYG{p}{)}
+\PYG{+w}{	}\PYG{n}{contador\PYGZus{}total}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}
+\PYG{+w}{	}\PYG{n}{contador\PYGZus{}cumplen}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}
+\PYG{+w}{	}\PYG{k}{for}\PYG{+w}{ }\PYG{n}{\PYGZus{}}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{rep}
+\PYG{+w}{	}\PYG{n}{A}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{rand}\PYG{p}{(}\PYG{n}{d}\PYG{p}{,}\PYG{n}{N}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{N}\PYG{p}{)}
+\PYG{+w}{	}\PYG{k}{for}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{N}
+\PYG{+w}{	}\PYG{k}{for}\PYG{+w}{ }\PYG{n}{j}\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{o}{:}\PYG{n}{N}
+\PYG{+w}{	}\PYG{n}{a\PYGZus{}ij}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{a\PYGZus{}ji}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{A}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,}\PYG{n}{j}\PYG{p}{],}\PYG{+w}{ }\PYG{n}{A}\PYG{p}{[}\PYG{n}{j}\PYG{p}{,}\PYG{n}{i}\PYG{p}{]}
+\PYG{+w}{	}\PYG{k}{if}\PYG{+w}{ }\PYG{n}{a\PYGZus{}ij}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n}{a\PYGZus{}ji}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{  }\PYG{c}{\PYGZsh{} caso negativo/negativo \PYGZhy{}\PYGZgt{} cooperación}
+\PYG{+w}{	}\PYG{n}{contador\PYGZus{}total}\PYG{+w}{ }\PYG{o}{+=}\PYG{+w}{ }\PYG{l+m+mi}{1}
+\PYG{+w}{	}\PYG{k}{if}\PYG{+w}{ }\PYG{n}{a\PYGZus{}ji}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{n}{a\PYGZus{}ij}
+\PYG{+w}{	}\PYG{n}{contador\PYGZus{}cumplen}\PYG{+w}{ }\PYG{o}{+=}\PYG{+w}{ }\PYG{l+m+mi}{1}
+\PYG{+w}{	}\PYG{k}{end}
+\PYG{+w}{	}\PYG{k}{end}
+\PYG{+w}{	}\PYG{k}{end}
+\PYG{+w}{	}\PYG{k}{end}
+\PYG{+w}{	}\PYG{k}{end}
+\PYG{+w}{	}\PYG{k}{return}\PYG{+w}{  }\PYG{n}{contador\PYGZus{}cumplen}\PYG{o}{/}\PYG{n}{contador\PYGZus{}total}\PYG{c}{\PYGZsh{} contador\PYGZus{}total \PYGZhy{} contador\PYGZus{}cumplen}
+\PYG{+w}{	}\PYG{k}{end}
+\end{Verbatim}

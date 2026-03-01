@@ -1,0 +1,70 @@
+\documentclass[../main.tex]{subfiles}
+	
+\begin{document}
+	
+
+\chapter{Demostración del criterio espectral de estabilidad.}
+
+\setlength{\parindent}{0cm} En este apéndice se presenta la demostración completa de la Proposición \ref{prop:paramMay}.
+
+\begin{proposición}\label{prop:paramMay}
+	Sea $A=-dI+B\in\mathrm{M}_n(\mathbb{R})$, donde $d>0$ y $B$ es una matriz aleatoria cuyas entradas fuera de la diagonal son independientes, con media cero, varianza $\sigma^2$ y probabilidad de conexión $C$. Entonces, cuando $n\to\infty$, el radio espectral de $B$ satisface 
+	$$\rho(B)\approx\sigma\sqrt{NC}$$
+	En consecuencia, el sistema lineal $\dot{x}=Ax$ es estable con alta probabilidad si
+	$$\sigma\sqrt{NC}<d$$
+\end{proposición}
+
+\begin{proof}
+	Otro modo de entender el enunciado de la proposición \ref{prop:paramMay} es que el parámetro descrito define la posición del $\max(|\lambda_A|)$, que puede ser negativo, cero o positivo. Por lo tanto, éste será el elemento central de esta demostración. Ahora se utilizará el \textit{Teorema Circular de Girko} \cite{girko1985circular} el cual muestra la forma de obtener el radio espectral de matrices aleatorias como las de May. El teorema establece que para cualquier matriz $B\in \mathrm{M}_n(\mathbb{R})$ con entradas independientes e idénticamente distribuidas de media cero y varianza finita, y al considerar la siguiente matriz re-escalada\footnote{Conocida como matriz de Ginibre.}
+	$$\hat{B} = \frac{1}{\sqrt{n}}B$$
+	los valores propios quedan distribuidos en un disco centrado en el origen con radio $\sigma$: $D(0,\sigma)$. Dicho de otro modo el resultado dice que el radio espectral de la matriz $\hat{B}$ es
+	$$\rho(\hat{B})=\max|\lambda_{\hat{B}}|=\sigma$$		
+	El hecho de realizar el re-escalamiento es para asegurar que este radio tenga un tamaño finito para cuando $n\to\infty$. Para llegar a este resultado se utilizan argumentos probabilísticos; primero se considera un renglón arbitrario de la matriz $\hat{B}$: $r=\frac{1}{\sqrt{n}}(b_{i1},...,b_{in})$ y se determina su norma cuadrada
+	$$\|r\|^2=\frac{1}{n}\sum_{j=1}^N b_{ij}^2$$
+	cada elemento $b_{ij}^2$ tiene valor esperado $\sigma^2$ implicando que la esperanza de la norma cuadrada es $\mathbb{E}[\|r\|^2]=\frac{n\sigma^2}{n}=\sigma^2$ y su varianza es $\Var(\|r\|^2)=\frac{n}{n^2}(3\sigma^4-\sigma^4)=\frac{2\sigma^4}{n}$ teniendo en cuenta el cuarto momento la distribución normal\footnote{Utilizando la siguiente fórmula para los momentos de orden $n$ de $\mathcal{N}(0,\sigma^2)$: $$\mathbb{E}[X^n]=\begin{cases}
+			0,\qquad&\text{si $n$ es impar}\\
+			\sigma^n(n-1)!!,\qquad&\text{si $n$ es par}
+		\end{cases}$$}. De aquí sigue utilizar el \textit{Teorema Central del Límite} para mostrar que existe una variable estandarizada que esta en función de $\|r\|^2$, $\mathbb{E}[\|r\|^2]$ y $\sqrt{\Var(\|r\|^2)}$, y converge a una distribución normal estándar $\mathcal{N}(0,1)$ cuando $n\to\infty$, la cual es equivalente a la siguiente aproximación
+	$$\|r\|^2\approx \sigma^2+\frac{\eta}{\sqrt{n}}$$
+	donde $\eta\sim\mathcal{N}(0,2\sigma^4)$. Por tanto $\|r\|^2$ converge a una distribución normal con valor esperado $\sigma^2$ y fluctuaciones de orden $1/\sqrt{n}$. En este punto resta determinar la norma euclidiana del renglón arbitrario
+	$$\|r\|=\sqrt{\sigma^2+\frac{\eta}{\sqrt{n}}}=\sigma\sqrt{1+\frac{\eta}{\sigma^2\sqrt{n}}}$$
+	\newpage
+	realizando la expansión en Series de Taylor alrededor del cero de $\sqrt{1+\varepsilon}=1+\frac{\varepsilon}{2}-\frac{\varepsilon^2}{8}+\cdots$ se tiene
+	$$\|r\|\approx\sigma+\frac{\eta}{2\sigma\sqrt{n}}$$
+	Por lo tanto se logra observar que el valor esperado de $\|r\|$ es $\sigma$ y sus fluctuaciones son de orden $1/\sqrt{n}$ lo que implica que para cuando $n\to\infty$, la norma euclidiana será $\|r\|=\sigma$. Sin embargo cuando se considera la matriz $B$ sin re-escalar, entonces existe un factor $\sqrt{n}$ en el valor esperado de $\|r\|$ con fluctuaciones de orden $1/\sqrt{n}$, entonces cuando $n\to\infty$ la norma será
+	$$\|r\|=\sigma\sqrt{n}$$
+	y en consecuencia el disco irá creciendo en función de $n$. Si además de lo anterior se considera que las entradas de la matriz $B$ siguen a una probabilidad de existencia $C$ tal como la variable aleatoria (\ref{proof1:VarAlW}) de la proposición \ref{prop:DiagonalI} entonces al aplicar el mismo procedimiento de antes se llega al siguiente resultado
+	\begin{equation}\label{proof2:norma}
+		\|r\|=\sigma\sqrt{nC}
+	\end{equation}
+	¿Por qué se utiliza la norma euclidiana como referente para el radio espectral de las matrices aleatorias? Si se considera un vector unitario arbitrario $\mathbf{u}$, es de interés saber cual es el efecto que ejerce la matriz $\hat{B}$ sobre dicho vector. Para ello extendemos los procedimientos anteriores pero ahora enfocados a como será el vector $\hat{B}\textbf{u}$ en términos de su magnitud, entonces hay que encontrar nuevamente el valor esperado de $\|\hat{B}\textbf{u}\|$ y sus fluctuaciones. Se define el producto escalar del renglón arbitrario de $\hat{B}$ por $\textbf{u}$
+	\begin{equation}\label{proof2:prodEscalar}
+		S_i = \frac{1}{\sqrt{n}}\sum_{j=1}^n b_{ij}u_j
+	\end{equation}
+	será conveniente conocer su valor esperado de $|S_i|^2$ para determinar los próximos cálculos, entonces:
+	$$\mathbb{E}[|S_i|^2]=\frac{1}{n}\sum_{j=1}^n\mathbb{E}[b_{ij}^2]|u_j|^2=\frac{\sigma^2	}{n}\cdot\|\textbf{u}\|^2$$
+	Nuevamente se utiliza el \textit{Teorema Central del Límite} para conocer cual es el valor esperado de $\|\hat{B}\textbf{u}\|^2$ con sus fluctuaciones, para posteriormente conocer los de $\|\hat{B}\textbf{u}\|$
+	$$\mathbb{E}[\|\hat{B}\textbf{u}\|^2]=\sum_{i=1}^n\mathbb{E}[|S_i|^2]=\sum_{i=1}^n\frac{\sigma^2}{n}\cdot\|\textbf{u}\|^2=\sigma^2$$
+	resultado equivalente al valor esperado de la norma cuadrada del renglón arbitrario $\mathbb{E}[\|r\|^2]$. Ahora se calcula el segundo momento de $|S_i|^2$ para poder armar el camino para determinar la varianza de $\|\hat{B}\textbf{u}\|^2$ 
+	$$\mathbb{E}\left [|S_i|^4 \right ]=\frac{1}{n^2}\sum_{j=1}^n\mathbb{E}\left [b_{ij}^4\right ]|u_j|^4=\frac{3\sigma^4}{n^2}\cdot\left (\|\textbf{u}\|^2\right )^2$$
+	esto indica que la varianza del producto escalar (\ref{proof2:prodEscalar}) al cuadrado es 
+	$$\Var(|S_i|^2)=\frac{1}{n^2}(3\sigma^4-\sigma^4)=\frac{2\sigma^4}{n^2}$$ 
+	Entonces la varianza de la norma cuadrada es
+	$$\Var(\|\hat{B}\textbf{u}\|^2)=\sum_{i=1}^n\Var(|S_i|^2)=\frac{2\sigma^4}{n}$$
+	resultado que también es equivalente a la varianza de la norma cuadrada del renglón arbitrario $\Var(\|r\|^2)$.	Con estos elementos y con base en los procedimientos mostrados anteriormente se concluye que la norma $\|\hat{B}\textbf{u}\|$ tiene un valor esperado $\sigma$ con fluctuaciones de orden $1/\sqrt{n}$. Por lo tanto el efecto que ejerce la matriz $\hat{B}$ sobre cualquier vector unitario es la de estirarlos en función de $\sigma$, ya sea que $\sigma>1$, $\sigma<1$ ó dejarlos invariantes en magnitud con $\sigma=1$.
+	\\
+	\\
+	Considerando en particular la ecuación de valores propios $\hat{B}\vec{v}=\lambda\vec{v}$, si normalizamos al vector propio asociado entonces la norma euclidiana será 
+	$$\|\hat{B}\textbf{v}\|=|\hat{\lambda}|\leq\sigma+\mathcal{O}(1/\sqrt{n})$$
+	donde $|\hat{\lambda}|=\frac{|\lambda|}{\|\vec{v}\|}$ y nótese que es un vector propio arbitrario, esto implica que todos los vectores propios son estirados o contraídos en diversas direcciones pero restringidos al valor del radio espectral $\sigma$, es decir, que el máximo valor/vector propio solo podrá tener magnitud $\sigma$. Al considerar la matriz $B$ sin re-escalar y tomando el resultado (\ref{proof2:norma}), se concluye finalmente que el radio espectral de esta matriz es
+	$$\rho(B)=\sigma\sqrt{nC}$$
+	y es más grande conforme $n\to\infty$. Ahora como último paso de esta prueba hay que considerar a las matrices de May, que son idénticas a la matriz $B$ solo que con el valor $-d$ en la diagonal. Eso significa que $A$ tendrá una distribución uniforme de valores propios alrededor de $-d$, entonces el radio espectral en este caso será
+	$$\rho(A)=-d+\sigma\sqrt{nC}$$
+	y de aquí se podrá definir la relación de May para delimitar la estabilidad de sus sistemas
+	\begin{equation}\label{eqn:radioMayGirko}
+		\sigma\sqrt{nC}<d
+	\end{equation}
+	mientras el radio espectral sea menor al valor absoluto de la diagonal, se podrá garantizar que el sistema es estable, y cuando $n\to\infty$ las fluctuaciones tienden a cero lo cual hace cada vez más estrecho el radio y abrupta la caída de estabilidad.
+\end{proof}
+
+\end{document}
