@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.14)  28 FEB 2026 18:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.14)  1 MAR 2026 20:25
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1470,111 +1470,114 @@ Package biblatex Info: ... file 'AuxiliarComp.bbl' found.
  (AuxiliarComp.bbl)
 Package biblatex Info: Reference section=0 on input line 4.
 Package biblatex Info: Reference segment=0 on input line 4.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 7.
+
+
+LaTeX Warning: Reference `sec:PuntosFijos' on page 1 undefined on input line 11
+.
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 11.
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 7.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 11.
+
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+<../../Imagenes/PuntoFijoCompetencia.png, id=10, 1806.75pt x 1405.25pt>
+File: ../../Imagenes/PuntoFijoCompetencia.png Graphic file (type png)
+<use ../../Imagenes/PuntoFijoCompetencia.png>
+Package pdftex.def Info: ../../Imagenes/PuntoFijoCompetencia.png  used on input
+ line 13.
+(pdftex.def)             Requested size: 234.88574pt x 182.6889pt.
+
+
+LaTeX Warning: Reference `fig:Seriesdetiempopostiva' on page 1 undefined on inp
+ut line 20.
+
+
+LaTeX Warning: Reference `eqn:EcsPuntoFijo' on page 1 undefined on input line 2
+0.
+
+
+LaTeX Warning: Reference `fig:SeriesdeTiempoLK100' on page 1 undefined on input
+ line 20.
+
+
+LaTeX Warning: Command \textasciiacute invalid in math mode on input line 23.
+
+
+LaTeX Warning: Command \textasciiacute invalid in math mode on input line 23.
+
+Missing character: There is no � in font cmr8!
+<../../Imagenes/PuntoFijoCoop1.png, id=13, 3011.25pt x 1405.25pt>
+File: ../../Imagenes/PuntoFijoCoop1.png Graphic file (type png)
+<use ../../Imagenes/PuntoFijoCoop1.png>
+Package pdftex.def Info: ../../Imagenes/PuntoFijoCoop1.png  used on input line 
+26.
+(pdftex.def)             Requested size: 481.80984pt x 224.84459pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--30
+
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<../../Imagenes/PuntoFijoCoop2.png, id=14, 3011.25pt x 1405.25pt>
+File: ../../Imagenes/PuntoFijoCoop2.png Graphic file (type png)
+<use ../../Imagenes/PuntoFijoCoop2.png>
+Package pdftex.def Info: ../../Imagenes/PuntoFijoCoop2.png  used on input line 
+33.
+(pdftex.def)             Requested size: 481.80984pt x 224.84459pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<../../Imagenes/PuntoFijoCoop3.png, id=15, 3011.25pt x 1405.25pt>
+File: ../../Imagenes/PuntoFijoCoop3.png Graphic file (type png)
+<use ../../Imagenes/PuntoFijoCoop3.png>
+Package pdftex.def Info: ../../Imagenes/PuntoFijoCoop3.png  used on input line 
+41.
+(pdftex.def)             Requested size: 481.80984pt x 224.84459pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--45
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 [1
 Non-PDF special ignored!
 <special> header=psfrag.pro
 {C:/Users/Rodrigo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
 
-]
-<../../Imagenes/TransicionMaySigma.png, id=18, 2810.5pt x 1204.5pt>
-File: ../../Imagenes/TransicionMaySigma.png Graphic file (type png)
-<use ../../Imagenes/TransicionMaySigma.png>
-Package pdftex.def Info: ../../Imagenes/TransicionMaySigma.png  used on input l
-ine 11.
-(pdftex.def)             Requested size: 463.7125pt x 198.73392pt.
-<../../Imagenes/TransicionσDirvsNoDir.png, id=20, 1806.75pt x 1405.25pt>
-File: ../../Imagenes/TransicionσDirvsNoDir.png Graphic file (type png)
-<use ../../Imagenes/TransicionσDirvsNoDir.png>
-Package pdftex.def Info: ../../Imagenes/TransicionσDirvsNoDir.png  used on inp
-ut line 18.
-(pdftex.def)             Requested size: 241.84843pt x 188.09239pt.
+ <../../Imagenes/PuntoFijoCompetencia.png>]
 
-Underfull \hbox (badness 10000) in paragraph at lines 24--29
+LaTeX Warning: Reference `sec:PuntosFijos' on page 2 undefined on input line 46
+.
+
+
+LaTeX Warning: Reference `eqn:MatrizJacobiana' on page 2 undefined on input lin
+e 48.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--49
 
  []
 
 
-
-[2 <../../Imagenes/TransicionMaySigma.png> <../../Imagenes/TransicionσDirvsNoD
-ir.png>]
-<../../Imagenes/Transicionσ√NC02.png, id=29, 3011.25pt x 1304.875pt>
-File: ../../Imagenes/Transicionσ√NC02.png Graphic file (type png)
-<use ../../Imagenes/Transicionσ√NC02.png>
-Package pdftex.def Info: ../../Imagenes/Transicionσ√NC02.png  used on input 
-line 48.
-(pdftex.def)             Requested size: 481.80984pt x 208.78426pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 39--52
-
- []
+Underfull \vbox (badness 2460) has occurred while \output is active []
 
 
 
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 53--56
+[2 <../../Imagenes/PuntoFijoCoop1.png> <../../Imagenes/PuntoFijoCoop2.png>]
 
- []
-
-
-
-[4 <../../Imagenes/Transicionσ√NC02.png>]
-<../../Imagenes/Transicionσ√NC06.png, id=42, 3011.25pt x 1304.875pt>
-File: ../../Imagenes/Transicionσ√NC06.png Graphic file (type png)
-<use ../../Imagenes/Transicionσ√NC06.png>
-Package pdftex.def Info: ../../Imagenes/Transicionσ√NC06.png  used on input 
-line 59.
-(pdftex.def)             Requested size: 481.80984pt x 208.78426pt.
-
-
-[5 <../../Imagenes/Transicionσ√NC06.png>]
-
-LaTeX Warning: Reference `eqn:LK' on page 6 undefined on input line 72.
-
-
-LaTeX Warning: Reference `eqn:MatrizIncidencias' on page 6 undefined on input l
-ine 72.
-
-
-LaTeX Warning: Reference `eqn:MatrizJacobiana' on page 6 undefined on input lin
-e 72.
-
-
-LaTeX Warning: Reference `prop:paramMay' on page 6 undefined on input line 72.
-
-
-LaTeX Warning: Reference `eqn:radioMayGirko' on page 6 undefined on input line 
-72.
-
-
-LaTeX Warning: Reference `eqn:LK' on page 6 undefined on input line 74.
-
-
-LaTeX Warning: Reference `ch:Ap' on page 6 undefined on input line 76.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 72--77
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 72--77
-
- []
-
-
-
-[6] (AuxiliarComp.aux
+[3 <../../Imagenes/PuntoFijoCoop3.png>] (AuxiliarComp.aux
 LaTeX Info: Redefining \sptext on input line 11.
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
@@ -1588,34 +1591,33 @@ L3 programming layer <2024-07-20>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `AuxiliarComp.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+(rerunfilecheck)             Checksum: 8AC27454B9D956E6B866037D6DB53C58;158.
 Package logreq Info: Writing requests to 'AuxiliarComp.run.xml'.
 \openout1 = `AuxiliarComp.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38477 strings out of 473899
- 757761 string characters out of 5725556
- 1940960 words of memory out of 5000000
- 60760 multiletter control sequences out of 15000+600000
- 565568 words of font info for 65 fonts, out of 8000000 for 9000
+ 38470 strings out of 473899
+ 757548 string characters out of 5725556
+ 1946960 words of memory out of 5000000
+ 60759 multiletter control sequences out of 15000+600000
+ 564324 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 118i,8n,124p,947b,1826s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 118i,8n,124p,1430b,1826s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
 m/cmbx10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmmi10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/Rodrigo/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Rodrigo/AppData
-/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Rodrig
-o/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Use
-rs/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pf
-b><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmsy10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmsy8.pfb>
-Output written on AuxiliarComp.pdf (6 pages, 804266 bytes).
+/amsfonts/cm/cmbx12.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Rodrigo/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Rodrigo/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Rodri
+go/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/
+Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy
+8.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
+ts/symbols/msbm10.pfb>
+Output written on AuxiliarComp.pdf (3 pages, 474725 bytes).
 PDF statistics:
- 101 PDF objects out of 1000 (max. 8388607)
- 12 named destinations out of 1000 (max. 500000)
- 33 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 86 PDF objects out of 1000 (max. 8388607)
+ 9 named destinations out of 1000 (max. 500000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

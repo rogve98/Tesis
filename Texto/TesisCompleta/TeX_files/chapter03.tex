@@ -161,74 +161,47 @@ Por lo tanto se confirma que, en sistemas estructuralmente simétricos, el radio
 
 \section{Implementación numérica y metodología}
 
-\subfile{./TeX_files/AuxiliarComp.tex}
+Tras el análisis espectral del sistema linealizado tipo May, se procede ahora al estudio numérico del modelo dinámico completo. En un primer nivel, se examinan las series de tiempo generadas por el sistema con el fin de identificar la convergencia hacia estados estacionarios o la aparición de comportamientos no triviales. A partir de dichas trayectorias se determina el punto de equilibrio $X^*$ y se analiza su distribución estadística. Este estudio constituye un antecedente para la construcción y evaluación de la matriz Jacobiana $\mathcal{J}$ en el equilibrio, cuya estructura permitirá relacionar la factibilidad y la estabilidad local del sistema con las propiedades espectrales discutidas anteriormente.
+\\
+\\
+En el presente trabajo, se consideraron tres tamaños de sistema: $N\in\{25,50,100\}$. En las simulaciones del modelo de Lotka-Volterra generalizado se fijaron los parámetros demográficos homogéneamente para todas las especies, tomando $r_i=2$ y $K_i=5$. Esta elección permite aislar el efecto estructural de la matriz $\Lambda$ sobre la dinámica, minimizando fuentes adicionales de variabilidad asociadas a heterogeneidad en los parámetros intrínsecos. \\
+\\
+En consecuencia, la única fuente de variación fue la matriz de coeficientes de interacción $\Lambda$, generada a partir de los parámetros $(p,\sigma,N)$. Para cada tamaño de sistema se realizaron barridos paramétricos variando $p$ con $\sigma$ fija y, de manera análoga, variando $\sigma$ con $p$ fijo. La integración temporal del sistema se llevó a cabo mediante el método de Runge-Kutta de cuarto orden (RK4) en el intervalo $t\in[0,50]$, utilizando un paso de integración $h=0.01$. Las simulaciones se realizaron bajo la condición inicial $X_0=\textbf{1}$, es decir, todas las especies parten de abundancia unitaria. Se consideraron matrices $\Lambda$ tanto de soporte simétrico como dirigido\footnote{El soporte dirigido se analizó unicamente para $N=100$; para $N=25$ y $N=50$ se consideraron exclusivamente matrices estructuralmente simétricas.}, con el objetivo de contrastar sus efectos dinámicos, en concordancia con el análisis espectral previo. En el Apéndice (tal) se detalla el procedimiento computacional empleado para la generación de las matrices y la ejecución de simulaciones.
 
 \subsection{Series de tiempo}
 
-Anteriormente se ha comentado que las interacciones de la matriz de incidencias $\Lambda$ están volteadas con respecto de la matriz de Jacobiana del sistema (\ref{eqn:MatrizJacobiana}); por ejemplo, la cooperación en $\mathcal{J}_\Lambda$ se da para las interacciones (++) mientras que para $\Lambda$ es $(--)$. Si se tuviera un sistema puramente de competencia, es decir para toda $\alpha_{ij}\in\Lambda$ mayor o igual que cero, entonces no hay forma de que ninguna de las poblaciones participantes sobrepasen la capacidad de carga establecida, tal y como se indica en la ecuación (\ref{eqn:LKextendida}) y en el Ejemplo \ref{eg:2x2}. Por lo tanto se obtendrían series de tiempo caóticas para cada una de las especies por debajo de $K=5$.
+Como se discutió anteriormente, los signos de las interacciones en la Jacobiana $\mathcal{J}$ aparecen invertidos con respecto de la matriz de coeficientes $\Lambda$. En particular, interacciones competitivas en $\mathcal{J}$ corresponden a coeficientes $\alpha_{ij}\geq 0$ en $\Lambda$. Si se considera un sistema puramente competitivo, entonces el término interespecífico actúa sistemáticamente reduciendo la tasa de crecimiento efectiva de cada población. En este régimen, la contribución acoplada no puede inducir incrementos adicionales sobre el término logístico intrínseco, sino únicamente amortiguarlo. 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.23]{../Imagenes/Seriesdetiempopositiva}
-	\caption{Series de tiempo para el sistema de competencia de especies. Se emplea una matriz de incidencias con $N=100$ cuyas entradas vienen de una distribución uniforme del intervalo $[0,1]$. Se considera a la totalmente conexa, es decir, con $p=1.0$. En este caso la dinámica no sobrepasa la capacidad de carga puesto que las 100 especies se encuentran compitiendo y obedeciendo el comportamiento logístico que se muestra en (\ref{eqn:LKextendida}).}
+	\caption{Series de tiempo para el sistema de competencia de $N=100$ especies. Se emplea una matriz $\Lambda$ cuyas entradas provienen de una distribución uniforme del intervalo $[0,1]$ para $p=1.0$. Las especies quedan acotadas por su capacidad de carga $K=5$.}
 	\label{fig:Seriesdetiempopostiva}
 \end{figure}
 
-Una de las características que se encontró en los sistemas de competencia, es el tiempo que tarda en estabilizarse es considerablemente mayor que en sistemas donde se considerarán todas las interacciones que puede ofrecer una distribución normal de media cero y varianza finita (cooperación, presa-depredador, etc.). Las poblaciones en este caso se encuentran limitadas por la capacidad de carga y serán incapaces de superarla ya que el término de la derecha en (\ref{eqn:LKextendida}) es siempre positivo y por tanto resta al término logístico de la izquierda.
+Como consecuencia, las trayectorias permanecen acotadas por las capacidades de carga $K_i=5$ y el sistema tiende a un estado estacionario positivo. Desde el punto de vista lineal, esta estructura favorece una forma efectiva de dominancia diagonal en la Jacobiana evaluada en el equilibrio, ya que contribuciones fuera de la diagonal refuerzan el carácter disipativo del sistema. De manera equivalente, la suma interespecífica en la ecuación \eqref{eqn:LKextendida} es no negativa y, por tanto, resta al término logístico, inhibiendo mecanismos de crecimiento cooperativo.
 \\
 \\
-En contraste con el sistema generalizado, éste sí excede la capacidad de carga ya que el término de la derecha en (\ref{eqn:LKextendida}) puede sumar al de la izquierda y permite que pueda superar el límite que la capacidad de carga impone, lo que se traduce en especies dominantes que regulan el sistema y provocan que llegue al atractor en un tiempo menor. Otro aspecto de la red de competencias es que cuando es más conectada el tiempo en estabilizarse también es mayor. La cantidad de fluctuaciones posibles es cada vez mayor, y el sistema no lineal es sensible en presencia de estas fluctuaciones, por lo tanto es esperable que el tiempo en llegar al equilibrio sea prolongado. Por el contrario, si la red de competencias tiene pocas conexiones ($p\leq 0.5$) entonces el sistema tarda menos en estabilizarse.\\
+En contraste con el sistema puramente competitivo, en el modelo generalizado la suma interepecífica puede adquirir signo negativo debido a la presencia de interacciones cooperativas (englobando la depredación en el ámbito depredador y el comensalismo). En este régimen, el término acoplado no solo amortigua el crecimiento logístico, sino que puede compensarlo e incluso superarlo. En consecuencia, las capacidades de carga $K_i$ dejan de constituir un límite rígido y pasan a desempeñar el papel de parámetros reguladores de crecimiento.
 \\
-En el Ejemplo \ref{eg:2x2CoopyDemás} del capítulo anterior, se observaba como las interacciones de cooperación $(--)$ en la matriz de incidencias $\Lambda$ genera la aparición de un atractor que se posiciona por arriba de la magnitud de la capacidad de carga (Figura (\ref{fig:CooperacionEspecies})). En el caso extendido a $N\gg 1$ especies ocurrirá algo semejante considerando un atractor $N$-dimensional. En este caso pueden haber especies que sobrepasen por mucho o poco la capacidad de carga, pero también cabe la posibilidad de que algunas no logren sobrepasarla y otras que lleguen a extinguirse. A continuación se muestran dos ejemplos diferentes
+\\
+En la Figura \eqref{fig:SeriesdeTiempoLK100} se presentan dos realizaciones representativas del sistema generalizado: el caso (\textbf{A}) correspondiente a $(p=0.35,\sigma=0.2,N=100)$ y el caso (\textbf{B}) a $(p=0.5,\sigma=0.2,N=100)$. En ambos escenarios se observa un subconjunto de especies cuyas abundancias estacionarias superan ampliamente sus respectivas capacidades de carga. Este comportamiento indica que dichas especies experimentan una contribución interespecífica netamente favorable, lo que amplifica su abundancia en el equilibrio.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.23]{../Imagenes/Series de Tiempo LK100}
-	\caption{(\textbf{A}) Series de tiempo del sistema LV generalizado asociada a una matriz de incidencias de $N=100$, con $\sigma=0.2$ y $p=0.35$. (\textbf{B}) Series de tiempo para el sistema LV generalizado asociada a una matriz de incidencias de $N=100$, con $\sigma=0.2$ y $p=0.5$}
+	\caption{Series de tiempo del sistema Lotka-Volterra generalizado. (\textbf{A}) Se consideran los parámetros $p=0.35$, $\sigma=0.2$ y $N=100$ para $\Lambda$. (\textbf{B}) Se consideran los parámetros $p=0.5$, $\sigma=0.2$ y $N=100$ para $\Lambda$. }
 	\label{fig:SeriesdeTiempoLK100}
 \end{figure}
-\newpage
-La diferencia evidente entre estas gráficas es debido la matriz de incidencias, sus parámetros son $\sigma=0.2$ con $p=0.35$ y $p=0.5$ respectivamente. El segundo caso corresponde con una red más conectada que el primero y eso se traduce en la oportunidad de tener más interacciones con signo negativo que propicien un mayor crecimiento. El tiempo en que llegaron a estabilizarse fue menor a $t=50$, y a su vez considerablemente menor que el sistema de competencia de especies de la Figura (\ref{fig:Seriesdetiempopostiva}). 
 
-
-\subsection{Puntos fijos}\label{sec:PuntosFijos2.0}
-
-Algo interesante de notar en los sistemas de competencia es la tendencia del punto fijo. En la sección \ref{sec:PuntosFijos} se propuso que una posible solución del punto fijo sería $X^*=\Lambda^{-1}\mathrm{K}$, se había discutido que su distribución podría ser de cola pesada con posibilidad de tener entradas negativas. Si $\Lambda$ tiene todos 
-\begin{wrapfigure}{r}{0.5 \textwidth} \vspace{-25pt} \begin{center}
-		\includegraphics[scale=0.13]{../Imagenes/PuntoFijoCompetencia}
-	\end{center}
-	\vspace{-20pt} 
-	\caption{Distribución de punto fijo para caso particular del sistema de competencia de especies, escogiendo $p=0.5$ y considerando una distribución uniforme en los pesos de las interacciones.}
-	\vspace{-10pt}
-	\label{fig:PuntoFijoCompetencia}
-\end{wrapfigure}
-sus coeficientes positivos provenientes de la distribución uniforme en el intervalo $[0,1]$ entonces la distribución de $X^*$ podría ser diferente pero lo que se observa en la Figura (\ref{fig:Seriesdetiempopostiva}) es que la mayoría de las especies tienden a cero (se extinguen) mientras que unas cuantas logran sobrevivir por debajo de la capacidad de carga, empatando con una distribución de cola pesada tal y como se observa en la Figura (\ref{fig:PuntoFijoCompetencia}). Esta evidencia muestra un parteaguas en donde no necesariamente el punto fijo y su distribución estarán dados por $X^*=\Lambda^{-1}\mathrm{K}$, sino que el punto fijo favorable puede ser alguno en donde una o varias especies del sistema se extinguen, es decir, resolver las ecuaciones  del sistema (\ref{eqn:EcsPuntoFijo}) cuando se asume que existe un subconjunto que son cero: $S=\{x_k=0\ |\ k\in\mathcal{I}\, \wedge\,  \mathcal{I}\subset \{1,...,N\}\}$. Pero nuestro caso de mayor interés es lo que se logra observar en la Figura (\ref{fig:SeriesdeTiempoLK100}); se tienen dos sistemas estables que definitivamente muestran una distribución de cola pesada puesto que un número reducido de ellas se encuentran dispersas en valores mayores a la capacidad de carga pero es posible hallar a la mayoría concentradas en valores cercanos al cero (Ver Figura (\ref{fig:PuntoFijoCoop3}) \textbf{A}).
+Dado que el término acoplado depende linealmente de $X_j^*$, las especies con abundancias elevadas adquieren un peso desproporcionado en la dinámica colectiva, influyendo de manera dominante en la regulación efectiva del sistema. A partir de las series de tiempo se observa que la estructura de las interacciones ---en particular la densidad efectiva de enlaces--- influye de manera significativa en el valor del equilibrio alcanzado por el sistema y, en consecuencia, en la distribución de abundancias estacionarias. En el caso (\textbf{B}), correspondiente a un mayor valor de $p$, el equilibrio colectivo alcanza magnitudes sustancialmente superiores al observado en (\textbf{A}). \\
 \\
-\\
-Anteriormente se ha discutido que mientras los valores de $\sigma$ y $p$ en la matriz de incidencias $\Lambda$ sean pequeños con respecto del otro, es decir, $\sigma\ll p$ ó $p\ll\sigma$: se obtendría una distribución alrededor del valor fijo de la capacidad de carga, en este caso $K=5$. Bajo esta premisa, se explorará para que escenarios la configuración $X^*=\Lambda^{´-1}\mathrm{K}$ representa correctamente el punto fijo y su distribución. A continuación se presentan una serie de histogramas que muestran gráficamente la comparación entre el resultado numérico y el teórico
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=0.16]{../Imagenes/PuntoFijoCoop1}
-	\caption{Distribución del punto fijo para un sistema LV generalizado con $p=0.5$ y $\sigma=0.003$. En este caso se cumple $\sigma\ll p$ y por lo tanto la distribución coincide con $X^*=\Lambda^{-1}\mathrm{K}$.}
-	\label{fig:PuntoFijoCoop1}
-\end{figure}
+No obstante, estas realizaciones individuales no son suficientes para establecer una conclusión general. En la siguiente sección se presentará un análisis sistemático de los puntos de equilibrio, con el fin de evaluar de manera cuantitativa como los equilibrios dependen de los parámetros $(p,\sigma,N)$.
 
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=0.16]{../Imagenes/PuntoFijoCoop2}
-	\caption{Distribución del punto fijo para un sistema LV generalizado con $p=0.003$ y $\sigma=0.5$. En este caso se cumple $p\ll \sigma$ y por lo tanto la distribución coincide con $X^*=\Lambda^{-1}\mathrm{K}$.}
-	\label{fig:PuntoFijoCoop2}
-\end{figure}
-En ambos escenarios se puede notar que la distribución del punto fijo se acumula alrededor de $K=5$ y realmente coincide con $X^*=\Lambda^{-1}\mathrm{K}$, se observará en los siguientes histogramas que cuando $\sigma$ y $p$ incrementen sus valores respectivamente, los puntos fijos ya no coincidirán con esta forma.\\
-\\
-\begin{figure}
-	\centering
-	\includegraphics[scale=0.16]{../Imagenes/PuntoFijoCoop3}
-	\caption{Distribución del punto fijo para un sistema LV generalizado con $p=0.5$ y $\sigma=0.2$. }
-	\label{fig:PuntoFijoCoop3}
-\end{figure}
+\subfile{./TeX_files/AuxiliarComp.tex}
 
-Con base en estos resultados se complementa la sección \ref{sec:PuntosFijos} con el hecho de que para los casos $\sigma\ll p$ y $p\ll\sigma$, el punto fijo coincide con $X^*=\Lambda^{-1}\mathrm{K}$. Sin embargo, cuando $\sigma$ y $p$ son del mismo orden de magnitud entonces la distribución de $\Lambda^{-1}\mathrm{K}$ se ensancha hacia valores negativos mismos que no se pueden admitir en una dinámica estable (Figura (\ref{fig:PuntoFijoCoop3} \textbf{B})). Lo que se muestra en las simulaciones es que el punto fijo sigue una distribución de cola pesada con sesgo positivo alrededor del cero, la Figura (\ref{fig:PuntoFijoCoop3} \textbf{A}) indica que al menos un 65\% de las especies se han extinguido ó están cerca de extinguirse, mientras que el resto se ha estabilizado desde valores relativos que van del 10 al 200.\\
-\\
-Los puntos fijos con $p$ y $\sigma$ en el mismo orden de magnitud necesitan tener múltiples especies extintas para que pueda ser estable. Esta característica sigue dependiendo enteramente de las interacciones de $\Lambda$ y más adelante se observará como decae la estabilidad con base en el incremento de estos parámetros. Ya que la distribución del punto fijo es de cola pesada, tendrá un impacto directo en la distribución de valores propios de la matriz Jacobiana asociada a $\Lambda$. Cada valor de la diagonal será un tipo de atractor de valores propios en $\mathbb{C}$ y al estar distribuidos de forma heterogénea y re-escalados según (\ref{eqn:MatrizJacobiana}), la distribución de valores propios ya no será uniforme como en el caso de May o Allesina, sino que tendrá una forma más amorfa y/o dispersa. Por último se debe de aclarar que para obtener las diferentes distribuciones del punto fijo de los resultados numéricos, únicamente bastó con agarrar el último punto de la serie de tiempo y concentrarlo en un arreglo que representará al punto fijo.
+
+
+
+
 \newpage
 
 \subsection{Matriz Jacobiana}
