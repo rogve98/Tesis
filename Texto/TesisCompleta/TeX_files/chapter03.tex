@@ -199,11 +199,6 @@ No obstante, estas realizaciones individuales no son suficientes para establecer
 \subfile{./TeX_files/AuxiliarComp.tex}
 
 
-
-
-
-\newpage
-
 \subsection{Matriz Jacobiana}
 
 Una vez que se obtienen los puntos fijos a partir de las series de tiempo, se evalúan en la Jacobiana (\ref{eqn:MatrizJacobiana}) y se valida su estabilidad con base en la parte real de sus valores propios asociados. En cambio, si la serie de tiempo diverge entonces se asume que el sistema es inestable. Un elemento importante a considerar de este proceso es que no es trivial determinar cuando se estabilizará el sistema. La serie de tiempo puede mostrar una referencia visual pero la información que entrega no es determinante. En general se ha observado que gran parte de las simulaciones realizadas corresponden a sistemas que se estabilizan en un tiempo menor o igual a $t=50$, sin embargo, existen sistemas que se estabilizan en un tiempo superior a este lo que genera inconsistencias en los resultados. Para evitar que esto ocurra se incluye una restricción en los algoritmos para considerar sistemas que se estabilicen en un tiempo menor o igual a $t=50$.
