@@ -6,57 +6,5 @@
 
 \setlength{\parindent}{0cm} 
 
-\subsection{Estados estacionarios}\label{sec:PuntosFijos2.0}
-
-En la sección \ref{sec:PuntosFijos} se analizaron las propiedades del estado estacionario coexistente, el cual contribuye un caso particular relevante dentro de los equilibrios factibles. Se mostró que cuando $\Lambda^{-1}$ es invertible, el equilibrio coexistente es $X^*=\Lambda^{-1}\mathrm{K}$. En la presente sección se retoma el estudio de los estados estacionarios desde una perspectiva numérica, utilizando las trayectorias obtenidas mediante integración temporal. El punto de equilibrio se estimó a partir del valor final de la serie de tiempo, bajo la condición de que el sistema hubiera alcanzado un régimen estacionario. En la práctica, esto implica que las variaciones temporales en el tramo final de la simulación fueran despreciables dentro de la precisión numérica considerada.
-\begin{wrapfigure}{r}{0.5 \textwidth} \vspace{-25pt} \begin{center}
-		\includegraphics[scale=0.13]{../Imagenes/PuntoFijoCompetencia}
-	\end{center}
-	\vspace{-20pt} 
-	\caption{Distribución del punto de fijo $X^*$ para caso particular del sistema de competencia de especies, escogiendo $p=0.5$ y considerando una distribución uniforme en los pesos de las interacciones.}
-	\vspace{-10pt}
-	\label{fig:PuntoFijoCompetencia}
-\end{wrapfigure}
-
-En la Figura \eqref{fig:PuntoFijoCompetencia} se muestra la distribución del punto de equilibrio asociado a sistemas puramente competitivos, como el ilustrado en la Figura \eqref{fig:Seriesdetiempopostiva}. Se observa que aproximadamente el 80\% de especies alcanzan abundancias nulas en el equilibrio mientras que el subconjunto restante presenta valores positivos acotados por debajo de la capacidad de carga $K_i=5$. Este resultado muestra que, si bien el sistema converge típicamente a un estado estacionario estable, la coexistencia plena no es estructuralmente favorecida en regímenes puramente competitivos. La competencia homogénea induce exclusión de un número considerable de especies, restringiendo la biomasa efectiva a subconjunto reducido cuya abundancia permanece regulada por el término logístico. Desde una perspectiva ecológica, esta dinámica refleja un escenario de exclusión competitiva dominante, donde la estabilidad se logra a costa de una pérdida significativa de diversidad.
-\\
-\\
-En el caso generalizado, la distribución del punto de equilibrio no se concentra necesariamente por debajo de las capacidades de carga, ya que en la presencia de interacciones mixtas permite desplazamientos tanto hacia valores superiores como a inferiores a $K_i$. Desde el punto de vista paramétrico, pueden distinguirse dos regímenes relevantes. Cuando la intensidad típica de interacción es pequeña en comparación con la conectividad efectiva (por ejemplo, $\sigma\ll p$), las contribuciones interespecíficas tienden a compensarse estadísticamente, favoreciendo estados coexistentes con abundancias distribuidas alrededor de valores logísticos. De manera análoga, cuando $p\ll \sigma$ la conectividad es suficientemente baja, la estructura dispersa limita el acoplamiento efectivo, lo que también puede permitir configuraciones factibles.\\
-\\
-En contraste, cuando la combinación de $p$ y $\sigma$ incrementa significativamente el acoplamiento global, la coexistencia plena deja de ser típica. Sin embargo, la pérdida de factibilidad estricta no implica necesariamente inestabilidad dinámica, ya que el sistema puede converger a estados estacionarios parcialmente factibles, caracterizados por la extinción de un subconjunto de especies y la estabilización del resto. 
-\\
-\\
-En la Figura \eqref{fig:PuntoFijoCoop1} se presenta la comparación entre la distribución del punto de equilibrio obtenida numéricamente para una realización $p=0.5$ y $\sigma=0.003$, y la solución teórica del estado coexistente dada por $X^*=\Lambda^{-1}\mathrm{K}$. Se observa una concordancia estrecha entre ambas distribuciones, lo que indica que el estado coexistente es factible en este régimen caracterizado por interacciones de magnitud débil ($\sigma\ll p$). Así mismo, puede apreciarse una ligera asimetría alrededor del valor logístico $K_i$, reflejando el efecto residual de las contribuciones específicas.	
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=0.16]{../Imagenes/PuntoFijoCoop1}
-	\caption{Distribución del punto fijo para una realización con $p=0.5$ y $\sigma=0.003$. }
-	\label{fig:PuntoFijoCoop1}
-\end{figure}
-
-En contraste, la Figura \eqref{fig:PuntoFijoCoop2} muestra la misma comparación para una realización $\sigma=0.5$ y $p=0.003$, correspondiente a un sistema disperso con interacciones típicas fuertes ($p\ll \sigma$). En este caso, aunque la solución numérica continúa siendo consistente con el equilibrio teórico de las especies supervivientes, la distribución presenta una marcada concentración alrededor de $K_i$ para aproximadamente el 80\% de las especies, mientras que el subconjunto restante alcanza abundancias significativamente distintas. Esto sugiere que la estructura dispersa limita el acoplamiento efectivo global, permitiendo que la mayoría de las especies permanezcan dominadas por el término logístico, mientras que unas pocas experimentan desviaciones más pronunciadas.
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=0.16]{../Imagenes/PuntoFijoCoop2}
-	\caption{Distribución del punto fijo para una realización con $p=0.003$ y $\sigma=0.5$.}
-	\label{fig:PuntoFijoCoop2}
-\end{figure}
-
-Los resultados anteriores sugieren que cuando el acoplamiento es débil ---ya sea porque $\sigma\ll p$ o $p\ll\sigma$---, el sistema tiende al estado coexistente completo. En estos regímenes, la solución teórica $X^*=\Lambda^{-1}\mathrm{K}$ permanece en el ortante positivo y coincide con el equilibrio dinámico observado numéricamente. Sin embargo, al aumentarse la intensidad colectiva de las interacciones, la coexistencia plena deja de ser factible. La solución analítica del coexistente comienza a presentar componentes negativos, lo cual la descarta como estado biológicamente admisible, aunque no implique necesariamente inestabilidad del sistema dinámico. \\
-\\
-En la Figura \eqref{fig:PuntoFijoCoop3} se muestra la comparación para una realización con $p=0.5$ y $\sigma=0.2$. En este caso, aunque el sistema converge a un estado estacionario estable, la contribución numérica del equilibrio difiere sustancialmente de la solución teórica coexistente. La predicción analítica se dispersa hacia valores negativos, mientras que el resultado dinámico exhibe una distribución asimétrica con cola pesada y concentración cercana al cero, consistente con la presencia de especies parcialmente extintas y un subconjunto reducido con abundancias elevadas. Este comportamiento reproduce estadísticamente lo observado en la Figura \eqref{fig:SeriesdeTiempoLK100}, donde la pérdida de factibilidad plena da lugar a una reorganización de las abundancias en torno a un equilibrio parcialmente coexistente.
-\newpage
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=0.16]{../Imagenes/PuntoFijoCoop3}
-	\caption{Distribución del punto fijo para una realización con $p=0.5$ y $\sigma=0.2$. }
-	\label{fig:PuntoFijoCoop3}
-\end{figure}
-
-Los resultados anteriores indican que, en el régimen de acoplamiento intermedio y fuerte, los estados parcialmente factibles son estadísticamente más frecuentes que la coexistencia plena. En estos escenarios, la estabilidad dinámica no desaparece, sino que se reorganiza en torno a equilibrios donde un subconjunto de especies se extingue y el resto se estabiliza en abundancias positivas. Si bien el parámetro efectivo $R=\sigma\sqrt{Np}$ controla en buena medida la factibilidad del estado coexistente\footnote{En sistemas de soporte simétrico dicho control solo es parcial debido a la geometría espectral.}, no proporciona un criterio directo para caracterizar la factibilidad de estados parcialmente coexistentes. En consecuencia, la transición relevante no es únicamente entre estabilidad e inestabilidad, sino entre coexistencia plena y coexistencia fragmentada.\\
-\\
-Además, la distribución heterogénea de las abundancias en el equilibrio implica que la diagonal de la matriz Jacobiana $\mathcal{J}$ evaluada en dicho estado heredará esa heterogeneidad. Esta estructura no homogénea modificará las propiedades espectrales del sistema linealizado, lo cual motiva al análisis desarrollado de la Jacobiana en la siguiente sección.
-
-
 
 \end{document}

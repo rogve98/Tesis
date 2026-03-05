@@ -166,8 +166,9 @@ Tras el análisis espectral del sistema linealizado tipo May, se procede ahora a
 \\
 En el presente trabajo, se consideraron tres tamaños de sistema: $N\in\{25,50,100\}$. En las simulaciones del modelo de Lotka-Volterra generalizado se fijaron los parámetros demográficos homogéneamente para todas las especies, tomando $r_i=2$ y $K_i=5$. Esta elección permite aislar el efecto estructural de la matriz $\Lambda$ sobre la dinámica, minimizando fuentes adicionales de variabilidad asociadas a heterogeneidad en los parámetros intrínsecos. \\
 \\
-En consecuencia, la única fuente de variación fue la matriz de coeficientes de interacción $\Lambda$, generada a partir de los parámetros $(p,\sigma,N)$. Para cada tamaño de sistema se realizaron barridos paramétricos variando $p$ con $\sigma$ fija y, de manera análoga, variando $\sigma$ con $p$ fijo. La integración temporal del sistema se llevó a cabo mediante el método de Runge-Kutta de cuarto orden (RK4) en el intervalo $t\in[0,50]$, utilizando un paso de integración $h=0.01$. Las simulaciones se realizaron bajo la condición inicial $X_0=\textbf{1}$, es decir, todas las especies parten de abundancia unitaria. Se consideraron matrices $\Lambda$ tanto de soporte simétrico como dirigido\footnote{El soporte dirigido se analizó unicamente para $N=100$; para $N=25$ y $N=50$ se consideraron exclusivamente matrices estructuralmente simétricas.}, con el objetivo de contrastar sus efectos dinámicos, en concordancia con el análisis espectral previo. En el Apéndice (tal) se detalla el procedimiento computacional empleado para la generación de las matrices y la ejecución de simulaciones.
-
+En consecuencia, la única fuente de variación fue la matriz de coeficientes de interacción $\Lambda$, generada a partir de los parámetros $(p,\sigma,N)$. Para cada tamaño de sistema se realizaron barridos paramétricos variando $p$ con $\sigma$ fija y, de manera análoga, variando $\sigma$ con $p$ fijo. La integración temporal del sistema se llevó a cabo mediante el método de Runge-Kutta de cuarto orden (RK4) en el intervalo $t\in[0,50]$, utilizando un paso de integración $h=0.01$. Las simulaciones se realizaron bajo la condición inicial $X_0=\textbf{1}$, es decir, todas las especies parten de abundancia unitaria. Se consideraron matrices $\Lambda$ tanto de soporte simétrico como dirigido\footnote{El soporte dirigido se analizó unicamente para $N=100$; para $N=25$ y $N=50$ se consideraron exclusivamente matrices estructuralmente simétricas.}, con el objetivo de contrastar sus efectos dinámicos, en concordancia con el análisis espectral previo. \\
+\\
+El estado estacionario fue estimado a partir del valor final de la integración temporal. La consistencia dinámica de dicho estado se verificó evaluando la matriz Jacobiana en ese punto y comprobando que todos sus valores propios tuvieran parte real negativa, garantizando estabilidad lineal local. Este procedimiento permitió descartar realizaciones que no hubieran alcanzado un régimen asintóticamente estable dentro del intervalo considerado. Se observó que, en regímenes cercanos al umbral crítico, la convergencia puede volverse lenta, lo cual es consistente con la proximidad del mayor valor propio al eje imaginario.
 \subsection{Series de tiempo}
 
 Como se discutió anteriormente, los signos de las interacciones en la Jacobiana $\mathcal{J}$ aparecen invertidos con respecto de la matriz de coeficientes $\Lambda$. En particular, interacciones competitivas en $\mathcal{J}$ corresponden a coeficientes $\alpha_{ij}\geq 0$ en $\Lambda$. Si se considera un sistema puramente competitivo, entonces el término interespecífico actúa sistemáticamente reduciendo la tasa de crecimiento efectiva de cada población. En este régimen, la contribución acoplada no puede inducir incrementos adicionales sobre el término logístico intrínseco, sino únicamente amortiguarlo. 
@@ -192,176 +193,164 @@ En la Figura \eqref{fig:SeriesdeTiempoLK100} se presentan dos realizaciones repr
 	\label{fig:SeriesdeTiempoLK100}
 \end{figure}
 
-Dado que el término acoplado depende linealmente de $X_j^*$, las especies con abundancias elevadas adquieren un peso desproporcionado en la dinámica colectiva, influyendo de manera dominante en la regulación efectiva del sistema. A partir de las series de tiempo se observa que la estructura de las interacciones ---en particular la densidad efectiva de enlaces--- influye de manera significativa en el valor del equilibrio alcanzado por el sistema y, en consecuencia, en la distribución de abundancias estacionarias. En el caso (\textbf{B}), correspondiente a un mayor valor de $p$, el equilibrio colectivo alcanza magnitudes sustancialmente superiores al observado en (\textbf{A}). \\
+Dado que el término acoplado depende linealmente de $x_j^*$, las especies con abundancias elevadas adquieren un peso desproporcionado en la dinámica colectiva, influyendo de manera dominante en la regulación efectiva del sistema. A partir de las series de tiempo se observa que la estructura de las interacciones ---en particular la densidad efectiva de enlaces--- influye de manera significativa en el valor del equilibrio alcanzado por el sistema y, en consecuencia, en la distribución de abundancias estacionarias. En el caso (\textbf{B}), correspondiente a un mayor valor de $p$, el equilibrio colectivo alcanza magnitudes sustancialmente superiores al observado en (\textbf{A}). \\
 \\
 No obstante, estas realizaciones individuales no son suficientes para establecer una conclusión general. En la siguiente sección se presentará un análisis sistemático de los puntos de equilibrio, con el fin de evaluar de manera cuantitativa como los equilibrios dependen de los parámetros $(p,\sigma,N)$.
+
+\subsection{Estados estacionarios}\label{sec:PuntosFijos2.0}
+
+En la sección \ref{sec:PuntosFijos} se analizaron las propiedades del estado estacionario coexistente, el cual contribuye un caso particular relevante dentro de los equilibrios factibles. Se mostró que cuando $\Lambda^{-1}$ es invertible, el equilibrio coexistente es $X^*=\Lambda^{-1}\mathrm{K}$. En la presente sección se retoma el estudio de los estados estacionarios desde una perspectiva numérica, utilizando las trayectorias obtenidas mediante integración temporal. 
+\newline
+\begin{wrapfigure}{r}{0.5 \textwidth} \vspace{-25pt} \begin{center}
+		\includegraphics[scale=0.13]{../Imagenes/PuntoFijoCompetencia}
+	\end{center}
+	\vspace{-20pt} 
+	\caption{Distribución del punto de fijo $X^*$ para caso particular del sistema de competencia de especies, escogiendo $p=0.5$ y considerando una distribución uniforme en los pesos de las interacciones.}
+	\vspace{-10pt}
+	\label{fig:PuntoFijoCompetencia}
+\end{wrapfigure}
+En la Figura \eqref{fig:PuntoFijoCompetencia} se muestra la distribución del punto de equilibrio asociado a sistemas puramente competitivos, como el ilustrado en la Figura \eqref{fig:Seriesdetiempopostiva}. Se observa que aproximadamente el 80\% de especies alcanzan abundancias nulas en el equilibrio mientras que el subconjunto restante presenta valores positivos acotados por debajo de la capacidad de carga $K_i=5$. Este resultado muestra que, si bien el sistema converge típicamente a un estado estacionario estable, la coexistencia plena no es estructuralmente favorecida en regímenes puramente competitivos. La competencia homogénea induce exclusión de un número considerable de especies, restringiendo la biomasa efectiva a subconjunto reducido cuya abundancia permanece regulada por el término logístico. Por lo tanto, la estabilidad en este contexto se logra a costa de una pérdida significativa de diversidad.
+\newpage
+En el caso generalizado, la distribución del punto de equilibrio no se concentra necesariamente por debajo de las capacidades de carga, ya que en la presencia de interacciones mixtas permite desplazamientos tanto hacia valores superiores como a inferiores a $K_i$. Desde el punto de vista paramétrico, pueden distinguirse dos regímenes relevantes. Cuando la intensidad típica de interacción es pequeña en comparación con la conectividad efectiva (por ejemplo, $\sigma\ll p$), las contribuciones interespecíficas tienden a compensarse estadísticamente, favoreciendo estados coexistentes con abundancias distribuidas alrededor de valores logísticos. De manera análoga, cuando $p\ll \sigma$ la conectividad es suficientemente baja, la estructura dispersa limita el acoplamiento efectivo, lo que también puede permitir configuraciones factibles.
+\\
+\\
+En la Figura \eqref{fig:PuntoFijoCoop1} se presenta la comparación entre la distribución del punto de equilibrio obtenida numéricamente para una realización $p=0.5$ y $\sigma=0.003$, y la solución teórica del estado coexistente dada por $X^*=\Lambda^{-1}\mathrm{K}$. Se observa una concordancia estrecha entre ambas distribuciones, lo que indica que el estado coexistente es factible en este régimen caracterizado por interacciones de magnitud débil ($\sigma\ll p$). Así mismo, puede apreciarse una ligera asimetría alrededor del valor logístico $K_i$, reflejando el efecto residual de las contribuciones específicas.	
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.16]{../Imagenes/PuntoFijoCoop1}
+	\caption{Distribución del punto fijo para una realización con $p=0.5$ y $\sigma=0.003$. }
+	\label{fig:PuntoFijoCoop1}
+\end{figure}
+
+En contraste, la Figura \eqref{fig:PuntoFijoCoop2} muestra la misma comparación para una realización $\sigma=0.5$ y $p=0.003$, correspondiente a un sistema disperso con interacciones típicas fuertes ($p\ll \sigma$). En este caso, aunque la solución numérica continúa siendo consistente con el equilibrio teórico de las especies supervivientes, la distribución presenta una marcada concentración alrededor de $K_i$ para aproximadamente el 80\% de las especies, mientras que el subconjunto restante alcanza abundancias significativamente distintas. Esto sugiere que la estructura dispersa limita el acoplamiento efectivo global, permitiendo que la mayoría de las especies permanezcan dominadas por el término logístico, mientras que unas pocas experimentan desviaciones más pronunciadas.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.16]{../Imagenes/PuntoFijoCoop2}
+	\caption{Distribución del punto fijo para una realización con $p=0.003$ y $\sigma=0.5$.}
+	\label{fig:PuntoFijoCoop2}
+\end{figure}
+
+Los resultados anteriores sugieren que cuando el acoplamiento es débil ---ya sea porque $\sigma\ll p$ o $p\ll\sigma$---, el sistema tiende al estado coexistente completo. En estos regímenes, la solución teórica $X^*=\Lambda^{-1}\mathrm{K}$ permanece en el ortante positivo y coincide con el equilibrio dinámico observado numéricamente. Sin embargo, al aumentarse la intensidad colectiva de las interacciones, la coexistencia plena deja de ser factible. La solución analítica del coexistente comienza a presentar componentes negativos, lo cual la descarta como estado biológicamente admisible, aunque no implique necesariamente inestabilidad del sistema dinámico. \\
+\\
+En la Figura \eqref{fig:PuntoFijoCoop3} se muestra la comparación para una realización con $p=0.5$ y $\sigma=0.2$. En este caso, aunque el sistema converge a un estado estacionario estable, la contribución numérica del equilibrio difiere sustancialmente de la solución teórica coexistente. La predicción analítica se dispersa hacia valores negativos, mientras que el resultado dinámico exhibe una distribución asimétrica con cola pesada y concentración cercana al cero, consistente con la presencia de especies parcialmente extintas y un subconjunto reducido con abundancias elevadas. Este comportamiento reproduce estadísticamente lo observado en la Figura \eqref{fig:SeriesdeTiempoLK100}, donde la pérdida de factibilidad plena da lugar a una reorganización de las abundancias en torno a un equilibrio parcialmente coexistente.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.16]{../Imagenes/PuntoFijoCoop3}
+	\caption{Distribución del punto fijo para una realización con $p=0.5$ y $\sigma=0.2$. }
+	\label{fig:PuntoFijoCoop3}
+\end{figure}
+\newpage
+Los resultados anteriores indican que, en el régimen de acoplamiento intermedio y fuerte, los estados parcialmente factibles son estadísticamente más frecuentes que la coexistencia plena. En estos escenarios, la estabilidad dinámica no desaparece, sino que se reorganiza en torno a equilibrios donde un subconjunto de especies se extingue y el resto se estabiliza en abundancias positivas. Si bien el parámetro efectivo $R=\sigma\sqrt{Np}$ controla en buena medida la factibilidad del estado coexistente\footnote{En sistemas de soporte simétrico dicho control solo es parcial debido a la geometría espectral.}, no proporciona un criterio directo para caracterizar la factibilidad de estados parcialmente coexistentes. En consecuencia, la transición relevante no es únicamente entre estabilidad e inestabilidad, sino entre coexistencia plena y coexistencia fragmentada.\\
+\\
+Además, la distribución heterogénea de las abundancias en el equilibrio implica que la diagonal de la matriz Jacobiana $\mathcal{J}$ evaluada en dicho estado heredará esa heterogeneidad. Esta estructura no homogénea modificará las propiedades espectrales del sistema linealizado, lo cual motiva al análisis desarrollado de la Jacobiana en la siguiente sección.
+
+\subsection{Matriz Jacobiana}
+
+Una vez caracterizados los estados estacionarios, es posible evaluar la matriz Jacobiana en el equilibrio correspondiente con el fin de analizar su distribución espectral. En el modelo generalizado de Lotka-Volterra, la linealización alrededor del equilibrio introduce una dependencia explícita en las abundancias estacionarias $X^*$, de modo que la estructura efectiva de la Jacobiana queda ponderada por la heterogeneidad del estado alcanzado.
+\\
+\\
+Esta dependencia rompe la hipótesis de homogeneidad estadística considerada en el marco clásico de May, donde los coeficientes se tratan como realizaciones independientes con varianza uniforme. En presencia de estados plenamente o parcialmente coexistentes, la diagonal y los términos fuera de la diagonal heredan la distribución no uniforme de $X^*$, alterando la geometría espectral esperada. En esta sección se examinan las implicaciones de evaluar la Jacobiana tanto en estados plenamente coexistentes como en estados parcialmente factibles, con el objetivo de comparar sus distribuciones espectrales y su relación con la estabilidad del sistema.\\
+\\
+Recordando que los elementos diagonales de la matriz Jacobiana están dados por 
+$$\mathcal{J}_{ii}=r_i\left (1-\frac{\sum_j\alpha_{ij}x_j^*}{K_i}\right )-\frac{r_ix_i^*}{K_i}\alpha_{ii}$$
+cuando el estado es plenamente coexistente ($x_i^*>0$ para toda $i$), la condición de equilibrio anula el primer término para toda $i$. En consecuencia la Jacobiana evaluada en el estado coexistente adopta la forma
+\begin{equation}\label{eqn:JacobianaCoexistente}
+	\mathcal{J}=-D\Lambda,\qquad D=\operatorname{diag}\left (\frac{r_i}{K_i}(\Lambda^{-1}\mathrm{K})_i\right )
+\end{equation}
+Esto muestra que la matriz Jacobiana no es simplemente una realización de la matriz $\Lambda$, sino una deformación multiplicativa por una matriz diagonal cuya estructura depende explícitamente del equilibrio $X^*=\Lambda^{-1}\mathrm{K}$. En particular, la geometría espectral de $\mathcal{J}$ queda modulada por la distribución de abundancias estacionarias, rompiendo la homogeneidad considerada en el marco clásico de May. En el límite donde $X^*$ es aproximadamente homogéneo se cumple $X^*\approx\mathrm{K}$, entonces  el término diagonal se reduce a $D=r\cdot\textbf{1}$ (considerando $r_i=r$) y por tanto la estructura espectral se reduce a un reescalamiento del caso clásico de May.\\
+\\
+En el estado parcialmente factible ($x_i^*=0$ para algún subconjunto de especies), la estructura de la matriz Jacobiana deja de ser puramente multiplicativa. Para las especies persistentes ($x_i^*>0$), los elementos satisfacen 
+$$\mathcal{J}_{ij}=-\frac{r_ix_i^*}{K_i}\alpha_{ij}$$
+mientras que para las especies extintas ($x_i^*=0$) los términos fuera de la diagonal se anula,
+$$\mathcal{J}_{ij}=0,\qquad i\neq j$$
+mientras que la entrada diagonal queda dado por la condición de invasibilidad
+$$\mathcal{J}_{ii}=r_i\left (1-\frac{\sum_j\alpha_{ij}x_j^*}{K_i}\right )$$
+Como consecuencia, tras una permutación adecuada de los índices, la Jacobiana adopta una estructura triangular por bloques. El subbloque asociado a las especies persistentes conserva la deformación multiplicativa del caso coexistente, mientras que las especies extintas contribuyen únicamente con valores propios reales determinados por sus tasas de invasión efectivas. Esta descomposición modifica sustancialmente la geometría del espectro del sistema. En particular, si $\mathcal{J}_{PP}$ denota el subbloque correspondiente a las especies persistentes y $\mathcal{J}_{EE}$ el bloque diagonal asociado a las especies extintas, entonces $$\operatorname{spec}(\mathcal{J})=\operatorname{spec}(\mathcal{J}_{PP})\cup\operatorname{spec}(\mathcal{J}_{EE})$$ 
+ya que 
+$$\det(\mathcal{J}-\lambda I)=\det(\mathcal{J}_{PP}-\lambda I)\det(\mathcal{J}_{EE}-\lambda I))$$
+Por lo tanto, en la transición dinámica no solo se observa un cambio de estabilidad del equilibrio, sino también una modificación en la estructura lineal efectiva del sistema, al reducirse la dimensión del subbloque colectivo que gobierna la dinámica conjunta.
+\\
+\\
+La estructura anterior sugiere que la geometría espectral depende de manera explícita del tipo de equilibrio alcanzado. En el régimen plenamente coexistente, el espectro esta gobernado por una matriz aleatoria multiplicativamente deformada por $X^*=\Lambda^{-1}\mathrm{K}$, mientras que en el régimen parcialmente factible la dinámica colectiva queda restringida al subbloque correspondiente a las especies persistentes, coexistiendo con valores propios reales asociados a las especies extintas.\\
+\\
+En consecuencia, al explorar numéricamente la distribución espectral para distintas configuraciones paramétricas, es esperable observar diferencias sistemáticas entre escenarios plenamente coexistentes y parcialmente factibles, tanto en la extensión del soporte espectral como en la posible acumulación de valores propios sobre el eje real. En la siguiente parte se examina esta estructura mediante simulaciones numéricas para distintos valores de los parámetros.
+
+\subsection{Distribución espectral} 
+
+Se ha determinado que la estructura de la matriz Jacobiana dado un punto de equilibrio $X^*$, puede escribirse por bloques para especies persistentes $\mathcal{J}_{PP}$ y especies extintas $\mathcal{J}_{EE}$, lo que muestra que su estructura depende explícitamente de la distribución de abundancias en equilibrio. En particular, cuando el estado es coexistente, la Jacobiana adquiere la forma \eqref{eqn:JacobianaCoexistente}, de modo que la deformación respecto de $\Lambda$ esta gobernada por la heterogeneidad de $X^*$.
+\\
+\\
+En el caso parcialmente factible, la transformación multiplicativa actúa únicamente sobre el subconjunto de especies persistentes, mientras que las especies extintas introducen un bloque diagonal adicional cuyos valores propios poseen parte real determinadas por sus tasas de invasión. En consecuencia, el espectro total se descompone en un componente colectivo asociado al subbloque persistente y un subconjunto  de valores propios reales correspondientes a especies extintas.
+\newline
+Finalmente, este análisis se repetirá en sistemas cuya matriz $\Lambda$ posee soporte simétrico pero dinámica dirigida. En este contexto, la geometría espectral de $\Lambda$ deja de ser isotrópica ---para ciertos casos concretos--- y no puede caracterizarse únicamente a través del radio espectral, por tanto, la deformación inducida por $X^*$ es significativamente diferente del caso dirigido. El contraste entre estos escenarios permitirá interpretar con mayor precisión las transiciones dinámicas del sistema.
+\\
+\\
+Comenzando con el estado plenamente coexistente, en le Figura \eqref{fig:EspectroCoexistenteDir} se muestra una realización para $N=100$ con $p=0.1$ y $\sigma=0.1$. En (\textbf{A}) se observa la distribución aproximadamente isotrópica de valores propios de $\Lambda$, consistente con una matriz dirigida con entradas independientes y media nula. Ya que el radio espectral en este contexto es considerablemente menor a uno se puede garantizar el estado coexistente con gran probabilidad. \\
+\\
+En este régimen, la Jacobiana evaluada en el equilibrio obtiene la forma \eqref{eqn:JacobianaCoexistente}, por lo que la transformación con respecto de $\Lambda$ es puramente multiplicativa. En (\textbf{B}) se aprecia la deformación espectral inducida por la transformación multiplicativa. A diferencia de un simple desplazamiento rígido, la nube de valores propios experimenta una contracción anisostrópica en el plano complejo: distintas regiones del soporte se reescalan de manera desigual como consecuencia de la heterogeneidad de $X^*$. Esta anisotropía refleja que la multiplicación por la matriz diagonal no actúa como una traslación uniforme del espectro, sino como una transformación que altera su geometría interna. \\
+\\
+La naturaleza de esta deformación se confirma en (\textbf{C}), donde se observa la relación lineal entre las entradas diagonales de $\mathcal{J}$ y las abundancias de $X^*$. La pendiente negativa es consistente con $\mathcal{J}_{ii}=-\frac{r_ix_i^*}{K_i}\alpha_{ii}$, lo que evidencia que la distribución espectral esta controlada directamente por la estructura del equilibrio coexistente.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.16]{../Imagenes/EspectroCoexistenteDir}
+	\caption{Se muestra una realización de un estado coexistente para los parámetros $N=100$, $p=0.1$ y $\sigma=0.1$. (\textbf{A}) Espectro de $\Lambda$ asociada. (\textbf{B}) Espectro de la Jacobiana asociada. (\textbf{C}) Relación lineal $\operatorname{diag}(\mathcal{J})$ vs $X^*$.}
+	\label{fig:EspectroCoexistenteDir}
+\end{figure}
+
+En contraste, la Figura \eqref{fig:EspectroParcialDir} muestra un estado parcialmente factible bajo la misma dimensión $N=100$ con parámetros $p=0.5$ y $\sigma=0.2$. En (\textbf{A}) se observa el espectro de $\Lambda$, cuyo soporte presenta un radio espectral del orden de la unidad. En este régimen, la matriz de interacciones puede encontrarse cercana a la singularidad efectiva, lo que implica que la solución formal del equilibrio interior $X^*=\Lambda^{-1}\mathrm{K}$ contiene entradas de gran magnitud y, en general con signos mixtos. Como consecuencia, el equilibrio plenamente coexistente pierde factibilidad y el sistema evoluciona hacia un estado parcialmente factible
+\\
+\\
+En (\textbf{B}) se muestra el espectro de la Jacobiana evaluada en dicho equilibrio. A diferencia del caso coexistente, la distribución presenta una mayor dispersión en el plano complejo, atribuible a la amplificación inducida por las abundancias persistentes a través del factor diagonal 
+$$\mathcal{J}_{ii}=-\operatorname{diag}\left (\frac{r_ix_i^*}{K_i}\right ),\qquad x_i^*>0$$
+Cuando las entradas de $X^*$ son grandes, el bloque persistente $\mathcal{J}_{PP}$ puede exhibir una escala espectral significativamente mayor. Simultáneamente, se observa un conjunto de valores propios reales negativos asociados a las especies extintas. Estos provienen del bloque diagonal correspondiente  a las tasas efectivas de invasión, y aparecen desacopladas del soporte complejo principal.\\
+\\
+Finalmente, en (\textbf{C}) se distinguen claramente dos estructuras: una relación lineal correspondiente a las especies persistentes, y un conjunto separado de puntos asociados a las especies extintas, cuyos valores propios negativos reflejan la contribución del término diagonal de invasibilidad. Esta separación visual ilustra directamente la descomposición espectral del sistema en componentes persistentes y extintas.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.16]{../Imagenes/EspectroParcialDir}
+	\caption{Se muestra una realización de un estado parcialmente factible para los parámetros $N=100$, $p=0.5$ y $\sigma=0.2$. (\textbf{A}) Espectro de $\Lambda$ asociada. (\textbf{B}) Espectro de la Jacobiana asociada. (\textbf{C}) Relación lineal $\operatorname{diag}(\mathcal{J})$ vs $X^*$.}
+	\label{fig:EspectroParcialDir}
+\end{figure}
+\newpage
+Pasando ahora al estado coexistente para el sistema con soporte estructuralmente simétrico y dinámica dirigida. En la Figura \eqref{fig:EspectroCoexistenteSim} se ajusta una realización para $N=100$, $p=0.02$ y $\sigma=0.2$. En (\textbf{A}) se muestra el espectro de $\Lambda$. A diferencia del caso completamente dirigido, el espectro pierde la isotropía característica de la ley circular. Esto ocurre debido a las correlaciones introducidas por la simetría estructural del soporte, generando una deformación anisotrópica del conjunto espectral  y una elongación visible hacia los ejes complejos.\\
+\\
+En (\textbf{B}) se presenta el espectro de la matriz $\mathcal{J}$. Se observa una dispersión mayor que en el caso dirigido (Figura \eqref{fig:EspectroCoexistenteDir}), aún cuando la conectividad es considerablemente menor. En (\textbf{C}) se aprecia nuevamente la relación aproximadamente lineal entre el espectro de $\mathcal{J}$ y las abundancias del punto de equilibrio $X^*$. Dado que en este contexto no aparecen especies extintas, la transformación \eqref{eqn:JacobianaCoexistente} actúa como deformación multiplicativa del espectro de $\Lambda$. Sin embargo, en este caso dicha deformación se compone con la anisotropía  ya presente en $\Lambda$, heredando así tanto la estructura espectral inducida por las abundancias como la deformación asociada a la simetría estructural del sistema.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.16]{../Imagenes/EspectroCoexistenteSim}
+	\caption{Se muestra una realización de $\Lambda$ con soporte estructuralmente simétrico de un estado coexistente para los parámetros $N=100$, $p=0.02$ y $\sigma=0.2$. (\textbf{A}) Espectro de $\Lambda$ asociada. (\textbf{B}) Espectro de la Jacobiana asociada. (\textbf{C}) Relación lineal $\operatorname{diag}(\mathcal{J})$ vs $X^*$.}
+	\label{fig:EspectroCoexistenteSim}
+\end{figure}
+
+Finalmente, en la Figura \eqref{fig:EspectroParcialSim} se analiza el estado parcialmente factible para una realización estructuralmente simétrica con $N=100$, $p=0.02$, $\sigma=0.2$. A diferencia del caso coexistente mostrado previamente, en (\textbf{A}) la distribución espectral de $\Lambda$ se ajusta nuevamente con una geometría aproximadamente isotrópica compatible con la ley circular. Por tanto, el mecanismo observado en el caso parcialmente dirigido ---donde valores propios cercanos al origen amplifican las entradas de $\Lambda^{-1}$ y producen abundancias grandes--- también se encuentra presente en este régimen.
+\\
+\\
+Sin embargo, el espectro de la matriz Jacobiana mostrado en (\textbf{B}) presenta una dispersión mayor que en el caso dirigido parcialmente factible (\ref{fig:EspectroParcialDir}). Esta mayor dispersión sugiere que el reescalamiento multiplicativo inducido por $X^*$ interactúa de manera más compleja con la estructura del soporte cuando éste es simétrico. En (\textbf{C}) se observa nuevamente la seperación entre especies persistentes y especies extintas, donde estas últimas se asocian a valores propios reales negativos. No obstante, a diferencia del caso dirigido, la relación aproximadamente lineal entre valores propios de $\mathcal{J}$ y las abundancias $X^*$ de las especies persistentes deja de ser tan nítida. Esta desviación indica que, aunque el mecanismo principal de deformación espectral sigue siendo el reescalamiento de $X^*$, la estructura simétrica del soporte introduce correlaciones adicionales en la martiz efectiva que perturban la proporcionalidad observada en el caso dirigido.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.16]{../Imagenes/EspectroParcialSim}
+	\caption{Se muestra una realización de $\Lambda$ con soporte estructuralmente simétrico de un parcialmente factible para los parámetros $N=100$, $p=0.02$ y $\sigma=0.2$. (\textbf{A}) Espectro de $\Lambda$ asociada. (\textbf{B}) Espectro de la Jacobiana asociada. (\textbf{C}) Relación lineal $\operatorname{diag}(\mathcal{J})$ vs $X^*$.}
+	\label{fig:EspectroParcialSim}
+\end{figure}
+
+Un rasgo común a todas las realizaciones estudiadas es la tendencia del espectro de la matriz $\mathcal{J}$ a deformarse preferentemente a lo largo del eje real, En particular, la dispersión de los valores propios en la dirección real resulta sistemáticamente mayor que en la dirección imaginaria, produciendo una geometría aproximadamente elíptica horizontal. Si bien esta observación se basa en evidencia visual y no constituye una caracterización espectral rigurosa, el patrón aparece de forma consistente en todas las configuraciones consideradas. El caso coexistente con soporte estructuralmente simétrico presenta una dispersión algo mayor que en el eje imaginario; sin embargo, la elongación dominante continúa observándose sobre el eje real.\\
+\\
+En el marco de los modelos ecológicos aleatorios, se ha argumentado que la orientación de la elipse puede relacionarse con el tipo dominante de interacciones en la red: una elongación hacia el eje real suele asociarse con interacciones simétricas de cooperación o competencia, mientras que una elongación hacia el eje imaginario es característica de interacciones asimétricas del tipo presa-depredador \cite{allesina2012stability}. En este trabajo no se evalúan explícitamente estas correlaciones en la matriz $\mathcal{J}$, por lo que esta interpretación se menciona únicamente como una posible línea futura para el análisis espectral de las Jacobianas del modelo de Lotka-Volterra generalizado.\\
+\\
+Otro aspecto relevante es el comportamiento de los valores propios en los estados parcialmente factibles. En ambos tipos de soporte, se observa una acumulación significativa de valores propios cercanos al origen del plano complejo. Este fenómeno indica que, aunque el sistema parece linealmente estable, varios modos dinámicos presentan tasas de relajación muy pequeñas, lo que implica tiempos de retorno largos ante perturbaciones. En consecuencia, estos estados se encuentran próximos la borde de estabilidad.\\
+\\
+Desde la perspectiva de la estabilidad marginal en ecosistemas complejos, este comportamiento sugiere que los estados parcialmente factibles tienden a ubicarse cerca de un régimen marginalmente estable, caracterizado por la presencia de valores propios arbitrariamente cercanos a cero \cite{bunin2017ecological,biroli2018marginally}. Esta proximidad al límite de estabilidad puede incrementar la sensibilidad del sistema frente a cambios estructurales en la red de interacciones, aún cuando el equilibrio permanezca formalmente estable.\\
+\\
+En conjunto, los resultados muestran que la geometría espectral de la matriz $\mathcal{J}$ se encuentra determinada por dos mecanismos principales. Por un lado la distribución espectral de la matriz $\Lambda$ fija la estructura global del espectro, la cual puede presentar propiedades isotrópicas o anisotrópicas dependiendo de la organización del soporte de la red. Por otro lado, el reescalamiento multiplicativo inducido por las abundancias del equilibrio $X^*$ deforma el espectro de la Jacobiana  generando una relación aproximadamente lineal entre sus abundancias y los elementos diagonales de $\mathcal{J}$. Esta relación se observa con mayor claridad en los estados coexistentes y se modifica en los estados parcialmente factibles debido a la presencia de especies extintas y a la consiguiente degeneración de algunas direcciones dinámicas.\\
+\\
+Un rasgo recurrente en los sistemas parcialmente factibles es la acumulación de los valores propios cercanos al origen del plano complejo.  Aunque el equilibrio permanece linealmente estable, la proximidad de estos valores propios a cero implica la existencia de modos dinámicos con tiempos de relajación largos, lo que sitúa al sistema al borde de la estabilidad. Este comportamiento es consistente con la aparición de estados marginalmente estables en modelos ecológicos aleatorios, como se discute en el contexto del modelo estudiado por Guy Bunin y Giulio Biroli, donde la selección dinámica de especies persistentes conduce a configuraciones cercanas a la estabilidad marginal.\\
+\\
+Desde la perspectiva de $\mathcal{J}$ no solo caracteriza la estabilidad local del equilibrio, sino que también sugiere la proximidad del sistema a regímenes dinámicos cualitativamente distintos. En particular, la acumulación de valores propios cercanos a cero puede interpretarse como una señal de que pequeñas variaciones en los parámetros del sistema ---como en la conectividad, la intensidad de las interacciones o la heterogeneidad de las abundancias--- podrían inducir cambios cualitativos en la dinámica colectiva. Este escenario motiva el estudio de las transiciones dinámicas en el modelo, donde la pérdida de estabilidad, o la reorganización del conjunto de especies persistentes puede dar lugar a nuevos regímenes de comportamiento ecológico
 
 \subfile{./TeX_files/AuxiliarComp.tex}
 
 
-\subsection{Matriz Jacobiana}
-
-Una vez que se obtienen los puntos fijos a partir de las series de tiempo, se evalúan en la Jacobiana (\ref{eqn:MatrizJacobiana}) y se valida su estabilidad con base en la parte real de sus valores propios asociados. En cambio, si la serie de tiempo diverge entonces se asume que el sistema es inestable. Un elemento importante a considerar de este proceso es que no es trivial determinar cuando se estabilizará el sistema. La serie de tiempo puede mostrar una referencia visual pero la información que entrega no es determinante. En general se ha observado que gran parte de las simulaciones realizadas corresponden a sistemas que se estabilizan en un tiempo menor o igual a $t=50$, sin embargo, existen sistemas que se estabilizan en un tiempo superior a este lo que genera inconsistencias en los resultados. Para evitar que esto ocurra se incluye una restricción en los algoritmos para considerar sistemas que se estabilicen en un tiempo menor o igual a $t=50$.
-\\
-\\
-La forma de verificar la estabilidad recae en la parte real de los valores propios de la matriz $\mathcal{J}_\Lambda$, si por ejemplo la serie de tiempo aparenta estabilizarse pero los valores propios del sistema tienen parte real positiva, entonces quiere decir que el sistema no ha alcanzado a su punto fijo atractor. A continuación se presentan cuatro ejemplos arbitrarios de sistemas que resultaron estables para ir observando sus características. En este \href{https://github.com/rogve98/Tesis/tree/master/Notebooks/Datos/Ejemplo\%20Jacobianos}{enlace}\footnote{Consultar: \url{https://github.com/rogve98/Tesis/tree/master/Notebooks/Datos/Ejemplo\%20Jacobianos}} el lector tendrá acceso a 4 de estas matrices para los parámetros $N=100$, $\sigma=0.2$ y $p=\{0.3,0.4,0.5,0.6\}$. A continuación se presenta el código en \julia para validar como son sus diagonales.
-\begin{tcolorbox}[colback=green!10!white, colframe=black, title=Entrada]
-	\begin{minted}{julia}
-using CSV, DataFrames
-jacobianos = []
-for i in 0.3:0.1:0.6
-  ruta = "Datos/Ejemplo Jacobianos/Jacobiano100_p$i.s0.2.csv"
-  df = CSV.read(ruta,DataFrame,header=false)
-  push!(jacobianos,df)
-end
-jacobianos
-	\end{minted}
-\end{tcolorbox}
-
-\begin{tcolorbox}[colback=red!10!white, colframe=black, title=Salida]
-4-element Vector{Any}:\\
-100×100 DataFrame
-\end{tcolorbox}
-
-\begin{tcolorbox}[colback=green!10!white, colframe=black, title=Entrada]
-	\begin{minted}{julia}
-using LinearAlgebra
-print(all(x -> x<=0,diag(Matrix(jacobianos[1]))),", ")
-print(all(x -> x<=0,diag(Matrix(jacobianos[2]))),", ")
-print(all(x -> x<=0,diag(Matrix(jacobianos[3]))),", ")
-print(all(x -> x<=0,diag(Matrix(jacobianos[4]))))
-	\end{minted}
-\end{tcolorbox}
-
-\begin{tcolorbox}[colback=red!10!white, colframe=black, title=Salida]
-true, true, true, true
-\end{tcolorbox}
-
-Si las diagonales de estas matrices son todas negativas o cero quiere decir que el punto fijo asociado tiene entradas mayor o igual que cero ya que $\mathcal{J}_{ii}=-\frac{r_i}{K_i}x^*_i$ con $x_i^*\in X^*$. Por lo tanto, la distribución de la diagonal de $\mathcal{J}_\Lambda$ será de cola pesada pero ahora con sesgo negativo. Esta distribución se ensancha en función de los parámetros, en particular con este ejemplo se observará que cuando la red es más conectada: la distribución será más dispersa. 
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=0.16]{../Imagenes/DistDiagonal}
-	\caption{Distribuciones de diagonales de las matrices Jacobianas del ejemplo, considerando los parámetros: $N=100$, $\sigma=0.2$ y $p\in\{0.3,0.4,0.5,0.6\}$.}
-	\label{fig:DistDiagonal}
-\end{figure}
-
-La distribución de los valores propios en $\mathbb{C}$ dependerá en gran medida de las entradas de la diagonal, entre más dispersa sea también lo serán los valores propios. En la proposición \ref{prop:DiagonalI} se introdujo la importancia de la diagonal de las matrices Jacobianas con respecto de la posición general de sus valores propios. Los discos de Gershgorin están centrados en cada valor de esta diagonal, por lo tanto los valores propios quedarán dispersos sus alrededores. En la proposición \ref{prop:paramMay} se mostró como surge el radio espectral (\ref{eqn:radioMayGirko}) cuando el centro de los discos esta fijado a un solo valor $-d$. Actualmente la pregunta será ver si existe un tipo de radio espectral para delimitar la distribución de valores propios de las matrices $\mathcal{J}_\Lambda$.
-
-\section{Espectro del LV generalizado}
-
-\subsection{Leyes Circulares}\label{sec:LeyesCirculares}
-
-Si la distribución de la diagonal es dispersa y no necesariamente simétrica (ver Figura (\ref{fig:DistDiagonal})) entonces no tiene sentido definir un radio espectral sino más bien concentrarse en el valor de la diagonal más cercano al cero y los valores propios de su alrededor para conocer las condiciones en $\Lambda$ que llevan a que $\mathcal{J}_\Lambda$ tenga valores propios positivos o negativos en esa región. Para ir desarrollando esta idea primero se revisarán las distribuciones de valores propios de las Jacobianas antes presentadas
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=0.24]{../Imagenes/DistEigenvalores}
-	\caption{Distribución de valores propios de las matrices Jacobianas del ejemplo, considerando los parámetros $N=100$, $\sigma=0.2$ y $p\in\{0.3,0.4,0.5,0.6\}$.}
-	\label{fig:DistEigenvalores}
-\end{figure}
-
-Se ha propuesto en cada distribución un disco con centro y radio con la parte real más negativa del conjunto de valores propios: en consecuencia se genera el disco con el radio más grande posible de cada sistema. Se puede observar que dichos discos si encierran a cada una de las distribuciones pero no se ajustan al círculo en concreto, tal y como sucede en los sistemas de May/Allesina. Sin embargo aún así se observa que toda la distribución se encuentra contenida en el semiplano negativo de $\mathbb{C}$. \\
-\\
-El ensanchamiento y/o dispersión de cada distribución de valores propios parece tener relación con la distribución de la diagonal (Figura (\ref{fig:DistDiagonal})), y ésta a su vez tiene relación directa con los puntos fijos asociados. Por lo tanto el punto fijo determina la dispersión de las distribuciones del sistema. Una forma de poder ajustar esta distribución amorfa es proponiendo $N$ discos cuyos centros y radios sean los valores de la diagonal de $\mathcal{J}_\Lambda$. Para dar un acercamiento a esta propuesta, se ocupará la distribución más ancha para $p=0.6$:
-% Sería una propuesta semejante a los discos de Gershgorin y serviría para enfocarse principalmente en los valores propios que se encuentran cercanos al cero\footnote{Que son de gran interés ya que son los más propensos a desplazarse al semiplano positivo de $\mathbb{C}$, volviendo inestable al sistema.}.
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=0.17]{../Imagenes/LeyesCirculares}
-	\caption{Distribución de valores propios del sistema generalizado para $N=100$, $\sigma=0.2$ y $p=0.6$. Se consideran $N$ discos cuyo centro y radio es cada valor de la diagonal de la matriz Jacobiana asociada. }
-	\label{fig:LeyesCirculares}
-\end{figure}
-
-
-\begin{wrapfigure}{l}{0.5 \textwidth} \vspace{-40pt} \begin{center}
-	\includegraphics[scale=0.13]{../Imagenes/LeyCircularParticular}
-	\end{center}
-	\vspace{-20pt} 
-	\caption{Caso particular de la Figura (\ref{fig:LeyesCirculares}) para el valor de la diagonal $\alpha_{ii}=32.46\in\mathcal{J}_\Lambda$.}
-		\vspace{-10pt}
-	\label{fig:LeyCircularParticular}
-\end{wrapfigure}
-Esta propuesta se inspira de la Proposición \ref{prop:DiagonalI}, sin embargo, éstos discos no corresponden a los de Gershgorin debido a que los radios no necesariamente tienen la misma magnitud que el centro del disco, pueden ser mayores o menores. Se puede observar que esta elección de discos parece ajustarse a la distribución de valores propios, al menos de forma local para ciertos conjuntos. Si la varianza de los radios de Gershgorin (\ref{proof1:paramEstabilidad}) fuera menor o igual a 1, entonces esta propuesta sería más semejante a los discos de Gershgorin, pero en general esto solo se cumple bajo condiciones específicas. Un caso particular de la Figura (\ref{fig:LeyesCirculares}) considerando $\mathcal{J}_{ii}=32.46$ se puede observar en la Figura (\ref{fig:LeyCircularParticular}), cierto porcentaje de valores propios se distribuye por el círculo varios concentrados en el eje real, insinuando que al ser estructuralmente simétrica la matriz $\mathcal{J}_\Lambda$: tiene correlaciones positivas. Sin embargo existen algunos otros valores propios que se escapan del confinamiento particular y pasan al siguiente nivel o círculo. Para poder confirmar o refutar esta propuesta, se explorarán múltiples sistemas estables con sus respectivas distribuciones de diagonales y valores propios.
-
-\subsubsection{Análisis para $N=50$}
-
-Se tienen a disposición dos conjuntos de datos, ambos son de simulaciones realizadas para diferentes valores de $p$ y $\sigma$ considerando matrices $\Lambda$ estructuralmente simétricas. Cada conjunto esta conformado por 78 archivos .csv y son simulaciones de matrices \href{https://github.com/rogve98/Tesis/tree/master/Notebooks/Datos/Jacobianos}{Jacobianas} y de distribuciones de \href{https://github.com/rogve98/Tesis/tree/master/Notebooks/Datos/Diagonales}{Diagonales}\footnote{Para los Jacobianos acceder a: \url{https://github.com/rogve98/Tesis/tree/master/Notebooks/Datos/Jacobianos}. Para las Diagonales acceder a \url{https://github.com/rogve98/Tesis/tree/master/Notebooks/Datos/Diagonales}.}. Así mismo, en cada archivo se encuentran 100 simulaciones que resultaron estables y de los cuales se realizará el análisis correspondiente a la relación entre la distribución de las diagonales y de las partes reales de los valores propios de las matrices Jacobianas. En la siguiente tabla se muestra el esquema de simulaciones para cada $p$ y $\sigma$
-\begin{table}[h!]
-	\centering
-	\begin{tabular}{|c|c|c|c|}
-		\hline
-		Fuerza promedio [$\sigma$] & Probabilidades [$p$] & Cantidad de archivos & Simulaciones realizadas \\ \hline
-		$0.1-0.5$  & $0.1-1.0$  & 50 & 5000  \\ \hline
-		0.6  & $0.1-0.9$  & 9 & 900 \\ \hline
-		0.7  & $0.1-0.7$  & 7 & 700 \\ \hline
-		0.8  & $0.1-0.5$  & 5 & 500 \\ \hline
-		0.9  & $0.1-0.4$  & 4 & 400 \\ \hline
-		1.0  & $0.1-0.3$  & 3 & 300 \\ \hline
-		& \textbf{Total:} & 78& 7800\\ \hline
-	\end{tabular}
-	\caption{Cantidad de archivos generados para el banco de Diagonales y Jacobianos considerando $N=50$. A partir de $\sigma=0.6$ en adelante, los tiempos de compilación fueron muy prolongados por lo que no se obtuvieron los 10 archivos respectivos a diferencia de los valores promedio anteriores.}
-	\label{tab:Simulaciones}
-\end{table} 
-
-La razón principal de escoger los sistemas para $N=50$ es por el costo computacional. Ha resultado muy prolongado el tiempo de compilación de sistemas más grandes (como el de $N=100$) y aún así para valores altos de la fuerza promedio ($\sigma\geq 0.6$) no se obtuvieron los 10 archivos por la misma razón. Con esta información se procede a continuar con el análisis de las $N$ Leyes Circulares, observando primero como es la distribución de los valores propios de cada conjunto así como la relación que existe entre la parte real y los valores de la diagonal de las $\mathcal{J}_\Lambda$.
-\newpage
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=0.2]{../Imagenes/ReEvs-Diagonales}
-	\caption{(\textbf{A}) Distribución de valores propios de 100 jacobianos para el caso $\sigma=0.6$, $p=0.7$. Se agrega una ley circular correspondiente al valor medio de la distribución de diagonales. (\textbf{B}) Relación entre la parte real de los valores propios con las diagonales de los Jacobianos considerados.}
-	\label{fig:ReEvs-Diagonales}
-\end{figure}
-
-La distribución de los valores propios queda contenida por completo en el semiplano negativo de $\mathbb{C}$ asegurando que todas las simulaciones realizadas para el conjunto correspondiente ($\sigma=0.6$, $p=0.7$) están asociadas a sistemas estables. Se puede observar en la Figura (\ref{fig:ReEvs-Diagonales} \textbf{A}) que gran parte de los valores propios se quedan contenidos en el eje real; debido a que todas las simulaciones contempladas son para sistemas estructuralmente simétricos, esta observación refuerza estadisticamente el argumento de poseer correlaciones positivas en las interacciones de $\mathcal{J}_\Lambda$. 
-\\
-\\
-Por otro lado en la Figura (\ref{fig:ReEvs-Diagonales} \textbf{B}) se observa una relación lineal prácticamente perfecta, insinuando que para este caso particular: hay una dependencia directa entre las entradas de la diagonal y la parte real de los valores propios de las Jacobianas $\mathcal{J}_\Lambda$. Sin embargo el ajuste parece ser mejor para los valores cercanos al cero y la razón puede ser la siguiente: Cada valor de la diagonal es un centro particular de una vecindad de Gershgorin y cada valor propio se encuentra en al menos una de estas vecindades; entonces cuando la magnitud de los centros es cada vez mayor, su radio también lo será y por lo tanto la vecindad es cada vez más amplia, haciendo que el valor propio pueda adoptar una posición considerablemente apartada de su centro y en consecuencia no tener una relación tan proporcional como en los casos donde el centro y radio de Gershgorin es cercano a cero.
-\newpage
-\begin{wrapfigure}{r}{0.5 \textwidth} \vspace{-30pt} \begin{center}
-		\includegraphics[scale=0.13]{../Imagenes/RadsDiagsGersh}
-	\end{center}
-	\vspace{-20pt} 
-	\caption{Relación entre centros y radios de Gershgorin de las Jacobianas asociadas a la Figura (\ref{fig:ReEvs-Diagonales}).}
-	\vspace{-10pt}
-	\label{fig:RadsDiagsGersh}
-\end{wrapfigure}
-En la Figura (\ref{fig:RadsDiagsGersh}) se puede observar la relación entre cada centro y radio de Gershgorin de las Jacobianas asociadas a la Figura (\ref{fig:ReEvs-Diagonales}). En esta gráfica hay dos características a destacar: primero que efectivamente existe una relación creciente entre la magnitud del centro con su radio asociado: son proporcionales; por lo tanto existen valores propios capaces de alejarse del centro de su vecindad de Gershgorin volviendo no tan proporcional la relación entre los valores de la diagonal y autovalores de mayor magnitud. En segundo se puede observar que hay un gran número de centros con radio cero. De acuerdo con la definición de la matriz Jacobiana (\ref{eqn:MatrizJacobiana}) las entradas del punto fijo afectan a cada fila entera de esta matriz, y como se ha visto en las series de tiempo (Figura (\ref{fig:SeriesdeTiempoLK100})) y la distribución del punto fijo (Figura (\ref{fig:PuntoFijoCoop3} \textbf{A})) existen múltiples especies que decaen a cero. Por lo tanto es natural observar este fenómeno, pues son la representación de la cantidad de especies que resultaron extintas.
-%En la Figura (\ref{fig:ReEvs-Diagonales} \textbf{A}) se ha agregado una Ley Circular particular con centro y radio correspondiente al valor medio de la distribución de las partes reales de los valores propios, esto con el fin de observar que tan significativa es esta media en función de cuantos valores propios es capaz de encerrar. Si la distribución de autovalores fuera uniforme, la media podría capturar casi la totalidad de ellos (como en el caso de May), sin embargo al no ser uniforme solo será capaz de encerrar una porción del total. 
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=0.16]{../Imagenes/AjustesLinMeds}
-	\caption{(\textbf{A}) Ajuste lineal de la relación entre las medias de las $Re(\overline{\lambda})$ con las medias de las $d(\sigma_i,p_j)$ de las Jacobianas del sistema. (\textbf{B}) Ajuste lineal de la relación entre las medianas $Re(\overline{\lambda})$ con las medianas de las $d(\sigma_i,p_j))$ de las Jacobianas del sistema. (\textbf{C}) Ajuste lineal de la relación entre las modas de $Re(\overline{\lambda})$ con las modas de las $d(\sigma_i,p_j)$ de los Jacobianas del sistema.}
-	\label{fig:AjustesLinMeds}
-\end{figure}
-
-Para seguir explorando si la relación lineal existe también para el resto de las simulaciones de la Tabla (\ref{tab:Simulaciones}) se tomará la media, mediana y moda como cantidades representativas de cada una de las distribuciones de diagonales $d(\sigma_i,p_j)$ y partes reales de los conjuntos de valores propios $\overline{\lambda}$ para compararlos y realizando un ajuste lineal.\\
-\\
-Cada color se encuentra asociado a los valores de la fuerza promedio $\sigma$ y la cantidad de puntos del mismo color corresponde a cada una de las probabilidades de conectividad del sistema. Se ha visto en la Figuras (\ref{fig:DistDiagonal}, \ref{fig:DistEigenvalores}) que cuando esta probabilidad es cada vez mayor entonces las distribuciones son más dispersas en función de la cantidad de interacciones posibles, y a su vez de la dependencia que hay con los valores del punto fijo del sistema. Por lo tanto hacia la izquierda estarán las probabilidades más grandes e irán decreciendo hacia la derecha.\\
-\\
-En cada gráfica de la figura se contemplan los 78 conjuntos de simulaciones realizadas y se percibe una correspondencia entre los valores de la diagonal con las partes reales de los valores propios. Al igual que en la Figura (\ref{fig:ReEvs-Diagonales}), cada ajuste es mejor para valores cercanos al cero que para aquellos de magnitud máxima, esto debido al argumento antes mencionado sobre la amplitud del radio de Gershgorin que implica que los valores propios tengan la posibilidad de alojarse lejos del correspondiente centro $\mathcal{J}_{ii}$.
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=0.2]{../Imagenes/CoeficientesCorrelacionN}
-	\caption{Coeficientes de correlación entre valores de la diagonal y partes reales de eigenvalores de las matrices Jacobianas en función de $\sigma$ y $p$. Cada uno de los 78 coeficientes corresponde para un conjunto $\sigma_i$ y $p_j$ de simulaciones según la Tabla (\ref{tab:Simulaciones}).}
-	\label{fig:CoeficientesCorrelacionN}
-\end{figure}
-
-Para tener una confirmación estadística más robusta sobre la relación entre las $d(\sigma,p)$ y Re$(\lambda)$ se construye un diagrama de correlaciones de cada uno de los 78 conjuntos de simulaciones. El diagrama contiene un coeficiente de correlación entre las distribuciones mencionadas para cada caso. Las líneas verdes delimitan los conjuntos de simulaciones por cada $\sigma$ de acuerdo con la Tabla (\ref{tab:Simulaciones}). En general se puede apreciar una correlación muy alta en entre ambas distribuciones, implicando que la propuesta de las Leyes Circulares funciona en un primer nivel: caracterizando al menos los centros de las vecindades que encierran los valores propios. Lo que faltaría sería definir una regla para cada radio de estas vecindades.
-\begin{wrapfigure}{r}{0.5 \textwidth} \vspace{-30pt} \begin{center}
-		\includegraphics[scale=0.135]{../Imagenes/AnomaliaSim11}
-	\end{center}
-	\vspace{-20pt} 
-	\caption{Relación entre cantidades de la simulación 11, caso con $\sigma=0.2$ y $p=0.1$.}
-	\vspace{-10pt}
-	\label{fig:AnomaliaSim11}
-\end{wrapfigure}
-Este diagrama puede servir para tener un mapa general de como es la relación entre cada una de las distribuciones. Se puede observar un caso excepcional para los valores $\sigma=0.2$ y $p=0.1$, en este caso aunque la correlación sigue siendo muy alta, es la menor de todo el conjunto de simulaciones. Corroborando con la Figura (\ref{fig:AnomaliaSim11}) se puede apreciar un desfase en la linealidad justamente par aquellos valores de mayor magnitud, donde es posible que los radios de sus vecindades sean tan grandes que puedan alojarse lejos del centro de la misma.
-
-\subsubsection*{Breve discusión sobre el radio}
-
-El radio que se propuso al principio de la sección no posee un sustento matemático sólido para poder considerarlo, es únicamente una propuesta heurística para darle forma a la distribución de los valores propios. Una propuesta plausible serían los radios de Gershgorin, dados como la suma de los valores absolutos de los renglones sin considerar al elemento de la diagonal, sin embargo, esta opción contempla solo una cota superior de la distribución de los valores propios, es decir, las vecindades de Gershgorin no controlan la posición de los valores propios: únicamente determinan el área en donde podrían estar posicionados (ver Proposición \ref{prop:DiagonalI} y \ref{prop:paramMay}).\\
-\\
-Precisamente en la Proposición \ref{prop:paramMay} se ha mostrado que la norma euclidiana define el desplazamiento y confinamiento de los valores propios en el plano complejo. Entonces parece que la filosofía empleada en dicha proposición nos puede dar una respuesta concreta sobre los radios espectrales locales de los valores propios de esta distribución. El límite de esta opción es que actualmente no se posee información sobre la distribución de los valores fuera de la diagonal. La matriz (\ref{eqn:MatrizJacobiana}) indica que hay un producto entre una variable normal ($\alpha_{ij}\sim\mathcal{N}(0,\sigma^2)$) y el elemento del punto fijo $x_i^*\in X^*$ que viene de una distribución de cola pesada (Figura (\ref{fig:PuntoFijoCoop3} \textbf{A})). Incluso obteniendo dicha información es posible que no sea tan útil, pues no tendrá relación directa con lo que verdaderamente define la estabilidad del sistema: las configuraciones de $\Lambda$ (en función de $\sigma$ y $p$) que generan puntos fijos estables. Por lo tanto, la caracterización de estas distribuciones de valores propios queda solamente al nivel de los centros de las vecindades.
-
-\newpage
 \section{Transiciones de estabilidad del LV generalizado}
 
 Para darle seguimiento a los resultados de esta tesis, esta sección se va a centrar en explorar de forma cuantitativa las condiciones de estabilidad de los sistemas de Lotka-Volterra generalizado en función de $\sigma$ y $p$. Posteriormente se presentará un análisis sobre las condiciones de la matriz de incidencias para que exista o no estabilidad en los sistemas relacionados, con miras en presentar un primer esbozo del parámetro crítico de transición. Para el caso más robusto ($N=100$) se va a presentar la diferencia entre usar matrices estructuralmente simétricas y puramente aleatorias (como el caso de May), en miras de observar cambios de la dinámica como los que se reportaron al final del capítulo anterior. %A diferencia del caso anterior, este se trata más de como abre el cono convexo considerando que ahora los vectores columna presentan cierta simétría.\\
