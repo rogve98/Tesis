@@ -53,7 +53,7 @@ Retomando la discusión sobre el estado coexistente de la Sección \ref{sec:Punt
 
 No obstante, en matrices $\Lambda$ con soporte simétrico, la distribución espectral no se ajusta estrictamente al disco circular idealizado. En consecuencia el radio espectral deja de ser un descriptor suficiente para capturar el comportamiento global del sistema, pues la geometría completa del espectro ---y no solo su borde--- influye en el condicionamiento y, por ende, en la factibilidad positiva. Si estas dificultades aparecen ya en el estado plenamente coexistente, por transitividad es razonable esperar que los escenarios con especies extintas presenten una dinámica aún más compleja, lo que vuelve más sutil la caracterización de sus transiciones.
 
-\subsection*{Transiciones dinámicas de May}
+\subsection{Transiciones dinámicas de May}\label{sec:TransicionesMay}
 
 Antes de presentar los resultados propios del modelo de Lotka-Volterra generalizado, conviene analizar las transiciones dinámicas en el sistema clásico de May, con el fin de establecer un marco de referencia. Este análisis permitirá contextualizar los resultados posteriores, haciendo especial énfasis en las diferencias entre sistemas con soporte simétrico y aquellos puramente dirigidos, a la luz de las observaciones derivadas de la Figura \eqref{fig:LeyCircularMay2}.\\
 \\
@@ -149,14 +149,6 @@ Por lo tanto se confirma que, en sistemas estructuralmente simétricos, el radio
 	\caption{Re-escalamiento del eje $x$ para visualizar las transiciones de la conectancia $C$ y la fuerza promedio de las interacciones $\sigma$. Para este caso particular se escogió $\sigma=C=0.6$. Se consideran matrices de puramente aleatorias y estructuralmente simétricas.}
 	\label{fig:Transicionσ√NC06}
 \end{figure}
-
-
-
-
-%Esta última sección está motivada para que el lector se dé una idea de lo que iremos a explorar con los resultados del siguiente capítulo. Se tiene en primera instancia lo de la distribución de eigenvalores pero también se pretenderá explorar el parámetro crítico que demarca las condiciones de estabilidad e inestabilidad para los sistemas.
-
-
-%Estos elementos son claves para que podamos concebir la estabilidad para el sistema que hemos creado hasta ahora. Se tienen diferencias muy marcadas, nuestra matriz de interacciones $\mathcal{I}$ y la matriz de interacciones de May $A$: difícilmente tendrá su diagonal en $-1$ tal como $A$, sobre todo si se considera un sistema $n\gg 1$ especies. Esto genera un impacto en la distribución de los eigenvalores en el espacio complejo sin embargo al final de cuentas es estabilidad. Por esta misma razón, el parámetro de May (\ref{eqn:parametroMay}) puede no ajustarse perfectamente con nuestros resultados.
 
 
 \section{Implementación numérica y metodología}
@@ -348,157 +340,113 @@ Un rasgo recurrente en los sistemas parcialmente factibles es la acumulación de
 \\
 Desde la perspectiva de $\mathcal{J}$ no solo caracteriza la estabilidad local del equilibrio, sino que también sugiere la proximidad del sistema a regímenes dinámicos cualitativamente distintos. En particular, la acumulación de valores propios cercanos a cero puede interpretarse como una señal de que pequeñas variaciones en los parámetros del sistema ---como en la conectividad, la intensidad de las interacciones o la heterogeneidad de las abundancias--- podrían inducir cambios cualitativos en la dinámica colectiva. Este escenario motiva el estudio de las transiciones dinámicas en el modelo, donde la pérdida de estabilidad, o la reorganización del conjunto de especies persistentes puede dar lugar a nuevos regímenes de comportamiento ecológico
 
-\subfile{./TeX_files/AuxiliarComp.tex}
-
-
 \section{Transiciones de estabilidad del LV generalizado}
 
-Para darle seguimiento a los resultados de esta tesis, esta sección se va a centrar en explorar de forma cuantitativa las condiciones de estabilidad de los sistemas de Lotka-Volterra generalizado en función de $\sigma$ y $p$. Posteriormente se presentará un análisis sobre las condiciones de la matriz de incidencias para que exista o no estabilidad en los sistemas relacionados, con miras en presentar un primer esbozo del parámetro crítico de transición. Para el caso más robusto ($N=100$) se va a presentar la diferencia entre usar matrices estructuralmente simétricas y puramente aleatorias (como el caso de May), en miras de observar cambios de la dinámica como los que se reportaron al final del capítulo anterior. %A diferencia del caso anterior, este se trata más de como abre el cono convexo considerando que ahora los vectores columna presentan cierta simétría.\\
+En vista de que la matriz Jacobiana $\mathcal{J}$ presenta correlaciones inducidas por el reescalamiento multiplicativo de las abundancias del equilibrio $X^*$, su espectro muestra deformaciones sistemáticas con respecto al espectro de la matriz $\Lambda$. En esta sección se analizan los cambios dinámicos globales del sistema mediante barridos paramétricos análogos a los considerados en la subsección \ref{sec:TransicionesMay}, con el objetivo de caracterizar las transiciones dinámicas del sistema y explorar la posibilidad de identificar un parámetro de control crítico que permita aproximar heurísticamente el umbral de estabilidad.
 \\
-Se van a considerar tres tipos de sistemas, para $N=\{100,50,25\}$. Se pretende ver como cambia la estabilidad con diferentes tamaños del sistema (\ref{eqn:LK}). El proceso para llevar a cabo la construcción de los diagramas de transición es semejante al que se presentó en la sección de las Transiciones de May, se va a integrar el sistema fijando la fuerza de interacción en los siguientes valores ${\Sigma}=\{0.1,0.2,...,1.0\}$ mientras que para las probabilidades de conectividad se va a considerar la siguiente partición del intervalo $[0,1]$ para cada $N$:
-\begin{equation}\label{eqn:particionLin}
-	p = \{x_i\, |\, x_i=i\cdot\Delta x, i=0,1,2,...,100\},\qquad\text{con }\Delta x=0.01
-\end{equation}
-Con esta configuración de valores se permitirá generar diagramas de estabilidad para cada $N$ en función de $p$ considerando que es una partición equidistante. Hay otros dos diagramas de estabilidad que son de interés; siguiendo en función de la probabilidad de conectividad se define la siguiente partición sobre el intervalo $[0,1]$
-\begin{equation}\label{eqn:particionLog}
-	p_{\log}=\left \{ x_i\, |\, x_i=10^{-\left (10-\frac{10i}{99}\right )},\ i=0,1,...,99\right \}
-\end{equation}
-Se ha considerado particularmente este conjunto de probabilidades ya que para ciertas $\sigma\in\Sigma$ y para $N=100$ particularmente, la transición ocurre de manera abrupta para valores muy pequeños de $p$ de modo que no se aprecia con claridad cuando ocurre; la partición $p_{\log}$ resuelve este detalle. Por último pero no menos importante, se van a considerar diagramas en donde se deja fija la $p$ para cada $N$ y se define una partición equidistante en el intervalo $[0,1]$ en función de la fuerza de interacción, es decir:
-\begin{equation}\label{eqn:particionSigma}
-	\sigma = \{x_i\, |\, x_i=i\cdot\Delta x, i=0,1,2,...,100\},\qquad\text{con }\Delta x=0.01
-\end{equation}
-Para esta configuración de valores se obtendrán los diagramas de transición en función de $\sigma$ y se podrá tener otra óptica de la dinámica enfocándose en la fuerza de las interacciones del sistema, tal y como se observó en los sistemas de May. Este enfoque considerará 10 tamaños diferentes y definidos de los sistemas (para cada $p$ fija) y se observará su cambio de estabilidad cuando dicha fuerza de interacción aumente. Por otro lado, los sistemas en función de $p$ consideran 10 fuerzas diferentes (para cada $\sigma$ fija) y se observará el cambio de la estabilidad cuando se le aumenten enlaces/interacciones al sistema, partiendo de los nodos aislados ($p=0$) hasta la red completamente conexa ($p=1$). \\
 \\
-Teniendo las particiones y los ajustes de parámetros necesarios para generar los diagramas de transición, solamente falta ver cómo y de qué manera se van a generar estos diagramas: se integrará el sistema cierto número de veces para cada configuración $(N,\sigma,p)$ con sus correspondientes particiones; cada elemento de la partición contempla una configuración particular la cual será integrada el siguiente número de veces con base en $N$:
+A estas alturas del análisis es claro que las transiciones dinámicas del sistema no solo se manifiestan en la distinción entre estabilidad e inestabilidad lineal. Dichas transiciones también involucran cambios estructurales en el estado del equilibrio, particularmente en la transición entre regímenes plenamente coexistentes y estados parcialmente factibles en los que una fracción de las especies se extingue. Este cambio de régimen suele ir acompañado de deformaciones significativas en el espectro de valores propios.\\
+\\
+Asimismo, los resultados espectrales discutidos anteriormente sugieren que los estados parcialmente factibles tienden a ubicarse cerca del borde de la estabilidad. En estos casos, una fracción de los valores propios de la Jacobiana se aproxima en el origen del plano complejo, lo que implica tiempos de relajación largos y una mayor sensibilidad a perturbaciones estructurales. Desde este perspectiva, los estados parcialmente factibles pueden interpretarse como configuraciones dinámicas cercanas al régimen de estabilidad marginal.
+\\
+\\
+El criterio de estabilidad de May establece que el radio espectral controla el umbral de estabilidad del sistema al escalarse como $\sigma\sqrt{Np}\approx d$. Aunque en el sistema considerado la Jacobiana presenta correlaciones adicionales inducidas por las abundancias del equilibrio, este parámetro sigue proporcionando una escala natural para explorar la proximidad del umbral de estabilidad. Por esta razón, en lo que sigue se analizan barridos paramétricos en función de $p$ manteniendo fija $\sigma$, y de forma análoga variando $\sigma$ con $p$ fija, con el objetivo de examinar cómo las transiciones dinámicas se relacionan en cada escala.  \\
+\\
+El análisis exhaustivo de las transiciones dinámicas se realizará sobre el sistema de tamaño $N=100$, mientras que los sistemas de $N=25$ y $N=50$ se presentarán como evidencia cualitativa del cambio en la estabilidad en función del tamaño del sistema. Para explorar variabilidad dinámica, se consideran diez valores fijos equiespaciados en el intervalo $(0,1]$ del parámetro complementario al que se está barriendo. De esta manera, cada barrido paramétrico se evalúa sobre diez escalas distintas de interacción o conectividad del sistema. \\
+\\
+Cada configuración $(p,\sigma,N)$ se integra múltiples veces, generando distintas realizaciones aleatorias en la matriz $\Lambda$. El número de realizaciones utilizadas depende del tamaño del sistema y se resume en la Tabla \eqref{tab:SimulacionesTransicion}. Este procedimiento permite promediar sobre el desorden del sistema, reducir el ruido estadístico y obtener curvas suaves que revelen con mayor claridad las transiciones dinámicas.
 \begin{table}[h!]
 	\centering
-	\begin{tabular}{|c|c|}
-		\hline
-		Tamaño del sistema $N$ & Cantidad de simulaciones por cada elemento de la partición  \\ \hline
-		100 & 3000 \\ \hline
-		50  & 6000 \\ \hline
-		25  & 12000 \\ \hline		
- 	\end{tabular}
-	\caption{Cantidad de simulaciones realizadas por cada $N$ y para cada elemento de la partición definida.}
+	\begin{tabular}{ll}
+		\toprule
+		\rowcolor{gray!15}
+		Tamaño del sistema & No. simulaciones por configuración\\
+		\midrule
+		100        & 3000\\
+		50	       & 6000\\
+		25 	       & 12000\\
+		\bottomrule
+	\end{tabular}
+	\caption{Cantidad de simulaciones realizadas por cada $N$ y para cada configuración $(p,\sigma,N)$ establecida.}
 	\label{tab:SimulacionesTransicion}
-\end{table} 
-
-De esta manera se va a contabilizar el número de simulaciones estables por cada configuración para posteriormente guardar la información y visualizarla en los diagramas de transición. En el diagrama se podrá interpretar un porcentaje de estabilidad por cada configuración efectuada, viendo como cambia con el avance de los valores de la partición. El número de simulaciones efectuadas por configuración, para cada uno de los sistemas contemplados $N=\{25,50,100\}$, responde a la intención de suavizar las curvas siguiendo la ley de los grandes números. Se ha observado que entre más chico sea el tamaño del sistema se requieren mas simulaciones para poder suavizar dicha curva.\\
-\\
-%En una primera versión de resultados se consideró un método que generó algunos problemas los cuales se visualizaron en la sección anterior, en la discusión de los sistemas asintótica-mente estables: los cuales no alcanzaron su estabilidad o quizás no eran estables y todo gracias al tiempo de integración de $t_f=50$. Sin embargo se han generado otros resultados en donde se pone una restricción para que solamente se consideren sistemas que se integren en un tiempo máximo de $t_f=50$. Entre ambos tipos de resultados existen algunas desviaciones que requerirán de su análisis más adelante. Habiendo conseguido los diagramas de transición mediante todo un proceso computacionalmente arduo, merece preguntarse si acaso estas transiciones  de estabilidad corresponden con transiciones de fase, y de ser cierto ¿cuál sería su parámetro crítico? Se tiene una pista en la relación (\ref{eqn:paramMay}) que re acomodando se tiene
-%\begin{equation}\label{eqn:ParametroCritico}
-%	\sigma\sqrt{NC}<d
-%\end{equation}
-%donde en el caso de May corresponde con la diagonal fijada en $-d=-1$. Se explorará si en los diagramas de transición generados existe alguna dependencia/relación con algún valor representativo de las $d_{kk}(\sigma_i,p_j)$ de los Jacobianos del sistema.
-Ya que el parámetro de May no se ajusta a la forma de la distribución heterogénea de los valores propios de los sistemas LV, éste no será un parámetro crítico que determine la transición de estabilidad de dichos sistemas. Además, la propuesta sobre las $N$ leyes circulares solamente contempla los centros de las vecindades argumentando que para obtener los radios hay que caracterizar la distribución de los elementos fuera de la diagonal, mismos que se conforman del producto de una variable normal ($\alpha_{ij}$) y la entrada í-esima del punto fijo que para ciertas configuraciones $(N,\sigma,p)$ resulta ser de cola pesada con sesgo positivo hacia el cero. Por lo tanto el parámetro de transición deberá obtenerse de otros medios: principalmente enfocándose en el punto fijo que se deriva de la ecuación $\Lambda X^*=\mathrm{K}$.
-\\
-\\
-En un primer nivel, nos concentraremos en el punto fijo y sus configuraciones $(N,\sigma,p)$, ya que se necesita delimitar los escenarios en donde $X^*\geq 0$ es decir que no posea entradas negativas. Los escenarios en donde existe alguna $x_k\in X^*$ negativa normalmente devienen en dinámicas inestables, incluso si no fuera así: no hay interpretación física para poblaciones negativas. Se dice que este es un primer nivel ya que actualmente no se sabe si existirán puntos fijos $X\geq 0$ que resulten inestables.
-
+\end{table}
 
 \subsection{Para $N=100$}
 
 \subsubsection*{En función de $p$}
 
-Este escenario es el más robusto de los 3 tamaños a analizar, por ende se le pondrá más atención que a los otros dos tamaños. Como bien se mencionó anteriormente, se necesitó una cantidad de simulaciones considerablemente inferior en comparación con los sistemas $N=50,25$ (Tabla (\ref{tab:SimulacionesTransicion})), lo que por sí mismo demuestra que la cantidad de interacciones esta relacionada con la ley de los grandes números, entre más grande sea el sistema: mayor será su capacidad de ``promediar'' el ruido estocástico interno y por lo tanto sus fluctuaciones irán disminuyendo permitiendo que el promedio converja cada vez mejor al valor esperado.
+En la Figura \eqref{fig:EstabilidadLKpLin} se muestran las transiciones dinámicas de sistemas con soporte estructuralmente simétrico y dinámica dirigida en función de la probabilidad de conectividad $p$ para cada magnitud efectiva $\sigma$. En contraste con las transiciones asociadas al criterio de May para sistemas completamente dirigidos, las curvas observadas presentan una transición menos abrupta, caracterizada por una región intermedia en la que la probabilidad de estabilidad decrece gradualmente conforme $p$ aumenta.\\
+\\
+Este comportamiento no es exclusivo de la estructura simétrica del soporte y también aparece en sistemas con soporte dirigido. Una posible interpretación es la presencia de realizaciones cercanas al borde de estabilidad, donde la coexistencia completa se pierde progresivamente y emergen estados parcialmente factibles. En estos regímenes, pequeñas variaciones estructurales en las interacciones pueden determinar si una realización particular permanece estable o pierde estabilidad, lo que se manifiesta en una región transitoria amplia en las curvas de estabilidad.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.2]{../Imagenes/EstabilidadLKpLin.png}
-	\caption{Transiciones de estabilidad en el Sistema de Lotka-Votlerra generalizado estructuralmente simétrico en función de la probabilidad de conectividad para $N=100$.}
+	\caption{Transición dinámica del sistema Lotka-Votlerra generalizado estructuralmente simétrico en función de la probabilidad de conectividad para $N=100$.}
 	\label{fig:EstabilidadLKpLin}
 \end{figure}
 
-En este diagrama al igual que en el May (Fig. \ref{fig:TransicionMayDirLin}) también se observa una transición temprana para los casos $\sigma>0.3$. La diferencia con respecto de los sistemas de May radica en la forma suave de la transición; especialmente para $\sigma=0.2$ no se observa un cambio de fase abrupto delimitado por una probabilidad crítica, sino que la estabilidad va bajando gradualmente conforme el número de enlaces va aumentando. Esta suavidad es semejante a las transiciones de los sistemas semi Allesina del capítulo anterior; más adelante se realizará una comparación entre los escenarios contemplados hasta ahora. En las Figuras (\ref{fig:EstabilidadLKpLin}, \ref{fig:EstabilidadLKpLog}) se muestran los cambios de estabilidad considerando matrices $\Lambda$ estructuralmente simétricas. 
+Un aspecto llamativo es que para $\sigma=0.2$ la región transitoria abarca una fracción considerable en el intervalo de $p$, lo que sugiere una disminución gradual de la probabilidad de estabilidad conforme aumenta la conectividad. Esto indica que, en éste régimen, pequeñas variaciones en $p$ producen cambios relativamente pequeños en la fracción de realizaciones estables a causa de la magnitud típica $\sigma$. Por tanto, en este caso la anchura del umbral crítico se difumina en función de $\sigma$. No obstante, en el límite cuando $N\to\infty$ se espera que el umbral crítico sea más abrupto, aún para magnitudes típicas pequeñas.
+\\
+\\
+En contraste con magnitudes típicas mayores, se observa que el cambio de estabilidad ocurre en regiones tempranas de $p$ cuando $\sigma$ es grande y se desplaza hacia valores mayores de conectividad conforme $\sigma$ disminuye. Este comportamiento es consistente con el criterio de estabilidad de May y observado en la subsección \ref{sec:TransicionesMay}, el cual relaciona la pérdida de estabilidad con el crecimiento del radio espectral efectivo de la matriz Jacobiana. 
+\\
+\\
+En la Figura \eqref{fig:EstabilidadLKpLog} se muestran las transiciones dinámicas en una escala $\log_{10}$ con el fin de resaltar las variaciones en las regiones tempranas del parámetro de control. La forma general de estas transiciones presenta similitudes cualitativas con las observadas en sistemas con soporte estructuralmente simétrico en el análisis clásico de May. Esto sugiere que ciertas propiedades dinámicas del sistema están fuertemente influenciadas por la estructura del soporte de la matriz de coeficientes $\Lambda$, particularmente en lo que respecta a la organización estadística de sus interacciones. 
 \newpage
-Se ajusta el eje $x$ en escala logarítmica para lograr visualizar las transiciones con $\sigma>0.3$. Se puede observar que en casos se sigue presentando una notoria suavidad en la transición con respecto de los sistemas de May (Fig. \ref{fig:TransicionMayDirLog}), y son sustancialmente similares a los sistemas de semi Allesina, por lo tanto la simetría estructural incide significativamente en la forma de las transiciones.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.2]{../Imagenes/EstabilidadLKpLog}
-	\caption{Transiciones de estabilidad en el Sistema de Lotka-Votlerra generalizado estructuralmente simétrico en función de la probabilidad con escala logarítmica para $N=100$.}
+	\caption{Transición dinámica del sistema Lotka-Votlerra generalizado estructuralmente simétrico en función de la probabilidad con escala logarítmica para $N=100$.}
 	\label{fig:EstabilidadLKpLog}
 \end{figure}
 
-Sin embargo, se ha dado un hallazgo que puede aportar información a la estabilidad de los sistemas estructuralmente simétricos. Exclusivamente se da para interacciones de cooperación en la matriz $\Lambda$, es decir: $(--)$. El hallazgo se da para el caso $N=2$ dando apertura a que se pueda generalizar
-\begin{wrapfigure}{l}{0.5 \textwidth} \vspace{-20pt} \begin{center}
-		\includegraphics[scale=0.135]{../Imagenes/Heuristico}
-	\end{center}
-	\vspace{-20pt} 
-	\caption{Sistema inestable que no cumple con la relación (\ref{eqn:relacionHeuristica})}
-	\vspace{10pt}
-	\label{fig:Heuristico}
-\end{wrapfigure}
-a dimensiones mayores. La relación heurística hallada (considerando $\alpha_{ij},\alpha_{ji}<0$) es la siguiente:
-\begin{equation}\label{eqn:relacionHeuristica}
-	\alpha_{ij}>\frac{1}{\alpha_{ji}},\quad \text{con }i\neq j
-\end{equation}
-si esta condición se cumple, entonces el sistema (\ref{eqn:LK}) tiene posibilidades de ser estable (más no garantiza estabilidad para sistemas $N\gg 1$); en cambio si no se cumple esta relación entonces el sistema será inestable tal y como se muestra en la Figura (\ref{fig:Heuristico}): se ha integrado un sistema que no cumple esta condición considerando un intervalo de tiempo que va de 0 a 10, se observa que en apenas 0.6 unidades de tiempo el sistema se disparó a $-\infty$. En la Figura (\ref{fig:Heuristico2}) se presenta otro sistema que cumple al límite con la condición (\ref{eqn:relacionHeuristica}), por lo tanto el sistema si se estabiliza aunque lo hace en valores sumamente elevados, mostrando incluso una \\
-
-\begin{wrapfigure}{r}{0.5 \textwidth} \vspace{-30pt} \begin{center}
-		\includegraphics[scale=0.135]{../Imagenes/Heuristico2}
-	\end{center}
-	\vspace{-20pt} 
-	\caption{Sistema estable que cumple al límite con la relación (\ref{eqn:relacionHeuristica})}
-	\vspace{-10pt}
-	\label{fig:Heuristico2}
-\end{wrapfigure}
-fase metaestable en la que oscila hasta llegar a su atractor. En los siguientes diagramas se realizarán una serie de comparaciones entre sistemas LV generalizados con $\Lambda$ estructuralmente simétrica y puramente aleatoria, también se realizarán comparaciones con respecto de los sistemas de May antes mencionados. En la primer comparación se busca observar la desviación entre la elección del tipo de $\Lambda$; en la segunda comparación se busca observar la desviación con respecto de sistemas que consideran la diagonal fija. El tipo de $\Lambda$ utilizada para observar la transición de estabilidad influye mucho en como se comporta, en principio se observa en la Figura (\ref{fig:ComparacionIncidenciasp}) un comportamiento semejante al caso de May con respecto de los semi Allesina. El argumento para este caso mencionado eran las posibles correlaciones que emergen por tener simetría estructural, esto orillaba a que los sistemas semi Allesina tuvieran una distribución achatada de valores propios en el eje real que orillaba a sus partes reales a convertirse en positivas primero que en los sistemas de May. En nuestro caso con $\Lambda$, hay que hallar otras posibles explicaciones: ya que el eje de la estabilidad en sistemas LV son los puntos fijos asociados. ¿De que forma la simetría estructural impacta en la definición de los puntos fijos? La desigualdad (\ref{eqn:relacionHeuristica}) nos puede dar pistas al respecto, ya que las desviaciones son más marcadas conforme $\sigma\geq 3$, escenarios donde es más probable que se cumpla dicha desigualdad. 
+Por otro lado, en la Figura \eqref{fig:ComparacionIncidenciasp} se muestra el contraste de las transiciones dinámicas entre sistemas en los que la matriz $\Lambda$ posee soporte estructuralmente simétrico y dirigido. El comportamiento observado es cualitativamente consistente con el contraste previamente analizado en los sistemas de May con diferentes estructuras de soporte.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.16]{../Imagenes/ComparacionIncidenciasp}
-	\caption{Comparación de la estabilidad entre sistemas de Lotka-Volterra generalizados con $\Lambda$ aleatoria y estructuralmente simétrica.}
+	\caption{Contraste de transiciones dinámicas entre sistemas Lotka-Volterra generalizados con $\Lambda$ estructuralmente simétrica y de soporte dirigido.}
 	\label{fig:ComparacionIncidenciasp}
 \end{figure}
-\newpage
-Para notar que distribuciones comienzan a no cumplir la desigualdad, se realiza una simulación (Ver apéndice\footnote{Cita}) que utiliza matrices cuadradas similares a $\Lambda$ solo con la diferencia de que todas sus entradas (incluso la diagonal) se mapean de una distribución normal que toma valores discretos de $\sigma$ tal como en la partición (\ref{eqn:particionSigma}). La simulación considera 10,000 matrices de tamaño $N=100$, y por cada $\sigma$ evalúa cuantos de ellos no cumple la desigualdad y devuelve el resultado en forma de porcentaje. 
-\begin{tcolorbox}[colback=green!10!white, colframe=black, title=Entrada]
-	\begin{minted}{julia}
-for sigma in 0.1:0.01:1.0
-   if simula_probabilidad_cumplimiento(sigma) != 1.0
-      print(sigma," ",simula_probabilidad_cumplimiento(sigma))
-      break
-  end
-end
-	\end{minted}
-\end{tcolorbox}
 
-\begin{tcolorbox}[colback=red!10!white, colframe=black, title=Salida]
-0.27 0.9999998383552714
-\end{tcolorbox}
-El hallazgo es que a partir de $\sigma=0.27$ se observa la primer distribución normal que no cumple la desigualdad (\ref{eqn:relacionHeuristica}) con menos de 10 casos. Cuando $\sigma$ va aumentando, el número de casos no favorables también lo hace hasta tener 2,585,708 (79\%) de ellos. Y tal cual se nota en la Figura (\ref{fig:ComparacionIncidenciasp}), a partir de $\sigma=0.3$ en adelante se va observando una desviación cada vez más marcada hasta $\sigma=1.0$. Por lo tanto, la relación heurística puede tener un peso significativo en la estabilidad de los sistemas LV. Ahora se mostrarán las diferencias que existen entre ambos sistemas LV con respecto de May y semi Allesina.
+En particular, las transiciones asociadas a matrices con soporte dirigido presentan una pérdida de estabilidad más abrupta conforme aumenta la probabilidad $p$, mientras que los sistemas con soporte estructuralmente simétrico exhiben una región transitoria considerablemente más amplia. Esto indica que la estructura de soporte de $\Lambda$ influye de manera importante en las transiciones dinámicas del sistema, ya que la organización estadística de sus interacciones determina diferencias en la estructura espectral y, por lo tanto, en la probabilidad de estabilidad. En ese sentido, los sistemas estructuralmente simétricos muestran una transición más gradual, lo que sugiere una mayor robustez frente a variaciones del parámetro de control $p$. Una posible interpretación es que esta estructura favorece la aparición de configuraciones cercanas al borde de estabilidad, lo que ampliaría la región trnasitoria observada en las curvas de estabilidad.
+\\
+\\
+En la Figura \eqref{fig:ComparacionLKMay} se se muestran las desviaciones en la probabilidad de estabilidad entre el sistema de Lotka-Volterra generalizado de soporte dirigido y los sistemas aleatorios considerados en el análisis clásico de May. A pesar de las diferencias estructurales entre ambos sistemas, las caídas de estabilidad presentan un comportamiento cualitativamente similar. Esto sugiere que ciertas propiedades espectrales globales se conservan incluso después del reescalamiento multiplicativo inducido por las abundancias del equilibrio $X^*$ en la matriz Jacobiana $\mathcal{J}$.
 \begin{figure}[h!]
-\centering
-\includegraphics[scale=0.16]{../Imagenes/ComparacionLKMay.png}
-\caption{Comparación de la estabilidad entre sistemas de Lotka-Volterra y May en función de $p$ con matrices aleatorias.}
-\label{fig:ComparacionLKMay}
+	\centering
+	\includegraphics[scale=0.16]{../Imagenes/ComparacionLKMay.png}
+	\caption{Contraste de transiciones dinámicas entre sistemas de Lotka-Volterra y May en función de $p$ con matrices de soporte dirigido.}
+	\label{fig:ComparacionLKMay}
 \end{figure}
 
-En esta ocasión se percibe que la estabilidad de los sistemas de May y semi Allesina decaen primero que los LV, para ambos casos distinguiendo entre las matrices aleatorias y estructuralmente simétricas. En los diagramas con escala logarítmica se puede apreciar que cada decaimiento de estabilidad en sistemas LV es considerablemente similar su respectivo análogo, al menos de forma cualitativa. Por tanto, cada decaimiento muestra que existe una clara relación entre los sistemas LV y de May y/o semi Allesina. 
-
+Por otro lado, en la Figura \eqref{fig:ComparacionLKMayESim} se presenta de forma análoga el contraste entre sistemas Lotka-Volterra y sistemas de May cuando la matriz de interacciones posee soporte estructuralmente simétrico. En este caso, las desviaciones entre ambos modelos siguen siendo visibles; no obstante, las transiciones conservan una estructura cualitativamente similar. \\
+\\
+Este comportamiento sugiere que ciertas propiedades espectrales globales del sistema ---particularmente la anisotropía y la elongación del espectro en el plano complejo asociadas a este tipo de soporte--- continúan influyendo en la probabilidad de estabilidad, aún cuando la matriz Jacobiana efectiva esté modulada por el reescalamiento multiplicativo de las abundancias del equilibrio.
+\newpage
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.16]{../Imagenes/ComparacionLKMayESim.png}
-	\caption{Comparación de la estabilidad entre sistemas de Lotka-Volterra y May en función de $p$ con matrices estructuralmente simétricas.}
+	\caption{Contraste de transiciones dinámicas entre sistemas de Lotka-Volterra y May en función de $p$ con matrices estructuralmente simétricas.}
 	\label{fig:ComparacionLKMayESim}
 \end{figure}
 
+
 \subsubsection*{En función de $\sigma$}
 
-Hasta ahora se ha visto como cambia la estabilidad en función de ir agregando enlaces a la red de incidencias considerando 10 diferentes fuerzas de interacción. Ahora el siguiente análisis será contemplar el cambio de estabilidad considerando 10 tamaños diferentes de red variando la fuerza de interacción promedio mediante la partición (\ref{eqn:particionSigma}). En el capítulo anterior se ha observado que las desviaciones más notorias entre sistemas de May y semi Allesina se daban cuando el número de enlaces era escaso y menos notorio conforme dicha cantidad fuera aumentando. El argumento principal se centraba en los tamaños fijos de las redes y que el aumento gradual de la magnitud de sus interacciones volvía las matrices estructuralmente simétricas indistinguibles de las totalmente aleatorias.\\
+En el contexto de May, las transiciones en función de $\sigma$ se caracterizan por ser relativamente abruptas y están determinadas por el crecimiento del radio espectral de la matriz de interacciones. Asimismo, se observó que estas transiciones tienden a concentrarse conforme la conectividad aumenta. En este sentido, las diferencias dinámicas entre sistemas con soporte estructuralmente simétrico y dirigido se vuelven menos pronunciadas a medida que la red se vuelve más densa. Este comportamiento sugiere que, en regímenes de alta conectividad, la influencia específica de la estructura del soporte se atenúa, y el sistema tiende a aproximarse al comportamiento esperado para matrices aleatorias del tipo considerado en el análisis de May.\\
 \\
-En nuestro caso con $\Lambda$ puede que ocurra algo semejante, pero se deberá centrar el análisis en los puntos fijos que se generan en cada configuración para desenvolver en el nivel de estabilidad correspondiente. Al igual que en la Figura (\ref{fig:ComparacionIncidenciasp}), se va a mostrar como cambia la estabilidad cuando se consideran matrices de incidencias $\Lambda$ aleatorias y estructuralmente simétricas. Así mismo se observarán las desviaciones con respecto de los escenarios de May y semi Allesina respectivamente, tal como en las Figuras (\ref{fig:ComparacionLKMay}, \ref{fig:ComparacionLKMayESim}).
+En la Figura \eqref{fig:EstabilidadLKσLin} se muestra la caracterización de las transiciones dinámicas en función de $\sigma$ para sistemas estructuralmente simétricos. El comportamiento observado es análogo al descrito para matrices aleatorias de May, considerando las diferencias estructurales del soporte. En este caso, las transiciones se presentan de forma más definida para cada valor de $p$, lo que indica que las variaciones en $\sigma$ producen cambios de estabilidad más regulares que los observados en $p$. \\
+\\
+Asimismo, se observa que las interacciones tienden a concentrarse conforme la conectividad de la red aumenta. Este comportamiento es consistente con la tendencia previamente observada en sistemas densamente conectados, donde las diferencias entre configuraciones particulares se atenúan y el sistema muestra una transición de estabilidad más definida.
+\newpage
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.2]{../Imagenes/EstabilidadLKσLin}
-	\caption{Transiciones de estabilidad en el Sistema de Lotka-Volterra generalizado estructuralmente simétrico en función de la fuerza de interacción promedio para $N=100$.}
+	\caption{Transición dinámica del sistema de Lotka-Volterra generalizado estructuralmente simétrico en función de la magnitud típica para $N=100$.}
 	\label{fig:EstabilidadLKσLin}
 \end{figure}
 
-Se observa que las transiciones en función de $\sigma$ también se muestran más graduales tal y como en los sistemas de May y semi Allesina. El cambio gradual de la magnitud de las interacciones es proporcional al procentaje de estabilidad, ya no es tan abrupto como en el caso anterior en función de $p$. Algo importante de destacar es que conforme el tamaño de la red aumenta: las transiciones se van estrechando cada vez más, de modo que casi no exista diferencia entre el caso $p=0.9$ y $p=1.0$. \\
-\\
-Otro elemento que se hace evidente es lo que ocurre para $\sigma\geq 0.27$, para el caso $p=0.1$ prácticamente marca la pauta de la estabilidad pero para el resto de las redes, el decaimiento de la estabilidad comienza desde antes de esta cota. Es por ello que la relación heurística (\ref{eqn:relacionHeuristica}) es un ingrediente más a considerar en la estabilidad de los sistemas estructuralmente simétricos más no es enteramente determinante.\\
-\\
-Al comparar $\Lambda$ estructuralmente simétricas y aleatorias se puede percibir que el decaimiento de las estructuralmente simétricas es primero con respecto de las $\Lambda$ aleatorias, tal y como se observó entre sistemas de May y semi Allesina. En la Figura (\ref{fig:ComparacionIncidenciasσ}) también se muestra evidente que conforme la red es más grande: las desviaciones entre ambas $\Lambda$ va disminuyendo hasta mostrar el mismo decaimiento. En términos de la matriz de incidencias, se puede argumentar lo mismo que en el caso de May y semi Allesina: conforme la magnitud de las interacciones aumente para cada sistema de tamaño fijo, la matriz $\Lambda$ estructuralmente simétrica va siendo indistinguible de su homóloga aleatoria. Por lo tanto, es congruente que las desviaciones vayan siendo mínimas. Será de interés analizar cómo son sus puntos fijos y sus diferencias.
-\newpage
+Por otro lado, en la Figura \eqref{fig:ComparacionIncidenciasσ} se presenta el contraste en las transiciones del sistema Lotka-Volterra generalizado cuando la matriz de coeficientes $\Lambda$ posee soporte estructuralmente simétrico y dirigido. Se observa que las desviaciones entre ambos casos tienden a disminuir conforme la red se vuelve más conectada. Este comportamiento sugiere que la influencia específica del soporte estructuralmente simétrico se atenúa en regímenes de alta conectividad, donde la dinámica del sistema comienza a aproximarse al comportamiento esperado para matrices aleatorias densamente conectadas. 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.22]{../Imagenes/ComparacionIncidenciasσ}
@@ -506,21 +454,25 @@ Al comparar $\Lambda$ estructuralmente simétricas y aleatorias se puede percibi
 	\label{fig:ComparacionIncidenciasσ}
 \end{figure}
 
-Al comparar la estabilidad de los sistemas LV con respecto de May y semi Allesina, las diferencias son similares a las Figuras (\ref{fig:ComparacionLKMay}, \ref{fig:ComparacionLKMayESim}): las transiciones de May y semi Allesina se muestran hacia la izquierda con respecto de las transiciones LV. Sin embargo se puede observar que también siguen la tendencia de cambiar su estabilidad entorno a valores que se encuentran alrededor en el mismo orden de magnitud, lo que muestra una relación entre ambos sistemas. En realidad, la única diferencia entre las Jacobianas aleatorias y estructuralmente simétricas con respecto de May y semi Allesina es la injerencia que tiene el punto fijo sobre ellas (\ref{eqn:MatrizJacobiana}).
+En consecuencia, las propiedades de estabilidad asociadas a las matrices Jacobianas en ambos casos tienden a volverse más similares a medida que aumenta la conectividad de la red. Finalmente, en la Figura \eqref{fig:ComparacionLKMayσ} se muestran las desviaciones del sistema de Lokta-Volterra generalizado con respecto a las matrices aleatorias consideradas en el análisis clásico de May, tanto para soportes estructuralmente simétricos como dirigidos. En ambos casos observa que las transiciones de estabilidad conservan una estructura cualitativamente similar, lo que sugiere que ciertas propiedades espectrales globales continúan influyendo en la dinámica aún cuando la matriz Jacobiana este modulada por las abundancias del equilibrio.
+
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.16]{../Imagenes/ComparacionLKMayσ}
 	\caption{Comparación de la estabilidad entre sistemas de Lotka-Volterra y May en función de $\sigma$ con matrices aleatorias y estructuralmente simétricas.}
 	\label{fig:ComparacionLKMayσ}
 \end{figure}
-\newpage
-Para concluir el caso $N=100$ se puntualiza a partir de las Figuras (\ref{fig:EstabilidadLKpLin}, \ref{fig:EstabilidadLKσLin}) que genera más impacto en la estabilidad pequeños cambios en $p$ que en $\sigma$, es decir, en términos de estabilidad es más agresivo agregar enlaces a una red de interacciones que aumentar la magnitud de las mismas para redes de tamaño fijo.
+
+Em conjunto, las variaciones de los parámetros $p$ y $\sigma$ producen transiciones de estabilidad que guardan semejanza con las predichas en el marco clásico de May. Esto indica que el radio espectral de la matriz de interacciones sigue proporcionando una referencia útil para interpretar la estabilidad del sistema de Lotka-Volterra generalizado. Aunque la matriz Jacobiana se encuentre reescalada por las abundancias del equilibrio, la estructura estadística de la matriz $\Lambda$ continúa desempeñando un papel relevante en la organización espectral que determina la estabilidad del sistema.
 
 \subsection{Para $N=50$}
 
 \subsubsection*{En función de $p$}
 
-Se ha utilizado la misma metodología para generar los diagramas de transición para este caso y para $N=25$. Las particiones y los parámetros del sistema (\ref{eqn:LK}) son los mismos. Lo único que ha cambiado es el número de simulaciones por punto (Tabla (\ref{tab:SimulacionesTransicion})), pues entre menos especies se contemplen se debe de compensar con el número de simulaciones para suavizar las curvas con base en la ley de los grandes números. Algo que se podrá observar en estas transiciones es que son cada vez más suaves y tienen mayor rango de estabilidad (ver caso $\sigma=0.2$). Esto sugiere que es más probable hallar sistemas estables cuando su tamaño es cada vez menor.
+
+Para este caso particular, así como para $N=25$, se empleó la misma metodología utilizada en el análisis para $N=100$. La única diferencia radica en el número de simulaciones realizadas por cada configuración  $(p,\sigma,N)$, tal como se muesrta en la Tabla \eqref{tab:SimulacionesTransicion}. En estos sistemas de menor dimensión se requiere un mayor número de realizaciones para mitigar el ruido estadístico en la estimación de la probabilidad de estabilidad. \\
+\\
+En la Figura \eqref{fig:EstabilidadLKp50} se presentan las transiciones dinámicas con soporte estructuralmente simétrico en función de $p$. Se observa percibir que las regiones transitorias son más amplias en comparación con el caso $N=100$, lo que indica que pequeñas variaciones en $p$ producen cambios aún más graduales en la probabilidad de estabilidad.  En este sentido, el comportamiento observado para $\sigma=0.3$ resulta cualitativamente similar al caso $\sigma=0.2$ cuando $N=100$
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.16]{../Imagenes/EstabilidadLKp50}
@@ -528,23 +480,23 @@ Se ha utilizado la misma metodología para generar los diagramas de transición 
 	\label{fig:EstabilidadLKp50}
 \end{figure}
 
-Se puede observar que el caso $\sigma=0.2$ tiene hasta un 60\% de probabilidad de ser estable aún cuando la red es completamente conectada, hecho que contrasta con el caso $N=100$. Sin embargo aún así se sigue observando que el cambio de estabilidad para $\sigma$ cercano a 1.0 se da para valores de $p$ del orden de $10^{-4}$. Al realizar la simulación (Apéndice\footnote{Cita}) para observar el cumplimiento de la relación heurística (\ref{eqn:relacionHeuristica}) se encuentra que para $\sigma=0.27$ comienzan a emerger casos que no cumplen dicha desigualdad. Sin embargo solos se toma en cuenta como elemento adicional a considerar para las transiciones de estabilidad.
+Sin embargo, aún para este tamaño del sistema se conserva la tendencia a que las transiciones ocurran más temprano conforme aumenta la magnitud $\sigma$, aunque en términos absolutos estas se encuentren desplazadas hacia valores mayores de $p$ con respecto del caso $N=100$. De manera preliminar, estas observaciones sugieren que, para los rangos de parámetros considerados, los sistemas de menor dimensión presentan una mayor probabilidad de estabilidad.
 
 \subsubsection*{En función de $\sigma$}
 
-En las transiciones que dependen de $\sigma$ también se aprecia que son más suaves y desplazadas un poco a la derecha con respecto del caso $N=100$. Además se sigue observando que las diferencias entre los sistemas $p=0.9$ y $p=1.0$ son muy mínimas en comparación con las desviaciones entre los sistemas $p=0.1$ y $p=0.2$. En este sentido se logra ver que los cambios de estabilidad son más sustanciales cuando se tienen redes escasamente pobladas en comparación con redes densas y casi conexas.
+De manera análoga en la Figura \eqref{fig:EstabilidadLKσ50}, las transiciones en $\sigma$ de sistemas con soporte estructuralmente simétrico también se presentan de forma más gradual en comparación con el caso $N=100$. No obstante, se conserva la tendencia a que estas se concentren conforme aumente la conectividad de la red.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.2]{../Imagenes/EstabilidadLKσ50}
 	\caption{Transiciones de estabilidad en el Sistema de Lotka-Volterra generalizado estructuralmente simétrico en función de la fuerza de interacción para $N=50$.}
 	\label{fig:EstabilidadLKσ50}
 \end{figure}
-
+\newpage
 \subsection{Para $N=25$}
 
 \subsubsection*{En función de $p$}
 
-Finalmente para el último caso se encuentran transiciones de estabilidad todavía más suaves, a su vez con un rango de estabilidad mayor con respecto de los sistemas anteriores. Se contempla un número mayor de simulaciones por punto (Tabla \ref{tab:SimulacionesTransicion}) para poder suavizar las curvas. En este caso se puede observar que el sistema con $\sigma=0.2$ es 99\% estable aún con la red totalmente conexa. Se observa que la cantidad de interacciones influye significativamente en el cambio de estabilidad de los sistemas: tienen mayor probabilidad de ser estables. En la proposición \ref{prop:paramMay} se ha mencionado que el radio de Girko (\ref{eqn:radioMayGirko}) tiene un valor esperado $\sigma$\footnote{Considerando matrices de Ginibre, que se encuentran normalizadas por el factor $1/\sqrt{N}$.} con fluctuaciones de orden $1/\sqrt{N}$; eso implica que entre más grande sea el sistema: es más estrecha la incertidumbre de ser estable o no. Por esta razón los sistemas $N=100$ se les observa una transición abrupta. Sin embargo si el sistema es de menor tamaño, entonces las fluctuaciones son más grandes y la probabilidad de ser estables es mayor.
+Finalmente, en la Figura \eqref{fig:EstabilidadLKp25} se muestran las transiciones dinámicas con soporte estructuralmente simétrico en función de $p$ para $N=25$. En esta caso las regiones transitorias son aún más amplias que en los sistemas de mayor dimensión, lo que indica que las variaciones en $p$ producen cambios más graduales en la probabilidad de estabilidad. Esto confirma que el tamaño del sistema también influye de manera relevante en la organización de las transiciones dinámicas.
 
 \begin{figure}[h!]
 	\centering
@@ -553,18 +505,22 @@ Finalmente para el último caso se encuentran transiciones de estabilidad todav�
 	\label{fig:EstabilidadLKp25}
 \end{figure}
 
-En el caso $N=100$ se ha observado que existe una relación sutil entre los sistemas con diagonal fija y las Jacobianas de los LV. No se puede concluir directamente que los sistemas LV tienen fluctuaciones de orden $1/\sqrt{N}$, puesto que no los describe una ley circular por no tener una distribución uniforme de valores propios. Sin embargo se puede suponer que tienen fluctuaciones similares debido a la forma de las transiciones vistas hasta ahora, y para garantizarlo se deberá tener una estimación del parámetro crítico de transición.
+\subsubsection*{En función de $\sigma$}
+
+De manera análoga, en la Figura \eqref{fig:EstabilidadLKσ25} se presentan las transiciones en función de $\sigma$, las cuales muestran un comportamieinto cualitativamente similar al observado en los casos de mayor dimensión, aunque con regiones transitorias más amplias.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.2]{../Imagenes/EstabilidadLKσ25}
 	\caption{Transiciones de estabilidad en el Sistema de Lotka-Votlerra generalizado en función de la fuerza de interacción para $N=25$.}
 	\label{fig:EstabilidadLKσ25}
 \end{figure}
-\newpage
-Las transiciones en función de $\sigma$ también se muestran más suaves con respecto de los sistemas anteriores incluso se logra observar que el sistema con la red totalmente conexa ($p=1.0$) es estable con un 30\% de probabilidad para $\sigma=0.1$, hecho que no se logró observar en los casos anteriores. El mapeo de este caso particular sugiere que se requerirían interacciones de mayor magnitud para poder observar el decaimiento de la estabilidad a cero, es decir, considerar valores $\sigma\geq 1.0$ para el caso $p=0.1$. La simulación del apéndice(\footnote{Cita}) para la relación heurística (\ref{eqn:relacionHeuristica}) indica que para $\sigma=0.29$ se cumple la desigualdad y comienza a no cumplirlos para valores posteriores.
-\\
-\\
-Con esto se concluye la presentación de los resultados más importantes de esta tesis, en este punto se tiene un mapa general de como se comporta la estabilidad de los sistemas LV para diversos configuraciones $(p,\sigma,N)$. Hace falta reconocer si puede existir o no un parámetro crítico de transición además de revisar si la relación (\ref{eqn:relacionHeuristica}) tiene alguna relevancia en dicho parámetro de transición específicamente para los sistemas estructuralmente simétricos. En la siguiente y última sección de este trabajo se estará discutiendo las posibles implicaciones de esto.
+
+En conjunto, estos resultados sugieren que los sistemas de menor dimensión requieren interacciones de mayor magnitud para abandonar el régimen de estabilidad. De forma inductiva, esto apunta a que conforme el tamaño del sistema aumenta, las transiciones de estabilidad tienden a volverse más abruptas y a ocurrir para valores más pequeños de la magnitud típica de las interacciones.
+
+\subfile{./TeX_files/AuxiliarComp.tex}
+
+
+
 
 \section{Indicador espectral de transición de estabilidad}
 

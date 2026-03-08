@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.14)  5 MAR 2026 11:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.14)  8 MAR 2026 02:16
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1483,41 +1483,38 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 11.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
-LaTeX Warning: Reference `eqn:JacobianaCoexistente' on page 1 undefined on inpu
-t line 11.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 11.
 
 
-LaTeX Warning: Reference `eqn:JacobianaCoexistente' on page 1 undefined on inpu
-t line 21.
-
-<../../Imagenes/EspectroCoexistenteDir.png, id=11, 3011.25pt x 1003.75pt>
-File: ../../Imagenes/EspectroCoexistenteDir.png Graphic file (type png)
-<use ../../Imagenes/EspectroCoexistenteDir.png>
-Package pdftex.def Info: ../../Imagenes/EspectroCoexistenteDir.png  used on inp
-ut line 26.
-(pdftex.def)             Requested size: 481.80984pt x 160.60327pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 11--30
-
- []
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 11.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--30
+LaTeX Warning: Reference `tab:SimulacionesTransicion' on page 1 undefined on in
+put line 15.
 
- []
+<../../Imagenes/EstabilidadLKp50.png, id=15, 3011.25pt x 1204.5pt>
+File: ../../Imagenes/EstabilidadLKp50.png Graphic file (type png)
+<use ../../Imagenes/EstabilidadLKp50.png>
+Package pdftex.def Info: ../../Imagenes/EstabilidadLKp50.png  used on input lin
+e 20.
+(pdftex.def)             Requested size: 481.80984pt x 192.72394pt.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 11--30
+Underfull \hbox (badness 10000) in paragraph at lines 15--24
 
  []
 
+<../../Imagenes/EstabilidadLKσ50.png, id=17, 1806.75pt x 1204.5pt>
+File: ../../Imagenes/EstabilidadLKσ50.png Graphic file (type png)
+<use ../../Imagenes/EstabilidadLKσ50.png>
+Package pdftex.def Info: ../../Imagenes/EstabilidadLKσ50.png  used on input li
+ne 31.
+(pdftex.def)             Requested size: 361.3436pt x 240.89574pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--30
+Underfull \hbox (badness 10000) in paragraph at lines 25--35
 
  []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -1526,103 +1523,55 @@ Non-PDF special ignored!
 <special> header=psfrag.pro
 {C:/Users/Rodrigo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
 
+ <../../Imagenes/EstabilidadLKp50.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 36.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 36.
+
+<../../Imagenes/EstabilidadLKp25.png, id=33, 3011.25pt x 1204.5pt>
+File: ../../Imagenes/EstabilidadLKp25.png Graphic file (type png)
+<use ../../Imagenes/EstabilidadLKp25.png>
+Package pdftex.def Info: ../../Imagenes/EstabilidadLKp25.png  used on input lin
+e 43.
+(pdftex.def)             Requested size: 481.80984pt x 192.72394pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<../../Imagenes/EstabilidadLKσ25.png, id=35, 1806.75pt x 1204.5pt>
+File: ../../Imagenes/EstabilidadLKσ25.png Graphic file (type png)
+<use ../../Imagenes/EstabilidadLKσ25.png>
+Package pdftex.def Info: ../../Imagenes/EstabilidadLKσ25.png  used on input li
+ne 51.
+(pdftex.def)             Requested size: 361.3436pt x 240.89574pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+
+[2 <../../Imagenes/EstabilidadLKσ50.png>]
+
+LaTeX Warning: Reference `eqn:relacionHeuristica' on page 3 undefined on input 
+line 56.
+
+
+LaTeX Warning: Reference `eqn:relacionHeuristica' on page 3 undefined on input 
+line 59.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 56--60
+
+ []
+
+
+
+[3 <../../Imagenes/EstabilidadLKp25.png> <../../Imagenes/EstabilidadLKσ25.png>
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 31--35
 
- []
-
-<../../Imagenes/EspectroParcialDir.png, id=28, 3011.25pt x 1003.75pt>
-File: ../../Imagenes/EspectroParcialDir.png Graphic file (type png)
-<use ../../Imagenes/EspectroParcialDir.png>
-Package pdftex.def Info: ../../Imagenes/EspectroParcialDir.png  used on input l
-ine 41.
-(pdftex.def)             Requested size: 481.80984pt x 160.60327pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 35--45
-
- []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-
-[2 <../../Imagenes/EspectroCoexistenteDir.png>]
-
-LaTeX Warning: Reference `eqn:JacobianaCoexistente' on page 3 undefined on inpu
-t line 48.
-
-<../../Imagenes/EspectroCoexistenteSim.png, id=38, 3011.25pt x 1003.75pt>
-File: ../../Imagenes/EspectroCoexistenteSim.png Graphic file (type png)
-<use ../../Imagenes/EspectroCoexistenteSim.png>
-Package pdftex.def Info: ../../Imagenes/EspectroCoexistenteSim.png  used on inp
-ut line 51.
-(pdftex.def)             Requested size: 481.80984pt x 160.60327pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 46--55
-
- []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<../../Imagenes/EspectroParcialSim.png, id=41, 3011.25pt x 1003.75pt>
-File: ../../Imagenes/EspectroParcialSim.png Graphic file (type png)
-<use ../../Imagenes/EspectroParcialSim.png>
-Package pdftex.def Info: ../../Imagenes/EspectroParcialSim.png  used on input l
-ine 62.
-(pdftex.def)             Requested size: 481.80984pt x 160.60327pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 56--66
-
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[3 <../../Imagenes/EspectroParcialDir.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 67--80
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 67--80
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 67--80
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 67--80
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 67--80
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 67--80
-
- []
-
-
-
-[4 <../../Imagenes/EspectroCoexistenteSim.png> <../../Imagenes/EspectroParcialS
-im.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[5]
-
-[6] (AuxiliarComp.aux
+[4] (AuxiliarComp.aux
 LaTeX Info: Redefining \sptext on input line 11.
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
@@ -1636,35 +1585,34 @@ L3 programming layer <2024-07-20>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `AuxiliarComp.out' has not changed.
-(rerunfilecheck)             Checksum: 160CD0098D05D42EA1FAB98E499A67FE;166.
+(rerunfilecheck)             Checksum: 36499AAD048D60679DCDD76BB0C832A1;196.
 Package logreq Info: Writing requests to 'AuxiliarComp.run.xml'.
 \openout1 = `AuxiliarComp.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38456 strings out of 473899
- 757369 string characters out of 5725556
- 1944960 words of memory out of 5000000
- 60743 multiletter control sequences out of 15000+600000
- 563983 words of font info for 58 fonts, out of 8000000 for 9000
+ 38485 strings out of 473899
+ 757627 string characters out of 5725556
+ 1939960 words of memory out of 5000000
+ 60763 multiletter control sequences out of 15000+600000
+ 567420 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 118i,8n,124p,1065b,1826s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 118i,8n,124p,794b,1826s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
 m/cmbx10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public
 /amsfonts/cm/cmbx12.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmex10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Rodrigo/AppData/Local/P
-rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Rodrigo/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Rod
-rigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:
-/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr
-8.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmsy10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmsy6.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/font
-s/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on AuxiliarComp.pdf (6 pages, 756096 bytes).
+ype1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Rodrigo/AppData/Local/P
+rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Rodrigo/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Rod
+rigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/
+Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8
+.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
+s/cm/cmr9.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmsy10.pfb>
+Output written on AuxiliarComp.pdf (4 pages, 1321971 bytes).
 PDF statistics:
- 110 PDF objects out of 1000 (max. 8388607)
- 12 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 104 PDF objects out of 1000 (max. 8388607)
+ 14 named destinations out of 1000 (max. 500000)
+ 49 words of extra memory for PDF output out of 10000 (max. 10000000)
 
