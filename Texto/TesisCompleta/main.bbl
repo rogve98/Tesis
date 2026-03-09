@@ -280,6 +280,42 @@
       \field{pages}{694\bibrangedash 706}
       \range{pages}{13}
     \endentry
+    \entry{goh1977feasibility}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=4e2f33138bb32c6873e84ae8249c2a0f}{%
+           family={Goh},
+           familyi={G\bibinitperiod},
+           given={BS},
+           giveni={B\bibinitperiod}}}%
+        {{hash=0e913cc8861a5731fbaa71c0e506f38d}{%
+           family={Jennings},
+           familyi={J\bibinitperiod},
+           given={LS},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{abf923fb50634230cee6b22173637903}
+      \strng{fullhash}{abf923fb50634230cee6b22173637903}
+      \strng{fullhashraw}{abf923fb50634230cee6b22173637903}
+      \strng{bibnamehash}{abf923fb50634230cee6b22173637903}
+      \strng{authorbibnamehash}{abf923fb50634230cee6b22173637903}
+      \strng{authornamehash}{abf923fb50634230cee6b22173637903}
+      \strng{authorfullhash}{abf923fb50634230cee6b22173637903}
+      \strng{authorfullhashraw}{abf923fb50634230cee6b22173637903}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Ecological Modelling}
+      \field{number}{1}
+      \field{title}{Feasibility and stability in randomly assembled Lotka-Volterra models}
+      \field{volume}{3}
+      \field{year}{1977}
+      \field{pages}{63\bibrangedash 71}
+      \range{pages}{9}
+    \endentry
     \entry{may2019stability}{book}{}{}
       \name{author}{1}{}{%
         {{hash=46f392962803b157f2a2666260d8c593}{%

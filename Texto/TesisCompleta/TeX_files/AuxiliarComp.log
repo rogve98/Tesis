@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.14)  8 MAR 2026 02:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.14)  9 MAR 2026 04:13
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1470,49 +1470,43 @@ Package biblatex Info: ... file 'AuxiliarComp.bbl' found.
  (AuxiliarComp.bbl)
 Package biblatex Info: Reference section=0 on input line 4.
 Package biblatex Info: Reference segment=0 on input line 4.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 11.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 13.
 
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 11.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 13.
 
 
 (C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 11.
+LaTeX Warning: Reference `prop:DiagonalI' on page 1 undefined on input line 14.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 11.
+
+LaTeX Warning: Reference `eqn:DesigualdadCoexistencia' on page 1 undefined on i
+nput line 14.
 
 
-LaTeX Warning: Reference `tab:SimulacionesTransicion' on page 1 undefined on in
-put line 15.
-
-<../../Imagenes/EstabilidadLKp50.png, id=15, 3011.25pt x 1204.5pt>
-File: ../../Imagenes/EstabilidadLKp50.png Graphic file (type png)
-<use ../../Imagenes/EstabilidadLKp50.png>
-Package pdftex.def Info: ../../Imagenes/EstabilidadLKp50.png  used on input lin
-e 20.
-(pdftex.def)             Requested size: 481.80984pt x 192.72394pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 15--24
+Underfull \hbox (badness 10000) in paragraph at lines 13--17
 
  []
 
-<../../Imagenes/EstabilidadLKσ50.png, id=17, 1806.75pt x 1204.5pt>
-File: ../../Imagenes/EstabilidadLKσ50.png Graphic file (type png)
-<use ../../Imagenes/EstabilidadLKσ50.png>
-Package pdftex.def Info: ../../Imagenes/EstabilidadLKσ50.png  used on input li
-ne 31.
-(pdftex.def)             Requested size: 361.3436pt x 240.89574pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 25--35
+Underfull \hbox (badness 10000) in paragraph at lines 22--25
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--31
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--31
 
  []
 
@@ -1523,53 +1517,41 @@ Non-PDF special ignored!
 <special> header=psfrag.pro
 {C:/Users/Rodrigo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
 
- <../../Imagenes/EstabilidadLKp50.png>]
+]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 36.
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 64--68
 
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 36.
-
-<../../Imagenes/EstabilidadLKp25.png, id=33, 3011.25pt x 1204.5pt>
-File: ../../Imagenes/EstabilidadLKp25.png Graphic file (type png)
-<use ../../Imagenes/EstabilidadLKp25.png>
-Package pdftex.def Info: ../../Imagenes/EstabilidadLKp25.png  used on input lin
-e 43.
-(pdftex.def)             Requested size: 481.80984pt x 192.72394pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<../../Imagenes/EstabilidadLKσ25.png, id=35, 1806.75pt x 1204.5pt>
-File: ../../Imagenes/EstabilidadLKσ25.png Graphic file (type png)
-<use ../../Imagenes/EstabilidadLKσ25.png>
-Package pdftex.def Info: ../../Imagenes/EstabilidadLKσ25.png  used on input li
-ne 51.
-(pdftex.def)             Requested size: 361.3436pt x 240.89574pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+ []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 68--75
 
-[2 <../../Imagenes/EstabilidadLKσ50.png>]
-
-LaTeX Warning: Reference `eqn:relacionHeuristica' on page 3 undefined on input 
-line 56.
+ []
 
 
-LaTeX Warning: Reference `eqn:relacionHeuristica' on page 3 undefined on input 
-line 59.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 56--60
+Underfull \hbox (badness 10000) in paragraph at lines 68--75
 
  []
 
 
 
-[3 <../../Imagenes/EstabilidadLKp25.png> <../../Imagenes/EstabilidadLKσ25.png>
-]
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 77--82
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--94
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--94
+
+ []
+
+
 
 [4] (AuxiliarComp.aux
 LaTeX Info: Redefining \sptext on input line 11.
@@ -1585,34 +1567,40 @@ L3 programming layer <2024-07-20>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `AuxiliarComp.out' has not changed.
-(rerunfilecheck)             Checksum: 36499AAD048D60679DCDD76BB0C832A1;196.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to 'AuxiliarComp.run.xml'.
 \openout1 = `AuxiliarComp.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38485 strings out of 473899
- 757627 string characters out of 5725556
- 1939960 words of memory out of 5000000
- 60763 multiletter control sequences out of 15000+600000
- 567420 words of font info for 72 fonts, out of 8000000 for 9000
+ 38423 strings out of 473899
+ 755542 string characters out of 5725556
+ 1943960 words of memory out of 5000000
+ 60706 multiletter control sequences out of 15000+600000
+ 565914 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 118i,8n,124p,794b,1826s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 118i,15n,124p,703b,1826s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
 m/cmbx10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmbx12.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/t
+/amsfonts/cm/cmex10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/t
 ype1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Rodrigo/AppData/Local/P
-rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Rodrigo/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Rod
-rigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/
-Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8
+TeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Rodrigo/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Rodrigo/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/Rodr
+igo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/
+Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6
 .pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
-s/cm/cmr9.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmsy10.pfb>
-Output written on AuxiliarComp.pdf (4 pages, 1321971 bytes).
+s/cm/cmr8.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmr9.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Rodrigo/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Users/Rodrigo/AppData
+/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Rodr
+igo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pf
+b>
+Output written on AuxiliarComp.pdf (4 pages, 180263 bytes).
 PDF statistics:
- 104 PDF objects out of 1000 (max. 8388607)
- 14 named destinations out of 1000 (max. 500000)
- 49 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 112 PDF objects out of 1000 (max. 8388607)
+ 11 named destinations out of 1000 (max. 500000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
