@@ -1,4 +1,32 @@
 \chapter{Conclusiones}
 
-En esta tesis se ha investigado sobre la estabilidad del sistema de Lotka-Volterra generalizado abarcando desde su construcción hasta su integración y sus implicaciones con el fin de entender los mecanismos que determinan la persistencia o colapso del sistema. Se ha encontrado que la distribución del punto fijo tiene cola pesada con sesgo positivo. Esto indica que existen pocas especies dominantes que prosperan más que el resto de especies del sistema. La distribución del punto fijo induce a la diagonal de las matrices Jacobianas con la diferencia que ahora tiene sesgo negativo. En este sentido, el soporte espectral de las Jacobianas estará controlado por cada una de los valores de su diagonal generando un conjunto de $N$ Leyes Circulares. Finalmente la estabilidad estará dominada por la tupla $(p,\sigma,N)$ que induce puntos fijos estables en la matriz de incidencias $\Lambda$. \\
+\setlength{\parindent}{0cm} 
+
+En este trabajo se analizó la relación entre la factibilidad del equilibrio y la estabilidad dinámica en sistemas de Lotka–Volterra generalizados definidos sobre redes aleatorias. El análisis combinó herramientas de geometría convexa, teoría espectral y simulaciones numéricas para explorar cómo la estructura de las interacciones ecológicas determina el comportamiento dinámico del sistema.
 \\
+\\
+Uno de los resultados principales del estudio es que la estabilidad del sistema no depende únicamente de la estructura espectral de la matriz de coeficientes de interacción $\Lambda$, sino también del reescalamiento inducido por las abundancias del equilibrio. En particular, la matriz Jacobiana del sistema hereda propiedades espectrales de $\Lambda$, pero su distribución de valores propios se deforma en función de las abundancias del estado estacionario. Este mecanismo muestra que la estabilidad del sistema emerge de la interacción entre la geometría espectral de la red de interacciones y la estructura del equilibrio dinámico.
+\\
+\\
+Asimismo, el análisis de las trayectorias dinámicas muestra que los sistemas tienden a evolucionar hacia equilibrios parcialmente factibles, en los cuales un subconjunto de especies se extingue mientras el resto persiste. En estos estados estacionarios, la estabilidad depende de las tasas de invasibilidad de las especies ausentes, lo que introduce una estructura característica en la matriz Jacobiana. El espectro resultante puede interpretarse como la unión de subbloques asociados a especies persistentes y especies extintas.
+\\
+\\
+Los resultados también muestran la presencia frecuente de transitorios dinámicos amplios, y se vuelven abruptos conforme $N\to\infty$. Estos transitorios pueden asociarse con la proximidad del sistema a estados de estabilidad marginal, donde algunos valores propios de la Jacobiana se aproximan al eje imaginario. La aparición de estos regímenes sugiere que la dinámica de ecosistemas complejos puede organizarse cerca de fronteras de estabilidad.
+\\
+\\
+Por otro lado, se observó que la estructura topológica del soporte de interacciones influye de manera significativa en la geometría espectral del sistema. Las matrices con soporte dirigido presentan distribuciones espectrales aproximadamente isotrópicas, cercanas a la ley circular, mientras que los soportes estructuralmente simétricos introducen correlaciones entre interacciones recíprocas que deforman el espectro hacia los ejes coordenados del plano complejo. Estas deformaciones afectan directamente las condiciones de estabilidad del sistema.
+\\
+\\
+Finalmente, el trabajo propone un criterio heurístico que relaciona la factibilidad geométrica del equilibrio con la escala espectral que gobierna la estabilidad del sistema. Aunque este criterio se deriva desde un argumento basado en la geometría del cono convexo asociado a la matriz de de coeficientes de interacción, la escala crítica obtenida coincide con la asociada al radio espectral. Este resultado sugiere la existencia de un puente conceptual entre la geometría de la factibilidad del equilibrio y los criterios espectrales de estabilidad en sistemas ecológicos complejos.
+
+\subsection*{Perspectivas y extensiones}
+
+El análisis presentado abre diversas líneas de investigación futuras. En particular, resulta relevante estudiar el efecto de correlaciones estructurales entre interacciones recíprocas, como los ciclos de interacción de longitud dos, sobre la geometría espectral de las matrices de interacción. Asimismo, sería de interés extender el marco considerado hacia topologías de red más complejas, tales como redes libres de escala, modulares o jerárquicas, así como explorar el impacto de distribuciones estadísticas alternativas para las interacciones ecológicas.
+\\
+\\
+Desde el punto de vista teórico, un problema abierto consiste en formalizar analíticamente el criterio crítico propuesto, de modo que la conexión observada entre la factibilidad geométrica del equilibrio y la estabilidad espectral del sistema pueda establecerse en un marco matemático más riguroso. De igual forma, resulta relevante estudiar con mayor detalle la aparición de estados cercanos a estabilidad marginal y los transitorios dinámicos amplios observados en sistemas de gran dimensión.
+\\
+\\
+Finalmente, una dirección particularmente interesante consiste en caracterizar el régimen en el cual existen equilibrios factibles pero dinámicamente inestables, así como explorar la dinámica que emerge en dicho escenario. Estos problemas sugieren que la relación entre factibilidad y estabilidad en ecosistemas complejos constituye un campo abierto de investigación.
+\newpage
+En conjunto, los resultados sugieren que la dinámica de ecosistemas complejos puede entenderse como la interacción entre la geometría de factibilidad del equilibrio, la estructura espectral de las interacciones y la topología de la red ecológica, lo que abre la posibilidad de desarrollar marcos teóricos unificados para describir la estabilidad de comunidades de alta dimensión.

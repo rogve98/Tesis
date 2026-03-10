@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.14)  9 MAR 2026 04:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.14)  10 MAR 2026 05:13
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1470,43 +1470,18 @@ Package biblatex Info: ... file 'AuxiliarComp.bbl' found.
  (AuxiliarComp.bbl)
 Package biblatex Info: Reference section=0 on input line 4.
 Package biblatex Info: Reference segment=0 on input line 4.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 13.
 
-
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 13.
-
-
-(C:\Users\Rodrigo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-
-LaTeX Warning: Reference `prop:DiagonalI' on page 1 undefined on input line 14.
-
-
-
-LaTeX Warning: Reference `eqn:DesigualdadCoexistencia' on page 1 undefined on i
-nput line 14.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 13--17
+Underfull \hbox (badness 10000) in paragraph at lines 14--24
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 22--25
+Underfull \hbox (badness 10000) in paragraph at lines 14--24
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 25--31
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 25--31
+Underfull \hbox (badness 10000) in paragraph at lines 14--24
 
  []
 
@@ -1518,42 +1493,7 @@ Non-PDF special ignored!
 {C:/Users/Rodrigo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
 
 ]
-
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 64--68
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 68--75
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 68--75
-
- []
-
-
-
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 77--82
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 91--94
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 91--94
-
- []
-
-
-
-[4] (AuxiliarComp.aux
+(AuxiliarComp.aux
 LaTeX Info: Redefining \sptext on input line 11.
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
@@ -1567,40 +1507,30 @@ L3 programming layer <2024-07-20>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `AuxiliarComp.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+(rerunfilecheck)             Checksum: 7D5F4F528B56D55473CA94D986DD4148;171.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                AuxiliarComp
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'AuxiliarComp.run.xml'.
 \openout1 = `AuxiliarComp.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38423 strings out of 473899
- 755542 string characters out of 5725556
- 1943960 words of memory out of 5000000
- 60706 multiletter control sequences out of 15000+600000
- 565914 words of font info for 66 fonts, out of 8000000 for 9000
+ 38339 strings out of 473899
+ 754187 string characters out of 5725556
+ 1939960 words of memory out of 5000000
+ 60654 multiletter control sequences out of 15000+600000
+ 559327 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 118i,15n,124p,703b,1826s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 118i,5n,124p,708b,1822s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmbx10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmex10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Rodrigo/AppData/Local/Pr
-ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Rodrigo/AppDat
-a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/Rodr
-igo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/
-Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6
-.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
-s/cm/cmr8.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmr9.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Rodrigo/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Users/Rodrigo/AppData
-/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Rodr
-igo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pf
-b>
-Output written on AuxiliarComp.pdf (4 pages, 180263 bytes).
+m/cmbx12.pfb><C:/Users/Rodrigo/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/amsfonts/cm/cmr10.pfb>
+Output written on AuxiliarComp.pdf (1 page, 34397 bytes).
 PDF statistics:
- 112 PDF objects out of 1000 (max. 8388607)
- 11 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 29 PDF objects out of 1000 (max. 8388607)
+ 3 named destinations out of 1000 (max. 500000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -2,4 +2,11 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {1.1}{\ignorespaces Cantidad de simulaciones realizadas por cada $N$ y para cada configuración $(p,\sigma ,N)$ establecida.}}{25}{table.caption.26}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Tipos de interacciones posibles en sistemas de Lotka--Volterra generalizados.}}{14}{table.caption.13}%
+\contentsline {table}{\numberline {2.2}{\ignorespaces Estabilidad del estado coexistente en función del parámetro $\sigma \sqrt {Np}$.}}{19}{table.caption.17}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Cantidad de simulaciones realizadas por cada $N$ y para cada configuración $(p,\sigma ,N)$ establecida.}}{50}{table.caption.37}%
+\addvspace {10\p@ }

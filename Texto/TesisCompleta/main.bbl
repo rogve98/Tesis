@@ -219,36 +219,6 @@
       \field{note}{Consultado en: 2025-04-08}
       \field{title}{Matrix multiplication}
     \endentry
-    \entry{gardner1985spin}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=d1522236d048aea70252676619d0085a}{%
-           family={Gardner},
-           familyi={G\bibinitperiod},
-           given={Elisabeth},
-           giveni={E\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Elsevier}%
-      }
-      \strng{namehash}{d1522236d048aea70252676619d0085a}
-      \strng{fullhash}{d1522236d048aea70252676619d0085a}
-      \strng{fullhashraw}{d1522236d048aea70252676619d0085a}
-      \strng{bibnamehash}{d1522236d048aea70252676619d0085a}
-      \strng{authorbibnamehash}{d1522236d048aea70252676619d0085a}
-      \strng{authornamehash}{d1522236d048aea70252676619d0085a}
-      \strng{authorfullhash}{d1522236d048aea70252676619d0085a}
-      \strng{authorfullhashraw}{d1522236d048aea70252676619d0085a}
-      \field{sortinit}{G}
-      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Nuclear Physics B}
-      \field{title}{Spin glasses with p-spin interactions}
-      \field{volume}{257}
-      \field{year}{1985}
-      \field{pages}{747\bibrangedash 765}
-      \range{pages}{19}
-    \endentry
     \entry{girko1985circular}{article}{}{}
       \name{author}{1}{}{%
         {{hash=8c4095ab63ff46e76e5698cc99e524df}{%
@@ -316,6 +286,76 @@
       \field{pages}{63\bibrangedash 71}
       \range{pages}{9}
     \endentry
+    \entry{Koppen2005Interdisciplina}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=6875223031750d89520db071a3a8c313}{%
+           family={Köppen},
+           familyi={K\bibinitperiod},
+           given={Elke},
+           giveni={E\bibinitperiod}}}%
+        {{hash=af0a7c834bf7f739b11566cf5a8e9b16}{%
+           family={Mansilla},
+           familyi={M\bibinitperiod},
+           given={Ricardo},
+           giveni={R\bibinitperiod}}}%
+        {{hash=649dc31d61a19c8e848654a33ac2b345}{%
+           family={Miramontes},
+           familyi={M\bibinitperiod},
+           given={Pedro},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{56d5c84c75bcc9384d6b15d6d295de36}
+      \strng{fullhash}{56d5c84c75bcc9384d6b15d6d295de36}
+      \strng{fullhashraw}{56d5c84c75bcc9384d6b15d6d295de36}
+      \strng{bibnamehash}{56d5c84c75bcc9384d6b15d6d295de36}
+      \strng{authorbibnamehash}{56d5c84c75bcc9384d6b15d6d295de36}
+      \strng{authornamehash}{56d5c84c75bcc9384d6b15d6d295de36}
+      \strng{authorfullhash}{56d5c84c75bcc9384d6b15d6d295de36}
+      \strng{authorfullhashraw}{56d5c84c75bcc9384d6b15d6d295de36}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Ciencias}
+      \field{month}{7}
+      \field{note}{Julio--septiembre. Disponible en línea}
+      \field{number}{79}
+      \field{title}{La interdisciplina desde la teoría de los sistemas complejos}
+      \field{year}{2005}
+      \field{pages}{4\bibrangedash 12}
+      \range{pages}{9}
+    \endentry
+    \entry{may2007theoretical}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=84e6e0ad61782a75a62d946e2c68ed62}{%
+           family={May},
+           familyi={M\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+        {{hash=4d4e6cb51f8949b43d79bf20c692b761}{%
+           family={McLean},
+           familyi={M\bibinitperiod},
+           given={Angela\bibnamedelima R},
+           giveni={A\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {OUP Oxford}%
+      }
+      \strng{namehash}{45206cb77d0be64eca9c1a532fc837cc}
+      \strng{fullhash}{45206cb77d0be64eca9c1a532fc837cc}
+      \strng{fullhashraw}{45206cb77d0be64eca9c1a532fc837cc}
+      \strng{bibnamehash}{45206cb77d0be64eca9c1a532fc837cc}
+      \strng{authorbibnamehash}{45206cb77d0be64eca9c1a532fc837cc}
+      \strng{authornamehash}{45206cb77d0be64eca9c1a532fc837cc}
+      \strng{authorfullhash}{45206cb77d0be64eca9c1a532fc837cc}
+      \strng{authorfullhashraw}{45206cb77d0be64eca9c1a532fc837cc}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Theoretical ecology: principles and applications}
+      \field{year}{2007}
+    \endentry
     \entry{may2019stability}{book}{}{}
       \name{author}{1}{}{%
         {{hash=46f392962803b157f2a2666260d8c593}{%
@@ -335,6 +375,7 @@
       \strng{authornamehash}{46f392962803b157f2a2666260d8c593}
       \strng{authorfullhash}{46f392962803b157f2a2666260d8c593}
       \strng{authorfullhashraw}{46f392962803b157f2a2666260d8c593}
+      \field{extraname}{1}
       \field{sortinit}{M}
       \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
       \field{labelnamesource}{author}
@@ -342,42 +383,119 @@
       \field{title}{Stability and complexity in model ecosystems}
       \field{year}{2019}
     \endentry
-    \entry{mezard1987spin}{book}{}{}
-      \name{author}{3}{}{%
-        {{hash=b04a2b73d4b5f3367d29287f6c75be19}{%
-           family={Mézard},
+    \entry{may1972will}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=46f392962803b157f2a2666260d8c593}{%
+           family={May},
            familyi={M\bibinitperiod},
-           given={Marc},
-           giveni={M\bibinitperiod}}}%
-        {{hash=633aedb846f931194e4d892bef86fdc0}{%
-           family={Parisi},
-           familyi={P\bibinitperiod},
-           given={Giorgio},
-           giveni={G\bibinitperiod}}}%
-        {{hash=9144f567ea8c9f83a97afe7da808c684}{%
-           family={Virasoro},
-           familyi={V\bibinitperiod},
-           given={Miguel\bibnamedelima Angel},
-           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+           given={Robert\bibnamedelima M},
+           giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
-        {World Scientific Publishing Company}%
+        {Nature Publishing Group UK London}%
       }
-      \strng{namehash}{001556d4f59a04868b459734950c1a49}
-      \strng{fullhash}{001556d4f59a04868b459734950c1a49}
-      \strng{fullhashraw}{001556d4f59a04868b459734950c1a49}
-      \strng{bibnamehash}{001556d4f59a04868b459734950c1a49}
-      \strng{authorbibnamehash}{001556d4f59a04868b459734950c1a49}
-      \strng{authornamehash}{001556d4f59a04868b459734950c1a49}
-      \strng{authorfullhash}{001556d4f59a04868b459734950c1a49}
-      \strng{authorfullhashraw}{001556d4f59a04868b459734950c1a49}
+      \strng{namehash}{46f392962803b157f2a2666260d8c593}
+      \strng{fullhash}{46f392962803b157f2a2666260d8c593}
+      \strng{fullhashraw}{46f392962803b157f2a2666260d8c593}
+      \strng{bibnamehash}{46f392962803b157f2a2666260d8c593}
+      \strng{authorbibnamehash}{46f392962803b157f2a2666260d8c593}
+      \strng{authornamehash}{46f392962803b157f2a2666260d8c593}
+      \strng{authorfullhash}{46f392962803b157f2a2666260d8c593}
+      \strng{authorfullhashraw}{46f392962803b157f2a2666260d8c593}
+      \field{extraname}{2}
       \field{sortinit}{M}
       \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Spin glass theory and beyond: An Introduction to the Replica Method and Its Applications}
-      \field{volume}{9}
-      \field{year}{1987}
+      \field{journaltitle}{Nature}
+      \field{number}{5364}
+      \field{title}{Will a large complex system be stable?}
+      \field{volume}{238}
+      \field{year}{1972}
+      \field{pages}{413\bibrangedash 414}
+      \range{pages}{2}
+    \endentry
+    \entry{miramontes2005sistemas}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=c4f2aaaf329e2d102d589dc4c4cbd17a}{%
+           family={Miramontes},
+           familyi={M\bibinitperiod},
+           given={Octavio},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{c4f2aaaf329e2d102d589dc4c4cbd17a}
+      \strng{fullhash}{c4f2aaaf329e2d102d589dc4c4cbd17a}
+      \strng{fullhashraw}{c4f2aaaf329e2d102d589dc4c4cbd17a}
+      \strng{bibnamehash}{c4f2aaaf329e2d102d589dc4c4cbd17a}
+      \strng{authorbibnamehash}{c4f2aaaf329e2d102d589dc4c4cbd17a}
+      \strng{authornamehash}{c4f2aaaf329e2d102d589dc4c4cbd17a}
+      \strng{authorfullhash}{c4f2aaaf329e2d102d589dc4c4cbd17a}
+      \strng{authorfullhashraw}{c4f2aaaf329e2d102d589dc4c4cbd17a}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista Ciencia y Desarrollo}
+      \field{title}{Sistemas Complejos: entre el orden y el desorden}
+      \field{year}{2005}
+    \endentry
+    \entry{newman2018networks}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=91c825ea422365e0f6cb2597658def75}{%
+           family={Newman},
+           familyi={N\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford university press}%
+      }
+      \strng{namehash}{91c825ea422365e0f6cb2597658def75}
+      \strng{fullhash}{91c825ea422365e0f6cb2597658def75}
+      \strng{fullhashraw}{91c825ea422365e0f6cb2597658def75}
+      \strng{bibnamehash}{91c825ea422365e0f6cb2597658def75}
+      \strng{authorbibnamehash}{91c825ea422365e0f6cb2597658def75}
+      \strng{authornamehash}{91c825ea422365e0f6cb2597658def75}
+      \strng{authorfullhash}{91c825ea422365e0f6cb2597658def75}
+      \strng{authorfullhashraw}{91c825ea422365e0f6cb2597658def75}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Networks}
+      \field{year}{2018}
+    \endentry
+    \entry{posfai2016network}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=5996b175b9fa8551c3fa09da65426167}{%
+           family={Pósfai},
+           familyi={P\bibinitperiod},
+           given={Márton},
+           giveni={M\bibinitperiod}}}%
+        {{hash=15bacd7ddfc866c5dd96976d4b0244d5}{%
+           family={Barabási},
+           familyi={B\bibinitperiod},
+           given={Albert-László},
+           giveni={A\bibinithyphendelim L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Citeseer}%
+      }
+      \strng{namehash}{220bf3587c6ed70d17c43b8827837731}
+      \strng{fullhash}{220bf3587c6ed70d17c43b8827837731}
+      \strng{fullhashraw}{220bf3587c6ed70d17c43b8827837731}
+      \strng{bibnamehash}{220bf3587c6ed70d17c43b8827837731}
+      \strng{authorbibnamehash}{220bf3587c6ed70d17c43b8827837731}
+      \strng{authornamehash}{220bf3587c6ed70d17c43b8827837731}
+      \strng{authorfullhash}{220bf3587c6ed70d17c43b8827837731}
+      \strng{authorfullhashraw}{220bf3587c6ed70d17c43b8827837731}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Network science}
+      \field{volume}{3}
+      \field{year}{2016}
     \endentry
     \entry{prigogine1963introduction}{article}{}{}
       \name{author}{2}{}{%
@@ -414,6 +532,59 @@
       \field{year}{1963}
       \field{pages}{97C}
       \range{pages}{1}
+    \endentry
+    \entry{ramirez1999perspectivas}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=68bdf42bedfc8377e79a555c116a79fa}{%
+           family={Ramírez},
+           familyi={R\bibinitperiod},
+           given={Santiago},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Siglo XXI}%
+      }
+      \strng{namehash}{68bdf42bedfc8377e79a555c116a79fa}
+      \strng{fullhash}{68bdf42bedfc8377e79a555c116a79fa}
+      \strng{fullhashraw}{68bdf42bedfc8377e79a555c116a79fa}
+      \strng{bibnamehash}{68bdf42bedfc8377e79a555c116a79fa}
+      \strng{authorbibnamehash}{68bdf42bedfc8377e79a555c116a79fa}
+      \strng{authornamehash}{68bdf42bedfc8377e79a555c116a79fa}
+      \strng{authorfullhash}{68bdf42bedfc8377e79a555c116a79fa}
+      \strng{authorfullhashraw}{68bdf42bedfc8377e79a555c116a79fa}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Perspectivas en las teorías de sistemas}
+      \field{year}{1999}
+    \endentry
+    \entry{strogatz2001nonlinear}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=b0115f77df78376c68429033349375fc}{%
+           family={Strogatz},
+           familyi={S\bibinitperiod},
+           given={Steven\bibnamedelima H},
+           giveni={S\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Westview press}%
+      }
+      \strng{namehash}{b0115f77df78376c68429033349375fc}
+      \strng{fullhash}{b0115f77df78376c68429033349375fc}
+      \strng{fullhashraw}{b0115f77df78376c68429033349375fc}
+      \strng{bibnamehash}{b0115f77df78376c68429033349375fc}
+      \strng{authorbibnamehash}{b0115f77df78376c68429033349375fc}
+      \strng{authornamehash}{b0115f77df78376c68429033349375fc}
+      \strng{authorfullhash}{b0115f77df78376c68429033349375fc}
+      \strng{authorfullhashraw}{b0115f77df78376c68429033349375fc}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Nonlinear dynamics and chaos: with applications to physics, biology, chemistry, and engineering (studies in nonlinearity)}
+      \field{volume}{1}
+      \field{year}{2001}
     \endentry
   \enddatalist
 \endrefsection
