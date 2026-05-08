@@ -1,5 +1,5 @@
-\chapter{Estabilidad en sistemas complejos de gran dimensión.}
-\setlength{\parindent}{0cm} El análisis de la estabilidad dinámica constituye un problema central en el estudio de sistemas complejos de gran dimensión. Cuando el número de grados de libertad es elevado, la dinámica local alrededor de los estados estacionarios depende de la estructura global de las interacciones, lo que dificulta la aplicación directa de criterios clásicos de estabilidad. En este contexto, pequeñas variaciones pueden alterar drásticamente su comportamiento dinámico induciendo a posibles transiciones cualitativas del sistema. Este capítulo se enfoca en el análisis de sistemas modelados mediante matrices de interacción, sentando las bases para los resultados que se discutirán posteriormente.
+\chapter{Estabilidad en sistemas dinámicos de gran dimensión.}
+\setlength{\parindent}{0cm} El análisis de la estabilidad dinámica constituye un problema central en el estudio de sistemas complejos de gran dimensión. Cuando el número de grados de libertad es elevado, la dinámica local alrededor de los estados estacionarios depende de la estructura global de las interacciones, lo que dificulta la aplicación directa de criterios clásicos de estabilidad. En este contexto, pequeñas variaciones pueden alterar drásticamente su comportamiento dinámico induciendo a posibles transiciones cualitativas del sistema. Este capítulo se enfoca en el análisis de sistemas modelados mediante matrices aleatorias, sentando las bases para los resultados que se discutirán posteriormente.
 
 \section{Antecedentes}\label{sec:Antecedentes}
 
@@ -28,23 +28,23 @@ En sistemas de alta dimensión, el soporte espectral del operador linealizado se
 \begin{equation}\label{eqn:paramMay}
 	\sigma<(NC)^{-1/2}
 \end{equation}
-Al considerar el caso $d=1$, la condición de estabilidad se reduce a $\sigma\sqrt{NC}$. Para un sistema de tamaño fijo $N$, esta desigualdad define un umbral que puede analizarse variando la conectividad $C$ a $\sigma$ fija, o bien variando $\sigma$ a conectividad fija. Sin embargo, al aumentar el tamaño del sistema, la condición de estabilidad se vuelve más restrictiva. En el régimen $N\gg 1$, mantener la estabilidad requiere que la conectividad escale como $C\propto N^{-1}$ si $\sigma$ se mantiene fija, o bien que la intensidad de las interacciones escale como $\sigma\propto N^{-1/2}$ para conectividad fija. Cabe notar que, debido a los distintos escalamientos en $N$, las transiciones asociadas a variaciones en $C$ tienden a ser más abruptas que aquellas controladas por la intensidad de las interacciones, un aspecto que se retomará más adelante.
-\newpage
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=0.16]{../Imagenes/TransicionesdeMay}
-	\caption{Transiciones de estabilidad con sistemas de May de tamaño $N=100$. (\textbf{A}) Para la conectancia variable fijando $\sigma=0.3$. (\textbf{B}) Para la intensidad de las interacciones variable fijando $C=0.3$.}
-	\label{fig:TransicionesdeMay}
-\end{figure}
+Al considerar el caso $d=1$, la condición de estabilidad se reduce a $\sigma\sqrt{NC}<1$. Para un sistema de tamaño fijo $N$, esta desigualdad define un umbral que puede analizarse variando la conectividad $C$ a $\sigma$ fija, o bien variando $\sigma$ a conectividad fija. Sin embargo, al aumentar el tamaño del sistema, la condición de estabilidad se vuelve más restrictiva. En el régimen $N\gg 1$, mantener la estabilidad requiere que la conectividad escale como $C\propto N^{-1}$ si $\sigma$ se mantiene fija, o bien que la intensidad de las interacciones escale como $\sigma\propto N^{-1/2}$ para conectividad fija. Cabe notar que, debido a los distintos escalamientos en $N$, el umbral de estabilidad es más sensible a variaciones en $C$ (con $\sigma$ fija) que a variaciones en $\sigma$ (con $C$ fija), de modo que la transición se alcanza antes al modificar la conectividad cuando $\sigma$ se mantiene fija.
+\\
+\\
+%\begin{figure}[h!]
+%	\centering
+%	\includegraphics[scale=0.16]{../Imagenes/TransicionesdeMay}
+%	\caption{Transiciones de estabilidad con sistemas de May de tamaño $N=100$. (\textbf{A}) Para la conectancia variable fijando $\sigma=0.3$. (\textbf{B}) Para la intensidad de las interacciones variable fijando $C=0.3$.}
+%	\label{fig:TransicionesdeMay}
+%\end{figure}
 
 En términos cualitativos, el resultado central de May establece que la estabilidad de un sistema complejo emerge de un compromiso entre la conectividad de la red y la intensidad de las interacciones: sistemas con pocas conexiones pueden sostener interacciones fuertes sin perder estabilidad, mientras que redes densamente conectadas solo permanecen estables cuando las interacciones son suficientemente débiles. \\
 \\
-Sin embargo, esta caracterización proviene de la construcción estadística del sistema linealizado, sin incorporar explícitamente la dinámica no lineal que conduce a los estados estacionarios sobre los cuales se evalúa la estabilidad. En contraste, esta tesis aborda esta limitación considerando explícitamente la dinámica no lineal de un sistema de Lotka–Volterra generalizado \cite[p. 86]{may2007theoretical}, a partir del cual se identifica un estado estacionario bien definido y se analiza la estabilidad del sistema linealizado asociado.\\
+Sin embargo, esta caracterización proviene de la construcción estadística del sistema linealizado, sin incorporar explícitamente la dinámica no lineal que conduce a los estados estacionarios sobre los cuales se evalúa la estabilidad. En contraste, esta tesis aborda esta limitación considerando explícitamente la dinámica no lineal del modelo de Lotka–Volterra generalizado \cite[p. 86]{may2007theoretical}, a partir del cual se identifica un estado estacionario bien definido y se analiza la estabilidad del sistema linealizado asociado.\\
 \\
 El sistema de Lotka-Volterra generalizado considera un gran número de especies interactuantes $N\gg 1$. Este marco permite formular una dinámica no lineal bien definida y analizar como la estructura de las interacciones influye en la estabilidad de los estados estacionarios resultantes. Debido a la alta dimensionalidad del sistema, el estudio de su comportamiento dinámico y de las transiciones de estabilidad se apoya en herramientas computacionales.\\
 \\
 En este contexto, se propone modelar la estructura de las interacciones a partir de redes aleatorias tipo Erdös–Rényi, con posibilidad de extender el análisis a otras topologías. Al incorporar pesos estadísticos a los enlaces, se obtiene una representación matricial de las interacciones caracterizada por una intensidad típica $\sigma$, una probabilidad de conectividad $p$ y el tamaño del sistema $N$. Este enfoque permite estudiar como la estructura estadística de las interacciones influye en la estabilidad de los estados estacionarios del sistema dinámico y en la aparición de transiciones entre regímenes estables e inestables.\\
 \\	
-Finalmente, es importante señalar el alcance de este trabajo. El análisis desarrollado no pretende determinar un parámetro crítico en el sentido estricto del marco de May o de la mecánica estadística, sino proponer un criterio heurístico para identificar transiciones de estabilidad en sistemas de alta dimensión. Dicho criterio se construye a partir de una cantidad tipo \textit{signal-to-noise ratio} (SNR), que permite caracterizar de manera efectiva la competencia entre la estructura promedio de las interacciones y sus fluctuaciones. En este sentido, los resultados presentados deben interpretarse como un primer acercamiento al estudio del parámetro de transición cuando la dinámica no lineal del sistema es considerada de forma explícita.
-
+Finalmente, es importante señalar el alcance de este trabajo. El análisis desarrollado no pretende determinar un parámetro crítico en el sentido estricto del marco de May o de la mecánica estadística, sino proponer un criterio heurístico para identificar transiciones de estabilidad en sistemas de alta dimensión. Dicho criterio se basa en el análisis de la dinámica temporal del sistema, permitiendo clasificar las trayectorias como estables o inestables. En este contexto, la factibilidad de los estados actúa como una condición que delimita el conjunto de configuraciones relevantes. En este sentido, los resultados presentados deben interpretarse como un primer acercamiento al estudio de las transiciones de estabilidad cuando la dinámica no lineal del sistema es considerada de forma explícita.
 

@@ -1,36 +1,35 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {chapter}{Agradecimientos}{\es@scroman {iii}}{chapter*.1}%
-\contentsline {chapter}{Resumen}{\es@scroman {v}}{chapter*.2}%
-\contentsline {chapter}{Introducción}{\es@scroman {xvii}}{chapter*.7}%
-\contentsline {chapter}{\numberline {1}Estabilidad en sistemas complejos de gran dimensión.}{1}{chapter.1}%
+\contentsline {chapter}{Introducción}{\es@scroman {xv}}{chapter*.6}%
+\contentsline {chapter}{\numberline {1}Estabilidad en sistemas dinámicos de gran dimensión.}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Antecedentes}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Planteamiento del problema}{3}{section.1.2}%
-\contentsline {chapter}{\numberline {2}El modelo de Lotka-Volterra generalizado}{7}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Caso particular para $N=2$}{7}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Generalizando a $N\gg 1$ especies.}{10}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Red de interacciones ponderada}{11}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Tipos de interacciones}{13}{subsection.2.2.2}%
-\contentsline {section}{\numberline {2.3}Estados estacionarios}{17}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Jacobiana del sistema}{20}{section.2.4}%
-\contentsline {chapter}{\numberline {3}Estabilidad del sistema de Lotka-Volterra generalizado}{25}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Consideraciones generales sobre estabilidad}{26}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Transiciones dinámicas de May}{28}{subsection.3.1.1}%
-\contentsline {section}{\numberline {3.2}Implementación numérica y metodología}{34}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Series de tiempo}{35}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Estados estacionarios}{37}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Matriz Jacobiana}{40}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Distribución espectral}{42}{subsection.3.2.4}%
-\contentsline {chapter}{\numberline {4}Transiciones de estabilidad del LV generalizado}{49}{chapter.4}%
-\contentsline {subsection}{\numberline {4.0.1}Para $N=100$}{50}{subsection.4.0.1}%
-\contentsline {subsection}{\numberline {4.0.2}Para $N=50$}{57}{subsection.4.0.2}%
-\contentsline {subsection}{\numberline {4.0.3}Para $N=25$}{59}{subsection.4.0.3}%
-\contentsline {section}{\numberline {4.1}Indicador espectral para la transición de estabilidad}{60}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Borde de estabilidad para $N=2$}{61}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Cono convexo}{62}{subsection.4.1.2}%
-\contentsline {section}{\numberline {4.2}Discusión}{67}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Sobre el carácter de la transición}{67}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Sobre la simetría estructural}{69}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Sobre la factibilidad y la estabilidad}{70}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}Sobre el parámetro crítico}{71}{subsection.4.2.4}%
-\contentsline {subsection}{\numberline {4.2.5}Alcances y limitaciones}{73}{subsection.4.2.5}%
-\contentsline {chapter}{\numberline {5}Conclusiones}{75}{chapter.5}%
+\contentsline {chapter}{\numberline {2}El modelo de Lotka-Volterra generalizado}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Caso particular para $N=2$}{5}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Generalizando a $N\gg 1$ especies.}{8}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Red de interacciones ponderada}{9}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Tipos de interacciones}{11}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Estados estacionarios}{15}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Jacobiana del sistema}{18}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Estabilidad del sistema de Lotka-Volterra generalizado}{23}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Consideraciones generales sobre estabilidad}{24}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Transiciones dinámicas de May}{26}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}Implementación numérica y metodología}{32}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Series de tiempo}{33}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Estados estacionarios}{35}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Matriz Jacobiana}{39}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Distribución espectral}{41}{subsection.3.2.4}%
+\contentsline {chapter}{\numberline {4}Transiciones de estabilidad del LV generalizado}{47}{chapter.4}%
+\contentsline {subsection}{\numberline {4.0.1}Para $N=100$}{48}{subsection.4.0.1}%
+\contentsline {subsection}{\numberline {4.0.2}Para $N=50$}{54}{subsection.4.0.2}%
+\contentsline {subsection}{\numberline {4.0.3}Para $N=25$}{56}{subsection.4.0.3}%
+\contentsline {section}{\numberline {4.1}Parámetro heurístico de transición dinámica}{58}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Borde de estabilidad para $N=2$}{58}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Cono convexo}{60}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Discusión}{64}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Sobre el carácter de la transición}{64}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Sobre la simetría estructural}{66}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Sobre la factibilidad y la estabilidad}{67}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Sobre el parámetro crítico}{68}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}Alcances y limitaciones}{71}{subsection.4.2.5}%
+\contentsline {chapter}{\numberline {5}Conclusiones}{73}{chapter.5}%
