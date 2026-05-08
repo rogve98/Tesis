@@ -1,0 +1,33 @@
+\frametitle{Estabilidad local de un sistema dinámico}
+\begin{columns}
+		\column{0.55\textwidth}
+		Sistema dinámico
+		$$\dot{X}_i=f_i(X_1,\dots,X_N)$$
+		Linealización alrededor del equilibrio
+		$$\dot{\delta X}=\mathcal{J}\delta X$$
+		\begin{block}{Estabilidad}
+			La estabilidad depende de los valores propios de $\mathcal{J}$
+		\end{block}
+		
+		\column{0.45\textwidth}
+		\centering
+		
+		\begin{tikzpicture}
+			
+			\matrix[matrix of nodes,
+			nodes={draw,minimum size=7mm},
+			column sep=-\pgflinewidth,
+			row sep=-\pgflinewidth]{
+				
+				|[fill=gray!40]| & |[fill=blue!60]| & |[fill=red!60]| \\
+				|[fill=red!60]|  & |[fill=gray!40]| & |[fill=blue!60]| \\
+				|[fill=blue!60]| & |[fill=red!60]|  & |[fill=gray!40]| \\
+				
+			};
+			
+		\end{tikzpicture}
+	
+		
+		
+		%{\small $\mathcal{J}_{ij}:=$ efecto de la especie $j$ sobre la especie $i$.}
+	\end{columns}

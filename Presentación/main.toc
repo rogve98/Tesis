@@ -1,4 +1,5 @@
 \babel@toc {spanish}{}\relax 
-\beamer@sectionintoc {1}{Antecedentes}{3}{0}{1}
-\beamer@sectionintoc {2}{Planteamiento del problema}{7}{0}{2}
-\beamer@sectionintoc {3}{Metodología}{11}{0}{3}
+\beamer@sectionintoc {1}{Contexto y antecedentes}{3}{0}{1}
+\beamer@sectionintoc {2}{Modelo y planteamiento del problema}{10}{0}{2}
+\beamer@sectionintoc {3}{Resultados}{18}{0}{3}
+\beamer@sectionintoc {4}{Conclusiones}{32}{0}{4}
