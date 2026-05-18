@@ -1,181 +1,25 @@
-\chapter{El modelo de Lotka-Volterra generalizado}
+\chapter{El modelo de Lotka--Volterra generalizado (Metodología)}
 
-%En este capítulo solo se define y se construye el modelo, se deja listo para que en el siguiente capítulo pueda ser analizado.
-\setlength{\parindent}{0cm} En este capítulo se introduce el modelo de Lotka-Volterra generalizado que será utilizado a lo largo de esta tesis. Se define el sistema dinámico, se especifican sus parámetros y la estructura de las interacciones, y posteriormente se analizan los puntos de equilibrio del sistema y su matriz Jacobiana.
-\begin{equation}\label{eqn:LK}
-	\frac{dx_i}{dt}=r_ix_i\left(1-\frac{\sum_{j=1}^N \alpha_{ij}x_j}{K_i}\right),\qquad i=1,\dots,N
-\end{equation}
-En el sistema \eqref{eqn:LK}, $x_i(t)$ representa la abundancia de la especie $i$, $r_i$ denota su tasa intrínseca de crecimiento y $K_i$ su capacidad de carga, heredados del modelo logístico. Los coeficientes $\alpha_{ij}$ codifican la intensidad y el signo de las interacciones entre las especies $i$ y $j$; dependiendo de su signo, estas interacciones pueden corresponder a escenarios de competencia, cooperación o a un régimen mixto generalizado.\\
+\setlength{\parindent}{0cm} A partir de las limitaciones discutidas en el capítulo anterior, resulta natural estudiar de forma explícita la dinámica del modelo de Lotka--Volterra generalizado, incorporando tanto la estructura de interacción entre especies como la dependencia del equilibrio sobre la estabilidad del sistema. En este capítulo se introduce la formulación matemática del modelo y las herramientas generadas para su análisis. En particular, se define la estructura de interacción mediante redes aleatorias ponderadas, se estudian los estados estacionarios relevantes del sistema y se introduce la matriz Jacobiana asociada como objeto central para el estudio local de estabilidad.
+
+\section{Red de interacciones ponderada}
+
+En el contexto del modelo de Lotka--Volterra generalizado \eqref{eqn:LK}, la red de interacciones ponderada constituye el objeto matemático que codifica la estructura de sus interacciones. Su representación matricial corresponde a la \textbf{matriz de coeficientes de interacción}, la cual determina tanto la conectividad de las especies como la intensidad de dichas interacciones. En general, esta red se construye a partir de un soporte estructural tipo Erdös–Rényi que puede ser simétrico o dirigido, junto con un conjunto de pesos que no necesariamente satisfacen simetría. \\
 \\
-A continuación, se analiza el comportamiento del sistema en el caso particular de dos especies, con el fin de fijar intuiciones antes de abordar el régimen de alta dimensión. En este último caso, debido al carácter no lineal y la alta dimensionalidad del sistema, el análisis se apoya en herramientas computacionales.
-
-\section{Caso particular para $N=2$}
-
-En el caso particular $N=2$, el sistema \eqref{eqn:LK} se reduce a un par de ecuaciones diferenciales que conservan la misma estructura funcional y parámetros del modelo general,
-\begin{align*}
-	\frac{dx_1}{dt}&=r_1 x_1\left(1-\frac{\alpha_{11}x_1}{K_1}-\frac{\alpha_{12}x_2}{K_1}\right),\\
-	\frac{dx_2}{dt}&=r_2 x_2\left(1-\frac{\alpha_{21}x_1}{K_2}-\frac{\alpha_{22}x_2}{K_2}\right).
-\end{align*}
-
-Dada la estructura del sistema, los coeficientes de interacción entre especies pueden organizarse en una \textbf{matriz de coeficientes de interacción $\Lambda$}, cuyos elementos $\alpha_{ij}$ cuantifican la relación entre las especies $j$ con $i$.
-\begin{equation}\label{eqn:mIncidencias}
-	\Lambda=
-	\begin{pmatrix}
-		\alpha_{11} & \alpha_{12}\\
-		\alpha_{21} & \alpha_{22}
-	\end{pmatrix}
-\end{equation}
-En esta representación, los coeficientes de la diagonal se fijan a un valor positivo, en particular $\alpha_{ii}=1$, lo que induce un término de autorregulación para cada especie. Este término actúa como un mecanismo disipativo que limita el crecimiento no acotado del sistema y garantiza la existencia de una escala de saturación en las abundancias. Cabe destacar que esta matriz no corresponde con la Jacobiana el sistema linealiado alrededor de un estado estacionario, sino que representa los coeficientes de interacción que aparecen directamente en el modelo no lineal. En secciones posteriores se introducirá la matriz Jacobiana, la cual se construye a partir de $\Lambda$ pero posee una interpretación dinámica diferente.
-
-\begin{ejemplo}\label{eg:2x2}
-	A continuación se considera un sistema de Lotka-Volterra para $N=2$ especies, con coeficientes de interacción constantes y positivos, de modo que el sistema muestre un escenario competitivo.
-	\begin{equation}\label{eqn:Sist2x2Comp}
-		\begin{split}
-			\frac{dx}{dt}&=2x\left(1-\frac{x}{2}\right)-xy\\
-			\frac{dy}{dt}&=3y\left(1-\frac{y}{3}\right)-2xy
-		\end{split}
-	\end{equation}
-	Para analizar la dinámica del sistema se procede a la determinación de sus puntos de equilibrio, definidos como aquellos estados del sistema donde su dinámica se anula. Esto se logra igualando a cero y resolviendo las ecuaciones del sistema \eqref{eqn:Sist2x2Comp}. El equilibrio trivial corresponde con el estado $\vec{0}$, el cual representa la extinción de ambas especies. Para los casos no triviales, la resolución del sistema algebraico conduce a los puntos de equilibrio $(2,0)$, $(0,3)$ y $(1,1)$.\\
-	\\
-	Como se puede apreciar, el sistema (\ref{eqn:Sist2x2Comp}) presenta múltiples puntos de equilibrio, en contraste con los sistemas lineales, que admiten a lo sumo uno. Este hecho es relevante, ya que en sistemas no lineales de mayor dimensión la determinación explícita de los puntos de equilibrio se vuelve cada vez más compleja. En el caso presente, se conocen los puntos de equilibrio y por tanto es posible estudiar su estabilidad local mediante la evaluación de la matriz Jacobiana del sistema en dichos estados.\\
-	\\
-	Al evaluar el Jacobiano en el estado coexistente se obtiene 
-	\begin{equation}\label{eqn:Jacobiano(1,1)}
-		\mathbb{J}_{(1,1)}=\begin{pmatrix}
-			-1 & -1\\
-			-2 & -1
-		\end{pmatrix}
-	\end{equation}
-	Los valores propios asociados a esta matriz son
-	$$\lambda_{1}=-1+\sqrt{2}>0,\qquad\lambda_2=-1-\sqrt{2}<0$$
-\end{ejemplo}
-
-\begin{wrapfigure}{r}{0.5 \textwidth} \vspace{-30pt} \begin{center}
-		\includegraphics[width=0.5\textwidth]{../Imagenes/Competencia de especies} 
-	\end{center} 
-	\vspace{-20pt} 
-	\caption{Campo vectorial de las soluciones del sistema (\ref{eqn:Sist2x2Comp}) de dos especies.} 
-	\vspace{10pt}
-	\label{fig:CompetenciaEspecies}
-\end{wrapfigure} 
-Lo que caracteriza al punto de equilibrio $(1,1)$ como un \textbf{equilibrio tipo silla}, y por tanto localmente inestable. En consecuencia, las trayectorias se alejan de este punto y la dinámica converge hacia los atractores del sistema. Esta estructura puede apreciarse en la representación del espacio de fases del sistema (Figura (\ref{fig:CompetenciaEspecies})), donde se observan las regiones de atracción asociadas a los estados $(2,0)$ o $(0,3)$. Este procedimiento, aunque no admite una generalización analítica directa a sistemas de gran dimensión, puede extenderse de manera sistemática y será desarrollado progresivamente en las secciones siguientes. Como se ha señalado, el análisis de estabilidad se basa en el proceso de linealización local del sistema no lineal alrededor de un punto de equilibrio. La matriz Jacobiana constituye la representación del sistema linealizado, por lo que resulta conveniente introducir a continuación su forma general.
-\begin{definición}\label{def:LKVectorial}
-	Sea $\mathbf{F}:\mathbb{R}^N\to\mathbb{R}^N$ el campo vectorial no lineal asociado al sistema de Lotka-Volterra generalizado, cuyas componentes están definidas por 
-	\begin{equation}\label{eqn:Fmatricial}
-		\mathbf{F}(X)=\begin{pmatrix}
-			f_1(X)=r_1x_1\left(1-\frac{\sum_{j=1}^N \alpha_{1j}x_j}{K_1}\right)\\
-			\vdots\\
-			f_N(X)=r_Nx_N\left(1-\frac{\sum_{j=1}^N \alpha_{Nj}x_j}{K_N}\right)
-		\end{pmatrix},
-	\end{equation}
-	donde $X(t)=\left(x_1(t),\dots,x_N(t))\right)\in\mathbb{R}^N$. Sea $X^*$ un punto de equilibrio del sistema, es decir, cumple $\mathbf{F}(X^*)=\mathbf{0}$. La matriz Jacobiana asociada al sistema evaluada en $X^*$ esta dada por
-	\begin{equation}\label{eqn:Jacobiano}
-		\mathbb{J}_\mathbf{F}(X^*) = \begin{pmatrix}
-			\frac{\partial f_1(X^*)}{\partial x_1} & \cdots &\frac{\partial f_1(X^*)}{\partial x_N}\\
-			\vdots & \ddots & \vdots\\
-			\frac{\partial f_N(X^*)}{\partial x_1} & \cdots &\frac{\partial f_N(X^*)}{\partial x_N}
-		\end{pmatrix}
-	\end{equation}
-\end{definición}
-
-Con esta formulación queda establecido el marco general para el análisis de la dinámica y la estabilidad del sistema de Lotka-Votlerra generalizado. En lo que sigue, el estudio se centrará en la estructura de la matriz Jacobiana con base en las interacciones entre especies. En particular, será necesario especificar cómo se modela la conectividad del sistema y la distribución de las intensidades de interacción, aspectos que resultan clave para abordar el régimen de gran dimensión $N\gg1$.
-
-\section{Generalizando a $N\gg 1$ especies.}
-
-En esta sección se establece la estructura de las interacciones del sistema Lotka-Votlerra generalizado mediante la \textbf{matriz de coeficientes de interacción}. Se introducirán los parámetros que gobiernan su construcción, con el propósito de especificar un régimen estructural del sistema y formular el esquema de simulaciones que permitirán analizar los objetivos planteados.
+Con base en la Definición \ref{def:redAleatoria}, la estructura de conectividad consiste en redes aleatorias que pueden ser dirigidas o no dirigidas, lo cual se traduce en la simetría de su matriz de adyacencia. En este contexto, el parámetro $p\in[0,1]$ indica que tan densa es la red de interacciones resultante. Por otra parte, la intensidad de las interacciones se modela mediante variables aleatorias independientes e idénticamente distribuidas con media cero y varianza finita $\sigma^2$, en particular, empleando una distribución normal $\mathcal{N}(0,\sigma^2)$.\\
 \\
-\\
-Para modelar la estructura de las interacciones se recurre al formalismo de \textit{redes}. En este contexto, el sistema puede representarse como una red dirigida ponderada $G=(V,E)$, donde los \textit{nodos} $V$ corresponden a las especies y los enlaces $E$ describen las interacciones entre ellas. A modo ilustrativo, en la Figura (\ref{fig:RedKarate}) se muestra la red del club de karate estudiada por Wayne Zachary (1977), un ejemplo clásico en teoría de redes en donde los nodos representan individuos y los enlaces sus relaciones sociales.
-\begin{wrapfigure}{l}{0.45 \textwidth} \vspace{-30pt} \begin{center}
-		\includesvg[width=.5\textwidth]{../Imagenes/karateLu} 
-	\end{center} 
-	\vspace{-20pt} 
-	\caption{Red de Karate de Zachary} 
-	\vspace{10pt}
-	\label{fig:RedKarate}
-\end{wrapfigure} 
-No obstante, la estructura de las redes puede codificarse algebraicamente mediante su \textit{matriz de adyacencia}, la cual describe la conectividad del sistema independientemente de la intensidad de las interacciones que se perciben. En el modelo de Lotka-Volterra generalizado, los coeficientes $\alpha_{ij}$ cuantifican la influencia entre la especie $j$ sobre la especie $i$. En particular, si $\alpha_{ij}=0$, no existe interacción directa entre especies. De esta manera, los coeficientes de interacción $\alpha_{ij}$ pueden interpretarse como los pesos asociados a los enlaces de una red dirigida. En consecuencia, una red ponderada cuya matriz de pesos este dada por $(\alpha_{ij})$ es algebraicamente equivalente a la matriz de coeficientes de interacción del sistema, la cual se formaliza en esta sección.
-
-
-\begin{definición}
-	Una \textbf{red dirigida} se define como un par ordenado $G=(V,E)$, donde $V=\{1,\dots,n\}$ es el conjunto de nodos y $E\subseteq V\times V$ es el conjunto de enlaces ordenados. El par $(i,j)\in E$ representa una interacción dirigida desde el nodo $i$ hasta el nodo $j$. A esta red se le asocia su \textbf{matriz de adyacencia} dirigida $\mathcal{D}\in\mathrm{M}_n(\{0,1\})$, cuyos elementos se definen como
-	$$
-	\mathcal{D}_{ij}=\begin{cases}
-		1,\quad\text{si } (i,j)\in E\\
-		0,\quad\text{en otro caso.}
-	\end{cases}
-	$$
-	En el contexto ecológico, este tipo de estructura es natural, ya que las interacciones entre especies poseen una direccionalidad inherente: la influencia de la especie $i$ sobre $j$ no necesariamente coincide en el sentido contrario. Este es precisamente el tipo de estructura considerada en el análisis de estabilidad de comunidades complejas desarrollado por Robert May. Obsérvese que, en el modelo de Lotka-Volterra generalizado, la matriz de coeficientes $(\alpha_{ij})$ puede interpretarse como una matriz de pesos asociada a esta estructura dirigida, de modo que la conectividad y la intensidad de las interacciones quedan codificadas simultáneamente.
-\end{definición}
-
-\begin{ejemplo}
-	Considérese una red dirigida con $n=10$ nodos y 14 enlaces.
-\end{ejemplo}
-
-\begin{wrapfigure}{l}{0.5 \textwidth} \vspace{-44pt} \begin{center}
-		\includesvg[width=0.52\textwidth]{../Imagenes/Red10DirLu} 
-	\end{center} 
-	\vspace{-20pt} 
-	\caption{Red dirigida de 10 nodos.} 
-	\vspace{-150pt}
-	\label{fig:Red10Dir}
-\end{wrapfigure} 
-
-$$	\mathcal{D} = \begin{pmatrix}
-	0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
-	1 & 0 & 1 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
-	0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 1 \\
-	1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-	0 & 0 & 1 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
-	0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-	0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-	0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-	0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-	0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
-\end{pmatrix}$$
-\newline
-Su matriz de adyacencia $\mathcal{D}$ no es simétrica como lo sería en un contexto de \textit{red no dirigida}, los enlaces presentan una dirección preferencial entre nodos. Esta representación codifica únicamente la existencia de enlaces $(\mathcal{D}_{ij}\in\{0,1\})$, sin incorporar información sobre su intensidad. En este ejemplo se tiene $\mathcal{D}_{ii}=0$, es decir, no se consideran autoenlaces. Sin embargo, en el modelo dinámico subyacente los términos de la diagonal $\Lambda_{ii}$ desempeñan un papel fundamental al representar los mecanismos de regulación, los cuales serán incorporados explícitamente en la construcción de la martiz de coeficientes de interacción. Las \textbf{redes de interacción ponderadas} consideradas en esta tesis se construyen a partir de una matriz de adyacencia que podrá ser simétrica o dirigida, determinando así la estructura de conectividad del sistema.
-
-\subsection{Red de interacciones ponderada}
-
-La red de interacciones ponderada constituye el objeto matemático que codifica la estructura de interacciones del modelo de Lotka-Volterra generalizado. Su representación matricial corresponde a la matriz de coeficientes de interacción, la cual determina tanto la conectividad de las especies como la intensidad de dichas interacciones. En general, esta red se construye a partir de un soporte estructural que puede ser simétrico o dirigido, junto con un conjunto de pesos que no necesariamente satisfacen simetría. \\
-\\
-Su formulación depende de un conjunto de parámetros estructurales que serán especificados más adelante. Para modelar la estructura de conectividad se emplea la \textit{red aleatoria} de Erdös–Rényi, en la cual cada posible enlace entre pares de nodos se establece de manera independiente con probabilidad $p$. Por otra parte, la intensidad de las interacciones se modela mediante variables aleatorias independientes e idénticamente distribuidas con media cero y varianza finita. \\
-\\
-Como resultado, la red de interacciones ponderada considerada en este trabajo corresponde a una \textbf{red aleatoria ponderada}, donde la topología y los pesos se introducen de manera independiente. Este enfoque puede extenderse a otras topologías, como redes libres de escala o de mundo pequeño, aunque tales generalizaciones no se contemplan en este trabajo.
-
-\begin{definición}\label{def:redAleatoria}
-	Sea un conjunto de $N$ nodos. Una red aleatoria \textbf{no dirigida} $\mathcal{G}_\mathcal{E}$ se define por su matriz de adyacencia  $\mathcal{E}\in\mathrm{M}_N(\{0,1\})$ tal que
-	$$
-	\mathcal{E}_{ij}=\begin{cases}
-		X_{ij},\quad &i<j,\\
-		X_{ji},\quad &i>j,\\
-		0,\quad &i=j
-	\end{cases},\qquad X_{ij}\sim \text{Bernoulli}(p)
-	$$
-	donde las variables $X_{ij}$ son independientes. En consecuencia, $\mathcal{E}$ es simétrica y cada enlace aparece con probabilidad $p$. En contraste, su versión \textbf{dirigida} contempla
-	$$
-	\mathcal{E}_{ij}=\begin{cases}
-		X_{ij},\quad &i\neq j,\\
-		0,\quad &i=j
-	\end{cases},\qquad X_{ij}\sim\text{Bernoulli}(p)
-	$$
-	con $X_{ij}$ independientes, por lo que $\mathcal{E}$ no es necesariamente simétrica y existen $N(N-1)$ enlaces posibles.
-\end{definición}
-
-Para completar la construcción de la estructura de las interacciones, resta incorporar la magnitud de los enlaces. Para ello se introduce una matriz aleatoria $\mathcal{M}\in \mathrm{M}_N(\mathbb{R})$, cuyas entradas se suponen independientes e idénticamente distribuidas con $\mathcal{M}_{ij}\sim\mathcal{N}(0,\sigma^2)$. Esta matriz representará la intensidad de las interacciones y, combinada con la matriz de adyacencia previamente definida, permitirá construir la matriz de coeficientes de interacción $\Lambda$.
+Como resultado, la red de interacciones ponderada considerada en este trabajo corresponde a una red aleatoria ponderada, donde la topología y los pesos se introducen de manera independiente. Este enfoque puede extenderse a otras topologías, como redes libres de escala o de mundo pequeño, aunque tales generalizaciones no se contemplan en este trabajo.
 \begin{definición}\label{def:MatrizIncidencias}
 	Sea una red aleatoria $\mathcal{G}_\mathcal{E}$ dirigida o no dirigida con matriz de adyacencia $\mathcal{E}\in\mathrm{M}_N(\{0,1\})$. Sea una matriz $\mathcal{M}\in\mathrm{M}_N(\mathbb{R})$ con entradas i.i.d. con media cero y varianza finita $\mathcal{M}_{ij}\sim\mathcal{N}(0,\sigma^2)$. La \textbf{matriz de coeficientes de interacción} $\Lambda$ se define como el producto de Hadamard \cite{HadamardProduct} de la matriz de adyacencia con la matriz de entradas aleatorias sumada con la matriz identidad
 	\begin{equation}\label{eqn:MatrizIncidencias}
 		\Lambda=(\mathcal{E}\odot \mathcal{M}) + I
 	\end{equation}
-	El producto de Hadamard restringe los coeficientes aleatorios a los enlaces de la red, mientras que la suma con la identidad introduce términos de auto-interacción que funcionan como mecanismo de autorregulación. Se dirá que la matriz $\Lambda$ es \textbf{estructuralmente simétrica} si su matriz de adyacencia $\mathcal{E}$ es simétrica, es decir, si existe interacción entre $i$ con $j$ en ambos sentidos $(\mathcal{E}_{ij}=\mathcal{E}_{ji})$, aunque las intensidades correspondientes puedan diferir ($\Lambda_{ij}\neq\Lambda_{ji}$). Por el contrario, si $\mathcal{E}$ tiene un soporte dirigido entonces se dirá que $\Lambda$ es \textbf{estructuralmente no simétrica}. Esta distinción permite separar y distinguir entre la simetría del soporte topológico y la simetría dinámica de las interacciones. 
+	El producto de Hadamard restringe los coeficientes aleatorios a los enlaces de la red, mientras que la suma con la identidad introduce términos de auto-interacción que funcionan como mecanismo de autorregulación (ver ec. \eqref{eqn:LKextendida}). Se dirá que la matriz $\Lambda$ es \textbf{estructuralmente simétrica} si su matriz de adyacencia $\mathcal{E}$ es simétrica, es decir, si existe interacción entre $i$ con $j$ en ambos sentidos $(\mathcal{E}_{ij}=\mathcal{E}_{ji})$, aunque las intensidades correspondientes puedan diferir ($\Lambda_{ij}\neq\Lambda_{ji}$). Por el contrario, si $\mathcal{E}$ tiene un soporte dirigido entonces se dirá que $\Lambda$ posee interacciones aleatorias. Esta distinción permite separar y distinguir entre la simetría del soporte topológico y la simetría dinámica de las interacciones. 
 	\newline
 \end{definición}
 
-Por lo tanto, las matrices de coeficientes de interacción quedan parametrizadas por la probabilidad de conectividad $p$, la intensidad típica de las interacciones $\sigma$ y el tamaño del sistema $N$. En la Figura (\ref{fig:RedIncidencias}) se muestra una representación visual de una red de interacciones ponderada de 8 nodos, donde se ilustran tanto la estructura de conectividad como los pesos asociados. A continuación, se procede a caracterizar los distintos tipos de interacciones que pueden presentarse en este sistema dinámico.
-
-\begin{wrapfigure}{r}{0.51 \textwidth} \vspace{-70pt} \begin{center}
+Por lo tanto, las matrices de coeficientes de interacción quedan parametrizadas por la probabilidad de conectividad $p$, la intensidad típica de las interacciones $\sigma$ y el tamaño del sistema $N$. En la 
+\begin{wrapfigure}{r}{0.51 \textwidth} \vspace{-20pt} \begin{center}
 		\includesvg[width=0.52\textwidth]{../Imagenes/RedIncidencias} 
 	\end{center} 
 	\vspace{-52pt} 
@@ -183,97 +27,10 @@ Por lo tanto, las matrices de coeficientes de interacción quedan parametrizadas
 	\vspace{-10pt}
 	\label{fig:RedIncidencias}
 \end{wrapfigure} 
+Figura (\ref{fig:RedIncidencias}) se muestra una representación visual de una red de interacciones ponderada de 8 nodos, donde se ilustran tanto la estructura de conectividad como los pesos asociados. La red de interacciones ponderada induce, en general, una estructura dirigida en la dinámica independientemente del soporte estructural que posea. Esto implica que las interacciones entre especies no necesariamente están balanceadas y pueden existir influencias preferenciales entre especies. Esta perspectiva resulta natural en contextos ecológicos, donde las interacciones suelen presentar una direccionalidad efectiva. En el contexto del modelo de Lotka--Volterra generalizado, las interacciones posibles se encuentran invertidas con respecto de la clasificación clásica de May (Tabla \eqref{tab:Interacciones}).
 
 
-\subsection{Tipos de interacciones}
 
-La red de interacciones ponderada induce, en general, una estructura dirigida en la dinámica independientemente del soporte estructural que posea. Esto implica que las interacciones entre especies no necesariamente están balanceadas y pueden existir influencias preferenciales entre especies. Esta perspectiva resulta natural en contextos ecológicos, donde las interacciones suelen presentar una direccionalidad efectiva. En esta sección se explorarán los distintos tipos de interacciones que pueden surgir de sistemas de Lotka-Volterra generalizados bajo contextos estructuralmente simétricos y con interacciones aleatorias.\\
-\\
-Hasta ahora solo se han discutido interacciones de competencia en el Ejemplo \ref{eg:2x2}, donde los coeficientes $\alpha_{ij}\in\Lambda$ se consideran positivos. Bajo esta hipótesis, el crecimiento de las especies se ve limitado por sus respectivas capacidades de carga, lo que induce una dinámica acotada. Resulta entonces natural preguntarse como cambia el comportamiento del sistema cuando se permiten coeficientes $\alpha_{ij}$ negativos, los cuales representan distintos tipos de interacción biológica. Siguiendo la clasificación clásica de Robert May \cite{may2019stability}, pueden distinguirse cinco tipos fundamentales de interacciones. \\
-\\
-Estas interacciones se clasifican en función de los signos de las \textit{community matrices}, introducidas previamente en el Capítulo 1. En consecuencia, no se definen directamente sobre la matriz de coeficientes de interacción $\Lambda$, sino sobre la Jacobiana del sistema evaluada en un estado estacionario. En sistemas estructuralmente simétricos, las posibles interacciones son: competencia $(--)$, cooperación\footnote{También conocida como mutualismo o simbiosis} $(++)$ y presa-depredador $(-+)$ ó $(+-)$. Cuando se consideran sistemas sin esta restricción estructural, pueden presentarse además $(+0)$ y amensalismo $(-0)$, dando lugar a cinco tipos de interacción en total, en contraste con los tres del caso estructuralmente simétrico.
-\\
-\\
-La cooperación implica que ambas especies se benefician de la interacción $(++)$, mientras que en la competencia ambas resultan perjudicadas $(--)$. En la interacción presa-depredador, una especie se beneficia y la otra se ve perjudicada $(+-)$ ó $(-+)$. En el comensalismo, una especie obtiene un beneficio sin afectar a la otra $(+0)$, mientras que en el amensalismo una especie resulta perjudicada y la otra permanece sin efecto apreciable $(-0)$. 
-\newline
-\begin{table}[h!]
-	\centering
-	\begin{tabular}{lll}
-		\toprule
-		\rowcolor{gray!15}
-		Tipo de interacción & Signo & Interpretación ecológica \\
-		\midrule
-		Cooperación        & $(++)$ & Ambas especies aumentan sus poblaciones.\\
-		Competencia        & $(--)$ & Ambas especies limitan o disminuyen sus poblaciones.\\
-		Presa--depredador  & $(+-)$ ó $(-+)$ & Una especie aumenta su población y la otra la disminuye.\\
-		Comensalismo       & $(+0)$ & Una especie aumenta su población sin afectar a la otra. \\
-		Amensalismo        & $(-0)$ & Una especie disminuye su población sin afectar a la otra. \\
-		\bottomrule
-	\end{tabular}
-	\caption{Tipos de interacciones posibles en sistemas de Lotka--Volterra generalizados.}
-	\label{tab:Interacciones}
-\end{table}
-
-
-\subsubsection*{Interacciones en $\Lambda$}
-
-Las interacciones en la matriz de coeficientes $\Lambda$ se relacionan con la clasificación de May (Tabla \ref{tab:Interacciones}), pero bajo una convención de signo opuesta. En esta formulación, la cooperación se representa como $(--)$, la competencia como $(++)$, la depredación como $(-+)$ ó $(+-)$, y el comensalismo y amensalismo como $(-0)$ y $(+0)$ respectivamente. Esta inversión se debe a que los coeficientes $\alpha_{ij}$ aparecen dentro del término de limitación del crecimiento; por tanto, valores positivos incrementan la presión limitante sobre la especie $i$, mientras que valores negativos la reducen. Para analizar cómo éstos coeficientes afectan la dinámica, reescribimos las ecuaciones \eqref{eqn:LK} separando la contribución de autorregulación de las interacciones interespecíficas:
-
-\begin{equation}\label{eqn:LKextendida}
-r_ix_i\left (1-\frac{\sum_{j=1}^N\alpha_{ij}x_j}{K_i}\right ) = r_ix_i\left (1-\frac{\alpha_{ii}x_i}{K_i}\right )-r_ix_i\left (\frac{\sum_{j\neq i}\alpha_{ij}x_j}{K_i}\right )
-\end{equation}
-
-El segundo término correspondiente a las interacciones interespecíficas, produce un efecto neto sobre la tasa de crecimiento de la especie $i$: sera positivo si la suma interespecífica es negativa y viceversa. En consecuencia, desde la perspectiva de la especie $i$, las interacciones de cooperación, depredación (cuando $i$ es el depredador) y comensalismo favorecen su crecimiento poblacional, mientras que  la competencia, la depredación  (cuando $i$ es la presa) y amensalismo lo reducen. Nótese que si $\alpha_{ij}=0$, la especie $j$ no genera impacto sobre la dinámica de $i$.\\
-\\
-En este contexto, los coeficientes $\alpha_{ii}$ deben ser positivos; por convención, en este trabajo se fija $\alpha_{ii}=1$. Si se tomara $\alpha_{ii}\leq0$, se perdería el mecanismo intrínseco de regulación logística asociada a la especie, eliminando la auto-limitación de su crecimiento. Por esta razón, la contribución de la identidad en $\Lambda$ representa auto-interacciones que inducen un mecanismo de autorregulación del sistema. Por otro lado, coeficientes $\alpha_{ij}<0$ pueden favorecer el crecimiento poblacional de la especie $i$, desplazando el equilibrio efectivo por encima de su capacidad de carga $K_i$, fenómeno que no se aprecia en sistemas competitivos.
-\\
-\\
-%Explorar el balance de las interacciones (positivas y negativas) puede ser un elemento importante que defina el tipo de estabilidad del sistema. Sin embargo, debe de existir un balance entre las interacciones positivas y negativas, ya que si las segundas se sobreponen a las primeras, puede ocurrir un colapso del sistema traducido en crecimiento desmedido. Este escenario corresponderá a aquellos sistemas (\ref{eqn:LK}) inestables resultantes de ciertas configuraciones en $p$, $\sigma$ y $N$ de la matriz de incidencias y se irá revisando más adelante.\\\\
-Dependiendo de los parámetros asociados a $\Lambda$, la probabilidad de conectividad $p$ controla el número esperado de interacciones por especie, mientras que $\sigma$ fija la escala típica de sus magnitudes. En general, cada especie puede interactuar con hasta $N-1$ especies adicionales, dando lugar a cualquiera de los tipos de interacción antes descritos, de acuerdo con el soporte topológico de la red. A medida que el tamaño del sistema \eqref{eqn:LK} crece, su dinámica resultante se vuelve difícil de visualizar de manera directa, por lo que resulta conveniente analizar ejemplos de baja dimensión. En particular, a continuación se extiende el ejemplo bidimensional previo para ilustrar los casos con interacciones de cooperación. 
-
-\begin{ejemplo}\label{eg:2x2CoopyDemás}
-	En este ejemplo se ajustan los signos del sistema \eqref{eqn:Sist2x2Comp} como a continuación se muestra 
-	\begin{equation}\label{eqn:Sist2x2Coop}
-		\begin{split}
-			\frac{dx}{dt} &= 2x\left (1-\frac{x}{2}\right )+\frac{1}{2}xy\\
-			\frac{dy}{dt} &= 3y\left (1-\frac{y}{3}\right )+xy
-		\end{split}
-	\end{equation}
-	La matriz de coeficientes de interacción asociada es
-	$$
-	\Lambda = \begin{pmatrix}
-		1 & -\frac{1}{2}\\
-		-1 & 1
-	\end{pmatrix}
-	$$
-	Se puede apreciar una interacción de cooperación entre las especies $x$ y $y$; en este caso, dicha interacción favorece el crecimiento de ambas poblaciones, permitiendo que el equilibrio de coexistencia se ubique por encima de sus respectivas capacidades de carga. Los estados estacionarios del sistema son $(0,0)$, $(2,0)$, $(0,3)$ y $(7,10)$. Evaluando la matriz Jacobiana en el estado coexistente se obtiene 
-	$$
-	\mathbb{J}_{(7,10)}=\begin{pmatrix}
-	-7 & 3.5\\
-	10 & -10
-	\end{pmatrix}
-	$$
-	cuyos valores propios son $\lambda_{1,2}=\frac{-17\pm\sqrt{149}}{2}<0$. Por lo tanto, el punto $(7,10)$ es localmente y asintóticamente estable, lo que implica que trayectorias cercanas convergen a este punto de equilibrio conforme $t\to\infty$. En la Figura \eqref{fig:CooperacionEspecies} se muestran las series de tiempo y el espacio fase, donde se observa que las poblaciones se estabilizan en valores superiores a sus respectivas capacidades de carga.
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[scale=0.24]{../Imagenes/Cooperacion de especies}
-		\caption{Sistema de Lotka-Volterra con interacciones de cooperación dados por las ecuaciones (\ref{eqn:Sist2x2Coop}). Tasas de crecimiento y capacidades de carga: $r_x=K_x=2$ y $r_y=K_y=3$. (\textbf{A}) Series de tiempo del sistema para las especies $x(t)$ y $y(t)$ bajo la condición inicial $(1,2)$. (\textbf{B}) Espacio fase del sistema con sus puntos fijos asociados, se muestra solamente un único punto fijo estable.}
-		\label{fig:CooperacionEspecies}
-	\end{figure}
-	
-	En este contexto, el concepto de capacidad de carga deja de interpretarse como una cota rígida para la población y pasa a entenderse como un parámetro regulador de crecimiento. En ausencia de interacciones interespecíficas, $K_i$ fija el nivel de saturación logística; sin embargo, cuando se incorporan las interacciones, el término $\sum_j \alpha_{ij}x_j$ puede modificar de forma sustancial esta regulación. Si las contribuciones efectivas asociadas a interacciones que favorecen el crecimiento dominan sobre el término autorregulatorio, el sistema puede presentar equilibrios por encima de $K_i$ o incluso dinámicas no acotadas. \\
-	 \\
- 	En sistemas de baja dimensión pueden obtenerse condiciones explícitas que relacionen la estabilidad con la intensidad de las interacciones; este tipo de resultados se retoman más adelante. \\
- 	\\
- 	Para ilustrar el papel del signo de los coeficientes, se modifica nuevamente al sistema \eqref{eqn:Sist2x2Coop} para considerar interacciones de comensalismo, amensalismo y depredación. Las simulaciones correspondientes muestran que en el comensalismo la especie beneficiada puede alcanzar niveles superiores a su capacidad de carga efectiva mientras la otra permanece prácticamente inalterada; en el amensalismo, una especie ve reducido su nivel poblacional mientras la otra no experimenta cambios apreciables; finalmente, la depredación combina ambos efectos, con una especie favorecida y la otra perjudicada. Las series de tiempo se muestran en la Figura \eqref{fig:RestoInteraccionesST}
- 	\begin{figure}[h!]
- 		\centering
- 		\includegraphics[scale=0.2]{../Imagenes/STrestoInteracciones}
- 		\caption{Series de tiempo para las interacciones comensalismo, amensalismo y depredación modificando el sistema \eqref{eqn:Sist2x2Coop}. (\textbf{A}) Para el comensalismo se definió $\alpha_{21}=0$ y $\alpha_{12}=-\frac{1}{2}$. (\textbf{B}) Para el amensalismo se consideró $\alpha_{21}=0$ y $\alpha_{12}=\frac{1}{2}$ (\textbf{C}) Para la depredación se consideró $\alpha_{21}=-1$ y $\alpha_{12}=\frac{1}{2}$.}
- 		\label{fig:RestoInteraccionesST}
- 	\end{figure}
-\end{ejemplo}
-En esta sección se estableció la forma en que la estructura de la conectividad en conjunto con la magnitud de las interacciones determinan la matriz de coeficientes $\Lambda$, así como la clasificación de los distintos tipos de interacción ecológica y su efecto cualitativo sobre la dinámica poblacional. Estos elementos permiten pasar de una descripción estructural del sistema a una análisis dinámico propiamente dicho. En particular, la información obtenida en $\Lambda$ condiciona la existencia y naturaleza de los estados estacionarios del sistema, por lo que en la siguiente sección se abordará el estudio de los puntos de equilibrio y su estabilidad.
 
 \section{Estados estacionarios}\label{sec:PuntosFijos}
 
@@ -301,10 +58,7 @@ Finalmente, el tamaño del sistema $N$ modula el efecto conjunto de $p$ y $\sigm
 ¿Cuál es el efecto de $\Lambda^{-1}$ en la distribución del punto de equilibrio? La estructura de esta matriz no puede describirse como una combinación lineal simple de variables normales; depende de la geometría espectral de $\Lambda$. En particular, la magnitud de $\Lambda^{-1}$ esta gobernada por la cercanía de los valores propios de $\Lambda$ al origen. Si $\Lambda$ es singular, es decir, si alguno de sus valores propios es cero, entonces la matriz no es invertible y el estado coexistente deja de estar bien definido. Más generalmente, cuando existe un valor propio $|\lambda_{\min}|$ cercano a cero, la inversa contiene factores del orden $1/\lambda_{\min}$, lo que produce una fuerte amplificación en las entradas de $\Lambda^{-1}$ y, por tanto, en $X^*=\Lambda^{-1}\mathrm{K}$.
 \\
 \\
-En este sentido, el espectro de $\Lambda$ se encuentra controlado por la escala efectiva $\sigma\sqrt{Np}$, la cual regula simultáneamente la dispersión del punto de equilibrio y la proximidad del espectro de $\Lambda$ al origen. Cuando este parámetro se aproxima a la unidad, la matriz tiende a mal condicionarse, la variabilidad de $X^*$ aumenta significativamente y disminuye la probabilidad de \textbf{factibilidad positiva}. Este mismo umbral coincide con la transición de estabilidad dinámica identificada en el criterio clásico de May, sugiriendo que la pérdida de estabilidad y la pérdida de factibilidad emergen del mismo mecanismo estructural. \\
-\\
-Sin embargo, este no constituye un criterio suficiente de estabilidad para el sistema de Lotka-Volterra, ya que el análisis se ha restringido al estado coexistente y no excluye la aparición de otros estados estacionarios o regímenes dinámicos alternativos.
-\newline
+En este sentido, el espectro de $\Lambda$ se encuentra controlado por la escala efectiva $\sigma\sqrt{Np}$, la cual regula simultáneamente la dispersión del punto de equilibrio y la proximidad del espectro de $\Lambda$ al origen. Cuando este parámetro se aproxima a la unidad, la matriz tiende a mal condicionarse, la variabilidad de $X^*$ aumenta significativamente y disminuye la probabilidad de \textbf{factibilidad positiva}. Este mismo umbral coincide con la transición de estabilidad dinámica identificada en el criterio clásico de May, sugiriendo que la pérdida de estabilidad y la pérdida de factibilidad emergen del mismo mecanismo estructural. 
 \begin{table}[h!]
 	\centering
 	\begin{tabular}{ll}
@@ -321,12 +75,14 @@ Sin embargo, este no constituye un criterio suficiente de estabilidad para el si
 	\label{tab:lambdaMay}
 \end{table}
 
+Sin embargo, este no constituye un criterio suficiente de estabilidad para el sistema de Lotka--Volterra, ya que el análisis se ha restringido al estado coexistente y no excluye la aparición de otros estados estacionarios o regímenes dinámicos alternativos.
+
 \section{Jacobiana del sistema}
 
-En esta sección se definirá la matriz Jacobiana del sistema \eqref{eqn:LK}, se analizará su relación estructural con la matriz de coeficientes $\Lambda$ y se discutirá un criterio de estabilidad local obtenido al evaluarla en un estado estacionario. La Jacobiana evaluada en equilibrio coincide con la \textit{community matrix} empleada en el análisis ecológico clásico, introducida por Robert May, y constituye una forma de codificar las interacciones efectivas del sistema. En particular, como se verá, los términos interespecíficos aparecen con signo opuesto a los coeficientes correspondientes en $\Lambda$, por lo que la clasificación de interacciones discutida previamente aplica de manera natural en este contexto.
+En esta sección se definirá la matriz Jacobiana del sistema \eqref{eqn:LK}, se analizará su relación estructural con la matriz de coeficientes $\Lambda$ y se discutirá un criterio de estabilidad local obtenido al evaluarla en un estado estacionario arbitrario. La Jacobiana evaluada en equilibrio coincide con la \textit{matriz de interacciones} empleada en el análisis ecológico clásico, introducido por Robert May, y constituye una forma de codificar las interacciones efectivas del sistema. En particular, como se verá, los términos interespecíficos de la Jacobiana aparecen con signo opuesto a los coeficientes correspondientes en $\Lambda$, por lo que la clasificación de interacciones clásica de la Tabla \eqref{tab:Interacciones} aplica de manera natural en este contexto.
 \\
 \\
-Recordando que la estabilidad local del sistema está determinada por los valores propios de la matriz Jacobiana evaluada en un estado estacionario, resulta fundamental analizar su espectro, lo cual se abordará en el siguiente capítulo. Con base en la Definición \ref{def:LKVectorial}, se considera el sistema en forma vectorial $\dot{X}=\textbf{F}(X)$, donde $\textbf{F}$ es la función del modelo de Lotka-Volterra generalizado, y se calcula su matriz Jacobiana \eqref{eqn:Jacobiano} a partir de sus derivadas parciales correspondientes, distinguiendo entre los términos diagonales y las interacciones interespecíficas. Se considera una función arbitraria de $\textbf{F}$
+Recordando que la estabilidad local del sistema está determinada por los valores propios de la matriz Jacobiana evaluada en un estado estacionario, resulta fundamental analizar su espectro, lo cual se abordará en el siguiente capítulo. Con base en la Definición \ref{def:LKVectorial}, se considera el sistema en forma vectorial $\dot{X}=\textbf{F}(X)$, donde $\textbf{F}$ es la función del modelo de Lotka--Volterra generalizado, y se calcula su matriz Jacobiana \eqref{eqn:Jacobiano} a partir de sus derivadas parciales correspondientes, distinguiendo entre los términos diagonales y las interacciones interespecíficas. Se considera una función arbitraria de $\textbf{F}$
 $$
 f_i = r_ix_i\left (1 - \frac{S_i}{K_i}\right ),\qquad S_i=\sum_{j=1}^N \alpha_{ij}x_j
 $$
@@ -334,7 +90,7 @@ las derivadas parciales para los términos de la diagonal son
 $$\frac{\partial f_i}{\partial x_i} = r_i\left (1-\frac{S_i}{K_i}\right )-\frac{r_ix_i}{K_i}\alpha_{ii}$$
 Para los términos que quedan fuera de la diagonal evaluados en $X^*$ se tiene
 $$\frac{\partial f_i}{\partial x_k} = -\frac{r_ix_i}{K_i}\alpha_{ik},\qquad i\neq k$$
-De este modo, la matriz Jacobiana $\mathcal{J}$ del sistema de Lotka-Volterra generalizado queda dada por la siguiente estructura al evaluar en un punto de equlibrio $X^*$ arbitrario
+De este modo, la matriz Jacobiana $\mathcal{J}$ del sistema de Lotka--Volterra generalizado queda dada por la siguiente estructura al evaluar en un punto de equlibrio $X^*$ arbitrario
 \begin{equation}\label{eqn:MatrizJacobiana} 
 	\mathcal{J}_{ij}(X^*)=\begin{cases} r_i\left (1-\frac{\sum_j\alpha_{ij}x_j^*}{K_i}\right )-\frac{r_ix_i^*}{K_i}\alpha_{ii},\qquad&\text{para }i=j\\ -\frac{r_ix_i^*}{K_i}\alpha_{ij},\qquad&\text{para }i\neq j 
 	\end{cases}
@@ -356,7 +112,7 @@ $$
 $$
 Es importante remarcar la distinción entre estados coexistentes y estados con extinción parcial para tener presentes los posibles escenarios del sistema. En las simulaciones, los estados estacionarios no se obtienen como soluciones algebraicas independientes, sino como los valores asintóticos de las trayectorias numéricas; por construcción, estos corresponden a configuraciones factibles, es decir, con $x_i^*\geq0$. Una vez identificados, su estabilidad local se evalúa mediante el signo de los valores propios de la matriz Jacobiana asociada. \\
 \\
-En este contexto, el análisis de estabilidad admite múltiples enfoques dependiendo de la estructura del equilibrio considerado y de las interacciones del sistema. Con esta motivación, a continuación se introduce un umbral suficiente que permite garantizar estabilidad bajo ciertas condiciones, el cual servirá como antesala al estudio más detallado de la estabilidad dinámica que se desarrolla en el siguiente capítulo.
+En este contexto, el análisis de estabilidad puede abordarse desde distintas perspectivas, dependiendo de la estructura del equilibrio y de las interacciones presentes en el sistema. Como referencia para el estudio de la estabilidad local, a continuación se introduce una condición suficiente basada en la localización espectral de la matriz Jacobiana, la cual permite identificar configuraciones bajo las cuales el equilibrio es estable.
 
 \begin{proposición}[Criterio suficiente de estabilidad]\label{prop:DiagonalI}
 	Sea $X^*$ un estado estacionario del sistema. Si para todo $i$
@@ -408,8 +164,9 @@ En consecuencia, si este radio típico satisface
 \begin{equation}\label{eqn:CriterioDebil}
 	(N-1)p\sigma\sqrt{\frac{2}{\pi}}<1
 \end{equation}
-puede esperarse que, en promedio los discos de Gershgorin permanezcan contenidos en el semiplano negativo de $\mathbb{C}$, proporcionando así una condición suficiente típica para la estabilidad local en el estado coexistente.
-\newpage
+puede esperarse que, en promedio los discos de Gershgorin permanezcan contenidos en el semiplano negativo de $\mathbb{C}$, proporcionando así una condición suficiente típica para la estabilidad local en el estado coexistente. Sin embargo, esta condición no determina la posición del espectro ---tal y como hace el radio espectral--- solamente establece una cota superior del área en donde los valores propios se alojan. De este modo, el \textit{criterio suficiente de estabilidad} forza a que el área efectiva del espectro se mantenga en el semiplano negativo de $\mathbb{C}$, pero no delimita el espectro como lo hace la ley circular.
+\\
+\\
 ¿Qué ocurre al considerar estados con extinción parcial? En este caso la desigualdad \eqref{eqn:DesigualdadSuficiente} deja de ser aplicable debido a la aparición de $x_i^*=0$. Considérese un equilibrio $X^*$ donde $x_i^*=0$, es decir, la especie $i$ esta extinta. Evaluando su ecuación dinámica para perturbaciones pequeñas $x_i>0$, se obtiene la siguiente aproximación 
 $$\dot{x}_i\approx x_ir_i\left (1-\frac{\sum_j\alpha_{ij}x_j^*}{K_i}\right )$$
 donde el coeficiente que multiplica a $x_i$ coincide con el elemento de la diagonal $\mathcal{J}_{ii}$ de la Jacobiana. Este término representa la tasa de crecimiento per cápita ante una perturbación positiva infinitesimal de la especie $i$. Si $K_i>\sum_j\alpha_{ij}x_j^*$, entonces $\mathcal{J}_{ii}>0$ y la perturbación crece, lo que indica que la especie puede invadir el sistema y el equilibrio resulta inestable frente a esa perturbación. En cambio si $\mathcal{J}_{ii}<0$, la especie no puede establecerse y la perturbación decae, siendo el equilibrio locamente estable respecto a esa especie.\\
