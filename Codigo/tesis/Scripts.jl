@@ -45,7 +45,7 @@ end
 Analizar parámetro críctico, en términos de las diagonales de las matrices jacobianas
 """
 
-function promediosJacobianas(σ::Float64)
+function propiedadesJacobianas(σ::Float64,propiedad::String)
     Jbs = []
     p = range(0,stop=1,length=100)
     for i in p
@@ -57,20 +57,66 @@ function promediosJacobianas(σ::Float64)
     end
     Jbs = Array.(Jbs)
     matrices = []
-    for i in 1:length(Jbs)                                                                                                                                      conjuntos = []
-        for j in 1:length(Jbs[i][:,1])
+    for i in eachindex(Jbs)                                                                                                                                      conjuntos = []
+        for j in eachindex(Jbs[i][:,1])
             ms = reshape(Jbs[i][j,:],100,100)
             push!(conjuntos,ms)
         end          
         push!(matrices,conjuntos)
     end
     diags = []
-    for i in 1:length(matrices)
+    for i in eachindex(matrices)
         push!(diags,diag.(matrices[i]))
     end
-    promedios = []
-    for i in 1:length(diags)
-        push!(promedios,mean(mean.(diags[i])))
+    if propiedad == "trazas"
+        trazas = []
+        for i in eachindex(diags)
+            push!(trazas,sum(sum.(diags[i])))
+        end
+        return trazas
+    elseif propiedad == "trazas-promedio"
+        trazas = []
+        for i in eachindex(diags)
+            push!(trazas,mean(sum.(diags[i])))
+        end
+        return trazas 
+    elseif propiedad == "promedio" 
+        promedio = []
+        for i in eachindex(diags)
+            push!(promedio,mean(mean.(diags[i])))
+        end
+        return promedio 
+    elseif propiedad == "energia"
+        energia = []
+        for i in eachindex(matrices)
+            push!(energia,-mean(sum.(matrices[i])))
+        end
+        return energia
+    elseif propiedad == "Z-particion"
+        diagonales = []
+        zParticion = []
+        for i in eachindex(diags)
+            push!(diagonales,mean(sum.(diags[i])))
+            push!(zParticion,mean(sum.(diags[i])))
+        end
+        return diagonales,zParticion
+    elseif  propiedad == "f-energiaLibre"
+        diagonales = []
+        fELibre = []
+        for i in eachindex(diags)
+            push!(diagonales,mean(sum.(diags[i])))
+            push!(fELibre,log(abs(mean(sum.(diags[i])))))
+        end
+        return diagonales,fELibre
+    elseif propiedad == "derivada-f"
+        diagonales = []
+        derivada = []
+        for i in eachindex(diags)
+            push!(diagonales,mean(sum.(diags[i])))
+            push!(derivada,mean(1/sum.(diags[i])))
+        end
+        return diagonales,derivada
+    else
+        return "Opción no válida"
     end
-    return promedios    
 end

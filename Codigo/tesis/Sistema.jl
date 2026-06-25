@@ -93,7 +93,11 @@ function integrador(params::Parametros)
             end
         end
         evs = eigvals(M)
-        return Int(all(x->x<0,real(evs)))
+        if all(x->x<0,real(evs)) && all(x->x<1e-10,sistema(X))
+            return 1
+        else
+            return 0
+        end
     end
 end
 
@@ -276,4 +280,18 @@ function integradorJacobs(params::Parametros)
             return 0,nothing,A
         end
     end
+end
+
+using JuMP, Ipopt
+
+function solucion_positiva(A, K)
+    N = length(K)
+    model = Model(Ipopt.Optimizer)
+    set_silent(model)
+
+    @variable(model, x[1:N] >= 0)
+    @objective(model, Min, sum((A * x .- K).^2))  # Minimizar ||Ax - K||²
+    optimize!(model)
+
+    return value.(x)
 end

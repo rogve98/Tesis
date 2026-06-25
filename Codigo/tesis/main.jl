@@ -33,7 +33,7 @@ function interacciones(N,p,σ,red)
     g = redAleatoria(N,p,red)
     M = adjacency_matrix(g)
     dist = Normal(0,σ)
-    Id = -1 * Matrix(I,N,N)
+    Id = -5 * Matrix(I,N,N)
     M = M.*rand(dist,N,N) + Id
     #M = 1/sqrt(N*p)*M
     return Matrix(M)#, g
@@ -148,7 +148,7 @@ end
 
 function transicionMayDir(N,p,σ)
     sol = []
-    medidas = 1000
+    medidas = 2000
     for i in p
         estables = []
         for _ in 1:medidas

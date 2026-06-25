@@ -13,6 +13,20 @@
 # que tienen parte real negativa.
 
 """
+Última fila real, utilizado para cuando los sistemas sean estables y queramos rastrear
+la última entrada real
+"""
+
+function ultima_fila_real(matriz::Matrix{Float64})
+    for i in size(matriz, 1):-1:1  # recorrer de abajo hacia arriba
+        if all(isfinite, matriz[i, :]) && all(x->x<100,matriz[i,:])
+            return i, matriz[i, :]
+        end
+    end
+    return nothing  # por si todo fuera NaN
+end
+
+"""
 Esta función solo reúne la información necesaria para poder utilizar el objeto 
 estabilidad para podes usarlo como argumento de las funciones de este módulo.
 El objeto estabilidad contiene la información completa de los parámetros y de las
@@ -20,7 +34,11 @@ soluciones del sistema y agrega el punto de equilibrio X para poder ser utilizad
 """
 
 function Interacciones(params::Parametros,sol::Soluciones)
-    X = sol.rk4[end,:]
+    if esEstable(sol.rk4)
+        X = sol.rk4[end,:]
+    else
+        _,X = ultima_fila_real(sol.rk4)
+    end
     return estabilidad(params,sol,X)
 end
 
@@ -41,11 +59,11 @@ function Jacobiano(E::estabilidad)
     for i in 1:N
         for j in 1:N
             if i == j
-                xs = zeros(N)
+                xs = 0
                 for k in 1:N
-                    xs[i] += A[i,k]*X[k]
+                    xs += A[i,k]*X[k]
                 end
-                M[i,i] = r[i]*(1-xs[i]/K[i])-r[i]*X[i]/K[i]
+                M[i,i] = r[i]*(1-xs/K[i])-r[i]*X[i]/K[i]
             else
                 M[i,j] = -r[i]*X[i]*A[i,j]/K[i]
             end
@@ -234,4 +252,60 @@ function regresionNoLineal(x::Vector,y::Vector)
         (β1,β2) = ajustedeParametros(a,b)
     end
     return (β1,β2)    
+end
+
+
+"""Contador de inversos negativos: Queremos probar la condición α_ij > 1/α_ji"""
+
+function contadorInversos(Λ::Matrix,N::Int)
+    resNeg = Int[]
+    resPd = Int[]
+    resPos = Int[]
+    contador_positivos = 0
+    contador_negativos = 0
+    contador_no_ceros = 0
+    contador_pd = 0
+
+    for i in 1:N
+        for j in 1:i
+            if i == j
+                continue
+            end
+
+            a_ij = Λ[i, j]
+            a_ji = Λ[j, i]
+            if a_ij != 0
+                contador_no_ceros +=1
+            end
+            if (a_ij>0 && a_ji<0) || (a_ji>0 && a_ij<0)
+                contador_pd+=1
+                if a_ij > 1 / a_ji
+                    push!(resPd, 1)
+                elseif a_ji > 1 / a_ij
+                    push!(resPd, 1)
+                else
+                    push!(resPd,0)
+                end
+            end
+            if a_ij > 0 && a_ji > 0
+                contador_positivos+=1
+                if a_ij > 1 / a_ji
+                    push!(resPos, 1)
+                else
+                    push!(resPos, 0)
+                end
+            end
+
+            # Contador de valores distintos de cero (solo si a_ij ≠ 0)
+            if a_ij < 0 && a_ji < 0
+                contador_negativos += 1
+                if a_ij > 1 / a_ji
+                    push!(resNeg, 1)
+                else
+                    push!(resNeg, 0)
+                end
+            end
+        end
+    end
+    return contador_no_ceros,contador_pd,resPd,contador_positivos,resPos,contador_negativos,resNeg
 end
