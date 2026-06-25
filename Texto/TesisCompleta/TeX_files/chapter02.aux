@@ -1,44 +1,75 @@
 \relax 
 \providecommand{\transparent@use}[1]{}
 \providecommand\hyper@newdestlabel[2]{}
-\@writefile{toc}{\contentsline {chapter}{\numberline {2}El modelo de Lotka--Volterra generalizado (Metodología)}{21}{chapter.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}El modelo de Lotka--Volterra generalizado}{7}{chapter.2}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {2.1}Red de interacciones ponderada}{21}{section.2.1}\protected@file@percent }
-\newlabel{def:MatrizIncidencias}{{4}{22}{}{definición.4}{}}
-\newlabel{eqn:MatrizIncidencias}{{2.1}{22}{}{equation.2.1.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Red de interacciones ponderada de 8 nodos con topología de red aleatoria dirigida $p=0.15$ y una matriz aleatoria con $\mu =0$ y $\sigma =0.2$.}}{22}{figure.caption.22}\protected@file@percent }
-\newlabel{fig:RedIncidencias}{{2.1}{22}{Red de interacciones ponderada de 8 nodos con topología de red aleatoria dirigida $p=0.15$ y una matriz aleatoria con $\mu =0$ y $\sigma =0.2$}{figure.caption.22}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}Estados estacionarios}{23}{section.2.2}\protected@file@percent }
-\newlabel{sec:PuntosFijos}{{2.2}{23}{Estados estacionarios}{section.2.2}{}}
-\newlabel{eqn:EcsPuntoFijo}{{2.2}{23}{Estados estacionarios}{equation.2.2.2}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Estabilidad del estado coexistente en función del parámetro $\sigma \sqrt  {Np}$.}}{24}{table.caption.23}\protected@file@percent }
-\newlabel{tab:lambdaMay}{{2.1}{24}{Estabilidad del estado coexistente en función del parámetro $\sigma \sqrt {Np}$}{table.caption.23}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}Jacobiana del sistema}{25}{section.2.3}\protected@file@percent }
-\newlabel{eqn:MatrizJacobiana}{{2.3}{25}{Jacobiana del sistema}{equation.2.3.3}{}}
-\newlabel{prop:DiagonalI}{{2}{26}{Criterio suficiente de estabilidad}{proposición.2}{}}
-\newlabel{proof:CondicionGershgorin}{{2.4}{26}{Jacobiana del sistema}{equation.2.3.4}{}}
-\newlabel{eqn:DesigualdadSuficiente}{{2.5}{27}{Jacobiana del sistema}{equation.2.3.5}{}}
-\newlabel{eqn:DesigualdadCoexistencia}{{2.6}{27}{}{equation.2.3.6}{}}
-\newlabel{eqn:CriterioDebil}{{2.7}{27}{Jacobiana del sistema}{equation.2.3.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Modelo de Lotka--Volterra y estabilidad local}{7}{section.2.1}\protected@file@percent }
+\newlabel{eqn:LK}{{2.1}{7}{Modelo de Lotka--Volterra y estabilidad local}{equation.2.1.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}Caso particular para $N=2$}{7}{subsection.2.1.1}\protected@file@percent }
+\newlabel{eqn:mIncidencias}{{2.2}{8}{Caso particular para $N=2$}{equation.2.1.2}{}}
+\newlabel{eg:2x2}{{2}{8}{}{ejemplo.2}{}}
+\newlabel{eqn:Sist2x2Comp}{{2.3}{8}{}{equation.2.1.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Campo vectorial de las soluciones del sistema (\ref {eqn:Sist2x2Comp}) de dos especies.}}{8}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:CompetenciaEspecies}{{2.1}{8}{Campo vectorial de las soluciones del sistema (\ref {eqn:Sist2x2Comp}) de dos especies}{figure.caption.14}{}}
+\newlabel{eqn:Jacobiano(1,1)}{{2.4}{8}{Caso particular para $N=2$}{equation.2.1.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Interacciones en el modelo de Lotka--Volterra}{9}{section.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Interacciones ecológicas}{9}{subsection.2.2.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Tipos de interacciones posibles según la clasificación de Robert May.}}{9}{table.caption.15}\protected@file@percent }
+\newlabel{tab:Interacciones}{{2.1}{9}{Tipos de interacciones posibles según la clasificación de Robert May}{table.caption.15}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Interacciones en la matriz de coeficientes}{10}{subsection.2.2.2}\protected@file@percent }
+\newlabel{eqn:LKextendida}{{2.5}{10}{Interacciones en la matriz de coeficientes}{equation.2.2.5}{}}
+\newlabel{eg:2x2CoopyDemás}{{3}{10}{}{ejemplo.3}{}}
+\newlabel{eqn:Sist2x2Coop}{{2.6}{11}{}{equation.2.2.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Sistema de Lotka--Volterra con interacciones de mutualismo dados por las ecuaciones (\ref {eqn:Sist2x2Coop}). Tasas de crecimiento y capacidades de carga: $r_x=2$, $K_x=2$ y $r_y=3$, $K_y=3$. (\textbf  {A}) Series de tiempo del sistema para las especies $x(t)$ y $y(t)$ bajo la condición inicial $(1,2)$. (\textbf  {B}) Espacio fase del sistema con sus puntos fijos asociados, donde $(7,10)$ es el único punto fijo estable.}}{11}{figure.caption.16}\protected@file@percent }
+\newlabel{fig:CooperacionEspecies}{{2.2}{11}{Sistema de Lotka--Volterra con interacciones de mutualismo dados por las ecuaciones (\ref {eqn:Sist2x2Coop}). Tasas de crecimiento y capacidades de carga: $r_x=2$, $K_x=2$ y $r_y=3$, $K_y=3$. (\textbf {A}) Series de tiempo del sistema para las especies $x(t)$ y $y(t)$ bajo la condición inicial $(1,2)$. (\textbf {B}) Espacio fase del sistema con sus puntos fijos asociados, donde $(7,10)$ es el único punto fijo estable}{figure.caption.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Series de tiempo para las interacciones comensalismo, amensalismo y depredación modificando el sistema \eqref  {eqn:Sist2x2Coop}. (\textbf  {A}) Para el comensalismo se definió $\alpha _{21}=0$ y $\alpha _{12}=-\frac  {1}{2}$. (\textbf  {B}) Para el amensalismo se consideró $\alpha _{21}=0$ y $\alpha _{12}=\frac  {1}{2}$ (\textbf  {C}) Para la depredación se consideró $\alpha _{21}=-1$ y $\alpha _{12}=\frac  {1}{2}$.}}{12}{figure.caption.17}\protected@file@percent }
+\newlabel{fig:RestoInteraccionesST}{{2.3}{12}{Series de tiempo para las interacciones comensalismo, amensalismo y depredación modificando el sistema \eqref {eqn:Sist2x2Coop}. (\textbf {A}) Para el comensalismo se definió $\alpha _{21}=0$ y $\alpha _{12}=-\frac {1}{2}$. (\textbf {B}) Para el amensalismo se consideró $\alpha _{21}=0$ y $\alpha _{12}=\frac {1}{2}$ (\textbf {C}) Para la depredación se consideró $\alpha _{21}=-1$ y $\alpha _{12}=\frac {1}{2}$}{figure.caption.17}{}}
+\newlabel{def:LKVectorial}{{3}{12}{}{definición.3}{}}
+\newlabel{eqn:Fmatricial}{{2.7}{12}{}{equation.2.2.7}{}}
+\newlabel{eqn:Jacobiano}{{2.8}{13}{}{equation.2.2.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Estabilidad en sistemas de gran dimensión: el enfoque de May}{13}{section.2.3}\protected@file@percent }
+\newlabel{eqn:paramMay}{{2.9}{13}{Estabilidad en sistemas de gran dimensión: el enfoque de May}{equation.2.3.9}{}}
+\newlabel{prop:paramMay}{{1}{14}{}{proposición.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Distribución de valores propios en sistemas de May con soporte simétrico y puramente aleatorios. En ambos ejemplos se consideró $N=100$, magnitud típica $\sigma =0.2$, para una conectividad $C=\frac  {1}{\sigma ^2 N}-0.03$ y $d=-1$.}}{15}{figure.caption.18}\protected@file@percent }
+\newlabel{fig:LeyCircularMay}{{2.4}{15}{Distribución de valores propios en sistemas de May con soporte simétrico y puramente aleatorios. En ambos ejemplos se consideró $N=100$, magnitud típica $\sigma =0.2$, para una conectividad $C=\frac {1}{\sigma ^2 N}-0.03$ y $d=-1$}{figure.caption.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces Distribución de valores propios en sistemas de May con soporte simétrico y puramente aleatorios. En ambos ejemplos se consideró $N=100$, magnitud típica $\sigma =0.4$, para una conectividad $C=\frac  {1}{\sigma ^2 N}-0.03$ y $d=-1$. La distribución mostrada en (\textbf  {A}) presenta una visible deformación debido al soporte simétrico de su matriz de interacciones asociada, por lo que la ley circular y el radio espectral no son suficientes para ajustar dicha distribución.}}{16}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:LeyCircularMay2}{{2.5}{16}{Distribución de valores propios en sistemas de May con soporte simétrico y puramente aleatorios. En ambos ejemplos se consideró $N=100$, magnitud típica $\sigma =0.4$, para una conectividad $C=\frac {1}{\sigma ^2 N}-0.03$ y $d=-1$. La distribución mostrada en (\textbf {A}) presenta una visible deformación debido al soporte simétrico de su matriz de interacciones asociada, por lo que la ley circular y el radio espectral no son suficientes para ajustar dicha distribución}{figure.caption.19}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Transiciones dinámicas}{16}{subsection.2.3.1}\protected@file@percent }
+\newlabel{sec:transMay}{{2.3.1}{16}{Transiciones dinámicas}{subsection.2.3.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces Transición dinámica en sistemas de May aleatorios en función de la conectividad $C$. Para cada configuración se generaron 3000 simulaciones independientes.}}{16}{figure.caption.20}\protected@file@percent }
+\newlabel{fig:TransicionMayDirLin}{{2.6}{16}{Transición dinámica en sistemas de May aleatorios en función de la conectividad $C$. Para cada configuración se generaron 3000 simulaciones independientes}{figure.caption.20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces Transición dinámica en sistemas de May aleatorios en función de la conectividad $C$ en escala $\log _{10}$.}}{17}{figure.caption.21}\protected@file@percent }
+\newlabel{fig:TransicionMayDirLog}{{2.7}{17}{Transición dinámica en sistemas de May aleatorios en función de la conectividad $C$ en escala $\log _{10}$}{figure.caption.21}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces Transición de May puramente aleatoria vs estructuralmente simétrica. (\textbf  {A}) Se considera para $\sigma = 0.2$ (\textbf  {B}) Se considera para $\sigma =0.6$.}}{18}{figure.caption.22}\protected@file@percent }
+\newlabel{fig:TransicionDirvsNoDir}{{2.8}{18}{Transición de May puramente aleatoria vs estructuralmente simétrica. (\textbf {A}) Se considera para $\sigma = 0.2$ (\textbf {B}) Se considera para $\sigma =0.6$}{figure.caption.22}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces Transición dinámica en función de $\sigma $ (\textbf  {A}) Se consideran sistemas de May aleatorios con 3000 simulaciones por cada configuración. (\textbf  {B}) Caso particular para $C=0.1$; se consideran las diferencias entre sistemas de soporte simétrico y puramente aleatorios.}}{18}{figure.caption.23}\protected@file@percent }
+\newlabel{fig:TransicionMaySigma}{{2.9}{18}{Transición dinámica en función de $\sigma $ (\textbf {A}) Se consideran sistemas de May aleatorios con 3000 simulaciones por cada configuración. (\textbf {B}) Caso particular para $C=0.1$; se consideran las diferencias entre sistemas de soporte simétrico y puramente aleatorios}{figure.caption.23}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.10}{\ignorespaces Variación de la transición entre sistemas estructuralmente simétricas y puramente aleatorios. Se considera el valor de la conectividad $C=0.6$.}}{19}{figure.caption.24}\protected@file@percent }
+\newlabel{fig:TransicionσDirvsNoDir}{{2.10}{19}{Variación de la transición entre sistemas estructuralmente simétricas y puramente aleatorios. Se considera el valor de la conectividad $C=0.6$}{figure.caption.24}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.11}{\ignorespaces Re--escalamiento del eje $x$ al radio espectral $\sigma \sqrt  {NC}$. Las variaciones en $C$ y $\sigma $ fueron las mismas que en los casos anteriores considerados. Para este caso particular se ha fijado $\sigma =C=0.2$.}}{21}{figure.caption.25}\protected@file@percent }
+\newlabel{fig:Transicionσ√NC02}{{2.11}{21}{Re--escalamiento del eje $x$ al radio espectral $\sigma \sqrt {NC}$. Las variaciones en $C$ y $\sigma $ fueron las mismas que en los casos anteriores considerados. Para este caso particular se ha fijado $\sigma =C=0.2$}{figure.caption.25}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.12}{\ignorespaces Re--escalamiento del eje $x$ al radio espectral $\sigma \sqrt  {NC}$. Las variaciones en $C$ y $\sigma $ fueron las mismas que en los casos anteriores considerados. Para este caso particular se ha fijado $\sigma =C=0.6$.}}{21}{figure.caption.26}\protected@file@percent }
+\newlabel{fig:Transicionσ√NC06}{{2.12}{21}{Re--escalamiento del eje $x$ al radio espectral $\sigma \sqrt {NC}$. Las variaciones en $C$ y $\sigma $ fueron las mismas que en los casos anteriores considerados. Para este caso particular se ha fijado $\sigma =C=0.6$}{figure.caption.26}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}Limitaciones del enfoque clásico y planteamiento del problema}{22}{section.2.4}\protected@file@percent }
 \@setckpt{./TeX_files/chapter02}{
-\setcounter{page}{29}
-\setcounter{equation}{7}
+\setcounter{page}{23}
+\setcounter{equation}{9}
 \setcounter{enumi}{0}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
 \setcounter{enumiv}{0}
-\setcounter{footnote}{0}
+\setcounter{footnote}{1}
 \setcounter{mpfootnote}{0}
 \setcounter{part}{0}
 \setcounter{chapter}{2}
-\setcounter{section}{3}
+\setcounter{section}{4}
 \setcounter{subsection}{0}
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{1}
+\setcounter{figure}{12}
 \setcounter{table}{1}
 \setcounter{parentequation}{0}
 \setcounter{@pps}{0}
@@ -50,7 +81,7 @@
 \setcounter{algocf}{0}
 \setcounter{FancyVerbLine}{0}
 \setcounter{linenumber}{1}
-\setcounter{LN@truepage}{46}
+\setcounter{LN@truepage}{40}
 \setcounter{FancyVerbWriteLine}{0}
 \setcounter{FancyVerbBufferIndex}{0}
 \setcounter{FancyVerbBufferLength}{0}
@@ -75,12 +106,12 @@
 \setcounter{subtable}{0}
 \setcounter{section@level}{1}
 \setcounter{Item}{0}
-\setcounter{Hfootnote}{2}
+\setcounter{Hfootnote}{1}
 \setcounter{bookmark@seq@number}{16}
-\setcounter{proposición}{2}
+\setcounter{proposición}{1}
 \setcounter{teorema}{0}
-\setcounter{corolario}{1}
-\setcounter{definición}{4}
+\setcounter{corolario}{0}
+\setcounter{definición}{3}
 \setcounter{ejemplo}{3}
 \setcounter{svg@param@lastpage}{0}
 \setcounter{svg@param@currpage}{-1}
@@ -93,7 +124,7 @@
 \setcounter{citetotal}{0}
 \setcounter{multicitecount}{0}
 \setcounter{multicitetotal}{0}
-\setcounter{instcount}{14}
+\setcounter{instcount}{19}
 \setcounter{maxnames}{3}
 \setcounter{minnames}{1}
 \setcounter{maxitems}{3}

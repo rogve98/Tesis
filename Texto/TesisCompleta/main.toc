@@ -1,37 +1,43 @@
 \babel@toc {spanish}{}\relax 
-\contentsline {chapter}{Agradecimientos}{\es@scroman {iii}}{chapter*.1}%
-\contentsline {chapter}{Introducción}{\es@scroman {xv}}{chapter*.6}%
-\contentsline {chapter}{\numberline {1}Estabilidad en sistemas dinámicos de gran dimensión.}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Sistemas complejos e interacciones}{1}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Tipos de interacciones}{2}{subsection.1.1.1}%
-\contentsline {subsection}{\numberline {1.1.2}Redes}{3}{subsection.1.1.2}%
-\contentsline {section}{\numberline {1.2}Modelo de Lotka--Volterra y estabilidad local}{5}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Caso particular para $N=2$}{5}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}Interacciones en el modelo de Lotka--Volterra}{7}{subsection.1.2.2}%
-\contentsline {section}{\numberline {1.3}Estabilidad en sistemas de gran dimensión: el enfoque de May}{10}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}Transiciones dinámicas}{13}{subsection.1.3.1}%
-\contentsline {section}{\numberline {1.4}Limitaciones del enfoque clásico y planteamiento del problema}{19}{section.1.4}%
-\contentsline {chapter}{\numberline {2}El modelo de Lotka--Volterra generalizado (Metodología)}{21}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Red de interacciones ponderada}{21}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Estados estacionarios}{23}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Jacobiana del sistema}{25}{section.2.3}%
-\contentsline {chapter}{\numberline {3}Estabilidad del modelo (Resultados preliminares)}{29}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Implementación numérica}{30}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Series de tiempo}{31}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Estados estacionarios}{33}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Matriz Jacobiana}{36}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Distribución espectral}{38}{section.3.5}%
-\contentsline {chapter}{\numberline {4}Transiciones de estabilidad (Resultados principales)}{45}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Para $N=100$}{46}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Para $N=50$}{52}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Para $N=25$}{54}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Parámetro heurístico de transición dinámica}{56}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Borde de estabilidad para $N=2$}{56}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Cono convexo}{58}{subsection.4.4.2}%
-\contentsline {section}{\numberline {4.5}Discusión}{62}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Sobre el carácter de la transición}{62}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Sobre la simetría estructural}{64}{subsection.4.5.2}%
-\contentsline {subsection}{\numberline {4.5.3}Sobre la factibilidad y la estabilidad}{65}{subsection.4.5.3}%
-\contentsline {subsection}{\numberline {4.5.4}Sobre el parámetro crítico}{66}{subsection.4.5.4}%
-\contentsline {subsection}{\numberline {4.5.5}Alcances y limitaciones}{69}{subsection.4.5.5}%
-\contentsline {chapter}{\numberline {5}Conclusiones}{71}{chapter.5}%
+\contentsline {chapter}{Prólogo}{\es@scroman {iii}}{chapter*.1}%
+\contentsline {chapter}{Agradecimientos}{\es@scroman {v}}{chapter*.2}%
+\contentsline {chapter}{Resumen}{\es@scroman {xvii}}{chapter*.7}%
+\contentsline {chapter}{\numberline {1}Interacciones en sistemas dinámicos de gran dimensión}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Estructura y dinámica de sistemas complejos}{2}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Estabilidad en sistemas dinámicos de gran dimensión}{4}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Redes Aleatorias}{5}{section.1.3}%
+\contentsline {chapter}{\numberline {2}El modelo de Lotka--Volterra generalizado}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Modelo de Lotka--Volterra y estabilidad local}{7}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Caso particular para $N=2$}{7}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}Interacciones en el modelo de Lotka--Volterra}{9}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Interacciones ecológicas}{9}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Interacciones en la matriz de coeficientes}{10}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Estabilidad en sistemas de gran dimensión: el enfoque de May}{13}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Transiciones dinámicas}{16}{subsection.2.3.1}%
+\contentsline {section}{\numberline {2.4}Limitaciones del enfoque clásico y planteamiento del problema}{22}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Propuesta metodológica}{23}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Análisis teórico}{23}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Red de interacciones ponderada}{23}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Estados estacionarios}{25}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Jacobiana del sistema}{27}{subsection.3.1.3}%
+\contentsline {section}{\numberline {3.2}Análisis numérico}{31}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Implementación numérica}{31}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Series de tiempo}{32}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Estados estacionarios}{34}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Matriz Jacobiana}{38}{subsection.3.2.4}%
+\contentsline {section}{\numberline {3.3}Distribución espectral}{40}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Transiciones de estabilidad (Resultados)}{47}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Para $N=100$}{48}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Para $N=50$}{54}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Para $N=25$}{56}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Parámetro heurístico de transición dinámica}{58}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Borde de inestabilidad para $N=2$}{58}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Cono convexo}{60}{subsection.4.4.2}%
+\contentsline {chapter}{\numberline {5}Discusión y conclusiones}{65}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Discusión}{65}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Sobre el carácter de la transición}{65}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Sobre la simetría estructural}{67}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Sobre la factibilidad y la estabilidad}{68}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}Sobre el parámetro crítico}{69}{subsection.5.1.4}%
+\contentsline {subsection}{\numberline {5.1.5}Alcances y limitaciones}{71}{subsection.5.1.5}%
+\contentsline {section}{\numberline {5.2}Conclusiones}{73}{section.5.2}%

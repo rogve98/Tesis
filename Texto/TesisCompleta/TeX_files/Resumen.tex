@@ -1,0 +1,43 @@
+\chapter{Resumen}
+
+% \section*{Breve descripción del trabajo de tesis}\label{sec:Resumen}
+
+
+\setlength{\parindent}{0cm} El presente proyecto de tesis se enmarca en el estudio de las \textit{Redes Complejas}, la \textit{Física Estadística} y la \textit{Ecología Matemática}. Tiene como propósito estudiar la dinámica temporal y la estabilidad de sistemas de \textit{Lotka--Volterra} mediante simulaciones numéricas, análisis espectral y criterios de factibilidad, con el objetivo de identificar cambios cualitativos en el comportamiento colectivo de las poblaciones, al considerar un gran número de especies interactuantes.
+\\
+\\
+El sistema de \textit{Lotka--Volterra} generalizado, utilizado para describir la dinámica de especies en interacción, constituye un marco fundamental en ecología teórica para el estudio de estabilidad, coexistencia y dinámica de comunidades complejas \cite{may2007theoretical}. En el límite de un gran número de especies, estos sistemas exhiben comportamientos emergentes cuyo estudio resulta de interés desde la perspectiva de sistemas complejos y la física estadística. La dinámica del sistema se modela mediante las ecuaciones generalizadas de \textit{Lotka--Volterra},
+$$\frac{dx_i}{dt}=r_ix_i\left(1-\sum_{j=1}^N \frac{\alpha_{ij}x_j}{K_i}\right),\qquad i=1,\dots,N,$$
+donde $x_i$ representa la abundancia de la especie $i$, $r_i$ su tasa intrínseca de crecimiento, $K_i$ su capacidad de carga y $\alpha_{ij}$ la intensidad de interacción entre las especies $i$ y $j$. En esta tesis, se investiga cómo cambios en la estructura de interacciones del sistema, parametrizada por la tupla $(p,\sigma,N)$, inducen distintos regímenes dinámicos y de estabilidad, identificables a partir de propiedades espectrales y simulaciones numéricas.
+
+
+
+\subsection*{Pregunta de investigación}
+
+La \textbf{\textit{pregunta de investigación}} consiste en determinar si es posible identificar cambios cualitativos en la estabilidad del sistema de \textit{Lotka--Volterra} y establecer una descripción de dichos cambios a partir de simulaciones numéricas y propiedades dinámicas del sistema.
+ 
+
+
+\subsection*{Objetivos}\label{sec:Objetivos}
+
+\textbf{\textit{Objetivo principal:}} Investigar las transiciones de estabilidad en el modelo de Lotka--Volterra generalizado mediante el análisis de su dinámica temporal, proponiendo un criterio heurístico para su caracterización.
+
+\textbf{\textit{Objetivos específicos:}}
+\begin{itemize}
+	\item[1.] Analizar la factibilidad de los estados estacionarios del modelo de Lotka--Volterra generalizado, distinguiendo entre regímenes de factibilidad total y parcial, y explorar su relación con la estabilidad dinámica observada en las trayectorias temporales.
+	\item[2.] Estudiar cómo la variación de los parámetros de control del ensamble (tamaño, conectividad, intensidad de interacciones) induce cambios en la probabilidad de estabilidad del sistema, caracterizando la naturaleza de las transiciones entre regímenes dinámicos.
+	\item[3.] Proponer un parámetro de orden heurístico, definido a partir de la matriz de coeficientes de interacción, que permita caracterizar la cercanía a transiciones de estabilidad dentro del conjunto de sistemas factibles.
+\end{itemize}
+
+\subsection*{Relevancia, alcances y limitaciones}
+
+El estudio se centra en sistemas de \textit{Lotka--Volterra} generalizados con interacciones aleatorias definidas sobre soportes dirigidos y estructuralmente simétricos. Mediante simulaciones numéricas, criterios de factibilidad y análisis espectral, se investiga la relación entre la estructura de las interacciones y la estabilidad dinámica del sistema. El alcance del trabajo se restringe a regímenes que convergen hacia equilibrios estables y a redes aleatorias simples, por lo que no se consideran de forma sistemática dinámicas oscilatorias, equilibrios inestables ni estructuras de interacción más complejas.
+
+
+\subsection*{Organización del trabajo de tesis}
+
+La tesis se organiza de la siguiente manera. En el capítulo 1 se presenta el estado del arte sobre la estructura, dinámica y estabilidad en sistemas dinámicos de alta dimensión. En el capítulo 2 se presentan los antecedentes sobre el modelo de Lotka--Volterra, mostrando diversos escenarios dinámicos, y posteriormente el análisis de estabilidad contextualizado en el trabajo de Robert May. En el capítulo 3 se muestra la propuesta metodológica para abordar el análisis dinámico del modelo de Lotka–Volterra generalizado desde una perspectiva tanto teórica como numérica. En el capítulo 4 se presentan los resultados sobre transiciones dinámicas de estabilidad, junto con la propuesta de un parámetro de orden heurístico que permite caracterizar la cercanía a dichas transiciones. Finalmente, en el capítulo 5 se presenta la discusión, conclusiones y perspectivas del trabajo.
+
+
+
+%Agregar si da tiempo de incluir en la discusión. Al final del capítulo 4: "cuya interpretación se discute en relación con criterios clásicos de estabilidad."

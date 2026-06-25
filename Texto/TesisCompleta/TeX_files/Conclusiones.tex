@@ -1,4 +1,132 @@
-\chapter{Conclusiones}
+\chapter{Discusión y conclusiones}
+
+\section{Discusión}
+
+\subsection{Sobre el carácter de la transición}
+
+\setlength{\parindent}{0cm} Existen trabajos que abordan modelo de Lotka--Volterra generalizado en términos de transiciones análogas a las observadas en sistemas de \textit{spin glasses}, como el trabajo de Guy Bunin \cite{bunin2017ecological}, donde se analiza la aparición de regímenes complejos en sistemas ecológicos de gran dimensión. En esta línea, distintos estudios han explorado la posible existencia de fases críticas marginales del tipo Gardner, originalmente introducidas en la teoría de spin glasses \cite{biroli2018marginally,altieri2021properties}.
+\\
+\\
+En particular, en el trabajo de Ada Altieri \textit{et al.} resulta relevante, ya que considera un modelo de Lotka--Volterra generalizado con interacciones estrictamente simétricas y presencia de ruido estocástico. Bajo esas condiciones, la dinámica puede reformularse como un flujo de gradiente asociado a un Hamiltoniano efectivo, de modo que el sistema evoluciona según
+$$\frac{dx_i}{dt}=-\frac{\partial H}{\partial x_i}$$
+En este contexto, el Hamiltoniano efectivo permite relacionar los mínimos de energía con los distintos atractores del sistema. El análisis estadístico de esta función de energía permite explorar distintos regímenes dinámicos conforme varían los parámetros del modelo. Dependiendo del régimen, el sistema puede presentar un único equilibrio estable, múltiples equilibrios o incluso un número exponencial de mínimos metaestables asociados a modos blandos característicos de la fase Gardner.
+\\
+\\
+En este marco resulta particularmente útil analizar la matriz Hessiana del Hamiltoniano efectivo, denotada por $\mathcal{H}$, ya que su espectro caracteriza la estabilidad local de los puntos críticos del paisaje de energía. En particular, cuando todos los valores propios de la Hessiana son positivos
+$$\lambda_{\min}>0$$
+el punto crítico corresponde a un mínimo local del Hamiltoniano y, por tanto, a un atractor dinámico del sistema. En contraste, la aparición de valores propios que se aproximan a cero indica que la curvatura del paisaje de energía se aplana en ciertas direcciones, dando lugar a los denominados modos blandos asociados a estados de estabilidad marginal. Este fenómeno es característico de la fase crítica tipo Gardner, donde el número de mínimos metaestables puede crecer rápidamente con el tamaño del sistema. Finalmente, la presencia de valores propios negativos en la Hessiana indica direcciones inestables en el paisaje de energía, correspondientes a puntos silla o máximos del Hamiltoniano.
+\\
+\\
+En nuestro contexto se consideran sistemas de Lotka--Volterra generalizado con dinámica dirigida, de modo que la matriz de interacción no es simétrica, \emph{i.e.}, en general $\alpha_{ij}\neq\alpha_{ji}$. Bajo estas condiciones, la dinámica ya no puede escribirse como un flujo gradiente asociado a un potencial efectivo.  En particular, el campo vectorial del sistema no es conservativo, ya que las derivadas cruzadas no satisfacen la condición de integrabilidad
+$$\frac{\partial f_i}{\partial x_j}\neq\frac{\partial f_j}{\partial x_i}$$
+lo cual impide la definición de un Hamiltoniano global que describa la dinámica. En consecuencia, el análisis del sistema no puede formularse en términos de un paisaje de energía. En su lugar, la estabilidad del equilibrio se caracteriza a partir de la matriz Jacobiana evaluada en el equilibrio. De manera análoga al papel que desempeña la matriz Hessiana en sistemas tipo gradiente, el espectro de la Jacobiana determina la estabilidad lineal del equilibrio y permite identificar los regímenes dinámicos del sistema.\\
+\\
+Por esta razón, a lo largo de este trabajo se ha enfatizado que las transiciones observadas deben interpretarse como transiciones dinámicas, asociados a cambios de estabilidad del equilibrio, sin implicar la presencia de un mecanismo termodinámico subyacente ni una transición de fase en el sentido estadístico habitual.
+
+\subsubsection*{Implicación ecológica}
+
+La distinción entre interacciones simétricas y asimétricas tiene implicaciones profundas para la naturaleza de la dinámica del sistema. Cuando la matriz de interacciones es simétrica, la dinámica del sistema puede reformularse como un flujo de gradiente asociado a un potencial efectivo. En este caso, el sistema satisface una condición análoga al balance detallado y su evolución puede interpretarse como un proceso de relajación hacia mínimos de un paisaje de energía efectivo.\\
+\\
+En contraste, cuando las interacciones son asimétricas, el campo vectorial deja de ser conservativo y ya no existe un potencial global que describa la dinámica. En términos dinámicos, esto implica la aparición de corrientes en el espacio de fases y la ausencia de una descripción en términos de un paisaje de energía. La asimetría de las interacciones introduce direccionalidad entre los intercambios entre especies y convierte al sistema en un ejemplo de sistema dinámico fuera de equilibrio, en el sentido de la teoría de sistemas disipativos desarrollada por Ilya Prigogine \cite{prigogine1963introduction}.
+\\
+\\
+Desde una perspectiva ecológica, asumir interacciones estrictamente simétricas constituye un escenario altamente idealizado. Las interacciones entre especies suelen ser inherentemente dirigidas y heterogéneas, por lo que el modelo de Lotka--Volterra generalizado con interacciones no necesariamente simétricas proporciona una descripción más natural de ecosistemas como sistemas dinámicos fuera del equilibrio. En este contexto, las transiciones que observamos emergen de propiedades geométricas y espectrales de la matriz de interacción, particularmente de la organización de sus ciclos dirigidos y de las condiciones necesarias para la factibilidad del equilibrio.
+
+\subsection{Sobre la simetría estructural}
+
+En el contexto de la simetría estructural se introdujo previamente la condición \eqref{eqn:relacionHeuristica} como un criterio que garantiza estabilidad en el caso  $N=2$. En este escenario el sistema únicamente contiene un ciclo de interacción posible, correspondiente al par de interacciones recíprocas entre las especies. Como consecuencia, dicha condición controla de manera directa la estabilidad del equilibrio.\\
+\\
+Sin embargo, en sistemas de mayor dimensión $N\gg 2$ la situación cambia de manera cualitativa.  A medida que el número de especies aumenta, el sistema admite un número creciente de ciclos de interacción de orden superior. Estos ciclos contribuyen colectivamente a la estructura espectral de la matriz Jacobiana y, por lo tanto, a la estabilidad del equilibrio. En este régimen, los ciclos de interacción de orden dos dejan de ser el único mecanismo  relevante y su efecto queda inmerso dentro de una red mucho más compleja de retroalimentaciones dirigidas.\\
+\\
+En consecuencia, la estabilidad del sistema ya no puede entenderse únicamente a partir de condiciones locales a pares de especies, sino que emerge de la interacción global entre ciclos dirigidos de distintas longitudes. No obstante, la deformación observada en el espectro de $\Lambda$, y por consiguiente en el espectro de la matriz Jacobiana, puede estar relacionada con la presencia sistemática de ciclos de interacción de orden dos. La simetría estructural del soporte introduce correlaciones entre pares de entradas $\alpha_{ij}$ y $\alpha_{ji}$, asociadas a interacciones recíprocas entre especies. Estas correlaciones inducen simultáneamente componentes simétricas y antisimétricas en la matriz efectiva de interacción, lo que rompe la isotropía espectral característica de matrices completamente desordenadas. 
+\\
+\\
+Como resultado, el espectro de $\Lambda$ tiende a elongarse preferencialmente en dirección de los ejes coordenados, en particular sobre el eje real. Este efecto modifica la localización del borde espectral de la Jacobiana y, por lo tanto, influye en las condiciones de estabilidad del equilibrio. En consecuencia, aunque los ciclos de interacción de orden dos no determinen por sí solos la estabilidad del sistema cuando $N\gg1$, sí introducen correlaciones estructurales que contribuyen a la deformación espectral observada.
+\\
+\\
+Sin embargo, los resultados numéricos indican que la deformación del espectro no depende únicamente de la magnitud típica de las interacciones $\sigma$. En particular, se observan casos en redes altamente dispersas (ver Figura \eqref{fig:EspectroCoexistenteSim}) donde, aún para valores moderados de $\sigma$, el espectro presenta una deformación anisotrópica de tipo cruz. Esto sugiere que la estructura topológica de la red, y en particular el régimen de dispersión del soporte, puede amplificar el efecto de correlaciones locales asociadas a ciclos de interacción recíprocos. Por lo tanto, el papel preciso de los ciclos de interacción de orden dos en la organización espectral de la matriz $\Lambda$ requiere un análisis más detallado que excede el alcance del presente trabajo.
+
+\subsection{Sobre la factibilidad y la estabilidad}
+
+La estructura de la matriz de coeficientes de interacción $\Lambda$ determina la factibilidad del equilibrio, lo cual se ha analizado a lo largo de este trabajo mediante el marco geométrico del cono convexo generado por sus vectores columna. En este contexto, la factibilidad del equilibrio depende de que el vector de capacidades de carga pertenezca al cono convexo generado por dichas columnas.
+\\
+\\
+Por otra parte, la estabilidad del equilibrio está gobernada por el espectro de la matriz Jacobiana del sistema. En el modelo de Lotka–Volterra generalizado, la Jacobiana puede escribirse como una transformación de $\Lambda$ ponderada por las abundancias del equilibrio $X^*$. En consecuencia, aunque las abundancias deformen la matriz efectiva del sistema, la organización global del espectro permanece fuertemente condicionada por la estructura de $\Lambda$.
+\\
+\\
+En las simulaciones realizadas se consideraron matrices cuya distribución espectral presenta dos tipos de geometría principales: isotrópica y anisotrópica con elongación hacia los ejes coordenados. Bajo este marco, los resultados obtenidos sugieren que la estabilidad del sistema requiere necesariamente la existencia de un equilibrio factible —al menos parcialmente factible—, mientras que la factibilidad por sí misma no garantiza la estabilidad. En otras palabras, pueden existir equilibrios factibles cuya estructura espectral conduce a un equilibrio dinámicamente inestable.
+\\
+\\
+La metodología utilizada en este trabajo se centró en identificar equilibrios estables a partir de las series de tiempo del sistema. Como consecuencia, el análisis no explora sistemáticamente el régimen en el cual existen estados factibles pero dinámicamente inestables. Este hecho resalta que, aun cuando el equilibrio sea factible desde el punto de vista geométrico, la organización espectral de $\Lambda$ ---y posteriormente de la matriz Jacobiana--- resulta determinante para establecer su estabilidad.
+\\
+\\
+Finalmente, la geometría espectral de $\Lambda$ ---y en consecuencia de la matriz Jacobiana $\mathcal{J}$--- también determina la proximidad del sistema a la estabilidad marginal. En particular, cuando el espectro contiene valores propios que se aproximan a cero ($\lambda\to0$), el sistema desarrolla modos blandos asociados a tiempos de relajación largos, característicos de estados cercanos al umbral de estabilidad.
+
+\subsection{Sobre el parámetro crítico}
+
+El parámetro crítico propuesto en este trabajo se encuentra principalmente asociado a la factibilidad del estado equilibrio. Sin embargo, este parámetro no constituye por sí mismo un criterio estricto de estabilidad dinámica del equilibrio. En esta sección se propone un ajuste heurístico del parámetro crítico a partir de la observación de algunas transiciones dinámicas representativas. Este ajuste busca incorporar, de manera aproximada, el efecto que la estructura espectral del sistema tiene sobre la estabilidad. \\
+\\
+Resulta notable que la escala característica obtenida presenta la misma dependencia funcional que el parámetro clásico introducido por May para la estabilidad de sistemas ecológicos aleatorios. Esta coincidencia sugiere que ambas condiciones ---factibilidad y estabilidad--- pueden estar gobernadas por una misma escala estructural del sistema, aunque emergen de mecanismos conceptualmente distintos. El caso $\kappa=1$ recupera la escala espectral clásica de May, la cual describe adecuadamente el inicio de la pérdida de estabilidad observada en las simulaciones. Sin embargo, las transiciones dinámicas presentan una región transitoria amplia y gradual que no puede capturarse mediante un umbral abrupto basado únicamente en el radio espectral. En este contexto, valores efectivos $\kappa<1$ permiten parametrizar heurísticamente el ensanchamiento de la transición observado en el sistema.
+\\
+\\
+A continuación se presentan los valores del criterio suficiente de estabilidad y de la SNR ajustada a $\kappa=0.9$ para sistemas con soporte estructuralmente simétrico y dirigido. Ambos criterios se contrastan en sistemas dependientes de $p$ considerando los casos $\sigma=0.2$ y $\sigma=1.0$. En la Figura \eqref{fig:kappasigma02} se muestra el caso $\sigma=0.2$. El criterio suficiente de estabilidad delimita un régimen de conectividad $p$ donde el sistema permanece estable, cumpliendo su función como condición conservadora. En contraste, el valor crítico $p_c$ inducido por el parámetro 
+$\kappa$ se ubica aproximadamente al inicio de la transición de estabilidad.\\
+\\
+Debido a que en este escenario la transición ocurre a través de un transitorio amplio, el criterio basado en la SNR permite capturar de manera adecuada la separación entre un régimen estable, un régimen marginalmente estable asociado al transitorio dinámico, y finalmente un régimen inestable.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.16]{../Imagenes/kappasigma02}
+	\caption{Transición dinámica en función de la conectividad para $\sigma=0.2$ considerando $\kappa=0.9$. (\textbf{A}) Escala lineal. (\textbf{B}) Escala logarítmica.}
+	\label{fig:kappasigma02}
+\end{figure}
+
+Por otro lado, en la Figura \eqref{fig:kappasigma1} se muestra el contraste correspondiente al escenario $\sigma=1.0$. En este régimen ambos criterios se ubican en una escala de conectividad similar, describiendo adecuadamente la transición del sistema con soporte dirigido. En contraste, estos parámetros no reproducen de forma precisa la transición en el sistema con soporte estructuralmente simétrico. Incluso en este régimen persisten transitorios amplios que pueden atribuirse a la geometría espectral de las matrices $\Lambda$ y $\mathcal{J}$, particularmente a las deformaciones inducidas por las correlaciones asociadas a ciclos de interacción recíprocos.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.16]{../Imagenes/kappasigma1}
+	\caption{Transición dinámica en función de la conectividad para el caso $\sigma=1.0$ considerando $\kappa=0.9$. (\textbf{A}) Escala lineal. (\textbf{B}) Escala logarítmica.}
+	\label{fig:kappasigma1}
+\end{figure}
+
+En consecuencia, el caso estructuralmente simétrico requiere correcciones adicionales que incorporen de manera explícita estas correlaciones estructurales, lo cual queda fuera del alcance de esta tesis. En la Figura \eqref{fig:kappaps} se muestran dos transiciones en función de $\sigma$ para $p=0.1$ y $p=1.0$. En ambos casos se observa un comportamiento cualitativamente consistente con los resultados anteriores para el criterio suficiente de estabilidad y el parámetro basado en la SNR. Sin embargo, para $p=0.1$ se registran desviaciones entre los sistemas con soporte dirigido y con soporte estructuralmente simétrico. Estas diferencias pueden atribuirse a las correlaciones inducidas por la simetría estructural del soporte, las cuales modifican la geometría espectral de las matrices $\Lambda$ y $\mathcal{J}$
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.16]{../Imagenes/kappaps}
+	\caption{Transiciones dinámica en función de $\sigma$ considerando $\kappa=0.9$. (\textbf{A}) Caso particular para $p=0.1$. (\textbf{B}) Caso particular para $p=1.0$.}
+	\label{fig:kappaps}
+\end{figure}
+
+Por lo tanto, el valor crítico $\sigma_c$ inducido por el parámetro $\kappa$ también presenta desviaciones en el caso estructuralmente simétrico, lo que sugiere que este escenario también requiere correcciones adicionales que incorporen explícitamente dichas correlaciones. Por lo tanto, el parámetro crítico propuesto debe entenderse como una construcción heurística que captura la escala característica del sistema. Aunque surge del análisis de la factibilidad del equilibrio, su dependencia funcional coincide con la escala que gobierna la expansión espectral de las matrices de interacción. Esta correspondencia sugiere la existencia de un puente conceptual entre la geometría de factibilidad y los criterios espectrales de estabilidad, cuya formalización rigurosa queda como una dirección natural para trabajos futuros.
+
+
+\subsection{Alcances y limitaciones}
+
+El presente trabajo estudia sistemas de Lotka–Volterra generalizados en los cuales las interacciones entre especies se modelan mediante matrices aleatorias definidas sobre un soporte topológico. En particular, se consideran dos tipos de estructura de red: soportes dirigidos y estructuralmente simétricos, los cuales inducen diferentes patrones de correlación en las interacciones entre especies. La dinámica del sistema incorpora además un término de autorregulación logística que estabiliza el crecimiento individual de cada especie. 
+\newpage
+Asimismo, se consideraron tasas de crecimiento y capacidades de carga homogéneas para todas las especies de los sistemas analizados. Esta simplificación permitió aislar el efecto de los parámetros $(p,\sigma,N)$ sobre las transiciones de estabilidad, evitando que la heterogeneidad en los parámetros demográficos indujera factores adicionales que dificulten la interpretación de los resultados. Sin embargo, esta hipótesis reduce el realismo biológico del modelo, ya que en ecosistemas reales las especies suelen presentar tasas de crecimiento y capacidades de carga distintas.\\
+\\
+Dentro de este marco, el análisis se centra en la relación entre factibilidad del equilibrio y estabilidad dinámica. Para ello se utilizan herramientas provenientes de la geometría convexa, que permiten caracterizar la factibilidad de los estados estacionarios, y del análisis espectral de matrices aleatorias, que describe la estabilidad del sistema a partir de la distribución de valores propios de la matriz Jacobiana. Este enfoque permite identificar cómo la estructura estadística de la matriz de interacciones y la topología del soporte influyen en la geometría espectral del sistema y, en consecuencia, en su estabilidad.
+\\
+\\
+Los resultados obtenidos se interpretan en el contexto de sistemas de gran dimensión y con interacciones aleatorias, donde la estructura espectral de las matrices de interacción presenta distribuciones aproximadamente isotrópicas o deformaciones moderadas inducidas por correlaciones estructurales del soporte. En particular, el trabajo explora cómo estas correlaciones pueden modificar la geometría del espectro y afectar las condiciones de estabilidad del equilibrio.
+\\
+\\
+No obstante, el alcance del estudio presenta ciertas limitaciones. La metodología empleada se enfocó en sistemas cuya dinámica converge hacia un equilibrio estable, lo cual permitió identificar los puntos fijos a partir de simulaciones dinámicas. Como consecuencia, no se investigó de manera sistemática el régimen en el que existen equilibrios factibles pero dinámicamente inestables, ni se exploraron otros comportamientos dinámicos posibles como ciclos límite o dinámicas no estacionarias. Asimismo, el análisis se restringe a redes aleatorias simples y no considera estructuras de interacción más complejas que podrían surgir en sistemas ecológicos reales.
+
+\subsection*{Perspectivas y extensiones}
+
+El análisis presentado abre diversas líneas de investigación futuras. En particular, extender el análisis con tasas de crecimiento y capacidades de carga heterogéneas para observar que tanto difiere de los resultados presentados en esta tesis. También resulta relevante estudiar el efecto de correlaciones estructurales entre interacciones recíprocas, como los ciclos de interacción de longitud dos, sobre la geometría espectral de las matrices de interacción. Asimismo, sería de interés extender el marco considerado hacia topologías de red más complejas, tales como redes libres de escala, modulares o jerárquicas, así como explorar el impacto de distribuciones estadísticas alternativas para las interacciones ecológicas.
+\\
+\\
+Desde el punto de vista teórico, un problema abierto consiste en formalizar analíticamente el criterio crítico propuesto, de modo que la conexión observada entre la factibilidad geométrica del equilibrio y la estabilidad espectral del sistema pueda establecerse en un marco matemático más riguroso. De igual forma, resulta relevante estudiar con mayor detalle la aparición de estados cercanos a estabilidad marginal y los transitorios dinámicos amplios observados en sistemas de gran dimensión.
+\\
+\\
+Finalmente, una dirección particularmente interesante consiste en caracterizar el régimen en el cual existen equilibrios factibles pero dinámicamente inestables, así como explorar la dinámica que emerge en dicho escenario. Estos problemas sugieren que la relación entre factibilidad y estabilidad en ecosistemas complejos constituye un campo abierto de investigación.
+
+
+%\subfile{./TeX_files/AuxiliarComp.tex}
+
+\section{Conclusiones}
 
 \setlength{\parindent}{0cm} 
 
@@ -18,15 +146,7 @@ Por otro lado, se observó que la estructura topológica del soporte de interacc
 \\
 \\
 Finalmente, el trabajo propone un criterio heurístico que relaciona la factibilidad geométrica del equilibrio con la escala espectral que gobierna la estabilidad del sistema. Aunque este criterio se deriva desde un argumento basado en la geometría del cono convexo asociado a la matriz de de coeficientes de interacción, la escala crítica obtenida coincide con la asociada al radio espectral. Este resultado sugiere la existencia de un puente conceptual entre la geometría de la factibilidad del equilibrio y los criterios espectrales de estabilidad en sistemas ecológicos complejos.
-
-\subsection*{Perspectivas y extensiones}
-
-El análisis presentado abre diversas líneas de investigación futuras. En particular, resulta relevante estudiar el efecto de correlaciones estructurales entre interacciones recíprocas, como los ciclos de interacción de longitud dos, sobre la geometría espectral de las matrices de interacción. Asimismo, sería de interés extender el marco considerado hacia topologías de red más complejas, tales como redes libres de escala, modulares o jerárquicas, así como explorar el impacto de distribuciones estadísticas alternativas para las interacciones ecológicas.
 \\
 \\
-Desde el punto de vista teórico, un problema abierto consiste en formalizar analíticamente el criterio crítico propuesto, de modo que la conexión observada entre la factibilidad geométrica del equilibrio y la estabilidad espectral del sistema pueda establecerse en un marco matemático más riguroso. De igual forma, resulta relevante estudiar con mayor detalle la aparición de estados cercanos a estabilidad marginal y los transitorios dinámicos amplios observados en sistemas de gran dimensión.
-\\
-\\
-Finalmente, una dirección particularmente interesante consiste en caracterizar el régimen en el cual existen equilibrios factibles pero dinámicamente inestables, así como explorar la dinámica que emerge en dicho escenario. Estos problemas sugieren que la relación entre factibilidad y estabilidad en ecosistemas complejos constituye un campo abierto de investigación.
-\newpage
 En conjunto, los resultados sugieren que la dinámica de ecosistemas complejos puede entenderse como la interacción entre la geometría de factibilidad del equilibrio, la estructura espectral de las interacciones y la topología de la red ecológica, lo que abre la posibilidad de desarrollar marcos teóricos unificados para describir la estabilidad de comunidades de alta dimensión.
+

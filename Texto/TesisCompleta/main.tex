@@ -56,7 +56,11 @@
 \usepackage{svg}
 
 
-\usepackage[backend=biber,style=numeric]{biblatex}
+\usepackage[
+backend=biber,
+style=numeric,
+sorting=none
+]{biblatex}
 \bibliography{./TeX_files/referencias.bib}
 
 
@@ -69,7 +73,7 @@
 \faculty{Facultad de Ciencias}
 \degree{F\'ISICO}
 \supervisor{Dr. Sergio Antonio Alcalá Corona}
-\cityandyear{Ciudad Universitaria, CDMX, 2024}
+\cityandyear{Ciudad Universitaria, CDMX, 2026}
 \logouni{Escudo-UNAM}
 \logofac{Escudo-FCIENCIAS}
 
@@ -84,21 +88,20 @@
 \maketitle
 
 \begin{flushright}%
-	\emph{A mis padres...}\\
-	\emph{A mi hermano...}
+	\emph{Dedicado principalmente}\\
+	\emph{A mi mamá, a mi papá}\\
+	\emph{A mi hermano.}
 	\thispagestyle{empty}
 \end{flushright}
 
-\chapter{Agradecimientos}
-
-%\chapter{Resumen}
+\include{./TeX_files/Prologo.tex}
 
 \tableofcontents
 \listoffigures
 \listoftables
 \listofalgorithms
 
-\include{./TeX_files/Introducción.tex}
+\include{./TeX_files/Resumen.tex}
 
 \mainmatter
 \include{./TeX_files/chapter01}

@@ -1,176 +1,321 @@
-\chapter{El modelo de Lotka--Volterra generalizado (Metodología)}
+\chapter{El modelo de Lotka--Volterra generalizado}
 
-\setlength{\parindent}{0cm} A partir de las limitaciones discutidas en el capítulo anterior, resulta natural estudiar de forma explícita la dinámica del modelo de Lotka--Volterra generalizado, incorporando tanto la estructura de interacción entre especies como la dependencia del equilibrio sobre la estabilidad del sistema. En este capítulo se introduce la formulación matemática del modelo y las herramientas generadas para su análisis. En particular, se define la estructura de interacción mediante redes aleatorias ponderadas, se estudian los estados estacionarios relevantes del sistema y se introduce la matriz Jacobiana asociada como objeto central para el estudio local de estabilidad.
+\section{Modelo de Lotka--Volterra y estabilidad local}
 
-\section{Red de interacciones ponderada}
-
-En el contexto del modelo de Lotka--Volterra generalizado \eqref{eqn:LK}, la red de interacciones ponderada constituye el objeto matemático que codifica la estructura de sus interacciones. Su representación matricial corresponde a la \textbf{matriz de coeficientes de interacción}, la cual determina tanto la conectividad de las especies como la intensidad de dichas interacciones. En general, esta red se construye a partir de un soporte estructural tipo Erdös–Rényi que puede ser simétrico o dirigido, junto con un conjunto de pesos que no necesariamente satisfacen simetría. \\
-\\
-Con base en la Definición \ref{def:redAleatoria}, la estructura de conectividad consiste en redes aleatorias que pueden ser dirigidas o no dirigidas, lo cual se traduce en la simetría de su matriz de adyacencia. En este contexto, el parámetro $p\in[0,1]$ indica que tan densa es la red de interacciones resultante. Por otra parte, la intensidad de las interacciones se modela mediante variables aleatorias independientes e idénticamente distribuidas con media cero y varianza finita $\sigma^2$, en particular, empleando una distribución normal $\mathcal{N}(0,\sigma^2)$.\\
-\\
-Como resultado, la red de interacciones ponderada considerada en este trabajo corresponde a una red aleatoria ponderada, donde la topología y los pesos se introducen de manera independiente. Este enfoque puede extenderse a otras topologías, como redes libres de escala o de mundo pequeño, aunque tales generalizaciones no se contemplan en este trabajo.
-\begin{definición}\label{def:MatrizIncidencias}
-	Sea una red aleatoria $\mathcal{G}_\mathcal{E}$ dirigida o no dirigida con matriz de adyacencia $\mathcal{E}\in\mathrm{M}_N(\{0,1\})$. Sea una matriz $\mathcal{M}\in\mathrm{M}_N(\mathbb{R})$ con entradas i.i.d. con media cero y varianza finita $\mathcal{M}_{ij}\sim\mathcal{N}(0,\sigma^2)$. La \textbf{matriz de coeficientes de interacción} $\Lambda$ se define como el producto de Hadamard \cite{HadamardProduct} de la matriz de adyacencia con la matriz de entradas aleatorias sumada con la matriz identidad
-	\begin{equation}\label{eqn:MatrizIncidencias}
-		\Lambda=(\mathcal{E}\odot \mathcal{M}) + I
-	\end{equation}
-	El producto de Hadamard restringe los coeficientes aleatorios a los enlaces de la red, mientras que la suma con la identidad introduce términos de auto-interacción que funcionan como mecanismo de autorregulación (ver ec. \eqref{eqn:LKextendida}). Se dirá que la matriz $\Lambda$ es \textbf{estructuralmente simétrica} si su matriz de adyacencia $\mathcal{E}$ es simétrica, es decir, si existe interacción entre $i$ con $j$ en ambos sentidos $(\mathcal{E}_{ij}=\mathcal{E}_{ji})$, aunque las intensidades correspondientes puedan diferir ($\Lambda_{ij}\neq\Lambda_{ji}$). Por el contrario, si $\mathcal{E}$ tiene un soporte dirigido entonces se dirá que $\Lambda$ posee interacciones aleatorias. Esta distinción permite separar y distinguir entre la simetría del soporte topológico y la simetría dinámica de las interacciones. 
-	\newline
-\end{definición}
-
-Por lo tanto, las matrices de coeficientes de interacción quedan parametrizadas por la probabilidad de conectividad $p$, la intensidad típica de las interacciones $\sigma$ y el tamaño del sistema $N$. En la 
-\begin{wrapfigure}{r}{0.51 \textwidth} \vspace{-20pt} \begin{center}
-		\includesvg[width=0.52\textwidth]{../Imagenes/RedIncidencias} 
-	\end{center} 
-	\vspace{-52pt} 
-	\caption{Red de interacciones ponderada de 8 nodos con topología de red aleatoria dirigida $p=0.15$ y una matriz aleatoria con $\mu=0$ y $\sigma=0.2$.} 
-	\vspace{-10pt}
-	\label{fig:RedIncidencias}
-\end{wrapfigure} 
-Figura (\ref{fig:RedIncidencias}) se muestra una representación visual de una red de interacciones ponderada de 8 nodos, donde se ilustran tanto la estructura de conectividad como los pesos asociados. La red de interacciones ponderada induce, en general, una estructura dirigida en la dinámica independientemente del soporte estructural que posea. Esto implica que las interacciones entre especies no necesariamente están balanceadas y pueden existir influencias preferenciales entre especies. Esta perspectiva resulta natural en contextos ecológicos, donde las interacciones suelen presentar una direccionalidad efectiva. En el contexto del modelo de Lotka--Volterra generalizado, las interacciones posibles se encuentran invertidas con respecto de la clasificación clásica de May (Tabla \eqref{tab:Interacciones}).
-
-
-
-
-\section{Estados estacionarios}\label{sec:PuntosFijos}
-
-El análisis de los estados estacionarios es fundamental para comprender la estabilidad dinámica del sistema. La naturaleza de los puntos de equilibrio depende de las interacciones entre especies, codificadas en la matriz de coeficientes de interacción $\Lambda$. En esta sección se bosquejará un análisis exploratorio centrado en el estado estacionario coexistente, sin perder de vista que constituye solo uno de los múltiples equilibrios posibles. \\
-\\
-Este estado resulta de particular interés porque representa la coexistencia simultánea en todas las especies y permite examinar, de manera tratable, cómo su estabilidad puede variar en función de los parámetros $(p,\sigma,N)$. Para determinar los estados estacionarios se imponen $\dot{x}_i=0$ en el sistema \eqref{eqn:LK}. Esto implica que para cada $i$,
-\begin{equation}\label{eqn:EcsPuntoFijo}
-	x_i=0\quad\text{ó}\quad 1-\frac{\sum_{j=1}^N\alpha_{ij}x_j}{K_i}=0
+\setlength{\parindent}{0cm} El modelo de Lotka--Volterra constituye un ejemplo de sistema no lineal con interacciones acopladas que describe adecuadamente la dinámica de poblaciones asociadas a redes ecológicas. En su forma general, el modelo consiste en el siguiente ensamble de ecuaciones diferenciales
+\begin{equation}\label{eqn:LK}
+	\frac{dx_i}{dt}=r_ix_i\left(1-\frac{\sum_{j=1}^N \alpha_{ij}x_j}{K_i}\right),\qquad i=1,\dots,N
 \end{equation}
-Por tanto, el sistema admite múltiples soluciones asociadas a la extinción de una o varias especies. El caso de interés es el estado coexistente, en el cual $x_i^*>0$ para toda $i$. En este caso las ecuaciones se reducen a 
-$$\sum_{j=1}^N\alpha_{ij}x_j^*=K_i$$
-lo cual puede escribirse de forma matricial como
-$$\Lambda X^*=\mathrm{K},\qquad\text{con }\mathrm{K}=(K_1,\dots,K_n)$$
-%Aqui hay un argumento fuerte para la estabilidad en función de la tupla.
-Siempre que $\Lambda$ sea invertible, el coexistente viene dado por $X^*=\Lambda^{-1}\mathrm{K}$. La fijación de la diagonal en $d=1$ desplaza el espectro de $\Lambda$ y reduce la probabilidad de singularidad, de modo que la matriz resulta invertible con alta probabilidad dentro del ensamble considerado. No obstante, esto no garantiza que $x_i^*>0$ para toda especie aunque $\mathrm{K}>0$, las entradas de $\Lambda$ pueden tomar signos positivos o negativos, lo que puede producir componentes negativas en $X^*$. Si además se toma $\mathrm{K}=K\textbf{1}$ con $K>0$, entonces el vector coexistente $X^*$ se convierte en una variable aleatoria cuya distribución queda determinada por los parámetros estructurales $(p,\sigma,N)$.\\
+donde $x_i(t)$ representa la abundancia de la especie $i$, $r_i$ denota su tasa intrínseca de crecimiento y $K_i$ su capacidad de carga. Los coeficientes $\alpha_{ij}$ codifican la intensidad y el signo de las interacciones entre las especies $i$ y $j$; dependiendo de su signo, estas interacciones pueden corresponder a escenarios de competencia, mutualismo o a un régimen mixto generalizado.\\
 \\
-En este contexto, cuando se considera el régimen disperso $p\ll 1$ (con $\sigma$ fija), la matriz $\Lambda$ permanece cercana a la identidad en sentido perturbativo, por lo que también $\Lambda^{-1}\approx I$ y en consecuencia $X^*\approx \mathrm{K}$. En este caso, las interacciones apenas modifican capacidades de carga individuales. Conforme $p$ aumenta, crece el número efectivo de interacciones por especie y la desviación de $\Lambda$ respecto a la identidad se vuelve significativa. Esto induce un acoplamiento efectivo entre las especies y provoca que la distribución de $X^*$ se disperse respecto de $\mathrm{K}$; en particular, pueden aparecer componentes negativas, lo que indica la pérdida de viabilidad biológica coexistente.\\
+A continuación, se analiza el comportamiento del sistema en el caso particular de dos especies, con el fin de fijar intuiciones antes de abordar el régimen de alta dimensión. En este último caso, debido al carácter no lineal y la alta dimensionalidad del sistema, el análisis se apoya en herramientas computacionales.
+
+\subsection{Caso particular para $N=2$}
+
+En el caso particular $N=2$, el sistema \eqref{eqn:LK} se reduce a un par de ecuaciones diferenciales que conservan la misma estructura funcional y parámetros del modelo general,
+\begin{align*}
+	\frac{dx_1}{dt}&=r_1 x_1\left(1-\frac{\alpha_{11}x_1}{K_1}-\frac{\alpha_{12}x_2}{K_1}\right),\\
+	\frac{dx_2}{dt}&=r_2 x_2\left(1-\frac{\alpha_{21}x_1}{K_2}-\frac{\alpha_{22}x_2}{K_2}\right).
+\end{align*}
+
+Dada la estructura del sistema, los coeficientes de interacción entre especies pueden organizarse en una \textbf{matriz de coeficientes de interacción $\Lambda$}, cuyos elementos $\alpha_{ij}$ cuantifican el efecto per cápita que la abundancia de la especie $j$ ejerce sobre la tasa de crecimiento de la especie $i$.
+\begin{equation}\label{eqn:mIncidencias}
+	\Lambda=
+	\begin{pmatrix}
+		\alpha_{11} & \alpha_{12}\\
+		\alpha_{21} & \alpha_{22}
+	\end{pmatrix}
+\end{equation}
+En esta representación, los coeficientes de la diagonal se fijan a un valor positivo ---en particular $\alpha_{ii}=1$--- lo que induce un término de autorregulación para cada especie. Este término incorpora el efecto de recursos limitados y competencia intraespecífica, impidiendo el crecimiento indefinido de las poblaciones y dando lugar a abundancias de equilibrio finitas.
+
+\begin{ejemplo}\label{eg:2x2}
+	A continuación se considera un sistema de Lotka--Volterra para $N=2$ especies, con coeficientes de interacción constantes y positivos.
+	\begin{equation}\label{eqn:Sist2x2Comp}
+		\begin{split}
+			\frac{dx}{dt}&=2x\left(1-\frac{x}{2}-\frac{y}{2}\right)\\
+			\frac{dy}{dt}&=3y\left(1-\frac{2x}{3}-\frac{y}{3}\right)
+		\end{split}
+	\end{equation}
+	Para analizar la dinámica del sistema se procede a la determinación de sus puntos de equilibrio, definidos como aquellos estados del sistema donde su dinámica se anula. Esto se logra igualando a cero y resolviendo las ecuaciones del sistema \eqref{eqn:Sist2x2Comp}. El equilibrio trivial corresponde con el estado $\vec{0}$, el cual representa la extinción de ambas especies. Para los casos no triviales, la resolución del sistema algebraico conduce a los puntos de equilibrio $(2,0)$, $(0,3)$ y $(1,1)$.
+\end{ejemplo}
+
+\begin{wrapfigure}{r}{0.5 \textwidth} \vspace{-30pt} \begin{center}
+		\includegraphics[width=0.5\textwidth]{../Imagenes/Competencia de especies} 
+	\end{center} 
+	\vspace{-20pt} 
+	\caption{Campo vectorial de las soluciones del sistema (\ref{eqn:Sist2x2Comp}) de dos especies.} 
+	\vspace{10pt}
+	\label{fig:CompetenciaEspecies}
+\end{wrapfigure} 
+
+Como se puede apreciar, el sistema (\ref{eqn:Sist2x2Comp}) presenta múltiples puntos de equilibrio, en contraste con los sistemas lineales, que admiten a lo sumo uno. Este hecho es relevante, ya que en sistemas no lineales de mayor dimensión la determinación explícita de los puntos de equilibrio se vuelve cada vez más compleja. En el caso presente, se conocen los puntos de equilibrio y por tanto es posible estudiar su estabilidad local mediante la evaluación de la matriz Jacobiana del sistema en dichos estados. Al evaluar el Jacobiano en el estado coexistente se obtiene 
+\begin{equation}\label{eqn:Jacobiano(1,1)}
+	\mathbb{J}_{(1,1)}=\begin{pmatrix}
+		-1 & -1\\
+		-2 & -1
+	\end{pmatrix}
+\end{equation}
+Los valores propios asociados a esta matriz son
+$$\lambda_{1}=-1+\sqrt{2}>0,\qquad\lambda_2=-1-\sqrt{2}<0$$
+Lo que caracteriza al punto de equilibrio $(1,1)$ como un \textbf{equilibrio tipo silla}, y por tanto localmente inestable. En consecuencia, las trayectorias se alejan de este punto y la dinámica converge hacia los atractores del sistema. Esta estructura puede apreciarse en la representación del espacio de fases del sistema (Figura (\ref{fig:CompetenciaEspecies})), donde se observan las regiones de atracción asociadas a los estados estacionarios $(2,0)$ o $(0,3)$. Como se ha señalado, el análisis de estabilidad se basa en el proceso de linealización local del sistema no lineal alrededor de un punto de equilibrio. 
+
+\section{Interacciones en el modelo de Lotka--Volterra}
+
+\subsection{Interacciones ecológicas}
+
+En este contexto, la \textbf{matriz de interacciones} es la representación de una red ecológica en donde cada renglón corresponde con una especie y los elementos de las columnas su interacción con otras especies. De este modo los pares ordenados $(a_{ij},a_{ji})$ representan estas interacciones las cuales pueden ser de diversos tipos. \\
 \\
-Un efecto análogo ocurre al variar la amplitud típica de las interacciones (con $C$ fija). Cuando $\sigma=0$, se tiene trivialmente $\Lambda=I$ y por tanto $X^*=\mathrm{K}$. Para $\sigma$ pequeño, las interacciones actúan como una perturbación débil y $X^*$ permanece concentrado cerca de $\mathrm{K}$. A medida que $\sigma$ aumenta, la dispersión de los valores propios de $\Lambda$ crece y el inverso amplifica las fluctuaciones, ensanchando la distribución de $X^*$. Para valores suficientemente grandes de $\sigma$, esta amplificación incrementa la probabilidad de obtener componentes negativas, reduciendo la probabilidad de coexistencia positiva.
+Siguiendo la clasificación clásica de Robert May \cite{may2019stability}, pueden distinguirse cinco tipos fundamentales de interacciones: competencia $(--)$, mutualismo $(++)$, depredación $(-+)$, comensalismo $(+0)$ y amensalismo $(-0)$.
 \\
 \\
-Finalmente, el tamaño del sistema $N$ modula el efecto conjunto de $p$ y $\sigma$. Al aumentar $N$ crece la escala típica de las fluctuaciones colectivas de la matriz $\Lambda$, lo que tiende a ensanchar la distribución de $X^*=\Lambda^{-1}\mathrm{K}$ y a incrementar la probabilidad de componentes negativas. No obstante, este efecto no depende únicamente de $N$, sino del ensamble de los tres parámetros: la conectividad $p$, la magnitud típica de las interacciones $\sigma$ y el tamaño del sistema $N$, cuya combinación fija el régimen efectivo en el que opera $\Lambda$.
-\\
-\\
-¿Cuál es el efecto de $\Lambda^{-1}$ en la distribución del punto de equilibrio? La estructura de esta matriz no puede describirse como una combinación lineal simple de variables normales; depende de la geometría espectral de $\Lambda$. En particular, la magnitud de $\Lambda^{-1}$ esta gobernada por la cercanía de los valores propios de $\Lambda$ al origen. Si $\Lambda$ es singular, es decir, si alguno de sus valores propios es cero, entonces la matriz no es invertible y el estado coexistente deja de estar bien definido. Más generalmente, cuando existe un valor propio $|\lambda_{\min}|$ cercano a cero, la inversa contiene factores del orden $1/\lambda_{\min}$, lo que produce una fuerte amplificación en las entradas de $\Lambda^{-1}$ y, por tanto, en $X^*=\Lambda^{-1}\mathrm{K}$.
-\\
-\\
-En este sentido, el espectro de $\Lambda$ se encuentra controlado por la escala efectiva $\sigma\sqrt{Np}$, la cual regula simultáneamente la dispersión del punto de equilibrio y la proximidad del espectro de $\Lambda$ al origen. Cuando este parámetro se aproxima a la unidad, la matriz tiende a mal condicionarse, la variabilidad de $X^*$ aumenta significativamente y disminuye la probabilidad de \textbf{factibilidad positiva}. Este mismo umbral coincide con la transición de estabilidad dinámica identificada en el criterio clásico de May, sugiriendo que la pérdida de estabilidad y la pérdida de factibilidad emergen del mismo mecanismo estructural. 
 \begin{table}[h!]
 	\centering
-	\begin{tabular}{ll}
+	\begin{tabular}{lll}
 		\toprule
 		\rowcolor{gray!15}
-		Condición & Interpretación\\
+		Tipo de interacción & Signo & Interpretación ecológica \\
 		\midrule
-		$\sigma\sqrt{Np}\ll 1$        & Coexistencia cerca de $\mathrm{K}$. Sistema estable\\
-		$\sigma\sqrt{Np}\approx 1$    & La dispersión del coexistente aumenta\\
-		$\sigma\sqrt{Np}>1$ 	   	  & Coexistencia muy dispersa\\
+		Mutualismo        & $(++)$ & Ambas especies aumentan sus poblaciones.\\
+		Competencia        & $(--)$ & Ambas especies limitan o disminuyen sus poblaciones.\\
+		Depredación  & $(+-)$ ó $(-+)$ & Una especie aumenta su población y la otra la disminuye.\\
+		Comensalismo       & $(+0)$ ó $(0+)$& Una especie aumenta su población sin afectar a la otra. \\
+		Amensalismo        & $(-0)$ ó $(0-)$ & Una especie disminuye su población sin afectar a la otra. \\
 		\bottomrule
 	\end{tabular}
-	\caption{Estabilidad del estado coexistente en función del parámetro $\sigma\sqrt{Np}$.}
-	\label{tab:lambdaMay}
+	\caption{Tipos de interacciones posibles según la clasificación de Robert May.}
+	\label{tab:Interacciones}
 \end{table}
 
-Sin embargo, este no constituye un criterio suficiente de estabilidad para el sistema de Lotka--Volterra, ya que el análisis se ha restringido al estado coexistente y no excluye la aparición de otros estados estacionarios o regímenes dinámicos alternativos.
+En la Tabla \eqref{tab:Interacciones} se resume el efecto que tiene cada interacción mencionada en las especies que intervienen. Por tanto, el conjunto de interacciones y sus magnitudes asociadas determinan el espectro de valores propios el cual establece si el sistema es estable o inestable de acuerdo con el signo de sus partes reales. 
 
-\section{Jacobiana del sistema}
+\subsection{Interacciones en la matriz de coeficientes}
 
-En esta sección se definirá la matriz Jacobiana del sistema \eqref{eqn:LK}, se analizará su relación estructural con la matriz de coeficientes $\Lambda$ y se discutirá un criterio de estabilidad local obtenido al evaluarla en un estado estacionario arbitrario. La Jacobiana evaluada en equilibrio coincide con la \textit{matriz de interacciones} empleada en el análisis ecológico clásico, introducido por Robert May, y constituye una forma de codificar las interacciones efectivas del sistema. En particular, como se verá, los términos interespecíficos de la Jacobiana aparecen con signo opuesto a los coeficientes correspondientes en $\Lambda$, por lo que la clasificación de interacciones clásica de la Tabla \eqref{tab:Interacciones} aplica de manera natural en este contexto.
-\\
-\\
-Recordando que la estabilidad local del sistema está determinada por los valores propios de la matriz Jacobiana evaluada en un estado estacionario, resulta fundamental analizar su espectro, lo cual se abordará en el siguiente capítulo. Con base en la Definición \ref{def:LKVectorial}, se considera el sistema en forma vectorial $\dot{X}=\textbf{F}(X)$, donde $\textbf{F}$ es la función del modelo de Lotka--Volterra generalizado, y se calcula su matriz Jacobiana \eqref{eqn:Jacobiano} a partir de sus derivadas parciales correspondientes, distinguiendo entre los términos diagonales y las interacciones interespecíficas. Se considera una función arbitraria de $\textbf{F}$
-$$
-f_i = r_ix_i\left (1 - \frac{S_i}{K_i}\right ),\qquad S_i=\sum_{j=1}^N \alpha_{ij}x_j
-$$
-las derivadas parciales para los términos de la diagonal son
-$$\frac{\partial f_i}{\partial x_i} = r_i\left (1-\frac{S_i}{K_i}\right )-\frac{r_ix_i}{K_i}\alpha_{ii}$$
-Para los términos que quedan fuera de la diagonal evaluados en $X^*$ se tiene
-$$\frac{\partial f_i}{\partial x_k} = -\frac{r_ix_i}{K_i}\alpha_{ik},\qquad i\neq k$$
-De este modo, la matriz Jacobiana $\mathcal{J}$ del sistema de Lotka--Volterra generalizado queda dada por la siguiente estructura al evaluar en un punto de equlibrio $X^*$ arbitrario
-\begin{equation}\label{eqn:MatrizJacobiana} 
-	\mathcal{J}_{ij}(X^*)=\begin{cases} r_i\left (1-\frac{\sum_j\alpha_{ij}x_j^*}{K_i}\right )-\frac{r_ix_i^*}{K_i}\alpha_{ii},\qquad&\text{para }i=j\\ -\frac{r_ix_i^*}{K_i}\alpha_{ij},\qquad&\text{para }i\neq j 
-	\end{cases}
+Las interacciones en la matriz de coeficientes $\Lambda$ se relacionan con la clasificación de May (Tabla \eqref{tab:Interacciones}), pero bajo una convención de signo opuesta. En esta formulación, la competencia se representa como $(++)$, la mutualismo como $(--)$, la depredación como $(+-)$, y el comensalismo y amensalismo como $(-0)$ y $(+0)$ respectivamente. Esta inversión se debe a que los coeficientes $\alpha_{ij}$ aparecen dentro del término de limitación del crecimiento; por tanto, valores positivos incrementan la presión limitante sobre la especie $i$, mientras que valores negativos la reducen. Para analizar cómo estos coeficientes afectan la dinámica, reescribimos las ecuaciones \eqref{eqn:LK} separando la contribución de autorregulación de las interacciones interespecíficas:
+
+\begin{equation}\label{eqn:LKextendida}
+	r_ix_i\left (1-\frac{\sum_{j=1}^N\alpha_{ij}x_j}{K_i}\right ) = \underbrace{r_ix_i\left (1-\frac{\alpha_{ii}x_i}{K_i}\right )}_{\text{Término intraespecífico}}-\underbrace{r_ix_i\left (\frac{\sum_{j\neq i}\alpha_{ij}x_j}{K_i}\right )}_{\text{Término interespecífico}}
 \end{equation}
-Sin embargo, hay que realizar una distinción de dos posibles escenarios: contemplando un estado coexistente ($x_i^*>0$ para toda $i$), donde los términos logísticos se anulan, entonces $1-\frac{\sum_j\alpha_{ij}x_j^*}{K_i}=0$ para toda $i$, y la Jacobiana del coexistente puede reescribirse como 
-$$\mathcal{J}=-\text{diag}\left (\frac{r_ix_i^*}{K_i}\right )\Lambda$$
-es decir, constituye un reescalamiento fila a fila de la matriz de coeficientes $\Lambda$. Por otro lado, en un estado estacionario con especies extintas, donde hay una combinación $x_i^*\geq0$ de especies. 
-\newline
-En este caso, los términos de la diagonal satisfacen
-$$
-\mathcal{J}_{ii}(X^*)=\begin{cases}
-	-\frac{r_ix_i^*}{K_i}\alpha_{ii},\qquad& x_i^*>0\\
-	r_i\left (1-\frac{\sum_j\alpha_{ij}x_j^*}{K_i}\right ),\qquad& x_i^*=0
-\end{cases}
-$$
-mientras que para $i\neq j$ sigue cumpliendo
-$$
-\mathcal{J}(X^*)=\frac{r_ix_i^*}{K_i}\alpha_{ij}
-$$
-Es importante remarcar la distinción entre estados coexistentes y estados con extinción parcial para tener presentes los posibles escenarios del sistema. En las simulaciones, los estados estacionarios no se obtienen como soluciones algebraicas independientes, sino como los valores asintóticos de las trayectorias numéricas; por construcción, estos corresponden a configuraciones factibles, es decir, con $x_i^*\geq0$. Una vez identificados, su estabilidad local se evalúa mediante el signo de los valores propios de la matriz Jacobiana asociada. \\
-\\
-En este contexto, el análisis de estabilidad puede abordarse desde distintas perspectivas, dependiendo de la estructura del equilibrio y de las interacciones presentes en el sistema. Como referencia para el estudio de la estabilidad local, a continuación se introduce una condición suficiente basada en la localización espectral de la matriz Jacobiana, la cual permite identificar configuraciones bajo las cuales el equilibrio es estable.
 
-\begin{proposición}[Criterio suficiente de estabilidad]\label{prop:DiagonalI}
-	Sea $X^*$ un estado estacionario del sistema. Si para todo $i$
-	$$\mathcal{J}_{ii}(X^*)+\sum_{j\neq i}|\mathcal{J}_{ij}(X^*)|<0,$$
-	entonces todos los valores propios del Jacobiano evaluado en $X^*$ tienen parte real negativa y, por lo tanto, su equilibrio es linealmente estable.
+El segundo término correspondiente a las interacciones interespecíficas, produce un efecto neto sobre la tasa de crecimiento de la especie $i$: sera positivo si el término interespecífico es negativo y viceversa. En consecuencia, desde la perspectiva de la especie $i$, las interacciones de mutualismo, depredación (cuando $i$ es el depredador) y comensalismo favorecen su crecimiento poblacional, mientras que  la competencia, la depredación  (cuando $i$ es la presa) y amensalismo lo reducen. Nótese que si $\alpha_{ij}=0$, la especie $j$ no genera impacto sobre la dinámica de $i$.\\
+\\
+En este contexto, los coeficientes $\alpha_{ii}$ deben ser positivos ya que el efecto de competencia intraespecífica se toma como unidad de referencia para medir el resto de interacciones; por convención, en este trabajo se fija $\alpha_{ii}=1$. Al considerar $\alpha_{ii}\leq0$, se pierde el mecanismo intrínseco de regulación logística asociada a la especie, eliminando la auto--limitación de su crecimiento. Por esta razón, la contribución de la identidad en $\Lambda$ representa interacciones intraespecíficas que inducen un mecanismo de autorregulación del sistema. Por otro lado, coeficientes $\alpha_{ij}<0$ pueden favorecer el crecimiento poblacional de la especie $i$, desplazando el equilibrio efectivo por encima de su capacidad de carga $K_i$, fenómeno que no se aprecia en sistemas competitivos. En este sentido, el Ejemplo \ref{eg:2x2} constituye un sistema de competencia de especies.
+\\
+\\
+%Explorar el balance de las interacciones (positivas y negativas) puede ser un elemento importante que defina el tipo de estabilidad del sistema. Sin embargo, debe de existir un balance entre las interacciones positivas y negativas, ya que si las segundas se sobreponen a las primeras, puede ocurrir un colapso del sistema traducido en crecimiento desmedido. Este escenario corresponderá a aquellos sistemas (\ref{eqn:LK}) inestables resultantes de ciertas configuraciones en $p$, $\sigma$ y $N$ de la matriz de incidencias y se irá revisando más adelante.\\\\
+Para apreciar el efecto que representa desplazar el equilibrio de las especies por encima de sus capacidades de carga, se extiende el ejemplo bidimensional previo para ilustrar los casos con interacciones mixtas, centrándose principalmente en la mutualismo. A su vez, este ejercicio servirá para visualizar el efecto que generan las interacciones mixtas en la dinámica de sistemas de alta dimensión.
+
+\begin{ejemplo}\label{eg:2x2CoopyDemás}
+	En este ejemplo se ajustan los signos del sistema \eqref{eqn:Sist2x2Comp} como a continuación se muestra 
+	\begin{equation}\label{eqn:Sist2x2Coop}
+		\begin{split}
+			\frac{dx}{dt} &= 2x\left (1-\frac{x}{2}+\frac{y}{4}\right )\\
+			\frac{dy}{dt} &= 3y\left (1+\frac{x}{3}-\frac{y}{3}\right )
+		\end{split}
+	\end{equation}
+	La matriz de coeficientes de interacción asociada es
+	$$
+	\Lambda = \begin{pmatrix}
+		1 & -\frac{1}{2}\\
+		-1 & 1
+	\end{pmatrix}
+	$$
+	Se puede apreciar una interacción de mutualismo entre las especies $x$ y $y$; en este caso, dicha interacción favorece el crecimiento de ambas poblaciones, permitiendo que el equilibrio de coexistencia se ubique por encima de sus respectivas capacidades de carga. Los estados estacionarios del sistema son $(0,0)$, $(2,0)$, $(0,3)$ y $(7,10)$. Evaluando la matriz Jacobiana en el estado coexistente se obtiene 
+	$$
+	\mathbb{J}_{(7,10)}=\begin{pmatrix}
+		-7 & 3.5\\
+		10 & -10
+	\end{pmatrix}
+	$$
+	cuyos valores propios son $\lambda_{1,2}=\frac{-17\pm\sqrt{149}}{2}<0$. Por lo tanto, el punto $(7,10)$ es localmente y asintóticamente estable, lo que implica que trayectorias cercanas convergen a este punto de equilibrio conforme $t\to\infty$. En la Figura \eqref{fig:CooperacionEspecies} se muestran las series de tiempo y el espacio fase, donde se observa que las poblaciones se estabilizan en valores superiores a sus respectivas capacidades de carga.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.24]{../Imagenes/Cooperacion de especies}
+		\caption{Sistema de Lotka--Volterra con interacciones de mutualismo dados por las ecuaciones (\ref{eqn:Sist2x2Coop}). Tasas de crecimiento y capacidades de carga: $r_x=2$, $K_x=2$ y $r_y=3$, $K_y=3$. (\textbf{A}) Series de tiempo del sistema para las especies $x(t)$ y $y(t)$ bajo la condición inicial $(1,2)$. (\textbf{B}) Espacio fase del sistema con sus puntos fijos asociados, donde $(7,10)$ es el único punto fijo estable.}
+		\label{fig:CooperacionEspecies}
+	\end{figure}
+	
+	En este contexto, el concepto de capacidad de carga deja de interpretarse como una cota rígida para la población y pasa a entenderse como un parámetro regulador de crecimiento. En ausencia de interacciones interespecíficas, $K_i$ fija el nivel de saturación logística; sin embargo, cuando se incorporan las interacciones, el término $\sum_j \alpha_{ij}x_j$ puede modificar de forma sustancial esta regulación. Si las contribuciones efectivas asociadas a interacciones que favorecen el crecimiento dominan sobre el término autorregulatorio, el sistema puede presentar equilibrios por encima de $K_i$ o incluso dinámicas no acotadas. \\
+	\\
+	Para ilustrar el papel del signo de los coeficientes, se modifica nuevamente al sistema \eqref{eqn:Sist2x2Coop} para considerar interacciones de comensalismo, amensalismo y depredación. Las series de tiempo correspondientes muestran que en el comensalismo la especie beneficiada puede alcanzar niveles superiores a su capacidad de carga efectiva mientras la otra permanece prácticamente inalterada; en el amensalismo, una especie ve reducido su nivel poblacional mientras la otra no experimenta cambios apreciables; finalmente, la depredación combina ambos efectos, con una especie favorecida y la otra perjudicada. Las series de tiempo se muestran en la Figura \eqref{fig:RestoInteraccionesST}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=0.2]{../Imagenes/STrestoInteracciones}
+		\caption{Series de tiempo para las interacciones comensalismo, amensalismo y depredación modificando el sistema \eqref{eqn:Sist2x2Coop}. (\textbf{A}) Para el comensalismo se definió $\alpha_{21}=0$ y $\alpha_{12}=-\frac{1}{2}$. (\textbf{B}) Para el amensalismo se consideró $\alpha_{21}=0$ y $\alpha_{12}=\frac{1}{2}$ (\textbf{C}) Para la depredación se consideró $\alpha_{21}=-1$ y $\alpha_{12}=\frac{1}{2}$.}
+		\label{fig:RestoInteraccionesST}
+	\end{figure}
+\end{ejemplo}
+
+\begin{definición}\label{def:LKVectorial}
+	Sea $\mathbf{F}:\mathbb{R}^N\to\mathbb{R}^N$ el campo vectorial no lineal asociado al sistema de Lotka--Volterra generalizado, cuyas componentes están definidas por 
+	\begin{equation}\label{eqn:Fmatricial}
+		\mathbf{F}(X)=\begin{pmatrix}
+			f_1(X)=r_1x_1\left(1-\frac{\sum_{j=1}^N \alpha_{1j}x_j}{K_1}\right)\\
+			\vdots\\
+			f_N(X)=r_Nx_N\left(1-\frac{\sum_{j=1}^N \alpha_{Nj}x_j}{K_N}\right)
+		\end{pmatrix},
+	\end{equation}
+	donde $X(t)=\left(x_1(t),\dots,x_N(t))\right)\in\mathbb{R}^N$. Sea $X^*$ un punto de equilibrio del sistema, es decir, cumple $\mathbf{F}(X^*)=\mathbf{0}$. La matriz Jacobiana asociada al sistema evaluada en $X^*$ esta dada por
+	\begin{equation}\label{eqn:Jacobiano}
+		\mathbb{J}_\mathbf{F}(X^*) = \begin{pmatrix}
+			\frac{\partial f_1(X^*)}{\partial x_1} & \cdots &\frac{\partial f_1(X^*)}{\partial x_N}\\
+			\vdots & \ddots & \vdots\\
+			\frac{\partial f_N(X^*)}{\partial x_1} & \cdots &\frac{\partial f_N(X^*)}{\partial x_N}
+		\end{pmatrix}
+	\end{equation}
+\end{definición}
+
+
+\section{Estabilidad en sistemas de gran dimensión: el enfoque de May}
+
+En sistemas de baja dimensionalidad, la estabilidad local puede estudiarse directamente a partir de la matriz Jacobiana asociada al equilibrio de interés. Sin embargo, conforme el número de especies aumenta, la estructura de interacciones se vuelve considerablemente más compleja y la caracterización explícita de la matriz Jacobiana deja de ser una tarea tractable. Frente a esta dificultad, May propuso un enfoque estadístico para el estudio de sistemas ecológicos de gran dimensión, modelando las interacciones entre especies mediante matrices aleatorias. Este planteamiento permitió formular criterios probabilísticos de estabilidad basados en propiedades globales del espectro asociado.\\
+\\
+Las matrices de interacción de May se construyen con base en varias características: primero se establece que los valores de la diagonal se mantienen fijos en un valor real $-d$. Estos valores también adquieren una función de autorregulación de las especies y en este contexto debe ser un real negativo ya que se verá directamente reflejado en el espectro de valores propios. El resto de las entradas provienen de una distribución con media cero y varianza finita $\sigma^2$, y la forma del muestreo será con base en una probabilidad de conectividad $C$.\\
+\\
+El parámetro $\sigma$ de la distribución considerada cuantifica la intensidad típica de los acoplamientos entre las componentes del sistema y puede interpretarse como la escala de los pesos de los enlaces en una \textbf{red de interacciones}. Junto con el número de entes interactuantes $N$ y la conectividad $C$, estos parámetros determinan la complejidad del sistema desde el punto de vista de su estabilidad. En particular, existen configuraciones de estos parámetros para las cuales el estado estacionario es estable, así como regímenes en los que pequeñas perturbaciones se amplifican. 
+\\
+\\
+En sistemas de alta dimensión, el soporte espectral del operador linealizado se distribuye aproximadamente sobre un disco centrado en el término disipativo de la diagonal $-d$. En la literatura, esto es conocido como la \textit{Ley Circular} y fue propuesto por Robert May \cite{may1972will}. En este sentido, May introduce un parámetro crítico que delimita el umbral entre regímenes estables e inestables, lo que se traduce en un límite que determina el cruce de los valores propios por el eje imaginario
+\begin{equation}\label{eqn:paramMay}
+	\sigma<(NC)^{-1/2}
+\end{equation}
+Al considerar el caso $d=1$, la condición de estabilidad se reduce a $\sigma\sqrt{NC}<1$. La cantidad $\sigma\sqrt{NC}$ es conocida como \textit{radio espectral} y es la apertura del disco de la ley circular modulada por los parámetros que forman a las matrices de interacción. En esencia, la diagonal $-d$ y el radio espectral controlan la posición del espectro de la matriz de interacciones y permite distinguir entre estabilidad e inestabilidad dinámica. Con el fin de precisar esta interpretación, se enuncia a continuación una proposición que formaliza la relación entre los parámetros efectivos de la matriz de interacciones y el crecimiento asintótico del radio espectral.
+\begin{proposición}\label{prop:paramMay}
+	Sea $A=-dI+B\in\mathrm{M}_N(\mathbb{R})$, donde $d>0$ y $B$ es una matriz aleatoria cuyas entradas fuera de la diagonal son independientes, con media cero, varianza $\sigma^2$ y probabilidad de conexión $C$. Entonces, cuando $N\to\infty$, el radio espectral de $B$ satisface
+	$$\rho(B) = \sigma\sqrt{NC}$$% + \mathcal{O}(1)$$
+	con alta probabilidad. En consecuencia, un sistema lineal $\dot{x}=Ax$ es estable con alta probabilidad si
+	$$\sigma\sqrt{NC}<d.$$
 \end{proposición}
 \begin{proof}
-	Para demostrar la proposición se utiliza el \textit{Teorema de Gershgorin} \cite{GershgorinTheorem}. Sea 
-	$$R_i=\sum_{j\neq i}|\mathcal{J}_{ij}|$$
-	y considérese el disco
-	$$D(\mathcal{J}_{ii},R_i)=\{z\in\mathbb{C}:|z-\mathcal{J}_{ii}|\leq R_i\}$$
-	El teorema establece que todo valor propio de $\mathcal{J}$ pertenece a la unión de estos discos. Si para cada $i$ se cumple 
-	\begin{equation}\label{proof:CondicionGershgorin}
-		\mathcal{J}_{ii}+R_i<0
-	\end{equation}
-	entonces el disco esta completamente contenido en el semiplano izquierdo ($z:\operatorname{Re}z<0$). Por lo tanto todos los valores propios satisfacen ($\operatorname{Re}\lambda<0$) lo cual implica estabilidad local en el punto de equilibrio considerado.	
+	El resultado se obtiene como consecuencia del \textit{Teorema Circular de Girko} \cite{girko1985circular}, aplicado a la matriz reescalada $\frac{1}{\sqrt{N}}B$, cuyo espectro converge al disco de radio $\sigma\sqrt{C}$. Al deshacer el reescalamiento se obtiene la escala $\sigma\sqrt{NC}$ para el radio espectral de $B$. Si $A=-dI+B$ entonces el espectro se traslada $\rho(A)=-d+\rho(B)$, por lo tanto la estabilidad requiere $-d+\sigma\sqrt{NC}<0$ si y solo si $\sigma\sqrt{NC}<d$.
 \end{proof}
 
-Para que el \textit{criterio suficiente de estabilidad} se cumpla, los elementos de la diagonal necesariamente deben ser negativos. En particular, existe una relación tangible entre radios y centros de Gershgorin para observar el cumplimiento del criterio. De la ecuación \eqref{proof:CondicionGershgorin} se sigue
-$$r_i\left (1-\frac{S_i^*}{K_i}\right )-\frac{r_ix_i^*}{K_i}\alpha_{ii}+\frac{r_ix_i^*}{K_i}\sum_{j\neq i}|\alpha_{ij}|<0,\qquad S_i^*=\sum_{j=1}^N\alpha_{ij}x_j^*$$
-dividiendo entre $r_i>0$:
-$$1-\frac{S_i^*}{K_i}-\frac{x_i^*}{K_i}\left (\sum_{j\neq i}|\alpha_{ij}|-\alpha_{ii}\right )<0$$
-reordenando, finalmente se tiene
-\begin{equation}\label{eqn:DesigualdadSuficiente}
-	\sum_{j\neq i}|\alpha_{ij}|<\alpha_{ii}+\frac{S_i^*-K_i}{x_i^*}
-\end{equation}
-Válido para todo $i$, esta condición garantiza el cumplimiento de la Proposición \ref{prop:DiagonalI}. El término $\frac{S_i^*-K_i}{x_i^*}$ mide que tan lejos se encuentra la especie del equilibrio logístico local. 
-\begin{corolario}
-	Bajo el supuesto de coexistencia $x_i^*>0$ para toda $i$, la condición general de estabilidad dada en la Proposición \ref{prop:DiagonalI} se reduce a 
-	\begin{equation}\label{eqn:DesigualdadCoexistencia}
-		\sum_{j\neq i}|\alpha_{ij}|<\alpha_{ii}
-	\end{equation}
-\end{corolario}
-\begin{proof}
-	En estados coexistentes, se cumple $S_i^*=K_i$, por lo que el término $\frac{S_i^*-K_i}{x_i^*}$ se anula en la desigualdad \eqref{eqn:DesigualdadSuficiente}, obteniéndose inmediatamente el resultado.
-\end{proof}
-Asumiendo que $\mathcal{J}_{ii}<0$, resulta conveniente estimar el tamaño típico de los radios de Gershgorin para verificar la condición \eqref{eqn:DesigualdadCoexistencia}. Para modelar las entradas fuera de la diagonal, se introduce la variable aleatoria
-$$	W = 
-\begin{cases}
-	0,\qquad \text{Si }1-p\\
-	Y,\qquad \text{Si }p>0	
-\end{cases}$$
-donde $Y\sim N(0,\sigma^2)$. Dado que $R_i=\sum_{j\neq i}|\alpha_{ij}|$ involucra valores absolutos, es de interés calcular $\mathbb{E}|W|$: 
-$$\mathbb{E}[|W|]=(1-p)\cdot 0 + p\cdot \mathbb{E}[|Y|] = p\sigma\sqrt{\frac{2}{\pi}}$$
-%El término $\sqrt{\frac{2}{\pi}}$ viene de considerar la variable aleatoria $Z\sim N(0,1)$ y la distribución \textit{half-normal} $|Z|$, entonces su valor esperado es $$\mathbb{E}[|Z|]=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}|z|e^{-z^2/2}\, dz=\frac{2}{\sqrt{2\pi}}\int_0^\infty ze^{-z^2/2}\, dz=\sqrt{\frac{2}{\pi}}$$ considerar la variable aleatoria $Y\sim N(0,\sigma^2)$ entonces basta con escalar $Y=\sigma Z$ y en consecuencia su valor esperado será $$\mathbb{E}[|Y|]=\sigma \mathbb{E}[|Z|]=\sigma\sqrt{\frac{2}{\pi}}$$
-Por linealidad de la esperanza, el tamaño promedio del radio de Gershgorin es entonces 
-$$\mathbb{E}[R_i]=(N-1)p\sigma\sqrt{\frac{2}{\pi}}$$
-En consecuencia, si este radio típico satisface 
-\begin{equation}\label{eqn:CriterioDebil}
-	(N-1)p\sigma\sqrt{\frac{2}{\pi}}<1
-\end{equation}
-puede esperarse que, en promedio los discos de Gershgorin permanezcan contenidos en el semiplano negativo de $\mathbb{C}$, proporcionando así una condición suficiente típica para la estabilidad local en el estado coexistente. Sin embargo, esta condición no determina la posición del espectro ---tal y como hace el radio espectral--- solamente establece una cota superior del área en donde los valores propios se alojan. De este modo, el \textit{criterio suficiente de estabilidad} forza a que el área efectiva del espectro se mantenga en el semiplano negativo de $\mathbb{C}$, pero no delimita el espectro como lo hace la ley circular.
+
+Las matrices de interacción de May, cuyas entradas fuera de la diagonal se consideran independientes, reflejan un escenario sin estructura subyacente en las interacciones: las especies interactúan de manera aleatoria, sin patrones específicos. En consecuencia, la distribución de valores propios resulta isotrópica\footnote{En este caso nos referimos a la distribución uniforme sobre el disco espectral.}. Si se introdujeran correlaciones entre pares de especies, la distribución espectral podría deformarse, dando lugar a un comportamiento distinto. Stefano Allesina ha estudiado este fenómeno y ha determinado que, bajo ciertas correlaciones estructurales, los valores propios se distribuyen siguiendo una ley elíptica \cite{allesina2012stability}. \\
+\\
+Introducir correlaciones de forma explícita, induce a un espectro que transita entre extremos totalmente simétrico y antisimétrico. Considerar matrices de May con un soporte estructuralmente simétrico introduce pequeñas correlaciones implícitas que pueden generar un impacto en la distribución de valores propios. En ciertos regímenes, las matrices de May con soporte estructuralmente simétrico no presentan deformaciones apreciables del espectro respecto del caso puramente dirigido. En la Figura \eqref{fig:LeyCircularMay} se presenta un contraste entre matrices de May con soporte estructuralmente simétrico y dirigido.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.185]{../Imagenes/LeyCircularMay}
+	\caption{Distribución de valores propios en sistemas de May con soporte simétrico y puramente aleatorios. En ambos ejemplos se consideró $N=100$, magnitud típica $\sigma=0.2$, para una conectividad $C=\frac{1}{\sigma^2 N}-0.03$ y $d=-1$.}
+	\label{fig:LeyCircularMay}
+\end{figure}
+
+No se observa variabilidad significativa en ambos escenarios, sin embargo, al explorar otros regímenes si es posible apreciar una deformación visible del conjunto de valores propios, tal y como se muestra en la Figura \eqref{fig:LeyCircularMay2}. En estos casos, la distribución espectral presenta anisotropías y el disco circular deja de describir con precisión la distribución observada. En particular, en ciertas configuraciones se observa una mayor concentración relativa de valores propios en direcciones cercanas a los ejes de $\mathbb{C}$, lo que sugiere que la estructura del soporte introduce efectos no triviales en la organización espectral, más allá de lo esperado en el caso puramente dirigido.\\
+\\
+Para obtener un mapa de las posibles desviaciones que existen entre ambos escenarios, y al mismo tiempo, visualizar su cambio de estabilidad: se analizan las variaciones de la conectividad a $\sigma$ fija, o bien la variación de $\sigma$ a conectividad fija. Estos mapas corresponderán a las \textit{transiciones de estabilidad} mismas que deben ajustarse a la condición $\sigma\sqrt{NC}<d$, para distinguir el umbral que separa los regímenes de estabilidad e inestabilidad.  De la Figura \eqref{fig:LeyCircularMay2} se puede prever que el cambio de estabilidad será diferente en el caso estructuralmente simétrico respecto del escenario dirigido, ya que la elongación del espectro en el eje real supera al radio espectral en ciertos regímenes si es posible.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.185]{../Imagenes/LeyCircularMay2.png}
+	\caption{Distribución de valores propios en sistemas de May con soporte simétrico y puramente aleatorios. En ambos ejemplos se consideró $N=100$, magnitud típica $\sigma=0.4$, para una conectividad $C=\frac{1}{\sigma^2 N}-0.03$ y $d=-1$. La distribución mostrada en (\textbf{A}) presenta una visible deformación debido al soporte simétrico de su matriz de interacciones asociada, por lo que la ley circular y el radio espectral no son suficientes para ajustar dicha distribución.}
+	\label{fig:LeyCircularMay2}
+\end{figure}
+
+
+%\begin{figure}[h!]
+%	\centering
+%	\includegraphics[scale=0.16]{../Imagenes/TransicionesdeMay}
+%	\caption{Transiciones de estabilidad con sistemas de May de tamaño $N=100$. (\textbf{A}) Para la conectancia variable fijando $\sigma=0.3$. (\textbf{B}) Para la intensidad de las interacciones variable fijando $C=0.3$.}
+%	\label{fig:TransicionesdeMay}
+%\end{figure}
+\newpage
+\subsection{Transiciones dinámicas}\label{sec:transMay}
+
+En términos cualitativos, el resultado central de May establece que la estabilidad de un sistema complejo emerge de un compromiso entre la conectividad de la red y la intensidad de las interacciones: sistemas con pocas conexiones pueden sostener interacciones fuertes sin perder estabilidad, mientras que redes densamente conectadas solo permanecen estables cuando las interacciones son suficientemente
+\begin{wrapfigure}{l}{0.5 \textwidth} \vspace{-30pt} \begin{center}
+		\includegraphics[width=0.52\textwidth]{../Imagenes/TransicionMayDirLin} 
+	\end{center} 
+	\vspace{-20pt} 
+	\caption{Transición dinámica en sistemas de May aleatorios en función de la conectividad $C$. Para cada configuración se generaron 3000 simulaciones independientes.} 
+	\vspace{-0pt}
+	\label{fig:TransicionMayDirLin}
+\end{wrapfigure} 
+débiles. Para estudiar las transiciones dinámicas de estabilidad se analiza la respuesta del sistema frente a variaciones en la conectividad $C$ y en la magnitud típica de las interacciones $\sigma$, manteniendo fijo el parámetro complementario en cada caso. A partir de múltiples realizaciones independientes de la matriz de interacciones, se estima la probabilidad de estabilidad del sistema como función de estos parámetros, permitiendo caracterizar la transición entre regímenes predominantemente estables e inestables. La Figura \eqref{fig:TransicionMayDirLin} muestra distintas dinámicas en sistemas de tamaño $N=100$ para valores fijos de $\sigma$. En todas las representaciones se observa la aparición de un umbral crítico de estabilidad conforme la conectividad $C$ aumenta, consistente con la condición espectral $\sigma\sqrt{NC}\approx d$. No obstante, la localización de la transición depende de la magnitud típica $\sigma$: conforme esta aumenta, el cambio entre los regímenes estable e inestable ocurre para valores progresivamente menores de la conectividad.\\
+\\
+Para visualizar con mayor detalle el orden de magnitud en que ocurren las transiciones cuando $\sigma$ toma valores grandes, resulta conveniente reescalar la conectividad en escala logarítmica $\log_{10}$. Este cambio permite ampliar la región de conectividades pequeñas, donde el umbral crítico $\sigma\sqrt{NC}\approx d$ puede alcanzarse incluso para valores reducidos de $C$. En esta representación, la transición deja de observarse únicamente como un cambio abrupto y se aprecia con mayor claridad la anchura 
+\begin{wrapfigure}{r}{0.5 \textwidth} \vspace{-30pt} \begin{center}
+		\includegraphics[width=0.52\textwidth]{../Imagenes/TransicionMayDirLog} 
+	\end{center} 
+	\vspace{-20pt} 
+	\caption{Transición dinámica en sistemas de May aleatorios en función de la conectividad $C$ en escala $\log_{10}$.} 
+	\vspace{-10pt}
+	\label{fig:TransicionMayDirLog}
+\end{wrapfigure} 
+
+de la región crítica. En la representación de la Figura \eqref{fig:TransicionMayDirLog}, se observa que las transiciones correspondientes a valores grandes de $\sigma$ tienden a concentrarse. En particular, los casos $\sigma=0.9$ y $\sigma=1.0$ presentan umbrales muy próximos entre sí. Este comportamiento se explica directamente a partir del criterio $\sigma\sqrt{NC}$, del cual se obtiene $C_c=d^2/(\sigma^2N)$. La dependencia inversa cuadrática implica que, para valores grandes de $\sigma$, las variaciones en el umbral crítico de conectancia se comprimen progresivamente, produciendo una acumulación aparente de las curvas de transición.
 \\
 \\
-¿Qué ocurre al considerar estados con extinción parcial? En este caso la desigualdad \eqref{eqn:DesigualdadSuficiente} deja de ser aplicable debido a la aparición de $x_i^*=0$. Considérese un equilibrio $X^*$ donde $x_i^*=0$, es decir, la especie $i$ esta extinta. Evaluando su ecuación dinámica para perturbaciones pequeñas $x_i>0$, se obtiene la siguiente aproximación 
-$$\dot{x}_i\approx x_ir_i\left (1-\frac{\sum_j\alpha_{ij}x_j^*}{K_i}\right )$$
-donde el coeficiente que multiplica a $x_i$ coincide con el elemento de la diagonal $\mathcal{J}_{ii}$ de la Jacobiana. Este término representa la tasa de crecimiento per cápita ante una perturbación positiva infinitesimal de la especie $i$. Si $K_i>\sum_j\alpha_{ij}x_j^*$, entonces $\mathcal{J}_{ii}>0$ y la perturbación crece, lo que indica que la especie puede invadir el sistema y el equilibrio resulta inestable frente a esa perturbación. En cambio si $\mathcal{J}_{ii}<0$, la especie no puede establecerse y la perturbación decae, siendo el equilibrio locamente estable respecto a esa especie.\\
+Al considerar sistemas de May con soporte simétrico, el criterio basado únicamente en el radio espectral deja de describir completamente la transición observada en la probabilidad de estabilidad. En consecuencia, las transiciones pueden desarrollarse de manera distinta en comparación con sistemas puramente dirigidos. En la Figura \eqref{fig:TransicionDirvsNoDir} se presenta una comparación entre ambos escenarios para magnitudes típicas $\sigma\in\{0.2,0.6\}$.\\
 \\
-Este criterio, conocido como condición de \textbf{invasibilidad}, proporciona una interpretación biológica del análisis espectral y muestra que la estabilidad no depende únicamente de la estructura global de las interacciones, sino también de la respuesta local del sistema ante perturbaciones en cada especie. Por tanto, una condición necesaria para la estabilidad dinámica frente a especies ausentes es que $\mathcal{J}_{ii}<0$. En el siguiente capítulo se analizará como estas condiciones se reflejan en el soporte espectral de la matriz Jacobiana y en la estabilidad dinámica del sistema.
-%Sin embargo esta prueba tiene algunas limitantes; los discos de Gershgorin únicamente garantizan que contienen valores propios, forzar la condición (\ref{proof1:Desigualdad}) es suficiente para garantizar estabilidad pero no es determinante, ya que este método no menciona nada acerca de la posición de los valores propios. Si dicha desigualdad no se cumple pueden ocurrir dos escenarios: que $\max(|\lambda_\mathcal{J}|)<0$ y el sistema siga siendo estable a pesar de algún $R_i>\mathcal{J}_{ii}$ ó $\max(|\lambda_\mathcal{J}|)>0$ en cuyo caso el sistema será inestable, y eso dependerá de $\Lambda$ y la tupla $(p,\sigma,N)$. En conclusión, esta prueba funciona en un primer nivel para mostrar que los elementos de la diagonal de $\mathcal{J}$ y por consiguiente las entradas de $X^*$ juegan un papel importante en la estabilidad del sistema. 
+Para $\sigma=0.2$ se observa únicamente una desviación sutil del sistema estructuralmente simétrico respecto del caso dirigido, y la conectividad $C_c$ predicha por el radio espectral, coincide aproximadamente en ambos casos. En contraste, para $\sigma=0.6$ la transición del sistema con soporte simétrico se relaja de manera notable: la probabilidad de estabilidad decrece gradualmente en una región más amplia de conectividades, en lugar de presentar un cambio abrupto. Este ensanchamiento del régimen crítico sugiere que la geometría espectral inducida por la estructura del soporte introduce una mayor variabilidad en la parte real de los valores propios, modificando así el comportamiento colectivo del sistema.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale = 0.165]{../Imagenes/TransicionDirvsNoDir}
+	\caption{Transición de May puramente aleatoria vs estructuralmente simétrica. (\textbf{A}) Se considera para $\sigma = 0.2$ (\textbf{B}) Se considera para $\sigma=0.6$.}
+	\label{fig:TransicionDirvsNoDir}
+\end{figure}
+
+
+Al analizar las transiciones dinámicas en función de $\sigma$ se obtiene un comportamiento análogo, aunque con matices importantes. En este caso se muestran las transiciones para distintos valores fijos de la conectividad $C$. El umbral de estabilidad continúa estando controlado por el radio espectral, ahora dado por el valor crítico $\sigma_c=d/\sqrt{NC}$. A diferencia de las transiciones en función de $C$, las mostradas en la Figura (\ref{fig:TransicionMaySigma} \textbf{A}) no presentan una separación tan marcada entre distintos valores de conectividad. En particular para conectividades grandes las curvas tienden a concentrarse y sus diferencias se vuelven menos perceptibles. 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale = 0.164]{../Imagenes/TransicionMaySigma}
+	\caption{Transición dinámica en función de $\sigma$ (\textbf{A}) Se consideran sistemas de May aleatorios con 3000 simulaciones por cada configuración. (\textbf{B}) Caso particular para $C=0.1$; se consideran las diferencias entre sistemas de soporte simétrico y puramente aleatorios.}
+	\label{fig:TransicionMaySigma}
+\end{figure}
+\newpage
+Este comportamiento se explica por la forma funcional del umbral de estabilidad. En particular, la relación $\sigma_c\propto C^{-1/2}$ implica que al aumentar $C$, las variaciones del umbral en $\sigma$ se vuelven progresivamente más pequeñas, lo que se manifiesta como una compresión de los puntos de transición en ese eje. En contraste, la dependencia $C_c\propto \sigma^{-2}$ produce una expansión relativa de los umbrales, dando lugar a una mayor separación aparente. En la Figura (\ref{fig:TransicionMaySigma} \textbf{B}) se presenta la comparación entre sistemas con soporte 
+\begin{wrapfigure}{l}{0.5 \textwidth} \vspace{-30pt} \begin{center}
+		\includegraphics[width=0.5\textwidth]{../Imagenes/TransicionσDirvsNoDir} 
+	\end{center} 
+	\vspace{-20pt} 
+	\caption{Variación de la transición entre sistemas estructuralmente simétricas y puramente aleatorios. Se considera el valor de la conectividad $C=0.6$.} 
+	\vspace{-10pt}
+	\label{fig:TransicionσDirvsNoDir}
+\end{wrapfigure} 
+estructuralmente simétrico y puramente dirigido para una conectividad $C=0.1$. En este régimen de baja conectividad se observa una desviación sutil entre ambos escenarios, lo que sugiere que la estructura del soporte aún influye en la transición. En la Figura (\ref{fig:TransicionσDirvsNoDir}), correspondiente a $C=0.6$, la discrepancia se vuelve prácticamente imperceptible. Esto indica que, para un tamaño $N$ fijo y conectividades elevadas, el comportamiento crítico de ambos sistemas converge. En otras palabras, al aumentar la densidad de la red, la influencia de la simetría estructural sobre la transición dinámica se atenúa progresivamente, hasta volverse marginal en el régimen casi completamente conexo.
+\\
+\\
+Variar $C$ o $\sigma$ implica recorrer el espacio paramétrico desde perspectivas distintas. Cuando se fija $\sigma$ y se varía la conectividad $C$, se interpreta que la magnitud típica de las interacciones permanece constante mientras se agregan enlaces en la red ponderada, transitando desde un régimen disperso hasta uno densamente conectado. La sensibilidad del radio espectral frente a variaciones en $C$ está dada por
+$$\frac{\partial R}{\partial C}=\frac{\sigma\sqrt{N}}{2\sqrt{C}}$$
+lo que muestra que el sistema es particularmente sensible en el régimen de baja conectividad. Dado que el barrido de conectividades se realiza con incrementos uniformes $\Delta C=0.01$, el cambio inducido en el radio espectral puede aproximarse por 
+$$\Delta R\approx \frac{\partial R}{\partial C}\cdot\Delta C$$
+Esto muestra que, para valores pequeños de $C$, incrementos discretos iguales producen variaciones relativamente grandes en $R$, mientras que en el régimen de alta conectividad el efecto es considerablemente menor. En consecuencia, cuando el umbral crítico se localiza en regiones de baja conectividad, la transición observada puede concentrarse en pocos puntos del barrido paramétrico, reforzando su carácter abrupto. Al fijar la conectividad $C$ y variar $\sigma$, el tamaño efectivo del sistema permanece constante mientras que la magnitud típica de las interacciones recorre el intervalo $[0,1]$. La sensibilidad del radio con respecto de $\sigma$ ahora viene dada por 
+$$\frac{\partial R}{\partial \sigma}=\sqrt{NC}$$
+A diferencia del caso en función de $C$, esta derivada es constante para valores fijos de $N$ y $C$, lo que implica que incrementos discretos uniformes $\Delta\sigma$ producen variaciones uniformes en el radio espectral 
+$$\Delta R\approx\sqrt{NC}\cdot\Delta\sigma$$
+En consecuencia, el crecimiento de $R$ es proporcional a $\sigma$ y el cruce del umbral crítico ocurre de manera más regular, sin la amplificación observada en el régimen de baja conectividad. Esto explica por qué las transiciones en función de $\sigma$ se perciben más uniformes en comparación con aquellas obtenidas al variar $C$. Si se considera además la dependencia respecto del tamaño del sistema,
+$$\frac{\partial R}{\partial N}=\frac{\sigma\sqrt{C}}{2\sqrt{N}}$$
+se observa que la sensibilidad absoluta del radio espectral frente a variaciones $N$ decrece como $N^{-1/2}$. En el límite asintótico, las variaciones relativas inducidas por cambios en el tamaño del sistema se atenúan progresivamente, las fluctuaciones disminuyen y se va reforzando la concentración del umbral crítico. El marco anterior describe de manera consistente el comportamiento de sistemas puramente dirigidos, donde el radio espectral actúa como parámetro efectivo que organiza la transición de estabilidad. \\
+\\
+Sin embargo, en presencia de soporte simétrico, la geometría del espectro altera esta correspondencia. Aunque el radio espectral continúa delimitando el cruce del eje real, la forma de la transición observada ya no queda completamente caracterizada por $R=\sigma\sqrt{NC}$. En este escenario, las sensibilidades paramétricas derivadas anteriormente resultan insuficientes para explicar el ensanchamiento del régimen crítico, evidenciando que intervienen propiedades espectrales adicionales más allá del borde del espectro.
+\\
+\\
+Con el fin de verificar si el radio espectral constituye un parámetro de control universal, se reescalan las transiciones en términos de $R=\sigma\sqrt{NC}$. En particular, en la Figura \eqref{fig:Transicionσ√NC02} se presentan las transiciones dinámicas al variar $C$ fijando $\sigma=0.2$, así como al variar $\sigma$ con $C=0.2$ En ambos escenarios, el caso puramente dirigido colapsa consistentemente alrededor del valor crítico del radio espectral, mostrando que la estabilidad depende esencialmente de $R$. En contraste, el sistema estructuralmente simétrico exhibe desviaciones residuales respecto de este colapso: aunque el umbral se mantiene próximo al valor crítico, la forma de la transición no coincide completamente bajo el reescalamiento. 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.160]{../Imagenes/Transicionσ√NC02}
+	\caption{Re--escalamiento del eje $x$ al radio espectral $\sigma\sqrt{NC}$. Las variaciones en $C$ y $\sigma$ fueron las mismas que en los casos anteriores considerados. Para este caso particular se ha fijado $\sigma=C=0.2$.}
+	\label{fig:Transicionσ√NC02}
+\end{figure}
+
+En contraste, en la Figura \eqref{fig:Transicionσ√NC06} se presentan las mismas transiciones al fijar $\sigma$ y $C$ en el valor $0.6$. En el caso (\textbf{A}), el caso estructuralmente simétrico exhibe una desviación notable respecto del colapso observado en el sistema puramente dirigido. Esto indica que, si bien $R$ continúa siendo un descriptor relevante, no captura por completo los efectos geométricos inducidos por la estructura del soporte. Por lo tanto se confirma que, en sistemas estructuralmente simétricos, el radio espectral no constituye un parámetro de control universal en el mismo sentido que en el caso dirigido. La transición no está determinada únicamente por el borde del espectro, sino que también de la distribución interna de los valores propios, cuya geometría modifica el régimen crítico.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.160]{../Imagenes/Transicionσ√NC06}
+	\caption{Re--escalamiento del eje $x$ al radio espectral $\sigma\sqrt{NC}$. Las variaciones en $C$ y $\sigma$ fueron las mismas que en los casos anteriores considerados. Para este caso particular se ha fijado $\sigma=C=0.6$.}
+	\label{fig:Transicionσ√NC06}
+\end{figure}
+
+\section{Limitaciones del enfoque clásico y planteamiento del problema}
+
+El enfoque de May permitió formular criterios probabilísticos de estabilidad en sistemas ecológicos de gran dimensión a partir de propiedades estadísticas de matrices aleatorias, proporcionando una primera descripción del papel de la conectividad y de la intensidad de interacción. \\
+\\
+Sin embargo, esta caracterización no incorpora explícitamente la dinámica no lineal que conduce a los estados estacionarios sobre los cuales se evalúa la estabilidad. En el modelo de Lotka--Volterra generalizado, la matriz Jacobiana depende explícitamente del estado de equilibrio del sistema, de modo que sus propiedades espectrales quedan condicionadas por las abundancias resultantes de la dinámica.\\
+\\
+Asimismo, restricciones estructurales sobre la red de interacción ---como el soporte estructuralmente simétrico--- pueden inducir deformaciones apreciables en el espectro respecto al escenario isotrópico clásico, limitando la capacidad descriptiva del radio espectral como único indicador de estabilidad.\\
+\\
+En vista de estas limitaciones, surge la necesidad de estudiar de qué manera la dinámica no lineal y la estructura de interacción modifican las transiciones de estabilidad en el modelo de Lotka--Volterra generalizado. En particular, resulta relevante explorar si la factibilidad de los estados de equilibrio puede proporcionar información efectiva sobre la proximidad a cambios de estabilidad, permitiendo construir criterios heurísticos para caracterizar dichas transiciones más allá del marco clásico puramente espectral.\\
+\\
+Bajo esta perspectiva, los capítulos siguientes abordan el estudio dinámico del modelo de Lotka–Volterra generalizado mediante redes aleatorias ponderadas, donde las transiciones de estabilidad se analizan a partir de la evolución temporal del sistema y de su posible relación con la factibilidad de los estados de equilibrio.
 

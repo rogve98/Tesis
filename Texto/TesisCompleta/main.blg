@@ -1,16 +1,16 @@
 [0] Config.pm:308> INFO - This is Biber 2.20
-[1] Config.pm:311> INFO - Logfile is 'main.blg'
-[553] biber-MSWIN64:340> INFO - === 
-[718] Biber.pm:420> INFO - Reading 'main.bcf'
-[1152] Biber.pm:994> INFO - Found 17 citekeys in bib section 0
-[1224] Biber.pm:4463> INFO - Processing section 0
-[1265] Biber.pm:4654> INFO - Looking for bibtex file './TeX_files/referencias.bib' for section 0
-[1494] bibtex.pm:1713> INFO - LaTeX decoding ...
-[1634] bibtex.pm:1519> INFO - Found BibTeX data source './TeX_files/referencias.bib'
-[2047] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[2047] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
-[2047] Biber.pm:4283> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'es-ES'
-[2095] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[2122] bbl.pm:779> INFO - Output to main.bbl
-[2124] Biber.pm:131> WARN - legacy month field 'jul' in entry 'Koppen2005Interdisciplina' is not an integer - this will probably not sort properly.
-[2124] Biber.pm:133> INFO - WARNINGS: 1
+[0] Config.pm:311> INFO - Logfile is 'main.blg'
+[174] biber-MSWIN64:340> INFO - === 
+[262] Biber.pm:420> INFO - Reading 'main.bcf'
+[445] Biber.pm:994> INFO - Found 23 citekeys in bib section 0
+[476] Biber.pm:4463> INFO - Processing section 0
+[494] Biber.pm:4654> INFO - Looking for bibtex file './TeX_files/referencias.bib' for section 0
+[600] bibtex.pm:1713> INFO - LaTeX decoding ...
+[640] bibtex.pm:1519> INFO - Found BibTeX data source './TeX_files/referencias.bib'
+[786] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[786] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
+[786] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'es-ES'
+[800] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[820] bbl.pm:779> INFO - Output to main.bbl
+[821] Biber.pm:131> WARN - legacy month field 'jul' in entry 'Koppen2005Interdisciplina' is not an integer - this will probably not sort properly.
+[821] Biber.pm:133> INFO - WARNINGS: 1
